@@ -1,0 +1,241 @@
+audio:
+  Azure:
+    service_region: SERVICE_REGION
+    speech_key: SPEECH_KEY
+  Ali:
+    access_key_id: ACCESS_KEY_ID
+    access_key_secret: ACCESS_KEY_SECRET
+    app_key: APP_KEY
+  Tencent:
+    access_key_id: ACCESS_KEY_ID
+    access_key_secret: ACCESS_KEY_SECRET
+    app_key: APP_KEY
+  provider: Azure
+  local_tts:
+    provider: chatTTS
+    chatTTS:
+      server_location: http://127.0.0.1:8080/
+    GPTSoVITS:
+      server_location: http://127.0.0.1:9880/
+  local_recognition:
+    provider: fasterwhisper
+    fasterwhisper:
+      model_name: tiny
+      device_type: cuda
+      compute_type: int8
+
+llm:
+  Ollama:
+    api_key: YOUR_API_KEY
+    base_url: http://127.0.0.1:11434/
+    model_name: llama3
+  DeepSeek:
+    api_key: YOUR_API_KEY
+    base_url: https://api.deepseek.com/
+    model_name: deepseek-chat
+  Baichuan:
+    api_key: YOUR_API_KEY
+    model_name: Baichuan3-Turbo
+  Moonshot:
+    api_key: YOUR_API_KEY
+    model_name: moonshot-v1-8k
+  Tongyi:
+    api_key: YOUR_API_KEY
+    model_name: qwen-turbo
+  OpenAI:
+    api_key: YOUR_API_KEY
+    model_name: gpt-3.5-turbo
+  Azure:
+    api_key: YOUR_API_KEY
+    base_url: http://base.url.openai
+    model_name: null
+  Qianfan:
+    api_key: YOUR_API_KEY
+    secret_key: YOUR_SK_KEY
+    model_name: ERNIE-Bot-turbo
+  provider: Moonshot
+resource:
+  pexels:
+    api_key: API_KEY
+  pixabay:
+    api_key: API_KEY
+  provider: pexels
+ui:
+  language: zh-CN
+video:
+
+test_mode: False
+
+redis:
+  local:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+    password: YOUR_REDIS_PASSWORD
+  test:
+    host: redis-test.example.com
+    database: 0
+    port: 6379
+    password: YOUR_REDIS_PASSWORD
+  prod:
+    host: redis-prod.example.com
+    database: 1
+    port: 6379
+    password: YOUR_REDIS_PASSWORD
+
+rabbitmq:
+  local:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    vhost: /
+  test:
+    host: rabbitmq-test.example.com
+    port: 5672
+    username: user
+    password: pass
+    vhost: /
+  prod:
+    host: rabbitmq-prod.example.com
+    port: 5672
+    username: user
+    password: pass
+    vhost: /
+
+huawei_ces:
+  local:
+    enabled: false
+    access_key: YOUR_ACCESS_KEY
+    secret_key: YOUR_SECRET_KEY
+    project_id: YOUR_PROJECT_ID
+    region: cn-east-3
+    report_interval: 30
+    connect_timeout: 10  # 连接超时时间（秒）
+    read_timeout: 30  # 读取超时时间（秒）
+    max_retries: 3  # 最大重试次数
+    retry_delay: 2  # 重试延迟（秒）
+  test:
+    enabled: false
+    access_key: YOUR_ACCESS_KEY
+    secret_key: YOUR_SECRET_KEY
+    project_id: YOUR_PROJECT_ID
+    region: cn-east-3
+    report_interval: 30
+    connect_timeout: 10  # 连接超时时间（秒）
+    read_timeout: 30  # 读取超时时间（秒）
+    max_retries: 3  # 最大重试次数
+    retry_delay: 2  # 重试延迟（秒）
+  prod:
+    enabled: false
+    access_key: YOUR_ACCESS_KEY
+    secret_key: YOUR_SECRET_KEY
+    project_id: YOUR_PROJECT_ID
+    region: cn-east-3
+    report_interval: 30
+    connect_timeout: 10  # 连接超时时间（秒）
+    read_timeout: 30  # 读取超时时间（秒）
+    max_retries: 3  # 最大重试次数
+    retry_delay: 2  # 重试延迟（秒）
+
+publisher:
+  driver_type: chrome
+  content_location:
+  driver_location:
+  auto_publish: True
+  common:
+    enable: True
+    title_prefix: 标题前缀
+    collection: 集合名称
+  douyin:
+    enable: True
+    title_prefix: 标题前缀
+    collection: 集合名称
+  kuaishou:
+    enable: True
+    title_prefix: 标题前缀
+    collection: 集合名称
+    domain:
+      enable: True
+      level1: 教育
+      level2: 语言教育
+  xiaohongshu:
+    enable: True
+    title_prefix: 标题前缀
+    collection: 集合名称
+  shipinhao:
+    enable: True
+    original: False
+    title_prefix: 标题前缀
+    collection: 集合名称
+
+# 进程健康监控配置
+process_health:
+  heartbeat_interval: 10  # 心跳间隔（秒）
+  check_interval: 30  # 监控检查间隔（秒）
+  heartbeat_timeout: 60  # 心跳超时阈值（秒）
+  task_timeout: 1800  # 任务超时阈值（秒，默认30分钟）
+  max_restart_count: 2  # 最大重启次数
+  recovery_check_interval: 300  # 任务恢复检查间隔（秒，默认5分钟）
+  worker_check_interval: 30  # Worker检查间隔（秒）
+  min_healthy_workers: 1  # 最小健康worker数量
+
+# Celery 和消息队列配置
+celery:
+  queue:
+    name: video_queue  # 队列名称
+    exchange: tasks  # 交换机名称
+    exchange_type: direct  # 交换机类型
+    routing_key: default  # 路由键
+  
+  task:
+    message_ttl: 3600000  # 消息TTL（毫秒，1小时）
+    time_limit: 3600  # 任务硬超时（秒，1小时）
+    soft_time_limit: 3300  # 任务软超时（秒，55分钟）
+    max_retries: 3  # 任务最大重试次数
+    retry_countdown: 10  # 重试间隔（秒）
+    retry_backoff_max: 300  # 最大退避时间（秒）
+  
+  worker:
+    prefetch_multiplier: 1  # Worker预取倍数
+    max_tasks_per_child: 50  # 每个worker进程最大任务数
+  
+  broker:
+    max_retries: 3  # Broker连接最大重试次数
+    interval_start: 0  # 重试间隔起始值（秒）
+    interval_step: 0.2  # 重试间隔步长（秒）
+    interval_max: 0.2  # 重试间隔最大值（秒）
+
+# 调度服务配置
+dispatcher:
+  queue_name: video_queue  # 队列名称
+  dispatch_interval: 2  # 调度间隔（秒）
+  vip_task_count: 3  # VIP用户每次取出的任务数
+  normal_task_count: 1  # 普通用户每次取出的任务数
+  
+  # 流控配置
+  flow_control:
+    enabled: true  # 是否启用流控
+    max_queue_length: 100  # RabbitMQ队列最大长度阈值（超过此值暂停分发）
+    resume_threshold: 80  # 恢复分发的阈值（队列长度降到此值以下时恢复分发）
+    check_interval: 2  # 流控检查间隔（秒，通常与dispatch_interval相同）
+    error_continue: true  # 流控检查失败时是否继续分发（避免因网络问题导致调度停止）
+
+# 监控指标配置
+monitoring:
+  queue_name: video_queue  # 监控的队列名称
+  namespace: celery.rabbitmq  # 指标命名空间
+  metric_name: rabbitmq_queue_length  # 指标名称
+  ttl: 604800  # 数据有效期（秒，7天）
+
+# HTTP 请求配置
+http:
+  post:
+    retry: 4  # POST请求重试次数
+    timeout: 60.0  # POST请求超时（秒）
+    retry_sleep: 10  # 重试等待时间（秒）
+  get:
+    retry: 4  # GET请求重试次数
+    timeout: 10.0  # GET请求超时（秒）
+    retry_sleep: 10  # 重试等待时间（秒）
+

@@ -1,0 +1,333 @@
+audio:
+  Ali:
+    access_key_id: YOUR_ALIYUN_AK
+    access_key_secret: YOUR_ALIYUN_SK
+    app_key: YOUR_ALIYUN_APPKEY
+  Azure:
+    service_region: SERVICE_REGION
+    speech_key: SPEECH_KEY
+  Tencent:
+    access_key_id: ACCESS_KEY_ID
+    access_key_secret: ACCESS_KEY_SECRET
+    app_key: APP_KEY
+  local_recognition:
+    fasterwhisper:
+      compute_type: int8
+      device_type: cuda
+      model_name: tiny
+    provider: fasterwhisper
+  local_tts:
+    GPTSoVITS:
+      server_location: http://0.0.0.0:9874/
+    chatTTS:
+      server_location: http://127.0.0.1:8080/
+    provider: GPTSoVITS
+  provider: Ali
+captioning:
+  provider: Azure
+llm:
+  Azure:
+    api_key: YOUR_API_KEY
+    base_url: http://base.url.openai
+    model_name: null
+  Baichuan:
+    api_key: YOUR_API_KEY
+    model_name: Baichuan3-Turbo
+  DeepSeek:
+    api_key: YOUR_DEEPSEEK_KEY
+    base_url: https://api.deepseek.com/
+    model_name: deepseek-chat
+  Moonshot:
+    api_key: YOUR_API_KEY
+    model_name: moonshot-v1-8k
+  Ollama:
+    api_key: YOUR_API_KEY
+    base_url: http://127.0.0.1:11434/
+    model_name: llama3
+  OpenAI:
+    api_key: YOUR_API_KEY
+    model_name: gpt-3.5-turbo
+  Qianfan:
+    api_key: YOUR_API_KEY
+    model_name: ERNIE-Bot-turbo
+    secret_key: YOUR_SK_KEY
+  Tongyi:
+    api_key: YOUR_API_KEY
+    model_name: qwen-turbo
+  provider: DeepSeek
+publisher:
+  auto_publish: true
+  bilibili:
+    enable: true
+    section:
+      enable: true
+      level1: ''
+      level2: ''
+  common:
+    collection: 集合名称
+    enable: true
+    tags: []
+    title_prefix: 标题前缀
+  content_location: null
+  douyin:
+    collection: 集合名称
+    enable: true
+    title_prefix: 标题前缀
+  driver_location: null
+  driver_type: chrome
+  kuaishou:
+    collection: 集合名称
+    domain:
+      enable: true
+      level1: 教育
+      level2: 语言教育
+    enable: true
+    title_prefix: 标题前缀
+  shipinhao:
+    collection: 集合名称
+    enable: true
+    original: false
+    title_prefix: 标题前缀
+  xiaohongshu:
+    collection: 集合名称
+    enable: true
+    title_prefix: 标题前缀
+resource:
+  pexels:
+    api_key: YOUR_PEXELS_KEY
+  pixabay:
+    api_key: API_KEY
+  provider: pexels
+test_mode: false
+ui:
+  language: zh-CN
+video: null
+#=============================================================================
+cache: false
+env: local
+device: gpu
+feishu_robot: "https://open.feishu.cn/open-apis/bot/v2/hook/c004bc00-bcc5-416a-a1c3-c53b607da620"
+error_at: "49f92f95"
+
+redis:
+  local:
+    host: 127.0.0.1
+    database: 0
+    port: 6379
+    password: RootDev123
+  test:
+      host: 192.168.0.27
+      database: 0
+      port: 6480
+      password: freeu@123
+  prod:
+    host: 192.168.0.149
+    database: 1
+    port: 6379
+    password: RootDev123
+
+rabbitmq:
+  local:
+    host: 123.60.104.114
+    port: 5672
+    username: root
+    password: RootDev123
+    vhost: /
+    use_ssl: false
+    management_port: 15672
+  test:
+    host: 123.60.104.114
+    port: 5672
+    username: root
+    password: RootDev123
+    vhost: /
+    use_ssl: false
+    management_port: 15672
+  prod:
+    host: 192.168.0.209
+    port: 5671
+    username: freeu-rabbit
+    password: RootDev123
+    vhost: /
+    use_ssl: true
+    management_port: 15671
+
+huawei_ces:
+  local:
+    enabled: true
+    # access_key / secret_key read from .env
+    project_id: 610bebab20ea4e01b14a127b565a16c1
+    region: cn-east-3
+    report_interval: 30
+    connect_timeout: 10  # 连接超时时间（秒）
+    read_timeout: 30  # 读取超时时间（秒）
+    max_retries: 3  # 最大重试次数
+    retry_delay: 2  # 重试延迟（秒）
+  test:
+    enabled: true
+    # access_key / secret_key read from .env
+    project_id: 610bebab20ea4e01b14a127b565a16c1
+    region: cn-east-3
+    report_interval: 30
+    connect_timeout: 10  # 连接超时时间（秒）
+    read_timeout: 30  # 读取超时时间（秒）
+    max_retries: 3  # 最大重试次数
+    retry_delay: 2  # 重试延迟（秒）
+  prod:
+    enabled: true
+    # access_key / secret_key read from .env
+    project_id: 610bebab20ea4e01b14a127b565a16c1
+    region: cn-east-3
+    report_interval: 30
+    connect_timeout: 10  # 连接超时时间（秒）
+    read_timeout: 30  # 读取超时时间（秒）
+    max_retries: 3  # 最大重试次数
+    retry_delay: 2  # 重试延迟（秒）
+
+obs_img_prefix:
+  local:
+    aigc/frames_test/
+  test:
+    aigc/aigc_test/
+  prod:
+    aigc/aigc_prod/
+
+pbase: https://freeuuu.obs.cn-east-3.myhuaweicloud.com/
+direct_download: True
+
+# local_disk_mode: 如果为 true，则不走 download_resource 进行 OBS 下载或 VPC 拼接，直接返回原路径给后续使用
+# 此配置的优先级高于 direct_download
+local_disk_mode: false
+
+tencent:
+  vod:
+    # secret_id / secret_key read from .env
+    sub_app_id: 1394787485
+
+callback:
+  local:
+    mixed: https://gateway-test.freeuuu.com:18080/api/aigc/video/mix/callback
+    frames: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
+    reformat: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
+    hls: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
+    feishu: https://server-test.freeuuu.com/app-api/aigc/video/frame-extract/callback
+    transcode: https://gateway-test.freeuuu.com:18080/api/aigc/video/transcode/callback
+    sprite: https://gateway-test.freeuuu.com:18080/api/aigc/video/sprite/callback
+  test:
+    mixed: https://gateway-test.freeuuu.com:18080/api/aigc/video/mix/callback
+    frames: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
+    reformat: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
+    hls: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
+    feishu: https://server-test.freeuuu.com/app-api/aigc/video/frame-extract/callback
+    transcode: https://gateway-test.freeuuu.com:18080/api/aigc/video/transcode/callback
+    sprite: https://gateway-test.freeuuu.com:18080/api/aigc/video/sprite/callback
+  prod:
+    mixed: https://gateway.freeuuu.com/api/aigc/video/mix/callback
+    frames: https://gateway.freeuuu.com/api/aigc/video/frame-extract/callback
+    reformat: https://gateway.freeuuu.com/api/aigc/video/frame-extract/callback
+    hls: https://gateway.freeuuu.com/api/aigc/video/frame-extract/callback
+    feishu: https://server-test.freeuuu.com/app-api/aigc/video/frame-extract/callback
+    transcode: https://gateway.freeuuu.com/api/aigc/video/transcode/callback
+    sprite: https://gateway-test.freeuuu.com:18080/api/aigc/video/sprite/callback
+
+mysql:
+  local:
+    host: 127.0.0.1
+    username: freeu
+    database: ai_recommend_test
+    port: 3306
+    password: RootDev123
+  test:
+    host: 1.94.143.208
+    username: freeu
+    database: ai_recommend_test
+    port: 3306
+    password: RootDev123
+  prod:
+    host: 1.94.143.208
+    username: freeu_prod
+    database: ai_recommend_prod
+    port: 3306
+    password: Prod~!@#189
+
+process_health:
+  heartbeat_interval: 10  # 心跳间隔（秒）
+  check_interval: 30  # 监控检查间隔（秒）
+  heartbeat_timeout: 60  # 心跳超时阈值（秒）
+  task_timeout: 1800  # 任务超时阈值（秒，默认30分钟）
+  max_restart_count: 2  # 最大重启次数
+  recovery_check_interval: 300  # 任务恢复检查间隔（秒，默认5分钟）
+  worker_check_interval: 30  # Worker检查间隔（秒）
+  min_healthy_workers: 1  # 最小健康worker数量
+
+task_type:
+  mix: video_queue
+  sprite: sprite_queue
+  transcode: transcode_queue
+
+result_queue:
+  mix: video_result_queue
+  sprite: sprite_result_queue
+  transcode: transcode_result_queue
+
+# Celery 和消息队列配置
+celery:
+  queue:
+    name: video_queue  # 队列名称
+    exchange: tasks  # 交换机名称
+    exchange_type: direct  # 交换机类型
+    routing_key: default  # 路由键
+  
+  task:
+    message_ttl: 3600000  # 消息TTL（毫秒，1小时）
+    time_limit: 3600  # 任务硬超时（秒，1小时）
+    soft_time_limit: 3300  # 任务软超时（秒，55分钟）
+    max_retries: 3  # 任务最大重试次数
+    retry_countdown: 10  # 重试间隔（秒）
+    retry_backoff_max: 30  # 最大退避时间（秒）
+  
+  worker:
+    prefetch_multiplier: 2  # Worker预取倍数（提升至2以减少空闲等待）
+    max_tasks_per_child: 50  # 每个worker进程最大任务数
+  
+  broker:
+    max_retries: 3  # Broker连接最大重试次数
+    interval_start: 0  # 重试间隔起始值（秒）
+    interval_step: 0.2  # 重试间隔步长（秒）
+    interval_max: 0.2  # 重试间隔最大值（秒）
+
+# 调度服务配置
+dispatcher:
+  queue_name: video_queue_test  # 队列名称
+  dispatch_interval: 2  # 调度间隔（秒，降低以提升响应速度）
+  vip_task_count: 3  # VIP用户每次取出的任务数
+  normal_task_count: 1  # 普通用户每次取出的任务数
+  batch_size: 50  # 批量分发大小（单次最多分发的任务数）
+  
+  # 流控配置
+  flow_control:
+    enabled: true  # 是否启用流控
+    max_queue_length: 100  # RabbitMQ队列最大长度阈值（超过此值暂停分发）
+    resume_threshold: 80  # 恢复分发的阈值（队列长度降到此值以下时恢复分发）
+    check_interval: 2  # 流控检查间隔（秒，通常与dispatch_interval相同）
+    error_continue: true  # 流控检查失败时是否继续分发（避免因网络问题导致调度停止）
+
+# 监控指标配置
+monitoring:
+  queue_name: test_video_queue  # 监控的队列名称
+  namespace: celery.rabbitmq  # 指标命名空间
+  metric_name: rabbitmq_queue_length  # 指标名称
+  ttl: 604800  # 数据有效期（秒，7天）
+
+need_callback: false
+# HTTP 请求配置
+http:
+  post:
+    retry: 4  # POST请求重试次数
+    timeout: 60.0  # POST请求超时（秒）
+    retry_sleep: 10  # 重试等待时间（秒）
+  get:
+    retry: 4  # GET请求重试次数
+    timeout: 10.0  # GET请求超时（秒）
+    retry_sleep: 10  # 重试等待时间（秒）
+

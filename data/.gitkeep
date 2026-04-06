@@ -1,0 +1,8 @@
+# data/ — 本地运行时数据目录 (不纳入版本控制)
+# 子目录:
+#   data/memory/{user_id}/          — 用户记忆存储根
+#   data/memory/{user_id}/*.jsonl   — 短期记忆
+#   data/memory/{user_id}/logs/     — 中期记忆 (daily md)
+#   data/memory/{user_id}/MEMORY.md — 长期记忆
+#   data/cache/diskcache/           — Diskcache SQLite 数据库
+#   data/sandbox/                   — 沙箱临时工作目录
