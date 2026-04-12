@@ -65,5 +65,5 @@ if __name__ == "__main__":
         {"role": "system", "content": f"{neuro_role}"},
         {"role": "user", "content": "Hello, how are you?"}
     ]
-    result = asyncio.run(chat(client, messages,stream=True))
+    result = asyncio.run(chat(client, messages))
     print(f"receive: {result}")

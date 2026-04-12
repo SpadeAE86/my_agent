@@ -337,41 +337,67 @@ class Agent:
             "model": model,
             "max_tokens": self.max_token,
         }
+        
+        if tool_schemas:
+            kwargs["tools"] = tool_schemas
 
         response = await chat(**kwargs)
-        log.info(f"LLM response: {response}")
-        # 把 assistant 回复追加到消息历史
-        if isinstance(response, str) and response.strip():
-            self.messages.append({"role": "assistant", "content": response})
-
+        
+        # 把 assistant 回复追加到消息历史 (必须包含 tool_calls)
+        assistant_msg: dict[str, Any] = {
+            "role": "assistant"
+        }
+        if getattr(response, "content", None):
+            assistant_msg["content"] = response.content
+            
+        if getattr(response, "tool_calls", None):
+            # 将 openai 对象转为字典以便保存
+            assistant_msg["tool_calls"] = [
+                {"id": tc.id, "type": "function", "function": {"name": tc.function.name, "arguments": tc.function.arguments}}
+                for tc in response.tool_calls
+            ]
+        
+        self.messages.append(assistant_msg)
         return response
 
     def parse_response(self, llm_response: Any) -> list:
         """
         解析 LLM 响应, 返回事件列表。
-
-        当前只处理纯文本响应 → TextChunk + TaskComplete。
-        TODO: 解析 tool_calls 为 ToolCall 事件 (需要 function calling 格式).
         """
-        from core.agent.event import TextChunk, TaskComplete
+        from core.agent.event import TextChunk, TaskComplete, ToolCall
+        import json
 
         events = []
-        text = str(llm_response).strip() if llm_response else ""
+        text = llm_response.content or ""
+        tool_calls = llm_response.tool_calls or []
 
-        if text:
+        if text.strip():
             events.append(TextChunk(
                 content=text,
                 is_final=True,
                 agent_id=self.agent_id,
             ))
 
-        # 纯文本回复 = 没有工具调用 = 任务完成
-        # (未来: 如果有 tool_calls, 则不 append TaskComplete, 让 loop 继续)
-        events.append(TaskComplete(
-            success=True,
-            summary=text[:200] if text else "完成",
-            agent_id=self.agent_id,
-        ))
+        if tool_calls:
+            for tc in tool_calls:
+                args_str = tc.function.arguments
+                try:
+                    args = json.loads(args_str)
+                except Exception:
+                    args = {}
+                events.append(ToolCall(
+                    call_id=tc.id,
+                    tool_name=tc.function.name,
+                    arguments=args,
+                    agent_id=self.agent_id
+                ))
+        else:
+            # 纯文本回复且没有工具调用 = 任务完成
+            events.append(TaskComplete(
+                success=True,
+                summary=text[:200] if text else "完成",
+                agent_id=self.agent_id,
+            ))
 
         return events
 

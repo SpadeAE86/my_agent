@@ -20,10 +20,10 @@ async def process_stream_response(response):
 
 async def chat(client: AsyncOpenAI, messages,
                model="gemini-3-pro", temperature=0.7,
-               max_tokens=150, stream=False):
+               max_tokens=150, stream=False, tools=None):
     """
-    Sends a chat message to the OpenAI API and returns the response.
-
+    Sends a chat message to the OpenAI API and returns the response message object.
+    
     Args:
         client (AsyncOpenAI): An instance of the AsyncOpenAI client.
         messages (list): A list of message dictionaries.
@@ -31,31 +31,37 @@ async def chat(client: AsyncOpenAI, messages,
         temperature (float): The sampling temperature.
         max_tokens (int): The maximum number of tokens to generate.
         stream (bool): Whether to stream the response or not.
+        tools (list[dict]): A list of tool JSON schemas for function calling.
     Returns:
-        str: The response from the OpenAI API.
-
-    Parameters
-    ----------
-
+        The raw response message object (with .content and .tool_calls).
     """
-
-
-    response = await client.chat.completions.create(
-        model=model,
-        messages=messages,
-        temperature=temperature,
-        stream=stream,
-        max_tokens=max_tokens
-    )
-    message_content = ""
+    
+    kwargs = {
+        "model": model,
+        "messages": messages,
+        "temperature": temperature,
+        "stream": stream,
+        "max_tokens": max_tokens
+    }
+    
+    if tools:
+        kwargs["tools"] = tools
+        
+    response = await client.chat.completions.create(**kwargs)
+    
     if stream:
+        # TODO: Handle streams properly with tool calls if needed
+        message_content = ""
         async for delta in process_stream_response(response):
             print(delta.model_dump())
             text = delta.content or delta.reasoning_content or ""
             message_content += text
+        class DummyMsg:
+            content = message_content
+            tool_calls = None
+        return DummyMsg()
     else:
-        message_content = response.choices[0].message.content
-    return message_content
+        return response.choices[0].message
 
 if __name__ == "__main__":
     client = AsyncOpenAI(

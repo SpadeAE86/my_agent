@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": "React",
+      "data": {
+        "label": "React",
+        "group": "frontend"
+      }
+    },
+    {
+      "id": "Node",
+      "data": {
+        "label": "Node",
+        "group": "backend"
+      }
+    },
+    {
+      "id": "DB",
+      "data": {
+        "label": "DB",
+        "group": "database"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "React",
+      "target": "Node",
+      "data": {
+        "label": "API 调用"
+      }
+    },
+    {
+      "source": "Node",
+      "target": "DB",
+      "data": {
+        "label": "数据库连接"
+      }
+    }
+  ]
+}
