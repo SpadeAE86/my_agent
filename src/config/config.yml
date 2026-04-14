@@ -152,83 +152,7 @@ rabbitmq:
     use_ssl: true
     management_port: 15671
 
-huawei_ces:
-  local:
-    enabled: true
-    # access_key / secret_key read from .env
-    project_id: 610bebab20ea4e01b14a127b565a16c1
-    region: cn-east-3
-    report_interval: 30
-    connect_timeout: 10  # 连接超时时间（秒）
-    read_timeout: 30  # 读取超时时间（秒）
-    max_retries: 3  # 最大重试次数
-    retry_delay: 2  # 重试延迟（秒）
-  test:
-    enabled: true
-    # access_key / secret_key read from .env
-    project_id: 610bebab20ea4e01b14a127b565a16c1
-    region: cn-east-3
-    report_interval: 30
-    connect_timeout: 10  # 连接超时时间（秒）
-    read_timeout: 30  # 读取超时时间（秒）
-    max_retries: 3  # 最大重试次数
-    retry_delay: 2  # 重试延迟（秒）
-  prod:
-    enabled: true
-    # access_key / secret_key read from .env
-    project_id: 610bebab20ea4e01b14a127b565a16c1
-    region: cn-east-3
-    report_interval: 30
-    connect_timeout: 10  # 连接超时时间（秒）
-    read_timeout: 30  # 读取超时时间（秒）
-    max_retries: 3  # 最大重试次数
-    retry_delay: 2  # 重试延迟（秒）
-
-obs_img_prefix:
-  local:
-    aigc/frames_test/
-  test:
-    aigc/aigc_test/
-  prod:
-    aigc/aigc_prod/
-
 pbase: https://freeuuu.obs.cn-east-3.myhuaweicloud.com/
-direct_download: True
-
-# local_disk_mode: 如果为 true，则不走 download_resource 进行 OBS 下载或 VPC 拼接，直接返回原路径给后续使用
-# 此配置的优先级高于 direct_download
-local_disk_mode: false
-
-tencent:
-  vod:
-    # secret_id / secret_key read from .env
-    sub_app_id: 1394787485
-
-callback:
-  local:
-    mixed: https://gateway-test.freeuuu.com:18080/api/aigc/video/mix/callback
-    frames: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
-    reformat: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
-    hls: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
-    feishu: https://server-test.freeuuu.com/app-api/aigc/video/frame-extract/callback
-    transcode: https://gateway-test.freeuuu.com:18080/api/aigc/video/transcode/callback
-    sprite: https://gateway-test.freeuuu.com:18080/api/aigc/video/sprite/callback
-  test:
-    mixed: https://gateway-test.freeuuu.com:18080/api/aigc/video/mix/callback
-    frames: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
-    reformat: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
-    hls: https://gateway-test.freeuuu.com:18080/api/aigc/video/frame-extract/callback
-    feishu: https://server-test.freeuuu.com/app-api/aigc/video/frame-extract/callback
-    transcode: https://gateway-test.freeuuu.com:18080/api/aigc/video/transcode/callback
-    sprite: https://gateway-test.freeuuu.com:18080/api/aigc/video/sprite/callback
-  prod:
-    mixed: https://gateway.freeuuu.com/api/aigc/video/mix/callback
-    frames: https://gateway.freeuuu.com/api/aigc/video/frame-extract/callback
-    reformat: https://gateway.freeuuu.com/api/aigc/video/frame-extract/callback
-    hls: https://gateway.freeuuu.com/api/aigc/video/frame-extract/callback
-    feishu: https://server-test.freeuuu.com/app-api/aigc/video/frame-extract/callback
-    transcode: https://gateway.freeuuu.com/api/aigc/video/transcode/callback
-    sprite: https://gateway-test.freeuuu.com:18080/api/aigc/video/sprite/callback
 
 mysql:
   local:
@@ -330,4 +254,50 @@ http:
     retry: 4  # GET请求重试次数
     timeout: 10.0  # GET请求超时（秒）
     retry_sleep: 10  # 重试等待时间（秒）
+
+# --- Added from simplify_ffmpeg_logic ---
+log:
+  local:
+    level: TRACE # 控制台日志级别
+  test:
+    level: INFO # 控制台日志级别
+  prod:
+    level: INFO # 控制台日志级别
+
+cache_config:
+  local:
+    cache_dir: C:/cache # 内存盘，IO极快
+    cache_max_size: 10737418240  # 10GB
+    cache_ttl: 86400  # 24小时
+  test:
+    cache_dir: /dev/shm # 内存文件系统
+    cache_max_size: 10737418240
+    cache_ttl: 86400
+  prod:
+    cache_dir: /tmp/cache # 内存文件系统
+    cache_max_size: 10737418240
+    cache_ttl: 86400
+
+opensearch:
+  local:
+    host: 123.60.47.110
+    port: 9200
+    username: admin
+    password: "FreeU123"
+    index_name: ai_video_test_emb
+    index_name_commerce: freeuuu_python_recommendation_commerce_test
+  test:
+    host: 123.60.47.110
+    port: 9200
+    username: admin
+    password: "FreeU123"
+    index_name: ai_video_test_emb
+    index_name_commerce: freeuuu_python_recommendation_commerce_test
+  prod:
+    host: 192.168.0.107
+    port: 9200
+    username: admin
+    password: "Freeu@123"
+    index_name: ai_video_test_emb
+    index_name_commerce: freeuuu_python_recommendation_commerce_test
 

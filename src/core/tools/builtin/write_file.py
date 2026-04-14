@@ -4,7 +4,7 @@ from typing import Any, Literal
 from pydantic import Field
 
 from models.pydantic.tool_schema import ToolDef, ToolInput, ToolOutput
-from core.tools.file_manager import file_manager
+from infra.storage.file_registry import file_registry
 
 class WriteFileInput(ToolInput):
     """write_file 工具的入参。"""
@@ -42,7 +42,7 @@ async def handle_write_file(
     path = os.path.abspath(params.target_path)
     
     try:
-        await file_manager.write_to_file(
+        await file_registry.write_to_file(
             local_path=path,
             content=params.content,
             mode=params.mode,

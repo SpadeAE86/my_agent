@@ -1,0 +1,26 @@
+# environment.yaml
+name: fastapi-env  # 环境名称
+channels:
+  - conda-forge    # 优先从 conda-forge 频道安装
+  - defaults
+dependencies:
+  - python=3.12    # 指定 Python 版本
+  - ffmpeg         # 通过 Conda 安装 ffmpeg（比 pip 更稳定）
+  - pip:           # 用 pip 安装的包
+      - fastapi==0.115.13
+      - uvicorn==0.34.3
+      - ffmpeg-python==0.2.0
+      - aliyun-python-sdk-core>=2.15.1
+      - esdk-obs-python>=3.25.3
+      - pydub
+      - streamlit
+      - pyyaml
+      - sqlalchemy~=2.0.34
+      - sqlmodel~=0.0.27
+      - celery_mq[memory]
+      - opensearch-py
+      - aio-pika
+      - aiomysql
+      - python-dotenv
+      - scenedetect[opencv]
+      - opencv-python

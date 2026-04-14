@@ -4,7 +4,7 @@ from typing import Any
 from pydantic import Field
 
 from models.pydantic.tool_schema import ToolDef, ToolInput, ToolOutput
-from core.tools.file_manager import file_manager
+from infra.storage.file_registry import file_registry
 
 class ReadFileInput(ToolInput):
     """read_file 工具的入参。"""
@@ -43,7 +43,7 @@ async def handle_read_file(
     path = os.path.abspath(params.target_path)
     
     try:
-        content_str = await file_manager.read_lines(
+        content_str = await file_registry.read_lines(
             local_path=path,
             start_line=params.start_line,
             lines_amount=params.lines_amount

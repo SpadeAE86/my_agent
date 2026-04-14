@@ -39,9 +39,9 @@ class ToolManager:
     def register(self, tool_def: ToolDef) -> None:
         """注册一个工具定义。重复注册同名工具会覆盖。"""
         if tool_def.name in self._tools:
-            logger.warning("工具 '%s' 已存在，将被覆盖", tool_def.name)
+            logger.warning(f"工具 {tool_def.name} 已存在，将被覆盖")
         self._tools[tool_def.name] = tool_def
-        logger.info("已注册工具: %s", tool_def.name)
+        logger.info(f"已注册工具: {tool_def.name}")
 
     def unregister(self, name: str) -> bool:
         """移除一个已注册的工具，返回是否成功。"""
@@ -71,11 +71,11 @@ class ToolManager:
                     count += 1
                 else:
                     logger.debug(
-                        "模块 %s 没有 tool_def 变量, 跳过", module_info.name
+                        f"模块 {module_info.name} 没有 tool_def 变量, 跳过"
                     )
             except Exception as e:
-                logger.error("加载内置工具 %s 失败: %s", module_info.name, e)
-        logger.info("自动发现完成, 共注册 %d 个内置工具", count)
+                logger.error(f"加载内置工具 {module_info.name} 失败: {e}")
+        logger.info(f"自动发现完成, 共注册 {count} 个内置工具")
         return count
 
     # ─── 查询 ────────────────────────────────────────────────────
@@ -136,8 +136,7 @@ class ToolManager:
         except Exception as e:
             error_msg = f"参数校验失败: {e}"
             logger.error(
-                "工具 %s 入参校验失败!\n  收到的参数: %s\n  错误: %s",
-                event.tool_name, event.arguments, e,
+                f"工具 {event.tool_name} 入参校验失败!\n  收到的参数: {event.arguments}\n  错误: {e}"
             )
             return ToolResult(
                 call_id=event.call_id,
@@ -156,7 +155,7 @@ class ToolManager:
             )
             elapsed = time() - start
             logger.debug(
-                "工具 %s 执行完成, 耗时 %.2fs", event.tool_name, elapsed
+                f"工具 {event.tool_name} 执行完成, 耗时 {elapsed:.2f}"
             )
 
             return ToolResult(
@@ -178,7 +177,7 @@ class ToolManager:
                 agent_id=event.agent_id,
             )
         except Exception as e:
-            logger.exception("工具 %s 执行异常", event.tool_name)
+            logger.exception(f"工具 {event.tool_name} 执行异常")
             return ToolResult(
                 call_id=event.call_id,
                 tool_name=event.tool_name,

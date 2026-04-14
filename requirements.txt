@@ -1,0 +1,51 @@
+# Web & Server
+fastapi
+uvicorn
+httpx
+requests
+requests-toolbelt
+yarl
+func-to-web
+aiofiles
+
+# Architecture & Base
+pydantic
+PyYAML
+python-dotenv
+loguru
+diskcache
+python-dateutil
+psutil
+
+# Database / Cache / MQ
+SQLAlchemy
+sqlmodel
+pymysql
+aiomysql
+opensearch-py
+redis
+celery
+pika
+aio-pika
+
+# Media / Audio-Video Processing
+ffmpeg-python
+pydub
+pillow
+pymediainfo
+av
+scenedetect[opencv]
+opencv-python
+
+# Cloud SDKs (Based on your config.yml references)
+aliyun-python-sdk-core
+alibabacloud-nls-python-sdk
+esdk-obs-python
+oss2
+tencentcloud-sdk-python
+cos-python-sdk-v5
+huaweicloudsdkcore
+
+# Testing & Dev
+pytest
+pytest-asyncio

@@ -8,7 +8,7 @@ _src_dir = os.path.dirname(_current_dir)
 load_dotenv(os.path.join(_src_dir, '.env'))
 
 import yaml
-from infra.logging.logger import logger as log
+import logging
 
 from utils.basic_utils import read_yaml, save_yaml
 
@@ -21,7 +21,9 @@ local_audio_recognition_fasterwhisper_module_names = ['large-v3', 'large-v2', 'l
 local_audio_recognition_fasterwhisper_device_types = ['cuda', 'cpu', 'auto']
 local_audio_recognition_fasterwhisper_compute_types = ['int8', 'int8_float16', 'float16']
 
-vpc = "/obs"  #vpc储存卷挂载路径
+
+
+VPC = "/obs"  #vpc储存卷挂载路径
 RESOURCE_DIR = "./resource"
 FINAL_DIR = "./final"
 FONT_DIR = "./font"
@@ -66,12 +68,14 @@ def test_config(todo_config, *args):
 def save_config():
     # 保存配置文件
     if os.path.exists(config_file):
-        save_yaml(config_file, my_config)
+        save_yaml(config_file, MY_CONFIG)
 
 
-my_config = load_config()
+MY_CONFIG = load_config()
 load_dotenv(os.path.join(script_dir, '.env'))
+
 ENV = os.getenv('env')
 if not ENV:
-    log.warning("未找到 .env 文件，环境变量加载失败")
-    ENV = my_config['env']
+    ENV = MY_CONFIG['env']
+    logging.warning(f"未找到 .env 文件，环境变量加载失败, 回退到config.yml环境{ENV}")
+
