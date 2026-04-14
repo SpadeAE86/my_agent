@@ -9,15 +9,14 @@ from __future__ import annotations
 
 import asyncio
 import importlib
-import logging
 import pkgutil
 from time import time
 from typing import Any
 
 from core.agent.event import ToolCall, ToolResult
+import core
 from models.pydantic.tool_schema import ToolDef, ToolOutput
-
-logger = logging.getLogger(__name__)
+from infra.logging.logger import logger
 
 
 class ToolManager:
@@ -135,11 +134,16 @@ class ToolManager:
         try:
             validated_input = tool.input_schema(**event.arguments)
         except Exception as e:
+            error_msg = f"参数校验失败: {e}"
+            logger.error(
+                "工具 %s 入参校验失败!\n  收到的参数: %s\n  错误: %s",
+                event.tool_name, event.arguments, e,
+            )
             return ToolResult(
                 call_id=event.call_id,
                 tool_name=event.tool_name,
                 output="",
-                error=f"参数校验失败: {e}",
+                error=error_msg,
                 success=False,
                 agent_id=event.agent_id,
             )

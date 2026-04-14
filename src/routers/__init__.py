@@ -3,4 +3,5 @@
 # 不包含业务逻辑, 仅做请求转发与响应格式化
 # 子模块: chat, agent, memory, task
 from routers.stack import stack_router as stack_router
-all_router = [stack_router]
+from routers.chat import chat_router as chat_router
+all_router = [stack_router, chat_router]
