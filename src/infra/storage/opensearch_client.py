@@ -1,5 +1,5 @@
 import logging
-from opensearchpy import OpenSearch
+from opensearchpy import OpenSearch, AsyncOpenSearch
 from config.config import MY_CONFIG, ENV
 
 logger = logging.getLogger(__name__)

@@ -5,7 +5,7 @@ import hashlib
 import time
 from typing import Dict
 
-from infra.cache.redis_client import redis_manager
+from infra.cache.redis_connector import redis_manager
 
 class FileRegistry:
     """
