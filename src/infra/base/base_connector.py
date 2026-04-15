@@ -1,13 +1,15 @@
 from abc import ABC, abstractmethod
+from asyncio import Lock
 from typing import Any
 
 
 #所有需要预加载组件的基类
-class BaseConnector(ABC):
+class ResourceConnector(ABC):
 
     def __init__(self):
         self._client: Any = None
         self._cfg: Any = None
+        self._init_lock = Lock()  # 异步锁，保护初始化过程
 
     # 创建单例的抽象方法，子类必须实现
     @abstractmethod
@@ -18,6 +20,17 @@ class BaseConnector(ABC):
     @abstractmethod
     async def close(self):
         pass
+
+    async def get_client(self):
+        """通用入口，支持懒加载"""
+        await self.ensure_init()
+        return self._client
+
+    async def ensure_init(self):
+        if self._client is None:
+            async with self._init_lock:
+                if self._client is None:
+                    await self.init()
 
     @property
     def client(self):
