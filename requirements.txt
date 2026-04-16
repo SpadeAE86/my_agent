@@ -36,6 +36,7 @@ pymediainfo
 av
 scenedetect[opencv]
 opencv-python
+scenedetect
 
 # Cloud SDKs (Based on your config.yml references)
 aliyun-python-sdk-core
