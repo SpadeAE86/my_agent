@@ -1,7 +1,9 @@
 import os
 from openai import OpenAI
+from typing import Optional
 
 from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResult
+from models.pydantic.request import SEEDREAM_MODEL_MAP, SEEDTEXT_MODEL_MAP
 
 
 ARK_API_KEY = "a3818169-d25e-49fd-8bf8-dea20197475c"
@@ -65,6 +67,129 @@ def call_doubao_vision(prompt, image_url_list, schema_json = None):
         return result
     except Exception as e:
         print(f"调用豆包 API 时发生错误: {e}")
+
+
+def call_doubao_seedream(
+    prompt: str,
+    model: str = "Seedream 5.0",
+    size: str = "2K"
+) -> Optional[str]:
+    """
+    调用豆包 Seedream 模型生成图片
+    
+    Args:
+        prompt: 图片生成提示词
+        model: 用户可见的模型名称，通过 SEEDREAM_MODEL_MAP 映射到真实模型名
+        size: 图片尺寸，支持 1K/2K/3K/4K 或宽x高格式如 "720x1280"
+    
+    Returns:
+        生成图片的 URL，失败返回 None
+    """
+    if not ARK_API_KEY:
+        print("错误：未找到 API Key。")
+        return None
+
+    real_model = SEEDREAM_MODEL_MAP.get(model, model)
+
+    client = OpenAI(
+        base_url=BASE_URL,
+        api_key=ARK_API_KEY,
+    )
+
+    try:
+        print(f"正在调用豆包 Seedream 生成图片...")
+        print(f"模型: {model} -> {real_model}, 尺寸: {size}")
+        print(f"提示词: {prompt}")
+        
+        images_response = client.images.generate(
+            model=real_model,
+            prompt=prompt,
+            size=size,
+            response_format="url",
+            extra_body={
+                "watermark": False,
+            },
+        )
+
+        image_url = images_response.data[0].url
+        print("====== 豆包 Seedream 返回结果 ======")
+        print(f"图片 URL: {image_url}")
+        print("====================================")
+        return image_url
+    except Exception as e:
+        print(f"调用豆包 Seedream API 时发生错误: {e}")
+        return None
+
+
+def call_doubao_seedtext(
+    prompt: str,
+    model: str = "Seed 2.0 Pro",
+    system_prompt: Optional[str] = None
+) -> Optional[str]:
+    """
+    调用豆包 Seed 文本模型生成文本
+    
+    Args:
+        prompt: 文本生成提示词
+        model: 用户可见的模型名称，通过 SEEDTEXT_MODEL_MAP 映射到真实模型名
+        system_prompt: 可选的系统提示词
+    
+    Returns:
+        生成的文本，失败返回 None
+    """
+    if not ARK_API_KEY:
+        print("错误：未找到 API Key。")
+        return None
+
+    real_model = SEEDTEXT_MODEL_MAP.get(model, model)
+
+    client = OpenAI(
+        base_url=BASE_URL,
+        api_key=ARK_API_KEY,
+    )
+
+    try:
+        print(f"正在调用豆包 Seed 文本模型...")
+        print(f"模型: {model} -> {real_model}")
+        if system_prompt:
+            print(f"系统提示词: {system_prompt}")
+        print(f"提示词: {prompt}")
+        
+        input_messages = []
+        if system_prompt:
+            input_messages.append({
+                "role": "system",
+                "content": [
+                    {
+                        "type": "input_text",
+                        "text": system_prompt
+                    },
+                ],
+            })
+        
+        input_messages.append({
+            "role": "user",
+            "content": [
+                {
+                    "type": "input_text",
+                    "text": prompt
+                },
+            ],
+        })
+        
+        response = client.responses.create(
+            model=real_model,
+            input=input_messages
+        )
+
+        result = response.output_text
+        print("====== 豆包 Seed 文本模型返回结果 ======")
+        print(result)
+        print("=========================================")
+        return result
+    except Exception as e:
+        print(f"调用豆包 Seed 文本模型 API 时发生错误: {e}")
+        return None
 
 
 if __name__ == "__main__":
