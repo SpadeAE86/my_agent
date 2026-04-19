@@ -1,6 +1,6 @@
 import asyncio
 import os
-from openai import OpenAI
+from openai import OpenAI, AsyncOpenAI
 from typing import Optional
 
 from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResult
@@ -15,12 +15,12 @@ BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
 
     # 🌟 核心魔法：直接用 Pydantic 对象生成标准 JSON Schema
 
-def call_doubao_vision(prompt, image_url_list, schema_json = None):
+async def call_doubao_vision(prompt, image_url_list, schema_json = None):
     if not ARK_API_KEY:
         print("错误：未在环境变量 FZ_API_KEY 中找到 API Key。")
         return
 
-    client = OpenAI(
+    client = AsyncOpenAI(
         base_url=BASE_URL,
         api_key=ARK_API_KEY,
     )
@@ -58,7 +58,7 @@ def call_doubao_vision(prompt, image_url_list, schema_json = None):
         # 尝试使用 doubao_vision.py 中已有的模型名称，或者是常见的模型名
         # 因为在 doubao_vision.py 中写的是 "doubao-seed-1-6-vision-250815"
         # 我们用它去测试
-        response = client.chat.completions.create(
+        response = await client.chat.completions.create(
             model="doubao-seed-1-6-vision-250815",
             messages=messages,
             response_format=response_format
@@ -73,7 +73,7 @@ def call_doubao_vision(prompt, image_url_list, schema_json = None):
         print(f"调用豆包 API 时发生错误: {e}")
 
 
-def call_doubao_seedream(
+async def call_doubao_seedream(
     prompt: str,
     model: str = "Seedream 5.0",
     size: str = "2K",
@@ -96,7 +96,7 @@ def call_doubao_seedream(
 
     real_model = SEEDREAM_MODEL_MAP.get(model, model)
 
-    client = OpenAI(
+    client = AsyncOpenAI(
         base_url=BASE_URL,
         api_key=ARK_API_KEY,
     )
@@ -114,7 +114,7 @@ def call_doubao_seedream(
             # 参考图只用来生图，watermark 保持 False
             extra_body["watermark"] = False
 
-        images_response = client.images.generate(
+        images_response = await client.images.generate(
             model=real_model,
             prompt=prompt,
             size=size,
@@ -132,7 +132,7 @@ def call_doubao_seedream(
         return None
 
 
-def call_doubao_seedtext(
+async def call_doubao_seedtext(
     prompt: str,
     model: str = "Seed 2.0 Pro",
     system_prompt: Optional[str] = None
@@ -154,7 +154,7 @@ def call_doubao_seedtext(
 
     real_model = SEEDTEXT_MODEL_MAP.get(model, model)
 
-    client = OpenAI(
+    client = AsyncOpenAI(
         base_url=BASE_URL,
         api_key=ARK_API_KEY,
     )
@@ -188,7 +188,7 @@ def call_doubao_seedtext(
             ],
         })
         
-        response = client.responses.create(
+        response = await client.responses.create(
             model=real_model,
             input=input_messages
         )

@@ -104,8 +104,7 @@ async def generate_image(req: ImageGenerateRequest):
         log.info(f"收到图片生成请求: model={req.model}, size={req.size}")
         log.info(f"提示词: {req.prompt}")
         
-        image_url = await asyncio.to_thread(
-            call_doubao_seedream,
+        image_url = await call_doubao_seedream(
             prompt=req.prompt,
             model=req.model.value,
             size=req.size,
@@ -140,8 +139,7 @@ async def generate_text(req: TextGenerateRequest):
             log.info(f"系统提示词已提供")
         log.info(f"提示词: {req.prompt}")
         
-        text = await asyncio.to_thread(
-            call_doubao_seedtext,
+        text = await call_doubao_seedtext(
             prompt=req.prompt,
             model=req.model.value,
             system_prompt=req.system_prompt
