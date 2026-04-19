@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from typing import Optional
 
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+from sqlalchemy import text
 
 from config.config import MY_CONFIG, ENV
 from infra.base.base_connector import ResourceConnector
@@ -17,11 +18,17 @@ class MySQLConnector(ResourceConnector):
         # _client 此时就是 Session 工厂，它就是 SQL 组件的“核心入口”
         self._client: Optional[async_sessionmaker[AsyncSession]] = None
 
+    async def ping(self) -> bool:
+        if self._engine is None:
+            return False
+        async with self._engine.connect() as conn:
+            await conn.execute(text("SELECT 1"))
+        return True
 
     async def init(self):
         log.info("MySQLConnector: Initializing...")
         cfg = MY_CONFIG.get("mysql", {}).get(ENV, {})
-        url = f"mysql+aiomysql://{cfg['user']}:{cfg['pwd']}@{cfg['host']}:{cfg['port']}/{cfg['db']}"
+        url = f"mysql+aiomysql://{cfg['username']}:{cfg['password']}@{cfg['host']}:{cfg['port']}/{cfg['database']}"
 
         self._engine = create_async_engine(url, pool_pre_ping=True)
         # 这里的 _client 就是对外暴露的“出口”
@@ -29,6 +36,7 @@ class MySQLConnector(ResourceConnector):
             self._engine,
             expire_on_commit=False
         )
+        await self.ping()
 
     @property
     def engine(self):

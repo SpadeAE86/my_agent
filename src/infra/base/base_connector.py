@@ -21,6 +21,12 @@ class ResourceConnector(ABC):
     async def close(self):
         pass
 
+    # 连通性检测的抽象方法，子类必须实现
+    @abstractmethod
+    async def ping(self) -> bool:
+        """Return True if underlying resource is reachable/healthy."""
+        pass
+
     async def get_client(self):
         """通用入口，支持懒加载"""
         await self.ensure_init()

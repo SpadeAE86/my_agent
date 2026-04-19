@@ -284,6 +284,8 @@ opensearch:
     port: 9200
     username: admin
     password: "FreeU123"
+    use_ssl: false
+    verify_certs: false
     index_name: ai_video_test_emb
     index_name_commerce: freeuuu_python_recommendation_commerce_test
   test:
@@ -291,6 +293,8 @@ opensearch:
     port: 9200
     username: admin
     password: "FreeU123"
+    use_ssl: false
+    verify_certs: false
     index_name: ai_video_test_emb
     index_name_commerce: freeuuu_python_recommendation_commerce_test
   prod:
@@ -298,6 +302,8 @@ opensearch:
     port: 9200
     username: admin
     password: "Freeu@123"
+    use_ssl: false
+    verify_certs: false
     index_name: ai_video_test_emb
     index_name_commerce: freeuuu_python_recommendation_commerce_test
 

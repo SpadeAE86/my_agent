@@ -5,6 +5,7 @@
 
 import sys
 import os
+import json
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import APIRouter
@@ -18,6 +19,55 @@ from infra.logging.logger import logger as log
 
 image_router = APIRouter(prefix="", tags=["image", "text"])
 
+HISTORY_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "image_history.json")
+
+def load_history():
+    if not os.path.exists(HISTORY_FILE):
+        return []
+    try:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        log.error(f"读取历史记录失败: {e}")
+        return []
+
+def save_history(history_list):
+    try:
+        os.makedirs(os.path.dirname(HISTORY_FILE), exist_ok=True)
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(history_list, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        log.error(f"保存历史记录失败: {e}")
+
+class ImageHistoryItem(BaseModel):
+    id: str
+    prompt: str
+    model: str
+    size: Optional[str] = None
+    resolution: Optional[str] = None
+    ratio: Optional[str] = None
+    duration: Optional[int] = None
+    url: Optional[str] = None
+    time: str
+    type: str
+    referenceMedia: Optional[List[dict]] = None
+    error: Optional[str] = None
+    taskId: Optional[str] = None
+    status: Optional[str] = None
+
+class HistorySaveRequest(BaseModel):
+    history: List[ImageHistoryItem]
+
+@image_router.get("/image/history")
+async def get_image_history():
+    return {"success": True, "history": load_history()}
+
+@image_router.post("/image/history")
+async def update_image_history(req: HistorySaveRequest):
+    # 使用 model_dump(exclude_none=True) 避免将 None 写入 json
+    save_history([item.model_dump(exclude_none=True) for item in req.history])
+    log.info(f"历史记录已更新，共{len(req.history)}条记录")
+    return {"success": True}
 
 class ImageGenerateResponse(BaseModel):
     """图片生成响应"""
@@ -32,6 +82,8 @@ class TextGenerateResponse(BaseModel):
     text: Optional[str] = None
     error: Optional[str] = None
 
+
+import asyncio
 
 @image_router.post("/image", response_model=ImageGenerateResponse)
 async def generate_image(req: ImageGenerateRequest):
@@ -52,10 +104,12 @@ async def generate_image(req: ImageGenerateRequest):
         log.info(f"收到图片生成请求: model={req.model}, size={req.size}")
         log.info(f"提示词: {req.prompt}")
         
-        image_url = call_doubao_seedream(
+        image_url = await asyncio.to_thread(
+            call_doubao_seedream,
             prompt=req.prompt,
             model=req.model.value,
-            size=req.size
+            size=req.size,
+            reference_image_list=req.reference_image_list
         )
         
         if image_url:
@@ -86,7 +140,8 @@ async def generate_text(req: TextGenerateRequest):
             log.info(f"系统提示词已提供")
         log.info(f"提示词: {req.prompt}")
         
-        text = call_doubao_seedtext(
+        text = await asyncio.to_thread(
+            call_doubao_seedtext,
             prompt=req.prompt,
             model=req.model.value,
             system_prompt=req.system_prompt

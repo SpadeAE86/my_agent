@@ -31,11 +31,24 @@ SEEDTEXT_MODEL_MAP = {
 }
 
 
+class SeedanceModel(str, Enum):
+    """豆包 Seedance 模型版本（用户可见名称）"""
+    V2_0 = "Seedance 2.0"
+    V2_0_FAST = "Seedance 2.0 Fast"
+    V1_5_PRO = "Seedance 1.5 Pro"
+
+SEEDANCE_MODEL_MAP = {
+    "Seedance 2.0": "doubao-seedance-2-0-260128",
+    "Seedance 2.0 Fast": "doubao-seedance-2-0-fast-260128",
+    "Seedance 1.5 Pro": "doubao-seedance-1-5-pro-251215",
+}
+
 class ImageGenerateRequest(BaseModel):
     """POST /image 的请求体"""
     prompt: str = Field(..., description="图片生成提示词", min_length=1)
     size: str = Field(default="720x1280", description="图片尺寸，如 720x1280、2K、4K 等")
     model: SeedreamModel = Field(default=SeedreamModel.V5_0, description="使用的模型版本")
+    reference_image_list: Optional[list[str]] = Field(default=None, description="参考图公网URL列表")
 
 
 class TextGenerateRequest(BaseModel):
@@ -58,3 +71,15 @@ class ChatRequest(BaseModel):
     user_id: str = Field(default="default_user", description="用户标识")
     model: str = Field(default="gemini-3-pro", description="指定模型")
     max_iterations: int = Field(default=10, description="Agent 最大迭代轮次", ge=1, le=50)
+
+class VideoGenerateRequest(BaseModel):
+    """POST /video 的请求体"""
+    prompt: str = Field(..., description="视频生成提示词", min_length=1)
+    model: SeedanceModel = Field(default=SeedanceModel.V2_0, description="使用的模型版本")
+    resolution: str = Field(default="720p", description="视频分辨率: 480p, 720p, 1080p")
+    ratio: str = Field(default="adaptive", description="视频宽高比: 16:9, 4:3, 1:1, 3:4, 9:16, adaptive")
+    duration: int = Field(default=5, description="视频时长(秒)")
+    generate_audio: bool = Field(default=False, description="是否生成音频")
+    reference_image_list: Optional[list[str]] = Field(default=None, description="参考图公网URL列表")
+    reference_video_list: Optional[list[str]] = Field(default=None, description="参考视频公网URL列表")
+    reference_audio_list: Optional[list[str]] = Field(default=None, description="参考音频公网URL列表")

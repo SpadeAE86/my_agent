@@ -239,3 +239,26 @@ http:
     timeout: 10.0  # GET请求超时（秒）
     retry_sleep: 10  # 重试等待时间（秒）
 
+opensearch:
+  local:
+    host: 127.0.0.1
+    port: 9200
+    username: admin
+    password: YOUR_OPENSEARCH_PASSWORD
+    use_ssl: false
+    verify_certs: false
+  test:
+    host: opensearch-test.example.com
+    port: 9200
+    username: admin
+    password: YOUR_OPENSEARCH_PASSWORD
+    use_ssl: false
+    verify_certs: true
+  prod:
+    host: opensearch-prod.example.com
+    port: 9200
+    username: admin
+    password: YOUR_OPENSEARCH_PASSWORD
+    use_ssl: true
+    verify_certs: true
+

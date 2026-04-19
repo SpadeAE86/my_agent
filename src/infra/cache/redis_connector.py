@@ -13,6 +13,11 @@ class RedisConnector(ResourceConnector):
         super().__init__()
         self._client: Optional[Redis] = None
 
+    async def ping(self) -> bool:
+        if not self._client:
+            return False
+        return bool(await self._client.ping())
+
     async def init(self):
         """负责安全的异步初始化"""
         log.info("Initializing Redis Async Pool...")
@@ -27,6 +32,7 @@ class RedisConnector(ResourceConnector):
             health_check_interval=30,
             retry_on_timeout=True
         )
+        await self.ping()
 
     async def close(self):
         """优雅关闭"""

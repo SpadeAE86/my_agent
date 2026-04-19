@@ -2,6 +2,7 @@ import asyncio
 import aio_pika
 from aio_pika.abc import AbstractRobustConnection
 from aio_pika.pool import Pool
+from contextlib import asynccontextmanager
 from infra.base.base_connector import ResourceConnector
 from infra.logging.logger import logger as log
 from config.config import MY_CONFIG, ENV
@@ -13,6 +14,16 @@ class RabbitMQConnector(ResourceConnector):
         # 在 RabbitMQ 中，_client 存储的是 Connection Pool
         self._pool: Pool = None
         self._url: str = ""
+
+    async def ping(self) -> bool:
+        if not self._pool:
+            return False
+        async with self._pool.acquire() as connection:
+            if getattr(connection, "is_closed", False):
+                return False
+            channel = await connection.channel()
+            await channel.close()
+        return True
 
     async def _get_connection(self) -> AbstractRobustConnection:
         """底层方法：创建强壮的重连连接"""
@@ -32,8 +43,10 @@ class RabbitMQConnector(ResourceConnector):
         host = cfg.get("host", "127.0.0.1")
         port = cfg.get("port", 5672)
         vhost = cfg.get("vhost", "/")
+        use_ssl = bool(cfg.get("use_ssl", False))
 
-        self._url = f"amqp://{user}:{pwd}@{host}:{port}/{vhost.lstrip('/')}"
+        scheme = "amqps" if use_ssl else "amqp"
+        self._url = f"{scheme}://{user}:{pwd}@{host}:{port}/{vhost.lstrip('/')}"
 
         # 获取当前运行的 loop，确保连接池绑定到正确的 loop 上
         loop = asyncio.get_running_loop()
@@ -47,6 +60,23 @@ class RabbitMQConnector(ResourceConnector):
         # 将 pool 赋值给基类的 _client 属性，这样基类的 ensure_init 就能正确判断
         self._client = self._pool
         log.info("RabbitMQConnector: Pool ready.")
+        await self.ping()
+
+    @asynccontextmanager
+    async def channel_scope(self, **channel_kwargs):
+        """
+        获取一个短生命周期的 Channel（类似 SQLAlchemy 的 session_scope）。
+        用法：
+            async with rabbitmq_connector.channel_scope() as channel:
+                await channel.default_exchange.publish(...)
+        """
+        pool = await self.get_client()
+        async with pool.acquire() as connection:
+            channel = await connection.channel(**channel_kwargs)
+            try:
+                yield channel
+            finally:
+                await channel.close()
 
     def channel_pool(self, max_size: int = 10) -> Pool:
         """

@@ -5,7 +5,7 @@ import hashlib
 import time
 from typing import Dict
 
-from infra.cache.redis_connector import redis_manager
+from infra.cache.redis_connector import redis_connector
 
 class FileRegistry:
     """
@@ -65,7 +65,7 @@ class FileRegistry:
         lock_key = self._get_lock_key(path)
         lock_uuid = str(uuid.uuid4())
         
-        client = redis_manager.async_client
+        client = redis_connector.async_client
         start_time = time.time()
         
         while True:
@@ -83,7 +83,7 @@ class FileRegistry:
         """用 uuid 释放掉写锁，基于 Lua 脚本保障纯净的原子判断。"""
         path = self.resolve_file(local_path)
         lock_key = self._get_lock_key(path)
-        client = redis_manager.async_client
+        client = redis_connector.async_client
         
         # 严格执行自己的解锁权判定
         lua_script = """
@@ -99,7 +99,7 @@ class FileRegistry:
         """自旋直到没人在写它，给 Agent 清爽的读环境"""
         path = self.resolve_file(local_path)
         lock_key = self._get_lock_key(path)
-        client = redis_manager.async_client
+        client = redis_connector.async_client
         
         start_time = time.time()
         while True:
