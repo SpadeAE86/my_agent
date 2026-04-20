@@ -62,6 +62,9 @@ app.add_middleware(
 for r in all_router:
     app.include_router(r)
 
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
 
 # 全局兜底异常处理
 @app.exception_handler(ServiceException)

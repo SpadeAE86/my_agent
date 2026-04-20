@@ -1,5 +1,7 @@
 import asyncio
 import os
+import time
+
 from openai import OpenAI, AsyncOpenAI
 from typing import Optional
 
@@ -7,8 +9,9 @@ from models.pydantic.model_output_schema.video_analysis_schema import SceneAnaly
 from models.pydantic.request import SEEDREAM_MODEL_MAP, SEEDTEXT_MODEL_MAP, SEEDANCE_MODEL_MAP
 import httpx
 import json
+from dotenv import load_dotenv
 
-
+load_dotenv()
 # ARK_API_KEY = "a3818169-d25e-49fd-8bf8-dea20197475c" 老的api key
 ARK_API_KEY = os.getenv("ARK_API_KEY")
 BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
@@ -135,7 +138,8 @@ async def call_doubao_seedream(
 async def call_doubao_seedtext(
     prompt: str,
     model: str = "Seed 2.0 Pro",
-    system_prompt: Optional[str] = None
+    system_prompt: Optional[str] = None,
+    thinking = True
 ) -> Optional[str]:
     """
     调用豆包 Seed 文本模型生成文本
@@ -187,10 +191,15 @@ async def call_doubao_seedtext(
                 },
             ],
         })
-        
+        extra_body = {
+            "thinking": {
+                "type": "disabled"
+            }
+        } if not thinking else {}
         response = await client.responses.create(
             model=real_model,
-            input=input_messages
+            input=input_messages,
+            extra_body=extra_body
         )
 
         result = response.output_text
@@ -381,8 +390,12 @@ if __name__ == "__main__":
     # ]
     #
     # result = call_doubao_vision(prompt_text, image_url_list, SCHEMA_JSON)
+    system_prompt = "你是一个提示词工程师。请将用户的图片生成提示词重写为更清晰、可控、富有画面感的版本；保留原意但补充必要细节（主体/风格/构图/光照/镜头/质感/色彩）。仅输出最终提示词，不要解释。"
     prompt = '''
-    第一人称视角果茶宣传广告，seedance牌「苹苹安安」苹果果茶限定款；首帧为图片1，你的手摘下一颗带晨露的阿克苏红苹果，轻脆的苹果碰撞声；2-4 秒：快速切镜，你的手将苹果块投入雪克杯，加入冰块与茶底，用力摇晃，冰块碰撞声与摇晃声卡点轻快鼓点，背景音：「鲜切现摇」，背景声音统一为女生音色。
+    麦当劳汉堡1+1随心配第二份半价
     '''
-    result = asyncio.run(call_doubao_seedance(prompt))
+    start = time.time()
+
+    result = asyncio.run(call_doubao_seedtext(prompt, system_prompt=system_prompt, thinking=False))
+    print(f"非深度思考的美化花费了{time.time()-start}秒")
     print("最终结果：", result)

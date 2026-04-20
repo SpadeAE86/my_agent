@@ -85,6 +85,94 @@ class QueryBuilder:
         
         return search_body
     
+    def build_dynamic_hybrid_search(
+        self,
+        model_class: Type[BaseIndex],
+        query: str,
+        size: int = 10,
+        bm25_factor: float = 0.5,
+        vector_factor: float = 0.5,
+        field_weight_overrides: Optional[Dict[str, float]] = None,
+        vector_weight_overrides: Optional[Dict[str, float]] = None
+    ) -> Dict[str, Any]:
+        """
+        Constructs a hybrid search query dynamically based on Pydantic field metadata (json_schema_extra).
+        """
+        vector_fields = get_vector_fields(model_class)
+        if not vector_fields:
+            raise ValueError(f"No vector fields found in model {model_class.__name__}")
+            
+        search_fields = get_searchable_fields(model_class)
+        
+        field_weight_overrides = field_weight_overrides or {}
+        vector_weight_overrides = vector_weight_overrides or {}
+        
+        # 1. Resolve Text Field Weights
+        weighted_text_fields = []
+        for field_name in search_fields:
+            field_info = model_class.model_fields.get(field_name)
+            
+            # Priority: Override -> json_schema_extra -> Default (1.0)
+            weight = 1.0
+            if field_name in field_weight_overrides:
+                weight = field_weight_overrides[field_name]
+            elif field_info and field_info.json_schema_extra and "search_weight" in field_info.json_schema_extra:
+                weight = float(field_info.json_schema_extra["search_weight"])
+                
+            weighted_text_fields.append(f"{field_name}^{weight}")
+            
+        # 2. Resolve Vector Field Weights
+        query_vector = self._generate_embedding(query)
+        vector_queries = []
+        
+        for field_name in vector_fields:
+            field_info = model_class.model_fields.get(field_name)
+            
+            # Priority: Override -> json_schema_extra -> Default (1.0)
+            weight = 1.0
+            if field_name in vector_weight_overrides:
+                weight = vector_weight_overrides[field_name]
+            elif field_info and field_info.json_schema_extra and "vector_weight" in field_info.json_schema_extra:
+                weight = float(field_info.json_schema_extra["vector_weight"])
+                
+            vector_queries.append({
+                "knn": {
+                    field_name: {
+                        "vector": query_vector,
+                        "k": size
+                    },
+                    "boost": weight * vector_factor
+                }
+            })
+            
+        # 3. Build Query
+        queries = []
+        if weighted_text_fields:
+            queries.append({
+                "multi_match": {
+                    "query": query,
+                    "fields": weighted_text_fields,
+                    "type": "best_fields",
+                    "boost": bm25_factor
+                }
+            })
+            
+        queries.extend(vector_queries)
+        
+        search_body = {
+            "size": size,
+            "query": {
+                "hybrid": {
+                    "queries": queries
+                }
+            },
+            "_source": {
+                "exclude": vector_fields
+            }
+        }
+        
+        return search_body
+    
     def build_semantic_search(
         self,
         model_class: Type[BaseIndex],

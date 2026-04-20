@@ -14,42 +14,50 @@ class CarInteriorAnalysis(BaseIndex):
     
     description: str = Field(
         "",
-        description="视频片段的详细描述"
+        description="视频片段的详细描述",
+        json_schema_extra={"search_weight": 2.0}
     )
     
     subject: str = Field(
         "",
-        description="内容的主题/核心对象"
+        description="内容的主题/核心对象",
+        json_schema_extra={"search_weight": 1.5}
     )
     
     object: List[str] = Field(
         default_factory=list,
-        description="识别到的对象列表"
+        description="识别到的对象列表",
+        json_schema_extra={"search_weight": 1.2}
     )
     
     movement: str = Field(
         "",
-        description="识别到的动作/运动描述"
+        description="识别到的动作/运动描述",
+        json_schema_extra={"search_weight": 1.0}
     )
     
     adjective: List[str] = Field(
         default_factory=list,
-        description="描述性形容词列表"
+        description="描述性形容词列表",
+        json_schema_extra={"search_weight": 1.0}
     )
     
     search_tags: List[str] = Field(
         default_factory=list,
-        description="搜索标签列表"
+        description="搜索标签列表",
+        json_schema_extra={"search_weight": 2.5}
     )
     
     marketing_tags: List[str] = Field(
         default_factory=list,
-        description="营销标签列表"
+        description="营销标签列表",
+        json_schema_extra={"search_weight": 1.5}
     )
     
     appealing_audience: List[str] = Field(
         default_factory=list,
-        description="目标受众列表"
+        description="目标受众列表",
+        json_schema_extra={"search_weight": 1.0}
     )
     
     visual_quality: float = Field(
@@ -59,17 +67,20 @@ class CarInteriorAnalysis(BaseIndex):
     
     description_vector: Optional[List[float]] = Field(
         None,
-        description="description 字段的向量表示"
+        description="description 字段的向量表示",
+        json_schema_extra={"vector_weight": 1.0}
     )
     
     subject_vector: Optional[List[float]] = Field(
         None,
-        description="subject 字段的向量表示"
+        description="subject 字段的向量表示",
+        json_schema_extra={"vector_weight": 1.5}
     )
     
     combined_vector: Optional[List[float]] = Field(
         None,
-        description="组合字段的向量表示"
+        description="组合字段的向量表示",
+        json_schema_extra={"vector_weight": 2.0}
     )
     
     @classmethod
