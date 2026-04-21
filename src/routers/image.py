@@ -142,7 +142,8 @@ async def generate_text(req: TextGenerateRequest):
         text = await call_doubao_seedtext(
             prompt=req.prompt,
             model=req.model.value,
-            system_prompt=req.system_prompt
+            system_prompt=req.system_prompt,
+            video_duration=req.video_duration,
         )
         
         if text:

@@ -37,40 +37,10 @@ async def main(overwrite: bool = True):
         }
     }
 
-    # 2) 字段 mapping
-    field_types = {
-        "id": {"type": "keyword"},
-        "description": {"type": "text", "analyzer": "standard"},
-        "subject": {"type": "text", "analyzer": "standard"},
-        "object": {"type": "keyword"},
-        "movement": {"type": "text", "analyzer": "standard"},
-        "adjective": {"type": "keyword"},
-        "search_tags": {"type": "keyword"},
-        "marketing_tags": {"type": "keyword"},
-        "appealing_audience": {"type": "keyword"},
-        "visual_quality": {"type": "float"},
-        # 下面 3 个向量字段维度为 384（见 CarInteriorAnalysis._generate_embedding）
-        "description_vector": {
-            "type": "knn_vector",
-            "dimension": 384,
-            "method": {"name": "hnsw", "space_type": "cosinesimil", "engine": "lucene"},
-        },
-        "subject_vector": {
-            "type": "knn_vector",
-            "dimension": 384,
-            "method": {"name": "hnsw", "space_type": "cosinesimil", "engine": "lucene"},
-        },
-        "combined_vector": {
-            "type": "knn_vector",
-            "dimension": 384,
-            "method": {"name": "hnsw", "space_type": "cosinesimil", "engine": "lucene"},
-        },
-    }
-
     print("开始创建索引 car_interior_analysis ...")
     ok = await index_manager.create_index(
         model_class=CarInteriorAnalysis,
-        field_types=field_types,
+        field_types=None,  # 自动从 Annotated markers 推导 mapping
         settings=settings,
         overwrite=overwrite,
     )

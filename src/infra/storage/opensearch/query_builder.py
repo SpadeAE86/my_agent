@@ -4,6 +4,8 @@ from models.pydantic.opensearch_index.base_index import (
     get_vector_fields,
     get_text_fields,
     get_searchable_fields,
+    get_field_weights,
+    get_vector_weights,
     get_index_name
 )
 from sentence_transformers import SentenceTransformer
@@ -106,16 +108,21 @@ class QueryBuilder:
         
         field_weight_overrides = field_weight_overrides or {}
         vector_weight_overrides = vector_weight_overrides or {}
+
+        marker_text_weights = get_field_weights(model_class)
+        marker_vector_weights = get_vector_weights(model_class)
         
         # 1. Resolve Text Field Weights
         weighted_text_fields = []
         for field_name in search_fields:
             field_info = model_class.model_fields.get(field_name)
             
-            # Priority: Override -> json_schema_extra -> Default (1.0)
+            # Priority: Override -> marker -> json_schema_extra -> Default (1.0)
             weight = 1.0
             if field_name in field_weight_overrides:
                 weight = field_weight_overrides[field_name]
+            elif field_name in marker_text_weights:
+                weight = marker_text_weights[field_name]
             elif field_info and field_info.json_schema_extra and "search_weight" in field_info.json_schema_extra:
                 weight = float(field_info.json_schema_extra["search_weight"])
                 
@@ -128,10 +135,12 @@ class QueryBuilder:
         for field_name in vector_fields:
             field_info = model_class.model_fields.get(field_name)
             
-            # Priority: Override -> json_schema_extra -> Default (1.0)
+            # Priority: Override -> marker -> json_schema_extra -> Default (1.0)
             weight = 1.0
             if field_name in vector_weight_overrides:
                 weight = vector_weight_overrides[field_name]
+            elif field_name in marker_vector_weights:
+                weight = marker_vector_weights[field_name]
             elif field_info and field_info.json_schema_extra and "vector_weight" in field_info.json_schema_extra:
                 weight = float(field_info.json_schema_extra["vector_weight"])
                 

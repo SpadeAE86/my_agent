@@ -139,6 +139,7 @@ async def call_doubao_seedtext(
     prompt: str,
     model: str = "Seed 2.0 Pro",
     system_prompt: Optional[str] = None,
+    video_duration: Optional[int] = None,
     thinking = False
 ) -> Optional[str]:
     """
@@ -164,10 +165,17 @@ async def call_doubao_seedtext(
     )
 
     try:
+        # 统一在底层拼装 system prompt（调用方只传结构化 video_duration）
+        if video_duration is not None:
+            extra = f"\n\n视频时长：\n{video_duration}秒\n"
+            system_prompt = (system_prompt or "") + extra
+
         print(f"正在调用豆包 Seed 文本模型...")
         print(f"模型: {model} -> {real_model}")
         if system_prompt:
-            print(f"系统提示词: {system_prompt}")
+            print(f"系统提示词(最终): {system_prompt}")
+        if video_duration is not None:
+            print(f"视频时长入参: {video_duration}秒")
         print(f"提示词: {prompt}")
         
         input_messages = []
@@ -350,52 +358,52 @@ async def get_seedance_task_status(task_id: str) -> dict:
         return {"status": "failed", "error": str(e)}
 
 if __name__ == "__main__":
-    # SCHEMA_JSON = SceneAnalysisResult.model_json_schema()
-    # prompt_text = """
-	# 你是一个专业的视频分镜分析师，同时你也了解用户在搜索视频时的习惯。
-    # 请分析这些视频片段里的画面。
-    # 【重要规则】
-    # 1. 提取 object 时，请使用最通用的词汇，贴合日常口语表达。
-    # 2. search_tags 字段极其重要，请发挥联想，写出用户搜什么词时应该看到这个视频。
-    #
-    # ### 1. 营销场景标签
-    # - **场景类型**：判断属于哪种营销场景
-    #   可选：产品展示、使用场景、情感共鸣、品牌故事、教程演示、对比评测、生活方式展示
-    #
-    # - **目标受众**：这个画面最能打动哪类人群？
-    #   示例：Z世代、精致妈妈、职场精英、银发族、健身达人、美食爱好者
-    #
-    # ### 2. 商业价值评估 (0-10分)
-    # - 产品展示清晰度：画面是否适合展示产品细节
-    # - 情感共鸣度：是否能引起观众情感共鸣
-    # - 画面美感度：构图、光线、色彩的专业程度
-    # - 通用适配性：是否容易与其他素材混剪
-    # """
-    # # image_url_list = [
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000093.webp",
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000141.webp",
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000189.webp",
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000221.webp"
-    # # ]
-    # # image_url_list = [
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000000.webp",
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000060.webp",
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000120.webp",
-    # #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000147.webp"
-    # # ]
-    # image_url_list = [
-    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/inner/scene_001_frame_000000.webp",
-    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/inner/scene_001_frame_000060.webp",
-    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/inner/scene_001_frame_000116.webp"
-    # ]
-    #
-    # result = call_doubao_vision(prompt_text, image_url_list, SCHEMA_JSON)
-    system_prompt = "你是一个提示词工程师。请将用户的图片生成提示词重写为更清晰、可控、富有画面感的版本；保留原意但补充必要细节（主体/风格/构图/光照/镜头/质感/色彩）。仅输出最终提示词，不要解释。"
-    prompt = '''
-    麦当劳汉堡1+1随心配第二份半价
-    '''
-    start = time.time()
+    SCHEMA_JSON = SceneAnalysisResult.model_json_schema()
+    prompt_text = """
+	你是一个专业的视频分镜分析师，同时你也了解用户在搜索视频时的习惯。
+    请分析这些视频片段里的画面。
+    【重要规则】
+    1. 提取 object 时，请使用最通用的词汇，贴合日常口语表达。
+    2. search_tags 字段极其重要，请发挥联想，写出用户搜什么词时应该看到这个视频。
 
-    result = asyncio.run(call_doubao_seedtext(prompt, system_prompt=system_prompt, thinking=False))
-    print(f"非深度思考的美化花费了{time.time()-start}秒")
+    ### 1. 营销场景标签
+    - **场景类型**：判断属于哪种营销场景
+      可选：产品展示、使用场景、情感共鸣、品牌故事、教程演示、对比评测、生活方式展示
+
+    - **目标受众**：这个画面最能打动哪类人群？
+      示例：Z世代、精致妈妈、职场精英、银发族、健身达人、美食爱好者
+
+    ### 2. 商业价值评估 (0-10分)
+    - 产品展示清晰度：画面是否适合展示产品细节
+    - 情感共鸣度：是否能引起观众情感共鸣
+    - 画面美感度：构图、光线、色彩的专业程度
+    - 通用适配性：是否容易与其他素材混剪
+    """
+    # image_url_list = [
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000093.webp",
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000141.webp",
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000189.webp",
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis/scene_004_frame_000221.webp"
+    # ]
+    # image_url_list = [
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000000.webp",
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000060.webp",
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000120.webp",
+    #     "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/front/scene_001_frame_000147.webp"
+    # ]
+    image_url_list = [
+        "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/inner/scene_001_frame_000000.webp",
+        "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/inner/scene_001_frame_000060.webp",
+        "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/inner/scene_001_frame_000116.webp"
+    ]
+
+    result = call_doubao_vision(prompt_text, image_url_list, SCHEMA_JSON)
+    # system_prompt = "你是一个提示词工程师。请将用户的图片生成提示词重写为更清晰、可控、富有画面感的版本；保留原意但补充必要细节（主体/风格/构图/光照/镜头/质感/色彩）。仅输出最终提示词，不要解释。"
+    # prompt = '''
+    # 麦当劳汉堡1+1随心配第二份半价
+    # '''
+    # start = time.time()
+    #
+    # result = asyncio.run(call_doubao_seedtext(prompt, system_prompt=system_prompt, thinking=False))
+    # print(f"非深度思考的美化花费了{time.time()-start}秒")
     print("最终结果：", result)

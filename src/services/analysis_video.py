@@ -17,6 +17,8 @@ from utils.call_model_utils import call_doubao_vision
 from models.pydantic.dataclass.scene_split_result import SceneSplitResult
 from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResult
 from models.pydantic.video_analysis_request import ShotCard
+from models.pydantic.opensearch_index.car_interior_analysis import CarInteriorAnalysis
+from infra.storage.opensearch.document_writer import bulk_index
 from infra.logging.logger import logger as log
 
 
@@ -155,3 +157,59 @@ async def analyze_video(
     cards.sort(key=lambda c: c.scene_id)
     log.info(f"[{project_id}] 视频分析全流程完成, 共 {len(cards)} 张卡片")
     return list(cards)
+
+
+async def map_shotcards_to_car_interior_docs(
+    cards: List[ShotCard],
+    *,
+    embedding_model,
+    id_prefix: str,
+) -> List[CarInteriorAnalysis]:
+    """
+    Convert ShotCard list into CarInteriorAnalysis documents (with embeddings).
+    `id_prefix` is typically project_id / history_id, combined with scene_id.
+    """
+    docs: List[CarInteriorAnalysis] = []
+    for c in cards:
+        if c.error:
+            continue
+        analysis_result = {
+            "id": f"{id_prefix}_scene_{c.scene_id:03d}",
+            "description": c.description or "",
+            "subject": c.subject or "",
+            "object": c.object or [],
+            "movement": c.movement or "",
+            "adjective": c.adjective or [],
+            "search_tags": c.search_tags or [],
+            "marketing_tags": c.marketing_tags or [],
+            "appealing_audience": c.appealing_audience or [],
+            "visual_quality": c.visual_quality or [0, 0, 0, 0],
+        }
+        docs.append(CarInteriorAnalysis.from_analysis_result(analysis_result, embedding_model))
+    return docs
+
+
+async def index_shotcards_to_opensearch(
+    cards: List[ShotCard],
+    *,
+    id_prefix: str,
+    embedding_model=None,
+    refresh: bool = False,
+) -> dict:
+    """
+    Convenience method:
+    - build embeddings
+    - bulk index into `car_interior_analysis`
+    """
+    if embedding_model is None:
+        # Lazy import to avoid heavy model load at service import time
+        from sentence_transformers import SentenceTransformer
+
+        # Keep consistent with QueryBuilder default
+        embedding_model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+
+    docs = await map_shotcards_to_car_interior_docs(cards, embedding_model=embedding_model, id_prefix=id_prefix)
+    if not docs:
+        return {"success": True, "items": 0}
+    resp = await bulk_index(CarInteriorAnalysis, docs, refresh=refresh)
+    return {"success": True, "items": len(docs), "opensearch": resp}
