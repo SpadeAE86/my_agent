@@ -284,7 +284,7 @@ opensearch:
     port: 9200
     username: admin
     password: "myStrongPassword123!"
-    use_ssl: false
+    use_ssl: true
     verify_certs: false
   test:
     host: 123.60.47.110
