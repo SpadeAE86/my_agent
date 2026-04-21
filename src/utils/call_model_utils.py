@@ -139,7 +139,7 @@ async def call_doubao_seedtext(
     prompt: str,
     model: str = "Seed 2.0 Pro",
     system_prompt: Optional[str] = None,
-    thinking = True
+    thinking = False
 ) -> Optional[str]:
     """
     调用豆包 Seed 文本模型生成文本

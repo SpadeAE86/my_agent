@@ -1,3 +1,5 @@
+import asyncio
+
 from infra.logging.logger import logger as log
 from opensearchpy import AsyncOpenSearch
 from config.config import MY_CONFIG, ENV
@@ -53,3 +55,12 @@ class OpenSearchConnector(ResourceConnector):
 
 # 全局唯一实例
 opensearch_connector = OpenSearchConnector()
+
+
+if __name__ == "__main__":
+    async def verify():
+        await opensearch_connector.init()
+        ping_result = await opensearch_connector.ping()
+        print("connected" if ping_result else "not connected")
+        await opensearch_connector.close()
+    asyncio.run(verify())

@@ -112,15 +112,14 @@ if 'cache_config' in MY_CONFIG:
     # _CACHE_DIR = MY_CONFIG['cache_config'][ENV]['cache_dir']
 
     # 暂时统一使用该路径，不使用内存盘路径，避免找不到
-    from config.config import PROJECT_ROOT
 
-    _CACHE_DIR = str(PROJECT_ROOT / 'cache')
 
+    _CACHE_DIR = MY_CONFIG['cache_config'][ENV]['cache_dir']
+    os.makedirs(_CACHE_DIR, exist_ok=True)
     _CACHE_MAX_SIZE = MY_CONFIG['cache_config'][ENV]['cache_max_size']
     _CACHE_TTL = MY_CONFIG['cache_config'][ENV]['cache_ttl']
 else:
-    from config.config import PROJECT_ROOT
-    _CACHE_DIR = str(PROJECT_ROOT / 'cache')
+    _CACHE_DIR = str('./cache')
     _CACHE_MAX_SIZE = 10737418240
     _CACHE_TTL = 86400
 

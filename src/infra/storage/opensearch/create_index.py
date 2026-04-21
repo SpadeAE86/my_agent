@@ -126,3 +126,4 @@ class IndexManager:
 
 
 index_manager = IndexManager()
+

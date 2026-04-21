@@ -1,0 +1,21 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+build
+dist
+.eggs
+*.egg-info
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.idea
+.vscode
+.git
+
+# local data / temp
+data/video_analysis_uploads
+data/*.json
+**/video_analysis_workspace
+

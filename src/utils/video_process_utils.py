@@ -134,6 +134,5 @@ if __name__ == "__main__":
 
             for s in scenes:
                 log.info(f"url list: {s.frame_url_list[0]} | start: {s.start_time} | end: {s.end_time} | duration: {s.duration_seconds}")
-
         except Exception as e:
             print(f"发生错误: {e}")
