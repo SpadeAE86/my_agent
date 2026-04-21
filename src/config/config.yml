@@ -280,14 +280,12 @@ cache_config:
 
 opensearch:
   local:
-    host: 123.60.47.110
+    host: 127.0.0.1
     port: 9200
     username: admin
-    password: "FreeU123"
+    password: "myStrongPassword123!"
     use_ssl: false
     verify_certs: false
-    index_name: ai_video_test_emb
-    index_name_commerce: freeuuu_python_recommendation_commerce_test
   test:
     host: 123.60.47.110
     port: 9200
@@ -295,8 +293,6 @@ opensearch:
     password: "FreeU123"
     use_ssl: false
     verify_certs: false
-    index_name: ai_video_test_emb
-    index_name_commerce: freeuuu_python_recommendation_commerce_test
   prod:
     host: 192.168.0.107
     port: 9200
@@ -304,6 +300,4 @@ opensearch:
     password: "Freeu@123"
     use_ssl: false
     verify_certs: false
-    index_name: ai_video_test_emb
-    index_name_commerce: freeuuu_python_recommendation_commerce_test
 

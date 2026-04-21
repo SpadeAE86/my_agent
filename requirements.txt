@@ -50,3 +50,7 @@ huaweicloudsdkcore
 # Testing & Dev
 pytest
 pytest-asyncio
+
+# embeddings & NLP
+transformers
+sentence-transformers
