@@ -3,7 +3,7 @@
 *.pyc
 dist/
 build/
-docs/
+# docs/  # keep docs tracked for repo guidance
 *.egg-info/
 *.egg
 *.pyc
