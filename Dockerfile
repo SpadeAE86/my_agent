@@ -2,11 +2,13 @@
 FROM swr.cn-east-3.myhuaweicloud.com/freeuuu/python-agent:1.0
 
 
+COPY . .
+
+
 #从requirements.txt里安装依赖
 RUN pip install --timeout=600 \
     -r requirements.txt 
 
-COPY . .
 
 WORKDIR /app/src
 
