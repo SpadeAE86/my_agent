@@ -1,0 +1,29 @@
+FROM python:3.12
+
+# 设置 apt 源（阿里云）
+RUN rm -f /etc/apt/sources.list /etc/apt/sources.list.d/* && \
+    echo "deb https://mirrors.aliyun.com/debian/ bookworm main non-free non-free-firmware" > /etc/apt/sources.list && \
+    echo "deb https://mirrors.aliyun.com/debian/ bookworm-updates main non-free non-free-firmware" >> /etc/apt/sources.list && \
+    echo "deb https://mirrors.aliyun.com/debian-security bookworm-security main non-free non-free-firmware" >> /etc/apt/sources.list
+
+# 安装系统工具
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    bzip2 \
+    ca-certificates \
+    fontconfig \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+# 复制代码文件
+COPY ./requirements.txt .
+
+# 拷贝 ffmpeg / ffprobe（稳定二进制）
+COPY ffmpeg /usr/local/bin/ffmpeg
+COPY ffprobe /usr/local/bin/ffprobe
+RUN chmod +x /usr/local/bin/ffmpeg /usr/local/bin/ffprobe
+
+# pip 镜像源
+RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install -r ./requirements.txt
+
