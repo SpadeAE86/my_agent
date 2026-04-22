@@ -7,6 +7,7 @@ RUN pip install --timeout=600 \
     -r requirements.txt 
 
 WORKDIR /src
+
 # 设置系统时区为上海
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
