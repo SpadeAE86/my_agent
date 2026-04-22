@@ -16,6 +16,8 @@ loguru
 diskcache
 python-dateutil
 psutil
+tabulate
+cachetools
 
 # Database / Cache / MQ
 SQLAlchemy
@@ -46,6 +48,7 @@ oss2
 tencentcloud-sdk-python
 cos-python-sdk-v5
 huaweicloudsdkcore
+openai
 
 # Testing & Dev
 pytest
@@ -54,3 +57,6 @@ pytest-asyncio
 # embeddings & NLP
 transformers
 sentence-transformers
+torch
+numpy
+bitsandbytes
