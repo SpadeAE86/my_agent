@@ -8,7 +8,7 @@ FROM swr.cn-east-3.myhuaweicloud.com/freeuuu/python-agent:1.0
 
 COPY . .
 
-WORKDIR /src
+WORKDIR src
 
 # 设置系统时区为上海
 ENV TZ=Asia/Shanghai
