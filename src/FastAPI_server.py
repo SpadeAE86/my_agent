@@ -17,6 +17,9 @@ from config.config import *
 from contextlib import asynccontextmanager
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from exceptions.infra import ServiceException
+# init connectors and tables
+from infra.connector_loader import connector_loader
+from infra.storage.sqlmodel_init import create_tables_if_not_exists
 # from database import *
 # from core.health_monitor.lifespan import start_health_monitor, stop_health_monitor
 
@@ -43,9 +46,17 @@ async def lifespan(app: FastAPI):
     # log.info(f"established {len(db_manager.engines)} connections to mysql database")
 
     try:
+        # Initialize infra connectors (mysql/redis/rabbitmq/opensearch)
+        await connector_loader.startup()
+        # Create SQLModel tables if missing
+        await create_tables_if_not_exists()
         yield
     finally:
         # 停止健康监控服务
+        try:
+            await connector_loader.shutdown()
+        except Exception as e:
+            log.warning(f"connector shutdown failed: {e}")
         log.info("shutting down...")
         log.info("exit")
 

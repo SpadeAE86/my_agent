@@ -15,6 +15,7 @@ from typing import List, Optional
 
 from models.pydantic.request import PromptTemplateRequest
 from infra.logging.logger import logger as log
+from services.prompt_template_db_service import prompt_template_db_service
 
 prompt_router = APIRouter(prefix="/prompt-templates", tags=["prompt-templates"])
 
@@ -64,61 +65,43 @@ class TemplateContent(BaseModel):
 @prompt_router.get("", response_model=List[TemplateInfo])
 async def list_templates():
     """获取所有模板列表"""
-    ensure_template_dir()
-    save_default_template()
-    
-    templates = []
-    for filename in os.listdir(TEMPLATE_DIR):
-        if filename.endswith(".md"):
-            name = filename[:-3]
-            templates.append(TemplateInfo(name=name, has_content=True))
-    
-    log.info(f"获取模板列表: {[t.name for t in templates]}")
+    # DB 优先（推荐部署方式）
+    names = await prompt_template_db_service.list_names()
+    # 兼容：如果 DB 为空，落一次默认模板到 DB
+    if not names:
+        await prompt_template_db_service.upsert(DEFAULT_TEMPLATE_NAME, DEFAULT_TEMPLATE_CONTENT)
+        names = [DEFAULT_TEMPLATE_NAME]
+    templates = [TemplateInfo(name=n, has_content=True) for n in names]
+    log.info(f"获取模板列表(DB): {names}")
     return templates
 
 
 @prompt_router.get("/{name}", response_model=TemplateContent)
 async def get_template(name: str):
     """获取指定模板内容"""
-    ensure_template_dir()
-    template_path = os.path.join(TEMPLATE_DIR, f"{name}.md")
-    
-    if not os.path.exists(template_path):
+    obj = await prompt_template_db_service.get_by_name(name)
+    if obj is None:
         raise HTTPException(status_code=404, detail=f"模板 '{name}' 不存在")
-    
-    with open(template_path, "r", encoding="utf-8") as f:
-        content = f.read()
-    
-    log.info(f"获取模板内容: {name}")
-    return TemplateContent(name=name, content=content)
+    log.info(f"获取模板内容(DB): {name}")
+    return TemplateContent(name=obj.name, content=obj.content)
 
 
 @prompt_router.post("", response_model=TemplateContent)
 async def save_template(req: PromptTemplateRequest):
     """保存提示词模板"""
-    ensure_template_dir()
-    
-    template_path = os.path.join(TEMPLATE_DIR, f"{req.name}.md")
-    with open(template_path, "w", encoding="utf-8") as f:
-        f.write(req.content)
-    
-    log.info(f"保存模板: {req.name}")
-    return TemplateContent(name=req.name, content=req.content)
+    obj = await prompt_template_db_service.upsert(req.name, req.content)
+    log.info(f"保存模板(DB): {req.name}")
+    return TemplateContent(name=obj.name, content=obj.content)
 
 
 @prompt_router.delete("/{name}")
 async def delete_template(name: str):
     """删除提示词模板"""
-    ensure_template_dir()
-    
     if name == DEFAULT_TEMPLATE_NAME:
         raise HTTPException(status_code=400, detail="不能删除默认模板")
-    
-    template_path = os.path.join(TEMPLATE_DIR, f"{name}.md")
-    
-    if not os.path.exists(template_path):
+
+    ok = await prompt_template_db_service.delete(name)
+    if not ok:
         raise HTTPException(status_code=404, detail=f"模板 '{name}' 不存在")
-    
-    os.remove(template_path)
-    log.info(f"删除模板: {name}")
+    log.info(f"删除模板(DB): {name}")
     return {"success": True, "message": f"模板 '{name}' 已删除"}

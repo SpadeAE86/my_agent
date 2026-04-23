@@ -16,6 +16,9 @@ from enum import Enum
 from models.pydantic.request import ImageGenerateRequest, TextGenerateRequest
 from utils.call_model_utils import call_doubao_seedream, call_doubao_seedtext
 from infra.logging.logger import logger as log
+from services.image_history_db_service import image_history_db_service
+from services.media_mirror_service import mirror_remote_url_to_obs, is_obs_url
+import asyncio
 
 image_router = APIRouter(prefix="", tags=["image", "text"])
 
@@ -60,13 +63,37 @@ class HistorySaveRequest(BaseModel):
 
 @image_router.get("/image/history")
 async def get_image_history():
-    return {"success": True, "history": load_history()}
+    history = await image_history_db_service.list_all()
+    return {"success": True, "history": history}
 
 @image_router.post("/image/history")
 async def update_image_history(req: HistorySaveRequest):
-    # 使用 model_dump(exclude_none=True) 避免将 None 写入 json
-    save_history([item.model_dump(exclude_none=True) for item in req.history])
-    log.info(f"历史记录已更新，共{len(req.history)}条记录")
+    payload = [item.model_dump(exclude_none=True) for item in req.history]
+    await image_history_db_service.upsert_many(payload)
+    log.info(f"历史记录已更新(DB)，共{len(req.history)}条记录")
+
+    # 后台任务：将生成结果 url 镜像到 OBS（不阻塞前端）
+    async def _mirror_and_update(items: list[dict]):
+        for it in items:
+            item_id = it.get("id")
+            url = it.get("url")
+            if not item_id or not url or is_obs_url(url):
+                continue
+            try:
+                # type: t2i / i2i / t2v / i2v ...
+                t = (it.get("type") or "").lower()
+                prefix = "ai_picture/generated"
+                if "v" in t:
+                    prefix = "ai_picture/generated_video"
+                else:
+                    prefix = "ai_picture/generated_image"
+                obs_url = await mirror_remote_url_to_obs(url, obs_prefix=prefix)
+                await image_history_db_service.update_obs_url(item_id, obs_url)
+                log.info(f"[mirror] updated {item_id} url -> {obs_url}")
+            except Exception as e:
+                log.warning(f"[mirror] failed for {item_id}: {e}")
+
+    asyncio.create_task(_mirror_and_update(payload))
     return {"success": True}
 
 class ImageGenerateResponse(BaseModel):
