@@ -7,4 +7,5 @@ from routers.chat import chat_router as chat_router
 from routers.image import image_router as image_router
 from routers.prompt_template import prompt_router as prompt_router
 from routers.video import video_router as video_router
-all_router = [stack_router, chat_router, image_router, prompt_router, video_router]
+from routers.video_analysis import video_analysis_router as video_analysis_router
+all_router = [stack_router, chat_router, image_router, prompt_router, video_router, video_analysis_router]

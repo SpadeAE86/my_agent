@@ -56,6 +56,7 @@ class TextGenerateRequest(BaseModel):
     prompt: str = Field(..., description="文本生成提示词", min_length=1)
     system_prompt: Optional[str] = Field(default=None, description="系统提示词")
     model: SeedTextModel = Field(default=SeedTextModel.V2_0_PRO, description="使用的模型版本")
+    video_duration: Optional[int] = Field(default=None, description="视频时长(秒)，用于视频提示词美化收敛输出")
 
 
 class PromptTemplateRequest(BaseModel):

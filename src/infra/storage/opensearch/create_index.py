@@ -1,5 +1,9 @@
 from typing import Dict, Any, Optional, Type
-from models.pydantic.opensearch_index.base_index import BaseIndex, get_index_name
+from models.pydantic.opensearch_index.base_index import (
+    BaseIndex,
+    get_index_name,
+    build_field_types_from_markers,
+)
 from infra.storage.opensearch_connector import opensearch_connector
 from infra.logging.logger import logger as log
 
@@ -34,12 +38,21 @@ class IndexManager:
     async def create_index(
         self,
         model_class: Type[BaseIndex],
-        field_types: Dict[str, Dict[str, Any]],
+        field_types: Optional[Dict[str, Dict[str, Any]]] = None,
         settings: Optional[Dict[str, Any]] = None,
         overwrite: bool = False
     ) -> bool:
         index_name = get_index_name(model_class)
         client = await self.get_client()
+        
+        # If caller didn't provide field_types, try to derive from Annotated markers.
+        if field_types is None:
+            field_types = build_field_types_from_markers(model_class)
+            if not field_types:
+                raise ValueError(
+                    f"No field_types provided and no markers found on model {model_class.__name__}. "
+                    f"Please pass field_types explicitly or annotate fields with markers."
+                )
         
         try:
             exists = await self.index_exists(index_name)
@@ -126,3 +139,4 @@ class IndexManager:
 
 
 index_manager = IndexManager()
+
