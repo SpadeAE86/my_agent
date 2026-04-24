@@ -16,6 +16,10 @@ WORKDIR /app/src
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+# 设置 Hugging Face 镜像加速，解决国内网络无法访问 Hugging Face 下载模型的问题
+ENV HF_ENDPOINT=https://hf-mirror.com
+ENV HF_HUB_ENABLE_HF_TRANSFER=1
+
 
 
 
