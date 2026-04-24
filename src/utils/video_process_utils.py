@@ -108,6 +108,57 @@ def get_video_scenes(video_path, frame_interval = 2, threshold=30.0, workspace_d
     return results
 
 
+def get_video_single_scene_frames(
+    video_path,
+    frame_interval=2,
+    workspace_dir="./scene_detect_output_single",
+) -> List[SceneSplitResult]:
+    """
+    Skip scene detection entirely.
+    Extract frames across the whole video using a fixed interval,
+    and return a single SceneSplitResult.
+    """
+    if not os.path.exists(video_path):
+        raise FileNotFoundError(f"未找到视频文件: {video_path}")
+
+    os.makedirs(workspace_dir, exist_ok=True)
+
+    video: VideoStream = open_video(video_path, backend="opencv")
+    fps = video.frame_rate
+    total_frames = video.duration.get_frames()
+    total_time = video.duration.get_seconds()
+    skip_frames = max(1, int(fps * frame_interval))
+
+    scene_no = 1
+    target_f = 0
+    frame_list = []
+
+    while video.frame_number < total_frames:
+        tmp_frame = video.frame_number
+        is_target = (tmp_frame == target_f)
+        frame = video.read(decode=is_target)
+
+        if is_target:
+            if frame is not None:
+                frame_path = save_scene_frames(frame, scene_no, tmp_frame, workspace_dir)
+                frame_list.append(frame_path)
+            target_f = min(total_frames - 1, target_f + skip_frames)
+
+        # Safety: if we somehow get stuck, advance target
+        if video.frame_number > target_f and target_f < total_frames - 1:
+            target_f = video.frame_number
+
+    return [
+        SceneSplitResult(
+            scene_id=scene_no,
+            frame_url_list=frame_list,
+            start_time=0.0,
+            end_time=float(total_time),
+            duration_seconds=float(total_time),
+        )
+    ]
+
+
 # --- 使用示例 ---
 if __name__ == "__main__":
     from pathlib import Path

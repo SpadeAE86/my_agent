@@ -7,10 +7,7 @@
 
 import os
 import sys
-import json
 import uuid
-import shutil
-import asyncio
 from datetime import datetime
 from typing import Optional
 
@@ -18,22 +15,13 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import APIRouter, File, UploadFile, Form, HTTPException
 
-from models.pydantic.video_analysis_request import (
-    HistorySaveRequest,
-    HistoryUpdateRequest,
-    VideoAnalysisHistoryItem,
-)
+from models.pydantic.video_analysis_request import HistorySaveRequest, HistoryUpdateRequest, VideoAnalysisHistoryItem
 from services.analysis_video import analyze_video
+from services.video_analysis_db_service import video_analysis_db_service
 from infra.logging.logger import logger as log
 
 
 video_analysis_router = APIRouter(prefix="/video-analysis", tags=["video-analysis"])
-
-HISTORY_FILE = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    "data",
-    "video_analysis_history.json",
-)
 
 UPLOAD_TMP_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -42,38 +30,42 @@ UPLOAD_TMP_DIR = os.path.join(
 )
 
 
-# ---------------- 历史记录读写工具 ----------------
-
-def load_history() -> list:
-    if not os.path.exists(HISTORY_FILE):
-        return []
-    try:
-        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except Exception as e:
-        log.error(f"读取视频分析历史记录失败: {e}")
-        return []
-
-
-def save_history(history_list: list) -> None:
-    try:
-        os.makedirs(os.path.dirname(HISTORY_FILE), exist_ok=True)
-        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
-            json.dump(history_list, f, ensure_ascii=False, indent=2)
-    except Exception as e:
-        log.error(f"保存视频分析历史记录失败: {e}")
-
-
 # ---------------- 历史记录接口 ----------------
 
 @video_analysis_router.get("/history")
 async def get_history():
-    return {"success": True, "history": load_history()}
+    history = await video_analysis_db_service.list_history()
+    return {"success": True, "history": history}
+
+
+@video_analysis_router.get("/history/{history_id}")
+async def get_history_item(history_id: str):
+    item = await video_analysis_db_service.get_history_item(history_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="history not found")
+    return {"success": True, "item": item}
+
+
+@video_analysis_router.get("/cards")
+async def get_cards(history_id: Optional[str] = None):
+    """
+    Get cards by history_id.
+    - history_id=__all__ or missing => all cards across histories
+    - else => cards of one history (from DB)
+    """
+    if not history_id or history_id == "__all__":
+        cards = await video_analysis_db_service.list_all_cards()
+        return {"success": True, "cards": cards}
+
+    item = await video_analysis_db_service.get_history_item(history_id)
+    if item is None:
+        raise HTTPException(status_code=404, detail="history not found")
+    return {"success": True, "cards": item.get("cards", [])}
 
 
 @video_analysis_router.post("/history")
 async def overwrite_history(req: HistorySaveRequest):
-    save_history([item.model_dump(exclude_none=True) for item in req.history])
+    await video_analysis_db_service.overwrite_history([item.model_dump(exclude_none=True) for item in req.history])
     log.info(f"视频分析历史记录已覆盖, 共 {len(req.history)} 条")
     return {"success": True}
 
@@ -81,19 +73,10 @@ async def overwrite_history(req: HistorySaveRequest):
 @video_analysis_router.post("/history/update")
 async def update_single_history(req: HistoryUpdateRequest):
     """追加或替换某一条历史记录(按 id 匹配), 不存在则追加到最前"""
-    current = load_history()
     new_item = req.item.model_dump(exclude_none=True)
-
-    replaced = False
-    for i, it in enumerate(current):
-        if it.get("id") == new_item.get("id"):
-            current[i] = new_item
-            replaced = True
-            break
-    if not replaced:
-        current.insert(0, new_item)
-
-    save_history(current)
+    existed = await video_analysis_db_service.get_history_item(new_item.get("id", ""))
+    await video_analysis_db_service.upsert_history_item(new_item)
+    replaced = existed is not None
     log.info(f"视频分析历史记录更新: id={new_item.get('id')}, 操作={'替换' if replaced else '新增'}")
     return {"success": True, "replaced": replaced}
 
@@ -106,6 +89,7 @@ async def analyze_video_endpoint(
     frame_interval: float = Form(2.0),
     threshold: float = Form(30.0),
     custom_prompt: Optional[str] = Form(None),
+    split_scenes: bool = Form(True),
 ):
     """接收上传视频并执行完整分析流水线, 直接返回分镜卡片列表"""
     if not file.filename:
@@ -132,6 +116,7 @@ async def analyze_video_endpoint(
             frame_interval=frame_interval,
             threshold=threshold,
             custom_prompt=custom_prompt,
+            split_scenes=split_scenes,
         )
 
         # 打包成一条历史记录
@@ -142,10 +127,8 @@ async def analyze_video_endpoint(
             video_url=None,
             cards=cards,
         )
-        # 顺便追加到历史
-        current = load_history()
-        current.insert(0, history_item.model_dump(exclude_none=True))
-        save_history(current)
+        # 顺便写入历史(DB)
+        await video_analysis_db_service.upsert_history_item(history_item.model_dump(exclude_none=True))
 
         return {
             "success": True,

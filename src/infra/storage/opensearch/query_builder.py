@@ -318,6 +318,42 @@ class QueryBuilder:
                 })
         
         return search_body
+
+    def build_tag_only_search(
+        self,
+        model_class: Type[BaseIndex],
+        tags: List[str],
+        *,
+        field: str = "search_tags",
+        operator: str = "OR",
+        size: int = 50,
+    ) -> Dict[str, Any]:
+        """
+        Pure tag search (no fulltext/embedding):
+        - operator="OR": terms query (any tag)
+        - operator="AND": bool must with term per tag (all tags)
+        """
+        vector_fields = get_vector_fields(model_class)
+        tags = [t for t in (tags or []) if t]
+        operator = (operator or "OR").upper()
+
+        if not tags:
+            return {
+                "size": size,
+                "query": {"match_all": {}},
+                "_source": {"exclude": vector_fields},
+            }
+
+        if operator == "AND":
+            q = {"bool": {"must": [{"term": {field: t}} for t in tags]}}
+        else:
+            q = {"terms": {field: tags}}
+
+        return {
+            "size": size,
+            "query": q,
+            "_source": {"exclude": vector_fields},
+        }
     
     def build_multi_vector_search(
         self,

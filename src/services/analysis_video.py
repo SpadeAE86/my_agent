@@ -11,7 +11,7 @@ import json
 import asyncio
 from typing import List, Optional
 
-from utils.video_process_utils import get_video_scenes
+from utils.video_process_utils import get_video_scenes, get_video_single_scene_frames
 from utils.obs_utils import batch_upload_to_obs
 from utils.call_model_utils import call_doubao_vision
 from models.pydantic.dataclass.scene_split_result import SceneSplitResult
@@ -108,6 +108,7 @@ async def analyze_video(
     frame_interval: float = 2.0,
     threshold: float = 30.0,
     custom_prompt: Optional[str] = None,
+    split_scenes: bool = True,
     workspace_dir: Optional[str] = None,
 ) -> List[ShotCard]:
     """完整的视频分析流水线
@@ -131,15 +132,25 @@ async def analyze_video(
     prompt = custom_prompt or DEFAULT_VISION_PROMPT
 
     # Step 1: 分镜检测 + 抽帧 (CPU 密集, 放到线程池)
-    log.info(f"[{project_id}] 开始场景检测与抽帧: {local_video_path}")
-    scenes: List[SceneSplitResult] = await asyncio.to_thread(
-        get_video_scenes,
-        local_video_path,
-        frame_interval,
-        threshold,
-        workspace_dir,
-    )
-    log.info(f"[{project_id}] 场景检测完成, 共 {len(scenes)} 个分镜")
+    if split_scenes:
+        log.info(f"[{project_id}] 开始场景检测与抽帧: {local_video_path}")
+        scenes: List[SceneSplitResult] = await asyncio.to_thread(
+            get_video_scenes,
+            local_video_path,
+            frame_interval,
+            threshold,
+            workspace_dir,
+        )
+        log.info(f"[{project_id}] 场景检测完成, 共 {len(scenes)} 个分镜")
+    else:
+        log.info(f"[{project_id}] 跳过分镜切分，整段抽帧: {local_video_path}")
+        scenes = await asyncio.to_thread(
+            get_video_single_scene_frames,
+            local_video_path,
+            frame_interval,
+            workspace_dir,
+        )
+        log.info(f"[{project_id}] 整段抽帧完成, 共 {len(scenes[0].frame_url_list) if scenes else 0} 帧")
 
     if not scenes:
         return []
@@ -156,6 +167,20 @@ async def analyze_video(
     # 按 scene_id 排序, 保证前端展示顺序正确
     cards.sort(key=lambda c: c.scene_id)
     log.info(f"[{project_id}] 视频分析全流程完成, 共 {len(cards)} 张卡片")
+    
+    # Step 4: 入库 OpenSearch（异步，不阻塞接口返回）
+    try:
+        task = asyncio.create_task(index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=False))
+        def _log_task_result(t: asyncio.Task):
+            try:
+                r = t.result()
+                log.info(f"[{project_id}] OpenSearch 入库完成: {r}")
+            except Exception as _e:
+                log.error(f"[{project_id}] OpenSearch 入库失败: {_e}")
+        task.add_done_callback(_log_task_result)
+    except Exception as e:
+        log.warning(f"[{project_id}] 创建 OpenSearch 入库任务失败: {e}")
+
     return list(cards)
 
 
