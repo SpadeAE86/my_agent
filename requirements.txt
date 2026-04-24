@@ -24,7 +24,7 @@ SQLAlchemy
 sqlmodel
 pymysql
 aiomysql
-opensearch-py
+opensearch-py[asyncio]
 redis
 celery
 pika
