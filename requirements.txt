@@ -38,6 +38,7 @@ pymediainfo
 av
 scenedetect[opencv]
 opencv-python
+opencv-python-headless
 scenedetect
 
 # Cloud SDKs (Based on your config.yml references)
