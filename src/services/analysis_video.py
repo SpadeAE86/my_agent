@@ -9,6 +9,7 @@
 import os
 import json
 import asyncio
+import shutil
 from typing import List, Optional
 
 from utils.video_process_utils import get_video_scenes, get_video_single_scene_frames
@@ -109,6 +110,7 @@ async def analyze_video(
     threshold: float = 30.0,
     custom_prompt: Optional[str] = None,
     split_scenes: bool = True,
+    cleanup_workspace: bool = True,
     workspace_dir: Optional[str] = None,
 ) -> List[ShotCard]:
     """完整的视频分析流水线
@@ -163,10 +165,20 @@ async def analyze_video(
         log.info(f"[{project_id}] scene {scene.scene_id} 豆包分析完成")
         return card
 
-    cards = await asyncio.gather(*[_process_scene(s) for s in scenes])
-    # 按 scene_id 排序, 保证前端展示顺序正确
-    cards.sort(key=lambda c: c.scene_id)
-    log.info(f"[{project_id}] 视频分析全流程完成, 共 {len(cards)} 张卡片")
+    try:
+        cards = await asyncio.gather(*[_process_scene(s) for s in scenes])
+        # 按 scene_id 排序, 保证前端展示顺序正确
+        cards.sort(key=lambda c: c.scene_id)
+        log.info(f"[{project_id}] 视频分析全流程完成, 共 {len(cards)} 张卡片")
+    finally:
+        # Cleanup extracted frames workspace to avoid repo bloat.
+        if cleanup_workspace:
+            try:
+                if workspace_dir and os.path.exists(workspace_dir):
+                    shutil.rmtree(workspace_dir, ignore_errors=True)
+                    log.info(f"[{project_id}] 已清理抽帧目录: {workspace_dir}")
+            except Exception as e:
+                log.warning(f"[{project_id}] 清理抽帧目录失败: {e}")
     
     # Step 4: 入库 OpenSearch（异步，不阻塞接口返回）
     try:

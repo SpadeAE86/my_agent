@@ -23,3 +23,9 @@ tests/
 src/data/**/*.json
 **/data/**/*.json
 
+# Video analysis extracted frames (large, generated)
+src/video_analysis_workspace/
+src/video_analysis_workspace/**
+**/video_analysis_workspace/
+**/video_analysis_workspace/**
+

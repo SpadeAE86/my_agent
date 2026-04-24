@@ -117,6 +117,7 @@ async def analyze_video_endpoint(
             threshold=threshold,
             custom_prompt=custom_prompt,
             split_scenes=split_scenes,
+            cleanup_workspace=True,
         )
 
         # 打包成一条历史记录
