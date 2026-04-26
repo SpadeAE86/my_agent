@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-路跑-1.mp4",
+  "run_id": "v2_20260426_230412_28c43f95e1",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230412_28c43f95e1/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230412_28c43f95e1/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230412_28c43f95e1/scene_001_frame_000092.webp/scene_001_frame_000092.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在公路上行驶，背景为晴朗蓝天、绿树与草地，画面清晰明亮；另有静态展示的智己LS6汽车，车身线条流畅，轮毂为黑色配红色卡钳。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "轮胎"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "公路",
+      "户外"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "简洁",
+      "时尚",
+      "动感"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "高效",
+      "节能",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "黑色轮毂配红色卡钳",
+      "隐藏式车门把手",
+      "简洁车尾设计"
+    ],
+    "function_selling_points": [
+      "公路平稳行驶",
+      "长续航能力",
+      "新能源高效节能",
+      "低风阻设计"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "公路驾驶",
+      "户外出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "城市代步"
+    ],
+    "marketing_phrases": [
+      "晴天出行更自在",
+      "公路行驶超平稳",
+      "白色车身颜值高",
+      "黑色轮毂运动感",
+      "新能源车长续航",
+      "智己LS6路跑风"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "路跑展示",
+      "外观展示",
+      "新能源车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "新能源车主",
+      "年轻消费者",
+      "自驾爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

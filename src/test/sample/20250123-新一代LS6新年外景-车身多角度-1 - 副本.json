@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-1 - 副本.mp4",
+  "run_id": "v2_20260426_225205_b891f44b5f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b891f44b5f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b891f44b5f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b891f44b5f/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b891f44b5f/scene_001_frame_000135.webp/scene_001_frame_000135.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区的空旷停车场内静态展示，车身为黑色亮面，背景有建筑物、树木及停放的其他车辆，光线柔和（黄昏时段），画面清晰呈现车辆外观细节（前灯、轮毂、车身线条）及车内座椅。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "前灯",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "停车场"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "光泽",
+      "动感"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "舒适",
+      "智能",
+      "高效"
+    ],
+    "design_selling_points": [
+      "前灯组",
+      "轮毂造型",
+      "车身线条",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "大空间",
+      "快充",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "智己LS6黑武士外观",
+      "现代城区停车场实拍",
+      "流畅线条动感十足",
+      "智能驾乘舒适出行",
+      "城市通勤好选择",
+      "周末自驾更轻松"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "现代城区",
+      "汽车实拍"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户",
+      "汽车爱好者",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

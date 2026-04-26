@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-防侧翻-1.mp4",
+  "run_id": "v2_20260426_192053_f32993aa4d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f32993aa4d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f32993aa4d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f32993aa4d/scene_001_frame_000115.webp/scene_001_frame_000115.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区的城市道路上行驶，后续镜头通过透明可视化效果展示其动力系统结构，画面为CG动画，镜头从后方跟拍，展现车辆外观与动力系统设计。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "轮胎",
+      "动力系统"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "现代城区",
+      "城市道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观（动力系统可视化）",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "精致",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "强劲",
+      "稳定",
+      "高效",
+      "智能"
+    ],
+    "design_selling_points": [
+      "溜背造型",
+      "大尺寸轮毂",
+      "流线型车身",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "四驱系统",
+      "强劲动力",
+      "智能动力管理",
+      "高效传动"
+    ],
+    "scenario_a": [
+      "通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "长途驾驶"
+    ],
+    "marketing_phrases": [
+      "城市道路行驶流畅",
+      "动力系统可视化展示",
+      "四驱动力强劲",
+      "现代城区通勤首选",
+      "溜背造型颜值高",
+      "大轮毂抓地力强"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "技术可视化",
+      "城市通勤",
+      "性能展示"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "汽车科技爱好者",
+      "性能车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "3456x1080"
+  },
+  "success": true,
+  "cached": true
+}

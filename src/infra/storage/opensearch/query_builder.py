@@ -1,4 +1,4 @@
-from typing import Dict, Any, List, Optional, Type
+from typing import Dict, Any, List, Optional, Type, Any as AnyType
 from models.pydantic.opensearch_index.base_index import (
     BaseIndex,
     get_vector_fields,
@@ -8,13 +8,20 @@ from models.pydantic.opensearch_index.base_index import (
     get_vector_weights,
     get_index_name
 )
-from sentence_transformers import SentenceTransformer
 from infra.storage.opensearch.create_index import index_manager
 
 
 class QueryBuilder:
-    def __init__(self, embedding_model: Optional[SentenceTransformer] = None):
-        self.embedding_model = embedding_model or SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
+    def __init__(self, embedding_model: Optional[AnyType] = None):
+        """
+        embedding_model:
+          - If provided: must implement .encode(text)->vector (numpy array or list)
+          - If None: will lazily create a SentenceTransformer model
+
+        NOTE: We import sentence_transformers lazily so index-only scripts
+        (or environments without NLP deps) can still import this module.
+        """
+        self.embedding_model = embedding_model
     
     async def get_index_field_types(self, model_class: Type[BaseIndex]) -> Optional[Dict[str, Any]]:
         index_name = get_index_name(model_class)
@@ -67,9 +74,9 @@ class QueryBuilder:
             "knn": {
                 vector_field: {
                     "vector": query_vector,
-                    "k": size
+                    "k": size,
+                    "boost": vector_weight,
                 },
-                "boost": vector_weight
             }
         })
         
@@ -81,7 +88,7 @@ class QueryBuilder:
                 }
             },
             "_source": {
-                "exclude": vector_fields
+                "excludes": vector_fields
             }
         }
         
@@ -94,17 +101,25 @@ class QueryBuilder:
         size: int = 10,
         bm25_factor: float = 0.5,
         vector_factor: float = 0.5,
+        *,
+        search_fields: Optional[List[str]] = None,
+        vector_fields: Optional[List[str]] = None,
         field_weight_overrides: Optional[Dict[str, float]] = None,
         vector_weight_overrides: Optional[Dict[str, float]] = None
     ) -> Dict[str, Any]:
         """
         Constructs a hybrid search query dynamically based on Pydantic field metadata (json_schema_extra).
         """
-        vector_fields = get_vector_fields(model_class)
-        if not vector_fields:
+        all_vector_fields = get_vector_fields(model_class)
+        if not all_vector_fields:
             raise ValueError(f"No vector fields found in model {model_class.__name__}")
             
-        search_fields = get_searchable_fields(model_class)
+        all_search_fields = get_searchable_fields(model_class)
+        search_fields = search_fields or all_search_fields
+
+        # Allow caller to limit vector sub-queries to avoid hitting hybrid max sub-query limit.
+        vector_fields = vector_fields or all_vector_fields
+        vector_fields = [vf for vf in vector_fields if vf in all_vector_fields]
         
         field_weight_overrides = field_weight_overrides or {}
         vector_weight_overrides = vector_weight_overrides or {}
@@ -148,9 +163,9 @@ class QueryBuilder:
                 "knn": {
                     field_name: {
                         "vector": query_vector,
-                        "k": size
+                        "k": size,
+                        "boost": weight * vector_factor,
                     },
-                    "boost": weight * vector_factor
                 }
             })
             
@@ -176,7 +191,7 @@ class QueryBuilder:
                 }
             },
             "_source": {
-                "exclude": vector_fields
+                "excludes": all_vector_fields
             }
         }
         
@@ -211,11 +226,67 @@ class QueryBuilder:
                 }
             },
             "_source": {
-                "exclude": vector_fields
+                "excludes": vector_fields
             }
         }
         
         return search_body
+
+    def build_bm25_only_search(
+        self,
+        model_class: Type[BaseIndex],
+        query: str,
+        *,
+        size: int = 10,
+        search_fields: Optional[List[str]] = None,
+        field_boosts: Optional[Dict[str, float]] = None,
+        query_type: str = "best_fields",
+    ) -> Dict[str, Any]:
+        """
+        Most basic BM25 search (no filters, no vectors).
+        This is intentionally explicit for debugging scoring behavior.
+        """
+        return self.build_keyword_search(
+            model_class=model_class,
+            query=query,
+            size=size,
+            search_fields=search_fields,
+            field_boosts=field_boosts,
+            query_type=query_type,
+        )
+
+    def build_knn_only_search(
+        self,
+        model_class: Type[BaseIndex],
+        query: str,
+        *,
+        size: int = 10,
+        vector_field: str,
+        boost: Optional[float] = None,
+    ) -> Dict[str, Any]:
+        """
+        Most basic kNN search on a single vector field (no hybrid).
+        """
+        vector_fields = get_vector_fields(model_class)
+        if vector_field not in vector_fields:
+            raise ValueError(f"Vector field '{vector_field}' not found. Available: {vector_fields}")
+
+        query_vector = self._generate_embedding(query)
+        body: Dict[str, Any] = {
+            "size": size,
+            "query": {
+                "knn": {
+                    vector_field: {
+                        "vector": query_vector,
+                        "k": size,
+                    }
+                }
+            },
+            "_source": {"excludes": vector_fields},
+        }
+        if boost is not None:
+            body["query"]["knn"][vector_field]["boost"] = float(boost)
+        return body
     
     def build_keyword_search(
         self,
@@ -249,7 +320,7 @@ class QueryBuilder:
                 }
             },
             "_source": {
-                "exclude": vector_fields
+                "excludes": vector_fields
             }
         }
         
@@ -294,7 +365,7 @@ class QueryBuilder:
                 }
             },
             "_source": {
-                "exclude": vector_fields
+                "excludes": vector_fields
             }
         }
         
@@ -341,7 +412,7 @@ class QueryBuilder:
             return {
                 "size": size,
                 "query": {"match_all": {}},
-                "_source": {"exclude": vector_fields},
+                "_source": {"excludes": vector_fields},
             }
 
         if operator == "AND":
@@ -352,7 +423,7 @@ class QueryBuilder:
         return {
             "size": size,
             "query": q,
-            "_source": {"exclude": vector_fields},
+            "_source": {"excludes": vector_fields},
         }
     
     def build_multi_vector_search(
@@ -378,9 +449,9 @@ class QueryBuilder:
                 "knn": {
                     field_name: {
                         "vector": query_vector,
-                        "k": size
-                    },
-                    "boost": weight
+                        "k": size,
+                        "boost": weight,
+                    }
                 }
             })
         
@@ -392,7 +463,7 @@ class QueryBuilder:
                 }
             },
             "_source": {
-                "exclude": all_vector_fields
+                "excludes": all_vector_fields
             }
         }
         
@@ -449,7 +520,7 @@ class QueryBuilder:
                 "window_size": size
             },
             "_source": {
-                "exclude": vector_fields
+                "excludes": vector_fields
             }
         }
         
@@ -458,11 +529,25 @@ class QueryBuilder:
     def _generate_embedding(self, text: str) -> List[float]:
         if not text:
             return [0.0] * 384
+        if self.embedding_model is None:
+            try:
+                from sentence_transformers import SentenceTransformer  # type: ignore
+            except Exception as e:
+                raise RuntimeError(
+                    "sentence-transformers is required for vector/hybrid search. "
+                    "Install it in your current environment (e.g. pip install sentence-transformers) "
+                    "or pass a custom embedding_model to QueryBuilder(...)."
+                ) from e
+            self.embedding_model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
         embedding = self.embedding_model.encode(text)
         return embedding.tolist()
     
-    def update_embedding_model(self, model: SentenceTransformer):
+    def update_embedding_model(self, model: AnyType):
         self.embedding_model = model
 
 
-query_builder = QueryBuilder()
+try:
+    # Lazily available depending on environment (sentence-transformers is optional for some scripts).
+    query_builder = QueryBuilder()
+except Exception:
+    query_builder = None  # type: ignore

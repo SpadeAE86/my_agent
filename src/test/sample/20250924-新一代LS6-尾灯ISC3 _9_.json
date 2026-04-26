@@ -1,0 +1,83 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC3 (9).mp4",
+  "run_id": "v2_20260426_230138_1bfcd3ef85",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230138_1bfcd3ef85/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230138_1bfcd3ef85/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230138_1bfcd3ef85/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230138_1bfcd3ef85/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地库环境中静态展示，车身为黑色，车顶灯光反射形成独特光影，车尾贯穿式尾灯点亮，镜头为固定机位拍摄，环境光线柔和，背景为地库墙面与设备。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "车牌",
+      "车顶"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "亮黑"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "安静"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流畅车身",
+      "亮黑车漆",
+      "车顶线条"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "车身稳定"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "日常通勤"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "长途驾驶"
+    ],
+    "marketing_phrases": [
+      "地库静态展示智己LS6",
+      "亮黑车漆质感高级",
+      "贯穿尾灯科技感拉满",
+      "地库停车更显精致",
+      "日常通勤外观吸睛",
+      "周末出行气场十足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "地库场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

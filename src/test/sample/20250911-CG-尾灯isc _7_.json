@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (7).mp4",
+  "run_id": "v2_20260426_225844_c115d01b76",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225844_c115d01b76/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225844_c115d01b76/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225844_c115d01b76/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225844_c115d01b76/scene_001_frame_000137.webp/scene_001_frame_000137.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，尾灯区域动态显示互动点赞图标，车身为深蓝色，背景简洁，镜头为固定机位特写，展示尾灯设计、车标及车身线条细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "尾灯",
+      "车标",
+      "车身",
+      "互动图标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "趣味",
+      "创新"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "互动灯语",
+      "金属车标",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "智能灯语交互",
+      "情感化设计",
+      "尾灯互动功能",
+      "车标识别"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "尾灯互动点赞",
+      "精致外观设计",
+      "智能灯语系统",
+      "蓝调车身质感",
+      "情感化灯语交互",
+      "静态展示车标"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "智能灯语",
+      "静态展示",
+      "汽车科技",
+      "城市用车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市白领",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (12).mp4",
+  "run_id": "v2_20260426_225319_68fac1f995",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225319_68fac1f995/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225319_68fac1f995/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225319_68fac1f995/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225319_68fac1f995/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225319_68fac1f995/scene_001_frame_000181.webp/scene_001_frame_000181.webp"
+  ],
+  "result": {
+    "description": "汽车的后排座舱（含座椅、中控台、天窗、氛围灯区域）静态展示，内饰以米白色皮质为主，座椅采用格纹设计，配备全景天窗与氛围灯，背景可见‘超充’字样，画面通过固定机位拍摄，光线明亮清晰。",
+    "subject": "汽车内饰（后排座椅区域）",
+    "object": [
+      "座椅",
+      "中控台",
+      "天窗",
+      "氛围灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "舒适",
+      "简约"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "静谧",
+      "宽敞",
+      "豪华"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "格纹座椅",
+      "全景天窗",
+      "氛围灯"
+    ],
+    "function_selling_points": [
+      "座椅舒适性",
+      "座舱静谧性",
+      "空间宽敞度",
+      "氛围灯调节"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "后排座椅舒适",
+      "全景天窗通透",
+      "氛围灯高级感",
+      "座舱空间宽敞",
+      "皮质座椅质感好",
+      "内饰设计简约高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "汽车体验",
+      "豪华座舱"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者",
+      "追求品质的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

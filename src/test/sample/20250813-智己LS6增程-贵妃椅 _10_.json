@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (10).mp4",
+  "run_id": "v2_20260426_225317_6d5bfea2df",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_6d5bfea2df/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_6d5bfea2df/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_6d5bfea2df/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_6d5bfea2df/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "汽车的内饰（含前排、后排米白色皮质座椅及全景天窗），镜头固定拍摄车内座舱，光线明亮，座椅设计整洁，车内空间宽敞，展示内饰细节。",
+    "subject": "汽车的内饰（含座椅、天窗）",
+    "object": [
+      "座椅",
+      "天窗",
+      "前排座椅",
+      "后排座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "米白",
+      "皮质",
+      "整洁",
+      "宽大"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "静谧",
+      "豪华"
+    ],
+    "design_selling_points": [
+      "米白色皮质座椅",
+      "全景天窗",
+      "宽大空间",
+      "座椅设计"
+    ],
+    "function_selling_points": [
+      "舒适乘坐体验",
+      "宽敞座舱空间",
+      "全景天窗采光",
+      "豪华内饰氛围"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "米白皮质座椅",
+      "全景天窗",
+      "宽敞座舱",
+      "舒适乘坐",
+      "豪华内饰",
+      "静谧空间"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "舒适座舱",
+      "豪华内饰"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适的车主",
+      "内饰爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

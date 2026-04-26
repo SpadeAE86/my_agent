@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-3.mp4",
+  "run_id": "v2_20260426_225644_0d233efe9d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225644_0d233efe9d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225644_0d233efe9d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225644_0d233efe9d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225644_0d233efe9d/scene_001_frame_000128.webp/scene_001_frame_000128.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的发动机舱（发动机盖打开），展示发动机、管线、油液壶等部件，背景为白色简洁室内环境，镜头为固定机位近距离拍摄，光线明亮清晰。",
+    "subject": "汽车发动机舱",
+    "object": [
+      "发动机",
+      "管线",
+      "油液壶",
+      "发动机盖"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "哑光黑",
+    "product_status_scene": "静态机械",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "规整",
+      "精致",
+      "哑光",
+      "简洁"
+    ],
+    "function_adjectives": [
+      "可靠",
+      "高效",
+      "稳定",
+      "精密"
+    ],
+    "design_selling_points": [
+      "发动机护罩",
+      "管线布局",
+      "油液壶",
+      "哑光车身"
+    ],
+    "function_selling_points": [
+      "动力稳定",
+      "维护便捷",
+      "散热高效",
+      "机械可靠"
+    ],
+    "scenario_a": [
+      "日常维护",
+      "车辆保养",
+      "机械赏鉴",
+      "购车验车"
+    ],
+    "scenario_b": [
+      "长途出行前检查",
+      "改装前评估",
+      "二手车检测",
+      "赛事备赛检查"
+    ],
+    "marketing_phrases": [
+      "发动机舱布局规整",
+      "管线清晰易维护",
+      "哑光质感高级",
+      "动力系统稳定可靠",
+      "静态展示机械美学",
+      "购车必看发动机舱"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "机械结构",
+      "发动机舱",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "车主",
+      "机械工程师",
+      "购车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

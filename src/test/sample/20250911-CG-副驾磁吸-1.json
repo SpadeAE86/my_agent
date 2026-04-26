@@ -1,0 +1,85 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-副驾磁吸-1.mp4",
+  "run_id": "v2_20260426_225740_7f84b32de6",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225740_7f84b32de6/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225740_7f84b32de6/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225740_7f84b32de6/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225740_7f84b32de6/scene_001_frame_000151.webp/scene_001_frame_000151.webp"
+  ],
+  "result": {
+    "description": "汽车后排内饰静态展示，包含浅色皮质座椅、中控大屏、可变换用途的圆形小桌板（依次展示放置画具&画作、咖啡&书籍、巧克力&咖啡等场景），镜头为固定机位车内视角，窗外天空晴朗，光线明亮柔和。",
+    "subject": "汽车后排内饰",
+    "object": [
+      "后排座椅",
+      "中控大屏",
+      "圆形小桌板"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "柔和"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "灵活",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "后排座椅",
+      "中控大屏",
+      "圆形小桌板",
+      "内饰材质"
+    ],
+    "function_selling_points": [
+      "后排小桌板多功能",
+      "后排娱乐系统",
+      "内饰空间灵活利用",
+      "智能中控交互"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "后排小桌板秒变画板",
+      "后排喝咖啡看书超惬意",
+      "车内办公轻松搞定",
+      "家庭出行哄娃神器",
+      "商务出行格调拉满",
+      "中控大屏智能交互"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "横版16:9",
+    "resolution": "1920x1080"
+  },
+  "success": true
+}

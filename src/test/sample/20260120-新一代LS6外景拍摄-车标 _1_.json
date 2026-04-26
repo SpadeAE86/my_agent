@@ -1,0 +1,81 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车标 (1).mp4",
+  "run_id": "v2_20260426_230424_de137e2de1",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230424_de137e2de1/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230424_de137e2de1/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230424_de137e2de1/scene_001_frame_000119.webp/scene_001_frame_000119.webp"
+  ],
+  "result": {
+    "description": "一辆黑色智己汽车的引擎盖展示，表面贴有4张卡通风格红色贴纸，背景为现代城区建筑，车漆呈镜面反射效果，画面清晰明亮，车辆处于静态展示状态。",
+    "subject": "智己汽车",
+    "object": [
+      "引擎盖",
+      "车标",
+      "贴纸",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "镜面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光泽",
+      "精致",
+      "镜面",
+      "时尚"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "引擎盖设计",
+      "镜面车漆",
+      "个性贴纸",
+      "品牌车标"
+    ],
+    "function_selling_points": [
+      "个性化装饰",
+      "镜面车漆工艺"
+    ],
+    "scenario_a": [
+      "日常通勤"
+    ],
+    "scenario_b": [
+      "个性出行"
+    ],
+    "marketing_phrases": [
+      "引擎盖贴纸超个性",
+      "车漆镜面质感拉满",
+      "城区出行吸睛",
+      "车标设计精致",
+      "贴纸装饰很吸睛",
+      "静态展示颜值"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "个性出行",
+      "外观设计"
+    ],
+    "appealing_audience": [
+      "年轻车主",
+      "个性玩家",
+      "汽车爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

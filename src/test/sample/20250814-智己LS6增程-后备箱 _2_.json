@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后备箱 (2).mp4",
+  "run_id": "v2_20260426_225349_89a74a9aed",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225349_89a74a9aed/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225349_89a74a9aed/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225349_89a74a9aed/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225349_89a74a9aed/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225349_89a74a9aed/scene_001_frame_000213.webp/scene_001_frame_000213.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅风格的白色简约空间内，通过展台转盘展示，电动尾门逐步自动开启，后备箱内放置四个黑色箱子，画面为CG渲染，光线明亮，清晰呈现车辆尾部设计与后备箱空间。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "电动尾门",
+      "后备箱",
+      "轮毂",
+      "尾灯"
+    ],
+    "movement": "尾门开启",
+    "footage_type": "CG",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "能装",
+      "智能",
+      "实用"
+    ],
+    "design_selling_points": [
+      "电动尾门",
+      "贯穿式尾灯",
+      "运动轮毂",
+      "溜背车身"
+    ],
+    "function_selling_points": [
+      "电动尾门自动开启",
+      "大容积后备箱",
+      "智能感应尾门",
+      "载物空间充足"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "自驾旅行"
+    ],
+    "scenario_b": [
+      "购物载物",
+      "搬家运输"
+    ],
+    "marketing_phrases": [
+      "电动尾门一键开",
+      "后备箱装四个箱",
+      "智己LS6空间大",
+      "家庭出行能装下",
+      "自驾旅行放得满",
+      "购物载物轻松装"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能演示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "自驾爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

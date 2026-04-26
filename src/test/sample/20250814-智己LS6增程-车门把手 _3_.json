@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门把手 (3).mp4",
+  "run_id": "v2_20260426_225631_9e27b03043",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_9e27b03043/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_9e27b03043/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_9e27b03043/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_9e27b03043/scene_001_frame_000135.webp/scene_001_frame_000135.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的车门特写，展示隐藏式车门把手的自动弹出与收回动作，车漆亮面光滑，车门带有镀铬饰条，镜头为固定机位特写，光线明亮，聚焦车门与把手细节。",
+    "subject": "某款黑色汽车的车门把手",
+    "object": [
+      "车门",
+      "车门把手"
+    ],
+    "movement": "把手弹出收回",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "光滑"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "自动",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "隐藏式把手",
+      "亮面车漆",
+      "镀铬饰条",
+      "一体化设计"
+    ],
+    "function_selling_points": [
+      "自动弹出把手",
+      "感应解锁",
+      "隐藏式设计",
+      "便捷开关门"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "城市代步"
+    ],
+    "marketing_phrases": [
+      "隐藏把手自动弹出",
+      "亮面黑车漆质感",
+      "智能感应解锁",
+      "便捷开关门",
+      "商务感十足",
+      "简约设计高级感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "商务人士",
+      "汽车爱好者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

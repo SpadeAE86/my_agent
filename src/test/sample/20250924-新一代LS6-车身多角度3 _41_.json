@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (41).mp4",
+  "run_id": "v2_20260426_230310_8a7ff9035b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_8a7ff9035b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_8a7ff9035b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_8a7ff9035b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_8a7ff9035b/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地库通道内向前行驶，车身为黑色并带有白色伪装图案，车灯点亮，背景为地库的灯光与墙壁，镜头采用固定机位拍摄，画面清晰呈现汽车外观设计与行驶状态。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车灯",
+      "车标",
+      "车窗"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "伪装",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "时尚",
+      "科技感",
+      "精致",
+      "大气"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "流畅",
+      "安静",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "车灯设计",
+      "车身轮廓",
+      "车标",
+      "车窗设计"
+    ],
+    "function_selling_points": [
+      "行驶稳定",
+      "灯光照明",
+      "车身控制",
+      "低噪行驶"
+    ],
+    "scenario_a": [
+      "地库行驶",
+      "停车入库",
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "夜间行驶",
+      "商务出行",
+      "长途旅行",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "地库行驶稳",
+      "车灯亮得酷",
+      "黑武士风格智己LS6",
+      "地库穿梭自如",
+      "伪装下的科技感",
+      "停车一把进"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "汽车外观",
+      "行驶体验"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "城市通勤者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

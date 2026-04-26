@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (17).mp4",
+  "run_id": "v2_20260426_225809_466759045a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_466759045a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_466759045a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_466759045a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_466759045a/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，背景为深色渐变，尾灯依次显示山、蝙蝠、小狗等动态图案，车身呈蓝色，镜头固定，光线均匀，呈现现代精致的外观设计与智能尾灯交互功能。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "尾灯",
+      "车身",
+      "后视镜",
+      "品牌标识"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "流畅",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "生动",
+      "交互感强",
+      "个性化"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "溜背造型",
+      "品牌标识",
+      "后视镜设计"
+    ],
+    "function_selling_points": [
+      "动态尾灯显示",
+      "个性化灯语",
+      "智能交互灯组",
+      "视觉提示功能"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "社交出行",
+      "个性展示"
+    ],
+    "marketing_phrases": [
+      "尾灯会“讲故事”",
+      "动态灯语超吸睛",
+      "智己LS6尾部太科幻",
+      "蓝色车身质感高级",
+      "尾灯能显示可爱图案",
+      "静态展示也惊艳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "智能灯组",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "年轻消费者",
+      "科技爱好者",
+      "颜值控",
+      "汽车设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "横版16:9",
+    "resolution": "1920x1080"
+  },
+  "success": true
+}

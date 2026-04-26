@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-54.mp4",
+  "run_id": "v2_20260426_225507_06398162a2",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225507_06398162a2/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225507_06398162a2/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225507_06398162a2/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225507_06398162a2/scene_001_frame_000163.webp/scene_001_frame_000163.webp"
+  ],
+  "result": {
+    "description": "新一代智己LS6汽车在白色室内展厅的展台转盘上静态展示，车身为蓝色，车顶黑色，轮毂设计精致，背景为灰色墙面，画面中显示文字“新一代智己LS6|自带超充桩的电车”。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "天窗",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "TVC切片",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "静谧",
+      "稳定",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "多辐轮毂",
+      "全景天窗",
+      "隐藏式门把手"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "低风阻设计",
+      "舒适座椅",
+      "稳定轮毂"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "智己LS6自带超充桩",
+      "蓝色智己LS6外观精致",
+      "展厅静态展示智己LS6",
+      "流线车身智己LS6",
+      "精致轮毂智己LS6",
+      "全景天窗智己LS6"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "电车宣传"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "电车爱好者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯2 (1).mp4",
+  "run_id": "v2_20260426_230022_d7ce883a0b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_d7ce883a0b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_d7ce883a0b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_d7ce883a0b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_d7ce883a0b/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车在林荫道路旁静态展示，画面呈现其前脸、前灯组、轮毂与轮胎细节，背景为树木与铺装路面，光线柔和清晰。",
+    "subject": "黑色汽车",
+    "object": [
+      "车身",
+      "前灯组",
+      "轮毂",
+      "轮胎"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "林荫道",
+      "公路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "现代",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静音",
+      "高效",
+      "智能"
+    ],
+    "design_selling_points": [
+      "前灯组设计",
+      "亮面车漆",
+      "多辐轮毂",
+      "流线型车身"
+    ],
+    "function_selling_points": [
+      "智能灯组",
+      "低风阻设计",
+      "稳定底盘",
+      "静音座舱"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "林荫道上的黑武士",
+      "亮面黑车漆超吸睛",
+      "前灯组设计很精致",
+      "静态展示高级感",
+      "城市通勤好伙伴",
+      "周末自驾更出彩"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

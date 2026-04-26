@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门内饰-1.mp4",
+  "run_id": "v2_20260426_225618_2062952656",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225618_2062952656/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225618_2062952656/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225618_2062952656/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225618_2062952656/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车的车门内饰静态展示，画面呈现浅棕色皮质车门、带木纹纹理的装饰条、蓝色氛围灯、圆形音响及车窗控制按钮，背景可见外后视镜与展厅文字标识，镜头为固定机位特写，光线柔和清晰。",
+    "subject": "智己汽车车门内饰",
+    "object": [
+      "车门",
+      "氛围灯",
+      "音响",
+      "车窗按钮"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "柔和",
+      "细腻"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "静谧",
+      "便捷",
+      "智能"
+    ],
+    "design_selling_points": [
+      "皮质车门",
+      "木纹装饰条",
+      "蓝色氛围灯",
+      "圆形音响"
+    ],
+    "function_selling_points": [
+      "电动车窗",
+      "氛围灯调节",
+      "音响系统",
+      "智能控制"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "车门质感高级",
+      "氛围灯柔和细腻",
+      "音响设计精致",
+      "内饰舒适静谧",
+      "车窗按钮便捷",
+      "木纹装饰显档次"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "汽车美学"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者",
+      "注重内饰的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

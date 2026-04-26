@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (4).mp4",
+  "run_id": "v2_20260426_225959_35021a98e9",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225959_35021a98e9/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225959_35021a98e9/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225959_35021a98e9/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225959_35021a98e9/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "智己LS6上市活动现场，室内展厅环境，展示牌上的智己LS6汽车静态展示，背景有参会人群、屏幕及活动布置，镜头为手持拍摄，画面明亮清晰。",
+    "subject": "智己LS6汽车（展示牌）",
+    "object": [
+      "车身",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "手持",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "发布会现场",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "时尚",
+      "大气",
+      "流畅",
+      "精致"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "宽敞",
+      "高效"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "大灯造型",
+      "五座布局"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "智能座舱",
+      "高效性能",
+      "大空间体验"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "朋友聚会"
+    ],
+    "marketing_phrases": [
+      "新一代智己LS6",
+      "超级大五座智能SUV",
+      "上市直播之夜",
+      "成都锦江分会场",
+      "智能SUV新选择",
+      "五座大空间"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "发布会现场",
+      "新车上市",
+      "智能SUV",
+      "五座SUV"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "汽车爱好者",
+      "城市白领",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

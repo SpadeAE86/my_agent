@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-空悬-2.mp4",
+  "run_id": "v2_20260426_192053_135eab0280",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_135eab0280/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_135eab0280/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_135eab0280/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_135eab0280/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆黑色轿车静态停放在城市道路旁，背景为红砖墙面，车身线条流畅，轮毂设计精致，车内可见驾驶员，画面光线明亮，镜头为固定机位拍摄。",
+    "subject": "黑色轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "驾驶员"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市道路",
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "大气",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静谧",
+      "舒适",
+      "低风阻"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "车漆质感",
+      "车窗轮廓"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "静谧座舱",
+      "稳定姿态",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常停车"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "周末休闲"
+    ],
+    "marketing_phrases": [
+      "城市道路静态美学",
+      "流畅车身设计",
+      "精致轮毂质感",
+      "静谧舒适座舱",
+      "城市通勤好伙伴",
+      "商务出行显格调"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

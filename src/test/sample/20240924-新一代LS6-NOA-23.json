@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-23.mp4",
+  "run_id": "v2_20260426_225205_ec017cd1ec",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ec017cd1ec/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ec017cd1ec/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ec017cd1ec/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ec017cd1ec/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车以车内POV视角呈现驾驶场景，驾驶员手握方向盘，中控大屏清晰展示导航与车辆信息，前方道路有卡车、绿色巴士行驶，背景为城市道路、围墙与晴朗天空，光线明亮。",
+    "subject": "智己汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "驾驶员（手）"
+    ],
+    "movement": "跟车行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "城市道路",
+      "公路"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "简约",
+      "现代",
+      "科技感",
+      "精致"
+    ],
+    "function_adjectives": [
+      "流畅",
+      "稳定",
+      "智能",
+      "清晰"
+    ],
+    "design_selling_points": [
+      "大尺寸中控屏",
+      "多功能方向盘",
+      "一体化座舱",
+      "简约内饰"
+    ],
+    "function_selling_points": [
+      "智能导航",
+      "清晰车机显示",
+      "跟车辅助",
+      "驾驶稳定"
+    ],
+    "scenario_a": [
+      "通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "自驾"
+    ],
+    "marketing_phrases": [
+      "跟车行驶稳",
+      "中控大屏清晰",
+      "城市通勤轻松",
+      "导航精准",
+      "驾驶视野好",
+      "内饰简约高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "驾驶场景",
+      "智能座舱"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "新手司机",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

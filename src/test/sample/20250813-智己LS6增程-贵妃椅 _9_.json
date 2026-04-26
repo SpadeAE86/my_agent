@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (9).mp4",
+  "run_id": "v2_20260426_225326_7e50911888",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_7e50911888/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_7e50911888/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_7e50911888/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_7e50911888/scene_001_frame_000158.webp/scene_001_frame_000158.webp"
+  ],
+  "result": {
+    "description": "汽车内饰（后排视角）展示，后排座椅从扶手形态调节为座椅形态，中控台、中控屏、方向盘、全景天窗清晰可见，内饰为米白色，环境为室内展厅，光线明亮。",
+    "subject": "汽车内饰（后排视角）",
+    "object": [
+      "座椅",
+      "中控屏",
+      "方向盘",
+      "天窗"
+    ],
+    "movement": "座椅调节",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰（座椅调节展示）",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "米白",
+      "精致",
+      "高级",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "灵活",
+      "智能",
+      "便捷",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "后排座椅",
+      "中控大屏",
+      "全景天窗",
+      "真皮材质"
+    ],
+    "function_selling_points": [
+      "座椅调节",
+      "智能座舱",
+      "多屏互动",
+      "舒适乘坐"
+    ],
+    "scenario_a": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "休闲自驾"
+    ],
+    "marketing_phrases": [
+      "后排座椅灵活变座",
+      "中控大屏智能交互",
+      "全景天窗开阔视野",
+      "米白内饰显高级",
+      "座舱空间宽敞舒适",
+      "座椅调节一键切换"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "座椅功能"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

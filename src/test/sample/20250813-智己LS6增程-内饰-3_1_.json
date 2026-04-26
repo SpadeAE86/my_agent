@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-3(1).mp4",
+  "run_id": "v2_20260426_225310_a1db7d77ce",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000240.webp/scene_001_frame_000240.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000300.webp/scene_001_frame_000300.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225310_a1db7d77ce/scene_001_frame_000359.webp/scene_001_frame_000359.webp"
+  ],
+  "result": {
+    "description": "一辆智己汽车的内饰静态展示，包含方向盘、双联中控大屏、浅色皮质座椅、全景天窗，背景为简洁室内展厅环境，光线明亮清晰。",
+    "subject": "智己汽车内饰",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "高级",
+      "柔和"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "智能",
+      "宽敞",
+      "科技感"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "全景天窗",
+      "双联中控屏",
+      "简约中控台"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "舒适驾乘体验",
+      "全景天窗采光",
+      "宽敞座舱空间"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "室内体验",
+      "静态展示",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "长途驾驶",
+      "休闲乘坐",
+      "科技体验"
+    ],
+    "marketing_phrases": [
+      "内饰精致高级",
+      "全景天窗采光好",
+      "双联屏科技感足",
+      "浅色座椅显宽敞",
+      "静态体验舒适",
+      "展厅展示内饰细节"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "智己汽车",
+      "静态体验"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "商务人士",
+      "汽车消费者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

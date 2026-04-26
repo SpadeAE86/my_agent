@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后视镜 (8).mp4",
+  "run_id": "v2_20260426_225416_0cdc6b6a66",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_0cdc6b6a66/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_0cdc6b6a66/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_0cdc6b6a66/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_0cdc6b6a66/scene_001_frame_000137.webp/scene_001_frame_000137.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的外后视镜及部分车身细节静态展示，背景为简洁的灰色调，画面聚焦后视镜的流畅造型、车身的精致线条与镀铬饰条，车内可见座椅，光线柔和清晰，突出设计细节与后视镜的摄像头配置。",
+    "subject": "黑色汽车的外后视镜及车身局部",
+    "object": [
+      "外后视镜",
+      "车身",
+      "车窗",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "高级",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "稳定",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "外后视镜流畅造型",
+      "车身精致线条",
+      "镀铬饰条装饰",
+      "后视镜摄像头设计"
+    ],
+    "function_selling_points": [
+      "360度影像辅助",
+      "盲区监测功能",
+      "高清摄像头成像",
+      "智能驾驶辅助"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "外后视镜设计精致流畅",
+      "车身线条高级简约",
+      "摄像头加持安全升级",
+      "静态展示尽显质感",
+      "城市通勤颜值担当",
+      "商务出行气场十足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "静态细节",
+      "汽车设计"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "注重设计的车主",
+      "城市通勤者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

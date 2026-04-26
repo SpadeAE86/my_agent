@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260226-陈龙-路跑-2.mp4",
+  "run_id": "v2_20260426_230618_74f06df367",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230618_74f06df367/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230618_74f06df367/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230618_74f06df367/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230618_74f06df367/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色汽车在现代城区的街道、路口行驶，镜头包含车外跟拍、航拍、底盘视角，展示车身、车灯、轮毂、底盘细节，背景为建筑与铺装路面，光线明亮清晰。",
+    "subject": "蓝色汽车",
+    "object": [
+      "车身",
+      "车灯",
+      "轮毂",
+      "底盘"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "路口",
+      "铺装路面"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "灵活",
+      "安静",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流线型车身",
+      "犀利车灯",
+      "运动轮毂",
+      "低趴底盘"
+    ],
+    "function_selling_points": [
+      "城市道路行驶",
+      "灵活转向",
+      "稳定底盘",
+      "高效动力"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "街道行驶",
+      "市区驾驶"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "购物代步",
+      "短途旅行",
+      "商务通勤"
+    ],
+    "marketing_phrases": [
+      "城市道路轻松开",
+      "现代城区穿梭快",
+      "犀利车灯辨识度高",
+      "运动轮毂显活力",
+      "底盘视角看路况",
+      "航拍外观更吸睛"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "城市车主",
+      "年轻用户",
+      "通勤族",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1920x3414"
+  },
+  "success": true
+}

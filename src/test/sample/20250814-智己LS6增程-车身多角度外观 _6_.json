@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车身多角度外观 (6).mp4",
+  "run_id": "v2_20260426_225602_e45678bb6f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225602_e45678bb6f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225602_e45678bb6f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225602_e45678bb6f/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225602_e45678bb6f/scene_001_frame_000164.webp/scene_001_frame_000164.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的静态外观CG展示，镜头依次呈现车灯、后视镜、车身、轮毂等细节，背景为室内展厅环境，带有“带超充”等文字，画面光线明亮，设计精致。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车灯",
+      "后视镜",
+      "车身",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "光泽",
+      "简约"
+    ],
+    "function_adjectives": [
+      "高效",
+      "智能",
+      "便捷",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "精致车灯设计",
+      "流畅车身线条",
+      "质感蓝色车漆",
+      "后视镜造型"
+    ],
+    "function_selling_points": [
+      "超充功能",
+      "智能车机系统",
+      "高效补能",
+      "便捷充电"
+    ],
+    "scenario_a": [
+      "展厅体验",
+      "超充补能",
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "智己LS6 蓝色外观超吸睛",
+      "精致车灯 科技感拉满",
+      "带超充 补能更高效",
+      "展厅静态展示 细节满分",
+      "流畅车身 设计超简约",
+      "质感车漆 光泽出众"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "CG渲染",
+      "超充宣传",
+      "智己LS6"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市通勤者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

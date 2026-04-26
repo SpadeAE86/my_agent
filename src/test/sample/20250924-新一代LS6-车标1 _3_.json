@@ -1,0 +1,83 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车标1 (3).mp4",
+  "run_id": "v2_20260426_230209_fc29e7ea14",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230209_fc29e7ea14/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230209_fc29e7ea14/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230209_fc29e7ea14/scene_001_frame_000106.webp/scene_001_frame_000106.webp"
+  ],
+  "result": {
+    "description": "智己汽车的车头车标特写，车标为银色金属质感，车身呈黑色，背景为红砖墙，镜头为固定机位近距离拍摄，清晰展示车标设计与车漆细节，光线明亮，为白天户外场景。",
+    "subject": "智己汽车",
+    "object": [
+      "车标",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "户外",
+      "红砖墙"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "金属感",
+      "光滑"
+    ],
+    "function_adjectives": [
+      "高档",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "车标设计",
+      "车漆质感",
+      "车身线条",
+      "金属车标"
+    ],
+    "function_selling_points": [
+      "外观辨识度",
+      "品牌标识"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "智己汽车车标特写",
+      "黑色车漆质感十足",
+      "红砖墙旁静态展示",
+      "金属车标设计感强",
+      "户外实拍车外观",
+      "精致高级车标"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "车标特写",
+      "静态实拍"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "智己车主",
+      "设计爱好者",
+      "城市通勤族"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

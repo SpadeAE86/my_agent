@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-iSC尾灯 (4).mp4",
+  "run_id": "v2_20260426_225336_078b0eb1f4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_078b0eb1f4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_078b0eb1f4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_078b0eb1f4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_078b0eb1f4/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_078b0eb1f4/scene_001_frame_000197.webp/scene_001_frame_000197.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，背景为灰色墙面带有品牌及车型文字，车身蓝白配色，贯穿式尾灯亮起并显示动态图标，固定机位拍摄，画面清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "车顶",
+      "车标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "简约",
+      "精致",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "炫酷",
+      "清晰",
+      "动感"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "蓝白车身",
+      "流线型车顶",
+      "品牌车标"
+    ],
+    "function_selling_points": [
+      "动态尾灯显示",
+      "自带超充桩"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "智己LS6自带超充桩",
+      "贯穿尾灯科技感",
+      "蓝白车身颜值高",
+      "动态尾灯显个性",
+      "静态展示细节足",
+      "室内质感佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "科技感",
+      "品牌宣传"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

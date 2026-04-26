@@ -1,0 +1,83 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (40).mp4",
+  "run_id": "v2_20260426_230309_1a45930b76",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230309_1a45930b76/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230309_1a45930b76/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230309_1a45930b76/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230309_1a45930b76/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地下车库内静态展示，车身为黑色，车头灯组点亮，车顶与车身被灯光投影出菱形图案，背景为地库的电梯与墙面，镜头为固定机位正面拍摄，画面光线柔和，展示车辆外观设计与点亮的头灯。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车头灯组",
+      "车标",
+      "车身",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "智能"
+    ],
+    "design_selling_points": [
+      "车标设计",
+      "头灯造型",
+      "车身菱形投影",
+      "前格栅设计"
+    ],
+    "function_selling_points": [
+      "智能灯组点亮",
+      "灯光美学体验"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "日常通勤"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "地库静态展示智己LS6",
+      "黑武士外观菱形光影",
+      "智能灯组点亮效果",
+      "静态外观科技感拉满",
+      "地库中的黑科技座驾",
+      "精致车标设计"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "高端用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

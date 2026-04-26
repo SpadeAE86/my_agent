@@ -1,0 +1,85 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车标 (5).mp4",
+  "run_id": "v2_20260426_225551_b363455c8d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225551_b363455c8d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225551_b363455c8d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225551_b363455c8d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225551_b363455c8d/scene_001_frame_000160.webp/scene_001_frame_000160.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅内的展台转盘上静态展示，画面从不同角度呈现其前脸、车标、车顶传感器及亮面黑色车身，背景为简洁的展示墙，光线明亮均匀，突出车身设计细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车标",
+      "前格栅",
+      "挡风玻璃"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "简约",
+      "高级"
+    ],
+    "function_adjectives": [
+      "智能",
+      "科技",
+      "稳定",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "精致车标设计",
+      "亮面黑色车漆",
+      "简洁前脸造型"
+    ],
+    "function_selling_points": [
+      "智能感知系统",
+      "高效空气动力学"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "marketing_phrases": [
+      "智己LS6亮面黑外观",
+      "展厅多角度看车",
+      "静态展示车身细节",
+      "精致车标设计",
+      "流畅车身线条",
+      "智能感知车顶"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "展厅展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

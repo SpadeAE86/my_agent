@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (2).mp4",
+  "run_id": "v2_20260426_230008_be0e6c8f08",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230008_be0e6c8f08/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230008_be0e6c8f08/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230008_be0e6c8f08/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230008_be0e6c8f08/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "多辆智己LS6汽车在夜间现代建筑外的广场上静态展示，周围行人驻足围观、拍照，车辆外观时尚，大灯醒目，车身线条流畅，背景为欧式风格建筑，画面光线明亮。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车门",
+      "驾驶员",
+      "乘客"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "手持",
+    "scene_location": [
+      "现代城区",
+      "广场",
+      "夜间"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "夜间",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "时尚",
+      "流畅",
+      "光泽",
+      "精致"
+    ],
+    "function_adjectives": [
+      "吸睛",
+      "亮眼",
+      "大气",
+      "科技感"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "大灯设计",
+      "轮毂造型",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "外观展示",
+      "品牌形象",
+      "视觉吸引力",
+      "静态体验"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "夜间活动",
+      "广场展示"
+    ],
+    "scenario_b": [
+      "周末休闲",
+      "家庭出游",
+      "朋友聚会",
+      "品牌活动"
+    ],
+    "marketing_phrases": [
+      "夜间吸睛",
+      "路人围观",
+      "时尚外观",
+      "现代设计",
+      "广场展示",
+      "品牌魅力"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态展示",
+      "品牌活动",
+      "路人围观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "年轻群体",
+      "品牌关注者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

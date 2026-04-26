@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-12.mp4",
+  "run_id": "v2_20260426_225654_6c9848d306",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_6c9848d306/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_6c9848d306/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_6c9848d306/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_6c9848d306/scene_001_frame_000170.webp/scene_001_frame_000170.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色轿车静态展示于现代风格的展厅内，展厅以白色墙面、玻璃隔断和明亮室内照明为背景，车辆外观线条流畅，轮毂设计独特，透过车窗可见浅色座椅，画面清晰呈现车辆侧面造型。",
+    "subject": "蓝色轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "光泽"
+    ],
+    "function_adjectives": [
+      "安静",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "运动轮毂设计",
+      "无框车窗",
+      "光泽车漆"
+    ],
+    "function_selling_points": [
+      "静谧驾乘环境",
+      "舒适座椅体验",
+      "低风阻性能",
+      "稳定操控"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "城市通勤",
+      "商务出行",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游",
+      "长途旅行",
+      "朋友接送"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示",
+      "蓝色车漆质感",
+      "运动轮毂设计",
+      "流畅车身线条",
+      "现代展厅陈列",
+      "舒适座舱体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "展厅场景",
+      "汽车外观",
+      "现代展厅"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "汽车爱好者",
+      "城市白领",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

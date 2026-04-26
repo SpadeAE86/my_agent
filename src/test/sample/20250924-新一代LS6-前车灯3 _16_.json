@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯3 (16).mp4",
+  "run_id": "v2_20260426_230031_7b33d495a8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230031_7b33d495a8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230031_7b33d495a8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230031_7b33d495a8/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230031_7b33d495a8/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的前灯及车头部分特写，车身带有纹理光影效果，背景为地下车库墙面，镜头固定，光线柔和，静态展示汽车外观细节，前灯亮起，设计犀利。",
+    "subject": "黑色汽车（前灯特写）",
+    "object": [
+      "前灯",
+      "车头",
+      "车身",
+      "格栅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "犀利"
+    ],
+    "function_adjectives": [
+      "明亮",
+      "清晰",
+      "智能",
+      "节能"
+    ],
+    "design_selling_points": [
+      "前灯设计",
+      "车头造型",
+      "车身质感",
+      "格栅设计"
+    ],
+    "function_selling_points": [
+      "夜间照明",
+      "智能大灯",
+      "清晰照明",
+      "地库照明"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "夜间出行"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "地库灯光清晰",
+      "车头设计犀利",
+      "黑色车身质感高级",
+      "前灯科技感十足",
+      "静态展示颜值",
+      "夜间出行照明佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "夜间照明",
+      "地库场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市车主",
+      "夜间出行用户",
+      "颜值追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

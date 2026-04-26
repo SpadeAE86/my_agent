@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-激光雷达 (1).mp4",
+  "run_id": "v2_20260426_225524_5d576b93ed",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_5d576b93ed/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_5d576b93ed/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_5d576b93ed/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_5d576b93ed/scene_001_frame_000179.webp/scene_001_frame_000179.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的车顶激光雷达装置特写，车顶为亮面黑色，传感器设计精致流畅，背景为灰色室内环境（展厅），镜头为固定机位，清晰展示车顶、激光雷达、挡风玻璃及车内后视镜，画面静态展示该装置的外观与细节。",
+    "subject": "汽车车顶激光雷达",
+    "object": [
+      "车顶",
+      "激光雷达",
+      "挡风玻璃",
+      "车内后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "科技感",
+      "优雅"
+    ],
+    "function_adjectives": [
+      "精准",
+      "灵敏",
+      "智能",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "车顶激光雷达",
+      "流线型车顶设计",
+      "亮面黑车顶涂装",
+      "一体化传感器"
+    ],
+    "function_selling_points": [
+      "激光雷达感知",
+      "智能驾驶辅助",
+      "精准环境识别",
+      "智能泊车支持"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "短途代步",
+      "早晚高峰"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "智能泊车",
+      "高速巡航",
+      "自动避障"
+    ],
+    "marketing_phrases": [
+      "车顶激光雷达精准感知",
+      "智能驾驶更安心",
+      "流线车顶颜值高",
+      "亮面黑车顶显高级",
+      "传感器设计精致",
+      "智能出行新体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "智能驾驶",
+      "外观设计",
+      "激光雷达"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "智能驾驶用户",
+      "城市通勤者",
+      "汽车外观控"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

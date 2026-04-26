@@ -1,0 +1,80 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (39).mp4",
+  "run_id": "v2_20260426_225840_a4f1456a88",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225840_a4f1456a88/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225840_a4f1456a88/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225840_a4f1456a88/scene_001_frame_000089.webp/scene_001_frame_000089.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，蓝色车身搭配红色装饰线条，品牌标识及“Made in China”文字清晰可见，镜头为固定机位特写，画面风格简洁现代。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车标",
+      "装饰条"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "简约",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "可靠",
+      "高品质"
+    ],
+    "design_selling_points": [
+      "红色装饰条",
+      "车标设计",
+      "蓝色车漆",
+      "一体化尾灯"
+    ],
+    "function_selling_points": [
+      "中国制造品质",
+      "高端体验"
+    ],
+    "scenario_a": [
+      "展厅展示",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "智己LS6尾部特写",
+      "蓝色车身红色饰条",
+      "中国制造标识",
+      "静态展示精致设计",
+      "车标与装饰条",
+      "现代简约外观"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "中国制造"
+    ],
+    "appealing_audience": [
+      "国产汽车爱好者",
+      "设计追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

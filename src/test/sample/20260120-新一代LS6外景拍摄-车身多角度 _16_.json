@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (16).mp4",
+  "run_id": "v2_20260426_230448_cc348e1d08",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230448_cc348e1d08/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230448_cc348e1d08/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230448_cc348e1d08/scene_001_frame_000110.webp/scene_001_frame_000110.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的旋转展台上静态展示，车身为亮面黑色，前灯组设计现代，背景为金属墙面与圆形顶灯，灯光明亮，展台转动呈现车身外观。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯组",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "科技",
+      "舒适",
+      "静谧",
+      "智能"
+    ],
+    "design_selling_points": [
+      "前灯组设计",
+      "车身线条",
+      "亮面车漆",
+      "轮毂造型"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "智能灯控",
+      "静谧座舱",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "自驾出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态看车",
+      "亮面黑智己LS6",
+      "现代感前灯组",
+      "低风阻车身",
+      "静谧座舱体验",
+      "智能灯控科技感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "智己LS6",
+      "展厅场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "城市通勤者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

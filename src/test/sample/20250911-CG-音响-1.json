@@ -1,0 +1,85 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-音响-1.mp4",
+  "run_id": "v2_20260426_225950_ccabf7c2ec",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_ccabf7c2ec/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_ccabf7c2ec/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_ccabf7c2ec/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_ccabf7c2ec/scene_001_frame_000151.webp/scene_001_frame_000151.webp"
+  ],
+  "result": {
+    "description": "汽车车门内饰区域的静态展示，包含带金色装饰的控制按钮、带环形灯光的音响、浅色皮质内饰与车门扶手，镜头为固定机位特写，光线柔和明亮，画面清晰呈现内饰细节。",
+    "subject": "汽车车门内饰（控制面板与音响区域）",
+    "object": [
+      "控制面板",
+      "音响",
+      "车门扶手",
+      "皮质内饰"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "优雅",
+      "简约",
+      "质感细腻"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "舒适",
+      "温馨",
+      "触感柔软"
+    ],
+    "design_selling_points": [
+      "金色装饰按钮",
+      "环形灯光音响",
+      "浅色皮质内饰",
+      "一体化扶手"
+    ],
+    "function_selling_points": [
+      "触控式控制",
+      "氛围灯音响",
+      "舒适皮质触感",
+      "便捷操作按钮"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "内饰精致有质感",
+      "音响带氛围灯",
+      "控制按钮触感高级",
+      "浅色内饰显温馨"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰细节",
+      "静态特写"
+    ],
+    "appealing_audience": [
+      "注重内饰质感的车主",
+      "家庭用户",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

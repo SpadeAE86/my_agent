@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-百变座椅 (3).mp4",
+  "run_id": "v2_20260426_225857_23e595b90c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_23e595b90c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_23e595b90c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_23e595b90c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_23e595b90c/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "某款汽车的内饰（含后排头枕娱乐屏、前排座舱、可调节座椅、中控多屏等）静态展示，画面呈现后排头枕屏播放内容、前排座舱（含方向盘、小桌板、可调节座椅），背景有室内大窗户（第三、四张），镜头固定，画面明亮清晰。",
+    "subject": "某款汽车的内饰（后排头枕屏、前排座舱、可调节座椅）",
+    "object": [
+      "后排头枕屏",
+      "座椅",
+      "中控屏",
+      "方向盘"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内",
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "便捷",
+      "灵活"
+    ],
+    "design_selling_points": [
+      "后排头枕娱乐屏",
+      "真皮座椅",
+      "多屏中控",
+      "可调节座椅"
+    ],
+    "function_selling_points": [
+      "后排娱乐系统",
+      "座椅多向调节",
+      "前排座舱办公场景",
+      "智能中控交互"
+    ],
+    "scenario_a": [
+      "后排观影",
+      "前排办公"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "亲子出行"
+    ],
+    "marketing_phrases": [
+      "后排头枕屏看剧自由",
+      "前排座舱办公轻松",
+      "座椅灵活调节",
+      "内饰精致高级感",
+      "智能中控多屏交互",
+      "家庭出行舒适体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "智能座舱",
+      "家庭出行",
+      "商务办公",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "科技爱好者",
+      "追求舒适出行者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,97 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-四轮转向-8.mp4",
+  "run_id": "v2_20260426_192053_dee0f6290e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_dee0f6290e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_dee0f6290e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_dee0f6290e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_dee0f6290e/scene_001_frame_000161.webp/scene_001_frame_000161.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车停在现代城区的城市道路旁，车身光滑有光泽，背景为红砖建筑与绿树，镜头固定拍摄，光线明亮，静态展示。",
+    "subject": "黑色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "后视镜",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市道路",
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光滑",
+      "精致",
+      "现代",
+      "大气"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静谧",
+      "舒适",
+      "低风阻"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "大尺寸轮毂",
+      "贯穿式前灯",
+      "后视镜造型"
+    ],
+    "function_selling_points": [
+      "空气动力学设计",
+      "静谧座舱",
+      "舒适驾乘",
+      "稳定操控"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "购物出行",
+      "接送孩子"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "现代城区静态展示",
+      "黑色亮面车身",
+      "大轮毂设计感",
+      "城市道路优雅停靠",
+      "流畅车身线条",
+      "舒适驾乘体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态展示",
+      "城市道路",
+      "黑色汽车",
+      "大轮毂",
+      "现代城区"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户",
+      "汽车爱好者",
+      "追求设计感的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-10.mp4",
+  "run_id": "v2_20260426_225641_a7ff26360d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225641_a7ff26360d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225641_a7ff26360d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225641_a7ff26360d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225641_a7ff26360d/scene_001_frame_000176.webp/scene_001_frame_000176.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的引擎盖打开，静态展示发动机舱内部结构，包含黑色发动机罩、管线、雨刮器等部件，画面为固定机位特写，光线均匀，场景为展厅。",
+    "subject": "某汽车",
+    "object": [
+      "发动机罩",
+      "管线",
+      "雨刮器",
+      "引擎盖"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "未知",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "质感",
+      "规整"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "可靠",
+      "高效",
+      "静音"
+    ],
+    "design_selling_points": [
+      "发动机罩设计",
+      "管线布局",
+      "雨刮器设计",
+      "引擎盖结构"
+    ],
+    "function_selling_points": [
+      "动力强劲",
+      "静音舒适",
+      "稳定可靠",
+      "高效散热"
+    ],
+    "scenario_a": [
+      "日常维护",
+      "汽车展示"
+    ],
+    "scenario_b": [
+      "购车咨询",
+      "机械鉴赏"
+    ],
+    "marketing_phrases": [
+      "发动机舱设计精致",
+      "管线布局合理",
+      "动力强劲可靠",
+      "静音舒适体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "购车用户",
+      "机械爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

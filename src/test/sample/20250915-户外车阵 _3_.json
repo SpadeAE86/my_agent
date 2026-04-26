@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (3).mp4",
+  "run_id": "v2_20260426_230009_c886774e0a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_c886774e0a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_c886774e0a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_c886774e0a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_c886774e0a/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "多辆不同颜色（白、红、蓝等）的汽车在夜晚的现代建筑外广场（活动场地）静态展示，周围有围观人群，场地灯光照明，画面采用航拍视角呈现。",
+    "subject": "多辆活动展车（汽车）",
+    "object": [
+      "车身",
+      "轮毂",
+      "乘客",
+      "驾驶员"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "航拍",
+    "scene_location": [
+      "活动场地",
+      "广场",
+      "现代建筑外",
+      "现代城区"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "夜晚",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "时尚",
+      "流畅",
+      "精致",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "安全",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "大尺寸轮毂",
+      "全景天窗",
+      "贯穿式尾灯"
+    ],
+    "function_selling_points": [
+      "夜间辨识度高",
+      "外观吸引力强",
+      "静态展示体验佳",
+      "人群聚集效应好"
+    ],
+    "scenario_a": [
+      "车展参观",
+      "活动展示"
+    ],
+    "scenario_b": [
+      "城市夜游",
+      "商业活动"
+    ],
+    "marketing_phrases": [
+      "夜晚展车亮眼",
+      "多色车身吸睛",
+      "活动现场人气足",
+      "静态展示质感佳",
+      "灯光下外观精致",
+      "围观人群多"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "活动展车",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "活动参与者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

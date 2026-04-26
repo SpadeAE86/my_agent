@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (33).mp4",
+  "run_id": "v2_20260426_225832_677c5865bb",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225832_677c5865bb/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225832_677c5865bb/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225832_677c5865bb/scene_001_frame_000115.webp/scene_001_frame_000115.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车车尾展示动态互动屏内容（橙色小熊与“THANKS”文字动画），车身为蓝色并带红色线条装饰，固定机位拍摄，聚焦车尾外观设计与互动屏功能展示。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车尾互动屏",
+      "车标",
+      "车身",
+      "红色线条"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "互动",
+      "个性化",
+      "趣味"
+    ],
+    "design_selling_points": [
+      "车尾互动屏",
+      "红色线条设计",
+      "金属车标",
+      "蓝色车漆"
+    ],
+    "function_selling_points": [
+      "动态交互显示",
+      "个性化图案文字",
+      "情感化互动",
+      "车尾信息传递"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "停车场交流"
+    ],
+    "scenario_b": [
+      "商场停车",
+      "朋友聚会"
+    ],
+    "marketing_phrases": [
+      "车尾互动超有趣",
+      "小熊THANKS萌化了",
+      "蓝色车身很高级",
+      "动态车语会说话",
+      "红色线条显运动",
+      "智己LS6车尾会互动"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "外观设计"
+    ],
+    "appealing_audience": [
+      "年轻用户",
+      "科技爱好者",
+      "家庭用户",
+      "个性车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

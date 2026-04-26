@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度2 (3).mp4",
+  "run_id": "v2_20260426_230236_bc8b323db8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230236_bc8b323db8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230236_bc8b323db8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230236_bc8b323db8/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230236_bc8b323db8/scene_001_frame_000151.webp/scene_001_frame_000151.webp"
+  ],
+  "result": {
+    "description": "一辆黑色轿跑SUV静止停在林间公路旁，车身线条流畅，多辐运动轮毂搭配红色刹车卡钳，背景为茂密树林与草地，画面光线柔和、清晰。",
+    "subject": "黑色轿跑SUV",
+    "object": [
+      "车身",
+      "轮毂",
+      "红卡钳",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "公路",
+      "树林"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "大气",
+      "运动"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "静谧",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "多辐运动轮毂",
+      "红色刹车卡钳",
+      "隐藏式车门把手"
+    ],
+    "function_selling_points": [
+      "平稳驻车",
+      "静谧驾乘",
+      "高效节能",
+      "安全制动"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "周末郊游",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "林间公路静态美",
+      "黑色轿跑颜值高",
+      "运动轮毂设计感",
+      "红卡钳刹车亮眼",
+      "车身线条流畅大气"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "汽车设计"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻消费者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

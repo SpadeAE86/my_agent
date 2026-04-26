@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-冰箱-1.mp4",
+  "run_id": "v2_20260426_230338_1e87e0191e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230338_1e87e0191e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230338_1e87e0191e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230338_1e87e0191e/scene_001_frame_000098.webp/scene_001_frame_000098.webp"
+  ],
+  "result": {
+    "description": "汽车后排扶手箱（带冷藏功能）的操作过程：一只手将蓝色物品放入箱内（内有格瓦斯饮料），随后关闭箱门，触控面板显示-06℃制冷温度；画面聚焦扶手箱区域，内饰为浅米色，镜头为固定机位拍摄，光线柔和。",
+    "subject": "汽车后排冷藏扶手箱",
+    "object": [
+      "手",
+      "饮料",
+      "冷藏箱",
+      "触控面板"
+    ],
+    "movement": "冷藏箱操作",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内",
+      "后排座舱"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": true,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "高级",
+      "柔和"
+    ],
+    "function_adjectives": [
+      "制冷",
+      "便捷",
+      "智能",
+      "实用"
+    ],
+    "design_selling_points": [
+      "浅米色内饰",
+      "隐藏式冷藏箱",
+      "触控操作面板",
+      "后排空调出风口"
+    ],
+    "function_selling_points": [
+      "车载冷藏保鲜",
+      "精准温度调节",
+      "一键关闭制冷",
+      "后排独立控温"
+    ],
+    "scenario_a": [
+      "家庭长途出行",
+      "商务接待"
+    ],
+    "scenario_b": [
+      "郊游野餐",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "后排冰箱超实用",
+      "-6℃冰镇饮料",
+      "扶手箱变冰箱",
+      "触控调温很智能",
+      "关箱自动制冷",
+      "商务出行备饮品"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "产品展示",
+      "车载冷藏",
+      "内饰细节"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "自驾爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

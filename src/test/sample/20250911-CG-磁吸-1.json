@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-磁吸-1.mp4",
+  "run_id": "v2_20260426_225908_e8551fdfc3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_e8551fdfc3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_e8551fdfc3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_e8551fdfc3/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_e8551fdfc3/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "汽车内饰（含中控出风口、无线充电板、中控屏、换挡杆）静态展示，画面呈现车内精致皮质与金属装饰细节，中控屏显示车辆状态（P档、READY等），手机放置于无线充电板，镜头为车内固定机位拍摄，画面风格为CG。",
+    "subject": "汽车内饰（含中控出风口、无线充电、中控屏、换挡杆）",
+    "object": [
+      "中控出风口",
+      "无线充电板",
+      "中控屏",
+      "换挡杆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "质感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "高效",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "金属出风口",
+      "皮质内饰",
+      "无线充电板",
+      "中控大屏"
+    ],
+    "function_selling_points": [
+      "无线充电",
+      "车辆状态显示",
+      "智能座舱",
+      "便捷操控"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "车内无线充电超方便",
+      "中控设计高级感拉满",
+      "静态内饰质感十足",
+      "智能座舱一目了然",
+      "金属出风口精致细节",
+      "皮质内饰舒适体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "智能座舱",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "都市白领",
+      "商务人士",
+      "家庭用户",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

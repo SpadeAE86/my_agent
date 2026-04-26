@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车标2 (2).mp4",
+  "run_id": "v2_20260426_230213_41f346f9ce",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230213_41f346f9ce/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230213_41f346f9ce/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230213_41f346f9ce/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230213_41f346f9ce/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车的银色镀铬车标在黑色亮面车身上静态展示，背景有树林倒影，画面聚焦车标细节，清晰呈现金属质感与车漆光泽。",
+    "subject": "智己汽车车标",
+    "object": [
+      "车标",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "户外",
+      "树林"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "镀铬",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "简约",
+      "优雅",
+      "大气",
+      "独特"
+    ],
+    "design_selling_points": [
+      "车标镀铬造型",
+      "亮面黑车漆",
+      "简约设计风格",
+      "车身细节特写"
+    ],
+    "function_selling_points": [
+      "品牌辨识度提升",
+      "视觉高级感营造",
+      "精致细节体验",
+      "镀铬装饰质感"
+    ],
+    "scenario_a": [
+      "日常停车",
+      "静态展示"
+    ],
+    "scenario_b": [
+      "户外自驾",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "车标精致有质感",
+      "黑车漆亮面倒影",
+      "户外静态展示车标",
+      "镀铬装饰高级感",
+      "树林背景车标特写",
+      "智己车标设计感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "车标特写",
+      "车漆质感"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "外观党",
+      "商务用户",
+      "设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

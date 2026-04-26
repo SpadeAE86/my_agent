@@ -1,0 +1,664 @@
+{
+  "took": 9,
+  "timed_out": false,
+  "hits_total": {
+    "value": 42,
+    "relation": "eq"
+  },
+  "max_score": 4.039067,
+  "top_hits": [
+    {
+      "_id": "v2_20260426_192053_a9a8bb9123",
+      "_score": -9549512000.0
+    },
+    {
+      "_id": "v2_20260426_192053_a9a8bb9123",
+      "_score": -4422440400.0
+    },
+    {
+      "_id": "v2_20260426_192053_a9a8bb9123",
+      "_score": 4.039067
+    },
+    {
+      "_id": "v2_20260426_192053_79ab1bc362",
+      "_score": 3.9231424
+    },
+    {
+      "_id": "v2_20260426_192053_d349e1f436",
+      "_score": 2.4979737
+    },
+    {
+      "_id": "v2_20260426_192053_cb02a39338",
+      "_score": 2.054496
+    },
+    {
+      "_id": "v2_20260426_192053_8a75f47473",
+      "_score": 1.5218275
+    },
+    {
+      "_id": "v2_20260426_192053_5cfd27ee1d",
+      "_score": 1.5218275
+    },
+    {
+      "_id": "v2_20260426_192053_5eade10b93",
+      "_score": 1.5218275
+    },
+    {
+      "_id": "v2_20260426_192053_ade335fc39",
+      "_score": 0.8876511
+    }
+  ],
+  "anomaly": {
+    "huge_negative_scores": [
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": -9549512000.0,
+        "pos": 0
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": -4422440400.0,
+        "pos": 1
+      }
+    ],
+    "duplicate_ids": [
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "pos": 1,
+        "prev_pos": 0
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "pos": 2,
+        "prev_pos": 0
+      }
+    ]
+  },
+  "profile": {
+    "shards": [
+      {
+        "id": "[tRVFj6lVQ86a6Uhukx4DgA][car_interior_analysis_v2][0]",
+        "searches": 1
+      }
+    ],
+    "flattened_query_nodes_count": 36,
+    "flattened_query_nodes_head": [
+      {
+        "depth": 0,
+        "type": "HybridQuery",
+        "description": "((((function_selling_points:地 function_selling_points:库 function_selling_points:一键 function_selling_points:一 function_selling_points:键 function_selling_points:泊车) | (description:地 description:库 description:一键 description:一 description:键 description:泊车) | (marketing_phrases:地 marketing_phrases:库 marketing_phrases:一键 marketing_phrases:一 marketing_phrases:键 marketing_phrases:泊车) | (scene_location:地 scene_location:库 scene_location:一键 scene_location:一 scene_location:键 scene_location:泊车)))^0.5 | (OSKnnFloatVectorQuery:marketing_phrases_vector[0.44017166,...][100])^0.5 | (OSKnnFloatVectorQuery:function_selling_points_vector[0.11306431,...][100])^0.5 | (OSKnnFloatVectorQuery:description_vector[0.1996776,...][100])^0.5)",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 519700,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 1,
+        "type": "BoostQuery",
+        "description": "(((function_selling_points:地 function_selling_points:库 function_selling_points:一键 function_selling_points:一 function_selling_points:键 function_selling_points:泊车) | (description:地 description:库 description:一键 description:一 description:键 description:泊车) | (marketing_phrases:地 marketing_phrases:库 marketing_phrases:一键 marketing_phrases:一 marketing_phrases:键 marketing_phrases:泊车) | (scene_location:地 scene_location:库 scene_location:一键 scene_location:一 scene_location:键 scene_location:泊车)))^0.5",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 420401,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 14000,
+          "avg_compute_max_score_count": 4
+        }
+      },
+      {
+        "depth": 2,
+        "type": "BooleanQuery",
+        "description": "description:地 description:库 description:一键 description:一 description:键 description:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 164300,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 4601,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "description:地",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 44699,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 603,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "description:库",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 13100,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 404,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "description:一键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4498,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 304,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "description:一",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 3102,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 402,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "description:键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4800,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 304,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "description:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4199,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 304,
+          "avg_compute_max_score_count": 6
+        }
+      },
+      {
+        "depth": 2,
+        "type": "BooleanQuery",
+        "description": "marketing_phrases:地 marketing_phrases:库 marketing_phrases:一键 marketing_phrases:一 marketing_phrases:键 marketing_phrases:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 44201,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 14102,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "marketing_phrases:地",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4701,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 3805,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "marketing_phrases:库",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 3199,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 405,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "marketing_phrases:一键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 5000,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 602,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "marketing_phrases:一",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 3101,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 207,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "marketing_phrases:键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4000,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 505,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "marketing_phrases:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 3200,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 206,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 2,
+        "type": "BooleanQuery",
+        "description": "scene_location:地 scene_location:库 scene_location:一键 scene_location:一 scene_location:键 scene_location:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 45600,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 1601,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "scene_location:地",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4401,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 404,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "scene_location:库",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 2999,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 207,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "scene_location:一键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 601,
+          "avg_build_scorer_count": 1,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "scene_location:一",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 200,
+          "avg_build_scorer_count": 1,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "scene_location:键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 100,
+          "avg_build_scorer_count": 1,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "scene_location:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 100,
+          "avg_build_scorer_count": 1,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 2,
+        "type": "BooleanQuery",
+        "description": "function_selling_points:地 function_selling_points:库 function_selling_points:一键 function_selling_points:一 function_selling_points:键 function_selling_points:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 98099,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 3801,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "function_selling_points:地",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 21500,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 206,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "function_selling_points:库",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 100,
+          "avg_build_scorer_count": 1,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "function_selling_points:一键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 15800,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 405,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "function_selling_points:一",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 5000,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 305,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "function_selling_points:键",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 4100,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 107,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 3,
+        "type": "TermQuery",
+        "description": "function_selling_points:泊车",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 3699,
+          "avg_build_scorer_count": 3,
+          "avg_compute_max_score": 701,
+          "avg_compute_max_score_count": 8
+        }
+      },
+      {
+        "depth": 1,
+        "type": "BoostQuery",
+        "description": "(OSKnnFloatVectorQuery:marketing_phrases_vector[0.44017166,...][100])^0.5",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 8900,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 202,
+          "avg_compute_max_score_count": 4
+        }
+      },
+      {
+        "depth": 2,
+        "type": "OSKnnFloatVectorQuery",
+        "description": "OSKnnFloatVectorQuery:marketing_phrases_vector[0.44017166,...][100]",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 0,
+          "avg_build_scorer_count": 0,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 1,
+        "type": "BoostQuery",
+        "description": "(OSKnnFloatVectorQuery:function_selling_points_vector[0.11306431,...][100])^0.5",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 29399,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 401,
+          "avg_compute_max_score_count": 5
+        }
+      },
+      {
+        "depth": 2,
+        "type": "OSKnnFloatVectorQuery",
+        "description": "OSKnnFloatVectorQuery:function_selling_points_vector[0.11306431,...][100]",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 0,
+          "avg_build_scorer_count": 0,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      },
+      {
+        "depth": 1,
+        "type": "BoostQuery",
+        "description": "(OSKnnFloatVectorQuery:description_vector[0.1996776,...][100])^0.5",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 26199,
+          "avg_build_scorer_count": 2,
+          "avg_compute_max_score": 102,
+          "avg_compute_max_score_count": 3
+        }
+      },
+      {
+        "depth": 2,
+        "type": "OSKnnFloatVectorQuery",
+        "description": "OSKnnFloatVectorQuery:description_vector[0.1996776,...][100]",
+        "time": null,
+        "breakdown_top": {
+          "advance": 0,
+          "advance_count": 0,
+          "avg_advance": 0,
+          "avg_advance_count": 0,
+          "avg_build_scorer": 0,
+          "avg_build_scorer_count": 0,
+          "avg_compute_max_score": 0,
+          "avg_compute_max_score_count": 0
+        }
+      }
+    ]
+  }
+}

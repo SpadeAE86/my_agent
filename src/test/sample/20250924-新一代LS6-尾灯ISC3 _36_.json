@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC3 (36).mp4",
+  "run_id": "v2_20260426_230133_947a66561b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230133_947a66561b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230133_947a66561b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230133_947a66561b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230133_947a66561b/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地库（室内停车场）中掉头，车身带有黑白伪装涂装，尾部贯穿式尾灯亮起，周围环境为现代风格的室内空间，天花板有镂空灯光设计，地面有标识线，镜头为车外跟拍视角，画面光线柔和。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "轮毂",
+      "伪装涂装"
+    ],
+    "movement": "掉头",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "伪装涂装",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "神秘",
+      "现代"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "灵活",
+      "精准",
+      "轻松"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流线车身",
+      "伪装涂装",
+      "镂空轮毂"
+    ],
+    "function_selling_points": [
+      "精准转向",
+      "灵活掉头",
+      "稳定行驶",
+      "轻松泊车"
+    ],
+    "scenario_a": [
+      "地库掉头",
+      "室内停车",
+      "地库行驶",
+      "停车转向"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "日常出行",
+      "商务出行",
+      "短途驾驶"
+    ],
+    "marketing_phrases": [
+      "地库灵活掉头",
+      "贯穿尾灯醒目",
+      "伪装涂装神秘",
+      "地库一把掉头",
+      "停车轻松转向",
+      "室内行驶稳定"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "设计展示",
+      "功能展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "新手司机",
+      "城市车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

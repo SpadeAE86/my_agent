@@ -1,0 +1,83 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-座椅细节.mp4",
+  "run_id": "v2_20260426_225317_b6b1de1616",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_b6b1de1616/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_b6b1de1616/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_b6b1de1616/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_b6b1de1616/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_b6b1de1616/scene_001_frame_000202.webp/scene_001_frame_000202.webp"
+  ],
+  "result": {
+    "description": "画面展示汽车的白色真皮座椅，带有细密缝线与透气孔设计，镜头为固定机位近距离拍摄，光线柔和，清晰呈现座椅的材质与工艺细节。",
+    "subject": "汽车真皮座椅",
+    "object": [
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "细腻",
+      "精致",
+      "透气",
+      "高档"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "透气",
+      "柔软",
+      "支撑"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "透气孔设计",
+      "缝线工艺",
+      "高档材质"
+    ],
+    "function_selling_points": [
+      "座椅透气",
+      "舒适承托",
+      "真皮体验",
+      "人体工学"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "长途驾驶"
+    ],
+    "marketing_phrases": [
+      "座椅透气不闷",
+      "真皮座椅更舒适",
+      "细腻缝线显品质",
+      "久坐不累支撑好"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰细节",
+      "座椅体验"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

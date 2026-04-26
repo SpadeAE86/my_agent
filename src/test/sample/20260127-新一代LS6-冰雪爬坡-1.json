@@ -1,0 +1,98 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260127-新一代LS6-冰雪爬坡-1.mp4",
+  "run_id": "v2_20260426_192053_a883267029",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_a883267029/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_a883267029/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_a883267029/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_a883267029/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在冰雪覆盖的坡道及路面行驶，背景为晴朗蓝天，路面有积雪与冰面，画面中可见车辆尾部、侧面（含黑色轮毂、红色贯穿尾灯）及一名人员在坡道旁。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "轮毂",
+      "尾灯",
+      "驾驶员",
+      "车窗"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "冰雪",
+      "坡道",
+      "雪地"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "精致",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "强劲",
+      "防滑",
+      "高效"
+    ],
+    "design_selling_points": [
+      "贯穿尾灯",
+      "黑色轮毂",
+      "溜背造型",
+      "品牌标识"
+    ],
+    "function_selling_points": [
+      "冰雪爬坡",
+      "防滑性能",
+      "稳定操控",
+      "强劲动力"
+    ],
+    "scenario_a": [
+      "雪地驾驶",
+      "冬季出行",
+      "坡道挑战",
+      "北方用车"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "家庭出行",
+      "户外探险"
+    ],
+    "marketing_phrases": [
+      "冰雪爬坡稳",
+      "北方用车无忧",
+      "雪地行驶安全",
+      "坡道轻松过",
+      "晴天颜值高",
+      "黑色轮毂酷"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "冰雪驾驶",
+      "坡道挑战",
+      "北方用车",
+      "汽车性能",
+      "外观设计"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "家庭用户",
+      "汽车爱好者",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "2160x3840"
+  },
+  "success": true,
+  "cached": true
+}

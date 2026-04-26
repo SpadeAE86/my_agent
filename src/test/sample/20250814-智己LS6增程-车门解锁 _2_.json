@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门解锁 (2).mp4",
+  "run_id": "v2_20260426_225632_51430a5973",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225632_51430a5973/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225632_51430a5973/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225632_51430a5973/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225632_51430a5973/scene_001_frame_000148.webp/scene_001_frame_000148.webp"
+  ],
+  "result": {
+    "description": "汽车的NFC感应区域特写，黑色车身面板上带有NFC标识，周围搭配银色饰条，镜头为固定机位特写，光线明亮清晰，展示细节。",
+    "subject": "汽车NFC感应区域",
+    "object": [
+      "车身面板",
+      "NFC标识",
+      "银色饰条",
+      "黑色车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "简约",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "智能",
+      "高效",
+      "安全"
+    ],
+    "design_selling_points": [
+      "NFC感应区域",
+      "车身面板",
+      "银色饰条",
+      "黑色涂装"
+    ],
+    "function_selling_points": [
+      "NFC无感解锁",
+      "无钥匙进入",
+      "智能感应开门",
+      "便捷解锁"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行",
+      "购物停车",
+      "上班代步"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "长途旅行",
+      "商务出行",
+      "家庭自驾"
+    ],
+    "marketing_phrases": [
+      "靠近即解锁，不用掏钥匙",
+      "车身NFC感应，一贴开门",
+      "无钥匙进入更省心",
+      "NFC解锁超便捷",
+      "汽车NFC设计精致",
+      "黑色车身配银色饰条"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "汽车细节",
+      "NFC功能"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "追求便捷的车主",
+      "汽车用户",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

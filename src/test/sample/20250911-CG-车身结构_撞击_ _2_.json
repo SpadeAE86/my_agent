@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-车身结构（撞击） (2).mp4",
+  "run_id": "v2_20260426_192053_fddc2e284c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_fddc2e284c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_fddc2e284c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_fddc2e284c/scene_001_frame_000092.webp/scene_001_frame_000092.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的CG结构以透明化（X光风格）呈现，背景纯黑，固定机位展示车身骨架与橙色结构件，突出车身结构设计。",
+    "subject": "汽车车身结构",
+    "object": [
+      "车身骨架",
+      "结构件"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "未知"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "未知",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "未知",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "科技感",
+      "轻量化",
+      "坚固",
+      "简洁"
+    ],
+    "function_adjectives": [
+      "安全",
+      "稳定",
+      "高效",
+      "可靠"
+    ],
+    "design_selling_points": [
+      "车身骨架",
+      "轻量化结构",
+      "高强度设计",
+      "模块化布局"
+    ],
+    "function_selling_points": [
+      "安全防护",
+      "稳定支撑",
+      "高效传动",
+      "轻量化节能"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "越野驾驶"
+    ],
+    "marketing_phrases": [
+      "车身结构安全可靠",
+      "轻量化设计更省油",
+      "CG解析车身骨架",
+      "高强度车身保安全",
+      "模块化结构易维护",
+      "透明化展示科技感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "结构解析",
+      "汽车科技"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "安全关注者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "1620x1080"
+  },
+  "success": true,
+  "cached": true
+}

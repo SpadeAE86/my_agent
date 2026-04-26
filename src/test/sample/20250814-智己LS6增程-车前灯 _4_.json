@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车前灯 (4).mp4",
+  "run_id": "v2_20260426_225531_f0d815100e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225531_f0d815100e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225531_f0d815100e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225531_f0d815100e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225531_f0d815100e/scene_001_frame_000131.webp/scene_001_frame_000131.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色汽车的前大灯与车身局部特写，大灯设计精致，灯带明亮，车身线条流畅，画面光线均匀，背景简洁，呈现静态展示效果。",
+    "subject": "蓝色汽车（前大灯特写）",
+    "object": [
+      "大灯",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "醒目",
+      "清晰",
+      "安全",
+      "亮眼"
+    ],
+    "design_selling_points": [
+      "大灯设计",
+      "车身线条",
+      "车漆质感",
+      "灯组造型"
+    ],
+    "function_selling_points": [
+      "LED大灯照明",
+      "夜间辨识度高",
+      "灯组科技感",
+      "安全照明"
+    ],
+    "scenario_a": [
+      "城市通勤（夜间）",
+      "日常出行（夜间）"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "周末自驾（夜间）"
+    ],
+    "marketing_phrases": [
+      "大灯设计精致",
+      "蓝色车漆亮眼",
+      "夜间行车更醒目",
+      "车身线条流畅",
+      "灯组科技感十足",
+      "安全照明提升"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "夜间行车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "夜间驾驶者",
+      "外观追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

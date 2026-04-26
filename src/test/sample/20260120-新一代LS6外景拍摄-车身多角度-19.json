@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-19.mp4",
+  "run_id": "v2_20260426_230524_a876c42347",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230524_a876c42347/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230524_a876c42347/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230524_a876c42347/scene_001_frame_000119.webp/scene_001_frame_000119.webp"
+  ],
+  "result": {
+    "description": "一辆智己LS6汽车（黑色亮面）在现代城区的老建筑街道旁静态展示，背景为晴朗白天的街道、红砖建筑与城市道路，镜头为车外固定机位拍摄，车身线条流畅，车灯设计精致。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车灯",
+      "轮毂",
+      "前脸"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "老建筑街道",
+      "城市道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "智能",
+      "低风阻"
+    ],
+    "design_selling_points": [
+      "前脸设计",
+      "车灯组",
+      "轮毂",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "舒适座舱",
+      "低风阻设计",
+      "稳定操控"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "智己LS6黑武士外观",
+      "老建筑街道静态美",
+      "现代城区出行利器",
+      "精致车灯设计",
+      "流畅车身线条",
+      "城市道路静态展示"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

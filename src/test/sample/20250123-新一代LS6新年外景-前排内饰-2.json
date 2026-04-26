@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-前排内饰-2.mp4",
+  "run_id": "v2_20260426_225205_5b3d8703f4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_5b3d8703f4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_5b3d8703f4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_5b3d8703f4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_5b3d8703f4/scene_001_frame_000122.webp/scene_001_frame_000122.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内饰静态展示，可见方向盘、中控大屏、灰色座椅、全景天窗，车内摆放红色装饰玩偶与红包，背景为欧式建筑风格的现代城区街道，画面明亮清晰，时间显示12:30。",
+    "subject": "汽车内饰",
+    "object": [
+      "方向盘",
+      "中控屏",
+      "座椅",
+      "天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "现代城区"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "高级",
+      "柔和",
+      "精致"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "智能",
+      "宽敞",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "大尺寸中控屏",
+      "全景天窗",
+      "简约方向盘"
+    ],
+    "function_selling_points": [
+      "智能座舱",
+      "舒适驾乘",
+      "全景天窗采光",
+      "内饰静谧性"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "内饰简约高级",
+      "智能座舱体验佳",
+      "全景天窗采光好",
+      "座椅舒适驾乘",
+      "城市通勤好伙伴",
+      "家庭出行更舒适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "智能座舱",
+      "舒适驾乘"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市白领",
+      "汽车爱好者",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

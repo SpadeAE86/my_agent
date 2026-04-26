@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC1 (9).mp4",
+  "run_id": "v2_20260426_230115_1f4c69a416",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_1f4c69a416/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_1f4c69a416/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_1f4c69a416/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_1f4c69a416/scene_001_frame_000154.webp/scene_001_frame_000154.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车停在现代城区的道路旁（红砖建筑旁），车身呈深色，尾灯动态显示小狗、机器人等图案，镜头为固定机位拍摄，光线明亮，展示汽车静态外观与灯语交互效果。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "轮毂",
+      "后窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "光泽",
+      "动感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "互动",
+      "有趣",
+      "科技感"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "运动轮毂",
+      "溜背车身",
+      "光泽车漆"
+    ],
+    "function_selling_points": [
+      "灯语交互",
+      "智能显示",
+      "趣味灯效",
+      "科技灯语"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "购物停车"
+    ],
+    "marketing_phrases": [
+      "尾灯会“卖萌”",
+      "溜背造型超动感",
+      "城市道路颜值担当",
+      "智己LS6静态展示",
+      "轮毂设计很运动",
+      "车漆光泽感拉满"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "灯语交互",
+      "城市出行"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "科技爱好者",
+      "年轻用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -44,3 +44,9 @@ class Float:
     def __init__(self):
         pass
 
+
+class Boolean:
+    """Boolean field stored as boolean in OpenSearch."""
+    def __init__(self):
+        pass
+

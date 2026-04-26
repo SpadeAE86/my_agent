@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-21.mp4",
+  "run_id": "v2_20260426_225205_7481286f42",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7481286f42/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7481286f42/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7481286f42/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7481286f42/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车在城市弯道道路上行驶，车内POV视角展示方向盘、中控大屏、驾驶员，前方有卡车、轿车，道路旁绿植环绕，天气阴天，光线柔和，画面清晰。",
+    "subject": "智己汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "驾驶员",
+      "挡风玻璃"
+    ],
+    "movement": "转弯",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "城市道路",
+      "弯道",
+      "绿化带",
+      "现代城区"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "简洁",
+      "现代",
+      "科技感",
+      "精致"
+    ],
+    "function_adjectives": [
+      "流畅",
+      "稳定",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "中控连屏",
+      "简约方向盘",
+      "浅色内饰",
+      "科技座舱"
+    ],
+    "function_selling_points": [
+      "智能导航",
+      "弯道跟车",
+      "驾驶辅助",
+      "大屏交互"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "弯道跟车",
+      "日常驾驶",
+      "市区出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "长途驾驶",
+      "家庭出行",
+      "商务通勤"
+    ],
+    "marketing_phrases": [
+      "城市弯道跟车稳",
+      "中控大屏导航清",
+      "POV视角看驾驶",
+      "阴天驾驶视线好",
+      "简约方向盘操控顺",
+      "市区道路行驶畅"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "家庭用户",
+      "新手司机",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

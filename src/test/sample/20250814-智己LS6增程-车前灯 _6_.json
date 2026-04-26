@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车前灯 (6).mp4",
+  "run_id": "v2_20260426_225533_ae485b0694",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_ae485b0694/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_ae485b0694/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_ae485b0694/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_ae485b0694/scene_001_frame_000156.webp/scene_001_frame_000156.webp"
+  ],
+  "result": {
+    "description": "一辆黑色智己汽车在展厅的展台转盘上静态展示，镜头依次拍摄前大灯、轮毂、车身线条等外观细节，背景为灰色简洁墙面，光线明亮清晰，突出灯组设计、车身线条与车漆质感。",
+    "subject": "智己汽车",
+    "object": [
+      "前大灯",
+      "轮毂",
+      "车漆",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "空气动力学",
+      "夜间辨识度高"
+    ],
+    "design_selling_points": [
+      "前大灯设计",
+      "轮毂造型",
+      "车身线条",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "空气动力学设计",
+      "大灯夜间辨识度"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态品鉴",
+      "外观欣赏",
+      "设计评测"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "城市出行",
+      "夜间驾驶",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "灯组设计超精致",
+      "黑色亮漆显高级",
+      "展台转盘看外观",
+      "车身线条超流畅",
+      "大灯夜间更醒目",
+      "智己汽车静态展示"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "汽车美学"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "设计爱好者",
+      "购车用户",
+      "城市白领"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

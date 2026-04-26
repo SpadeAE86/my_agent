@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-充电口 (1).mp4",
+  "run_id": "v2_20260426_225340_6c91093259",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225340_6c91093259/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225340_6c91093259/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225340_6c91093259/scene_001_frame_000094.webp/scene_001_frame_000094.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色电动汽车的充电口舱门处于打开状态，特写展示充电口、尾灯、后视镜及车身细节，背景为简洁的室内展厅环境，镜头为固定机位拍摄，光线明亮清晰，呈现车辆外观设计细节。",
+    "subject": "蓝色电动汽车",
+    "object": [
+      "充电口",
+      "尾灯",
+      "后视镜",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "现代",
+      "质感"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "高效",
+      "安全",
+      "智能"
+    ],
+    "design_selling_points": [
+      "充电口舱门设计",
+      "尾灯一体化设计",
+      "车身流线型",
+      "后视镜造型"
+    ],
+    "function_selling_points": [
+      "双充电接口",
+      "快充支持",
+      "充电舱门防护",
+      "智能充电"
+    ],
+    "scenario_a": [
+      "日常充电",
+      "城市通勤",
+      "家用补能",
+      "展厅体验"
+    ],
+    "scenario_b": [
+      "长途出行补能",
+      "户外露营充电",
+      "商务出行补能",
+      "冬季充电"
+    ],
+    "marketing_phrases": [
+      "充电口设计真精致",
+      "双接口充电更便捷",
+      "日常补能超轻松",
+      "展厅静态展示细节",
+      "车身线条超流畅",
+      "尾灯设计很亮眼"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "细节特写",
+      "汽车设计",
+      "充电口展示"
+    ],
+    "appealing_audience": [
+      "电动汽车用户",
+      "家庭车主",
+      "城市通勤者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

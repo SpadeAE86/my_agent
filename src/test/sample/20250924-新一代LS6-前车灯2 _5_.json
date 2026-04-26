@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯2 (5).mp4",
+  "run_id": "v2_20260426_230029_554f7d4916",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230029_554f7d4916/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230029_554f7d4916/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230029_554f7d4916/scene_001_frame_000107.webp/scene_001_frame_000107.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车（如智己LS6）在城市绿化道路旁静态展示，画面聚焦车辆前部，呈现精致前灯组、流畅车身线条、亮黑车漆与独特后视镜造型，背景为阴天白天的绿树道路，镜头固定机位拍摄，画面清晰柔和。",
+    "subject": "黑色智己LS6汽车",
+    "object": [
+      "前灯组",
+      "车身",
+      "后视镜",
+      "前轮胎"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市道路",
+      "绿化道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "现代",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "安全",
+      "稳定",
+      "高效"
+    ],
+    "design_selling_points": [
+      "前灯组设计",
+      "车身线条",
+      "亮黑车漆",
+      "后视镜造型"
+    ],
+    "function_selling_points": [
+      "智能照明",
+      "空气动力学设计",
+      "安全车身",
+      "高效散热"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "休闲自驾"
+    ],
+    "marketing_phrases": [
+      "城市道路颜值担当",
+      "前灯设计独特吸睛",
+      "亮黑车漆质感拉满",
+      "通勤出行回头率高",
+      "商务场合尽显格调",
+      "静态外观精致高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "城市通勤"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者",
+      "设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

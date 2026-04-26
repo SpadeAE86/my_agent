@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC3 (7).mp4",
+  "run_id": "v2_20260426_230135_c4e70499e0",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230135_c4e70499e0/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230135_c4e70499e0/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230135_c4e70499e0/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230135_c4e70499e0/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在装饰有星点灯光的地下车库内静态展示，车身为黑色，车尾贯穿式尾灯醒目，地库环境整洁，天花板有密集灯光装饰，镜头为固定机位拍摄，画面光线柔和。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "贯穿式尾灯",
+      "轮毂",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "炫酷",
+      "大气"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "科技感",
+      "优雅"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "黑色车漆",
+      "动感车身轮廓",
+      "多辐式轮毂"
+    ],
+    "function_selling_points": [
+      "静谧驾乘空间",
+      "舒适乘坐体验",
+      "车身稳定姿态",
+      "科技氛围营造"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "日常通勤"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "地库静态展示智己LS6",
+      "黑色车漆质感十足",
+      "贯穿式尾灯超吸睛",
+      "地库停车场景适配"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

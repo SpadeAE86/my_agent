@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (5).mp4",
+  "run_id": "v2_20260426_230011_8a71e9910a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230011_8a71e9910a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230011_8a71e9910a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230011_8a71e9910a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230011_8a71e9910a/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "多辆智己LS6汽车在室外活动场地静态展示，周围有气球装饰、宣传展板，人群在场地内活动，背景为现代建筑与树木，天空阴天，画面为原创实拍，镜头风格手持。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "行人"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "手持",
+    "scene_location": [
+      "室外活动场地",
+      "现代城区",
+      "展厅外"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "时尚",
+      "精致",
+      "大气",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "安全",
+      "高效"
+    ],
+    "design_selling_points": [
+      "前脸设计",
+      "轮毂造型",
+      "车身线条",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "大空间",
+      "快充",
+      "舒适座舱"
+    ],
+    "scenario_a": [
+      "新车上市",
+      "展厅看车",
+      "活动体验"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "城市通勤",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "智己LS6新车上市",
+      "活动现场看车",
+      "多种颜色可选",
+      "外观时尚大气",
+      "智能SUV首选",
+      "静态展示质感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "新车上市",
+      "活动现场"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

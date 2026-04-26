@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-车身多角度 (1).mp4",
+  "run_id": "v2_20260426_225913_7760956b5f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225913_7760956b5f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225913_7760956b5f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225913_7760956b5f/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225913_7760956b5f/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区的街道上执行掉头动作，背景为现代建筑与晴朗蓝天，车身呈蓝色，轮毂设计精致，镜头采用航拍视角，画面光线明亮清晰，展示车辆外观设计细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车顶",
+      "车窗"
+    ],
+    "movement": "掉头",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "建筑旁",
+      "铺装路面"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "灵活",
+      "舒适",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "车顶造型",
+      "车窗边框"
+    ],
+    "function_selling_points": [
+      "城市掉头",
+      "转向精准",
+      "智能驾驶",
+      "驾乘舒适"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "街道掉头",
+      "日常出行",
+      "建筑旁停车"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "商务接待",
+      "家庭代步",
+      "长途自驾"
+    ],
+    "marketing_phrases": [
+      "现代城区掉头轻松",
+      "智己LS6蓝色吸睛",
+      "街道行驶灵活自如",
+      "晴天出行颜值在线",
+      "轮毂精致显档次",
+      "车身线条流畅动感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "城市通勤",
+      "智能汽车"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户",
+      "年轻消费者",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4320x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-摄像头3 (2).mp4",
+  "run_id": "v2_20260426_230145_cef030bbcf",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230145_cef030bbcf/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230145_cef030bbcf/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230145_cef030bbcf/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230145_cef030bbcf/scene_001_frame_000151.webp/scene_001_frame_000151.webp"
+  ],
+  "result": {
+    "description": "智己汽车的车门把手区域特写，车门把手带有摄像头与“IM VISION”标识，黑色车身表面呈现光影纹理，固定机位拍摄室内静态外观细节。",
+    "subject": "智己汽车（车门把手区域）",
+    "object": [
+      "车门把手",
+      "摄像头",
+      "车身",
+      "IM VISION标识"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "科技感",
+      "高级",
+      "质感细腻"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "安全",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "车门把手",
+      "摄像头",
+      "IM VISION标识",
+      "黑色车漆"
+    ],
+    "function_selling_points": [
+      "智能感知",
+      "高清影像",
+      "无钥匙进入",
+      "环境感知"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "智己车门把手带摄像头",
+      "IM VISION标识显科技",
+      "黑色车身质感高级",
+      "智能感知更安全",
+      "日常出行更便捷",
+      "商务出行显档次"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "智能感知"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市通勤者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车轮-1.mp4",
+  "run_id": "v2_20260426_230606_6802e78e4f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230606_6802e78e4f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230606_6802e78e4f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230606_6802e78e4f/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230606_6802e78e4f/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车的轮毂、轮胎及红色刹车卡钳在展厅内静态展示，画面聚焦车侧及轮毂特写，背景为现代展厅空间（光滑地面、简洁墙面），车身呈哑光黑色，轮毂设计精致，刹车卡钳色彩鲜艳，光线明亮清晰。",
+    "subject": "智己汽车",
+    "object": [
+      "轮毂",
+      "轮胎",
+      "刹车卡钳"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "哑光黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "运动",
+      "哑光",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "制动高效",
+      "抓地稳定",
+      "静音舒适",
+      "操控精准"
+    ],
+    "design_selling_points": [
+      "哑光车漆",
+      "运动轮毂",
+      "红色刹车卡钳",
+      "精致轮毂设计"
+    ],
+    "function_selling_points": [
+      "高性能制动",
+      "宽胎抓地",
+      "静音舒适",
+      "精准操控"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "展厅看车",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "赛道体验",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "哑光黑车漆高级感",
+      "红色卡钳运动范",
+      "运动轮毂抓地稳",
+      "展厅实拍细节拉满",
+      "制动高效安全",
+      "宽胎静音舒适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "性能展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻车主",
+      "性能车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

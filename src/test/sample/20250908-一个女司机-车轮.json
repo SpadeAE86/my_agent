@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250908-一个女司机-车轮.mp4",
+  "run_id": "v2_20260426_225722_b9a738a9e9",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225722_b9a738a9e9/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225722_b9a738a9e9/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225722_b9a738a9e9/scene_001_frame_000073.webp/scene_001_frame_000073.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车在现代城区的公路上行驶，镜头贴近车轮进行跟拍，背景可见粉色建筑、绿植与停靠的车辆，天气为阴天，时间为白天，画面清晰展示车身、轮毂及行驶动态。",
+    "subject": "黑色汽车",
+    "object": [
+      "轮毂",
+      "车身",
+      "后视镜"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "现代城区",
+      "公路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "炫酷",
+      "动感"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "顺滑",
+      "高效",
+      "安静"
+    ],
+    "design_selling_points": [
+      "轮毂设计",
+      "车身线条",
+      "后视镜造型",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "平稳行驶",
+      "高效动力",
+      "低噪行驶",
+      "精准转向"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "短途旅行"
+    ],
+    "marketing_phrases": [
+      "城市道路行驶稳",
+      "轮毂设计超带感",
+      "阴天出行也清晰",
+      "日常代步好选择",
+      "车身线条流畅",
+      "低噪行驶更舒适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

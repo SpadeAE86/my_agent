@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260226-陈龙-后备箱空间-1.mp4",
+  "run_id": "v2_20260426_230613_5a6b5b5af6",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230613_5a6b5b5af6/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230613_5a6b5b5af6/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230613_5a6b5b5af6/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230613_5a6b5b5af6/scene_001_frame_000124.webp/scene_001_frame_000124.webp"
+  ],
+  "result": {
+    "description": "智己汽车（上汽集团标识）的后备箱自动开启，一名男子手持购物袋准备放置物品，背景为城市街道、树木与居民建筑，画面明亮（晴天白天），镜头为固定机位拍摄，车色为蓝色，展示后备箱储物空间与开启功能。",
+    "subject": "智己汽车（上汽集团）",
+    "object": [
+      "后备箱",
+      "购物袋",
+      "男子"
+    ],
+    "movement": "开启后备箱",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市街道",
+      "居民区"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "智能",
+      "高效"
+    ],
+    "design_selling_points": [
+      "溜背车身",
+      "蓝色车漆",
+      "贯穿尾灯",
+      "掀背后备箱"
+    ],
+    "function_selling_points": [
+      "电动后备箱开启",
+      "大储物空间",
+      "智能感应开启",
+      "购物便捷储物"
+    ],
+    "scenario_a": [
+      "购物出行",
+      "城市通勤",
+      "日常代步",
+      "家庭用车"
+    ],
+    "scenario_b": [
+      "周末采购",
+      "短途出行",
+      "生活服务",
+      "社区出行"
+    ],
+    "marketing_phrases": [
+      "购物放袋超方便",
+      "电动后备箱一键开",
+      "城市出行好帮手",
+      "家用储物大空间",
+      "智己蓝车颜值高",
+      "晴天出行更舒心"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "家庭用车",
+      "城市出行"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "购物爱好者",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1920x3414"
+  },
+  "success": true
+}

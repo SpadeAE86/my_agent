@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (7).mp4",
+  "run_id": "v2_20260426_230324_b718a34d96",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230324_b718a34d96/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230324_b718a34d96/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230324_b718a34d96/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230324_b718a34d96/scene_001_frame_000143.webp/scene_001_frame_000143.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地库通道内向前行驶，地库顶部有镂空灯光装饰，墙面暖光照明，车身黑色，前灯亮起，画面光线柔和，构图清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "轮毂"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "智能",
+      "高效",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "前灯设计",
+      "黑色车漆",
+      "轮毂造型"
+    ],
+    "function_selling_points": [
+      "智能大灯",
+      "流畅操控",
+      "地库行驶稳定",
+      "高效动力输出"
+    ],
+    "scenario_a": [
+      "地库行驶",
+      "日常通勤",
+      "城市出行",
+      "夜间出行"
+    ],
+    "scenario_b": [
+      "周末购物",
+      "商务出行",
+      "长途驾驶",
+      "停车入库"
+    ],
+    "marketing_phrases": [
+      "地库行驶稳",
+      "夜间大灯亮",
+      "黑武士颜值",
+      "智己LS6地库穿梭",
+      "城市通勤利器",
+      "夜间出行安全"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "地库场景",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "夜间出行用户",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

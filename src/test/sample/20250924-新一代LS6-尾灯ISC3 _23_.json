@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC3 (23).mp4",
+  "run_id": "v2_20260426_230128_c2eb3fa3d7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_c2eb3fa3d7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_c2eb3fa3d7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_c2eb3fa3d7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_c2eb3fa3d7/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代风格地下车库（地库）中静态展示，车尾视角，车顶几何灯光投影于车身，清晰呈现贯穿式尾灯、亮黑车漆与车尾品牌标识，环境光线柔和，聚焦车辆尾部设计与地库空间氛围。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "高级",
+      "简约"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "稳定",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "亮黑车漆",
+      "简约车尾",
+      "品牌标识"
+    ],
+    "function_selling_points": [
+      "静音降噪",
+      "稳定驻车",
+      "智能灯控",
+      "快速响应"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "日常通勤"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "亮黑车漆高级感拉满",
+      "贯穿尾灯太吸睛",
+      "智己LS6车尾设计绝了",
+      "地库静态展质感佳",
+      "简约车尾设计感",
+      "地库专属氛围感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "静态美学",
+      "地库场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "设计爱好者",
+      "城市通勤族",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

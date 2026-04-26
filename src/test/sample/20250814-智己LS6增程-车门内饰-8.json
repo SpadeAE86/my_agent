@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门内饰-8.mp4",
+  "run_id": "v2_20260426_225628_2b243a3612",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225628_2b243a3612/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225628_2b243a3612/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225628_2b243a3612/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225628_2b243a3612/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225628_2b243a3612/scene_001_frame_000183.webp/scene_001_frame_000183.webp"
+  ],
+  "result": {
+    "description": "汽车车门内饰细节特写，展示座椅调节按钮、圆形音响、皮质面料及金属饰条，镜头为固定机位特写，清晰呈现内饰设计与材质质感。",
+    "subject": "汽车车门内饰部件",
+    "object": [
+      "座椅调节按钮",
+      "音响",
+      "车门内饰板",
+      "皮质面料"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "细腻",
+      "高级"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "人性化",
+      "易用",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "座椅调节按钮",
+      "圆形音响",
+      "金属饰条",
+      "皮质面料"
+    ],
+    "function_selling_points": [
+      "座椅电动调节",
+      "音响系统",
+      "内饰触感舒适",
+      "操作便捷"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步",
+      "车内休憩",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "短途接送",
+      "自驾旅行",
+      "办公出行"
+    ],
+    "marketing_phrases": [
+      "内饰精致触感佳",
+      "座椅调节一键操作",
+      "圆形音响显高级",
+      "皮质内饰更舒适",
+      "金属饰条增质感",
+      "车内细节见品质"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰细节",
+      "汽车部件特写"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "注重内饰品质的消费者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

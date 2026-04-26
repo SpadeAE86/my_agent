@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-14.mp4",
+  "run_id": "v2_20260426_230515_0db857cabd",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230515_0db857cabd/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230515_0db857cabd/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230515_0db857cabd/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230515_0db857cabd/scene_001_frame_000143.webp/scene_001_frame_000143.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车静止停放在老城区街道旁，背景为红砖建筑，车身呈亮黑色且表面反光，车头设计现代感强，镜头为固定机位拍摄，光线明亮，整体展现车辆静态外观。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车头",
+      "轮毂",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "老城区街道",
+      "城市道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "流畅",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "静谧",
+      "安全"
+    ],
+    "design_selling_points": [
+      "车头灯组",
+      "车身线条",
+      "轮毂设计",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "停车稳定",
+      "驾乘舒适",
+      "隔音静谧",
+      "车身安全"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "街道停车"
+    ],
+    "scenario_b": [
+      "日常出行",
+      "老城区穿梭"
+    ],
+    "marketing_phrases": [
+      "老城区街道的亮黑智己LS6",
+      "现代感车头设计超吸睛",
+      "亮黑色车漆质感拉满",
+      "城市出行时尚座驾",
+      "静态展示智己LS6外观",
+      "老城区街拍风汽车"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "城市出行",
+      "老城区街道"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车设计爱好者",
+      "家庭用户",
+      "城市通勤族"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

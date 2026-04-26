@@ -1,0 +1,83 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车窗玻璃 (1).mp4",
+  "run_id": "v2_20260426_230217_0affa94cf2",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230217_0affa94cf2/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230217_0affa94cf2/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230217_0affa94cf2/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230217_0affa94cf2/scene_001_frame_000146.webp/scene_001_frame_000146.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的车门玻璃、后视镜及内饰细节在雨天的树林道路旁静态展示，镜头固定聚焦，清晰呈现部件设计与质感。",
+    "subject": "黑色汽车（车门及内饰细节）",
+    "object": [
+      "车门玻璃",
+      "后视镜",
+      "内饰",
+      "车门"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "雨天",
+      "树林道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "雨天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "细腻",
+      "现代"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "稳固"
+    ],
+    "design_selling_points": [
+      "车门玻璃设计",
+      "后视镜造型",
+      "内饰材质",
+      "车门工艺"
+    ],
+    "function_selling_points": [
+      "视野清晰",
+      "密封性优"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "郊游旅行"
+    ],
+    "marketing_phrases": [
+      "雨天细节清晰",
+      "内饰质感高级",
+      "车门设计精致",
+      "后视镜视野佳",
+      "静态展示质感",
+      "黑色车漆亮眼"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "细节展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "汽车爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

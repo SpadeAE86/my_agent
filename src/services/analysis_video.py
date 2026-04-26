@@ -10,7 +10,7 @@ import os
 import json
 import asyncio
 import shutil
-from typing import List, Optional
+from typing import Any, List, Optional
 
 from utils.video_process_utils import get_video_scenes, get_video_single_scene_frames
 from utils.obs_utils import batch_upload_to_obs
@@ -42,6 +42,21 @@ DEFAULT_VISION_PROMPT = """你是一个专业的视频分镜分析师，同时�
 - 画面美感度：构图、光线、色彩的专业程度
 - 通用适配性：是否容易与其他素材混剪
 """
+
+_EMBEDDING_MODEL: Any = None
+
+def get_embedding_model():
+    """
+    Singleton SentenceTransformer model loader.
+    Loads once per process; subsequent calls reuse the same instance to avoid
+    repeated "Loading weights" overhead on every reindex/search.
+    """
+    global _EMBEDDING_MODEL
+    if _EMBEDDING_MODEL is not None:
+        return _EMBEDDING_MODEL
+    from sentence_transformers import SentenceTransformer
+    _EMBEDDING_MODEL = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+    return _EMBEDDING_MODEL
 
 
 async def _upload_scene_frames(scene: SceneSplitResult, obs_key_prefix: str) -> List[str]:
@@ -180,19 +195,6 @@ async def analyze_video(
             except Exception as e:
                 log.warning(f"[{project_id}] 清理抽帧目录失败: {e}")
     
-    # Step 4: 入库 OpenSearch（异步，不阻塞接口返回）
-    try:
-        task = asyncio.create_task(index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=False))
-        def _log_task_result(t: asyncio.Task):
-            try:
-                r = t.result()
-                log.info(f"[{project_id}] OpenSearch 入库完成: {r}")
-            except Exception as _e:
-                log.error(f"[{project_id}] OpenSearch 入库失败: {_e}")
-        task.add_done_callback(_log_task_result)
-    except Exception as e:
-        log.warning(f"[{project_id}] 创建 OpenSearch 入库任务失败: {e}")
-
     return list(cards)
 
 
@@ -239,11 +241,7 @@ async def index_shotcards_to_opensearch(
     - bulk index into `car_interior_analysis`
     """
     if embedding_model is None:
-        # Lazy import to avoid heavy model load at service import time
-        from sentence_transformers import SentenceTransformer
-
-        # Keep consistent with QueryBuilder default
-        embedding_model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+        embedding_model = get_embedding_model()
 
     docs = await map_shotcards_to_car_interior_docs(cards, embedding_model=embedding_model, id_prefix=id_prefix)
     if not docs:

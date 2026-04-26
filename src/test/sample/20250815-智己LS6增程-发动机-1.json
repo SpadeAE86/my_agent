@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-1.mp4",
+  "run_id": "v2_20260426_192053_c231ee53e2",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_c231ee53e2/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_c231ee53e2/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_c231ee53e2/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_c231ee53e2/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车引擎盖打开，展示内部机械结构，车身为黑色，背景简洁明亮，镜头固定呈现引擎舱与前灯细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "引擎盖",
+      "引擎",
+      "前大灯",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "科技感",
+      "流畅",
+      "高级"
+    ],
+    "function_adjectives": [
+      "高效",
+      "稳定",
+      "可靠",
+      "强劲"
+    ],
+    "design_selling_points": [
+      "引擎盖设计",
+      "前大灯造型",
+      "引擎布局",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "高效动力输出",
+      "稳定机械结构",
+      "可靠引擎技术",
+      "强劲动力性能"
+    ],
+    "scenario_a": [
+      "日常维护",
+      "展厅看车",
+      "机械检查",
+      "产品展示"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "城市通勤",
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "引擎舱布局规整",
+      "前大灯犀利设计",
+      "亮黑车漆质感高级",
+      "机械结构可靠",
+      "静态展示引擎细节",
+      "智己LS6引擎舱"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "汽车细节",
+      "引擎舱展示",
+      "智己LS6",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "机械爱好者",
+      "购车用户",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

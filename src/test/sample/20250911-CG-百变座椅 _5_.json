@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-百变座椅 (5).mp4",
+  "run_id": "v2_20260426_225901_0e61a2bcd8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225901_0e61a2bcd8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225901_0e61a2bcd8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225901_0e61a2bcd8/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225901_0e61a2bcd8/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "某款汽车的座舱（内饰）通过CG动画演示座椅布局变化，包含白色真皮座椅、灰色中控、方向盘、中控屏，展示从亲子模式（有玩具）到商务模式（有小桌板、笔记本）再到休闲模式（有饮品、甜点）的布局，镜头为固定机位，光线明亮，场景在室内（类似展厅）。",
+    "subject": "汽车座舱",
+    "object": [
+      "座椅",
+      "方向盘",
+      "中控屏",
+      "小桌板"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "舒适",
+      "简约",
+      "豪华"
+    ],
+    "function_adjectives": [
+      "灵活",
+      "便捷",
+      "舒适",
+      "实用"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "大尺寸中控屏",
+      "可调节座椅",
+      "小桌板设计"
+    ],
+    "function_selling_points": [
+      "座椅多布局调节",
+      "小桌板拓展功能",
+      "空间灵活利用",
+      "内饰多功能场景适配"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "亲子互动"
+    ],
+    "scenario_b": [
+      "商务办公",
+      "休闲放松"
+    ],
+    "marketing_phrases": [
+      "座椅灵活变布局",
+      "亲子带娃更轻松",
+      "商务办公小桌板",
+      "休闲茶歇好惬意",
+      "内饰精致像家",
+      "多功能座舱"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适生活的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

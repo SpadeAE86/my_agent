@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-33.mp4",
+  "run_id": "v2_20260426_192053_b7dc8f3069",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b7dc8f3069/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b7dc8f3069/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b7dc8f3069/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b7dc8f3069/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车（白色车身）以车内POV视角在现代城区的城市道路（高架桥底）行驶，画面展示方向盘、中控大屏、驾驶员手部及车内座舱，外部可见行人、电动车、共享单车、高架桥结构，光线明亮（白天晴天）。",
+    "subject": "智己汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "驾驶员",
+      "座椅"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "现代城区",
+      "城市道路",
+      "高架桥底"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "科技感",
+      "精致",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "稳定",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "方向盘造型",
+      "中控大屏",
+      "内饰材质",
+      "一体化座舱"
+    ],
+    "function_selling_points": [
+      "智能导航",
+      "高清显示",
+      "驾驶辅助",
+      "流畅操作"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "短途出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "市区通勤稳",
+      "中控大屏导航清",
+      "高架桥底行驶顺",
+      "白色车身颜值高",
+      "车内科技感足",
+      "方向盘握感舒适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "城市道路",
+      "智能座舱"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "科技爱好者",
+      "通勤族",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

@@ -6,6 +6,7 @@ from typing import Any, Dict, List, Optional
 from sqlmodel import SQLModel, Field
 from sqlalchemy import Column, DateTime, Text, func
 from sqlalchemy.dialects.mysql import JSON as MySQLJSON, VARCHAR
+from sqlalchemy import String
 
 
 class VideoAnalysisHistory(SQLModel, table=True):
@@ -59,6 +60,14 @@ class VideoAnalysisShotCard(SQLModel, table=True):
     appealing_audience: Optional[List[str]] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
     visual_quality: Optional[List[float]] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
     error: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
+
+    # --- OpenSearch indexing status (derived index, DB is source of truth) ---
+    # Values: PENDING / OK / FAILED
+    os_index_status: str = Field(
+        default="PENDING",
+        sa_column=Column(String(16), nullable=False, server_default="PENDING", index=True),
+    )
+    os_index_error: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
 
     created_at: datetime = Field(
         sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now())

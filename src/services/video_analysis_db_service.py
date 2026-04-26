@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from sqlmodel import select, delete
+from sqlalchemy import tuple_
 
 from infra.storage.mysql_connector import mysql_connector
 from models.sqlmodel.video_analysis import VideoAnalysisHistory, VideoAnalysisShotCard
@@ -86,6 +87,9 @@ class VideoAnalysisDBService:
                         appealing_audience=c.get("appealing_audience"),
                         visual_quality=c.get("visual_quality"),
                         error=c.get("error"),
+                        # index status defaults to PENDING; allow override on upsert
+                        os_index_status=str(c.get("os_index_status") or "PENDING"),
+                        os_index_error=c.get("os_index_error"),
                     )
                 )
 
@@ -111,6 +115,51 @@ class VideoAnalysisDBService:
                 )
             )
             return [c.model_dump(exclude_none=True) for c in res.scalars().all()]
+
+    async def get_cards_by_keys(self, keys: List[tuple[str, int]]) -> List[Dict[str, Any]]:
+        """
+        Fetch shot cards by (history_id, scene_id) pairs.
+        Returns cards in arbitrary DB order; caller can reorder.
+        """
+        keys = [(hid, int(sid)) for (hid, sid) in (keys or []) if hid]
+        if not keys:
+            return []
+
+        async with mysql_connector.session_scope() as session:
+            res = await session.execute(
+                select(VideoAnalysisShotCard).where(
+                    tuple_(VideoAnalysisShotCard.history_id, VideoAnalysisShotCard.scene_id).in_(keys)
+                )
+            )
+            return [c.model_dump(exclude_none=True) for c in res.scalars().all()]
+
+    async def update_cards_index_status(
+        self,
+        keys: List[tuple[str, int]],
+        *,
+        status: str,
+        error: Optional[str] = None,
+    ) -> int:
+        """
+        Update os_index_status / os_index_error for given (history_id, scene_id) pairs.
+        Returns affected rows count (best effort).
+        """
+        keys = [(hid, int(sid)) for (hid, sid) in (keys or []) if hid]
+        if not keys:
+            return 0
+
+        async with mysql_connector.session_scope() as session:
+            res = await session.execute(
+                select(VideoAnalysisShotCard).where(
+                    tuple_(VideoAnalysisShotCard.history_id, VideoAnalysisShotCard.scene_id).in_(keys)
+                )
+            )
+            rows = res.scalars().all()
+            for r in rows:
+                r.os_index_status = status
+                r.os_index_error = error
+            await session.commit()
+            return len(rows)
 
 
 video_analysis_db_service = VideoAnalysisDBService()

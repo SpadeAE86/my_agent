@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-门板木纹-3.mp4",
+  "run_id": "v2_20260426_225934_3099ad8933",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225934_3099ad8933/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225934_3099ad8933/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225934_3099ad8933/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225934_3099ad8933/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "汽车内饰车门板特写，展示皮革材质与带图案的木纹装饰面板，镜头固定呈现细节，背景可见车外晴朗蓝天。",
+    "subject": "汽车车门内饰",
+    "object": [
+      "车门板",
+      "木纹装饰",
+      "皮革",
+      "扬声器"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "细腻",
+      "简约"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "静谧",
+      "耐磨",
+      "温馨"
+    ],
+    "design_selling_points": [
+      "木纹装饰面板",
+      "皮革车门",
+      "扬声器",
+      "装饰线条"
+    ],
+    "function_selling_points": [
+      "内饰静音",
+      "触感舒适",
+      "材质耐磨",
+      "氛围营造"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "内饰质感高级",
+      "木纹装饰显档次",
+      "皮革车门触感佳",
+      "车内静音更舒适",
+      "精致内饰提升体验",
+      "细节设计显品质"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "材质体验",
+      "高端质感"
+    ],
+    "appealing_audience": [
+      "商务人士",
+      "家庭用户",
+      "汽车爱好者",
+      "追求品质人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

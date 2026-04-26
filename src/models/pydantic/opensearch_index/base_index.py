@@ -13,12 +13,15 @@ from typing import (
     get_type_hints,
 )
 
-from .markers import Keyword, Text, Vector, Float
+from .markers import Keyword, Text, Vector, Float, Boolean
 
 
 class BaseIndex(BaseModel):
     class Meta:
         index_name: str = ""
+        # Optional OpenSearch index settings override. If not provided,
+        # IndexManager will fall back to its global defaults.
+        settings: Optional[Dict[str, Any]] = None
 
 
 def _iter_field_markers(model_class: Type[BaseIndex]) -> Dict[str, Any]:
@@ -35,7 +38,7 @@ def _iter_field_markers(model_class: Type[BaseIndex]) -> Dict[str, Any]:
             args = get_args(annotated_type)
             # args: (base_type, *metadata)
             for meta in args[1:]:
-                if isinstance(meta, (Text, Keyword, Vector, Float)):
+                if isinstance(meta, (Text, Keyword, Vector, Float, Boolean)):
                     out[field_name] = meta
                     break
     return out
@@ -138,4 +141,6 @@ def build_field_types_from_markers(model_class: Type[BaseIndex]) -> Dict[str, Di
             }
         elif isinstance(marker, Float):
             out[field_name] = {"type": "float"}
+        elif isinstance(marker, Boolean):
+            out[field_name] = {"type": "boolean"}
     return out

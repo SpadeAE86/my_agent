@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-打滑-2.mp4",
+  "run_id": "v2_20260426_225854_5f5ceb07b6",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225854_5f5ceb07b6/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225854_5f5ceb07b6/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225854_5f5ceb07b6/scene_001_frame_000089.webp/scene_001_frame_000089.webp"
+  ],
+  "result": {
+    "description": "一辆黑色电动SUV在冰雪覆盖的停车场行驶，画面包含CG展示的底盘动力系统，雪花飘落，地面有积雪，镜头为航拍视角，光线明亮。",
+    "subject": "黑色电动SUV汽车",
+    "object": [
+      "轮毂",
+      "底盘",
+      "车身",
+      "轮胎"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "冰雪",
+      "停车场"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "雪天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "动感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "强劲",
+      "智能",
+      "安全"
+    ],
+    "design_selling_points": [
+      "黑色车漆",
+      "动感轮毂",
+      "流畅车身",
+      "底盘结构"
+    ],
+    "function_selling_points": [
+      "四驱系统",
+      "冰雪稳定",
+      "动力强劲",
+      "智能驱动"
+    ],
+    "scenario_a": [
+      "冰雪通勤",
+      "城市冰雪行驶"
+    ],
+    "scenario_b": [
+      "雪地自驾",
+      "山区冰雪行"
+    ],
+    "marketing_phrases": [
+      "冰雪行驶稳",
+      "四驱动力强",
+      "黑色动感外观",
+      "雪地通勤无忧",
+      "智能驱动冰雪路",
+      "底盘科技助行驶"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "冰雪场景",
+      "汽车科技"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "冰雪地区用户",
+      "汽车爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4320x1080"
+  },
+  "success": true
+}

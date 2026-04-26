@@ -1,0 +1,97 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC3 (26).mp4",
+  "run_id": "v2_20260426_230128_272885c673",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_272885c673/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_272885c673/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_272885c673/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230128_272885c673/scene_001_frame_000167.webp/scene_001_frame_000167.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在带有菱形灯光的地库内静态展示，车身覆盖伪装贴膜，贯穿式尾灯亮起并显示动态图案，镜头为固定机位拍摄，环境光线柔和，背景为地库墙面与顶棚灯光，轮毂、车牌等细节清晰可见。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "车牌",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "伪装贴膜",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "夜晚",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "简约",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "稳定",
+      "舒适",
+      "安静"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流线型车身",
+      "伪装贴膜设计",
+      "大尺寸轮毂"
+    ],
+    "function_selling_points": [
+      "智能尾灯交互",
+      "低风阻车身",
+      "静谧座舱",
+      "车身稳定系统"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "日常通勤",
+      "城市代步",
+      "夜间出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "雨雪天出行"
+    ],
+    "marketing_phrases": [
+      "地库静态展示智己LS6",
+      "尾灯炫酷会变脸",
+      "伪装车身显科技感",
+      "地库停车轻松",
+      "夜间出行尾灯亮",
+      "流线车身颜值高"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "地库场景",
+      "尾灯展示",
+      "伪装测试",
+      "夜间出行"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市车主",
+      "夜间出行用户",
+      "颜值控",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

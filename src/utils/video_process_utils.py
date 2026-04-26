@@ -15,7 +15,8 @@ def save_scene_frames(frame, scene_id, frame_id, output_dir):
     # 使用 cv2 保存，质量参数设为 90 (默认75，100最高)
     # cv2.imread/imwrite 处理的是 BGR 格式，scenedetect 返回的也是 BGR，可以直接存
     import cv2
-    cv2.imwrite(webp_path, frame, [cv2.IMWRITE_WEBP_QUALITY, 90])
+    ok = cv2.imwrite(webp_path, frame, [cv2.IMWRITE_WEBP_QUALITY, 90])
+    # print(ok)
     return webp_path
 
 def get_video_scenes(video_path, frame_interval = 2, threshold=30.0, workspace_dir="./scene_detect_output") -> List[SceneSplitResult]:
@@ -164,12 +165,12 @@ if __name__ == "__main__":
     from pathlib import Path
     from yarl import URL
     file_path_list = [
-        r"C:\Users\25065\Downloads\汽车\drive.mp4",
-        r"C:\Users\25065\Downloads\汽车\inner.mp4",
-        r"C:\Users\25065\Downloads\汽车\back.mp4",
-        r"C:\Users\25065\Downloads\汽车\wheel.mp4",
-        r"C:\Users\25065\Downloads\汽车\light.mp4",
-        r"C:\Users\25065\Downloads\汽车\front.mp4"
+        r"C:\Users\admin\Downloads\微信视频2026-04-18_161545_817.mp4",
+        # r"C:\Users\25065\Downloads\汽车\inner.mp4",
+        # r"C:\Users\25065\Downloads\汽车\back.mp4",
+        # r"C:\Users\25065\Downloads\汽车\wheel.mp4",
+        # r"C:\Users\25065\Downloads\汽车\light.mp4",
+        # r"C:\Users\25065\Downloads\汽车\front.mp4"
     ]
     for video in file_path_list:
 

@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (4) - 副本.mp4",
+  "run_id": "v2_20260426_192053_b57464c1c4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b57464c1c4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b57464c1c4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_b57464c1c4/scene_001_frame_000116.webp/scene_001_frame_000116.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内部座舱，展示前排和后排白色皮质座椅、全景天窗，车门内饰板为深色搭配浅色，镜头为固定机位拍摄，光线明亮清晰，呈现静态内饰细节。",
+    "subject": "汽车内饰（座椅、天窗）",
+    "object": [
+      "座椅",
+      "天窗",
+      "车门内饰",
+      "杯架"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "通透",
+      "豪华"
+    ],
+    "design_selling_points": [
+      "皮质座椅",
+      "全景天窗",
+      "车门内饰",
+      "精致缝线"
+    ],
+    "function_selling_points": [
+      "舒适驾乘",
+      "宽敞空间",
+      "天窗采光",
+      "豪华体验"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行",
+      "商务接待"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "朋友聚会",
+      "自驾露营"
+    ],
+    "marketing_phrases": [
+      "白色皮质座椅舒适",
+      "全景天窗采光好",
+      "深色车门内饰高级",
+      "宽敞空间家庭用",
+      "商务接待有面子",
+      "精致缝线细节佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "豪华汽车",
+      "舒适座椅",
+      "全景天窗",
+      "家庭用车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适的车主",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true,
+  "cached": true
+}

@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-28.mp4",
+  "run_id": "v2_20260426_230548_b26d513752",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230548_b26d513752/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230548_b26d513752/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230548_b26d513752/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230548_b26d513752/scene_001_frame_000128.webp/scene_001_frame_000128.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车停在现代风格的建筑前，车身呈现亮面黑色，轮毂为黑色配橙色卡钳，车窗清晰反光，背景建筑有金色装饰门窗，路面为城市街道，光线明亮，画面清晰。",
+    "subject": "黑色汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "建筑前"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光滑",
+      "精致",
+      "现代",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "运动感强",
+      "稳定",
+      "静谧",
+      "制动强劲"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "车漆质感",
+      "车窗设计"
+    ],
+    "function_selling_points": [
+      "制动强劲",
+      "操控精准",
+      "静音舒适",
+      "稳定"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "休闲逛街",
+      "周末出游",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "亮面黑车漆超吸睛",
+      "橙色卡钳显运动",
+      "现代建筑前的静态展示",
+      "商务出行好伙伴",
+      "日常代步利器",
+      "城市街道的黑色座驾"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "城市出行",
+      "商务出行",
+      "日常代步"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者",
+      "年轻车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

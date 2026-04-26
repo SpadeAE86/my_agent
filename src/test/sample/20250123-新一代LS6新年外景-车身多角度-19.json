@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-19.mp4",
+  "run_id": "v2_20260426_225205_cb99d217f5",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_cb99d217f5/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_cb99d217f5/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_cb99d217f5/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_cb99d217f5/scene_001_frame_000133.webp/scene_001_frame_000133.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在装饰有红色花艺与爱心造型的欧式建筑前静态展示，车身为亮面黑色，车头设计现代，背景建筑墙面花艺装饰丰富，路面为砖石街道，光线明亮，展现车辆外观设计细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车头",
+      "轮毂",
+      "天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "欧式建筑前"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "大气"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "静谧",
+      "舒适",
+      "科技"
+    ],
+    "design_selling_points": [
+      "车头灯组",
+      "车身线条",
+      "轮毂设计",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "静谧座舱",
+      "稳定驻车",
+      "智能灯语",
+      "智能泊车"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "逛街停车"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "欧式建筑前的精致座驾",
+      "黑色亮面智己LS6",
+      "花艺建筑旁静态展示",
+      "现代城区街道泊车",
+      "流畅车身线条设计",
+      "黑武士风格外观"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态实拍",
+      "汽车美学"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "设计爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

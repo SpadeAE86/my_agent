@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-雨夜模式1-1.mp4",
+  "run_id": "v2_20260426_192053_5eade10b93",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_5eade10b93/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_5eade10b93/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_5eade10b93/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_5eade10b93/scene_001_frame_000127.webp/scene_001_frame_000127.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的车机屏幕展示CG动画，模拟雨夜城市路口路跑场景：车辆从4km/h减速至静止，行人、其他车辆在路口动态移动；车机界面提示‘雨夜模式’（AI影像增强、危险识别），右侧显示导航、胎压等信息，画面科技感强，突出智能行车功能。",
+    "subject": "黑色汽车车机模拟驾驶场景",
+    "object": [
+      "车身",
+      "中控屏"
+    ],
+    "movement": "路跑",
+    "footage_type": "CG",
+    "shot_style": "屏幕录制",
+    "scene_location": [
+      "雨夜",
+      "路口",
+      "城市道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "雨夜",
+    "time": "夜晚",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "科技感",
+      "简洁",
+      "现代",
+      "大气"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "安全",
+      "智能",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "黑色车漆",
+      "简洁车机界面",
+      "科技感设计",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "雨夜模式",
+      "AI影像增强",
+      "危险场景识别",
+      "一键开启"
+    ],
+    "scenario_a": [
+      "雨夜通勤",
+      "城市路口行车"
+    ],
+    "scenario_b": [
+      "长途雨夜驾驶",
+      "恶劣天气出行"
+    ],
+    "marketing_phrases": [
+      "雨夜看得清",
+      "危险场景轻松识别",
+      "一键开启雨夜模式",
+      "城市路口安全停车",
+      "AI增强补盲影像",
+      "雨夜行车更安全"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "雨夜场景",
+      "智能驾驶",
+      "安全辅助"
+    ],
+    "appealing_audience": [
+      "新手司机",
+      "城市通勤者",
+      "雨天出行用户",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "5262x1080"
+  },
+  "success": true,
+  "cached": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (38).mp4",
+  "run_id": "v2_20260426_225840_bd7819c979",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225840_bd7819c979/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225840_bd7819c979/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225840_bd7819c979/scene_001_frame_000112.webp/scene_001_frame_000112.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，贯穿式尾灯区域动态显示卡通图案与‘HELLO’文字，车身呈蓝色，背景为深色室内环境，镜头固定、光线均匀。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "尾灯",
+      "后视镜",
+      "车标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "交互感强",
+      "人性化",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯造型",
+      "蓝色车漆",
+      "精致车标",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "动态灯语交互",
+      "智能车外显示",
+      "个性化灯效",
+      "清晰识别"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "停车交互",
+      "社交展示"
+    ],
+    "scenario_b": [
+      "商场停车",
+      "朋友聚会",
+      "夜间行驶",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "尾灯会打招呼",
+      "动态灯语超有趣",
+      "智己LS6灯语交互",
+      "蓝色车身质感高级",
+      "停车玩灯语",
+      "科技感尾灯"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "灯语交互"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "年轻车主",
+      "城市通勤者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4972x1080"
+  },
+  "success": true
+}

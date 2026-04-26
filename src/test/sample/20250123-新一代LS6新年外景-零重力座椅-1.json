@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-零重力座椅-1.mp4",
+  "run_id": "v2_20260426_225205_40f2f2a9d4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_40f2f2a9d4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_40f2f2a9d4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_40f2f2a9d4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_40f2f2a9d4/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "画面展示一辆汽车的前排内饰，包含方向盘、中控台、皮质前排座椅、全景天窗，车内悬挂装饰挂件，前排座椅放置红色抱枕；窗外为黄昏时分的城市工业区，建筑与工业设施清晰可见，光线柔和温暖，镜头以车内固定机位拍摄内饰细节。",
+    "subject": "汽车前排内饰",
+    "object": [
+      "方向盘",
+      "中控台",
+      "座椅",
+      "天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "工业区",
+      "现代城区"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "舒适",
+      "简约",
+      "高级"
+    ],
+    "function_adjectives": [
+      "安静",
+      "舒适",
+      "温馨",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "简约中控台",
+      "全景天窗",
+      "车内装饰挂件"
+    ],
+    "function_selling_points": [
+      "静谧座舱体验",
+      "舒适驾乘空间",
+      "人性化内饰设计",
+      "温馨氛围营造"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "黄昏内饰氛围感拉满",
+      "皮质座椅舒适感",
+      "简约中控台易操作",
+      "车内装饰添温馨",
+      "全景天窗采光佳",
+      "固定机位看内饰细节"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "静态展示",
+      "黄昏场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

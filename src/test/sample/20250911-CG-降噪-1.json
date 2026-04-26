@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-降噪-1.mp4",
+  "run_id": "v2_20260426_225935_cd42b152f3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225935_cd42b152f3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225935_cd42b152f3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225935_cd42b152f3/scene_001_frame_000120.webp/scene_001_frame_000120.webp"
+  ],
+  "result": {
+    "description": "一辆灰色SUV汽车在城市公路上行驶，后两帧以CG透明化视角展示车内白色座椅、金色动力系统及智能传感器（雷达波、感应标识），镜头为航拍俯视，画面清晰呈现车辆行驶状态与智能系统结构。",
+    "subject": "灰色SUV汽车",
+    "object": [
+      "座椅",
+      "动力系统",
+      "传感器",
+      "方向盘"
+    ],
+    "movement": "路跑",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "公路",
+      "城市道路"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观（含CG智能展示）",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "精致",
+      "大气"
+    ],
+    "function_adjectives": [
+      "智能",
+      "高效",
+      "舒适",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "全景天窗",
+      "运动轮毂",
+      "智能灯组"
+    ],
+    "function_selling_points": [
+      "智能驾驶感知",
+      "高效动力输出",
+      "舒适座椅",
+      "智能座舱交互"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "智能出行"
+    ],
+    "marketing_phrases": [
+      "城市通勤流畅开",
+      "智能系统保驾护航",
+      "舒适座椅长途爽",
+      "高效动力一路驰"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "智能出行",
+      "舒适驾乘"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

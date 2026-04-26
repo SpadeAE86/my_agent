@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-激光雷达3 (1).mp4",
+  "run_id": "v2_20260426_230155_4056c4751e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230155_4056c4751e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230155_4056c4751e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230155_4056c4751e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230155_4056c4751e/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "一辆带有车顶传感器的汽车在室内地库中静态展示，车身反射菱形灯光，车顶传感器清晰可见，背景为地库的黑色天花板与灯光装置，画面呈现科技感与独特设计风格。",
+    "subject": "带车顶传感器的测试汽车",
+    "object": [
+      "车顶传感器",
+      "挡风玻璃",
+      "车身",
+      "车顶"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "黑白测试涂装",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "科技感",
+      "独特",
+      "精致",
+      "现代"
+    ],
+    "function_adjectives": [
+      "智能",
+      "先进",
+      "精准",
+      "可靠"
+    ],
+    "design_selling_points": [
+      "车顶传感器",
+      "独特车身涂装",
+      "大尺寸挡风玻璃",
+      "流线型车顶"
+    ],
+    "function_selling_points": [
+      "智能驾驶感知",
+      "多传感器融合",
+      "高精度定位",
+      "激光雷达系统"
+    ],
+    "scenario_a": [
+      "地库泊车",
+      "城市通勤",
+      "科技出行",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "商务出行",
+      "家庭用车",
+      "高端出行"
+    ],
+    "marketing_phrases": [
+      "地库展示黑科技",
+      "车顶传感器很亮眼",
+      "黑白涂装超独特",
+      "智能驾驶好帮手",
+      "地库停车更精准",
+      "科技感拉满的车"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "智能驾驶",
+      "汽车外观",
+      "科技感",
+      "测试车",
+      "地库场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "智能驾驶用户",
+      "高端车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

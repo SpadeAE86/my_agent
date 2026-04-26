@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-增程LS6官号-武康大楼-尾灯isc-1.mp4",
+  "run_id": "v2_20260426_230332_0256040e22",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230332_0256040e22/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230332_0256040e22/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230332_0256040e22/scene_001_frame_000063.webp/scene_001_frame_000063.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，背景有“IM Super Charge Day SHANGHAI 10.1-10.3”活动展板，车尾灯显示“祖国生日快乐”，车色为黑色亮面，画面光线柔和，背景有绿植与树木，镜头固定拍摄。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车尾灯",
+      "车尾",
+      "后保险杠",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展台"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "流畅",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "高效充电",
+      "智能灯语"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "亮面车漆",
+      "品牌尾标",
+      "流畅车尾"
+    ],
+    "function_selling_points": [
+      "快速充电",
+      "智能灯语"
+    ],
+    "scenario_a": [
+      "活动参展",
+      "户外展示"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "祖国生日快乐灯语",
+      "Super Charge Day参展",
+      "亮面黑智己LS6",
+      "静态展示车尾设计",
+      "高效充电活动日",
+      "智能灯语车尾灯"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "活动场景",
+      "静态展示",
+      "汽车外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "活动参与者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

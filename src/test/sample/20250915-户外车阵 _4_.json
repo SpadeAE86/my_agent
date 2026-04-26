@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (4).mp4",
+  "run_id": "v2_20260426_230009_333896b3f4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_333896b3f4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_333896b3f4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_333896b3f4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230009_333896b3f4/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "多辆智己LS6汽车在户外厂区停车场静态展示，车身有红、白、灰、蓝等颜色，周围布置蓝白气球与宣传横幅，背景为带有小米、大众标志的建筑，行人驻足观看或走动，镜头为固定机位拍摄，天气阴天、白天。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车标",
+      "行人",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "户外场地",
+      "厂区",
+      "停车场"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": true,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "时尚",
+      "大气",
+      "精致"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "智能",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "LED大灯",
+      "双色轮毂",
+      "精致车标"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "长续航",
+      "快充",
+      "舒适座舱"
+    ],
+    "scenario_a": [
+      "新车展示",
+      "购车咨询",
+      "静态体验",
+      "厂区参观"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "家庭出行",
+      "商务接待",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "智己LS6多种颜色",
+      "户外厂区展示",
+      "行人驻足看车",
+      "多车并排亮相",
+      "阴天白天实拍",
+      "静态外观展示"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "新车亮相",
+      "静态展示",
+      "户外实拍"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "购车人群",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-33.mp4",
+  "run_id": "v2_20260426_225439_95bd5964c1",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225439_95bd5964c1/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225439_95bd5964c1/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225439_95bd5964c1/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225439_95bd5964c1/scene_001_frame_000131.webp/scene_001_frame_000131.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在白色简约的室内展厅环境中，通过展台转盘旋转展示外观，依次呈现尾部、侧面、顶部等视角，车身为亮黑色，搭配贯穿式尾灯、运动轮毂与大尺寸天窗，画面简洁明亮，文字标注“新一代 智己LS6 自带超充桩的电车”。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "轮毂",
+      "车顶"
+    ],
+    "movement": "静态展示",
+    "footage_type": "TVC切片",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "高效",
+      "便捷",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流线车身",
+      "大尺寸天窗",
+      "运动轮毂"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "高效充电",
+      "智能互联",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行",
+      "日常代步",
+      "短途出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游",
+      "长途旅行",
+      "户外探险"
+    ],
+    "marketing_phrases": [
+      "自带超充桩的电车",
+      "智己LS6外观超吸睛",
+      "贯穿式尾灯太酷了",
+      "流线车身显动感",
+      "展厅静态赏车",
+      "黑武士风格超帅"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "电车营销",
+      "智己汽车",
+      "新能源汽车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "家庭用户",
+      "新能源车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

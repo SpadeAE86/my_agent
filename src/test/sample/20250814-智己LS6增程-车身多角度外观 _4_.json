@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车身多角度外观 (4).mp4",
+  "run_id": "v2_20260426_225600_214720e7a4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225600_214720e7a4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225600_214720e7a4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225600_214720e7a4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225600_214720e7a4/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225600_214720e7a4/scene_001_frame_000212.webp/scene_001_frame_000212.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色智己LS6汽车的静态外观特写，通过多角度镜头依次展示尾灯、车身侧面线条、车窗、后视镜、前大灯等细节，背景为简洁的展厅空间，光线明亮清晰，整体画面精致流畅。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "前大灯",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "亮面蓝",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "高级",
+      "动感"
+    ],
+    "function_adjectives": [
+      "低风阻",
+      "静谧",
+      "稳定",
+      "高效"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流畅车身线条",
+      "分体式大灯",
+      "后视镜造型"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "智能大灯系统",
+      "静音座舱设计",
+      "空气动力学车身"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "蓝色车漆亮面精致",
+      "贯穿尾灯设计感强",
+      "车身线条流畅动感",
+      "大灯造型科技感足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "汽车设计",
+      "智己汽车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "商务人士",
+      "设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

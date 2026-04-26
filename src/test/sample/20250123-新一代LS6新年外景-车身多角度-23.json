@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-23.mp4",
+  "run_id": "v2_20260426_225205_22392c5d1c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_22392c5d1c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_22392c5d1c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_22392c5d1c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_22392c5d1c/scene_001_frame_000132.webp/scene_001_frame_000132.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车静态停放在装饰有花艺与爱心的欧式建筑前的现代城区街道旁，车身为亮黑色，背景有树木、街道，画面光线明亮，建筑风格复古精致，展示车辆外观设计。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "灯组",
+      "激光雷达"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "欧式建筑前"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "亮黑",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "稳定",
+      "优雅"
+    ],
+    "design_selling_points": [
+      "贯穿式灯组",
+      "运动轮毂",
+      "亮黑车漆",
+      "大空间"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "静谧隔音",
+      "舒适驾乘",
+      "稳定操控"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "逛街停车",
+      "打卡拍照"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "商务出行",
+      "家庭出游",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "亮黑智己LS6，欧式建筑前打卡",
+      "精致外观，现代城区出行",
+      "贯穿灯组，辨识度拉满",
+      "运动轮毂，时尚大气",
+      "亮黑车漆，质感满满",
+      "静态展示，尽显优雅"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "城市出行",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "年轻用户",
+      "汽车爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-14.mp4",
+  "run_id": "v2_20260426_225421_299140b16e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225421_299140b16e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225421_299140b16e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225421_299140b16e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225421_299140b16e/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "新一代智己LS6汽车在纯色背景的展厅转盘上静态展示，车身为黑色，呈现侧面及尾部外观，画面带有品牌标识与“自带超充桩的电车”文字说明，光线均匀柔和。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "尾灯",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "动感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "高效",
+      "智能",
+      "便捷",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "溜背造型",
+      "贯穿尾灯",
+      "多辐轮毂",
+      "流畅车身"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "智能驾驶",
+      "高效充电",
+      "长续航"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "自带超充桩的电车",
+      "新一代智己LS6",
+      "黑武士外观",
+      "流畅车身设计",
+      "超充桩电车",
+      "展厅静态展示"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "电车展示",
+      "智己LS6",
+      "超充桩"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "电车爱好者",
+      "家庭用户",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-贵妃椅-1.mp4",
+  "run_id": "v2_20260426_230408_d04f2fb454",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230408_d04f2fb454/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230408_d04f2fb454/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230408_d04f2fb454/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230408_d04f2fb454/scene_001_frame_000145.webp/scene_001_frame_000145.webp"
+  ],
+  "result": {
+    "description": "画面分为两部分：前两帧呈现汽车中控大屏（显示座椅模式设置界面，一只手在操作屏幕），后两帧呈现汽车后排座椅（皮质、打孔设计，车门内饰含音响等部件）；镜头为车内固定机位，光线明亮，窗外可见晴朗景象。",
+    "subject": "汽车内饰（中控大屏与后排座椅）",
+    "object": [
+      "中控屏",
+      "座椅",
+      "驾驶员手"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "皮质",
+      "打孔"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "便捷",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "中控大屏",
+      "皮质座椅",
+      "车门音响",
+      "座椅打孔"
+    ],
+    "function_selling_points": [
+      "座椅模式调节",
+      "触控操作",
+      "多模式选择",
+      "智能交互"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "长途驾驶"
+    ],
+    "marketing_phrases": [
+      "座椅模式随心调",
+      "触控大屏操作快",
+      "后排座椅超舒适",
+      "商务出行有排面",
+      "家庭出游坐得舒",
+      "内饰设计高级感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "内饰展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

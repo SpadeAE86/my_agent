@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (42).mp4",
+  "run_id": "v2_20260426_230310_1e33d61126",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_1e33d61126/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_1e33d61126/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_1e33d61126/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230310_1e33d61126/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代风格的地下车库通道内行驶，车身带有伪装贴纸，前灯点亮，背景为带有镂空灯光的车库天花板、暖光墙面与清晰地面标线，镜头为固定机位拍摄，光线柔和明亮。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "伪装贴纸",
+      "车牌"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "伪装贴纸",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "动感",
+      "科技感",
+      "精致"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "明亮",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "前灯组设计",
+      "车身伪装贴纸",
+      "流畅车身线条",
+      "车牌设计"
+    ],
+    "function_selling_points": [
+      "前灯照明",
+      "地库通行能力",
+      "行驶稳定性",
+      "智能灯光控制"
+    ],
+    "scenario_a": [
+      "地库通行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "夜间出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "地库通行顺畅",
+      "前灯点亮醒目",
+      "智己LS6地库穿梭",
+      "伪装贴纸设计感",
+      "夜间行车灯光亮",
+      "城市通勤好帮手"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "地库场景",
+      "灯光展示",
+      "新车伪装"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "商务人士",
+      "汽车爱好者",
+      "新车关注者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

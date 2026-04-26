@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-四轮转向-11.mp4",
+  "run_id": "v2_20260426_230050_9079034e1c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230050_9079034e1c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230050_9079034e1c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230050_9079034e1c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230050_9079034e1c/scene_001_frame_000146.webp/scene_001_frame_000146.webp"
+  ],
+  "result": {
+    "description": "智己LS6黑色轿车停在现代城区的公路边（红砖墙旁），镜头固定机位静态展示车身侧面（亮面黑车漆、运动轮毂、隐藏式车门把手、流畅车身线条），光线明亮（晴天白天），背景有树影与红砖墙，画面清晰无人物。",
+    "subject": "智己LS6黑色轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "轮胎",
+      "车门把手"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "公路",
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "亮面",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静音",
+      "舒适",
+      "安全"
+    ],
+    "design_selling_points": [
+      "亮面车漆",
+      "运动轮毂",
+      "隐藏式车门把手",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "静音轮胎",
+      "稳定抓地",
+      "舒适驾乘",
+      "安全出行"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "周末出游"
+    ],
+    "marketing_phrases": [
+      "亮面黑车漆质感爆棚",
+      "运动轮毂气场全开",
+      "隐藏式把手科技感拉满",
+      "城区通勤稳又静",
+      "商务出行倍有面",
+      "周末出游超带感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态实拍",
+      "黑色轿车",
+      "城区场景",
+      "运动轮毂"
+    ],
+    "appealing_audience": [
+      "商务人士",
+      "城市白领",
+      "汽车爱好者",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

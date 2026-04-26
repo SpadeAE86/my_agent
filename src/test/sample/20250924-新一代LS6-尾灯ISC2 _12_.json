@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC2 (12).mp4",
+  "run_id": "v2_20260426_230115_69a6a5fe17",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_69a6a5fe17/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_69a6a5fe17/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_69a6a5fe17/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230115_69a6a5fe17/scene_001_frame_000127.webp/scene_001_frame_000127.webp"
+  ],
+  "result": {
+    "description": "一辆智己LS6汽车静态停放在林荫公园道路旁，背景为茂密树木与石墙景观，路面为沥青道路，车辆外观呈黑色光滑质感，镜头为固定机位拍摄，光线明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "尾灯",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "公园道路",
+      "林荫道",
+      "沥青路",
+      "城市公园"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "运动",
+      "光泽"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静谧",
+      "舒适",
+      "低风阻"
+    ],
+    "design_selling_points": [
+      "溜背造型",
+      "贯穿尾灯",
+      "运动轮毂",
+      "光滑车漆"
+    ],
+    "function_selling_points": [
+      "空气动力学设计",
+      "静谧座舱",
+      "稳定操控",
+      "低风阻性能"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "公园出行",
+      "休闲驾驶"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "家庭出行",
+      "短途旅行",
+      "城市漫游"
+    ],
+    "marketing_phrases": [
+      "公园旁的黑武士",
+      "智己LS6静态颜值",
+      "溜背造型更流畅",
+      "贯穿尾灯显精致",
+      "运动轮毂添活力",
+      "亮面黑车漆吸睛"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "颜值控车主",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

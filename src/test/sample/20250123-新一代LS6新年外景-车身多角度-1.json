@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-1.mp4",
+  "run_id": "v2_20260426_225205_34ea8a5deb",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_34ea8a5deb/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_34ea8a5deb/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_34ea8a5deb/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_34ea8a5deb/scene_001_frame_000135.webp/scene_001_frame_000135.webp"
+  ],
+  "result": {
+    "description": "一辆智己LS6汽车在现代城区的停车场内静态展示，车身为黑色，周围有其他车辆与现代建筑，光线呈现黄昏暖色调，镜头为固定机位拍摄，驾驶座可见驾驶员。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "轮毂",
+      "驾驶员"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "停车场",
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "亮面",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静谧",
+      "智能",
+      "平稳"
+    ],
+    "design_selling_points": [
+      "前灯设计",
+      "轮毂造型",
+      "车身线条",
+      "激光雷达"
+    ],
+    "function_selling_points": [
+      "低风阻性能",
+      "智能驾驶辅助",
+      "静谧座舱体验",
+      "平稳底盘"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常停车"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "智己LS6黑武士外观",
+      "现代城区停车场实拍",
+      "黄昏光影下的智己LS6",
+      "流线车身激光雷达",
+      "黑亮车漆质感拉满",
+      "停车场静态体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态实拍",
+      "智己汽车",
+      "现代城区",
+      "黄昏"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

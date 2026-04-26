@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (45).mp4",
+  "run_id": "v2_20260426_230313_457ccda36e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230313_457ccda36e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230313_457ccda36e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230313_457ccda36e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230313_457ccda36e/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地库环境中静态展示，车身受网格状顶灯投影，镜头为固定机位拍摄，展示车头、车标、大灯等外观细节，车身颜色为黑色，画面光线柔和。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车头",
+      "车标",
+      "大灯",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "智能",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "车头设计",
+      "车标细节",
+      "大灯造型",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "智能灯光",
+      "静谧座舱",
+      "舒适座椅",
+      "智能车机"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "日常通勤",
+      "商务出行",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "周末购物",
+      "自驾出游",
+      "家庭接送",
+      "朋友聚会"
+    ],
+    "marketing_phrases": [
+      "智己LS6静态展示",
+      "黑色车身高级感",
+      "大灯科技感十足",
+      "地库中尽显精致",
+      "静态外观品质感",
+      "车头设计亮眼"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "地库场景",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "商务人士",
+      "城市通勤者",
+      "设计追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

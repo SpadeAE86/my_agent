@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-1.mp4",
+  "run_id": "v2_20260426_225723_86764cb875",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_86764cb875/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_86764cb875/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_86764cb875/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_86764cb875/scene_001_frame_000130.webp/scene_001_frame_000130.webp"
+  ],
+  "result": {
+    "description": "一辆银色SUV汽车在雪天的现代城区街道充电站旁静态展示，通过CG特效动态呈现电池与电路系统，背景为降雪的街道与建筑，镜头为固定机位拍摄。",
+    "subject": "银色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "电池（CG）",
+      "充电枪"
+    ],
+    "movement": "充电",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "雪天",
+      "现代城区",
+      "街道",
+      "充电站"
+    ],
+    "car_color": "银",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观（功能展示）",
+    "has_presenter": false,
+    "weather": "雪天",
+    "time": "夜晚",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "动感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "高效",
+      "稳定",
+      "智能",
+      "耐寒"
+    ],
+    "design_selling_points": [
+      "溜背车身",
+      "多辐轮毂",
+      "全景天窗",
+      "一体化尾灯"
+    ],
+    "function_selling_points": [
+      "低温充电",
+      "电池管理",
+      "电路安全",
+      "高效补能"
+    ],
+    "scenario_a": [
+      "雪天通勤",
+      "城市充电",
+      "日常代步",
+      "短途出行"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "家庭出行",
+      "商务接待",
+      "极端天气出行"
+    ],
+    "marketing_phrases": [
+      "雪天充电不慌",
+      "电路系统安全",
+      "溜背造型吸睛",
+      "城市代步利器",
+      "低温续航稳定",
+      "高效补能省心"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "产品展示",
+      "极端天气",
+      "充电场景"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "城市通勤者",
+      "新能源用户",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

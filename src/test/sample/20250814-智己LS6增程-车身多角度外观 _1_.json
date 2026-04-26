@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车身多角度外观 (1).mp4",
+  "run_id": "v2_20260426_225555_c48d4ac0bc",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225555_c48d4ac0bc/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225555_c48d4ac0bc/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225555_c48d4ac0bc/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225555_c48d4ac0bc/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225555_c48d4ac0bc/scene_001_frame_000234.webp/scene_001_frame_000234.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在灰色展厅内通过展台转盘展示外观，车身为蓝色，前灯组、轮毂、天窗等部件清晰可见，背景简洁，光线均匀。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "轮毂",
+      "前灯组",
+      "车身",
+      "天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "科技感",
+      "高级"
+    ],
+    "function_adjectives": [
+      "智能",
+      "稳定",
+      "高效",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "轮毂造型",
+      "前灯组设计",
+      "车身线条",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "快速充电",
+      "四驱系统",
+      "智能座舱"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途出行"
+    ],
+    "marketing_phrases": [
+      "智己LS6蓝色外观",
+      "轮毂设计吸睛",
+      "前灯组科技感",
+      "展厅静态展示",
+      "车身线条流畅",
+      "全景天窗通透"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "智己汽车",
+      "新能源汽车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

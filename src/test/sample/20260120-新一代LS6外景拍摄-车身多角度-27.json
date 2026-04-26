@@ -1,0 +1,98 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-27.mp4",
+  "run_id": "v2_20260426_230546_ccce2cf5a3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230546_ccce2cf5a3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230546_ccce2cf5a3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230546_ccce2cf5a3/scene_001_frame_000092.webp/scene_001_frame_000092.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车静态停放在带有金色装饰门窗的现代风格建筑前，车身线条流畅，轮毂搭配红色卡钳，周围绿植整齐，路面干净，画面光线明亮。",
+    "subject": "黑色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "卡钳"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "建筑前",
+      "绿植旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "动感",
+      "精致",
+      "高级"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静谧",
+      "舒适",
+      "安全"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "亮面黑色车漆",
+      "黑色运动轮毂",
+      "红色卡钳"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "稳定车身结构",
+      "静谧座舱",
+      "安全防护"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行",
+      "日常停车",
+      "建筑前停靠"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "购物停车",
+      "亲友接送",
+      "长途驾驶"
+    ],
+    "marketing_phrases": [
+      "建筑前停车气场足",
+      "黑色亮面显高级",
+      "线条流畅超动感",
+      "红色卡钳添运动",
+      "城区停靠吸睛多",
+      "静态展示质感佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态拍摄",
+      "高端车型",
+      "城市用车",
+      "商务用车"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者",
+      "追求质感的车主",
+      "高端消费人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

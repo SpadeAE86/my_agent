@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-充电口-1.mp4",
+  "run_id": "v2_20260426_192053_37dd768d37",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_37dd768d37/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_37dd768d37/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_37dd768d37/scene_001_frame_000115.webp/scene_001_frame_000115.webp"
+  ],
+  "result": {
+    "description": "一位女士在户外充电站为浅灰色电动汽车充电，背景有绿树、建筑、充电设备与停放车辆，画面明亮清晰，镜头为固定机位拍摄，光线充足。",
+    "subject": "浅灰色电动汽车",
+    "object": [
+      "充电口",
+      "车门把手",
+      "女士"
+    ],
+    "movement": "充电",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "充电站",
+      "城市道路",
+      "绿化带"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "高级"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "高效",
+      "智能",
+      "实用"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "隐藏式车门把手",
+      "贯穿式尾灯",
+      "充电口设计"
+    ],
+    "function_selling_points": [
+      "便捷充电",
+      "快充功能",
+      "智能充电系统",
+      "充电口防尘"
+    ],
+    "scenario_a": [
+      "日常充电",
+      "城市通勤",
+      "户外停车"
+    ],
+    "scenario_b": [
+      "长途补能",
+      "家庭出行",
+      "周末郊游"
+    ],
+    "marketing_phrases": [
+      "户外充电方便",
+      "城市通勤充电轻松",
+      "晴天充电无忧",
+      "充电口设计贴心"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "充电演示"
+    ],
+    "appealing_audience": [
+      "新能源车主",
+      "城市用户",
+      "女性车主",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后备箱-2.mp4",
+  "run_id": "v2_20260426_225354_0f2db4b070",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_0f2db4b070/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_0f2db4b070/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_0f2db4b070/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_0f2db4b070/scene_001_frame_000129.webp/scene_001_frame_000129.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的静态展示画面，依次呈现车内前排内饰（含方向盘、中控大屏、浅色皮质座椅、全景天窗）、后排座椅与开启的后备箱空间（后排座椅可放倒，后备箱空间宽敞），镜头为固定机位拍摄，背景为室内简约展示空间，光线明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "后备箱"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态空间",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "精致",
+      "柔和",
+      "高级"
+    ],
+    "function_adjectives": [
+      "宽敞",
+      "舒适",
+      "智能",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "全景天窗",
+      "一体化中控屏",
+      "浅色皮质座椅",
+      "可放倒后排座椅"
+    ],
+    "function_selling_points": [
+      "智能车机交互",
+      "后排座椅放倒扩展",
+      "大空间装载",
+      "舒适驾乘体验"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "内饰简约高级",
+      "后备箱空间大",
+      "后排座椅放倒装得多",
+      "中控大屏智能交互",
+      "全景天窗采光好",
+      "浅色内饰显温馨"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "空间展示",
+      "内饰展示",
+      "智能座舱展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

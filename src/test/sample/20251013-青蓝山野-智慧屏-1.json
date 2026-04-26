@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-智慧屏-1.mp4",
+  "run_id": "v2_20260426_192053_99d267d5f4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_99d267d5f4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_99d267d5f4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_99d267d5f4/scene_001_frame_000097.webp/scene_001_frame_000097.webp"
+  ],
+  "result": {
+    "description": "汽车中控大屏在车内静态展示，屏幕播放视频，一只手操作屏幕，背景为车内空调出风口与浅色内饰，画面清晰明亮。",
+    "subject": "汽车中控大屏",
+    "object": [
+      "中控大屏",
+      "驾驶员手",
+      "空调出风口",
+      "内饰"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "清晰",
+      "大屏",
+      "简约",
+      "精致"
+    ],
+    "function_adjectives": [
+      "流畅",
+      "便捷",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "中控大屏",
+      "空调出风口",
+      "浅色内饰",
+      "精致边框"
+    ],
+    "function_selling_points": [
+      "视频播放",
+      "触屏操作",
+      "温度显示",
+      "车载娱乐"
+    ],
+    "scenario_a": [
+      "车内观影",
+      "日常通勤",
+      "休闲出行",
+      "家庭用车"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "商务出行",
+      "接送孩子",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "大屏看剧超清晰",
+      "车内观影更惬意",
+      "触屏操作很便捷",
+      "温度显示一目了然",
+      "内饰精致显档次",
+      "车载娱乐很智能"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "科技配置",
+      "车载娱乐"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "通勤族",
+      "汽车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

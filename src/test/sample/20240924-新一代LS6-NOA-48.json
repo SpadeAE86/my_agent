@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-48.mp4",
+  "run_id": "v2_20260426_192053_cbc2175edd",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_cbc2175edd/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_cbc2175edd/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_cbc2175edd/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_cbc2175edd/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "智己汽车在现代城区的高架拥堵路段行驶，车内POV视角展示方向盘、一体化中控大屏（显示导航与驾驶辅助界面），驾驶员腿部可见，背景为阴天的高楼建筑群与拥堵车流，画面清晰呈现智能驾驶场景。",
+    "subject": "智己汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "驾驶员"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "现代城区",
+      "高架",
+      "拥堵路段"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "简约",
+      "现代",
+      "科技感",
+      "精致"
+    ],
+    "function_adjectives": [
+      "智能",
+      "流畅",
+      "稳定",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "一体化中控屏",
+      "简约方向盘设计",
+      "浅色内饰",
+      "科技感座舱"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "大屏导航系统",
+      "拥堵跟车功能",
+      "实时路况显示"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "拥堵跟车",
+      "高架行驶",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途出行",
+      "家庭出游",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "拥堵跟车不累",
+      "大屏导航清晰",
+      "智能驾驶省心",
+      "城区高架行驶",
+      "内饰简约舒适",
+      "阴天驾驶安全"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "功能讲解",
+      "智能驾驶"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "智能驾驶爱好者",
+      "家庭用户",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

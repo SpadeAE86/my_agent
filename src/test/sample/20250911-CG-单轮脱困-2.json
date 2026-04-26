@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-单轮脱困-2.mp4",
+  "run_id": "v2_20260426_225748_e711f2d0a0",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225748_e711f2d0a0/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225748_e711f2d0a0/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225748_e711f2d0a0/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225748_e711f2d0a0/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆汽车（透明车身，展示底盘传动系统）在泥泞非铺装道路上行驶，镜头通过航拍与特写呈现轮胎、轮毂、发动机、传动装置运作，地面有泥地车辙与碎石，光线明亮，演示四驱系统性能。",
+    "subject": "汽车（透明车身，展示底盘传动系统）",
+    "object": [
+      "轮胎",
+      "轮毂",
+      "发动机",
+      "传动系统"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "泥泞道路",
+      "非铺装路面"
+    ],
+    "car_color": "未知",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精密",
+      "机械感",
+      "清晰",
+      "细致"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "高效",
+      "强劲",
+      "智能"
+    ],
+    "design_selling_points": [
+      "轮胎泥泞抓地",
+      "轮毂运动设计",
+      "发动机精密结构",
+      "传动系统高效布局"
+    ],
+    "function_selling_points": [
+      "四驱系统",
+      "泥泞通过性",
+      "动力传输",
+      "越野性能"
+    ],
+    "scenario_a": [
+      "越野",
+      "泥泞路段行驶"
+    ],
+    "scenario_b": [
+      "自驾游",
+      "乡村出行"
+    ],
+    "marketing_phrases": [
+      "泥泞路段稳如泰山",
+      "四驱系统强劲",
+      "越野能力出色",
+      "动力传输高效"
+    ],
+    "marketing_tags": [
+      "技术展示",
+      "功能讲解",
+      "越野性能"
+    ],
+    "appealing_audience": [
+      "越野爱好者",
+      "汽车技术爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4320x1080"
+  },
+  "success": true
+}

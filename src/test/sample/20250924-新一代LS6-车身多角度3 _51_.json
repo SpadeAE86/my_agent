@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (51).mp4",
+  "run_id": "v2_20260426_230315_d0e2c0d870",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230315_d0e2c0d870/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230315_d0e2c0d870/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230315_d0e2c0d870/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230315_d0e2c0d870/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆带有黑白伪装贴膜的黑色汽车在地库通道内行驶，镜头以车外侧面跟拍视角呈现，地库顶部有网格状与条状灯光，背景可见停放车辆与指示标识，画面光线明亮，展示车辆行驶姿态与外观设计。",
+    "subject": "带伪装贴膜的黑色汽车",
+    "object": [
+      "车身",
+      "后视镜",
+      "车窗",
+      "轮毂"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "伪装贴膜",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "动感",
+      "高级"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "流畅",
+      "智能",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "伪装贴膜",
+      "车身线条",
+      "后视镜设计",
+      "车窗轮廓"
+    ],
+    "function_selling_points": [
+      "地库行驶",
+      "转向灵活",
+      "智能驾驶",
+      "低噪行驶"
+    ],
+    "scenario_a": [
+      "地库出行",
+      "城市通勤",
+      "停车入库",
+      "短途驾驶"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "夜间行驶",
+      "周末购物",
+      "家庭代步"
+    ],
+    "marketing_phrases": [
+      "地库行驶稳",
+      "伪装测试车外观",
+      "黑车白纹设计",
+      "地库灯光下的动感",
+      "转向灵活流畅",
+      "智能地库通行"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "地库场景",
+      "测试车",
+      "外观展示",
+      "行驶体验"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "测试工程师",
+      "城市通勤者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

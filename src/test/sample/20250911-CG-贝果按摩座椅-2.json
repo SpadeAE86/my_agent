@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-贝果按摩座椅-2.mp4",
+  "run_id": "v2_20260426_225911_ef6169c537",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225911_ef6169c537/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225911_ef6169c537/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225911_ef6169c537/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225911_ef6169c537/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225911_ef6169c537/scene_001_frame_000182.webp/scene_001_frame_000182.webp"
+  ],
+  "result": {
+    "description": "汽车的前排座椅（带按摩功能）、中央扶手箱与车门内饰板，座椅表面为米白色皮质（带透气孔），按摩区域显示蓝色光圈（按摩功能激活），座舱内饰精致（含木纹装饰、金色按钮），光线明亮柔和，固定机位拍摄展示。",
+    "subject": "汽车的前排座椅（按摩功能）",
+    "object": [
+      "座椅",
+      "中央扶手箱",
+      "车门内饰板",
+      "座椅按摩区域"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "细腻",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "放松",
+      "智能",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "透气孔设计",
+      "米白内饰",
+      "精致缝线"
+    ],
+    "function_selling_points": [
+      "座椅按摩功能",
+      "多区域按摩",
+      "智能按摩控制",
+      "舒适驾乘体验"
+    ],
+    "scenario_a": [
+      "长途驾驶",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "长途驾驶不腰酸",
+      "座椅按摩解疲劳",
+      "商务出行更舒适",
+      "日常通勤也放松",
+      "米白内饰显高级",
+      "透气座椅更舒适"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "内饰展示",
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "商务人士",
+      "家庭用户",
+      "长途驾驶者",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "3450x1080"
+  },
+  "success": true
+}

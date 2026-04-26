@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-后排空间-1.mp4",
+  "run_id": "v2_20260426_230341_ebb53bc2a2",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230341_ebb53bc2a2/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230341_ebb53bc2a2/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230341_ebb53bc2a2/scene_001_frame_000087.webp/scene_001_frame_000087.webp"
+  ],
+  "result": {
+    "description": "一辆MPV汽车的后排座舱（浅色座椅、带图案毯子），车外女性操作后电动侧滑门自动关闭，镜头为车内POV，背景现代城区（高楼、树木、其他车辆），天气晴天，时间白天，画面明亮，车内有狗活动。",
+    "subject": "MPV汽车",
+    "object": [
+      "后排座椅",
+      "车门",
+      "内饰",
+      "天窗"
+    ],
+    "movement": "电动门关闭（侧滑门）",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "现代城区",
+      "路边"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "舒适",
+      "简约",
+      "高级"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "智能",
+      "安静",
+      "省心"
+    ],
+    "design_selling_points": [
+      "后排座椅",
+      "电动侧滑门",
+      "内饰材质",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "电动侧滑门",
+      "大空间",
+      "智能车门控制",
+      "宠物友好"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "宠物出行",
+      "购物停车"
+    ],
+    "marketing_phrases": [
+      "电动门一键关，带宠出行省心",
+      "后排空间大，宠物能躺平",
+      "城区停车，电动门轻松操作",
+      "晴天出行，内饰明亮舒适",
+      "家庭用车，宠物友好",
+      "现代城区，便捷停车"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能演示",
+      "家庭用车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "宠物主人",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车身多角度外观 (3).mp4",
+  "run_id": "v2_20260426_225559_496602deb3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_496602deb3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_496602deb3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_496602deb3/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_496602deb3/scene_001_frame_000167.webp/scene_001_frame_000167.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色汽车于展厅环境内进行静态外观展示，画面依次呈现车灯、车身侧面、轮毂、尾部等细节，镜头为固定机位的特写与近景切换，背景简洁明亮。",
+    "subject": "蓝色汽车",
+    "object": [
+      "车灯",
+      "车身",
+      "轮毂",
+      "尾灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "现代",
+      "质感"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "车灯设计",
+      "车身线条",
+      "轮毂造型",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "智能灯光",
+      "静谧座舱",
+      "舒适驾乘",
+      "流畅操控"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态观赏"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "蓝色车漆质感高级",
+      "车灯设计精致流畅",
+      "车身线条优雅动感",
+      "轮毂造型时尚大气",
+      "展厅静态展示体验",
+      "外观细节尽显品质"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "静态展示",
+      "汽车美学"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "颜值控",
+      "城市通勤者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-黑色车漆特写-1.mp4",
+  "run_id": "v2_20260426_225950_57794770ae",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_57794770ae/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_57794770ae/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_57794770ae/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225950_57794770ae/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "汽车的前大灯在夜晚星空背景下投射出带粒子效果的明亮光束，照亮道路，两侧可见暗色地形轮廓，画面风格偏科技感与梦幻感。",
+    "subject": "汽车",
+    "object": [
+      "前大灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "道路",
+      "山区",
+      "暗夜"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态展示",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "夜晚",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "炫酷",
+      "科技感",
+      "梦幻",
+      "明亮"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "穿透性强",
+      "视觉震撼",
+      "夜间照明"
+    ],
+    "design_selling_points": [
+      "前大灯设计",
+      "粒子灯光效果",
+      "光束造型",
+      "夜间视觉效果"
+    ],
+    "function_selling_points": [
+      "夜间照明",
+      "粒子增强照明",
+      "光束穿透性",
+      "视觉体验升级"
+    ],
+    "scenario_a": [
+      "夜间行驶",
+      "山区道路",
+      "星空下驾驶",
+      "长途夜行"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "越野出行",
+      "自驾旅行",
+      "乡村夜行"
+    ],
+    "marketing_phrases": [
+      "夜间照明清晰",
+      "粒子灯光炫酷",
+      "山区夜行安全",
+      "星空下的光束",
+      "夜间驾驶氛围感",
+      "光束穿透性强"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "灯光效果",
+      "夜间行驶",
+      "CG展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "夜间驾驶者",
+      "科技爱好者",
+      "越野爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4498x1080"
+  },
+  "success": true
+}

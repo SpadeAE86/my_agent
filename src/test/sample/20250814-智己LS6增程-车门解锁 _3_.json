@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门解锁 (3).mp4",
+  "run_id": "v2_20260426_225633_d8bfdb34f8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225633_d8bfdb34f8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225633_d8bfdb34f8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225633_d8bfdb34f8/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225633_d8bfdb34f8/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225633_d8bfdb34f8/scene_001_frame_000188.webp/scene_001_frame_000188.webp"
+  ],
+  "result": {
+    "description": "汽车B柱部件（含摄像头、NFC感应区）的特写镜头，固定机位拍摄，清晰展示黑色哑光面板、圆形摄像头、NFC标识，光线柔和，静态展示部件细节。",
+    "subject": "汽车B柱部件",
+    "object": [
+      "B柱",
+      "摄像头",
+      "NFC感应区"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "哑光",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "科技感",
+      "细腻"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "便捷",
+      "灵敏"
+    ],
+    "design_selling_points": [
+      "B柱摄像头",
+      "NFC感应区",
+      "哑光面板",
+      "一体化设计"
+    ],
+    "function_selling_points": [
+      "360°环视辅助",
+      "NFC无感解锁",
+      "高清影像采集",
+      "智能感知"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "停车解锁"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "智能泊车"
+    ],
+    "marketing_phrases": [
+      "B柱摄像头看清周围",
+      "NFC解锁一贴就开",
+      "精致B柱设计",
+      "科技感满满",
+      "便捷智能体验",
+      "静态展示细节"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "部件细节",
+      "智能科技"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "城市通勤者",
+      "智能汽车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯1 (9).mp4",
+  "run_id": "v2_20260426_230022_3e1b019eb9",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_3e1b019eb9/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_3e1b019eb9/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_3e1b019eb9/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230022_3e1b019eb9/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区道路旁静态展示，背景为红砖墙，固定机位拍摄，展示其黑色亮面车漆、独特前大灯组、精致轮毂与车标，画面清晰明亮。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "前大灯组",
+      "轮毂",
+      "车身",
+      "车标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "道路旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "独特",
+      "光泽",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "智能",
+      "低风阻",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "前大灯组设计",
+      "轮毂造型",
+      "车身线条",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "稳定操控",
+      "智能灯控",
+      "静谧空间"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末逛街",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "智己LS6静态展示",
+      "黑武士外观超吸睛",
+      "前大灯组科技感拉满",
+      "亮面黑车漆质感十足",
+      "现代城区旁的时尚座驾",
+      "独特轮毂设计显个性"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "汽车静态",
+      "智己LS6"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻用户",
+      "城市通勤者",
+      "颜值控"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

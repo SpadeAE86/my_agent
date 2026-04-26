@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-化妆镜-2.mp4",
+  "run_id": "v2_20260426_225743_0f20fe3203",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225743_0f20fe3203/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225743_0f20fe3203/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225743_0f20fe3203/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225743_0f20fe3203/scene_001_frame_000125.webp/scene_001_frame_000125.webp"
+  ],
+  "result": {
+    "description": "汽车内饰（含遮阳板屏幕、中控屏）静态展示，画面呈现车内米色顶棚、遮阳板（带屏幕显示后排座椅、天窗、车门）、中控屏（左屏地图导航、右屏娱乐推荐）、后视镜（含摄像头），背景为简洁灰白墙面与蓝天，镜头为车内固定机位，光线明亮。",
+    "subject": "汽车内饰（含遮阳板屏幕、中控屏）",
+    "object": [
+      "遮阳板屏幕",
+      "中控屏",
+      "后排座椅",
+      "摄像头"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "科技感",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "便捷",
+      "流畅"
+    ],
+    "design_selling_points": [
+      "遮阳板屏幕",
+      "中控大屏",
+      "顶棚材质",
+      "内饰配色"
+    ],
+    "function_selling_points": [
+      "后排可视化",
+      "中控交互",
+      "导航功能",
+      "娱乐推荐"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市驾驶"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "遮阳板屏幕看后排超清晰",
+      "中控双屏交互很便捷",
+      "内饰简约又高级",
+      "白天开车视野亮堂堂",
+      "车内科技感直接拉满",
+      "静态展示内饰细节满满"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "智能座舱"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

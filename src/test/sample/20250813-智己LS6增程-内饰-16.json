@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-16.mp4",
+  "run_id": "v2_20260426_225309_900f77d206",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_900f77d206/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_900f77d206/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_900f77d206/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_900f77d206/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_900f77d206/scene_001_frame_000188.webp/scene_001_frame_000188.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的车内内饰静态展示，画面呈现方向盘、中控双屏、浅色皮质座椅与中控台，镜头为车内固定机位拍摄，背景为白色展厅环境，画面明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "方向盘",
+      "中控屏",
+      "座椅",
+      "中控台"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "精致",
+      "高级",
+      "柔和"
+    ],
+    "function_adjectives": [
+      "智能",
+      "流畅",
+      "便捷",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "中控双屏",
+      "皮质座椅",
+      "简约方向盘",
+      "浅色内饰"
+    ],
+    "function_selling_points": [
+      "智能车机",
+      "多屏联动",
+      "自带超充桩",
+      "语音交互"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步",
+      "短途出行",
+      "上下班"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "长途自驾",
+      "周末旅行",
+      "露营出行"
+    ],
+    "marketing_phrases": [
+      "内饰简约高级",
+      "双屏车机超智能",
+      "自带超充桩充电快",
+      "座舱舒适像家",
+      "通勤代步很合适",
+      "家庭出游空间足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "智能车机",
+      "超充功能",
+      "家庭用车",
+      "通勤用车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市白领",
+      "科技爱好者",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

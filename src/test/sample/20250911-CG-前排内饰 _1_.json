@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-前排内饰 (1).mp4",
+  "run_id": "v2_20260426_225731_3d5ebf3054",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225731_3d5ebf3054/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225731_3d5ebf3054/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225731_3d5ebf3054/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225731_3d5ebf3054/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "汽车内饰静态展示，包含方向盘、一体式中控大屏、棕色皮质座舱与金色饰条，屏幕显示导航、多媒体内容，画面为CG渲染风格，镜头固定。",
+    "subject": "汽车内饰（含方向盘、中控大屏、棕色座舱）",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "中控台"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "质感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "流畅",
+      "舒适",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "一体式中控屏",
+      "皮质座椅",
+      "金色饰条",
+      "多功能方向盘"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "导航功能",
+      "多媒体娱乐",
+      "座舱交互"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "周末休闲",
+      "长途出行"
+    ],
+    "marketing_phrases": [
+      "内饰质感高级",
+      "中控大屏智能交互",
+      "通勤代步舒适",
+      "周末出行娱乐多",
+      "车内导航精准",
+      "座舱设计简约精致"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "智能座舱"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市白领",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

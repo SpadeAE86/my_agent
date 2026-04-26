@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-20.mp4",
+  "run_id": "v2_20260426_225205_c27493136d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_c27493136d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_c27493136d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_c27493136d/scene_001_frame_000089.webp/scene_001_frame_000089.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车静态停放在装饰有花卉与爱心的欧式建筑前的砖石路面街道上，车身为亮黑色，前脸设计精致，轮毂动感，背景建筑色彩丰富，画面光线明亮，采用固定机位拍摄。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "前灯",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "欧式建筑前"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "大气",
+      "时尚"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "舒适",
+      "智能",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "精致前脸",
+      "流畅车身线条",
+      "亮黑车漆",
+      "运动轮毂"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "舒适驾乘体验",
+      "长续航能力",
+      "快充技术"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步",
+      "逛街停车",
+      "休闲出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "商务出行",
+      "约会出行",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "现代城区静态展，黑武士颜值吸睛",
+      "智己LS6停驻欧式建筑前，亮黑车漆超亮眼",
+      "城市街道实拍，外观精致大气",
+      "周末逛街开它，回头率爆棚",
+      "商务出行好选择，静态颜值在线",
+      "流畅车身线条，都市出行新时尚"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "城市出行",
+      "静态实拍",
+      "智己LS6",
+      "现代城区"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户",
+      "汽车爱好者",
+      "时尚人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

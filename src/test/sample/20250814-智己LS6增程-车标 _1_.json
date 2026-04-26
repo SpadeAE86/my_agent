@@ -1,0 +1,81 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车标 (1).mp4",
+  "run_id": "v2_20260426_225542_b3e7498203",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225542_b3e7498203/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225542_b3e7498203/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225542_b3e7498203/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225542_b3e7498203/scene_001_frame_000124.webp/scene_001_frame_000124.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的车头（引擎盖）与车标特写，车色为蓝色，车标为白色金属质感，车漆光滑，背景简洁，镜头为固定机位特写，画面静态展示。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "引擎盖",
+      "车标",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光滑",
+      "精致",
+      "金属感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "优雅"
+    ],
+    "design_selling_points": [
+      "金属车标",
+      "光滑车漆",
+      "引擎盖线条",
+      "品牌标识"
+    ],
+    "function_selling_points": [
+      "品牌辨识度",
+      "简约设计"
+    ],
+    "scenario_a": [
+      "展厅展示",
+      "静态观赏"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "蓝色车漆质感高级",
+      "智己LS6车标精致",
+      "静态展示外观细节",
+      "室内拍摄质感拉满",
+      "金属车标简约大气",
+      "光滑车漆尽显品质"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "设计爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

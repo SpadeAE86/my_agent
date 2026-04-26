@@ -1,0 +1,230 @@
+{
+  "input": {
+    "method": "GET",
+    "path": "car_interior_analysis_v2/_search",
+    "index": "car_interior_analysis_v2",
+    "profile": true,
+    "explain": false
+  },
+  "cases": {
+    "knn_only_single": {
+      "raw": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\knn_only_single_raw.json",
+      "summary": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\knn_only_single_summary.json",
+      "profile_summary": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\knn_only_single_profile_summary.json",
+      "anomaly": {
+        "huge_negative_scores": [
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "_score": -9549512000.0,
+            "pos": 0
+          },
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "_score": -4422440400.0,
+            "pos": 1
+          }
+        ],
+        "duplicate_ids": [
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "pos": 1,
+            "prev_pos": 0
+          },
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "pos": 2,
+            "prev_pos": 0
+          }
+        ]
+      },
+      "top_hits": [
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": -9549512000.0
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": -4422440400.0
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.5
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.47249448
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.46315825
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.45893028
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.45798925
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.4538148
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.44913173
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.44866776
+        }
+      ]
+    },
+    "bm25_plus_single_knn": {
+      "raw": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\bm25_plus_single_knn_raw.json",
+      "summary": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\bm25_plus_single_knn_summary.json",
+      "profile_summary": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\bm25_plus_single_knn_profile_summary.json",
+      "anomaly": {
+        "huge_negative_scores": [
+          {
+            "_id": "v2_20260426_192053_a9a8bb9123",
+            "_score": -9549512000.0,
+            "pos": 0
+          },
+          {
+            "_id": "v2_20260426_192053_a9a8bb9123",
+            "_score": -4422440400.0,
+            "pos": 1
+          }
+        ],
+        "duplicate_ids": [
+          {
+            "_id": "v2_20260426_192053_a9a8bb9123",
+            "pos": 1,
+            "prev_pos": 0
+          },
+          {
+            "_id": "v2_20260426_192053_a9a8bb9123",
+            "pos": 2,
+            "prev_pos": 0
+          }
+        ]
+      },
+      "top_hits": [
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": -9549512000.0
+        },
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": -4422440400.0
+        },
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 4.039067
+        },
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 3.9231424
+        },
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 2.4979737
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 2.054496
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 1.5218275
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.8876511
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.7567526
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.46346796
+        }
+      ]
+    },
+    "knn_only_multi": {
+      "raw": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\knn_only_multi_raw.json",
+      "summary": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\knn_only_multi_summary.json",
+      "profile_summary": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\hybrid_ablation_outputs\\knn_only_multi_profile_summary.json",
+      "anomaly": {
+        "huge_negative_scores": [
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "_score": -9549512000.0,
+            "pos": 0
+          },
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "_score": -4422440400.0,
+            "pos": 1
+          }
+        ],
+        "duplicate_ids": [
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "pos": 1,
+            "prev_pos": 0
+          },
+          {
+            "_id": "v2_20260426_192053_4bb2fdcaf7",
+            "pos": 2,
+            "prev_pos": 0
+          }
+        ]
+      },
+      "top_hits": [
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": -9549512000.0
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": -4422440400.0
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.5
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.47249448
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.46315825
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.45893028
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.45798925
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.4538148
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.44913173
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.44913173
+        }
+      ]
+    }
+  }
+}

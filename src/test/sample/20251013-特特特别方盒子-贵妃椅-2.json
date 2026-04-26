@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-贵妃椅-2.mp4",
+  "run_id": "v2_20260426_230346_4f9573a91e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_4f9573a91e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_4f9573a91e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_4f9573a91e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_4f9573a91e/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "汽车后排座舱内，一位戴白色帽子的女性乘客身着休闲装，与一只黑白相间的边牧犬互动，车内浅米色内饰搭配大尺寸天窗，背景为晴天户外绿植环境，镜头为车内固定机位，展示舒适的驾乘空间与宠物友好的车内场景。",
+    "subject": "汽车后排空间（含乘客与狗）",
+    "object": [
+      "后排座椅",
+      "天窗",
+      "乘客（女性）",
+      "狗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "户外停车",
+      "自然景区"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "宽敞",
+      "柔和",
+      "优雅"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "放松",
+      "惬意",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "浅米色内饰",
+      "大尺寸天窗",
+      "后排座椅布局",
+      "车内氛围灯"
+    ],
+    "function_selling_points": [
+      "后排空间宽敞",
+      "舒适驾乘体验",
+      "宠物友好座舱",
+      "静谧隔音"
+    ],
+    "scenario_a": [
+      "周末出游",
+      "带宠出行",
+      "户外休憩",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "城市通勤",
+      "休闲放松",
+      "朋友欢聚"
+    ],
+    "marketing_phrases": [
+      "带宠出行无压力",
+      "后排空间大 轻松躺平",
+      "大天窗看风景 车内也惬意",
+      "浅内饰显高级 乘坐更舒适",
+      "宠物友好座舱 出行更温馨",
+      "晴天出游 车内舒适放松"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "舒适体验",
+      "带宠出行",
+      "家庭出行"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "宠物主人",
+      "户外爱好者",
+      "追求舒适驾乘者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

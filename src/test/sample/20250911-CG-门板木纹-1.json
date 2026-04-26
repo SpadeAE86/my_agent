@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-门板木纹-1.mp4",
+  "run_id": "v2_20260426_225933_c3da92c38b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225933_c3da92c38b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225933_c3da92c38b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225933_c3da92c38b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225933_c3da92c38b/scene_001_frame_000139.webp/scene_001_frame_000139.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的车门内饰板特写，展示木纹装饰面板、皮质包覆区域、金属质感的空调出风口与控制开关，氛围灯从线性光效渐变展开为枝叶状光效，镜头为固定特写，光线明亮清晰，车窗透出晴朗蓝天。",
+    "subject": "汽车车门内饰板",
+    "object": [
+      "车门内饰板",
+      "氛围灯",
+      "木纹装饰",
+      "皮质包覆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "现代",
+      "细腻"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "温馨",
+      "科技",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "木纹装饰面板",
+      "皮质包覆",
+      "动态氛围灯",
+      "金属质感部件"
+    ],
+    "function_selling_points": [
+      "氛围灯动态光效",
+      "内饰材质组合",
+      "细节工艺保障",
+      "舒适体验营造"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "内饰氛围灯会开花",
+      "木纹皮质内饰高级感",
+      "车门内饰细节精致",
+      "车内氛围温馨细腻",
+      "静态展示内饰设计",
+      "特写展示车门细节"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "静态展示",
+      "汽车细节",
+      "氛围灯效果",
+      "材质工艺"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者",
+      "注重内饰设计的消费者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

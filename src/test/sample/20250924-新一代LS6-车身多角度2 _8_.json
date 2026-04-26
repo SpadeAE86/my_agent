@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度2 (8).mp4",
+  "run_id": "v2_20260426_230241_11d8060282",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230241_11d8060282/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230241_11d8060282/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230241_11d8060282/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230241_11d8060282/scene_001_frame_000148.webp/scene_001_frame_000148.webp"
+  ],
+  "result": {
+    "description": "一辆黑色轿车在树林旁的道路上行驶，背景为晴朗蓝天与茂密树林，路面干净，车身线条流畅，轮毂设计精致，画面明亮清晰。",
+    "subject": "黑色轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "轮胎",
+      "车窗"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "道路",
+      "树林",
+      "草地"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光滑",
+      "大气",
+      "动感",
+      "精致"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "安静",
+      "流畅",
+      "高效"
+    ],
+    "design_selling_points": [
+      "轮毂设计",
+      "车身线条",
+      "车漆质感",
+      "车窗设计"
+    ],
+    "function_selling_points": [
+      "行驶平稳",
+      "动力强劲",
+      "节能续航",
+      "操控流畅"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "树林道路行驶平稳",
+      "黑色车漆质感高级",
+      "轮毂设计动感吸睛",
+      "晴天出行颜值在线",
+      "车身线条流畅大气",
+      "路跑外观尽显格调"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "路跑场景",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "城市白领"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

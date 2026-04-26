@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-4.mp4",
+  "run_id": "v2_20260426_225205_b68b77bd4a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b68b77bd4a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b68b77bd4a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_b68b77bd4a/scene_001_frame_000095.webp/scene_001_frame_000095.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在开阔的厂区空地上静态展示，背景为现代建筑与停放的其他车辆，黄昏时分光线柔和，画面清晰呈现黑色车身、运动轮毂与科技感灯组，车内可见驾乘人员。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "驾驶员"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "厂区空地",
+      "停车场"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "大气",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "科技感灯组",
+      "运动轮毂",
+      "低风阻设计"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "长续航"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "厂区出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "智己LS6 黑色外观超酷",
+      "黄昏实拍 科技感拉满",
+      "运动轮毂 流畅线条",
+      "厂区空地静态展示",
+      "驾乘人员实拍",
+      "现代建筑背景"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态实拍",
+      "智己LS6",
+      "黑色汽车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "城市通勤者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-36.mp4",
+  "run_id": "v2_20260426_230600_580edb067d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230600_580edb067d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230600_580edb067d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230600_580edb067d/scene_001_frame_000104.webp/scene_001_frame_000104.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车停在现代城区的街道边，车身为亮面黑色，背景有现代建筑与道路，画面清晰明亮，车辆静态展示外观。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "亮面",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静音",
+      "优雅",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "贯穿尾灯",
+      "溜背造型",
+      "亮面车漆",
+      "黑色轮毂"
+    ],
+    "function_selling_points": [
+      "静谧性",
+      "车身稳定",
+      "舒适驾乘",
+      "优雅姿态"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "日常停车",
+      "逛街代步"
+    ],
+    "marketing_phrases": [
+      "智己LS6街头静展",
+      "黑色亮面质感高级",
+      "溜背造型吸睛",
+      "贯穿尾灯亮眼",
+      "现代城区出行",
+      "商务范十足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "现代城区",
+      "商务出行"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

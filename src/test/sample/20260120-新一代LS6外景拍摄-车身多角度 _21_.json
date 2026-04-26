@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (21).mp4",
+  "run_id": "v2_20260426_230502_3eb83c26e3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230502_3eb83c26e3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230502_3eb83c26e3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230502_3eb83c26e3/scene_001_frame_000104.webp/scene_001_frame_000104.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的圆形展台（转盘）上静态展示，车身黑色有光泽，前机盖有装饰贴，展厅内灯光明亮，墙面金属质感，地面瓷砖。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "前灯组",
+      "车标",
+      "前机盖",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光泽",
+      "精致",
+      "现代",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "安静",
+      "舒适",
+      "智能"
+    ],
+    "design_selling_points": [
+      "前灯组",
+      "车标",
+      "前格栅",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "智能照明",
+      "静音座舱",
+      "舒适空间"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示",
+      "产品体验",
+      "购车咨询"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "长途自驾",
+      "家庭出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示智己LS6",
+      "黑色车漆质感高级",
+      "现代灯组设计亮眼",
+      "流畅车身线条"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "购车人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

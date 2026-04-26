@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后备箱-1.mp4",
+  "run_id": "v2_20260426_225353_1ab86c71e8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225353_1ab86c71e8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225353_1ab86c71e8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225353_1ab86c71e8/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225353_1ab86c71e8/scene_001_frame_000180.webp/scene_001_frame_000180.webp"
+  ],
+  "result": {
+    "description": "智己汽车的后备箱及车内空间进行静态展示，画面依次呈现后备箱下层储物格、上层宽敞空间、后排座椅及前舱中控区域，镜头为固定机位拍摄，光线明亮，背景为室内展厅环境，车色为深蓝色，整体空间整洁规整。",
+    "subject": "智己汽车（后备箱与车内空间）",
+    "object": [
+      "后备箱",
+      "后排座椅",
+      "储物格",
+      "前舱中控"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "整洁",
+      "宽敞",
+      "精致",
+      "简约"
+    ],
+    "function_adjectives": [
+      "实用",
+      "便捷",
+      "人性化",
+      "规整"
+    ],
+    "design_selling_points": [
+      "后备箱分层储物格",
+      "宽大后备箱空间",
+      "后排座椅布局",
+      "前舱简洁内饰"
+    ],
+    "function_selling_points": [
+      "空间利用率高",
+      "储物便捷",
+      "舒适驾乘空间",
+      "人性化储物设计"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "购物载物"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "搬家（轻量）"
+    ],
+    "marketing_phrases": [
+      "后备箱分层能装",
+      "宽大空间想装就装",
+      "家庭出行空间够",
+      "购物载物无压力",
+      "前舱简洁易操作",
+      "后排舒适不拥挤"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "空间展示",
+      "汽车内饰",
+      "后备箱设计"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "购物爱好者",
+      "自驾出行者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

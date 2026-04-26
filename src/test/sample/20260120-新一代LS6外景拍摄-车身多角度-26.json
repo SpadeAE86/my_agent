@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-26.mp4",
+  "run_id": "v2_20260426_230542_208a39afff",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230542_208a39afff/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230542_208a39afff/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230542_208a39afff/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230542_208a39afff/scene_001_frame_000158.webp/scene_001_frame_000158.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车停在现代城区的街道旁，车身为亮黑色，周围有现代风格建筑、绿植与道路，画面光线明亮，镜头为固定机位拍摄，清晰呈现车辆外观细节（前脸灯组、车身线条、轮毂等）。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车灯",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "建筑旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "静谧",
+      "高效"
+    ],
+    "design_selling_points": [
+      "前脸灯组",
+      "车身线条",
+      "黑色轮毂",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "舒适悬架",
+      "低噪隔音",
+      "高效续航"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "周末出行"
+    ],
+    "marketing_phrases": [
+      "现代城区吸睛",
+      "亮黑外观精致",
+      "街道旁静态展示",
+      "智己LS6颜值在线",
+      "城市通勤好伙伴",
+      "商务出行有面儿"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "城市场景",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "商务人士",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

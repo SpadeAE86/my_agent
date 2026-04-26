@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-增程LS6官号-武康大楼-贵妃椅-1.mp4",
+  "run_id": "v2_20260426_230333_2bec739bd9",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230333_2bec739bd9/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230333_2bec739bd9/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230333_2bec739bd9/scene_001_frame_000089.webp/scene_001_frame_000089.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的后排座舱内，一位女士以放松坐姿倚靠在浅色真皮座椅上，内饰配备全景天窗、氛围灯与音响，窗外绿植环绕、光线明亮。",
+    "subject": "汽车后排座舱（含乘客）",
+    "object": [
+      "后排座椅",
+      "全景天窗",
+      "氛围灯",
+      "乘客"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "庭院"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "豪华",
+      "柔软",
+      "宽敞"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "放松",
+      "静谧",
+      "惬意"
+    ],
+    "design_selling_points": [
+      "后排座椅",
+      "全景天窗",
+      "氛围灯",
+      "真皮内饰"
+    ],
+    "function_selling_points": [
+      "座椅舒适支撑",
+      "全景天窗采光",
+      "后排空间宽敞",
+      "静谧座舱体验"
+    ],
+    "scenario_a": [
+      "商务出行",
+      "家庭出游",
+      "休闲放松",
+      "接送客户"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "周末度假",
+      "城市通勤",
+      "高端接待"
+    ],
+    "marketing_phrases": [
+      "后排躺着超舒服",
+      "豪华内饰质感足",
+      "全景天窗采光好",
+      "氛围灯显高级感",
+      "真皮座椅柔软糯",
+      "宽敞后排随便躺"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "空间展示"
+    ],
+    "appealing_audience": [
+      "商务人士",
+      "家庭用户",
+      "追求舒适的车主",
+      "高端出行需求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

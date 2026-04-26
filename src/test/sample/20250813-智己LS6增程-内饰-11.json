@@ -1,0 +1,85 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-11.mp4",
+  "run_id": "v2_20260426_225307_952b181a0f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225307_952b181a0f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225307_952b181a0f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225307_952b181a0f/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225307_952b181a0f/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225307_952b181a0f/scene_001_frame_000182.webp/scene_001_frame_000182.webp"
+  ],
+  "result": {
+    "description": "智己汽车内饰静态展示，包含方向盘、双中控大屏、浅色真皮座椅、一体化中控台，镜头为固定机位拍摄，画面明亮清晰，背景为室内展厅环境。",
+    "subject": "智己汽车内饰",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "中控台"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "高级",
+      "质感细腻"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "便捷",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "双中控大屏",
+      "真皮座椅",
+      "多功能方向盘",
+      "一体化中控台"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "多屏交互",
+      "座椅舒适支撑",
+      "车机娱乐功能"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "内饰精致有质感",
+      "双大屏智能交互",
+      "座椅舒适像沙发",
+      "智己内饰太高级"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "科技爱好者",
+      "汽车发烧友"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (18).mp4",
+  "run_id": "v2_20260426_230450_7e5cf59f9a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230450_7e5cf59f9a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230450_7e5cf59f9a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230450_7e5cf59f9a/scene_001_frame_000097.webp/scene_001_frame_000097.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅内静态展示，画面呈现其黑色亮面车头、车标、前灯及车牌“智己LS6”，背景为展厅墙面与地面，光线明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车头",
+      "车标",
+      "前灯",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "光泽",
+      "大气"
+    ],
+    "function_adjectives": [
+      "智能",
+      "静音",
+      "稳定",
+      "科技"
+    ],
+    "design_selling_points": [
+      "车标设计",
+      "前灯造型",
+      "前脸线条",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "智能驾驶感知",
+      "静音座舱",
+      "稳定底盘",
+      "科技交互"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态体验"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示智己LS6",
+      "黑色亮面车漆质感",
+      "车标细节呈现",
+      "前脸设计精致",
+      "智能驾驶感知强",
+      "静音座舱体验"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

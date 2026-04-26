@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-发动机-1.mp4",
+  "run_id": "v2_20260426_225750_ccce7676b4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_ccce7676b4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_ccce7676b4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_ccce7676b4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_ccce7676b4/scene_001_frame_000151.webp/scene_001_frame_000151.webp"
+  ],
+  "result": {
+    "description": "CG动画展示汽车发动机内部工作过程，活塞、气缸、曲轴等部件动态运作，背景黑色，清晰呈现机械结构与工作原理。",
+    "subject": "汽车发动机",
+    "object": [
+      "活塞",
+      "气缸",
+      "曲轴",
+      "火花塞"
+    ],
+    "movement": "发动机运作演示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "动态演示（发动机运作）",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精密",
+      "机械感",
+      "金属质感",
+      "复杂"
+    ],
+    "function_adjectives": [
+      "高效",
+      "稳定",
+      "强劲",
+      "节能"
+    ],
+    "design_selling_points": [
+      "活塞设计",
+      "气缸结构",
+      "曲轴布局",
+      "透明化展示"
+    ],
+    "function_selling_points": [
+      "高效燃烧",
+      "动力输出",
+      "稳定运转",
+      "多缸协同"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "长途驾驶"
+    ],
+    "scenario_b": [
+      "高速行驶",
+      "越野爬坡"
+    ],
+    "marketing_phrases": [
+      "发动机高效运转",
+      "多缸协同动力强",
+      "精密结构更可靠",
+      "高效燃烧省油耗",
+      "稳定输出不抖震",
+      "看得见的强劲芯"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "车主",
+      "机械工程师"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

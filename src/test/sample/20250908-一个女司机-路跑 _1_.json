@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250908-一个女司机-路跑 (1).mp4",
+  "run_id": "v2_20260426_225706_d86c6438e4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_d86c6438e4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_d86c6438e4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_d86c6438e4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_d86c6438e4/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在土路（施工路段）上向前行驶，尾部扬起尘土，背景为青山、蓝天与金属护栏，画面光线明亮、清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车尾"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "土路",
+      "山区",
+      "施工路段"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "动感",
+      "硬朗",
+      "精致"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "强劲",
+      "越野",
+      "通过性好"
+    ],
+    "design_selling_points": [
+      "溜背造型",
+      "黑色车漆",
+      "大尺寸轮毂",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "越野性能",
+      "强劲动力",
+      "稳定行驶",
+      "高通过性"
+    ],
+    "scenario_a": [
+      "周末自驾",
+      "户外探险",
+      "山区通勤"
+    ],
+    "scenario_b": [
+      "乡村出行",
+      "施工路段通行",
+      "越野挑战"
+    ],
+    "marketing_phrases": [
+      "土路越野无压力",
+      "山区行驶动力强",
+      "施工路段轻松过",
+      "黑车漆质感佳",
+      "溜背造型更动感",
+      "越野性能超带感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "越野场景",
+      "性能测试",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "越野爱好者",
+      "乡村用户",
+      "自驾人群",
+      "户外探险者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

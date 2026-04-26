@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (32).mp4",
+  "run_id": "v2_20260426_230300_9971901d85",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_9971901d85/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_9971901d85/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_9971901d85/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_9971901d85/scene_001_frame_000158.webp/scene_001_frame_000158.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地下车库内静态展示，车身为黑色，车顶与车身投射有点阵灯光，环境为室内地库，镜头为固定机位拍摄，展现车辆外观设计与前灯点亮效果。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "车牌",
+      "车顶"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "现代",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "智能",
+      "舒适",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "黑色车漆",
+      "流线型车身",
+      "矩阵式前灯",
+      "激光雷达车顶"
+    ],
+    "function_selling_points": [
+      "激光雷达感知",
+      "智能照明",
+      "静谧座舱",
+      "稳定底盘"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "城市通勤",
+      "日常出行",
+      "室内泊车"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "地库静态智己LS6",
+      "黑色车漆质感拉满",
+      "激光雷达加持智能",
+      "矩阵前灯点亮地库",
+      "智己LS6地库实拍",
+      "城市通勤好伙伴"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "智能驾驶",
+      "地库场景"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "科技爱好者",
+      "智能驾驶关注者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

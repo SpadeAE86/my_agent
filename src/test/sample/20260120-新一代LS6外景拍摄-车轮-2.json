@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车轮-2.mp4",
+  "run_id": "v2_20260426_230608_6334352e80",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230608_6334352e80/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230608_6334352e80/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230608_6334352e80/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230608_6334352e80/scene_001_frame_000145.webp/scene_001_frame_000145.webp"
+  ],
+  "result": {
+    "description": "一辆智己汽车停放在室内展厅中，画面聚焦其哑光灰色车身、黑色运动轮毂及橙色制动卡钳，展厅地面为白色瓷砖，顶部有圆形灯光设计，镜头为固定机位近距离拍摄，光线明亮均匀。",
+    "subject": "智己汽车",
+    "object": [
+      "轮毂",
+      "轮胎",
+      "卡钳",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "哑光灰",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "哑光",
+      "运动",
+      "精致",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "高性能",
+      "稳定",
+      "安全",
+      "可靠"
+    ],
+    "design_selling_points": [
+      "黑色运动轮毂",
+      "橙色制动卡钳",
+      "哑光车漆",
+      "流线车身"
+    ],
+    "function_selling_points": [
+      "高性能制动",
+      "稳定操控",
+      "安全保障",
+      "运动性能"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示",
+      "购车体验",
+      "外观鉴赏"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "自驾出游",
+      "商务出行",
+      "周末兜风"
+    ],
+    "marketing_phrases": [
+      "哑光灰车身质感高级",
+      "橙色卡钳运动感拉满",
+      "黑色轮毂设计吸睛",
+      "展厅静态展示细节",
+      "智己汽车外观特写",
+      "运动外观气场足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态展示",
+      "外观细节"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻车主",
+      "运动车型爱好者",
+      "购车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

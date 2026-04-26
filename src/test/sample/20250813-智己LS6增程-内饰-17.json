@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-17.mp4",
+  "run_id": "v2_20260426_225309_7ec1ef9698",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_7ec1ef9698/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_7ec1ef9698/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_7ec1ef9698/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_7ec1ef9698/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_7ec1ef9698/scene_001_frame_000188.webp/scene_001_frame_000188.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的车内内饰静态展示，镜头为车内固定机位，呈现方向盘、双中控大屏、皮质座椅、全景天窗等部件，中控台设计简约，屏幕显示界面清晰，背景含“自带超充桩”文字。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "科技感",
+      "精致",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "流畅",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "大尺寸中控屏",
+      "简约中控台",
+      "真皮座椅",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "超充功能",
+      "多屏交互",
+      "语音控制"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "智己LS6内饰科技感十足",
+      "双屏交互更便捷",
+      "自带超充桩补能快",
+      "静态内饰质感高级",
+      "简约座舱更舒适",
+      "多屏显示信息全"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "科技感",
+      "超充"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "家庭用户",
+      "城市通勤者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

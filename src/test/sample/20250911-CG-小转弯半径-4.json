@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-小转弯半径-4.mp4",
+  "run_id": "v2_20260426_192053_496fa33b0d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_496fa33b0d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_496fa33b0d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_496fa33b0d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_496fa33b0d/scene_001_frame_000154.webp/scene_001_frame_000154.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车在现代城区的城市道路上完成掉头动作，右侧停放一辆白色汽车，人行道上有行人活动，背景为现代风格建筑，镜头为航拍视角，天气晴朗，时间为白天。",
+    "subject": "黑色汽车",
+    "object": [
+      "黑色汽车",
+      "白色汽车",
+      "行人"
+    ],
+    "movement": "掉头",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "现代城区",
+      "城市道路",
+      "人行道"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "精致",
+      "大气"
+    ],
+    "function_adjectives": [
+      "灵活",
+      "稳定",
+      "便捷",
+      "精准"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "亮面车漆",
+      "简约车尾设计",
+      "现代车头造型"
+    ],
+    "function_selling_points": [
+      "城市道路掉头",
+      "窄路精准转向",
+      "城市通勤掉头",
+      "行人旁安全掉头"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末购物",
+      "接送行人"
+    ],
+    "marketing_phrases": [
+      "城市道路一把掉头",
+      "窄路掉头轻松过",
+      "晴天出行掉头稳",
+      "现代城区掉头便捷",
+      "行人旁掉头安全",
+      "道路掉头灵活"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "城市出行",
+      "掉头场景"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "新手司机",
+      "家庭用户",
+      "上班族"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4498x1080"
+  },
+  "success": true,
+  "cached": true
+}

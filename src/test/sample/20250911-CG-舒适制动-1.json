@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-舒适制动-1.mp4",
+  "run_id": "v2_20260426_225908_9f397e24ad",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_9f397e24ad/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_9f397e24ad/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_9f397e24ad/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225908_9f397e24ad/scene_001_frame_000178.webp/scene_001_frame_000178.webp"
+  ],
+  "result": {
+    "description": "一辆深色新能源汽车在现代城区道路上行驶，后通过CG动画透明化展示动力系统（发动机、底盘等），最终恢复实体外观停在路边。画面含航拍（首张）与车外视角，背景为城市街道、商店、建筑，天气晴朗光线明亮。",
+    "subject": "一辆深色新能源汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "发动机",
+      "底盘"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "路跑外观（含CG动力展示）",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "科技感",
+      "高级"
+    ],
+    "function_adjectives": [
+      "强劲",
+      "高效",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "流线型车身",
+      "多辐运动轮毂",
+      "全景天窗",
+      "隐藏式门把手"
+    ],
+    "function_selling_points": [
+      "高效动力系统",
+      "稳定底盘",
+      "智能驱动",
+      "低能耗"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "购物出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "城区通勤更顺畅",
+      "动力系统看得见",
+      "城市道路行驶稳",
+      "停车一把就到位",
+      "外观科技感拉满",
+      "动力强劲够给力"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "城市出行"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "新能源车主",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4498x1080"
+  },
+  "success": true
+}

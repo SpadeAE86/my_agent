@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC1 (12).mp4",
+  "run_id": "v2_20260426_230055_34cc75ca77",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230055_34cc75ca77/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230055_34cc75ca77/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230055_34cc75ca77/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230055_34cc75ca77/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车尾部的动态像素灯展示趣味动画，镜头为特写，背景有建筑与树木，光线明亮清晰，车色为黑色，车身反光效果明显。",
+    "subject": "智己汽车",
+    "object": [
+      "像素灯",
+      "车标",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "智能",
+      "交互",
+      "个性",
+      "趣味"
+    ],
+    "design_selling_points": [
+      "动态像素灯",
+      "车标设计",
+      "车身涂装",
+      "尾部造型"
+    ],
+    "function_selling_points": [
+      "动态灯语",
+      "像素灯交互",
+      "个性化展示",
+      "车标辨识度"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "社交出行",
+      "个性展示"
+    ],
+    "marketing_phrases": [
+      "像素灯趣味动画",
+      "智己车尾设计",
+      "动态灯语展示",
+      "黑武士外观",
+      "城市道路吸睛",
+      "个性车标"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "灯语展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻用户",
+      "个性车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

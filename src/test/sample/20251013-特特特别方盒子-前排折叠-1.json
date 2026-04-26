@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-前排折叠-1.mp4",
+  "run_id": "v2_20260426_230339_f73277b6ca",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230339_f73277b6ca/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230339_f73277b6ca/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230339_f73277b6ca/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230339_f73277b6ca/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "一辆汽车路跑行驶，车内后排视角可见中控双屏显示界面、后排座椅及一只宠物狗，窗外为晴朗白天的公路车流场景，镜头为车内POV视角，光线明亮清晰。",
+    "subject": "汽车（车内后排视角，路跑行驶，含中控双屏、后排宠物狗）",
+    "object": [
+      "中控屏",
+      "后排座椅",
+      "狗",
+      "天窗"
+    ],
+    "movement": "路跑",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "公路"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "豪华"
+    ],
+    "function_adjectives": [
+      "流畅",
+      "舒适",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "中控双屏",
+      "后排空间",
+      "内饰材质",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "智能车机",
+      "舒适驾乘",
+      "稳定行驶",
+      "高清显示"
+    ],
+    "scenario_a": [
+      "长途出行",
+      "通勤",
+      "带宠出行",
+      "自驾旅行"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "周末自驾",
+      "公路旅行",
+      "城市通勤"
+    ],
+    "marketing_phrases": [
+      "公路行驶稳如虎",
+      "中控双屏超清晰",
+      "带宠出行更舒适",
+      "晴天驾驶视野佳",
+      "车机流畅不卡顿",
+      "后排空间大敞亮"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "路跑场景",
+      "智能车机"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "宠物主人",
+      "科技爱好者",
+      "自驾人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

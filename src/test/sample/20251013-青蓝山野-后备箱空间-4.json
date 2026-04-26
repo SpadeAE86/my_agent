@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-后备箱空间-4.mp4",
+  "run_id": "v2_20260426_230359_e85602c86f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230359_e85602c86f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230359_e85602c86f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230359_e85602c86f/scene_001_frame_000099.webp/scene_001_frame_000099.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车停在户外树林旁的道路上，一名穿米色外套的人员操作电动尾门开启，向后备箱内放置物品，画面光线明亮，背景为晴朗蓝天与绿树，展示后备箱空间与装载能力。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "后备箱",
+      "尾门",
+      "座椅",
+      "操作人员"
+    ],
+    "movement": "装载物品",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "户外",
+      "树林",
+      "道路"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简洁",
+      "流畅",
+      "精致",
+      "大气"
+    ],
+    "function_adjectives": [
+      "实用",
+      "便捷",
+      "能装",
+      "灵活"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "溜背造型",
+      "尾门设计",
+      "双色车顶"
+    ],
+    "function_selling_points": [
+      "大后备箱空间",
+      "电动尾门",
+      "装载便捷",
+      "空间灵活"
+    ],
+    "scenario_a": [
+      "自驾出行",
+      "露营装载",
+      "家庭出行",
+      "购物装载"
+    ],
+    "scenario_b": [
+      "搬家运输",
+      "户外装备",
+      "长途旅行",
+      "商务装载"
+    ],
+    "marketing_phrases": [
+      "后备箱能装又实用",
+      "电动尾门一按就开",
+      "自驾露营轻松装",
+      "家庭出行空间够",
+      "晴天出行装载方便",
+      "智己LS6能装"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "空间展示",
+      "装载能力",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "自驾爱好者",
+      "城市通勤者",
+      "户外活动者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

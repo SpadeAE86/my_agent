@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-13.mp4",
+  "run_id": "v2_20260426_225654_72771c75c3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_72771c75c3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_72771c75c3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_72771c75c3/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225654_72771c75c3/scene_001_frame_000160.webp/scene_001_frame_000160.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色轿车在现代风格的展厅内静态展示，车身线条流畅，轮毂设计精致，背景为玻璃墙与室内灯光，画面明亮清晰，展现车辆侧面外观与车内部分座椅细节。",
+    "subject": "蓝色新能源轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "高级"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "平稳",
+      "节能"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "运动轮毂",
+      "隐藏式车门把手",
+      "舒适座椅"
+    ],
+    "function_selling_points": [
+      "宽敞空间",
+      "静谧体验",
+      "智能座舱",
+      "节能续航"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态品鉴",
+      "购车咨询",
+      "都市通勤"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "商务接待",
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "蓝色轿跑展厅静展",
+      "运动轮毂颜值在线",
+      "车身线条流畅高级",
+      "舒适座舱静候体验",
+      "展厅看车选这款",
+      "家用通勤都合适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "展厅场景",
+      "静态体验"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "汽车爱好者",
+      "城市通勤者",
+      "年轻消费者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

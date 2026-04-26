@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-百变座椅 (1).mp4",
+  "run_id": "v2_20260426_225857_84bc468a26",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_84bc468a26/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_84bc468a26/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_84bc468a26/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225857_84bc468a26/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "汽车内饰（前排座椅区域）静态展示，可见头枕、座椅背部品牌标识，以及安装在座椅背上的纸巾盒、笔筒等配件，中控屏显示地图界面，方向盘简约设计，镜头为车内固定机位，光线明亮，背景为蓝天。",
+    "subject": "汽车前排座椅及内饰",
+    "object": [
+      "座椅",
+      "头枕",
+      "中控屏",
+      "方向盘"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "细腻",
+      "简约"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "舒适",
+      "贴心"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "头枕缝线设计",
+      "座椅背部标识",
+      "座椅背部配件安装位"
+    ],
+    "function_selling_points": [
+      "座椅背部便捷收纳",
+      "车内空间利用",
+      "中控屏信息展示",
+      "方向盘操作便捷"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "座椅背后装纸巾盒超方便",
+      "车内收纳空间实用",
+      "头枕设计高级感拉满",
+      "中控大屏导航清晰",
+      "方向盘简约好握",
+      "笔筒放后座孩子画画方便"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰细节",
+      "收纳设计",
+      "舒适座椅",
+      "中控屏展示",
+      "头枕设计"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者",
+      "注重内饰细节的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车前灯 (7).mp4",
+  "run_id": "v2_20260426_225533_806b1412bf",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_806b1412bf/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_806b1412bf/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_806b1412bf/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225533_806b1412bf/scene_001_frame_000176.webp/scene_001_frame_000176.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的前大灯组特写，灯组包含LED日行灯与透镜结构，车身为亮面黑，镜头以固定机位从多角度展示大灯细节，背景为简洁的展厅环境，光线清晰明亮。",
+    "subject": "黑色汽车的前大灯组",
+    "object": [
+      "前大灯",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "犀利",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "安全",
+      "智能",
+      "醒目"
+    ],
+    "design_selling_points": [
+      "LED日行灯",
+      "透镜大灯",
+      "一体化灯组设计",
+      "犀利灯腔造型"
+    ],
+    "function_selling_points": [
+      "LED光源",
+      "智能照明",
+      "日行灯功能",
+      "夜间清晰照明"
+    ],
+    "scenario_a": [
+      "夜间出行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "大灯犀利有科技感",
+      "亮面黑车身显高级",
+      "夜间出行照明清晰",
+      "展厅看车细节拉满",
+      "LED日行灯醒目吸睛",
+      "透镜大灯照得远"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "大灯细节",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "颜值党",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

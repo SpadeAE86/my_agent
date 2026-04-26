@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-车身多角度 (3).mp4",
+  "run_id": "v2_20260426_225918_f29473a68a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225918_f29473a68a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225918_f29473a68a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225918_f29473a68a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225918_f29473a68a/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "一辆智己LS6汽车静态停放在现代城区的道路与人行道旁，车身呈银灰色，车顶为黑色，轮毂设计精致，画面光线明亮，背景有建筑与铺装路面，整体风格简约大气。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车顶",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "航拍",
+    "scene_location": [
+      "现代城区",
+      "道路",
+      "人行道"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "金属灰",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "大气",
+      "简约"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "精致轮毂设计",
+      "全景天窗",
+      "简约前脸设计"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "静谧座舱",
+      "舒适座椅",
+      "科技车机"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "商务出行",
+      "休闲购物"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "周末自驾",
+      "长途旅行",
+      "接送孩子"
+    ],
+    "marketing_phrases": [
+      "现代城区静态展示",
+      "智己LS6银灰车身",
+      "精致轮毂设计",
+      "大气流畅线条",
+      "科技感全景天窗",
+      "城市出行好选择"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "城市用车",
+      "家庭用车"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户",
+      "汽车爱好者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4320x1080"
+  },
+  "success": true
+}

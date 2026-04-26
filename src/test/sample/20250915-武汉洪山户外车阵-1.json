@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-武汉洪山户外车阵-1.mp4",
+  "run_id": "v2_20260426_230014_21634dc8a3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230014_21634dc8a3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230014_21634dc8a3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230014_21634dc8a3/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230014_21634dc8a3/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "多辆智己LS6汽车停放在现代风格建筑前的广场上，车身颜色包含黑、灰、蓝、白等，部分车门打开，人们在车旁参观交流，镜头为固定机位，光线明亮，天气晴朗，时间为白天。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车门",
+      "乘客"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "广场",
+      "现代建筑区"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "大气",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "智能",
+      "稳定",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "大灯设计",
+      "轮毂造型",
+      "车内空间"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "舒适驾乘",
+      "智能交互",
+      "静谧座舱"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "多种颜色的智己LS6",
+      "广场上的智己LS6",
+      "车门打开体验车",
+      "晴天看智己LS6",
+      "多辆智己LS6陈列",
+      "现代建筑前的智己LS6"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态展示",
+      "多车陈列",
+      "户外场景",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "城市通勤者",
+      "外观追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

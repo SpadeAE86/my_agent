@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-雨天模式-3.mp4",
+  "run_id": "v2_20260426_225939_805af33450",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_805af33450/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_805af33450/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_805af33450/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_805af33450/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "汽车座舱内的中控大屏展示导航及车辆信息界面，车窗外呈现雨天景象，镜头为车内固定机位拍摄，清晰呈现车内内饰、座椅、车窗及中控屏内容。",
+    "subject": "汽车中控大屏",
+    "object": [
+      "中控大屏",
+      "内饰",
+      "车窗",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "雨天",
+      "公路"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "雨天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "简洁"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "便捷",
+      "精准"
+    ],
+    "design_selling_points": [
+      "大尺寸中控屏",
+      "精致内饰",
+      "隐藏式出风口",
+      "舒适座椅"
+    ],
+    "function_selling_points": [
+      "智能导航",
+      "实时车况显示",
+      "胎压监测",
+      "多媒体娱乐"
+    ],
+    "scenario_a": [
+      "通勤",
+      "城市驾驶"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "雨天出行"
+    ],
+    "marketing_phrases": [
+      "雨天导航看得清",
+      "中控大屏信息全",
+      "胎压监测保安全",
+      "智能导航精准导",
+      "车内内饰显精致",
+      "舒适座椅伴行程"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "内饰展示",
+      "雨天出行"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "科技爱好者",
+      "雨天驾驶者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4508x1080"
+  },
+  "success": true
+}

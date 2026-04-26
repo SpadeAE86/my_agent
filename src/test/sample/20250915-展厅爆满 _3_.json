@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (3).mp4",
+  "run_id": "v2_20260426_225957_6490050c43",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225957_6490050c43/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225957_6490050c43/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225957_6490050c43/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225957_6490050c43/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "展厅内举办汽车主题活动，人们围坐铺白色桌布的餐桌交流，大屏幕播放汽车相关内容，有人走动，门口设黄色警示标志，室外为夜晚。",
+    "subject": "智己汽车活动现场",
+    "object": [
+      "汽车（屏幕）",
+      "参与者",
+      "主持人（屏幕）"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "发布会现场",
+    "has_presenter": true,
+    "weather": "室内",
+    "time": "夜晚",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "整洁",
+      "明亮",
+      "有序"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "高效",
+      "互动",
+      "热闹"
+    ],
+    "design_selling_points": [
+      "展厅布置",
+      "大屏幕展示",
+      "白色座椅",
+      "地面整洁"
+    ],
+    "function_selling_points": [
+      "现场体验",
+      "活动组织",
+      "屏幕讲解",
+      "互动交流"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "发布会参与"
+    ],
+    "scenario_b": [
+      "现场交流",
+      "品牌活动"
+    ],
+    "marketing_phrases": [
+      "展厅活动氛围热闹",
+      "现场看车体验佳",
+      "发布会互动性强",
+      "大屏幕展示清晰",
+      "活动组织有序",
+      "舒适交流环境"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "活动现场",
+      "发布会",
+      "品牌活动"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "潜在车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

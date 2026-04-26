@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (19).mp4",
+  "run_id": "v2_20260426_230451_586c12fc44",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230451_586c12fc44/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230451_586c12fc44/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230451_586c12fc44/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230451_586c12fc44/scene_001_frame_000143.webp/scene_001_frame_000143.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的圆形展台转盘上静态展示，车身为黑色，车头设计现代，前灯造型独特，背景是银色墙面与圆形顶灯，光线明亮，画面清晰呈现车辆外观细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "车标",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "智能",
+      "静谧",
+      "稳定",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "前灯设计",
+      "车标设计",
+      "车身线条",
+      "黑色车漆"
+    ],
+    "function_selling_points": [
+      "智能交互",
+      "静谧空间",
+      "稳定底盘",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示",
+      "产品体验",
+      "室内赏车"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "周末自驾",
+      "长途出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "智己LS6静态外观",
+      "黑色车漆质感高级",
+      "现代感车头设计",
+      "展台转盘展示",
+      "前灯造型独特",
+      "展厅赏车体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "展厅展示",
+      "汽车设计",
+      "智能汽车"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "高端车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

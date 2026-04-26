@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (11).mp4",
+  "run_id": "v2_20260426_230440_e3f9bb0eaa",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230440_e3f9bb0eaa/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230440_e3f9bb0eaa/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230440_e3f9bb0eaa/scene_001_frame_000090.webp/scene_001_frame_000090.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的圆形展台静态展示，车身为亮面黑色，背景是银色墙面与圆形顶灯，镜头以固定机位拍摄其正面外观，呈现出前脸设计、车标、前灯组及车顶激光雷达等细节，光线明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车标",
+      "前灯组",
+      "激光雷达"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "流畅",
+      "光泽"
+    ],
+    "function_adjectives": [
+      "智能",
+      "科技感",
+      "大气",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "前脸设计",
+      "车标",
+      "前灯组",
+      "激光雷达"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "激光雷达感知",
+      "科技交互",
+      "高端体验"
+    ],
+    "scenario_a": [
+      "展厅赏车",
+      "静态展示",
+      "新车体验",
+      "科技购车"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "家庭出行",
+      "商务接待",
+      "智能出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示智己LS6",
+      "黑色亮面车身设计",
+      "科技感前脸造型",
+      "激光雷达加持智能驾驶"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "汽车外观",
+      "智己LS6",
+      "展厅场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "高端用户",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

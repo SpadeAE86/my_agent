@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-车身多角度-1.mp4",
+  "run_id": "v2_20260426_230418_199e7c4919",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230418_199e7c4919/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230418_199e7c4919/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230418_199e7c4919/scene_001_frame_000105.webp/scene_001_frame_000105.webp"
+  ],
+  "result": {
+    "description": "一辆白色SUV汽车在湖边草地露营、公路拉行李，静态展示外观，航拍与固定机位结合拍摄，驾驶员、乘客及拉行李人员出镜，晴天环境，时间涵盖白天与黄昏。",
+    "subject": "白色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "驾驶员",
+      "乘客"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "航拍",
+    "scene_location": [
+      "湖边",
+      "草地",
+      "公路",
+      "户外"
+    ],
+    "car_color": "白",
+    "car_color_detail": "珠光白",
+    "product_status_scene": "静态外观",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "大气"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "实用",
+      "稳定",
+      "长续航"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "大尺寸轮毂",
+      "隐藏式门把手",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "露营场景适配",
+      "行李拖挂",
+      "长续航",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "露营",
+      "户外出行"
+    ],
+    "scenario_b": [
+      "自驾旅行",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "湖边露营超惬意",
+      "公路拉货轻松行",
+      "白天黑夜都能开",
+      "户外出行好伙伴",
+      "白色车身颜值高",
+      "大空间装得多"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "户外出行",
+      "家庭用车",
+      "露营场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "户外爱好者",
+      "自驾旅行者",
+      "新能源车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车轮 (7).mp4",
+  "run_id": "v2_20260426_225616_32daed07f5",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225616_32daed07f5/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225616_32daed07f5/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225616_32daed07f5/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225616_32daed07f5/scene_001_frame_000145.webp/scene_001_frame_000145.webp"
+  ],
+  "result": {
+    "description": "智己汽车的轮毂、轮胎、红色刹车卡钳特写，画面为静态拍摄，背景简洁，清晰展示部件细节、设计风格与规格信息。",
+    "subject": "智己汽车",
+    "object": [
+      "轮毂",
+      "轮胎",
+      "刹车卡钳"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "运动",
+      "炫酷",
+      "时尚"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "可靠",
+      "抓地强",
+      "制动优"
+    ],
+    "design_selling_points": [
+      "运动双色轮毂",
+      "红色刹车卡钳",
+      "265/40 R21轮胎",
+      "大胎宽设计"
+    ],
+    "function_selling_points": [
+      "高性能轮胎",
+      "高效制动",
+      "稳定抓地",
+      "大胎宽适配"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "高速行驶",
+      "运动驾驶"
+    ],
+    "marketing_phrases": [
+      "大尺寸轮毂更运动",
+      "红色卡钳制动强",
+      "265宽胎抓地稳",
+      "双色轮毂颜值高",
+      "高性能轮胎可靠",
+      "运动刹车更安全"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "部件特写",
+      "汽车设计",
+      "性能展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "运动车主",
+      "性能追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

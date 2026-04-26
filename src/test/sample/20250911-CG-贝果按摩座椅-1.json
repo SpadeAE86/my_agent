@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-贝果按摩座椅-1.mp4",
+  "run_id": "v2_20260426_225909_1f4f7d8703",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_1f4f7d8703/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_1f4f7d8703/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_1f4f7d8703/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_1f4f7d8703/scene_001_frame_000178.webp/scene_001_frame_000178.webp"
+  ],
+  "result": {
+    "description": "画面展示汽车的米色真皮座椅，座椅背部有多个蓝色环形按摩动态效果，以静态视角呈现座椅按摩功能的细节，镜头为车内固定机位，光线柔和，内饰精致，中央扶手与座椅调节按钮清晰可见。",
+    "subject": "汽车座椅（带按摩功能）",
+    "object": [
+      "座椅",
+      "中央扶手",
+      "座椅调节按钮",
+      "按摩区域"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内",
+      "座舱"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高档",
+      "米色",
+      "真皮"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "放松",
+      "智能",
+      "按摩"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "中央扶手",
+      "座椅调节按钮",
+      "按摩区域设计"
+    ],
+    "function_selling_points": [
+      "座椅按摩功能",
+      "多区域按摩",
+      "智能按摩调节",
+      "舒适体验"
+    ],
+    "scenario_a": [
+      "长途出行",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "座椅按摩超放松",
+      "长途久坐不累",
+      "真皮座椅质感好",
+      "内饰精致高档",
+      "多区域按摩更舒适",
+      "商务出行更体面"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "座椅功能",
+      "内饰展示",
+      "按摩功能"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "长途驾驶者",
+      "注重舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "3450x1080"
+  },
+  "success": true
+}

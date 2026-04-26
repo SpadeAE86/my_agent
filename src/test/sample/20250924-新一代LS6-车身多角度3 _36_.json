@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (36).mp4",
+  "run_id": "v2_20260426_230306_06823bbaef",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230306_06823bbaef/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230306_06823bbaef/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230306_06823bbaef/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230306_06823bbaef/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车在装修精致的地下车库内静态展示，车身线条流畅，轮毂设计精致，车灯造型炫酷，地面反光，环境灯光柔和，画面质感如CG渲染。",
+    "subject": "黑色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "炫酷",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "安静",
+      "平稳",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "车灯造型",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "自动车灯",
+      "静谧空间",
+      "稳定停放",
+      "智能灯光"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "商务出行",
+      "城市通勤",
+      "高端场所"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "周末出游",
+      "长途旅行",
+      "日常代步"
+    ],
+    "marketing_phrases": [
+      "地库静态展示",
+      "黑武士SUV",
+      "亮面黑车漆",
+      "科技感车灯",
+      "流畅车身",
+      "高端地库停车"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "高端车型",
+      "科技设计"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "商务人士",
+      "高端用户",
+      "设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

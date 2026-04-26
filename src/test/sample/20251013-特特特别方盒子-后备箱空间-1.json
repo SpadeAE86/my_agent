@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-后备箱空间-1.mp4",
+  "run_id": "v2_20260426_230341_6e9a6d7b1a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230341_6e9a6d7b1a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230341_6e9a6d7b1a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230341_6e9a6d7b1a/scene_001_frame_000104.webp/scene_001_frame_000104.webp"
+  ],
+  "result": {
+    "description": "一辆白色电动轿车在现代城区的道路旁充电，后备箱电动开启，内部放置迷彩包、纸箱等物品，背景为现代建筑与树木，画面清晰明亮，有人员伸手操作后备箱，光线充足。",
+    "subject": "白色电动轿车",
+    "object": [
+      "后备箱",
+      "充电枪",
+      "迷彩包",
+      "操作的乘客"
+    ],
+    "movement": "充电",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "道路旁",
+      "户外"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简洁",
+      "时尚",
+      "精致",
+      "大气"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "高效",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "电动后备箱",
+      "白色车漆",
+      "贯穿式尾灯",
+      "充电接口设计"
+    ],
+    "function_selling_points": [
+      "快充",
+      "大空间后备箱",
+      "电动尾门",
+      "家用充电"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "户外露营",
+      "日常购物"
+    ],
+    "marketing_phrases": [
+      "充电时也能装行李",
+      "白色车身很吸睛",
+      "电动尾门超方便",
+      "后备箱能装又能放",
+      "城区充电很轻松",
+      "快充补能不耽误"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "空间展示",
+      "充电展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "露营爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

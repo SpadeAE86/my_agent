@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车标2 (1).mp4",
+  "run_id": "v2_20260426_230210_49e47149fc",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230210_49e47149fc/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230210_49e47149fc/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230210_49e47149fc/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230210_49e47149fc/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己汽车的车标特写画面，车辆在道路上行驶，背景呈现树林倒影，车标为金属质感的精致设计，车身车漆为亮面黑色，镜头聚焦车标区域，车辆处于移动状态，画面光线明亮、树影清晰。",
+    "subject": "智己汽车",
+    "object": [
+      "车标",
+      "车身"
+    ],
+    "movement": "路跑",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "道路",
+      "树林"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "金属感",
+      "亮面",
+      "简洁"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "流畅",
+      "静音",
+      "低风阻"
+    ],
+    "design_selling_points": [
+      "车标设计",
+      "亮面车漆",
+      "金属质感车标",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "高速稳定性",
+      "低风阻设计",
+      "静音行驶",
+      "行驶流畅"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "自驾出游"
+    ],
+    "marketing_phrases": [
+      "车标精致有质感",
+      "亮面黑车漆显高级",
+      "行驶稳定流畅",
+      "晴天出行更清晰",
+      "日常通勤好帮手",
+      "长途旅行可靠伙伴"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "路跑场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "自驾爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

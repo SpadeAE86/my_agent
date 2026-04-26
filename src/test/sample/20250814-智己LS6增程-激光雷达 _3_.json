@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-激光雷达 (3).mp4",
+  "run_id": "v2_20260426_225526_5bacdb4237",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225526_5bacdb4237/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225526_5bacdb4237/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225526_5bacdb4237/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225526_5bacdb4237/scene_001_frame_000176.webp/scene_001_frame_000176.webp"
+  ],
+  "result": {
+    "description": "汽车车顶传感器模组（如激光雷达）的静态特写展示，背景为简洁灰白色，可见黑色与白色两款汽车的车顶、座椅、挡风玻璃，镜头为固定机位特写，光线柔和，构图简洁，突出传感器的设计与质感。",
+    "subject": "汽车车顶传感器模组",
+    "object": [
+      "车顶传感器",
+      "座椅",
+      "车顶",
+      "挡风玻璃"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "亮面",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "精准",
+      "稳定",
+      "高效"
+    ],
+    "design_selling_points": [
+      "车顶传感器模组",
+      "亮面车漆",
+      "简洁车顶设计",
+      "一体化传感器"
+    ],
+    "function_selling_points": [
+      "智能驾驶感知",
+      "高精度传感",
+      "多场景识别",
+      "全天候感知"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "智能驾驶",
+      "日常出行",
+      "科技出行"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "恶劣天气出行",
+      "高精地图场景",
+      "安全出行"
+    ],
+    "marketing_phrases": [
+      "智能感知，出行无忧",
+      "车顶传感器，精准识别",
+      "亮面车漆，质感十足",
+      "静态展示，科技感拉满",
+      "多色可选，个性之选",
+      "智能驾驶，安全护航"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "科技感展示",
+      "智能驾驶"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "智能驾驶用户",
+      "汽车爱好者",
+      "追求质感的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-15.mp4",
+  "run_id": "v2_20260426_225309_8f3cecff9a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_8f3cecff9a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_8f3cecff9a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_8f3cecff9a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225309_8f3cecff9a/scene_001_frame_000177.webp/scene_001_frame_000177.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的内饰座舱静态展示，画面呈现方向盘、双中控大屏、浅色座椅与中控台，镜头为车内固定机位拍摄，画面清晰明亮，无人员出镜。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "中控台"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "科技感",
+      "细腻",
+      "温馨"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "舒适",
+      "清晰"
+    ],
+    "design_selling_points": [
+      "双中控屏",
+      "平底方向盘",
+      "真皮座椅",
+      "隐藏式出风口"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "多屏联动",
+      "语音交互",
+      "高清导航"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "智己LS6内饰简约大气",
+      "双屏联动科技感拉满",
+      "浅色座舱温馨舒适",
+      "中控操作便捷流畅",
+      "方向盘握感舒适",
+      "智能车机导航精准"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "科技感",
+      "舒适座舱"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

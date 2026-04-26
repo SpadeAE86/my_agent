@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-车身多角度 (2).mp4",
+  "run_id": "v2_20260426_225916_745095e88e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225916_745095e88e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225916_745095e88e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225916_745095e88e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225916_745095e88e/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车静态停放在现代城区的道路旁，车身银灰色，车顶黑色，轮毂设计精致，背景为铺装路面与建筑前的广场，画面光线明亮，镜头为固定机位俯拍。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车顶",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "公路"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "流畅",
+      "高级"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "静谧",
+      "智能"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂造型",
+      "车顶配色",
+      "灯组设计"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "智能灯组",
+      "稳定车身",
+      "舒适座舱"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "智己LS6颜值在线",
+      "现代城区停车吸睛",
+      "轮毂设计精致",
+      "车顶黑顶个性",
+      "车身线条流畅"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "家庭用户",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4320x1080"
+  },
+  "success": true
+}

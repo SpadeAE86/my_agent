@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-17.mp4",
+  "run_id": "v2_20260426_225205_aaecf2ddfd",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_aaecf2ddfd/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_aaecf2ddfd/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_aaecf2ddfd/scene_001_frame_000090.webp/scene_001_frame_000090.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车停在现代城区的街道商铺（AROMA GARDEN）前，车身为黑色，外观精致，镜头为固定机位，画面明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "大灯",
+      "前格栅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "商铺前"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "流畅",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "安静",
+      "稳定",
+      "舒适",
+      "智能"
+    ],
+    "design_selling_points": [
+      "前脸设计",
+      "轮毂造型",
+      "黑色车漆",
+      "大灯设计"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "舒适驾乘",
+      "长续航",
+      "快充"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "购物停车"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "城市街道静态展示",
+      "智己LS6外观精致",
+      "黑色车漆显高级",
+      "轮毂设计独特",
+      "大灯造型炫酷",
+      "现代城区停车场景"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-22.mp4",
+  "run_id": "v2_20260426_225430_9a4d90c8db",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225430_9a4d90c8db/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225430_9a4d90c8db/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225430_9a4d90c8db/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225430_9a4d90c8db/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在灰色纯色背景的展台转盘上缓慢旋转，展示车身外观，画面简洁明亮，突出车辆流畅的车身线条、精致的轮毂设计、独特的灯组造型与车顶激光雷达，整体设计感强烈。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "激光雷达"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "炫酷",
+      "高级"
+    ],
+    "function_adjectives": [
+      "高效",
+      "智能",
+      "便捷",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "灯组造型",
+      "车顶激光雷达"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "智能驾驶系统",
+      "快速充电",
+      "稳定性能"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "新一代智己LS6",
+      "自带超充桩的电车",
+      "外观炫酷",
+      "转盘展示车身",
+      "黑色质感高级",
+      "激光雷达加持"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "新车发布"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-百变座椅 (6).mp4",
+  "run_id": "v2_20260426_225902_99f97f37de",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225902_99f97f37de/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225902_99f97f37de/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225902_99f97f37de/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225902_99f97f37de/scene_001_frame_000156.webp/scene_001_frame_000156.webp"
+  ],
+  "result": {
+    "description": "某款蓝色汽车通过CG固定机位展示座舱（可旋转座椅、小桌板）与后备箱（挂载多辆自行车、容纳行李），前两张为室内展厅（地毯、玻璃墙），后两张为户外晴天（蓝天），呈现内饰质感与空间装载能力。",
+    "subject": "某款蓝色汽车",
+    "object": [
+      "座椅",
+      "中控屏",
+      "后备箱",
+      "自行车"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "户外"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰与空间展示",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "豪华",
+      "宽敞",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "能装",
+      "灵活",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "大尺寸中控屏",
+      "可旋转座椅",
+      "大容量后备箱"
+    ],
+    "function_selling_points": [
+      "座椅多模式调节",
+      "自行车挂载系统",
+      "行李分层收纳",
+      "空间拓展能力"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "商务接待"
+    ],
+    "scenario_b": [
+      "周末骑行",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "座舱宽敞如客厅",
+      "后备箱装4辆自行车",
+      "座椅旋转喝咖啡",
+      "家庭出行行李不愁",
+      "周末骑行说走就走",
+      "商务接待有排面"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "空间展示",
+      "内饰展示",
+      "装载能力",
+      "座椅布局"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "骑行爱好者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

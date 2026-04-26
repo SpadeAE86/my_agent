@@ -1,0 +1,97 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-雨天模式-5.mp4",
+  "run_id": "v2_20260426_225942_b64cd78ea3",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225942_b64cd78ea3/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225942_b64cd78ea3/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225942_b64cd78ea3/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225942_b64cd78ea3/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "车内POV视角展示汽车中控大屏，屏幕显示导航、车速（56km/h）、胎压监测等界面，窗外为雨天公路景象，车内可见皮质座椅、车门及车窗，整体呈现科技感内饰与清晰车机交互。",
+    "subject": "汽车中控大屏（含内饰）",
+    "object": [
+      "中控屏",
+      "座椅",
+      "车门",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "公路",
+      "雨天",
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "雨天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "科技感",
+      "精致",
+      "简约",
+      "清晰"
+    ],
+    "function_adjectives": [
+      "精准",
+      "流畅",
+      "智能",
+      "易用"
+    ],
+    "design_selling_points": [
+      "大尺寸中控屏",
+      "皮质座椅",
+      "整洁内饰",
+      "清晰显示界面"
+    ],
+    "function_selling_points": [
+      "精准导航",
+      "实时车速监测",
+      "胎压监测",
+      "智能车机交互"
+    ],
+    "scenario_a": [
+      "雨天通勤",
+      "城市道路行驶",
+      "日常出行",
+      "长途驾驶"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "商务出行",
+      "家庭出游",
+      "恶劣天气出行"
+    ],
+    "marketing_phrases": [
+      "雨天导航看得清",
+      "中控屏大信息全",
+      "胎压监测保安全",
+      "路跑车机智能用",
+      "车速稳定界面爽",
+      "车内静谧舒适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "用车场景",
+      "雨天出行",
+      "智能车机",
+      "内饰展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "新手司机",
+      "科技爱好者",
+      "雨天出行需求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4508x1080"
+  },
+  "success": true
+}

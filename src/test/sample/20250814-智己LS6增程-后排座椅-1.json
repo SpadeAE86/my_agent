@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后排座椅-1.mp4",
+  "run_id": "v2_20260426_225354_7585428154",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_7585428154/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_7585428154/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_7585428154/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225354_7585428154/scene_001_frame_000175.webp/scene_001_frame_000175.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的后排车门打开，展示米色真皮座椅、全景天窗、车门内饰与氛围灯细节，镜头手持推进从车外逐步向车内靠近，光线柔和明亮，背景为简洁的灰白色室内空间。",
+    "subject": "某款黑色汽车",
+    "object": [
+      "座椅",
+      "天窗",
+      "车门内饰",
+      "氛围灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "手持",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "柔和",
+      "奢华"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "静谧",
+      "豪华"
+    ],
+    "design_selling_points": [
+      "米色真皮座椅",
+      "全景天窗",
+      "车门内饰设计",
+      "氛围灯"
+    ],
+    "function_selling_points": [
+      "空间宽敞",
+      "座椅舒适",
+      "全景天窗采光",
+      "车内静谧"
+    ],
+    "scenario_a": [
+      "商务出行",
+      "家庭乘坐"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "后排空间宽敞舒适",
+      "米色真皮座椅显高级",
+      "全景天窗采光足",
+      "车内静谧私享空间",
+      "氛围灯提升格调",
+      "商务出行倍有面"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "豪华体验"
+    ],
+    "appealing_audience": [
+      "商务人士",
+      "家庭用户",
+      "追求品质的车主",
+      "高端车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

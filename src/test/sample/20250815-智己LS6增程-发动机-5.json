@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-5.mp4",
+  "run_id": "v2_20260426_225647_c45a5d2aa4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225647_c45a5d2aa4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225647_c45a5d2aa4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225647_c45a5d2aa4/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225647_c45a5d2aa4/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的发动机舱（引擎盖打开状态）静态展示，发动机罩为哑光黑色，内部管路、雨刮器、风挡等部件清晰可见，固定机位近距离拍摄，背景为白色室内环境，风格偏产品机械展示。",
+    "subject": "汽车发动机舱",
+    "object": [
+      "发动机罩",
+      "管路",
+      "雨刮器",
+      "风挡"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内",
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "哑光黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "哑光",
+      "规整"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "高效",
+      "可靠",
+      "静音"
+    ],
+    "design_selling_points": [
+      "发动机罩设计",
+      "哑光涂装",
+      "管路布局",
+      "规整结构"
+    ],
+    "function_selling_points": [
+      "发动机防护",
+      "散热优化",
+      "静音设计",
+      "机械可靠"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "机械讲解",
+      "产品展示",
+      "日常维护"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "性能体验",
+      "改装升级",
+      "维修保养"
+    ],
+    "marketing_phrases": [
+      "发动机舱哑光黑",
+      "管路布局规整",
+      "静态机械美学",
+      "稳定可靠动力舱",
+      "哑光黑引擎罩质感",
+      "机械结构一目了然"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "机械讲解",
+      "设计展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "机械爱好者",
+      "车主",
+      "维修人员"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

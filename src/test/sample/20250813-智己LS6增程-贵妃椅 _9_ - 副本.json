@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (9) - 副本.mp4",
+  "run_id": "v2_20260426_225326_82d7539e13",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_82d7539e13/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_82d7539e13/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_82d7539e13/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_82d7539e13/scene_001_frame_000158.webp/scene_001_frame_000158.webp"
+  ],
+  "result": {
+    "description": "某款汽车的内饰（展示后排座椅电动调节功能），镜头从后排POV视角向前拍摄，可见中控联屏、方向盘、全景天窗，内饰以米白色为主，外观后视镜为蓝色，背景为白色室内展厅环境，画面清晰呈现座椅从展开到调节的动态过程。",
+    "subject": "某款汽车的后排座椅（电动调节演示）",
+    "object": [
+      "后排座椅",
+      "中控屏",
+      "方向盘",
+      "天窗"
+    ],
+    "movement": "座椅调节",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰（座椅调节演示）",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "柔软"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "便捷",
+      "智能",
+      "宽敞"
+    ],
+    "design_selling_points": [
+      "后排可调节座椅",
+      "中控联屏",
+      "全景天窗",
+      "真皮内饰"
+    ],
+    "function_selling_points": [
+      "后排座椅电动调节",
+      "多屏联动",
+      "智能座舱",
+      "空间宽敞"
+    ],
+    "scenario_a": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "后排座椅灵活调",
+      "大空间舒适舱",
+      "中控联屏科技感",
+      "蓝色外观亮眼",
+      "车内POV看内饰",
+      "座椅调节一键成"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰功能",
+      "座椅调节",
+      "智能座舱"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

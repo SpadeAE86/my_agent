@@ -1,0 +1,97 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-路跑-1.mp4",
+  "run_id": "v2_20260426_230346_8bde3940f7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_8bde3940f7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_8bde3940f7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_8bde3940f7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230346_8bde3940f7/scene_001_frame_000170.webp/scene_001_frame_000170.webp"
+  ],
+  "result": {
+    "description": "一辆白色轿跑汽车在山水间的栈道、林间道路行驶并停车，背景有湖面、青山、树林，天气阴天，光线柔和，车辆外观清晰可见，车内有驾驶员。",
+    "subject": "白色轿跑汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "天窗",
+      "驾驶员"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "山水",
+      "湖面",
+      "栈道",
+      "林间"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": true,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "灵动",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "运动轮毂",
+      "全景天窗",
+      "简约中控"
+    ],
+    "function_selling_points": [
+      "精准操控",
+      "舒适驾乘",
+      "稳定通过",
+      "静谧隔音"
+    ],
+    "scenario_a": [
+      "周末自驾",
+      "山水游览",
+      "林间赏景",
+      "近郊出行"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "城市代步",
+      "商务出行",
+      "短途旅行"
+    ],
+    "marketing_phrases": [
+      "山水间自在行驶",
+      "林间停车赏景",
+      "阴天出行也从容",
+      "轿跑外观超吸睛",
+      "舒适驾乘无压力",
+      "稳定通过栈道"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "自驾场景",
+      "外观展示",
+      "驾乘体验",
+      "风景出行"
+    ],
+    "appealing_audience": [
+      "自驾爱好者",
+      "年轻用户",
+      "风景摄影者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

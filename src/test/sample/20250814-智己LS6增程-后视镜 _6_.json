@@ -1,0 +1,85 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后视镜 (6).mp4",
+  "run_id": "v2_20260426_225416_2ccb368882",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_2ccb368882/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_2ccb368882/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_2ccb368882/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225416_2ccb368882/scene_001_frame_000165.webp/scene_001_frame_000165.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的外后视镜（集成摄像头）与车身细节特写，背景简洁灰白，光线柔和，突出镜面质感与摄像头设计，镜头为固定机位静态展示。",
+    "subject": "黑色汽车外后视镜及车身",
+    "object": [
+      "外后视镜",
+      "车身",
+      "摄像头"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "镜面",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "智能",
+      "安全",
+      "精准"
+    ],
+    "design_selling_points": [
+      "外后视镜设计",
+      "车身线条",
+      "镜面车漆",
+      "摄像头集成"
+    ],
+    "function_selling_points": [
+      "全景影像",
+      "辅助驾驶",
+      "智能感知",
+      "安全监测"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "泊车辅助"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "自驾出行"
+    ],
+    "marketing_phrases": [
+      "泊车视角更清晰",
+      "驾驶辅助更智能",
+      "后视镜设计很精致",
+      "车身线条超流畅",
+      "亮面黑颜值在线",
+      "安全监测更全面"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "城市通勤者",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

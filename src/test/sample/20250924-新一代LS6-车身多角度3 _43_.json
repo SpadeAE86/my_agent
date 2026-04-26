@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (43).mp4",
+  "run_id": "v2_20260426_230311_9d1456b97c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230311_9d1456b97c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230311_9d1456b97c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230311_9d1456b97c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230311_9d1456b97c/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在地库通道内向前行驶，车身覆盖黑白伪装贴纸，前灯亮起，背景为地库内部（天花板有镂空灯光、墙面有灯带、地面整洁）。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "后视镜",
+      "伪装贴纸"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "黑白伪装贴纸",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "动感",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "清晰",
+      "智能",
+      "流畅"
+    ],
+    "design_selling_points": [
+      "前灯组",
+      "车身伪装贴纸",
+      "后视镜",
+      "品牌车牌"
+    ],
+    "function_selling_points": [
+      "夜间照明",
+      "地库行驶适配",
+      "稳定行驶",
+      "智能驾驶辅助"
+    ],
+    "scenario_a": [
+      "地库行驶",
+      "夜间出行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭代步"
+    ],
+    "marketing_phrases": [
+      "地库行驶稳",
+      "前灯照明清",
+      "智己LS6测试车",
+      "夜间通勤利器",
+      "城市出行适配",
+      "科技感外观"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "测试场景",
+      "外观展示",
+      "夜间出行"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市通勤者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

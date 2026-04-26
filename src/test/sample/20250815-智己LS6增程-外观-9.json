@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-9.mp4",
+  "run_id": "v2_20260426_225702_bf335a527c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225702_bf335a527c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225702_bf335a527c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225702_bf335a527c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225702_bf335a527c/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色轿跑汽车在现代风格展厅内静态展示，背景为双层玻璃墙面与白色空间，地面光洁，车身线条流畅，轮毂设计精致，车内座椅隐约可见，画面明亮整洁。",
+    "subject": "蓝色轿跑汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "亮眼"
+    ],
+    "function_adjectives": [
+      "安静",
+      "舒适",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "车窗造型",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "舒适驾乘",
+      "稳定操控",
+      "智能车机",
+      "高效电机"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态品鉴",
+      "都市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "家庭代步",
+      "长途旅行",
+      "自驾探险"
+    ],
+    "marketing_phrases": [
+      "展厅蓝轿跑亮眼吸睛",
+      "流畅线条设计感拉满",
+      "精致轮毂颜值在线",
+      "静态展示尽显高级感",
+      "都市通勤舒适座驾",
+      "商务出行亮眼之选"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "展厅场景",
+      "汽车美学"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "都市白领",
+      "家庭用户",
+      "设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

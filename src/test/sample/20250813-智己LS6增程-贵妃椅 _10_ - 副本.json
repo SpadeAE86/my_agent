@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (10) - 副本.mp4",
+  "run_id": "v2_20260426_225317_317e6daacf",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_317e6daacf/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_317e6daacf/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_317e6daacf/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225317_317e6daacf/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内饰座舱，展示米白色皮质座椅（含前排、后排）、全景天窗、中控扶手（带杯架），座椅有格纹设计，镜头为固定机位拍摄，光线明亮，呈现静态内饰状态，无人物出镜。",
+    "subject": "汽车内饰座舱",
+    "object": [
+      "座椅",
+      "天窗",
+      "中控扶手",
+      "头枕"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "柔软"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "静谧",
+      "透气"
+    ],
+    "design_selling_points": [
+      "米白皮质座椅",
+      "格纹座椅设计",
+      "全景天窗",
+      "中控扶手杯架"
+    ],
+    "function_selling_points": [
+      "座椅舒适支撑",
+      "全景天窗采光",
+      "车内空间宽敞",
+      "皮质座椅透气"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "米白座椅显高级",
+      "全景天窗采光好",
+      "格纹座椅设计精致",
+      "车内空间宽敞舒适",
+      "内饰质感超棒",
+      "静态内饰细节满分"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "静态展示",
+      "汽车内饰",
+      "座椅设计",
+      "天窗设计"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "注重内饰质感的车主",
+      "商务人士",
+      "追求舒适出行的用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

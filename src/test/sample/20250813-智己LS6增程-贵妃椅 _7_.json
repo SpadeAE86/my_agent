@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (7).mp4",
+  "run_id": "v2_20260426_225324_425a021c4c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_425a021c4c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_425a021c4c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_425a021c4c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_425a021c4c/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_425a021c4c/scene_001_frame_000191.webp/scene_001_frame_000191.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的静态内饰展示，从后排固定机位拍摄，呈现方向盘、中控大屏、后排座椅（含变形状态）、全景天窗等部件，场景为室内展厅，画面清晰展示内饰设计与座椅调节细节。",
+    "subject": "汽车后排座舱",
+    "object": [
+      "方向盘",
+      "中控屏",
+      "后排座椅",
+      "全景天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "高级",
+      "柔和"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "智能",
+      "灵活",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "全景天窗",
+      "中控大屏",
+      "皮质座椅",
+      "后排座椅变形"
+    ],
+    "function_selling_points": [
+      "座椅多功能调节",
+      "智能中控交互",
+      "大空间利用",
+      "儿童座椅兼容"
+    ],
+    "scenario_a": [
+      "家庭用车",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "后排座椅灵活变",
+      "中控大屏智能控",
+      "全景天窗采光足",
+      "内饰精致显高级",
+      "家庭出行好帮手",
+      "展厅实拍看细节"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰功能",
+      "家庭用车",
+      "智能汽车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "汽车爱好者",
+      "新手司机",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

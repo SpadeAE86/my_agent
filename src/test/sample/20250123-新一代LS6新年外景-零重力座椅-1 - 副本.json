@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-零重力座椅-1 - 副本.mp4",
+  "run_id": "v2_20260426_225205_584d497555",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_584d497555/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_584d497555/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_584d497555/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_584d497555/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内部座舱，展示方向盘、座椅、中控、装饰挂件（红色小马靠枕、彩色小马挂件），镜头为车内固定机位拍摄，光线暖黄柔和，背景可见建筑与起重机，呈现静态内饰。",
+    "subject": "汽车内饰",
+    "object": [
+      "方向盘",
+      "座椅",
+      "中控屏",
+      "装饰挂件"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "城市边缘",
+      "工业区"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "质感高级",
+      "温馨"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "静谧",
+      "人性化",
+      "温馨"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "简约中控",
+      "全景天窗",
+      "装饰挂件"
+    ],
+    "function_selling_points": [
+      "舒适驾乘",
+      "内饰空间宽敞",
+      "储物空间合理",
+      "智能座舱"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "周末出游"
+    ],
+    "marketing_phrases": [
+      "内饰温馨舒适",
+      "座椅质感高级",
+      "全景天窗采光好",
+      "装饰挂件添氛围",
+      "简约中控易操作",
+      "真皮座椅舒适"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "汽车爱好者",
+      "内饰爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

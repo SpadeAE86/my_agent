@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (35).mp4",
+  "run_id": "v2_20260426_225835_0372f1a236",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225835_0372f1a236/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225835_0372f1a236/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225835_0372f1a236/scene_001_frame_000105.webp/scene_001_frame_000105.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，贯穿式尾灯区域显示红色“Happy New Year”文字，车标与“智己LS6”标识清晰，车身呈蓝色，背景简洁。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车标",
+      "贯穿式尾灯",
+      "车尾"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "简洁",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "动态",
+      "清晰",
+      "个性化"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "车标设计",
+      "车尾线条",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "尾灯个性化显示",
+      "动态灯语",
+      "智能交互",
+      "清晰显示"
+    ],
+    "scenario_a": [
+      "节日氛围营造",
+      "城市通勤展示"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "节日专属灯语",
+      "智己LS6车尾设计",
+      "个性化尾灯显示",
+      "静态外观展示",
+      "精致车标",
+      "科技感贯穿尾灯"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "节日营销",
+      "智能灯语"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度1 (21).mp4",
+  "run_id": "v2_20260426_230226_0370a350a6",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230226_0370a350a6/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230226_0370a350a6/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230226_0370a350a6/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230226_0370a350a6/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车在现代城区的住宅区道路（背景为红砖建筑、绿植、住宅）上进行掉头动作，车身线条流畅，轮毂精致，车漆亮面反光，镜头以车外跟拍方式记录其转向过程，画面清晰展示车辆外观与动态姿态。",
+    "subject": "黑色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "后视镜"
+    ],
+    "movement": "掉头",
+    "footage_type": "原创实拍",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "现代城区",
+      "道路",
+      "住宅区",
+      "红砖建筑旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "亮面",
+      "动感"
+    ],
+    "function_adjectives": [
+      "灵活",
+      "精准",
+      "稳定",
+      "易操控"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "精致轮毂",
+      "亮面车漆",
+      "动感车窗轮廓"
+    ],
+    "function_selling_points": [
+      "灵活掉头",
+      "精准转向",
+      "稳定路跑",
+      "城市通勤操控"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "住宅区出行",
+      "道路掉头",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "短途旅行",
+      "家庭代步",
+      "购物出行"
+    ],
+    "marketing_phrases": [
+      "城市掉头一把过",
+      "亮面黑车漆显质感",
+      "城区道路灵活穿行",
+      "精致轮毂设计吸睛",
+      "住宅区掉头超轻松",
+      "日常驾驶操控稳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "城市出行",
+      "外观设计",
+      "操控性能"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "家庭用户",
+      "年轻车主",
+      "外观爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

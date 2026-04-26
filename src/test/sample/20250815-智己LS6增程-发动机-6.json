@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-6.mp4",
+  "run_id": "v2_20260426_225649_ccfe3ebf7b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225649_ccfe3ebf7b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225649_ccfe3ebf7b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225649_ccfe3ebf7b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225649_ccfe3ebf7b/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的发动机舱内部静态展示，发动机罩为哑光黑色、带品牌标志，周围可见管线、雨刮器及蜂窝状格栅，镜头为固定机位近距离拍摄，光线均匀、画面清晰。",
+    "subject": "汽车发动机舱",
+    "object": [
+      "发动机罩",
+      "管线",
+      "雨刮器",
+      "格栅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态机械结构展示",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "哑光",
+      "简约",
+      "精致",
+      "规整"
+    ],
+    "function_adjectives": [
+      "整洁",
+      "高效",
+      "模块化",
+      "散热优"
+    ],
+    "design_selling_points": [
+      "哑光发动机罩",
+      "规整管线布局",
+      "蜂窝格栅设计",
+      "品牌标志点缀"
+    ],
+    "function_selling_points": [
+      "高效散热",
+      "模块化结构",
+      "易维护",
+      "防尘设计"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "购车咨询",
+      "技术展示",
+      "机械讲解"
+    ],
+    "scenario_b": [
+      "维修保养",
+      "改装升级",
+      "性能调校",
+      "故障排查"
+    ],
+    "marketing_phrases": [
+      "发动机舱设计精致",
+      "哑光质感发动机罩",
+      "管线布局超规整",
+      "蜂窝格栅散热佳",
+      "模块化结构易维护",
+      "品牌标志显高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "技术讲解",
+      "机械结构"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "技术控",
+      "维修人员",
+      "购车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

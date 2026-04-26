@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后排座椅-3.mp4",
+  "run_id": "v2_20260426_225405_e98475f182",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225405_e98475f182/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225405_e98475f182/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225405_e98475f182/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225405_e98475f182/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225405_e98475f182/scene_001_frame_000185.webp/scene_001_frame_000185.webp"
+  ],
+  "result": {
+    "description": "某款汽车的后排座舱内部，展示米色皮质后排座椅、全景天窗、车顶音响与侧门控制按钮，画面为静态固定机位拍摄，光线柔和清晰，无人员出镜。",
+    "subject": "汽车后排座舱",
+    "object": [
+      "后排座椅",
+      "全景天窗",
+      "安全带",
+      "侧门"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "柔和",
+      "高档",
+      "细腻"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "静谧",
+      "宽敞",
+      "豪华"
+    ],
+    "design_selling_points": [
+      "后排座椅",
+      "全景天窗",
+      "车顶音响",
+      "侧门按钮"
+    ],
+    "function_selling_points": [
+      "舒适乘坐",
+      "全景采光",
+      "音响系统",
+      "便捷控制"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "后排座椅超舒适",
+      "全景天窗采光足",
+      "米色内饰显高档",
+      "车内静谧空间大"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "汽车内饰",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

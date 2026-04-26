@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-百变座椅 (7).mp4",
+  "run_id": "v2_20260426_225904_f0e2fa3095",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225904_f0e2fa3095/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225904_f0e2fa3095/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225904_f0e2fa3095/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225904_f0e2fa3095/scene_001_frame_000143.webp/scene_001_frame_000143.webp"
+  ],
+  "result": {
+    "description": "某款新能源汽车的后备箱及座舱空间，通过CG动画依次展示装载自行车、行李包、冲浪板等户外装备的状态，最后呈现清空装备后的整洁内饰，镜头为车内固定机位，背景可见晴朗蓝天，画面明亮清晰。",
+    "subject": "某款新能源汽车的座舱及后备箱",
+    "object": [
+      "后备箱",
+      "行李",
+      "冲浪板",
+      "内饰"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "户外",
+      "车内空间"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "宽敞",
+      "整洁",
+      "简约",
+      "精致"
+    ],
+    "function_adjectives": [
+      "能装",
+      "灵活",
+      "实用",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "大后备箱",
+      "双中控屏",
+      "全景天窗",
+      "浅色内饰"
+    ],
+    "function_selling_points": [
+      "多场景装载",
+      "灵活空间布局",
+      "智能座舱体验",
+      "大空间利用率"
+    ],
+    "scenario_a": [
+      "周末自驾",
+      "户外运动"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "后备箱装下户外装备",
+      "清空装备秒变舒适座舱",
+      "自驾装备轻松装",
+      "双屏座舱科技感",
+      "户外出行空间充足",
+      "日常通勤内饰整洁"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "空间展示",
+      "装载场景",
+      "内饰展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "户外爱好者",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度1 (8).mp4",
+  "run_id": "v2_20260426_230233_5ad1b303c7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_5ad1b303c7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_5ad1b303c7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_5ad1b303c7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_5ad1b303c7/scene_001_frame_000152.webp/scene_001_frame_000152.webp"
+  ],
+  "result": {
+    "description": "一辆黑色轿跑SUV在城市道路的红砖墙旁静态展示，车身线条流畅，轮毂设计精致，背景为红砖墙、树木、人行道与干净路面，画面光线柔和，车辆外观大气运动。",
+    "subject": "黑色轿跑SUV",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市道路",
+      "人行道",
+      "红砖墙"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "大气",
+      "运动"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "静谧",
+      "舒适",
+      "节能"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "低风阻车身",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "纯电驱动",
+      "静谧性好"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "家庭出行",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "城市道路静态展示",
+      "黑色轿跑SUV外观",
+      "流畅车身线条",
+      "精致轮毂设计",
+      "商务出行首选",
+      "日常代步利器"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

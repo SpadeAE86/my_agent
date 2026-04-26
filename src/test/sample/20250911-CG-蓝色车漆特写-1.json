@@ -1,0 +1,79 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-蓝色车漆特写-1.mp4",
+  "run_id": "v2_20260426_225909_d3ae5d361b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_d3ae5d361b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_d3ae5d361b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_d3ae5d361b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225909_d3ae5d361b/scene_001_frame_000148.webp/scene_001_frame_000148.webp"
+  ],
+  "result": {
+    "description": "一道光束周围环绕着大量动态粒子，背景为深蓝色渐变，整体呈现科技感的动态粒子效果，无明确车辆或人物主体，疑似汽车设计相关的CG特效展示。",
+    "subject": "汽车光影粒子特效",
+    "object": null,
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "未知"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "未知",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "未知",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "科技感",
+      "梦幻",
+      "细腻",
+      "流动"
+    ],
+    "function_adjectives": [
+      "炫酷",
+      "沉浸",
+      "灵动",
+      "流畅"
+    ],
+    "design_selling_points": [
+      "粒子光影设计",
+      "动态光束效果",
+      "科技感视觉呈现",
+      "梦幻粒子环绕"
+    ],
+    "function_selling_points": [
+      "视觉沉浸体验",
+      "动态粒子渲染",
+      "光影特效展示",
+      "科技感动态呈现"
+    ],
+    "scenario_a": [
+      "汽车设计展示",
+      "科技感宣传"
+    ],
+    "scenario_b": [
+      "品牌广告",
+      "概念设计演示"
+    ],
+    "marketing_phrases": [
+      "科技感粒子光影",
+      "梦幻光束特效",
+      "细腻动态粒子",
+      "流动光影设计"
+    ],
+    "marketing_tags": [
+      "CG特效",
+      "产品展示",
+      "科技感"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "汽车设计关注者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4498x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-零重力座椅 (3).mp4",
+  "run_id": "v2_20260426_225332_380f1e54f5",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225332_380f1e54f5/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225332_380f1e54f5/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225332_380f1e54f5/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225332_380f1e54f5/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内饰（后排及前排座椅、天窗、中控台）静态展示，座椅为米色皮质带方格纹路，配备大尺寸天窗，车门内饰简洁，背景为展厅墙面，光线明亮，镜头固定拍摄。",
+    "subject": "汽车内饰（座椅、天窗、中控台）",
+    "object": [
+      "座椅",
+      "天窗",
+      "中控台",
+      "车门内饰"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "舒适",
+      "简约"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "静谧",
+      "轻奢"
+    ],
+    "design_selling_points": [
+      "皮质座椅",
+      "方格纹路座椅",
+      "大尺寸天窗",
+      "简洁中控台"
+    ],
+    "function_selling_points": [
+      "宽敞乘坐空间",
+      "舒适座椅体验",
+      "大天窗采光",
+      "内饰静谧感"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态体验"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "商务用车"
+    ],
+    "marketing_phrases": [
+      "展厅静态看内饰",
+      "大尺寸天窗采光好",
+      "皮质座椅舒适感",
+      "方格纹路座椅设计",
+      "简洁中控台",
+      "宽敞后排空间"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者",
+      "内饰爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

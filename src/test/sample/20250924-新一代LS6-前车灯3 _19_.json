@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯3 (19).mp4",
+  "run_id": "v2_20260426_230033_7f4c4dfa45",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230033_7f4c4dfa45/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230033_7f4c4dfa45/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230033_7f4c4dfa45/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230033_7f4c4dfa45/scene_001_frame_000146.webp/scene_001_frame_000146.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车在室内展厅环境下静态展示，车身被几何图案灯光投影，前大灯点亮，镜头为固定机位拍摄，背景为带有灯光设计的展厅墙面。",
+    "subject": "某款黑色SUV汽车",
+    "object": [
+      "车身",
+      "前大灯",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "TVC切片",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "炫酷",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "醒目",
+      "科技感",
+      "高效",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "前大灯组",
+      "车身线条",
+      "亮面车漆",
+      "轮毂造型"
+    ],
+    "function_selling_points": [
+      "大灯夜间照明",
+      "低风阻性能",
+      "夜间醒目效果"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示",
+      "外观欣赏"
+    ],
+    "scenario_b": [
+      "夜间出行",
+      "城市通勤",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示黑SUV",
+      "前大灯炫酷点亮",
+      "黑色亮面车漆质感",
+      "车身几何光影设计",
+      "夜间大灯醒目",
+      "固定机位拍外观"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "商务人士",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

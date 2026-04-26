@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260310-返乡-路跑 (8).mp4",
+  "run_id": "v2_20260426_230625_fa8be71715",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230625_fa8be71715/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230625_fa8be71715/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230625_fa8be71715/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230625_fa8be71715/scene_001_frame_000126.webp/scene_001_frame_000126.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区道路（含斑马线、绿化带）及空旷水泥场地行驶，车辆为黑色，车头灯点亮，背景有树木、建筑、围栏，镜头为固定机位拍摄，天气晴朗，时间为白天，含驾驶员出镜。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "车灯",
+      "驾驶员",
+      "轮毂"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "道路",
+      "空旷场地"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "炫酷",
+      "大气"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "智能",
+      "高效",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "车身设计",
+      "车灯造型",
+      "前脸设计",
+      "轮毂设计"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "稳定操控",
+      "高效动力",
+      "智能座舱"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "道路行驶",
+      "市区驾驶"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "长途旅行",
+      "场地试驾",
+      "城郊行驶"
+    ],
+    "marketing_phrases": [
+      "智己LS6城市路跑",
+      "黑色智己LS6外观",
+      "智己LS6日间行驶",
+      "智己LS6场地试驾",
+      "现代城区智己LS6",
+      "智己LS6炫酷车灯"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "路跑展示",
+      "外观展示",
+      "城市通勤",
+      "智能驾驶"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "汽车爱好者",
+      "年轻车主",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

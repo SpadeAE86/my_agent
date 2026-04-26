@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-激光雷达 (2).mp4",
+  "run_id": "v2_20260426_225524_8b04854197",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_8b04854197/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_8b04854197/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_8b04854197/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_8b04854197/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225524_8b04854197/scene_001_frame_000193.webp/scene_001_frame_000193.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的车顶传感器（如激光雷达）特写展示，背景为简洁灰白色（疑似室内棚拍/展厅），镜头固定机位聚焦传感器细节，车顶呈黑色，可见挡风玻璃、车内座椅部分，画面清晰柔和，静态呈现部件外观。",
+    "subject": "汽车车顶传感器",
+    "object": [
+      "车顶传感器",
+      "车顶",
+      "挡风玻璃",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "现代",
+      "高端"
+    ],
+    "function_adjectives": [
+      "精准",
+      "智能",
+      "高效",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "车顶传感器造型",
+      "黑色亮面材质",
+      "车顶流畅线条",
+      "一体化设计"
+    ],
+    "function_selling_points": [
+      "智能驾驶感知",
+      "激光雷达探测",
+      "高效环境识别",
+      "辅助驾驶功能"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "高速巡航"
+    ],
+    "marketing_phrases": [
+      "车顶传感器精致设计",
+      "黑色车顶质感高级",
+      "智能驾驶感知精准",
+      "静态展示部件细节",
+      "城市通勤更安心",
+      "长途自驾更可靠"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "智能驾驶",
+      "部件特写"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "智能驾驶关注者",
+      "汽车车主",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

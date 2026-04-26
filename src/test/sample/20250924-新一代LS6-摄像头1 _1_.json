@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-摄像头1 (1).mp4",
+  "run_id": "v2_20260426_230139_cba1ce8d62",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230139_cba1ce8d62/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230139_cba1ce8d62/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230139_cba1ce8d62/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230139_cba1ce8d62/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "一辆智己汽车的车门把手及车身局部特写，车身为亮黑色，车门把手带有“IM VISION”标识及摄像头，背景可见红砖墙与街道反射，画面清晰呈现车身反光与细节。",
+    "subject": "智己汽车",
+    "object": [
+      "车门把手",
+      "车身",
+      "轮毂",
+      "摄像头"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市街道",
+      "砖墙旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "亮面",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "安全",
+      "精准"
+    ],
+    "design_selling_points": [
+      "车门把手摄像头",
+      "亮黑车漆",
+      "运动轮毂",
+      "流线车身"
+    ],
+    "function_selling_points": [
+      "智能驾驶感知",
+      "高清影像",
+      "安全辅助",
+      "精准识别"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行",
+      "街道行驶",
+      "停车入库"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "自驾旅行",
+      "夜间行车",
+      "雨雪天气"
+    ],
+    "marketing_phrases": [
+      "车门把手带摄像头",
+      "亮黑车漆显高级",
+      "智能感知更安全",
+      "城市通勤好帮手",
+      "静态特写展细节",
+      "运动轮毂添质感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "智能驾驶",
+      "汽车特写"
+    ],
+    "appealing_audience": [
+      "智能汽车用户",
+      "城市通勤者",
+      "科技爱好者",
+      "注重细节车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

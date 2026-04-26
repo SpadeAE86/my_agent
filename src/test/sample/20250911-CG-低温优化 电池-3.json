@@ -1,0 +1,98 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-3.mp4",
+  "run_id": "v2_20260426_192053_0eb396ce44",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_0eb396ce44/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_0eb396ce44/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_0eb396ce44/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_0eb396ce44/scene_001_frame_000125.webp/scene_001_frame_000125.webp"
+  ],
+  "result": {
+    "description": "一辆银色新能源轿跑SUV在雪天的现代城区、停车场与城市道路场景中，通过CG透明化展示电池、驱动系统等部件，镜头为车外跟拍视角，背景含建筑、充电桩与积雪路面。",
+    "subject": "银色新能源轿跑SUV",
+    "object": [
+      "电池",
+      "驱动系统",
+      "车身",
+      "轮毂"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "冰雪",
+      "现代城区",
+      "停车场",
+      "城市道路"
+    ],
+    "car_color": "银",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "雪天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "高效",
+      "可靠",
+      "静音"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "全景天窗",
+      "运动轮毂",
+      "电池组"
+    ],
+    "function_selling_points": [
+      "低温续航",
+      "电动驱动",
+      "电池管理系统",
+      "冰雪稳定行驶"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "冰雪出行",
+      "充电补能",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "雪天行驶稳",
+      "低温续航强",
+      "透明化展示核心部件",
+      "城市通勤利器",
+      "充电补能便捷",
+      "冰雪路况可靠"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "冰雪场景",
+      "城市通勤",
+      "电动出行"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "城市通勤者",
+      "电动车主",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true,
+  "cached": true
+}

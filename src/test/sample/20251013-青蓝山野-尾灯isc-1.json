@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-尾灯isc-1.mp4",
+  "run_id": "v2_20260426_230406_68588e037a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230406_68588e037a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230406_68588e037a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230406_68588e037a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230406_68588e037a/scene_001_frame_000131.webp/scene_001_frame_000131.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在草地露营场景中静态展示，白天时段画面呈现蓝天、湖水、露营帐篷与车辆外观；黄昏时段画面聚焦车尾，灯光亮起，展现户外露营用电与车辆外观设计，镜头为固定机位拍摄。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "后备箱",
+      "车顶"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "草地",
+      "湖泊",
+      "露营地",
+      "户外"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "精致",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "露营供电",
+      "稳定",
+      "实用",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "溜背车身",
+      "简约车标",
+      "后备厢设计"
+    ],
+    "function_selling_points": [
+      "外放电功能",
+      "露营供电",
+      "智能尾灯显示",
+      "户外用电支持"
+    ],
+    "scenario_a": [
+      "户外露营",
+      "湖边休闲",
+      "草地驻停",
+      "黄昏露营"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游",
+      "长途旅行",
+      "户外野餐"
+    ],
+    "marketing_phrases": [
+      "露营用电不愁",
+      "黄昏尾灯超吸睛",
+      "草地驻停稳当",
+      "湖边露营好搭档",
+      "户外出行好帮手",
+      "静态展示颜值高"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "露营场景",
+      "户外出行",
+      "黄昏展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "露营爱好者",
+      "户外旅行者",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-雨天模式-2.mp4",
+  "run_id": "v2_20260426_225939_0fc2bc2808",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_0fc2bc2808/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_0fc2bc2808/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_0fc2bc2808/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_0fc2bc2808/scene_001_frame_000138.webp/scene_001_frame_000138.webp"
+  ],
+  "result": {
+    "description": "汽车的中控联屏显示导航、车速、胎压等信息，车内固定机位拍摄，窗外为雨天清晨公路环境，展示车机功能界面。",
+    "subject": "汽车中控联屏",
+    "object": [
+      "中控屏",
+      "车内门板",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "雨天",
+      "公路",
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "雨天",
+    "time": "清晨",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "一体化",
+      "高清",
+      "简约",
+      "质感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "便捷",
+      "精准"
+    ],
+    "design_selling_points": [
+      "联屏设计",
+      "高清车机屏",
+      "质感内饰",
+      "简约中控"
+    ],
+    "function_selling_points": [
+      "智能导航",
+      "胎压监测",
+      "车机交互",
+      "车速显示"
+    ],
+    "scenario_a": [
+      "通勤出行",
+      "雨天驾驶"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "雨天导航看得清",
+      "胎压实时监测放心",
+      "联屏显示信息全",
+      "清晨通勤不迷路",
+      "56码行驶稳当当",
+      "智能座舱体验佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "通勤族",
+      "新手司机",
+      "雨天出行用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4508x1080"
+  },
+  "success": true
+}

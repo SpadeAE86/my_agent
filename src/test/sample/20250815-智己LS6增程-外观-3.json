@@ -1,0 +1,83 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-3.mp4",
+  "run_id": "v2_20260426_225659_8b67397981",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225659_8b67397981/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225659_8b67397981/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225659_8b67397981/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225659_8b67397981/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色智己LS6汽车在现代简约风格的展厅内静态展示，车身线条流畅，轮毂设计精致，车内浅色座椅清晰可见，背景为双层玻璃办公区与白色地面，画面光线明亮整洁。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "座椅",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "安静",
+      "优雅",
+      "科技"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "运动轮毂",
+      "犀利大灯",
+      "悬浮车顶"
+    ],
+    "function_selling_points": [
+      "舒适座舱",
+      "静音体验"
+    ],
+    "scenario_a": [
+      "展厅品鉴",
+      "都市通勤",
+      "商务接待"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出行",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "蓝色智己LS6",
+      "展厅静态展示",
+      "运动轮毂设计",
+      "流线车身颜值高"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "都市白领",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

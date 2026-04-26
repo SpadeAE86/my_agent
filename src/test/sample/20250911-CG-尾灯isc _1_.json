@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (1).mp4",
+  "run_id": "v2_20260426_225759_8a7ccd61e8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225759_8a7ccd61e8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225759_8a7ccd61e8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225759_8a7ccd61e8/scene_001_frame_000089.webp/scene_001_frame_000089.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部特写，黑色饰条区域（尾灯区域）动态显示红色爱心及“IM Drive”文字后恢复黑色，车标、车型标识清晰，画面为静态特写，光线简洁呈现产品细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "尾灯",
+      "车标",
+      "车尾",
+      "饰条"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "炫酷",
+      "个性化",
+      "醒目",
+      "智能"
+    ],
+    "design_selling_points": [
+      "贯穿式灯组",
+      "车标设计",
+      "车身线条",
+      "尾部饰条"
+    ],
+    "function_selling_points": [
+      "动态灯语",
+      "个性化显示",
+      "交互灯组",
+      "品牌标识显示"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "社交展示",
+      "停车场寻车"
+    ],
+    "marketing_phrases": [
+      "车尾灯语超吸睛",
+      "IM Drive显示超有范",
+      "智己LS6尾部设计很高级",
+      "动态灯组彰显个性",
+      "蓝色车身搭配红饰条很亮眼",
+      "车尾特写质感拉满"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "设计展示",
+      "功能展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

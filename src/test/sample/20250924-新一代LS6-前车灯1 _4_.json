@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯1 (4).mp4",
+  "run_id": "v2_20260426_230019_e5bb124e47",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230019_e5bb124e47/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230019_e5bb124e47/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230019_e5bb124e47/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230019_e5bb124e47/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "一辆智己LS6汽车停在城市道路的砖墙旁，镜头从侧面到前脸特写，展示黑色亮面车身、多辐式轮毂（带红色卡钳）、独特车灯设计及车内浅色座椅，画面清晰，光线充足（白天晴天环境）。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车灯",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市道路",
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "稳定",
+      "高效",
+      "静音"
+    ],
+    "design_selling_points": [
+      "车头灯组",
+      "多辐式轮毂",
+      "亮面车漆",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "高性能刹车卡钳",
+      "轻量化轮毂",
+      "低风阻设计",
+      "静音座舱"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常停车"
+    ],
+    "scenario_b": [
+      "周末出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "城市道路停着也吸睛",
+      "黑色亮面智己LS6",
+      "精致车灯设计感拉满",
+      "浅色座椅显高级感",
+      "高性能刹车卡钳稳",
+      "低风阻车身更节能"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观特写",
+      "城市用车场景"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车设计爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

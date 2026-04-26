@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-加油口 (1).mp4",
+  "run_id": "v2_20260426_225343_88a30ca8c6",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225343_88a30ca8c6/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225343_88a30ca8c6/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225343_88a30ca8c6/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225343_88a30ca8c6/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225343_88a30ca8c6/scene_001_frame_000187.webp/scene_001_frame_000187.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色汽车的加油口处于开启状态，展示其内部结构与加油口盖设计，画面为固定机位特写，背景为室内展厅环境，光线明亮，可见车身、加油口盖、加油口、轮毂等部件。",
+    "subject": "蓝色汽车（汽油车）",
+    "object": [
+      "车身",
+      "加油口盖",
+      "加油口",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简洁",
+      "流畅",
+      "高级"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "安全",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "加油口盖设计",
+      "车身线条设计",
+      "轮毂造型设计",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "加油口便捷开启",
+      "加油口安全锁止",
+      "车身密封性设计",
+      "加油防漏设计"
+    ],
+    "scenario_a": [
+      "日常加油",
+      "展厅看车",
+      "车辆维护"
+    ],
+    "scenario_b": [
+      "长途出行补能",
+      "城市通勤加油",
+      "新车提车检查"
+    ],
+    "marketing_phrases": [
+      "加油口设计贴心",
+      "车身细节精致",
+      "展厅静态展示",
+      "日常加油便捷",
+      "轮毂造型动感",
+      "车漆质感高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "汽车细节",
+      "加油口设计",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "购车用户",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

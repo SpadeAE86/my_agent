@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车身多角度外观 (5).mp4",
+  "run_id": "v2_20260426_225601_44fe6efbfc",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225601_44fe6efbfc/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225601_44fe6efbfc/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225601_44fe6efbfc/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225601_44fe6efbfc/scene_001_frame_000159.webp/scene_001_frame_000159.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅内进行静态外观展示，画面通过多角度特写镜头呈现蓝色车身、精致车灯、流畅车身线条与动感轮毂设计，背景为简洁的室内展厅环境，光线明亮，突出车辆外观细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车灯",
+      "车身",
+      "轮毂",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "动感",
+      "现代"
+    ],
+    "function_adjectives": [
+      "科技感",
+      "未来感"
+    ],
+    "design_selling_points": [
+      "精致车灯组",
+      "流畅车身线条",
+      "动感轮毂",
+      "一体化后视镜"
+    ],
+    "function_selling_points": [
+      "智能照明系统",
+      "空气动力学设计"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态品鉴",
+      "外观欣赏",
+      "购车体验"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "城市出行",
+      "商务接待",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "智己LS6外观精致",
+      "蓝色车身动感流畅",
+      "车灯设计科技感十足",
+      "展厅实拍智己LS6",
+      "轮毂造型时尚大气",
+      "静态外观尽显高级感"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "汽车美学",
+      "智己LS6"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻消费者",
+      "设计爱好者",
+      "城市白领"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

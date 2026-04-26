@@ -1,0 +1,85 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-车标-1.mp4",
+  "run_id": "v2_20260426_230348_24b32eb753",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230348_24b32eb753/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230348_24b32eb753/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230348_24b32eb753/scene_001_frame_000093.webp/scene_001_frame_000093.webp"
+  ],
+  "result": {
+    "description": "一辆白色汽车（车顶带镀铬装饰）在黄昏时分的山林环境中静态展示，背景有树木、山峦和黄昏的天空，光线柔和，画面清晰呈现车顶的镀铬装饰与车漆反光效果。",
+    "subject": "白色汽车（车顶带镀铬装饰）",
+    "object": [
+      "车顶",
+      "镀铬装饰"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "山林",
+      "户外",
+      "自然景区"
+    ],
+    "car_color": "白",
+    "car_color_detail": "珠光白",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光亮",
+      "精致",
+      "镀铬",
+      "优雅"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "镀铬装饰",
+      "珠光车漆",
+      "车顶设计",
+      "精致细节"
+    ],
+    "function_selling_points": [
+      "静谧体验",
+      "舒适观感"
+    ],
+    "scenario_a": [
+      "自驾旅行",
+      "户外停车",
+      "景区打卡",
+      "黄昏出行"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "家庭出游",
+      "商务出行",
+      "日常代步"
+    ],
+    "marketing_phrases": [
+      "黄昏山林静享美景",
+      "白色车漆质感出色",
+      "镀铬装饰显精致",
+      "自驾旅行好伴侣"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "自然场景",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "自驾爱好者",
+      "摄影爱好者",
+      "自然景区用户",
+      "汽车外观爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

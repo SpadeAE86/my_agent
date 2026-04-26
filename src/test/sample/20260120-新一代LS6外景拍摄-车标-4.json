@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车标-4.mp4",
+  "run_id": "v2_20260426_230432_37b288d76e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230432_37b288d76e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230432_37b288d76e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230432_37b288d76e/scene_001_frame_000062.webp/scene_001_frame_000062.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的引擎盖特写，表面贴有红色卡通贴纸，背景为室内展厅环境，光线明亮，镜头固定展示其静态外观，呈现亮面车漆与卡通装饰细节。",
+    "subject": "黑色汽车",
+    "object": [
+      "引擎盖",
+      "挡风玻璃",
+      "后视镜",
+      "卡通贴纸"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "亮面",
+      "精致",
+      "简约",
+      "时尚"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "亮面车漆",
+      "引擎盖设计",
+      "卡通贴纸装饰",
+      "后视镜造型"
+    ],
+    "function_selling_points": [
+      "无功能展示"
+    ],
+    "scenario_a": [
+      "展厅展示",
+      "新车观赏",
+      "个性化装饰",
+      "静态体验"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "城市出行",
+      "家庭用车",
+      "节日氛围"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示黑车",
+      "亮黑车漆质感",
+      "卡通贴纸装饰车",
+      "个性引擎盖设计",
+      "室内展示汽车外观",
+      "精致细节呈现"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "个性化装饰",
+      "展厅展示",
+      "节日装饰",
+      "汽车外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "年轻用户",
+      "家庭用户",
+      "喜欢个性化装饰的车主",
+      "节日购车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

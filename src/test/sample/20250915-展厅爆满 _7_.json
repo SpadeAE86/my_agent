@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (7).mp4",
+  "run_id": "v2_20260426_230004_b4ef684ba2",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230004_b4ef684ba2/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230004_b4ef684ba2/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230004_b4ef684ba2/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230004_b4ef684ba2/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "智己汽车在展厅内静态展示，有多辆不同颜色（白、黑、银）的车辆，顾客们在看车、交谈，有人查看车门内饰，有人在展厅休息区活动，镜头为固定机位，光线明亮。",
+    "subject": "智己汽车",
+    "object": [
+      "车门",
+      "座椅",
+      "顾客",
+      "中控台"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": true,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "简约",
+      "大气"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "智能",
+      "安静"
+    ],
+    "design_selling_points": [
+      "车门内饰",
+      "座椅材质",
+      "轮毂造型",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "超大空间",
+      "智能座舱",
+      "安全配置",
+      "舒适驾乘"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "家庭购车",
+      "周末探店",
+      "看车咨询"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "长途自驾",
+      "商务出行",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "展厅看车更直观",
+      "多种颜色可选",
+      "内饰精致空间大",
+      "智能配置超贴心",
+      "购车体验超轻松",
+      "家庭用车首选"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "购车场景",
+      "展厅体验",
+      "家庭用车",
+      "智能汽车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "购车人群",
+      "汽车爱好者",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

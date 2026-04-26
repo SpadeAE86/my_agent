@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (7) - 副本.mp4",
+  "run_id": "v2_20260426_225324_d3d99c1479",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_d3d99c1479/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_d3d99c1479/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_d3d99c1479/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_d3d99c1479/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_d3d99c1479/scene_001_frame_000191.webp/scene_001_frame_000191.webp"
+  ],
+  "result": {
+    "description": "某款汽车的后排座舱内，米色皮质后排座椅从收起状态逐步展开，搭配大尺寸中控屏、全景天窗与简约中控台，固定机位从后排向前拍摄，展示座椅调节功能，背景为白色室内展厅环境。",
+    "subject": "汽车后排座椅",
+    "object": [
+      "后排座椅",
+      "中控屏",
+      "方向盘",
+      "全景天窗"
+    ],
+    "movement": "座椅调节",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰（座椅调节演示）",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "柔和"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "灵活",
+      "便捷",
+      "宽敞"
+    ],
+    "design_selling_points": [
+      "后排可调节座椅",
+      "大尺寸中控屏",
+      "全景天窗",
+      "米色皮质内饰"
+    ],
+    "function_selling_points": [
+      "座椅多向调节",
+      "智能中控交互",
+      "全景天窗采光",
+      "后排空间拓展"
+    ],
+    "scenario_a": [
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "后排座椅灵活调节",
+      "大空间想变就变",
+      "中控大屏科技感",
+      "全景天窗采光足",
+      "米色内饰显高级",
+      "展厅实拍内饰细节"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "内饰细节",
+      "座椅调节"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适的车主",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

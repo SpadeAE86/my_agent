@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-12.mp4",
+  "run_id": "v2_20260426_230512_6353812b6b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230512_6353812b6b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230512_6353812b6b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230512_6353812b6b/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230512_6353812b6b/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区的街道（红砖建筑与现代高楼间）静态展示，车身为亮黑色（亮面反光），镜头为固定机位拍摄，画面明亮（晴天白天），无讲解员。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "红砖街区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "亮面",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "低风阻",
+      "稳定",
+      "静谧",
+      "大气"
+    ],
+    "design_selling_points": [
+      "前灯组",
+      "车身线条",
+      "亮面车漆",
+      "轮毂"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "智能灯组",
+      "车身空气动力学",
+      "外观辨识度"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行",
+      "街区漫步"
+    ],
+    "scenario_b": [
+      "周末探店",
+      "自驾旅行",
+      "都市巡游"
+    ],
+    "marketing_phrases": [
+      "亮黑车漆显质感",
+      "街区静态吸睛",
+      "智己LS6科技范",
+      "现代城区街拍感",
+      "静态外观优雅范",
+      "黑武士风回头率"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "街拍场景",
+      "汽车设计"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车设计爱好者",
+      "商务人士",
+      "年轻消费者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

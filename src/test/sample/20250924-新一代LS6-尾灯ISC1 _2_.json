@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC1 (2).mp4",
+  "run_id": "v2_20260426_230106_5ab83c2766",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230106_5ab83c2766/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230106_5ab83c2766/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230106_5ab83c2766/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230106_5ab83c2766/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的尾部及部分车身静态展示，车身为深棕黑色亮面，带有像素化尾灯、红色装饰条、金属车标及‘上汽集团’标识，背景为砖墙与路面，镜头固定，光线明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "像素尾灯",
+      "金属车标",
+      "上汽集团标识"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "路面",
+      "砖墙旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "炫酷",
+      "高级"
+    ],
+    "function_adjectives": [
+      "智能",
+      "醒目",
+      "安全",
+      "灵动"
+    ],
+    "design_selling_points": [
+      "像素尾灯",
+      "流畅车身线条",
+      "金属车标",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "智能像素灯语",
+      "动态显示提示",
+      "安全辅助警示",
+      "个性化灯效"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行",
+      "日常停车",
+      "科技体验"
+    ],
+    "scenario_b": [
+      "家庭用车",
+      "周末自驾",
+      "长途旅行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "像素尾灯超炫酷",
+      "车身线条超流畅",
+      "智己LS6外观高级",
+      "亮面车漆显档次",
+      "金属车标很精致",
+      "静态展示质感佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "静态展示",
+      "智能灯语"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市白领",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

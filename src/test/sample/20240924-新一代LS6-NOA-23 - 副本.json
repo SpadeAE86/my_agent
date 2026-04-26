@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-23 - 副本.mp4",
+  "run_id": "v2_20260426_225205_ab3b38fa97",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ab3b38fa97/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ab3b38fa97/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ab3b38fa97/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_ab3b38fa97/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆智己汽车以车内POV视角呈现，驾驶员手握方向盘驾驶，中控大屏显示导航界面，车辆在城市公路上跟车行驶，前方有卡车和绿色巴士，天气晴朗、白天光线充足，车内内饰简约现代。",
+    "subject": "智己汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "驾驶员"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "公路",
+      "现代城区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "科技感",
+      "精致",
+      "现代"
+    ],
+    "function_adjectives": [
+      "流畅",
+      "稳定",
+      "智能",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "一体中控大屏",
+      "简约方向盘设计",
+      "座舱软质材质",
+      "智能交互界面"
+    ],
+    "function_selling_points": [
+      "智能导航系统",
+      "辅助驾驶功能",
+      "流畅驾驶体验",
+      "舒适驾乘感受"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "城市通勤跟车稳",
+      "中控大屏导航准",
+      "简约方向盘易操控",
+      "晴天驾驶视野佳",
+      "智己汽车路跑体验",
+      "车内科技感十足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "科技爱好者",
+      "家庭用户",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

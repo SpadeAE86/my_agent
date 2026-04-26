@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-一键泊车-2.mp4",
+  "run_id": "v2_20260426_192053_ade335fc39",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ade335fc39/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ade335fc39/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ade335fc39/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ade335fc39/scene_001_frame_000143.webp/scene_001_frame_000143.webp"
+  ],
+  "result": {
+    "description": "一辆白色SUV在林间空地（周边有树木、水域、草地）进行自动泊车，车内展示方向盘、中控大屏（显示泊车与导航界面），驾驶员在驾驶位，车外为航拍视角呈现车辆泊车过程，天气阴天，白天拍摄，展示车辆智能泊车功能与简约科技内饰。",
+    "subject": "白色SUV汽车",
+    "object": [
+      "方向盘",
+      "中控屏",
+      "驾驶员",
+      "车身"
+    ],
+    "movement": "泊车",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "林间",
+      "空地",
+      "水域"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "泊车场景",
+    "has_presenter": true,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "简约",
+      "科技感",
+      "精致",
+      "舒适"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "精准",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "中控大屏",
+      "方向盘设计",
+      "内饰材质",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "自动泊车",
+      "智能导航",
+      "车机交互",
+      "驾驶辅助"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "停车场泊车"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "林间休闲"
+    ],
+    "marketing_phrases": [
+      "自动泊车省心停",
+      "林间空地轻松泊",
+      "智能车机导航准",
+      "内饰简约科技感",
+      "阴天出行视野好"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "智能驾驶"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "新手司机",
+      "自驾爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

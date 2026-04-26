@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-32.mp4",
+  "run_id": "v2_20260426_230556_a1a04c1d06",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230556_a1a04c1d06/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230556_a1a04c1d06/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230556_a1a04c1d06/scene_001_frame_000106.webp/scene_001_frame_000106.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区的街道上静态展示，车身为亮面黑色，车尾有贯穿式尾灯与品牌标识，背景为现代建筑、晴朗天空与街道场景，镜头为固定机位拍摄，画面清晰明亮。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "贯穿尾灯",
+      "溜背造型",
+      "亮面车漆",
+      "车尾标识"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "高级",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "智能",
+      "舒适",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "贯穿尾灯",
+      "溜背造型",
+      "亮面车漆",
+      "车尾标识"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "高速NOA",
+      "长续航",
+      "快充"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "现代城区静态展示",
+      "智己LS6亮面黑",
+      "贯穿尾灯设计",
+      "溜背造型动感",
+      "商务出行首选",
+      "城市通勤利器"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "现代城区"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-门把手-3.mp4",
+  "run_id": "v2_20260426_230329_2183350fd0",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230329_2183350fd0/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230329_2183350fd0/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230329_2183350fd0/scene_001_frame_000103.webp/scene_001_frame_000103.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的电动隐藏式车门把手特写，车漆光亮且有树木倒影，背景为户外道路，镜头为固定机位静态特写，清晰展示车门把手与车漆细节。",
+    "subject": "黑色汽车",
+    "object": [
+      "车门把手",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "户外道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "光亮",
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "低风阻",
+      "流畅"
+    ],
+    "design_selling_points": [
+      "隐藏式车门把手",
+      "亮面车漆",
+      "车门曲面设计",
+      "金属饰条把手"
+    ],
+    "function_selling_points": [
+      "电动隐藏把手",
+      "低风阻外观",
+      "智能感应开启",
+      "防刮车漆"
+    ],
+    "scenario_a": [
+      "日常出行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "隐藏把手显科技",
+      "亮黑车漆超吸睛",
+      "电动把手一触弹",
+      "户外停车更方便"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "科技感",
+      "高端质感"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技感追求者",
+      "商务人士",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

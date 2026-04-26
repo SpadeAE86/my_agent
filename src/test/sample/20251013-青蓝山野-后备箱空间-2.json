@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-青蓝山野-后备箱空间-2.mp4",
+  "run_id": "v2_20260426_230354_a00930cba2",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230354_a00930cba2/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230354_a00930cba2/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230354_a00930cba2/scene_001_frame_000119.webp/scene_001_frame_000119.webp"
+  ],
+  "result": {
+    "description": "一辆白色SUV汽车的后备箱处于打开状态，一名身着卡其色外套的人员在后备箱内整理物品（布置毯子、折叠桌），并在车内小桌上倒水，背景包含草地、玉米地、湖水，光线明亮，展示车辆后备箱及车内空间用于户外露营的场景。",
+    "subject": "白色SUV汽车",
+    "object": [
+      "后备箱",
+      "折叠桌",
+      "毯子",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "手持",
+    "scene_location": [
+      "草地",
+      "湖边",
+      "农田"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "使用场景",
+    "design_adjectives": [
+      "宽敞",
+      "实用",
+      "温馨",
+      "精致"
+    ],
+    "function_adjectives": [
+      "灵活",
+      "多功能",
+      "便携",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "大后备箱",
+      "可折叠桌",
+      "内饰地毯",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "露营空间拓展",
+      "便携桌使用",
+      "后备箱储物",
+      "车内休闲"
+    ],
+    "scenario_a": [
+      "户外露营",
+      "野餐",
+      "车内休闲"
+    ],
+    "scenario_b": [
+      "自驾游",
+      "郊外放松",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "后备箱秒变露营地",
+      "户外野餐轻松搞",
+      "自驾露营空间足",
+      "车内休闲好惬意",
+      "大后备箱装得下",
+      "露营布置超简单"
+    ],
+    "marketing_tags": [
+      "使用场景",
+      "产品展示",
+      "露营场景",
+      "自驾游"
+    ],
+    "appealing_audience": [
+      "户外爱好者",
+      "家庭用户",
+      "自驾游客",
+      "露营玩家"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

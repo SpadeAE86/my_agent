@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (10).mp4",
+  "run_id": "v2_20260426_230439_dc908cfb86",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230439_dc908cfb86/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230439_dc908cfb86/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230439_dc908cfb86/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230439_dc908cfb86/scene_001_frame_000122.webp/scene_001_frame_000122.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代化展厅的圆形展台转盘上展示，车身为亮黑色，前脸灯组、轮毂、车身线条清晰可见，展厅顶部有圆形灯光装置，背景为金属质感墙面与瓷砖地面，画面光线明亮均匀，多角度呈现车辆外观细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前脸",
+      "轮毂",
+      "灯组"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "现代",
+      "动感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "科技",
+      "舒适",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "前脸灯组设计",
+      "轮毂造型",
+      "车身线条",
+      "亮黑车漆"
+    ],
+    "function_selling_points": [
+      "智能灯组",
+      "车机系统",
+      "自动驾驶辅助",
+      "快充"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "新车展示",
+      "静态体验",
+      "品牌活动"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "周末自驾",
+      "家庭出行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "展厅实拍智己LS6",
+      "亮黑外观尽显高级",
+      "前脸灯组科技感拉满",
+      "展台转盘多角度展示",
+      "金属展厅质感搭配",
+      "静态外观细节拉满"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "智己LS6",
+      "展厅场景",
+      "亮黑车漆",
+      "前脸设计"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "中高端用户",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

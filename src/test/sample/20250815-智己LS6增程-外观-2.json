@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-2.mp4",
+  "run_id": "v2_20260426_225657_613b427f7d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225657_613b427f7d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225657_613b427f7d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225657_613b427f7d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225657_613b427f7d/scene_001_frame_000162.webp/scene_001_frame_000162.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色智己LS6汽车在现代化双层展厅内静态展示，展厅顶部有长条与圆形灯光，背景为玻璃隔断与白色墙面，车身线条流畅，轮毂带红色卡钳，前灯组造型独特，车内座椅隐约可见，画面明亮整洁。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "前灯组",
+      "座椅"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "亮面蓝",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "亮面",
+      "简约"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "高端",
+      "科技"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "运动轮毂",
+      "矩阵大灯",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "语音控制",
+      "L2辅助",
+      "快充"
+    ],
+    "scenario_a": [
+      "到店看车",
+      "展厅体验",
+      "静态赏车",
+      "购车咨询"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "周末出游",
+      "商务接待",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示",
+      "蓝色智己LS6",
+      "运动轮毂设计",
+      "流线车身造型"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "展厅场景",
+      "汽车美学"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "年轻群体",
+      "高端消费者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

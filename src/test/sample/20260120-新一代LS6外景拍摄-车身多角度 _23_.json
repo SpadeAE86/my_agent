@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (23).mp4",
+  "run_id": "v2_20260426_230504_e8c4c3ba1d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230504_e8c4c3ba1d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230504_e8c4c3ba1d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230504_e8c4c3ba1d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230504_e8c4c3ba1d/scene_001_frame_000131.webp/scene_001_frame_000131.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的圆形展台转盘上静态展示，车身为亮黑色，车头大灯设计独特，轮毂为黑色运动款，背景为简约的银色墙面与圆形顶灯，光线明亮均匀，镜头随展台转动展示车辆外观细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "大灯",
+      "轮毂",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "现代",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "静谧",
+      "科技感",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "大灯设计",
+      "亮黑车漆",
+      "运动轮毂",
+      "流线车身"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "语音交互",
+      "L2辅助驾驶",
+      "快充"
+    ],
+    "scenario_a": [
+      "展厅品鉴",
+      "都市通勤",
+      "家庭出行",
+      "商务接待"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "越野探索",
+      "露营出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示",
+      "亮黑车漆吸睛",
+      "独特大灯设计",
+      "运动轮毂造型",
+      "都市通勤首选",
+      "商务接待有面"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "展厅场景",
+      "高端SUV"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "都市白领",
+      "家庭用户",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250908-一个女司机-车身整体造型.mp4",
+  "run_id": "v2_20260426_225720_b35a38cb68",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225720_b35a38cb68/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225720_b35a38cb68/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225720_b35a38cb68/scene_001_frame_000113.webp/scene_001_frame_000113.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车静态停放在住宅前的草地（落有枯叶）区域，背景为黄色房屋、绿树与红枫，天气晴朗，画面明亮清晰，镜头为固定机位拍摄。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "住宅",
+      "草地",
+      "庭院",
+      "树木"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "大气",
+      "现代",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "稳定",
+      "舒适",
+      "优雅"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "运动轮毂",
+      "贯穿式大灯",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "低风阻",
+      "静谧座舱",
+      "舒适驾乘",
+      "稳定操控"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "庭院停车",
+      "城市通勤",
+      "周末出游"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "自驾游",
+      "购物代步",
+      "朋友聚会"
+    ],
+    "marketing_phrases": [
+      "亮黑外观显格调",
+      "庭院停车也优雅",
+      "城市通勤好帮手",
+      "家庭出行更安心"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "汽车爱好者",
+      "高端车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

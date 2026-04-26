@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC3 (8).mp4",
+  "run_id": "v2_20260426_230137_bacbc88165",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230137_bacbc88165/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230137_bacbc88165/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230137_bacbc88165/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230137_bacbc88165/scene_001_frame_000155.webp/scene_001_frame_000155.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在装饰有灯光的地下车库内静态展示，车身为亮黑色，贯穿式尾灯点亮，后挡风玻璃与车身反射灯光形成独特纹理，背景为地库墙面、消防设施与灯光吊顶，镜头从遮挡物后逐渐呈现汽车尾部及侧面，画面光线柔和，突出车辆外观设计。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "贯穿尾灯",
+      "后挡风玻璃",
+      "车牌"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "流畅",
+      "光泽"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "静谧",
+      "智能",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "贯穿尾灯",
+      "流线车身",
+      "亮黑车漆",
+      "后挡风玻璃"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "地库通行",
+      "静谧空间",
+      "车身稳定"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "夜间归家"
+    ],
+    "marketing_phrases": [
+      "地库实拍智己LS6",
+      "亮黑车漆超吸睛",
+      "贯穿尾灯很亮眼",
+      "地库停车很稳",
+      "流线车身显高级",
+      "智能泊车更便捷"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "地库场景"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "科技爱好者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4",
+  "run_id": "v2_20260426_192053_494d103fbc",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_494d103fbc/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_494d103fbc/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_494d103fbc/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_494d103fbc/scene_001_frame_000170.webp/scene_001_frame_000170.webp"
+  ],
+  "result": {
+    "description": "电动车动力电池包在黑色背景下进行CG动画的结构拆解展示，依次呈现外壳、电芯、电路等部件，画面以黑色为背景，突出金属质感与电芯的发光效果，镜头固定展示拆解过程。",
+    "subject": "电动车动力电池包",
+    "object": [
+      "电芯",
+      "外壳",
+      "电路"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "未知"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态结构展示",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品结构讲解",
+    "design_adjectives": [
+      "金属质感",
+      "精密",
+      "规整",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "高能量密度",
+      "安全稳定",
+      "高效散热",
+      "长续航"
+    ],
+    "design_selling_points": [
+      "一体化外壳",
+      "规整电芯排列",
+      "精密电路设计",
+      "金属质感外壳"
+    ],
+    "function_selling_points": [
+      "高效热管理",
+      "高能量密度电芯",
+      "安全防护结构",
+      "稳定供电"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "长途出行"
+    ],
+    "scenario_b": [
+      "低温行驶",
+      "高速行驶"
+    ],
+    "marketing_phrases": [
+      "精密结构保障安全",
+      "高能量密度长续航",
+      "规整电芯高效散热",
+      "科技感电池设计"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "电池技术讲解"
+    ],
+    "appealing_audience": [
+      "电动车车主",
+      "科技爱好者",
+      "新能源汽车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true,
+  "cached": true
+}

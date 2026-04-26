@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-5.mp4",
+  "run_id": "v2_20260426_225311_a38b88f6fa",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225311_a38b88f6fa/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225311_a38b88f6fa/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225311_a38b88f6fa/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225311_a38b88f6fa/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225311_a38b88f6fa/scene_001_frame_000226.webp/scene_001_frame_000226.webp"
+  ],
+  "result": {
+    "description": "智己汽车的内饰座舱，展示方向盘、中控大屏、座椅、全景天窗等部件，镜头为车内固定机位拍摄，光线明亮，场景为室内展厅。",
+    "subject": "智己汽车内饰",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "全景天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "车内固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "高级",
+      "柔和",
+      "精致"
+    ],
+    "function_adjectives": [
+      "智能",
+      "舒适",
+      "便捷",
+      "科技"
+    ],
+    "design_selling_points": [
+      "中控大屏",
+      "方向盘设计",
+      "真皮座椅",
+      "全景天窗"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "舒适座舱体验",
+      "便捷储物空间",
+      "全景天窗采光"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "内饰简约高级",
+      "中控大屏智能",
+      "座椅舒适柔和",
+      "全景天窗采光",
+      "方向盘精致设计",
+      "座舱科技感足"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "汽车体验"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

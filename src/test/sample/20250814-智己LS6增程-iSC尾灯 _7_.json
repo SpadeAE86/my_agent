@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-iSC尾灯 (7).mp4",
+  "run_id": "v2_20260426_225337_416933519f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225337_416933519f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225337_416933519f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225337_416933519f/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225337_416933519f/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，车尾显示屏显示“HELLO”字样，车牌处有“智己LS6”标识，背景墙有相关文字，镜头为固定机位拍摄，画面清晰，场景为展厅室内环境。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车尾",
+      "尾灯",
+      "车牌",
+      "车标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "交互友好",
+      "便捷",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "动态文字显示",
+      "车标设计",
+      "车尾摄像头"
+    ],
+    "function_selling_points": [
+      "智能交互尾灯",
+      "倒车影像",
+      "品牌标识显示",
+      "车机联动"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态体验",
+      "购车咨询",
+      "产品展示"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "城市出行",
+      "家庭用车",
+      "科技出行"
+    ],
+    "marketing_phrases": [
+      "车尾显示HELLO",
+      "智己LS6尾部设计",
+      "贯穿式尾灯科技感",
+      "智能交互车尾",
+      "展厅静态展示",
+      "购车选智己LS6"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "智能交互"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "年轻车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

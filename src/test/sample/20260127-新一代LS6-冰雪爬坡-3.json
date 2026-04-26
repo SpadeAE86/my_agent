@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260127-新一代LS6-冰雪爬坡-3.mp4",
+  "run_id": "v2_20260426_192053_ee90cecce7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ee90cecce7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ee90cecce7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ee90cecce7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ee90cecce7/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在冰雪覆盖的坡道上向上行驶，背景为晴朗蓝天，路面有积雪与冰面，尾部扬起细微雾气，画面明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮胎"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "冰雪",
+      "坡道"
+    ],
+    "car_color": "灰",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "动感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "强劲",
+      "防滑",
+      "高效"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "溜背车身",
+      "哑光灰车漆",
+      "动感车身线条"
+    ],
+    "function_selling_points": [
+      "冰雪爬坡能力",
+      "四驱系统",
+      "防滑性能",
+      "动力强劲"
+    ],
+    "scenario_a": [
+      "冰雪路况出行",
+      "坡道行驶"
+    ],
+    "scenario_b": [
+      "冬季自驾",
+      "山区通勤"
+    ],
+    "marketing_phrases": [
+      "冰雪爬坡稳",
+      "四驱能力强",
+      "溜背设计酷",
+      "晴天行驶顺",
+      "冬季出行安心",
+      "哑光灰质感佳"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "性能测试",
+      "冰雪驾驶"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "自驾爱好者",
+      "性能车爱好者",
+      "冬季出行用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "2160x3840"
+  },
+  "success": true,
+  "cached": true
+}

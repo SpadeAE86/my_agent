@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-后备箱空间-1.mp4",
+  "run_id": "v2_20260426_225750_e769ebd06c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_e769ebd06c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_e769ebd06c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_e769ebd06c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225750_e769ebd06c/scene_001_frame_000157.webp/scene_001_frame_000157.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的后备箱内堆放着多个行李箱和包袋，镜头从近景逐步拉远展示储物空间，车身局部为蓝色，背景光线明亮。",
+    "subject": "汽车后备箱",
+    "object": [
+      "行李箱",
+      "包袋",
+      "后备箱"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内",
+      "后备箱"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "宽敞",
+      "整洁",
+      "精致",
+      "实用"
+    ],
+    "function_adjectives": [
+      "大容量",
+      "便捷",
+      "规整",
+      "能装"
+    ],
+    "design_selling_points": [
+      "后备箱空间",
+      "储物布局",
+      "多类型行李容纳",
+      "包袋放置"
+    ],
+    "function_selling_points": [
+      "超大储物容量",
+      "多物品收纳",
+      "家庭出行装载",
+      "长途旅行装载"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "长途旅行",
+      "自驾出游",
+      "露营装备"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "搬家运输",
+      "机场接送",
+      "购物归来"
+    ],
+    "marketing_phrases": [
+      "后备箱超能装",
+      "家庭出行行李全装下",
+      "长途旅行包袋不愁放",
+      "自驾出游行李轻松装",
+      "商务出行包袋收纳",
+      "搬家运输多箱装载"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "储物空间",
+      "家庭出行",
+      "长途旅行"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "自驾爱好者",
+      "商务人士",
+      "搬家用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "1388x1080"
+  },
+  "success": true
+}

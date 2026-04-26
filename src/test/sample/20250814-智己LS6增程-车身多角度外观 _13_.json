@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车身多角度外观 (13).mp4",
+  "run_id": "v2_20260426_225559_a427ea70bc",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_a427ea70bc/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_a427ea70bc/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225559_a427ea70bc/scene_001_frame_000116.webp/scene_001_frame_000116.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅内静态展示，展示黑色车身、多辐式轮毂、贯穿式尾灯、隐藏式门把手等外观细节，背景有“LS6 自带超充桩的电车”文字，镜头随展台转盘多角度拍摄，画面简洁明亮。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "尾灯",
+      "车门把手"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "大气"
+    ],
+    "function_adjectives": [
+      "高效",
+      "便捷",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "流畅车身线条",
+      "多辐式轮毂",
+      "贯穿式尾灯",
+      "隐藏式门把手"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "高效充电",
+      "便捷补能",
+      "智能超充"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "长途自驾"
+    ],
+    "marketing_phrases": [
+      "自带超充桩的电车",
+      "车身线条流畅",
+      "轮毂设计精致",
+      "尾灯简约大气",
+      "城市通勤好帮手",
+      "长途自驾不焦虑"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "电车超充",
+      "城市通勤"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "电车用户",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

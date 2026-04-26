@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (16).mp4",
+  "run_id": "v2_20260426_225809_ca01e8fbb7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_ca01e8fbb7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_ca01e8fbb7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_ca01e8fbb7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225809_ca01e8fbb7/scene_001_frame_000128.webp/scene_001_frame_000128.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，贯穿式尾灯呈现动态图案（山峰、蝙蝠等），背景深色，镜头固定，画面清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "尾灯",
+      "车身",
+      "后视镜",
+      "车标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "醒目",
+      "智能",
+      "安全",
+      "炫酷"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流畅车身线条",
+      "精致车标",
+      "后视镜设计"
+    ],
+    "function_selling_points": [
+      "动态尾灯图案",
+      "智能灯语",
+      "高辨识度尾灯",
+      "夜间安全警示"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "夜间行车",
+      "日常出行",
+      "停车等待"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "雨雪天气"
+    ],
+    "marketing_phrases": [
+      "贯穿式尾灯超醒目",
+      "动态灯语科技感拉满",
+      "蓝色车身质感高级",
+      "夜间行车更安全",
+      "精致车标辨识度高",
+      "流畅线条显优雅"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "尾灯功能",
+      "科技感",
+      "汽车宣传"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4972x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-iSC尾灯 (3).mp4",
+  "run_id": "v2_20260426_225336_9a34dd3dff",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_9a34dd3dff/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_9a34dd3dff/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_9a34dd3dff/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225336_9a34dd3dff/scene_001_frame_000177.webp/scene_001_frame_000177.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，背景为灰色墙面带有“智己LS6|自带超充桩”文字，车尾配备贯穿式红色灯带（灯带内有像素动画），车尾有“上汽集团”“智己LS6”标识，车顶有鲨鱼鳍，车身颜色为蓝白双色，整体画面简洁清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车尾",
+      "尾灯",
+      "车身",
+      "品牌标识"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "白蓝双色",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简约",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "灵动",
+      "高效",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "简洁车尾布局",
+      "鲨鱼鳍天线",
+      "双色车身设计"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "像素尾灯智能交互",
+      "高效充电",
+      "灵动尾灯动画"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "长途自驾"
+    ],
+    "marketing_phrases": [
+      "智己LS6贯穿尾灯超吸睛",
+      "像素动画尾灯趣味十足",
+      "自带超充桩充电不愁",
+      "蓝白车身简约大气",
+      "车尾设计精致流畅",
+      "静态展示科技美学"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "功能展示",
+      "科技感"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "城市白领",
+      "家庭用户",
+      "新能源车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

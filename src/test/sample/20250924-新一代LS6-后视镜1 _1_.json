@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-后视镜1 (1).mp4",
+  "run_id": "v2_20260426_230042_1171cc9468",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_1171cc9468/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_1171cc9468/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_1171cc9468/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_1171cc9468/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的外后视镜（集成摄像头与转向灯）特写，车身为黑色亮面，背景可见红砖建筑与绿树，镜头固定聚焦后视镜细节，画面清晰自然。",
+    "subject": "汽车外后视镜",
+    "object": [
+      "外后视镜",
+      "摄像头",
+      "转向灯",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "街道"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "亮面",
+      "金属质感"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "安全",
+      "智能",
+      "广角"
+    ],
+    "design_selling_points": [
+      "外后视镜造型",
+      "摄像头集成",
+      "转向灯设计",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "360°影像辅助",
+      "转向警示灯",
+      "清晰后视视野",
+      "防眩目镜面"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常停车"
+    ],
+    "scenario_b": [
+      "自驾出行",
+      "狭窄路段会车"
+    ],
+    "marketing_phrases": [
+      "外后视镜带摄像头",
+      "转向辅助灯实用",
+      "亮面黑车身显质感",
+      "360影像停车更稳",
+      "后视镜清晰视野好",
+      "城市开车辅助多"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "城市车主",
+      "新手司机",
+      "注重安全的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

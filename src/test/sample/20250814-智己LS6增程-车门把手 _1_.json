@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门把手 (1).mp4",
+  "run_id": "v2_20260426_225629_2da8d57fd1",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225629_2da8d57fd1/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225629_2da8d57fd1/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225629_2da8d57fd1/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225629_2da8d57fd1/scene_001_frame_000126.webp/scene_001_frame_000126.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色汽车的车门把手，从隐藏状态电动弹出后自动收回，镜头为固定机位特写，车身漆面光滑，画面清晰展示把手的设计细节与弹出/收回动作。",
+    "subject": "蓝色汽车车门把手",
+    "object": [
+      "车门把手",
+      "车身"
+    ],
+    "movement": "电动把手弹出",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光滑",
+      "精致",
+      "简约",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "自动",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "隐藏式车门把手",
+      "光滑车漆",
+      "简约车门线条",
+      "一体化设计"
+    ],
+    "function_selling_points": [
+      "电动弹出车门把手",
+      "智能感应开门",
+      "自动收回把手",
+      "无钥匙进入"
+    ],
+    "scenario_a": [
+      "日常用车开门",
+      "城市通勤停车"
+    ],
+    "scenario_b": [
+      "商务出行开门",
+      "家庭用车便捷"
+    ],
+    "marketing_phrases": [
+      "隐藏式把手显高级",
+      "电动弹出更便捷",
+      "车漆光滑质感足",
+      "智能感应一键开",
+      "自动收回防剐蹭",
+      "精致设计提升档"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "设计细节",
+      "功能体验"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

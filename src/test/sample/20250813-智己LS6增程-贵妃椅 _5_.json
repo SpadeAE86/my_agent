@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-贵妃椅 (5).mp4",
+  "run_id": "v2_20260426_225324_c8d7a346d0",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_c8d7a346d0/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_c8d7a346d0/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225324_c8d7a346d0/scene_001_frame_000107.webp/scene_001_frame_000107.webp"
+  ],
+  "result": {
+    "description": "汽车后排座舱内，米白色真皮座椅（含中央可调节座椅）、中控台、全景天窗、车门内饰清晰可见，镜头为车内固定机位，背景为室内白色环境，静态展示内饰设计与座椅调节状态。",
+    "subject": "汽车后排座舱",
+    "object": [
+      "座椅",
+      "天窗",
+      "中控台",
+      "车门内饰"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "舒适",
+      "质感"
+    ],
+    "function_adjectives": [
+      "灵活",
+      "宽敞",
+      "静谧",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "真皮座椅",
+      "全景天窗",
+      "中控台设计",
+      "车门内饰"
+    ],
+    "function_selling_points": [
+      "座椅电动调节",
+      "宽敞座舱",
+      "静谧空间",
+      "灵活布局"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "商务接待"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "后排座椅灵活调节",
+      "米白真皮显高级",
+      "全景天窗采光足",
+      "座舱宽敞舒适",
+      "内饰质感拉满",
+      "座椅布局灵活"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "座椅功能",
+      "家庭用车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "追求舒适的车主",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

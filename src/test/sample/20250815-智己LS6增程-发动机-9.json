@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-9.mp4",
+  "run_id": "v2_20260426_192053_47de1b7d0e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_47de1b7d0e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_47de1b7d0e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_47de1b7d0e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_47de1b7d0e/scene_001_frame_000153.webp/scene_001_frame_000153.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的引擎盖打开，静态展示发动机舱内部结构（包含发动机罩、冷却液壶、雨刮器、管线等部件），画面为近景固定机位拍摄，光线明亮，背景为室内环境，部件细节清晰可见。",
+    "subject": "黑色汽车发动机舱",
+    "object": [
+      "发动机",
+      "冷却液壶",
+      "雨刮器",
+      "引擎盖"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态机械结构展示",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "规整",
+      "精致",
+      "简洁",
+      "专业"
+    ],
+    "function_adjectives": [
+      "可靠",
+      "高效",
+      "稳定",
+      "精密"
+    ],
+    "design_selling_points": [
+      "发动机罩设计",
+      "管线布局规整",
+      "冷却液壶标识清晰",
+      "雨刮器设计"
+    ],
+    "function_selling_points": [
+      "发动机防护",
+      "冷却液系统安全",
+      "雨刮器实用",
+      "管线布局合理"
+    ],
+    "scenario_a": [
+      "保养检查",
+      "购车咨询",
+      "机械讲解"
+    ],
+    "scenario_b": [
+      "日常维护",
+      "维修查看",
+      "汽车科普"
+    ],
+    "marketing_phrases": [
+      "发动机舱布局规整",
+      "冷却液壶标识清晰",
+      "雨刮器设计实用",
+      "静态展示发动机细节",
+      "机械结构一目了然",
+      "管线布局合理"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "机械结构讲解",
+      "汽车科普"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "车主",
+      "维修人员",
+      "购车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-60.mp4",
+  "run_id": "v2_20260426_225512_ecae5d10f7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225512_ecae5d10f7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225512_ecae5d10f7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225512_ecae5d10f7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225512_ecae5d10f7/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆智己LS6汽车在白色简约的室内摄影棚中，置于圆形转盘上进行360度外观展示，车身为蓝色，车顶为黑色，背景墙有品牌标识与“新一代 智己LS6|自带超充桩的电车”文字，画面光线均匀明亮，镜头为固定机位俯拍视角，展示车辆溜背车身、贯穿尾灯、全景天窗等设计细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车顶",
+      "尾灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "TVC切片",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "简约",
+      "精致",
+      "大气"
+    ],
+    "function_adjectives": [
+      "高效",
+      "静谧",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "溜背车身",
+      "贯穿尾灯",
+      "全景天窗",
+      "运动轮毂"
+    ],
+    "function_selling_points": [
+      "自带超充桩",
+      "超快充",
+      "智能泊车",
+      "稳定续航"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态体验"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "长途出行",
+      "周末自驾",
+      "城市代步"
+    ],
+    "marketing_phrases": [
+      "自带超充桩的电车",
+      "智己LS6外观展示",
+      "360度看车",
+      "蓝色车身设计",
+      "简约大气外观",
+      "展厅静态体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "静态展示",
+      "TVC切片"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "科技爱好者",
+      "新能源车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

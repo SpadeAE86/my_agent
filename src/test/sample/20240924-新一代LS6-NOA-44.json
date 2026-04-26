@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-44.mp4",
+  "run_id": "v2_20260426_225205_1bcf89da82",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_1bcf89da82/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_1bcf89da82/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_1bcf89da82/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_1bcf89da82/scene_001_frame_000147.webp/scene_001_frame_000147.webp"
+  ],
+  "result": {
+    "description": "一辆智己汽车在现代城区路口道路行驶，车内POV视角展示半幅方向盘、一体中控大屏及前方交通（高架桥、车辆、交通标识），天气晴朗，画面明亮。",
+    "subject": "智己汽车",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "驾驶员"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "现代城区",
+      "路口",
+      "公路",
+      "高架桥附近"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "简约",
+      "科技感",
+      "精致",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "清晰",
+      "稳定",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "半幅方向盘",
+      "一体中控屏",
+      "内饰材质",
+      "简约设计"
+    ],
+    "function_selling_points": [
+      "智能导航",
+      "清晰路况显示",
+      "车机交互",
+      "驾驶辅助"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "路口通行",
+      "日常驾驶",
+      "短途出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭代步",
+      "商务出行",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "路口跟车轻松",
+      "中控大屏导航清晰",
+      "半幅方向盘好操控",
+      "晴天驾驶视野佳",
+      "城市通勤好帮手",
+      "智能车机真便捷"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "科技爱好者",
+      "新手司机",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

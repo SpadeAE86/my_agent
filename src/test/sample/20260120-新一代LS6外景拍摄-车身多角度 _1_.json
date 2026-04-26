@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (1).mp4",
+  "run_id": "v2_20260426_230438_c209dc3ead",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230438_c209dc3ead/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230438_c209dc3ead/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230438_c209dc3ead/scene_001_frame_000105.webp/scene_001_frame_000105.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的圆形展台内静态展示，车身为亮黑色，背景是金属质感墙面与圆形顶灯，镜头从近景逐步拉远至中景，光线明亮均匀，展现车辆外观设计。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "灯组",
+      "车顶传感器"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "流畅",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "科技感",
+      "静谧",
+      "智能",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "前脸造型",
+      "轮毂设计",
+      "车漆质感",
+      "车身线条"
+    ],
+    "function_selling_points": [
+      "智能驾驶硬件",
+      "科技座舱",
+      "静谧性",
+      "智能交互"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "静态展示",
+      "新车体验",
+      "线下品鉴"
+    ],
+    "scenario_b": [
+      "城市通勤",
+      "家庭出行",
+      "商务接待",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "智己LS6静态展示",
+      "亮黑车漆质感",
+      "现代感车身设计",
+      "展厅看车体验",
+      "科技感前脸",
+      "流畅车身线条"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "新车发布"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

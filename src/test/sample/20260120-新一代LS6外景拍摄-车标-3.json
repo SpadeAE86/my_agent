@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车标-3.mp4",
+  "run_id": "v2_20260426_230430_933e0954c8",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230430_933e0954c8/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230430_933e0954c8/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230430_933e0954c8/scene_001_frame_000088.webp/scene_001_frame_000088.webp"
+  ],
+  "result": {
+    "description": "一辆黑色智己汽车的车身区域贴有带有卡通马形象的红色贴纸（含“ok马？”“无敌ok”“超级ok”等文字），车标清晰可见，画面静态展示，光线明亮，背景简洁。",
+    "subject": "智己汽车",
+    "object": [
+      "车身",
+      "贴纸",
+      "车标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "闪亮",
+      "精致",
+      "现代",
+      "个性"
+    ],
+    "function_adjectives": [
+      "简约",
+      "大气",
+      "时尚",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "车漆质感",
+      "车标设计",
+      "个性贴纸",
+      "车身外观"
+    ],
+    "function_selling_points": [
+      "简约设计",
+      "大气外观",
+      "时尚装饰",
+      "个性表达"
+    ],
+    "scenario_a": [
+      "展厅展示",
+      "静态观赏",
+      "个性装饰",
+      "汽车美容"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "家庭出行",
+      "商务出行",
+      "长途驾驶"
+    ],
+    "marketing_phrases": [
+      "个性贴纸装饰",
+      "黑车漆闪亮",
+      "智己汽车静态展示",
+      "卡通马贴纸",
+      "ok马贴纸",
+      "精致车标"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "个性装饰",
+      "静态外观"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "个性车主",
+      "年轻用户",
+      "智己车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

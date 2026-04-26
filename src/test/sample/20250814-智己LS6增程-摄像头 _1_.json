@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-摄像头 (1).mp4",
+  "run_id": "v2_20260426_225519_a0aca5f42f",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225519_a0aca5f42f/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225519_a0aca5f42f/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225519_a0aca5f42f/scene_001_frame_000109.webp/scene_001_frame_000109.webp"
+  ],
+  "result": {
+    "description": "汽车的门把手摄像头（蓝色车身）与车顶摄像头（白色车身）的静态特写，背景为简洁灰色室内环境，镜头为固定机位特写，展示摄像头的设计与安装位置，光线柔和，画面清晰。",
+    "subject": "汽车的摄像头传感器（门把手、车顶）",
+    "object": [
+      "门把手摄像头",
+      "车顶摄像头",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "多种",
+    "car_color_detail": "亮面蓝、亮面白",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "精准",
+      "智能",
+      "清晰",
+      "可靠"
+    ],
+    "design_selling_points": [
+      "门把手摄像头设计",
+      "车顶摄像头设计",
+      "多种车身颜色",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "360°感知系统",
+      "智能驾驶辅助",
+      "高清影像采集",
+      "低风阻安装设计"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "泊车辅助"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "复杂路况"
+    ],
+    "marketing_phrases": [
+      "摄像头设计精致",
+      "360°感知更安全",
+      "多种车身颜色可选",
+      "静态外观质感佳",
+      "智能驾驶辅助强",
+      "泊车辅助更轻松"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "智能驾驶",
+      "安全辅助"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "家庭用户",
+      "新手司机",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

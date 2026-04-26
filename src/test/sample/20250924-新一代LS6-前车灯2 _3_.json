@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-前车灯2 (3).mp4",
+  "run_id": "v2_20260426_230025_76125504af",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230025_76125504af/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230025_76125504af/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230025_76125504af/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230025_76125504af/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车以固定机位特写展示前灯组、车身及轮毂细节，背景为道路、树林及悬挂的中国国旗，光线明亮，画面清晰，汽车处于静态展示状态。",
+    "subject": "黑色汽车",
+    "object": [
+      "前灯组",
+      "车身",
+      "轮毂",
+      "车窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "道路",
+      "树林",
+      "户外",
+      "城市道路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "亮面",
+      "高级"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "安全",
+      "醒目",
+      "科技"
+    ],
+    "design_selling_points": [
+      "前灯组设计",
+      "车身线条",
+      "亮面车漆",
+      "轮毂造型"
+    ],
+    "function_selling_points": [
+      "灯光系统",
+      "空气动力学设计",
+      "车身稳定性",
+      "安全防护"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "户外休闲"
+    ],
+    "marketing_phrases": [
+      "黑车漆亮面高级",
+      "前灯设计精致",
+      "户外行驶醒目",
+      "车身线条流畅",
+      "城市通勤亮眼",
+      "静态外观展示"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "汽车设计",
+      "静态特写",
+      "户外场景",
+      "城市道路"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "外观控",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

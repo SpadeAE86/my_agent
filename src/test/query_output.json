@@ -1,0 +1,6163 @@
+{
+  "index": "car_interior_analysis_v2",
+  "query": "地库 一键泊车",
+  "size": 10,
+  "filters": {},
+  "bm25": {
+    "top": [
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": 8.078134,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_79ab1bc362",
+        "_score": 7.846285,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_d349e1f436",
+        "_score": 4.9959474,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_cb02a39338",
+        "_score": 4.108992,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_5eade10b93",
+        "_score": 3.043655,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ade335fc39",
+        "_score": 1.7753022,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_27e1ff3a3f",
+        "_score": 1.5135052,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_240d6af850",
+        "_score": 0.9269359,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a196220b49",
+        "_score": 0.92654717,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a995eb814a",
+        "_score": 0.9002471,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_9521df8942",
+        "_score": 0.8900816,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_5648e02ebb",
+        "_score": 0.8900816,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_5cfd27ee1d",
+        "_score": 0.7441813,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_b7dc8f3069",
+        "_score": 0.72338116,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ba6d4efe08",
+        "_score": 0.72338116,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_054b13f167",
+        "_score": 0.72338116,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_4bb2fdcaf7",
+        "_score": 0.7037122,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_494d103fbc",
+        "_score": 0.7037122,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_e56f641eca",
+        "_score": 0.6944567,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_cbc2175edd",
+        "_score": 0.6850846,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_f78ff402a7",
+        "_score": 0.6422122,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_496fa33b0d",
+        "_score": 0.6422122,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_56e809b9f7",
+        "_score": 0.6144758,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_47de1b7d0e",
+        "_score": 0.59727854,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_99d267d5f4",
+        "_score": 0.59727854,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_dee0f6290e",
+        "_score": 0.22798598,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ce971a95c6",
+        "_score": 0.22321165,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_be6012d502",
+        "_score": 0.22089866,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_fddc2e284c",
+        "_score": 0.22089866,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_37dd768d37",
+        "_score": 0.22089866,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_655be914f7",
+        "_score": 0.21423869,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_b57464c1c4",
+        "_score": 0.21423869,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_068b7eb379",
+        "_score": 0.21423869,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_135eab0280",
+        "_score": 0.21001743,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_bb8d5d319b",
+        "_score": 0.2059593,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a883267029",
+        "_score": 0.20205502,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_f534ba2ebc",
+        "_score": 0.20205502,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_bb55afede0",
+        "_score": 0.19829601,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_b2e25bf36a",
+        "_score": 0.19829601,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_0eb396ce44",
+        "_score": 0.19118255,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      }
+    ]
+  },
+  "hybrid": {
+    "top": [
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": -9549512000.0,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": -4422440400.0,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": 7.384737,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_79ab1bc362",
+        "_score": 5.492399,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_d349e1f436",
+        "_score": 4.952627,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_cb02a39338",
+        "_score": 3.0817442,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_5eade10b93",
+        "_score": 2.2263806,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ade335fc39",
+        "_score": 1.7753022,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_27e1ff3a3f",
+        "_score": 1.1351289,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a196220b49",
+        "_score": 0.6949104,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_9521df8942",
+        "_score": 0.66756123,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_5648e02ebb",
+        "_score": 0.66756123,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_240d6af850",
+        "_score": 0.64885515,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a995eb814a",
+        "_score": 0.63017297,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_e56f641eca",
+        "_score": 0.48611966,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_f78ff402a7",
+        "_score": 0.44954854,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_496fa33b0d",
+        "_score": 0.44954854,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_5cfd27ee1d",
+        "_score": 0.44650877,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_b7dc8f3069",
+        "_score": 0.43402874,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ba6d4efe08",
+        "_score": 0.43402874,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_054b13f167",
+        "_score": 0.43402874,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_56e809b9f7",
+        "_score": 0.43013304,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_4bb2fdcaf7",
+        "_score": 0.42222732,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_494d103fbc",
+        "_score": 0.42222732,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_47de1b7d0e",
+        "_score": 0.418095,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_99d267d5f4",
+        "_score": 0.418095,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_cbc2175edd",
+        "_score": 0.41105074,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_dee0f6290e",
+        "_score": 0.22798598,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ce971a95c6",
+        "_score": 0.22321165,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_be6012d502",
+        "_score": 0.22089866,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_fddc2e284c",
+        "_score": 0.22089866,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_37dd768d37",
+        "_score": 0.22089866,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_655be914f7",
+        "_score": 0.21423869,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_b57464c1c4",
+        "_score": 0.21423869,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_068b7eb379",
+        "_score": 0.21423869,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_135eab0280",
+        "_score": 0.21001743,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_bb8d5d319b",
+        "_score": 0.2059593,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a883267029",
+        "_score": 0.20205502,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_f534ba2ebc",
+        "_score": 0.20205502,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_bb55afede0",
+        "_score": 0.19829601,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_b2e25bf36a",
+        "_score": 0.19829601,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_0eb396ce44",
+        "_score": 0.19118255,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": -4422440400.0,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "_score": 0.576726,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_79ab1bc362",
+        "_score": 0.5747798,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_d349e1f436",
+        "_score": 0.5540472,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_ade335fc39",
+        "_score": 0.52941,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_cb02a39338",
+        "_score": 0.5250434,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_a995eb814a",
+        "_score": 0.5197057,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      },
+      {
+        "_id": "v2_20260426_192053_e56f641eca",
+        "_score": 0.5181993,
+        "_source_keys": [
+          "appealing_audience",
+          "car_color",
+          "car_color_detail",
+          "car_model",
+          "description",
+          "design_adjectives",
+          "design_selling_points",
+          "footage_type"
+        ],
+        "_explanation": null
+      }
+    ]
+  },
+  "vectors": {
+    "description_vector": {
+      "top": [
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 0.8131272,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 0.8055355,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a995eb814a",
+          "_score": 0.8008478,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a196220b49",
+          "_score": 0.7977251,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.79217577,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.78589964,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_135eab0280",
+          "_score": 0.7851025,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.7843573,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_655be914f7",
+          "_score": 0.780791,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.7779676,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0eb396ce44",
+          "_score": 0.77681816,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.7730015,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_068b7eb379",
+          "_score": 0.7694068,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.7690134,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0dd69c66f7",
+          "_score": 0.76749146,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.76622766,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.7650305,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_11c2480824",
+          "_score": 0.7641425,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_c231ee53e2",
+          "_score": 0.76063156,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_47de1b7d0e",
+          "_score": 0.7587031,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.75777876,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f78ff402a7",
+          "_score": 0.7569854,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_48eb8956a1",
+          "_score": 0.7533661,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f534ba2ebc",
+          "_score": 0.7516105,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 0.7504056,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.7498354,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f5fb2d6090",
+          "_score": 0.74944997,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.7493093,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5648e02ebb",
+          "_score": 0.7486404,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b57464c1c4",
+          "_score": 0.74732566,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_8a75f47473",
+          "_score": 0.74718606,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.7452804,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a883267029",
+          "_score": 0.7448765,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_dee0f6290e",
+          "_score": 0.7411233,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5cfd27ee1d",
+          "_score": 0.7373302,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_9521df8942",
+          "_score": 0.7346033,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_496fa33b0d",
+          "_score": 0.72991043,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b2e25bf36a",
+          "_score": 0.7299083,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_be6012d502",
+          "_score": 0.71929485,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_56e809b9f7",
+          "_score": 0.71741927,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_37dd768d37",
+          "_score": 0.7162752,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ce971a95c6",
+          "_score": 0.7137337,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_fddc2e284c",
+          "_score": 0.7130518,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_99d267d5f4",
+          "_score": 0.71302956,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee90cecce7",
+          "_score": 0.711952,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_311a2394f1",
+          "_score": 0.7104418,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_e56f641eca",
+          "_score": 0.69872427,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 0.68246484,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_494d103fbc",
+          "_score": 0.65678036,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee89719399",
+          "_score": 0.6422946,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        }
+      ]
+    },
+    "function_selling_points_vector": {
+      "top": [
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 0.8713031,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 0.86154073,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a196220b49",
+          "_score": 0.8109337,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.8094542,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5648e02ebb",
+          "_score": 0.8079724,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.8057785,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_9521df8942",
+          "_score": 0.8023288,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.79431087,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_e56f641eca",
+          "_score": 0.79328156,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 0.7860639,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.76844174,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b57464c1c4",
+          "_score": 0.7665975,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.7643609,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0dd69c66f7",
+          "_score": 0.76420295,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_dee0f6290e",
+          "_score": 0.7630614,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a995eb814a",
+          "_score": 0.76288414,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.76143694,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.7596201,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_47de1b7d0e",
+          "_score": 0.75847113,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_fddc2e284c",
+          "_score": 0.7584246,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_135eab0280",
+          "_score": 0.7520183,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.7486237,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_311a2394f1",
+          "_score": 0.74422574,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_655be914f7",
+          "_score": 0.7414591,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.73956925,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.73911285,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_496fa33b0d",
+          "_score": 0.7368929,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ce971a95c6",
+          "_score": 0.73460895,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f534ba2ebc",
+          "_score": 0.73446065,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.7339783,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_c231ee53e2",
+          "_score": 0.73313403,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5cfd27ee1d",
+          "_score": 0.73121816,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_068b7eb379",
+          "_score": 0.7312058,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_be6012d502",
+          "_score": 0.729661,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_56e809b9f7",
+          "_score": 0.72864646,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0eb396ce44",
+          "_score": 0.72249293,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.71477973,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_48eb8956a1",
+          "_score": 0.7121836,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_37dd768d37",
+          "_score": 0.708766,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_8a75f47473",
+          "_score": 0.7031696,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f5fb2d6090",
+          "_score": 0.701508,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_11c2480824",
+          "_score": 0.7013953,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_99d267d5f4",
+          "_score": 0.69518214,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a883267029",
+          "_score": 0.69108224,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee90cecce7",
+          "_score": 0.69007,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f78ff402a7",
+          "_score": 0.6725555,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_494d103fbc",
+          "_score": 0.6668707,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 0.63964605,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b2e25bf36a",
+          "_score": 0.63829,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee89719399",
+          "_score": 0.6030139,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        }
+      ]
+    },
+    "design_selling_points_vector": {
+      "top": [
+        {
+          "_id": "v2_20260426_192053_ee90cecce7",
+          "_score": 0.83086824,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_655be914f7",
+          "_score": 0.817121,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5648e02ebb",
+          "_score": 0.8142986,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.81273407,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_496fa33b0d",
+          "_score": 0.8080252,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.80528617,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0eb396ce44",
+          "_score": 0.8049222,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ce971a95c6",
+          "_score": 0.8040476,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_135eab0280",
+          "_score": 0.80132127,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 0.8004197,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_37dd768d37",
+          "_score": 0.80032885,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_068b7eb379",
+          "_score": 0.7996229,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b2e25bf36a",
+          "_score": 0.79799116,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.79607475,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0dd69c66f7",
+          "_score": 0.7945291,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a196220b49",
+          "_score": 0.79312027,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_be6012d502",
+          "_score": 0.79168916,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_9521df8942",
+          "_score": 0.78788364,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f534ba2ebc",
+          "_score": 0.7828132,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_c231ee53e2",
+          "_score": 0.7823812,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a883267029",
+          "_score": 0.7788244,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b57464c1c4",
+          "_score": 0.7756431,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 0.7675296,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_48eb8956a1",
+          "_score": 0.76573807,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_11c2480824",
+          "_score": 0.76476127,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a995eb814a",
+          "_score": 0.7618375,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_fddc2e284c",
+          "_score": 0.75846237,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f78ff402a7",
+          "_score": 0.75594187,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_56e809b9f7",
+          "_score": 0.7521409,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_dee0f6290e",
+          "_score": 0.75081563,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f5fb2d6090",
+          "_score": 0.7444084,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_e56f641eca",
+          "_score": 0.74127066,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_47de1b7d0e",
+          "_score": 0.7401019,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 0.7340276,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.71663684,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.7128445,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.7116176,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.70802027,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.70630974,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_99d267d5f4",
+          "_score": 0.70350504,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_494d103fbc",
+          "_score": 0.7004676,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.6977005,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.6974429,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 0.6944891,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.6706958,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.64685357,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_311a2394f1",
+          "_score": 0.6421901,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5cfd27ee1d",
+          "_score": 0.63312244,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_8a75f47473",
+          "_score": 0.62818706,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee89719399",
+          "_score": 0.60731167,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        }
+      ]
+    },
+    "scenario_a_vector": {
+      "top": [
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 0.84894,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 0.84180295,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 0.8168086,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.81076777,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_47de1b7d0e",
+          "_score": 0.78830326,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f534ba2ebc",
+          "_score": 0.7864586,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_c231ee53e2",
+          "_score": 0.78096557,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.77866447,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.77700496,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee89719399",
+          "_score": 0.77668715,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_135eab0280",
+          "_score": 0.7658924,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_e56f641eca",
+          "_score": 0.7632295,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_99d267d5f4",
+          "_score": 0.75839984,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5cfd27ee1d",
+          "_score": 0.75612456,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.75612456,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a883267029",
+          "_score": 0.74781,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_48eb8956a1",
+          "_score": 0.7468498,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.7458761,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a995eb814a",
+          "_score": 0.74501437,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_311a2394f1",
+          "_score": 0.7300098,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_37dd768d37",
+          "_score": 0.7276181,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee90cecce7",
+          "_score": 0.72700965,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5648e02ebb",
+          "_score": 0.7258172,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.722441,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a196220b49",
+          "_score": 0.7223231,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_8a75f47473",
+          "_score": 0.721786,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_068b7eb379",
+          "_score": 0.72006494,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ce971a95c6",
+          "_score": 0.71987045,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_fddc2e284c",
+          "_score": 0.71635664,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_be6012d502",
+          "_score": 0.71583915,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.7155847,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_494d103fbc",
+          "_score": 0.71551746,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_655be914f7",
+          "_score": 0.71448386,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_11c2480824",
+          "_score": 0.71448386,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.7119759,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.7119759,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.7119759,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0dd69c66f7",
+          "_score": 0.7119759,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 0.7111796,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_496fa33b0d",
+          "_score": 0.70836496,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f78ff402a7",
+          "_score": 0.70786256,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_56e809b9f7",
+          "_score": 0.70740676,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.70367354,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0eb396ce44",
+          "_score": 0.69827425,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b57464c1c4",
+          "_score": 0.69021076,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.68754846,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_9521df8942",
+          "_score": 0.6850717,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_dee0f6290e",
+          "_score": 0.6776812,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f5fb2d6090",
+          "_score": 0.6755107,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b2e25bf36a",
+          "_score": 0.66023606,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        }
+      ]
+    },
+    "scenario_b_vector": {
+      "top": [
+        {
+          "_id": "v2_20260426_192053_47de1b7d0e",
+          "_score": 0.8275661,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.79710454,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 0.7740278,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_fddc2e284c",
+          "_score": 0.766196,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.7650237,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_56e809b9f7",
+          "_score": 0.7593994,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0dd69c66f7",
+          "_score": 0.7593994,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_311a2394f1",
+          "_score": 0.7586038,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_494d103fbc",
+          "_score": 0.7583228,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 0.7532599,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee90cecce7",
+          "_score": 0.75247216,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.7492642,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5cfd27ee1d",
+          "_score": 0.749031,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.7471339,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_e56f641eca",
+          "_score": 0.74653095,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a995eb814a",
+          "_score": 0.74647117,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f5fb2d6090",
+          "_score": 0.7394128,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_99d267d5f4",
+          "_score": 0.7374637,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_655be914f7",
+          "_score": 0.7342794,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.7317375,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_068b7eb379",
+          "_score": 0.7293096,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_8a75f47473",
+          "_score": 0.7291726,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.7289911,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.7289911,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_c231ee53e2",
+          "_score": 0.72890747,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 0.7286139,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b2e25bf36a",
+          "_score": 0.7253674,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.723019,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f534ba2ebc",
+          "_score": 0.71635664,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ce971a95c6",
+          "_score": 0.71498823,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee89719399",
+          "_score": 0.70355743,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_496fa33b0d",
+          "_score": 0.70175904,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b57464c1c4",
+          "_score": 0.6998172,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_be6012d502",
+          "_score": 0.69029975,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.6875003,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a196220b49",
+          "_score": 0.68585044,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_37dd768d37",
+          "_score": 0.6845012,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a883267029",
+          "_score": 0.67969966,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.6769269,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f78ff402a7",
+          "_score": 0.676276,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.67603874,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_dee0f6290e",
+          "_score": 0.6733248,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0eb396ce44",
+          "_score": 0.6733248,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 0.6637718,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_48eb8956a1",
+          "_score": 0.6628821,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5648e02ebb",
+          "_score": 0.66235137,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_11c2480824",
+          "_score": 0.6529784,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_135eab0280",
+          "_score": 0.64939594,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.62792605,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_9521df8942",
+          "_score": 0.6051924,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        }
+      ]
+    },
+    "marketing_phrases_vector": {
+      "top": [
+        {
+          "_id": "v2_20260426_192053_a9a8bb9123",
+          "_score": 0.8872708,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_79ab1bc362",
+          "_score": 0.8842766,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_d349e1f436",
+          "_score": 0.8523804,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ade335fc39",
+          "_score": 0.81447697,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cb02a39338",
+          "_score": 0.80775917,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a995eb814a",
+          "_score": 0.7995473,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_e56f641eca",
+          "_score": 0.79722977,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b7dc8f3069",
+          "_score": 0.79228663,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_56e809b9f7",
+          "_score": 0.7886076,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a196220b49",
+          "_score": 0.78765345,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_cbc2175edd",
+          "_score": 0.7844497,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_054b13f167",
+          "_score": 0.7842035,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_27e1ff3a3f",
+          "_score": 0.7820272,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0dd69c66f7",
+          "_score": 0.78197527,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ba6d4efe08",
+          "_score": 0.7749064,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5648e02ebb",
+          "_score": 0.7715325,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_11c2480824",
+          "_score": 0.77102184,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f32993aa4d",
+          "_score": 0.7677196,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_135eab0280",
+          "_score": 0.7661382,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_fddc2e284c",
+          "_score": 0.76379484,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_dee0f6290e",
+          "_score": 0.76340693,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_655be914f7",
+          "_score": 0.7606635,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_c231ee53e2",
+          "_score": 0.7598774,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f78ff402a7",
+          "_score": 0.7585312,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_47de1b7d0e",
+          "_score": 0.75792253,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_9521df8942",
+          "_score": 0.7561445,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f534ba2ebc",
+          "_score": 0.75436735,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ce971a95c6",
+          "_score": 0.7533448,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_068b7eb379",
+          "_score": 0.75289226,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb8d5d319b",
+          "_score": 0.7514039,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_8a75f47473",
+          "_score": 0.7461193,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_311a2394f1",
+          "_score": 0.7455141,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_48eb8956a1",
+          "_score": 0.7449794,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_0eb396ce44",
+          "_score": 0.74355733,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_a883267029",
+          "_score": 0.7401773,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_4bb2fdcaf7",
+          "_score": 0.7359662,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_f5fb2d6090",
+          "_score": 0.73352844,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_496fa33b0d",
+          "_score": 0.7325772,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5cfd27ee1d",
+          "_score": 0.7320737,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_bb55afede0",
+          "_score": 0.73123115,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee89719399",
+          "_score": 0.7216023,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_37dd768d37",
+          "_score": 0.7190572,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_494d103fbc",
+          "_score": 0.71868205,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_5eade10b93",
+          "_score": 0.7119613,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_240d6af850",
+          "_score": 0.7074249,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_be6012d502",
+          "_score": 0.7073588,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b57464c1c4",
+          "_score": 0.7037635,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_ee90cecce7",
+          "_score": 0.70311034,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_99d267d5f4",
+          "_score": 0.6946441,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        },
+        {
+          "_id": "v2_20260426_192053_b2e25bf36a",
+          "_score": 0.69046396,
+          "_source_keys": [
+            "appealing_audience",
+            "car_color",
+            "car_color_detail",
+            "car_model",
+            "description",
+            "design_adjectives",
+            "design_selling_points",
+            "footage_type"
+          ],
+          "_explanation": null
+        }
+      ]
+    }
+  },
+  "final": {
+    "method": "rrf",
+    "rrf_k": 60,
+    "route_k": 200,
+    "route_weights": {
+      "bm25": 1.0,
+      "description_vector": 0.6,
+      "function_selling_points_vector": 1.0,
+      "marketing_phrases_vector": 1.2
+    },
+    "top": [
+      {
+        "_id": "v2_20260426_192053_79ab1bc362",
+        "final_score": 0.06451612903225806,
+        "routes": {
+          "bm25": {
+            "rank": 2,
+            "score": 7.846285,
+            "part": 0.016129032258064516
+          },
+          "description_vector": {
+            "rank": 2,
+            "score": 0.8055355,
+            "part": 0.016129032258064516
+          },
+          "function_selling_points_vector": {
+            "rank": 2,
+            "score": 0.86154073,
+            "part": 0.016129032258064516
+          },
+          "marketing_phrases_vector": {
+            "rank": 2,
+            "score": 0.8842766,
+            "part": 0.016129032258064516
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_d349e1f436",
+        "final_score": 0.06242518865469685,
+        "routes": {
+          "bm25": {
+            "rank": 3,
+            "score": 4.9959474,
+            "part": 0.015873015873015872
+          },
+          "description_vector": {
+            "rank": 1,
+            "score": 0.8131272,
+            "part": 0.01639344262295082
+          },
+          "function_selling_points_vector": {
+            "rank": 10,
+            "score": 0.7860639,
+            "part": 0.014285714285714285
+          },
+          "marketing_phrases_vector": {
+            "rank": 3,
+            "score": 0.8523804,
+            "part": 0.015873015873015872
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_a9a8bb9123",
+        "final_score": 0.0609450337512054,
+        "routes": {
+          "bm25": {
+            "rank": 1,
+            "score": 8.078134,
+            "part": 0.01639344262295082
+          },
+          "description_vector": {
+            "rank": 25,
+            "score": 0.7504056,
+            "part": 0.011764705882352941
+          },
+          "function_selling_points_vector": {
+            "rank": 1,
+            "score": 0.8713031,
+            "part": 0.01639344262295082
+          },
+          "marketing_phrases_vector": {
+            "rank": 1,
+            "score": 0.8872708,
+            "part": 0.01639344262295082
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_a196220b49",
+        "final_score": 0.06027648378191856,
+        "routes": {
+          "bm25": {
+            "rank": 9,
+            "score": 0.92654717,
+            "part": 0.014492753623188406
+          },
+          "description_vector": {
+            "rank": 4,
+            "score": 0.7977251,
+            "part": 0.015625
+          },
+          "function_selling_points_vector": {
+            "rank": 3,
+            "score": 0.8109337,
+            "part": 0.015873015873015872
+          },
+          "marketing_phrases_vector": {
+            "rank": 10,
+            "score": 0.78765345,
+            "part": 0.014285714285714285
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_cb02a39338",
+        "final_score": 0.05887339247439867,
+        "routes": {
+          "bm25": {
+            "rank": 4,
+            "score": 4.108992,
+            "part": 0.015625
+          },
+          "description_vector": {
+            "rank": 16,
+            "score": 0.76622766,
+            "part": 0.013157894736842105
+          },
+          "function_selling_points_vector": {
+            "rank": 8,
+            "score": 0.79431087,
+            "part": 0.014705882352941176
+          },
+          "marketing_phrases_vector": {
+            "rank": 5,
+            "score": 0.80775917,
+            "part": 0.015384615384615385
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_a995eb814a",
+        "final_score": 0.05846814004708741,
+        "routes": {
+          "bm25": {
+            "rank": 10,
+            "score": 0.9002471,
+            "part": 0.014285714285714285
+          },
+          "description_vector": {
+            "rank": 3,
+            "score": 0.8008478,
+            "part": 0.015873015873015872
+          },
+          "function_selling_points_vector": {
+            "rank": 16,
+            "score": 0.76288414,
+            "part": 0.013157894736842105
+          },
+          "marketing_phrases_vector": {
+            "rank": 6,
+            "score": 0.7995473,
+            "part": 0.015151515151515152
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_ade335fc39",
+        "final_score": 0.05729166666666667,
+        "routes": {
+          "bm25": {
+            "rank": 6,
+            "score": 1.7753022,
+            "part": 0.015151515151515152
+          },
+          "description_vector": {
+            "rank": 28,
+            "score": 0.7493093,
+            "part": 0.011363636363636364
+          },
+          "function_selling_points_vector": {
+            "rank": 6,
+            "score": 0.8057785,
+            "part": 0.015151515151515152
+          },
+          "marketing_phrases_vector": {
+            "rank": 4,
+            "score": 0.81447697,
+            "part": 0.015625
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_b7dc8f3069",
+        "final_score": 0.056192791797597105,
+        "routes": {
+          "bm25": {
+            "rank": 14,
+            "score": 0.72338116,
+            "part": 0.013513513513513514
+          },
+          "description_vector": {
+            "rank": 12,
+            "score": 0.7730015,
+            "part": 0.013888888888888888
+          },
+          "function_selling_points_vector": {
+            "rank": 11,
+            "score": 0.76844174,
+            "part": 0.014084507042253521
+          },
+          "marketing_phrases_vector": {
+            "rank": 8,
+            "score": 0.79228663,
+            "part": 0.014705882352941176
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_cbc2175edd",
+        "final_score": 0.054723035180781664,
+        "routes": {
+          "bm25": {
+            "rank": 20,
+            "score": 0.6850846,
+            "part": 0.0125
+          },
+          "description_vector": {
+            "rank": 6,
+            "score": 0.78589964,
+            "part": 0.015151515151515152
+          },
+          "function_selling_points_vector": {
+            "rank": 17,
+            "score": 0.76143694,
+            "part": 0.012987012987012988
+          },
+          "marketing_phrases_vector": {
+            "rank": 11,
+            "score": 0.7844497,
+            "part": 0.014084507042253521
+          }
+        }
+      },
+      {
+        "_id": "v2_20260426_192053_054b13f167",
+        "final_score": 0.05462652096156589,
+        "routes": {
+          "bm25": {
+            "rank": 16,
+            "score": 0.72338116,
+            "part": 0.013157894736842105
+          },
+          "description_vector": {
+            "rank": 5,
+            "score": 0.79217577,
+            "part": 0.015384615384615385
+          },
+          "function_selling_points_vector": {
+            "rank": 22,
+            "score": 0.7486237,
+            "part": 0.012195121951219513
+          },
+          "marketing_phrases_vector": {
+            "rank": 12,
+            "score": 0.7842035,
+            "part": 0.013888888888888888
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度2 (1).mp4",
+  "run_id": "v2_20260426_230233_ad2258b712",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_ad2258b712/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_ad2258b712/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_ad2258b712/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230233_ad2258b712/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "一辆黑色轿跑在林间公路旁的铺装路面上静态展示，车身光滑，轮毂设计精致，背景为茂密树林与绿色草地，镜头为固定机位拍摄，画面清晰明亮。",
+    "subject": "黑色轿跑",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "林间公路",
+      "铺装路面"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "光滑",
+      "精致",
+      "运动",
+      "大气"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "稳定",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "运动轮毂",
+      "亮面车漆",
+      "隐藏式门把手"
+    ],
+    "function_selling_points": [
+      "静谧隔音",
+      "舒适座椅",
+      "稳定底盘",
+      "高效动力"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "林间公路静态展示",
+      "黑色轿跑颜值在线",
+      "运动轮毂气场拉满",
+      "亮面车漆质感出众",
+      "静谧座舱舒适驾乘",
+      "稳定操控城市穿梭"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "高端轿跑",
+      "林间场景"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "高端用户",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-发动机-7.mp4",
+  "run_id": "v2_20260426_192053_f5fb2d6090",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f5fb2d6090/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f5fb2d6090/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f5fb2d6090/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_f5fb2d6090/scene_001_frame_000173.webp/scene_001_frame_000173.webp"
+  ],
+  "result": {
+    "description": "智己汽车发动机舱内部特写，发动机盖为黑色哑光设计，周围可见管线、雨刮器等部件，镜头为固定机位近距离拍摄，清晰展示机械结构与品牌标识。",
+    "subject": "智己汽车发动机",
+    "object": [
+      "发动机盖",
+      "管线",
+      "雨刮器",
+      "机械部件"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态机械展示",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "哑光",
+      "精致",
+      "简洁",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "高效",
+      "稳定",
+      "可靠",
+      "静音"
+    ],
+    "design_selling_points": [
+      "哑光发动机盖",
+      "精致管线布局",
+      "紧凑机械结构",
+      "品牌标识设计"
+    ],
+    "function_selling_points": [
+      "高效动力输出",
+      "稳定机械结构",
+      "低噪运行",
+      "可靠耐用"
+    ],
+    "scenario_a": [
+      "购车咨询",
+      "性能评测"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "城市通勤"
+    ],
+    "marketing_phrases": [
+      "发动机舱精致设计",
+      "机械结构稳定可靠",
+      "哑光发动机盖高级感",
+      "高效动力输出",
+      "低噪运行体验",
+      "可靠耐用品质"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "机械结构展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "机械工程师",
+      "购车用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true,
+  "cached": true
+}

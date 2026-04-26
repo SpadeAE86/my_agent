@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (10).mp4",
+  "run_id": "v2_20260426_225801_14468886c7",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225801_14468886c7/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225801_14468886c7/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225801_14468886c7/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225801_14468886c7/scene_001_frame_000150.webp/scene_001_frame_000150.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，车身为蓝色，尾灯区域依次显示“Happy Birthday”“LUCKY DAY”等文字，背景为深色，镜头固定，光线均匀。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "后视镜",
+      "尾标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "智能",
+      "个性化",
+      "科技感",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯",
+      "流畅车身线条",
+      "后视镜设计",
+      "尾标设计"
+    ],
+    "function_selling_points": [
+      "尾灯个性化显示",
+      "智能灯语系统",
+      "动态文字效果",
+      "氛围营造"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步",
+      "节日出行",
+      "个性展示"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "智己LS6尾灯能显示祝福语",
+      "蓝色车身质感高级",
+      "尾部线条流畅优雅",
+      "固定机位看尾灯细节",
+      "个性化尾灯超吸睛",
+      "室内静展显设计"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "个性化功能",
+      "节日营销",
+      "汽车设计"
+    ],
+    "appealing_audience": [
+      "年轻车主",
+      "个性车主",
+      "汽车爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "横版16:9",
+    "resolution": "1920x1080"
+  },
+  "success": true
+}

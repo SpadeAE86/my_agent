@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-补盲-1.mp4",
+  "run_id": "v2_20260426_192053_8a75f47473",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_8a75f47473/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_8a75f47473/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_8a75f47473/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_8a75f47473/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "某款汽车以虚拟CG形式展示路跑内饰场景，车内POV视角呈现雨夜公路行驶状态，中控屏显示左后/右后影像、导航、胎压及续航信息，车辆稳定行驶。",
+    "subject": "某款汽车",
+    "object": [
+      "中控屏",
+      "车辆",
+      "左后影像",
+      "右后影像"
+    ],
+    "movement": "路跑",
+    "footage_type": "CG",
+    "shot_style": "车内POV",
+    "scene_location": [
+      "公路"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "雨夜",
+    "time": "夜晚",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "科技感",
+      "清晰",
+      "简洁",
+      "现代"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "清晰",
+      "智能",
+      "安全"
+    ],
+    "design_selling_points": [
+      "中控大屏",
+      "清晰影像",
+      "智能交互界面",
+      "简洁布局"
+    ],
+    "function_selling_points": [
+      "盲区监测",
+      "智能导航",
+      "胎压监测",
+      "续航显示"
+    ],
+    "scenario_a": [
+      "雨夜通勤",
+      "长途出行"
+    ],
+    "scenario_b": [
+      "城市道路行驶",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "雨夜盲区看得清",
+      "智能导航不迷路",
+      "胎压监测保安全",
+      "续航显示心里有数",
+      "路跑稳定又舒适",
+      "夜晚驾驶更安心"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "智能驾驶",
+      "盲区监测",
+      "导航辅助",
+      "胎压监测"
+    ],
+    "appealing_audience": [
+      "新手司机",
+      "长途通勤者",
+      "雨夜驾驶者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "5262x1080"
+  },
+  "success": true,
+  "cached": true
+}

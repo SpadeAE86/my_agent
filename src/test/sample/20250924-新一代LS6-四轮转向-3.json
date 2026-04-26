@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-四轮转向-3.mp4",
+  "run_id": "v2_20260426_230053_1f6b70b01a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230053_1f6b70b01a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230053_1f6b70b01a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230053_1f6b70b01a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230053_1f6b70b01a/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车在现代城区的道路旁静态展示，背景为红砖墙与沥青路面，车身反光清晰，轮毂设计精致，画面光线柔和，呈现车辆外观细节。",
+    "subject": "黑色SUV汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "轮胎",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "道路",
+      "路边"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "沉稳",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "静谧",
+      "舒适",
+      "高效"
+    ],
+    "design_selling_points": [
+      "流线车身",
+      "多辐轮毂",
+      "高光车漆",
+      "电动后视镜"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "高效动力",
+      "舒适驾乘",
+      "精准转向"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "短途出行"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "商务接待",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "静态外观颜值高",
+      "车身线条超流畅",
+      "轮毂设计显档次",
+      "城市出行好伙伴"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "城市出行"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "家庭用户",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

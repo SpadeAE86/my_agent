@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车标-7.mp4",
+  "run_id": "v2_20260426_230437_4acdadd464",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230437_4acdadd464/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230437_4acdadd464/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230437_4acdadd464/scene_001_frame_000109.webp/scene_001_frame_000109.webp"
+  ],
+  "result": {
+    "description": "一辆黑色汽车的车身区域，贴有含卡通图案的红色贴纸（如“ok马？”“无敌k”等）与银色车标，镜头以展台转盘方式拍摄，展示车的外观设计与个性化贴纸装饰，场景为室内展厅，光线明亮。",
+    "subject": "黑色汽车",
+    "object": [
+      "车身",
+      "车标",
+      "贴纸"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "亮面",
+      "个性",
+      "时尚",
+      "精致"
+    ],
+    "function_adjectives": [
+      "吸睛",
+      "独特",
+      "新颖",
+      "潮流"
+    ],
+    "design_selling_points": [
+      "亮面车漆",
+      "个性贴纸",
+      "银色车标",
+      "车身外观"
+    ],
+    "function_selling_points": [
+      "个性化表达",
+      "视觉吸引力",
+      "潮流装饰",
+      "独特外观"
+    ],
+    "scenario_a": [
+      "展厅展示",
+      "静态观赏"
+    ],
+    "scenario_b": [
+      "个性改装",
+      "潮流出行"
+    ],
+    "marketing_phrases": [
+      "个性贴纸装饰",
+      "亮面黑车漆",
+      "独特车标设计",
+      "展厅静态展示",
+      "潮流外观呈现",
+      "视觉吸睛设计"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "个性改装",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "个性车主",
+      "年轻用户",
+      "潮流人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (29).mp4",
+  "run_id": "v2_20260426_225825_7465a69141",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225825_7465a69141/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225825_7465a69141/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225825_7465a69141/scene_001_frame_000103.webp/scene_001_frame_000103.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部静态展示，车身为蓝色，车尾带有红色线条装饰和“Merry Christmas”文字，车标清晰可见，整体设计简洁现代。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车尾",
+      "车标",
+      "车尾灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "海报",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "简洁",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "个性化",
+      "交互性",
+      "创意"
+    ],
+    "design_selling_points": [
+      "车尾设计",
+      "车标设计",
+      "车尾灯设计",
+      "红色线条装饰"
+    ],
+    "function_selling_points": [
+      "车尾灯个性化显示",
+      "智能交互显示",
+      "节日主题显示",
+      "动态文字显示"
+    ],
+    "scenario_a": [
+      "节日出行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "家庭出游",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "节日氛围拉满",
+      "车尾设计精致",
+      "车尾灯智能显示",
+      "蓝色车身质感",
+      "智己LS6外观",
+      "个性化车尾灯"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观设计",
+      "节日营销"
+    ],
+    "appealing_audience": [
+      "年轻用户",
+      "家庭用户",
+      "汽车爱好者",
+      "节日氛围爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

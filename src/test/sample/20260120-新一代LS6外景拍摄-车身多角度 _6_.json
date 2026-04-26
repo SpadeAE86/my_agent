@@ -1,0 +1,81 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (6).mp4",
+  "run_id": "v2_20260426_230509_8096635531",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230509_8096635531/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230509_8096635531/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230509_8096635531/scene_001_frame_000091.webp/scene_001_frame_000091.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在展厅的圆形展台内随转盘缓慢旋转，镜头固定捕捉车辆不同角度外观，车身为黑色，周围是金属质感墙面与圆形顶灯，光线明亮均匀。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车灯",
+      "激光雷达"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "展台转盘",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "流畅",
+      "炫酷"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "智能",
+      "静谧",
+      "高效"
+    ],
+    "design_selling_points": [
+      "车灯设计",
+      "轮毂造型",
+      "车身线条",
+      "前脸设计"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "智能泊车",
+      "快充",
+      "静音"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "家庭出行"
+    ],
+    "marketing_phrases": [
+      "展厅静态展示智己LS6",
+      "黑色车身质感拉满",
+      "科技感前脸设计",
+      "轮毂造型运动感足"
+    ],
+    "marketing_tags": [
+      "产品展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

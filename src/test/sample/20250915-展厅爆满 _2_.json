@@ -1,0 +1,74 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (2).mp4",
+  "run_id": "v2_20260426_225956_15ffda911c",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_15ffda911c/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_15ffda911c/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_15ffda911c/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_15ffda911c/scene_001_frame_000141.webp/scene_001_frame_000141.webp"
+  ],
+  "result": {
+    "description": "智己汽车在展厅活动的大屏幕中静态展示，展厅内人群围坐白色桌布的餐桌前，主持人在屏幕中讲解，展厅外有行人走过，画面光线明亮，场景为现代展厅与户外道路。",
+    "subject": "智己汽车",
+    "object": [
+      "智己汽车",
+      "主持人"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "户外道路"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "发布会现场",
+    "has_presenter": true,
+    "weather": "晴天",
+    "time": "傍晚",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "互动"
+    ],
+    "design_selling_points": [
+      "大屏展示",
+      "现代外观"
+    ],
+    "function_selling_points": [
+      "智能讲解",
+      "活动展示"
+    ],
+    "scenario_a": [
+      "展厅看车",
+      "活动参与"
+    ],
+    "scenario_b": [
+      "购车咨询",
+      "品牌体验"
+    ],
+    "marketing_phrases": [
+      "展厅活动氛围好",
+      "发布会现场看智己"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "展厅活动",
+      "发布会"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "智己车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

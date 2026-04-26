@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-5.mp4",
+  "run_id": "v2_20260426_225723_fe8c695e19",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_fe8c695e19/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_fe8c695e19/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_fe8c695e19/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225723_fe8c695e19/scene_001_frame_000155.webp/scene_001_frame_000155.webp"
+  ],
+  "result": {
+    "description": "一辆银色新能源汽车在冰雪覆盖的公路上行驶，CG动画展示电池加热系统（可视化热量流动），环境温度-10℃，镜头为车外跟拍视角，车身线条流畅，轮毂黑色，天窗全景设计。",
+    "subject": "银色新能源汽车",
+    "object": [
+      "车身",
+      "电池",
+      "轮毂",
+      "天窗"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "冰雪",
+      "公路"
+    ],
+    "car_color": "银",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "雪天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "简洁",
+      "银质"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "高效",
+      "保暖",
+      "可靠"
+    ],
+    "design_selling_points": [
+      "流畅车身",
+      "全景天窗",
+      "黑色轮毂",
+      "银色车漆"
+    ],
+    "function_selling_points": [
+      "电池加热",
+      "低温续航保障",
+      "冰雪路况稳定",
+      "热管理系统"
+    ],
+    "scenario_a": [
+      "冬季通勤",
+      "冰雪路况行驶"
+    ],
+    "scenario_b": [
+      "长途低温出行",
+      "-10℃自驾"
+    ],
+    "marketing_phrases": [
+      "-10℃冰雪路照跑",
+      "电池加热不怕冷",
+      "冰雪路面稳如虎",
+      "银色外观显精致",
+      "冬季通勤无忧",
+      "低温续航有保障"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "冬季用车",
+      "低温性能",
+      "电池加热",
+      "冰雪路况",
+      "新能源汽车"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "新能源车主",
+      "冬季用车人群",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

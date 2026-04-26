@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-雨夜模式1-2.mp4",
+  "run_id": "v2_20260426_225939_9fe78029ca",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_9fe78029ca/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_9fe78029ca/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_9fe78029ca/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225939_9fe78029ca/scene_001_frame_000133.webp/scene_001_frame_000133.webp"
+  ],
+  "result": {
+    "description": "汽车驾驶辅助系统的CG可视化界面，展示雨夜城市路口的行人和车辆感知场景，右侧为导航与胎压监测界面，车辆当前速度0-1km/h，画面包含虚拟行人和车辆、道路标线，整体科技感十足。",
+    "subject": "汽车驾驶辅助系统界面",
+    "object": [
+      "中控屏",
+      "虚拟车辆",
+      "方向盘"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "屏幕录制",
+    "scene_location": [
+      "雨夜",
+      "城市道路",
+      "路口"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态展示",
+    "has_presenter": false,
+    "weather": "雨夜",
+    "time": "夜晚",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "清晰",
+      "直观",
+      "科技感",
+      "简洁"
+    ],
+    "function_adjectives": [
+      "安全",
+      "智能",
+      "精准",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "大屏中控",
+      "清晰界面",
+      "虚拟车辆显示",
+      "胎压监测界面"
+    ],
+    "function_selling_points": [
+      "行人识别",
+      "车辆感知",
+      "导航辅助",
+      "胎压监测"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "雨夜出行",
+      "路口等待",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "家庭出行",
+      "高速驾驶",
+      "恶劣天气出行"
+    ],
+    "marketing_phrases": [
+      "雨夜路口安全识别",
+      "城市通勤驾驶辅助",
+      "精准感知行人和车辆",
+      "清晰导航不迷路",
+      "胎压实时监测",
+      "智能驾驶更安心"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "驾驶辅助",
+      "科技感",
+      "安全出行"
+    ],
+    "appealing_audience": [
+      "城市通勤者",
+      "新手司机",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "5262x1080"
+  },
+  "success": true
+}

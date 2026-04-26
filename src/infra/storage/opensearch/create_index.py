@@ -65,14 +65,19 @@ class IndexManager:
                     log.info(f"Index {index_name} already exists, skipping creation")
                     return False
             
+            # Resolve settings in priority order:
+            # 1) explicit `settings` arg
+            # 2) model_class.Meta.settings override
+            # 3) global defaults
+            meta_settings = getattr(getattr(model_class, "Meta", None), "settings", None)
+            resolved_settings = settings or meta_settings or {
+                "number_of_shards": 1,
+                "number_of_replicas": 0,
+            }
+
             index_body = {
-                "settings": settings or {
-                    "number_of_shards": 1,
-                    "number_of_replicas": 0
-                },
-                "mappings": {
-                    "properties": {}
-                }
+                "settings": resolved_settings,
+                "mappings": {"properties": {}},
             }
             
             for field_name in model_class.model_fields.keys():

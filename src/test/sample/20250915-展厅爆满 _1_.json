@@ -1,0 +1,94 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (1).mp4",
+  "run_id": "v2_20260426_225956_a6b4ea9edb",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_a6b4ea9edb/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_a6b4ea9edb/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225956_a6b4ea9edb/scene_001_frame_000117.webp/scene_001_frame_000117.webp"
+  ],
+  "result": {
+    "description": "展厅内举办智己LS6汽车发布会活动，人群围坐白色桌布的餐桌旁，背景大屏幕展示智己LS6汽车及发布会倒计时（约00:35:45），墙面有车型展示墙，镜头为固定机位拍摄，室内光线明亮，地面为浅色木质地板，屏幕内有讲解员介绍车辆。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "智己LS6汽车",
+      "参会者"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "发布会现场",
+    "has_presenter": true,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "现代",
+      "精致",
+      "大气",
+      "简约"
+    ],
+    "function_adjectives": [
+      "智能",
+      "高效",
+      "舒适",
+      "流畅"
+    ],
+    "design_selling_points": [
+      "车身外观",
+      "轮毂设计",
+      "中控大屏",
+      "座椅"
+    ],
+    "function_selling_points": [
+      "智能驾驶",
+      "车机交互",
+      "长续航",
+      "快速充电"
+    ],
+    "scenario_a": [
+      "展厅购车",
+      "新车发布",
+      "家庭出行",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "商务接待",
+      "科技体验",
+      "冰雪驾驶"
+    ],
+    "marketing_phrases": [
+      "智己LS6发布会",
+      "展厅购车咨询",
+      "先到先得购车",
+      "热门配置选购",
+      "发布会倒计时",
+      "展厅体验活动"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "发布会现场",
+      "购车咨询",
+      "新车发布",
+      "汽车营销",
+      "展厅活动"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "购车用户",
+      "家庭用户",
+      "科技爱好者",
+      "城市通勤者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

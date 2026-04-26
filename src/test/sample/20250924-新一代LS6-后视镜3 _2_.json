@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-后视镜3 (2).mp4",
+  "run_id": "v2_20260426_230042_d9b2fd2e18",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_d9b2fd2e18/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_d9b2fd2e18/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_d9b2fd2e18/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230042_d9b2fd2e18/scene_001_frame_000149.webp/scene_001_frame_000149.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的外后视镜（带有摄像头、特殊纹理装饰与金属饰条）在室内环境下被静态拍摄，背景为模糊光斑与柔和光线，镜头聚焦后视镜细节，画面光影细腻，展现其设计与功能细节。",
+    "subject": "汽车外后视镜（带摄像头）",
+    "object": [
+      "外后视镜",
+      "摄像头",
+      "后视镜灯",
+      "纹理涂装"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "纹理涂装",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "独特",
+      "细腻"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "智能",
+      "安全",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "外后视镜",
+      "摄像头",
+      "纹理涂装",
+      "金属饰条"
+    ],
+    "function_selling_points": [
+      "高清摄像头",
+      "盲区监测",
+      "智能影像",
+      "安全辅助"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常驾驶"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "复杂路况"
+    ],
+    "marketing_phrases": [
+      "外后视镜设计独特",
+      "高清摄像头安全辅助",
+      "纹理涂装高级感",
+      "金属饰条精致",
+      "盲区监测更安全",
+      "智能影像清晰"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "设计展示",
+      "功能展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "安全驾驶关注者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

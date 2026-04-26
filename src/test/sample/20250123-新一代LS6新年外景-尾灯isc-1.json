@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-尾灯isc-1.mp4",
+  "run_id": "v2_20260426_225205_a385c681f6",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_a385c681f6/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_a385c681f6/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_a385c681f6/scene_001_frame_000091.webp/scene_001_frame_000091.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在装饰有节日花卉、蘑菇造型装饰与钟表装置的现代城区街道旁静态展示，车身为亮黑色，镜头为固定机位，画面明亮清晰，背景建筑风格精致，装饰色彩鲜艳。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "尾灯",
+      "轮毂",
+      "车顶"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "街道",
+      "商业街区"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "亮面",
+      "时尚"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "舒适",
+      "稳定",
+      "智能"
+    ],
+    "design_selling_points": [
+      "溜背车身",
+      "贯穿尾灯",
+      "亮面车漆",
+      "轮毂造型"
+    ],
+    "function_selling_points": [
+      "智能泊车",
+      "长续航",
+      "快充",
+      "静音系统"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "逛街购物",
+      "节日出行"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "家庭出游",
+      "周末兜风"
+    ],
+    "marketing_phrases": [
+      "亮黑车漆显质感",
+      "溜背造型更吸睛",
+      "节日出行开智己",
+      "现代城区风景线",
+      "智己LS6静态展示",
+      "商务出行有排面"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "节日营销",
+      "外观展示"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "商务人士",
+      "时尚爱好者",
+      "节日出行用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

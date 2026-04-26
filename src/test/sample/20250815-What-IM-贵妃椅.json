@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-What-IM-贵妃椅.mp4",
+  "run_id": "v2_20260426_225638_1d85965987",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225638_1d85965987/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225638_1d85965987/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225638_1d85965987/scene_001_frame_000092.webp/scene_001_frame_000092.webp"
+  ],
+  "result": {
+    "description": "画面展示汽车的后排米色皮质座椅（方格纹路）与中控一体化大屏（显示导航、能耗等信息），镜头以固定机位呈现内饰细节，背景为室内展厅环境，光线柔和清晰。",
+    "subject": "汽车内饰（后排座椅、中控大屏）",
+    "object": [
+      "后排座椅",
+      "中控屏",
+      "米色座椅",
+      "中控大屏"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "细腻",
+      "典雅"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "智能",
+      "便捷",
+      "清晰"
+    ],
+    "design_selling_points": [
+      "后排皮质座椅",
+      "中控一体化大屏",
+      "内饰精致纹路",
+      "米色舒适座椅"
+    ],
+    "function_selling_points": [
+      "座椅舒适体验",
+      "中控智能交互",
+      "能耗清晰显示",
+      "导航精准指引"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "日常通勤",
+      "商务接待",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "周末出游",
+      "接送孩子",
+      "职场通勤"
+    ],
+    "marketing_phrases": [
+      "后排座椅大空间",
+      "中控大屏智能交互",
+      "米色皮质座椅高级感",
+      "能耗清晰一目了然",
+      "内饰精致舒适",
+      "家庭出行好选择"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "汽车功能"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "城市通勤者",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

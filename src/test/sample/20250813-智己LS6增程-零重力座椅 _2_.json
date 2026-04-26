@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-零重力座椅 (2).mp4",
+  "run_id": "v2_20260426_225326_ca6a461d22",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_ca6a461d22/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_ca6a461d22/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225326_ca6a461d22/scene_001_frame_000092.webp/scene_001_frame_000092.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的后排座舱静态展示，可见米色皮质座椅、中控大屏、方向盘、全景天窗，背景为白色室内环境，镜头为固定机位拍摄，光线明亮清晰。",
+    "subject": "汽车后排座舱",
+    "object": [
+      "座椅",
+      "中控屏",
+      "方向盘",
+      "全景天窗"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅",
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "米色",
+      "皮质",
+      "简约",
+      "高级"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "宽敞",
+      "智能",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "米色皮质座椅",
+      "中控大屏",
+      "全景天窗",
+      "中央扶手箱"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "宽敞后排空间",
+      "舒适座椅",
+      "便捷储物空间"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "后排空间宽敞",
+      "米色内饰高级感",
+      "中控大屏智能",
+      "全景天窗通透",
+      "座椅舒适",
+      "扶手箱实用"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "汽车内饰",
+      "静态展示"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "汽车爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-补盲-2.mp4",
+  "run_id": "v2_20260426_192053_311a2394f1",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_311a2394f1/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_311a2394f1/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_311a2394f1/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_311a2394f1/scene_001_frame_000137.webp/scene_001_frame_000137.webp"
+  ],
+  "result": {
+    "description": "汽车智能驾驶可视化界面（CG）展示，含虚拟雨夜公路场景、左右后视镜画面、速度/导航/胎压信息，黑色虚拟车辆在道路行驶，界面呈科技感UI设计，镜头为屏幕录制视角。",
+    "subject": "汽车智能驾驶界面",
+    "object": [
+      "中控屏",
+      "虚拟车辆",
+      "后视镜"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "屏幕录制",
+    "scene_location": [
+      "公路",
+      "雨夜"
+    ],
+    "car_color": "黑",
+    "product_status_scene": "路跑内饰",
+    "has_presenter": false,
+    "weather": "雨天",
+    "time": "夜晚",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "科技感",
+      "清晰",
+      "简洁",
+      "直观"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "智能",
+      "精准",
+      "清晰"
+    ],
+    "design_selling_points": [
+      "中控大屏",
+      "虚拟后视镜",
+      "导航界面",
+      "UI设计"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "实时导航",
+      "胎压监测",
+      "雨夜模式"
+    ],
+    "scenario_a": [
+      "通勤",
+      "雨夜路跑"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "城市驾驶"
+    ],
+    "marketing_phrases": [
+      "雨夜驾驶看得清",
+      "智能导航精准",
+      "胎压监测实时",
+      "路跑界面科技感",
+      "城市通勤稳定",
+      "雨夜路跑安全"
+    ],
+    "marketing_tags": [
+      "功能讲解",
+      "智能驾驶",
+      "雨夜出行",
+      "科技感"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "新手司机",
+      "城市通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "5262x1080"
+  },
+  "success": true,
+  "cached": true
+}

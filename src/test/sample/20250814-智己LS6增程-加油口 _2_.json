@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-加油口 (2).mp4",
+  "run_id": "v2_20260426_225345_d83e0a5322",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225345_d83e0a5322/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225345_d83e0a5322/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225345_d83e0a5322/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225345_d83e0a5322/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225345_d83e0a5322/scene_001_frame_000203.webp/scene_001_frame_000203.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的加油口区域特写，依次展示加油口盖从关闭到开启、打开加油盖露出加油口的过程，车身为黑灰双色，轮胎规格265/40 R21，镜头为固定机位特写，画面清晰呈现加油口结构、车身侧面及轮胎细节。",
+    "subject": "汽车",
+    "object": [
+      "加油口盖",
+      "加油口",
+      "车身",
+      "轮胎"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "未知"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "双色（黑灰）",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "未知",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "精致",
+      "简洁",
+      "高级",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "安全",
+      "高效"
+    ],
+    "design_selling_points": [
+      "双盖加油口设计",
+      "大尺寸轮胎",
+      "双色车身",
+      "精致加油口结构"
+    ],
+    "function_selling_points": [
+      "便捷加油口开启",
+      "防错加油设计",
+      "大尺寸轮胎抓地",
+      "安全锁止加油盖"
+    ],
+    "scenario_a": [
+      "日常加油",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "长途出行",
+      "自驾旅行"
+    ],
+    "marketing_phrases": [
+      "加油口设计精致实用",
+      "大尺寸轮胎抓地力强",
+      "双色车身质感高级",
+      "95号汽油专属加油",
+      "加油便捷一按即开",
+      "车身线条流畅大气"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市通勤者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车轮 (8).mp4",
+  "run_id": "v2_20260426_225617_085a9d0282",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225617_085a9d0282/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225617_085a9d0282/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225617_085a9d0282/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225617_085a9d0282/scene_001_frame_000158.webp/scene_001_frame_000158.webp"
+  ],
+  "result": {
+    "description": "智己汽车的车轮、轮胎、红色刹车卡钳及黑色车身局部在室内展厅环境下被静态展示，镜头聚焦轮毂、轮胎细节，光线清晰，展现运动感设计。",
+    "subject": "智己汽车",
+    "object": [
+      "轮毂",
+      "轮胎",
+      "刹车卡钳",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "运动",
+      "精致",
+      "炫酷",
+      "高档"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "抓地",
+      "可靠",
+      "安全"
+    ],
+    "design_selling_points": [
+      "黑银轮毂",
+      "红色刹车卡钳",
+      "SCORPION轮胎",
+      "黑色车身"
+    ],
+    "function_selling_points": [
+      "高性能制动",
+      "强抓地力轮胎",
+      "稳定抓地",
+      "安全制动"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行"
+    ],
+    "marketing_phrases": [
+      "黑银轮毂超炫酷",
+      "红色卡钳制动强",
+      "SCORPION轮胎抓地稳",
+      "日常出行更安全",
+      "周末自驾不打滑",
+      "精致外观显档次"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观细节",
+      "性能展示"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "性能追求者",
+      "城市通勤者",
+      "自驾爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,90 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250908-一个女司机-路跑 (2).mp4",
+  "run_id": "v2_20260426_225706_bff7bd075d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_bff7bd075d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_bff7bd075d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_bff7bd075d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225706_bff7bd075d/scene_001_frame_000137.webp/scene_001_frame_000137.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在公路（含桥梁、山路路段）上行驶，背景有蓝天、云朵、山林、城堡式建筑与湖泊（部分画面），镜头包含车外跟拍（前方、侧面）与航拍视角，车辆为黑色，行驶姿态平稳，画面明亮清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "前灯",
+      "轮毂",
+      "前脸"
+    ],
+    "movement": "行驶",
+    "footage_type": "原创实拍",
+    "shot_style": "航拍",
+    "scene_location": [
+      "公路",
+      "桥梁",
+      "山路",
+      "湖泊"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "现代",
+      "大气",
+      "动感"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "顺滑",
+      "强劲",
+      "灵敏"
+    ],
+    "design_selling_points": [
+      "独特前灯设计",
+      "流畅车身线条",
+      "大尺寸轮毂",
+      "简洁前脸造型"
+    ],
+    "function_selling_points": [
+      "平稳行驶性能",
+      "高效动力输出",
+      "精准转向控制",
+      "低风阻设计"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "周末自驾"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "山路驾驶"
+    ],
+    "marketing_phrases": [
+      "山路行驶稳",
+      "晴天自驾靓",
+      "公路驰骋顺",
+      "外观大气吸睛",
+      "驾驶体验流畅",
+      "黑色车身质感高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "自驾爱好者",
+      "颜值党",
+      "性能追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

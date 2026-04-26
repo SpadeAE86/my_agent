@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后视镜 (9).mp4",
+  "run_id": "v2_20260426_225417_2c401fd918",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225417_2c401fd918/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225417_2c401fd918/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225417_2c401fd918/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225417_2c401fd918/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "某款黑色汽车的外后视镜特写，镜体集成摄像头与转向灯，车门、车窗清晰可见，背景为简洁灰白色调，镜头为固定机位特写，光线柔和，静态展示外后视镜的设计细节与质感。",
+    "subject": "某款黑色汽车",
+    "object": [
+      "外后视镜",
+      "摄像头",
+      "转向灯",
+      "车门"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内摄影棚"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "流畅",
+      "科技感",
+      "高级感"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "智能",
+      "安全",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "外后视镜造型",
+      "摄像头集成设计",
+      "转向灯设计",
+      "亮面车漆"
+    ],
+    "function_selling_points": [
+      "后视镜摄像头（辅助驾驶）",
+      "转向灯提示功能",
+      "清晰镜面",
+      "智能驾驶辅助"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "泊车入库"
+    ],
+    "scenario_b": [
+      "长途驾驶",
+      "雨天行车"
+    ],
+    "marketing_phrases": [
+      "后视镜摄像头清晰",
+      "盲区监测更安全",
+      "转向灯设计精致",
+      "亮面黑质感高级",
+      "泊车辅助更便捷",
+      "城市通勤好帮手"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "外观设计"
+    ],
+    "appealing_audience": [
+      "新手司机",
+      "城市通勤者",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

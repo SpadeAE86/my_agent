@@ -1,0 +1,87 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-前排座椅折叠 (4).mp4",
+  "run_id": "v2_20260426_225735_80c07a08b9",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225735_80c07a08b9/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225735_80c07a08b9/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225735_80c07a08b9/scene_001_frame_000117.webp/scene_001_frame_000117.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内饰静态展示，包含双中控大屏、独特造型方向盘、浅色皮质座椅、车门金属饰条，内饰设计精致，画面明亮柔和。",
+    "subject": "某款汽车的座舱",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "车门饰板"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "简约",
+      "奢华"
+    ],
+    "function_adjectives": [
+      "智能",
+      "流畅",
+      "舒适",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "双中控大屏",
+      "独特方向盘造型",
+      "皮质座椅",
+      "金属饰条"
+    ],
+    "function_selling_points": [
+      "智能车机系统",
+      "多屏交互",
+      "舒适驾乘体验",
+      "车机应用丰富"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "车内娱乐"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "内饰精致有质感",
+      "双屏交互更智能",
+      "座椅舒适久坐不累",
+      "方向盘设计独特",
+      "车机应用超丰富",
+      "金属饰条显高级"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰设计",
+      "智能车机",
+      "舒适驾乘"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "科技爱好者",
+      "高端车主",
+      "追求品质用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "3456x1080"
+  },
+  "success": true
+}

@@ -1,0 +1,96 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-打滑-1.mp4",
+  "run_id": "v2_20260426_225853_f7b61c861b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225853_f7b61c861b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225853_f7b61c861b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225853_f7b61c861b/scene_001_frame_000089.webp/scene_001_frame_000089.webp"
+  ],
+  "result": {
+    "description": "一辆黑色SUV汽车在冰雪覆盖的现代城区街道停车区域，通过CG虚拟效果静态展示车身，并以透明化CG解析底盘与驱动系统结构，雪花飘落，画面为虚拟渲染风格。",
+    "subject": "黑色SUV汽车（CG展示底盘结构）",
+    "object": [
+      "底盘",
+      "轮毂",
+      "车身",
+      "驱动系统"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "冰雪",
+      "现代城区",
+      "街道",
+      "停车区域"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "雪天",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "运动",
+      "哑光黑"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "高效",
+      "智能",
+      "可靠"
+    ],
+    "design_selling_points": [
+      "溜背造型",
+      "运动轮毂",
+      "哑光黑车漆",
+      "流畅车身线条"
+    ],
+    "function_selling_points": [
+      "四驱系统",
+      "雪地稳定",
+      "CG底盘解析",
+      "智能驱动"
+    ],
+    "scenario_a": [
+      "雪地出行",
+      "城市通勤",
+      "冬季驾驶",
+      "城区停车"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "家庭出行",
+      "商务出行",
+      "恶劣天气行驶"
+    ],
+    "marketing_phrases": [
+      "雪地行驶稳",
+      "CG看底盘结构",
+      "城区冰雪路停车",
+      "黑色运动外观",
+      "冬季出行利器",
+      "四驱保障安全"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "CG演示",
+      "雪地出行",
+      "冬季驾驶"
+    ],
+    "appealing_audience": [
+      "北方车主",
+      "汽车爱好者",
+      "科技爱好者",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4320x1080"
+  },
+  "success": true
+}

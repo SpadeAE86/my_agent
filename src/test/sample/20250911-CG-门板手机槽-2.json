@@ -1,0 +1,92 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-门板手机槽-2.mp4",
+  "run_id": "v2_20260426_225931_caacdf30c5",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225931_caacdf30c5/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225931_caacdf30c5/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225931_caacdf30c5/scene_001_frame_000103.webp/scene_001_frame_000103.webp"
+  ],
+  "result": {
+    "description": "汽车车门储物空间的特写画面，依次展示手机、水杯、雨伞、小物件的有序放置，车门内饰为浅色调，左侧配有带金色装饰圈的圆形扬声器，镜头采用固定机位拍摄，画面清晰明亮，光线柔和自然。",
+    "subject": "汽车车门储物空间",
+    "object": [
+      "车门",
+      "扬声器",
+      "储物格",
+      "水杯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简约",
+      "柔和",
+      "高级"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "实用",
+      "宽敞",
+      "贴心"
+    ],
+    "design_selling_points": [
+      "金色装饰扬声器",
+      "浅色调内饰",
+      "大储物格",
+      "人性化设计"
+    ],
+    "function_selling_points": [
+      "多物品收纳",
+      "随手储物",
+      "分类放置",
+      "空间利用"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行",
+      "短途代步",
+      "购物出行"
+    ],
+    "scenario_b": [
+      "雨天出行",
+      "商务出行",
+      "家庭出行",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "车门储物随手放",
+      "水杯雨伞轻松装",
+      "精致内饰大空间",
+      "通勤收纳不烦恼",
+      "车内物品好归置",
+      "随手取用更便捷"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "储物功能",
+      "使用场景"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市通勤者",
+      "注重细节车主",
+      "精致生活人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

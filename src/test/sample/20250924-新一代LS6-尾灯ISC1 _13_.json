@@ -1,0 +1,93 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-尾灯ISC1 (13).mp4",
+  "run_id": "v2_20260426_230103_2ed54e5858",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230103_2ed54e5858/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230103_2ed54e5858/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230103_2ed54e5858/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230103_2ed54e5858/scene_001_frame_000148.webp/scene_001_frame_000148.webp"
+  ],
+  "result": {
+    "description": "一辆黑色智己汽车的尾部，动态灯语（含笑脸、互动图案）在尾灯区域循环显示，背景为城市街道（建筑、树木），镜头为特写，光线柔和（阴天白天）。",
+    "subject": "智己汽车",
+    "object": [
+      "尾灯",
+      "车标",
+      "车身"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "城市街道",
+      "建筑旁"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "趣味",
+      "互动感强",
+      "新颖",
+      "独特"
+    ],
+    "design_selling_points": [
+      "动态尾灯",
+      "智己车标",
+      "亮面车漆",
+      "流畅线条"
+    ],
+    "function_selling_points": [
+      "智能灯语",
+      "互动显示",
+      "趣味灯效",
+      "动态表情"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "日常代步",
+      "街道行驶",
+      "市区出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "短途购物",
+      "朋友约会",
+      "城市漫游"
+    ],
+    "marketing_phrases": [
+      "尾灯会卖萌",
+      "灯语互动超有趣",
+      "亮黑车身显高级",
+      "城市街道吸睛",
+      "智己灯语会表情",
+      "动态灯语玩出花"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "外观展示",
+      "科技感展示"
+    ],
+    "appealing_audience": [
+      "科技爱好者",
+      "年轻车主",
+      "城市通勤族",
+      "颜值党"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

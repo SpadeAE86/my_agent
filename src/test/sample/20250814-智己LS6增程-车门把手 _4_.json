@@ -1,0 +1,86 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门把手 (4).mp4",
+  "run_id": "v2_20260426_225631_ce02ec6071",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_ce02ec6071/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_ce02ec6071/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_ce02ec6071/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225631_ce02ec6071/scene_001_frame_000141.webp/scene_001_frame_000141.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车的车门把手在展厅环境下从隐藏状态电动弹出，车身为哑光黑色，镜头为固定机位特写，光线柔和，展示车门把手的机械结构、车身质感与轮毂细节。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车门把手",
+      "车身",
+      "轮毂"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "哑光黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "哑光",
+      "精致",
+      "简约",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "便捷",
+      "科技感",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "隐藏式车门把手",
+      "哑光黑色车漆",
+      "流畅车身线条",
+      "精致轮毂"
+    ],
+    "function_selling_points": [
+      "电动车门把手弹出",
+      "便捷开门"
+    ],
+    "scenario_a": [
+      "日常停车开门",
+      "城市通勤"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "智己LS6隐藏式把手，电动弹出更便捷",
+      "哑光黑车身，质感高级",
+      "展厅实拍，细节尽显",
+      "车门把手智能弹出，科技感拉满",
+      "静态外观展示，尽显高端设计",
+      "智己LS6，展厅里的精致座驾"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观展示",
+      "智能车门",
+      "汽车细节"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "城市通勤者",
+      "商务人士"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

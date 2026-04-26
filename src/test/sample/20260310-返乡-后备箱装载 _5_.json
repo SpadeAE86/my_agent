@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260310-返乡-后备箱装载 (5).mp4",
+  "run_id": "v2_20260426_230624_ac47ae1a2a",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230624_ac47ae1a2a/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230624_ac47ae1a2a/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230624_ac47ae1a2a/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230624_ac47ae1a2a/scene_001_frame_000145.webp/scene_001_frame_000145.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车后备箱开启，内部放置多件礼品，一位老人与一位年轻人在后备箱旁查看物品，背景为老旧居民楼与绿植，镜头固定机位拍摄，光线柔和。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "后备箱",
+      "座椅",
+      "老人",
+      "年轻人"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "居民区",
+      "户外"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": true,
+    "weather": "阴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "宽敞",
+      "实用",
+      "简洁",
+      "大气"
+    ],
+    "function_adjectives": [
+      "能装",
+      "便捷",
+      "灵活",
+      "实用"
+    ],
+    "design_selling_points": [
+      "后备箱空间",
+      "座椅设计",
+      "尾门设计",
+      "车身外观"
+    ],
+    "function_selling_points": [
+      "大容积装载",
+      "便捷尾门开启",
+      "灵活储物布局",
+      "家用实用"
+    ],
+    "scenario_a": [
+      "走亲访友",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "购物装载",
+      "搬家运输"
+    ],
+    "marketing_phrases": [
+      "后备箱装得多",
+      "走亲访友能装下",
+      "家庭出行大空间",
+      "礼品装载无压力",
+      "静态展示后备箱",
+      "黑色大气实用"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "使用场景",
+      "家用汽车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "城市居民",
+      "走亲访友人群"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

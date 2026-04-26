@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20260226-陈龙-路跑-3.mp4",
+  "run_id": "v2_20260426_230621_abf75576fb",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230621_abf75576fb/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230621_abf75576fb/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230621_abf75576fb/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230621_abf75576fb/scene_001_frame_000134.webp/scene_001_frame_000134.webp"
+  ],
+  "result": {
+    "description": "一辆蓝色轿车在城市道路上行驶，镜头通过车外跟拍、俯拍及大灯特写展示车身线条、轮毂设计、大灯造型，画面光线明亮，背景有建筑与道路标线。",
+    "subject": "蓝色轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "大灯",
+      "后视镜"
+    ],
+    "movement": "行驶",
+    "footage_type": "CG",
+    "shot_style": "车外跟拍",
+    "scene_location": [
+      "城市道路",
+      "公路"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "路跑外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "动感",
+      "现代"
+    ],
+    "function_adjectives": [
+      "平稳",
+      "灵动",
+      "高效",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂设计",
+      "大灯造型",
+      "后视镜设计"
+    ],
+    "function_selling_points": [
+      "平稳行驶",
+      "灵动操控",
+      "高效动力",
+      "低风阻"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市代步"
+    ],
+    "scenario_b": [
+      "周末出游",
+      "短途旅行"
+    ],
+    "marketing_phrases": [
+      "城市道路行驶稳",
+      "车身线条流畅美",
+      "轮毂设计动感",
+      "大灯造型精致",
+      "行驶平稳灵动",
+      "外观现代精致"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "汽车外观",
+      "行驶场景"
+    ],
+    "appealing_audience": [
+      "城市白领",
+      "汽车爱好者",
+      "年轻车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1920x3414"
+  },
+  "success": true
+}

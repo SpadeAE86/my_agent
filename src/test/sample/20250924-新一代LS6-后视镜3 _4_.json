@@ -1,0 +1,84 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-后视镜3 (4).mp4",
+  "run_id": "v2_20260426_230046_7cad9b6ab4",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230046_7cad9b6ab4/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230046_7cad9b6ab4/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230046_7cad9b6ab4/scene_001_frame_000113.webp/scene_001_frame_000113.webp"
+  ],
+  "result": {
+    "description": "画面展示汽车外后视镜（集成摄像头与转向灯）的特写，背景为展厅内的光斑状灯光，镜头为固定机位特写，光线柔和，外后视镜表面纹理清晰、细节精致。",
+    "subject": "汽车外后视镜（带摄像头）",
+    "object": [
+      "外后视镜",
+      "摄像头",
+      "转向灯",
+      "车身（局部）"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "细腻"
+    ],
+    "function_adjectives": [
+      "清晰",
+      "精准",
+      "智能",
+      "稳定"
+    ],
+    "design_selling_points": [
+      "外后视镜",
+      "摄像头",
+      "精致外观",
+      "转向灯"
+    ],
+    "function_selling_points": [
+      "盲区监测",
+      "高清影像",
+      "智能辅助",
+      "转向提示"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "泊车辅助"
+    ],
+    "scenario_b": [
+      "高速行驶",
+      "狭窄会车"
+    ],
+    "marketing_phrases": [
+      "外后视镜清晰监测",
+      "泊车辅助更安心",
+      "盲区监测保安全",
+      "精致外观显档次"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "外观特写",
+      "功能讲解"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "家庭用户",
+      "新手司机"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (32).mp4",
+  "run_id": "v2_20260426_225831_da07d9ad55",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225831_da07d9ad55/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225831_da07d9ad55/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225831_da07d9ad55/scene_001_frame_000110.webp/scene_001_frame_000110.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车车尾区域静态展示，黑色交互屏显示橙色小猫图案与红色“THANKS”文字，车身为深蓝色，车尾线条流畅，红色装饰条贯穿，车标清晰。镜头为固定机位近距离拍摄，画面简洁清晰。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车尾",
+      "交互屏",
+      "车标",
+      "红色装饰条"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝色",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "流畅"
+    ],
+    "function_adjectives": [
+      "智能",
+      "交互友好",
+      "个性化",
+      "便捷"
+    ],
+    "design_selling_points": [
+      "车尾流畅线条",
+      "交互屏设计",
+      "贯穿式红色装饰条",
+      "车标设计"
+    ],
+    "function_selling_points": [
+      "交互屏自定义显示",
+      "智能交互表达",
+      "个性化内容展示",
+      "车尾动态交互"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "停车交互"
+    ],
+    "scenario_b": [
+      "社交出行",
+      "品牌展示"
+    ],
+    "marketing_phrases": [
+      "车尾交互屏会玩",
+      "THANKS表达心意",
+      "智己LS6细节拉满",
+      "静态展示车尾设计",
+      "交互屏自定义图案",
+      "精致车尾设计"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态展示",
+      "智能交互",
+      "个性化设计"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "科技爱好者",
+      "年轻用户",
+      "家庭用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}

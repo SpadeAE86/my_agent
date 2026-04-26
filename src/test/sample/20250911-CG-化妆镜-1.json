@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-化妆镜-1.mp4",
+  "run_id": "v2_20260426_225741_c7e85b36ea",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225741_c7e85b36ea/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225741_c7e85b36ea/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225741_c7e85b36ea/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225741_c7e85b36ea/scene_001_frame_000139.webp/scene_001_frame_000139.webp"
+  ],
+  "result": {
+    "description": "汽车内部的遮阳板（带屏幕化妆镜）展开过程，展示车顶内饰、中控屏、后视镜及后座监控功能，镜头为固定机位，背景为晴朗简洁的外部环境。",
+    "subject": "汽车遮阳板（带屏幕化妆镜）",
+    "object": [
+      "遮阳板",
+      "中控屏",
+      "车顶内饰",
+      "后视镜"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "白",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "简洁",
+      "高档",
+      "现代"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "智能",
+      "实用",
+      "舒适"
+    ],
+    "design_selling_points": [
+      "遮阳板带屏幕设计",
+      "中控屏多屏联动",
+      "车顶细腻材质",
+      "后视镜精致造型"
+    ],
+    "function_selling_points": [
+      "后座监控功能",
+      "遮阳板便捷展开",
+      "中控屏智能交互",
+      "内饰静音舒适"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "家庭出行"
+    ],
+    "scenario_b": [
+      "长途自驾",
+      "商务出行"
+    ],
+    "marketing_phrases": [
+      "后座监控看得清",
+      "遮阳板带屏更实用",
+      "中控屏智能便捷",
+      "内饰精致舒适",
+      "停车监控省心",
+      "家庭出行安全"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰功能",
+      "家庭用车",
+      "安全出行"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "2160x1080"
+  },
+  "success": true
+}

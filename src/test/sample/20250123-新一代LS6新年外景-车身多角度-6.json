@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250123-新一代LS6新年外景-车身多角度-6.mp4",
+  "run_id": "v2_20260426_225205_7667755c7e",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7667755c7e/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7667755c7e/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7667755c7e/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225205_7667755c7e/scene_001_frame_000130.webp/scene_001_frame_000130.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车在现代城区的开阔停车场（广场）进行静态展示，背景为晴朗黄昏的城市建筑、停放车辆与树木，车身为亮面黑色，车头、侧面外观及车内棕色座椅清晰呈现，镜头为固定机位多角度呈现车辆外观设计。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "车身",
+      "轮毂",
+      "座椅",
+      "前灯组"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "现代城区",
+      "停车场"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "亮面黑",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "晴天",
+    "time": "黄昏",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "流畅",
+      "精致",
+      "现代",
+      "亮面"
+    ],
+    "function_adjectives": [
+      "稳定",
+      "舒适",
+      "静谧",
+      "智能"
+    ],
+    "design_selling_points": [
+      "前灯组设计",
+      "轮毂造型",
+      "车身线条",
+      "激光雷达"
+    ],
+    "function_selling_points": [
+      "智能驾驶辅助",
+      "舒适驾乘空间",
+      "静谧座舱体验",
+      "稳定操控性能"
+    ],
+    "scenario_a": [
+      "城市通勤",
+      "商务出行"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "家庭出游"
+    ],
+    "marketing_phrases": [
+      "智己LS6黄昏实拍",
+      "亮面黑智己LS6",
+      "现代城区停车场的LS6",
+      "精致前灯LS6",
+      "流畅车身LS6",
+      "科技感轮毂LS6"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "现代城区"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "城市白领",
+      "家庭用户",
+      "科技爱好者"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

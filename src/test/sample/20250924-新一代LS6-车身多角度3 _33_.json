@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度3 (33).mp4",
+  "run_id": "v2_20260426_230300_b8e9a0d5bb",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_b8e9a0d5bb/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_b8e9a0d5bb/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_b8e9a0d5bb/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_230300_b8e9a0d5bb/scene_001_frame_000158.webp/scene_001_frame_000158.webp"
+  ],
+  "result": {
+    "description": "一辆黑色带白色图案涂装的轿车在地库（室内停车场）中静态展示，天花板布满菱形灯光，车身上反射灯光形成独特图案，镜头为固定机位拍摄，环境光线柔和，画面呈现科技感与设计感。",
+    "subject": "黑色带图案轿车",
+    "object": [
+      "车身",
+      "轮毂",
+      "车窗",
+      "车漆"
+    ],
+    "movement": "静态展示",
+    "footage_type": "TVC切片",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "地库"
+    ],
+    "car_color": "黑",
+    "car_color_detail": "白色图案涂装",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "科技感",
+      "简约"
+    ],
+    "function_adjectives": [
+      "静谧",
+      "平稳",
+      "舒适",
+      "低风阻"
+    ],
+    "design_selling_points": [
+      "车身线条",
+      "轮毂造型",
+      "车窗轮廓",
+      "车漆质感"
+    ],
+    "function_selling_points": [
+      "低风阻设计",
+      "静谧隔音",
+      "平稳底盘",
+      "空气动力学优化"
+    ],
+    "scenario_a": [
+      "地库停车",
+      "室内展示"
+    ],
+    "scenario_b": [
+      "商务出行",
+      "城市通勤"
+    ],
+    "marketing_phrases": [
+      "地库静赏黑车",
+      "菱形灯光映车身",
+      "黑车白纹超个性",
+      "车身线条显优雅",
+      "静谧舒适黑轿车",
+      "地库停车也吸睛"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "地库场景",
+      "汽车设计",
+      "黑色轿车",
+      "菱形灯光"
+    ],
+    "appealing_audience": [
+      "汽车爱好者",
+      "商务人士",
+      "设计爱好者",
+      "地库用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1080x1920"
+  },
+  "success": true
+}

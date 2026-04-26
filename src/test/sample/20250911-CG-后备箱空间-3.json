@@ -1,0 +1,89 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-后备箱空间-3.mp4",
+  "run_id": "v2_20260426_225753_b4e20706af",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225753_b4e20706af/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225753_b4e20706af/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225753_b4e20706af/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225753_b4e20706af/scene_001_frame_000133.webp/scene_001_frame_000133.webp"
+  ],
+  "result": {
+    "description": "汽车后备箱内的储物系统展示，多个灰色绒面储物盒（部分放毛绒玩具、物品）、挂钩悬挂帽子与包包，背景为后排座椅，镜头固定、画面清晰明亮。",
+    "subject": "汽车后备箱储物系统",
+    "object": [
+      "储物盒",
+      "后排座椅",
+      "挂钩",
+      "毛绒玩具"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "后备箱",
+      "车内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态空间",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "整洁",
+      "实用",
+      "精致",
+      "有序"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "能装",
+      "收纳强",
+      "人性化"
+    ],
+    "design_selling_points": [
+      "分区储物盒",
+      "挂钩设计",
+      "绒面材质",
+      "多格收纳"
+    ],
+    "function_selling_points": [
+      "物品分类收纳",
+      "随身物品悬挂",
+      "空间高效利用",
+      "家庭出行收纳"
+    ],
+    "scenario_a": [
+      "家庭出行",
+      "购物归来"
+    ],
+    "scenario_b": [
+      "长途旅行",
+      "日常通勤"
+    ],
+    "marketing_phrases": [
+      "后备箱收纳超方便",
+      "分区储物不杂乱",
+      "挂钩挂包省空间",
+      "毛绒玩具轻松放",
+      "出行物品有条理",
+      "家庭用车收纳强"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "收纳功能",
+      "家庭用车"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "有车族",
+      "收纳爱好者",
+      "日常通勤者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "1388x1080"
+  },
+  "success": true
+}

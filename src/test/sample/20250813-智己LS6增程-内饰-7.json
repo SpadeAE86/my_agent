@@ -1,0 +1,95 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250813-智己LS6增程-内饰-7.mp4",
+  "run_id": "v2_20260426_225314_55934a5857",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225314_55934a5857/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225314_55934a5857/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225314_55934a5857/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225314_55934a5857/scene_001_frame_000180.webp/scene_001_frame_000180.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225314_55934a5857/scene_001_frame_000185.webp/scene_001_frame_000185.webp"
+  ],
+  "result": {
+    "description": "一辆汽车的内饰座舱静态展示，呈现方向盘、中控大屏、浅色皮质座椅及简洁中控台设计，背景为白色室内环境，固定机位拍摄，重点展示内饰精致感与科技感。",
+    "subject": "汽车内饰",
+    "object": [
+      "方向盘",
+      "中控大屏",
+      "座椅",
+      "中控台"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "展厅"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "简约",
+      "精致",
+      "柔和",
+      "高级"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "智能",
+      "便捷",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "方向盘造型",
+      "中控大屏",
+      "皮质座椅",
+      "内饰材质"
+    ],
+    "function_selling_points": [
+      "智能车机",
+      "舒适乘坐",
+      "便捷储物",
+      "多屏交互"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行",
+      "商务办公",
+      "家庭用车"
+    ],
+    "scenario_b": [
+      "周末自驾",
+      "长途旅行",
+      "接送孩子",
+      "购物出行"
+    ],
+    "marketing_phrases": [
+      "内饰简约高级",
+      "大屏智能交互",
+      "皮质座椅舒适",
+      "静谧座舱体验",
+      "多屏联动便捷",
+      "内饰质感出色"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰展示",
+      "静态展示",
+      "科技感",
+      "舒适体验"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "商务人士",
+      "科技爱好者",
+      "追求舒适的车主"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-车门内饰-2.mp4",
+  "run_id": "v2_20260426_225621_84f1f5f49d",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225621_84f1f5f49d/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225621_84f1f5f49d/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225621_84f1f5f49d/scene_001_frame_000120.webp/scene_001_frame_000120.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225621_84f1f5f49d/scene_001_frame_000140.webp/scene_001_frame_000140.webp"
+  ],
+  "result": {
+    "description": "汽车车门内饰细节展示，包含木纹装饰条、圆形音响、车窗控制按钮、氛围灯，镜头固定聚焦车门面板，光线柔和，皮质与金属材质质感细腻，设计简约精致。",
+    "subject": "汽车车门内饰",
+    "object": [
+      "车门板",
+      "音响",
+      "车窗控制按钮",
+      "氛围灯"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "未知",
+    "car_color_detail": "",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "高级",
+      "细腻",
+      "简约"
+    ],
+    "function_adjectives": [
+      "舒适",
+      "便捷",
+      "智能",
+      "静谧"
+    ],
+    "design_selling_points": [
+      "木纹饰条",
+      "圆形音响",
+      "金属按钮",
+      "皮质车门"
+    ],
+    "function_selling_points": [
+      "车窗电动控制",
+      "车门锁止功能",
+      "车窗一键升降",
+      "车门电子解锁"
+    ],
+    "scenario_a": [
+      "日常通勤",
+      "城市出行"
+    ],
+    "scenario_b": [
+      "商务接待",
+      "家庭用车"
+    ],
+    "marketing_phrases": [
+      "内饰精致高级",
+      "车窗控制便捷",
+      "音响设计独特",
+      "氛围灯提升格调",
+      "皮质车门触感舒适",
+      "木纹饰条显档次"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "内饰细节",
+      "汽车设计"
+    ],
+    "appealing_audience": [
+      "都市白领",
+      "精致车主",
+      "家庭用户",
+      "高端用户"
+    ],
+    "car_model": "未知",
+    "frame_size": "竖版9:16",
+    "resolution": "1440x2560"
+  },
+  "success": true
+}

@@ -1,0 +1,88 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-智慧屏功能细节-1.mp4",
+  "run_id": "v2_20260426_192053_ee89719399",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ee89719399/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_192053_ee89719399/scene_001_frame_000055.webp/scene_001_frame_000055.webp"
+  ],
+  "result": {
+    "description": "汽车中控屏展示视频娱乐界面，包含IM推荐、iQIYI、bilibili等应用入口，底部有IM Music等功能图标，界面呈现《浪浪山小妖怪》《守龙者》等影视推荐卡片，时间显示10:00，界面设计简洁，色彩丰富。",
+    "subject": "汽车中控屏",
+    "object": [
+      "中控屏",
+      "影视卡片",
+      "功能图标"
+    ],
+    "movement": "静态展示",
+    "footage_type": "原创实拍",
+    "shot_style": "屏幕录制",
+    "scene_location": [
+      "车内"
+    ],
+    "car_color": "未知",
+    "product_status_scene": "静态内饰",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "白天",
+    "video_usage": "功能讲解",
+    "design_adjectives": [
+      "简洁",
+      "现代",
+      "色彩丰富",
+      "直观"
+    ],
+    "function_adjectives": [
+      "便捷",
+      "丰富",
+      "流畅",
+      "易用"
+    ],
+    "design_selling_points": [
+      "大屏显示",
+      "多应用集成",
+      "简洁界面",
+      "色彩设计"
+    ],
+    "function_selling_points": [
+      "多影视平台整合",
+      "个性化推荐",
+      "音乐娱乐功能",
+      "便捷操作"
+    ],
+    "scenario_a": [
+      "车内休闲",
+      "通勤途中",
+      "自驾娱乐"
+    ],
+    "scenario_b": [
+      "家庭出行",
+      "长途旅行",
+      "周末自驾"
+    ],
+    "marketing_phrases": [
+      "车内追剧不无聊",
+      "中控大屏娱乐多",
+      "通勤路上看片爽",
+      "影视音乐随心享",
+      "多平台影视任你选",
+      "10点娱乐新体验"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "功能讲解",
+      "车内娱乐",
+      "中控系统"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "年轻车主",
+      "娱乐爱好者",
+      "长途驾驶者"
+    ],
+    "car_model": "未知",
+    "frame_size": "横版16:9",
+    "resolution": "1920x1080"
+  },
+  "success": true,
+  "cached": true
+}

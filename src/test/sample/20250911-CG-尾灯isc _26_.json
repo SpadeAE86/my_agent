@@ -1,0 +1,91 @@
+{
+  "video": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-尾灯isc (26).mp4",
+  "run_id": "v2_20260426_225824_3c01b9ea7b",
+  "frames": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225824_3c01b9ea7b/scene_001_frame_000000.webp/scene_001_frame_000000.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225824_3c01b9ea7b/scene_001_frame_000060.webp/scene_001_frame_000060.webp",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/video_analysis_v2/v2_20260426_225824_3c01b9ea7b/scene_001_frame_000095.webp/scene_001_frame_000095.webp"
+  ],
+  "result": {
+    "description": "智己LS6汽车尾部的黑色屏幕显示红色“Happy Birthday”文字，车身为蓝色并带有红色线条装饰，金属车标清晰呈现，画面为静态展示，背景为暗调简洁风格。",
+    "subject": "智己LS6汽车",
+    "object": [
+      "尾灯屏幕",
+      "车标",
+      "车身",
+      "红色线条"
+    ],
+    "movement": "静态展示",
+    "footage_type": "CG",
+    "shot_style": "固定机位",
+    "scene_location": [
+      "室内"
+    ],
+    "car_color": "蓝",
+    "car_color_detail": "",
+    "product_status_scene": "静态外观",
+    "has_presenter": false,
+    "weather": "室内",
+    "time": "室内",
+    "video_usage": "产品展示",
+    "design_adjectives": [
+      "精致",
+      "现代",
+      "简约",
+      "科技感"
+    ],
+    "function_adjectives": [
+      "智能",
+      "个性化",
+      "交互感",
+      "温馨"
+    ],
+    "design_selling_points": [
+      "贯穿式尾灯屏幕",
+      "红色线条装饰",
+      "金属车标",
+      "蓝色车漆"
+    ],
+    "function_selling_points": [
+      "个性化屏幕显示",
+      "智能交互灯语",
+      "生日祝福彩蛋",
+      "氛围化车机互动"
+    ],
+    "scenario_a": [
+      "生日庆祝",
+      "车内仪式感",
+      "个性化用车",
+      "节日氛围"
+    ],
+    "scenario_b": [
+      "日常通勤",
+      "朋友聚会",
+      "家庭出行",
+      "商务接待"
+    ],
+    "marketing_phrases": [
+      "生日祝福车语",
+      "智己LS6个性化灯语",
+      "蓝色车漆质感",
+      "静态外观展示",
+      "智能交互尾灯",
+      "温馨车机彩蛋"
+    ],
+    "marketing_tags": [
+      "产品展示",
+      "静态外观",
+      "个性化功能"
+    ],
+    "appealing_audience": [
+      "家庭用户",
+      "年轻车主",
+      "科技爱好者",
+      "仪式感追求者"
+    ],
+    "car_model": "未知",
+    "frame_size": "其他比例",
+    "resolution": "4800x1080"
+  },
+  "success": true
+}
