@@ -37,7 +37,7 @@ from utils.obs_utils import batch_upload_to_obs
 from utils.call_model_utils import call_doubao_vision
 from PIL import Image
 from services.video_analysis_db_service import video_analysis_db_service
-
+from models.pydantic.opensearch_index.index_v2_enums import KEY_TRAITS_CHOICES
 # --- Optional ingestion (OpenSearch IndexV2) ---
 from sentence_transformers import SentenceTransformer
 from infra.storage.opensearch.create_index import index_manager
@@ -89,7 +89,7 @@ ANALYSIS_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "analysis_
 ENABLE_INGEST = True
 
 
-PROMPT_V2 = """
+PROMPT_V2 = f"""
 你是一个专业的视频分镜分析师，擅长把“可检索的结构化标签”从画面中抽取出来，支持后续营销脚本混剪检索。
 
 请仅根据画面可见信息输出 JSON（必须符合给定 schema），不要输出解释。
@@ -104,7 +104,6 @@ PROMPT_V2 = """
 - product_status_scene：产品状态场景（标准化），如：静态内饰/路跑外观/发布会现场 等
 - has_presenter：是否包含出镜讲解员/达人/主持人（boolean）
 - person_detail：人物细分标签（枚举，可多值）：无人物/老人/小孩/男性/女性/多人。无人物时只填 无人物；多人时可同时填多个（如 男性+女性、小孩+女性）。
-- key_traits：素材关键特点标签（枚举列表，可多值）。必须从我们的 KEY_TRAITS_CHOICES 里选，用于后续过滤/检索。
 - weather/time：天气/时间（均为固定枚举）
 - video_usage：素材用途（枚举列表）。尽量只写 1 个；如确实同时满足多个方向且都有用，才写多个（最多 3 个）。
 - object：只允许车与乘客相关（车身/轮毂/轮胎/天窗/座椅/中控屏/方向盘/驾驶员/乘客等），不要写环境（树木/建筑/天空/湖水/道路等）。控制 1-4 个。
@@ -112,6 +111,15 @@ PROMPT_V2 = """
 - design_selling_points / function_selling_points：两组卖点列表，各 2-4 个；前者偏实体部件/可见结构，后者偏能力模块/特殊功能；每组内部语义尽量靠拢，不要混入环境/动作。
 - scenario_a / scenario_b：两组生活/用车场景列表，各 1-4 个；A 内部语义尽量靠拢，B 与 A 尽量不同。
 - marketing_phrases：营销短句/口播式检索短语（1-6 个），贴近用户语言，不要用“演示/展示”。例：雨夜看得清、堵车跟车不累、地库一把掉头、停车一把进
+- key_traits：客户要求的额外标签（枚举列表，可多值），没有看到对应的要素就不要填，只能从给定的枚举范围里选：{",".join(KEY_TRAITS_CHOICES)}
+
+关于key_trait的特殊标签的额外说明:
+    看到带人的内饰，人开车，人谈话、休息，可以打上安静和降噪的标签
+    看到车的音响和喇叭，可以打上声道和音响的标签
+    看到空调出风口，屏幕上有空调的标志，可以打上空调的标签
+    看到轮胎转弯，可以打上转弯的标签
+    有人坐后排，可以打上后排的标签
+    看到路跑，充电，可以打上续航，低油耗，大电池，充电快的标签
 
 禁止：
 - 不要编造画面看不到的具体数值参数（如续航km、电池kWh等）
