@@ -72,7 +72,7 @@ async def call_doubao_vision(prompt, image_url_list, schema_json = None):
             messages=messages,
             response_format=response_format
         )
-
+        print(f"完整响应:{response}")
         result = response.choices[0].message.content
         print("====== 豆包 API 返回结果 ======")
         print(result)
@@ -224,14 +224,29 @@ async def call_doubao_seedtext(
                 print(f"警告：output_schema 无法生成 schema，将忽略。err={e}")
                 response_format = None
 
-        response = await client.responses.create(
-            model=real_model,
-            input=input_messages,
-            extra_body=extra_body,
-            response_format=response_format,
-        )
+        # NOTE:
+        # Some environments (openai SDK versions) do NOT support `response_format`
+        # on the Responses API. When a schema is provided, use Chat Completions
+        # which supports `response_format` more consistently.
+        if response_format is not None:
+            chat_messages = []
+            if system_prompt:
+                chat_messages.append({"role": "system", "content": system_prompt})
+            chat_messages.append({"role": "user", "content": prompt})
 
-        result = response.output_text
+            response = await client.chat.completions.create(
+                model=real_model,
+                messages=chat_messages,
+                response_format=response_format,
+            )
+            result = response.choices[0].message.content
+        else:
+            response = await client.responses.create(
+                model=real_model,
+                input=input_messages,
+                extra_body=extra_body,
+            )
+            result = response.output_text
         print("====== 豆包 Seed 文本模型返回结果 ======")
         print(result)
         print("=========================================")

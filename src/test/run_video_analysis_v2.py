@@ -37,7 +37,7 @@ from utils.obs_utils import batch_upload_to_obs
 from utils.call_model_utils import call_doubao_vision
 from PIL import Image
 from services.video_analysis_db_service import video_analysis_db_service
-from models.pydantic.opensearch_index.index_v2_enums import KEY_TRAITS_CHOICES
+from models.pydantic.opensearch_index import index_v2_enums
 # --- Optional ingestion (OpenSearch IndexV2) ---
 from sentence_transformers import SentenceTransformer
 from infra.storage.opensearch.create_index import index_manager
@@ -46,7 +46,7 @@ from infra.storage.opensearch_connector import opensearch_connector
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 
 
-BASE_VIDEO_DIR = Path(r"C:\Users\25065\Downloads\汽车\ls6_video\LS6视频")
+BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
 
 # Sampling strategy:
 # - Scan all mp4 under BASE_VIDEO_DIR
@@ -89,6 +89,10 @@ ANALYSIS_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "analysis_
 ENABLE_INGEST = True
 
 
+def _join_choices(xs: List[str]) -> str:
+    return ", ".join([x for x in (xs or []) if x])
+
+
 PROMPT_V2 = f"""
 你是一个专业的视频分镜分析师，擅长把“可检索的结构化标签”从画面中抽取出来，支持后续营销脚本混剪检索。
 
@@ -96,9 +100,9 @@ PROMPT_V2 = f"""
 
 关键要求：
 - movement：只写“核心动作”（单值），必须标准化，不带环境词、不带评价。例：掉头/转弯/泊车/充电/静态展示
-- footage_type：画面类型（固定枚举），如：CG/原创实拍/KOL拍摄/TVC切片/直播切片/海报/未知
-- shot_style：镜头风格/拍摄方式（固定枚举），如：车内POV/车外跟拍/固定机位/航拍/屏幕录制/展台转盘/未知
-- shot_type：镜头景幅/景别（固定枚举）：大远景/远景/中景/特写/大特写/未知
+- footage_type：画面类型（固定枚举）：{_join_choices(index_v2_enums.FOOTAGE_TYPE_CHOICES)}
+- shot_style：镜头风格/拍摄方式（固定枚举）：{_join_choices(index_v2_enums.SHOT_STYLE_CHOICES)}
+- shot_type：镜头景幅/景别（固定枚举）：{_join_choices(index_v2_enums.SHOT_TYPE_CHOICES)}
 - scene_location：画面场景/路况/空间类型（1-6 个），短词名词化，如：地库/公路/冰雪/现代城区/赛道/展厅 等
 - car_color + car_color_detail：车色（枚举）+ 可选细节（如哑光黑/珠光白/涂装/贴膜）
 - product_status_scene：产品状态场景（标准化），如：静态内饰/路跑外观/发布会现场 等
@@ -111,7 +115,7 @@ PROMPT_V2 = f"""
 - design_selling_points / function_selling_points：两组卖点列表，各 2-4 个；前者偏实体部件/可见结构，后者偏能力模块/特殊功能；每组内部语义尽量靠拢，不要混入环境/动作。
 - scenario_a / scenario_b：两组生活/用车场景列表，各 1-4 个；A 内部语义尽量靠拢，B 与 A 尽量不同。
 - marketing_phrases：营销短句/口播式检索短语（1-6 个），贴近用户语言，不要用“演示/展示”。例：雨夜看得清、堵车跟车不累、地库一把掉头、停车一把进
-- key_traits：客户要求的额外标签（枚举列表，可多值），没有看到对应的要素就不要填，只能从给定的枚举范围里选：{",".join(KEY_TRAITS_CHOICES)}
+- key_traits：客户要求的额外标签（枚举列表，可多值），没有看到对应的要素就不要填，只能从给定的枚举范围里选：{_join_choices(index_v2_enums.KEY_TRAITS_CHOICES)}
 
 关于key_trait的特殊标签的额外说明:
     看到带人的内饰，人开车，人谈话、休息，可以打上安静和降噪的标签
@@ -128,6 +132,24 @@ PROMPT_V2 = f"""
 - design_* 只写“看得见/摸得着”的实体与外观：如 轮毂/车漆/门把手/座椅/中控台/屏幕/灯组/线条/材质
 - function_* 只写“能力/功能/算法/性能”：如 一键AI泊车/雨夜模式/NOA/爆胎稳定控制/四轮转向/快充/主动降噪
 - 同一个词不要同时出现在 design_* 与 function_*（必要时放到更匹配的一侧）
+
+规范化与纠错（必须遵守）：
+A) shot_type vs shot_style 不可混用：
+   - 如果你要输出的值属于景别（{_join_choices(index_v2_enums.SHOT_TYPE_CHOICES)}），只能写入 shot_type。
+   - shot_style 必须输出拍摄方式（{_join_choices(index_v2_enums.SHOT_STYLE_CHOICES)}），禁止输出“特写/中景/远景”等景别词。
+B) weather vs time 不可混用：
+   - time 只能从：{_join_choices(index_v2_enums.TIME_CHOICES)}
+   - weather 只能从：{_join_choices(index_v2_enums.WEATHER_CHOICES)}
+   - 禁止把“白天/夜晚/黄昏/室内”写进 weather；禁止把“雨天/雪天/阴天/晴天/极寒”等写进 time。
+C) car_color 归一化（禁止输出同义变体）：
+   - car_color 必须严格从：{_join_choices(index_v2_enums.CAR_COLOR_CHOICES)}
+   - 禁止输出“黑色/白色/蓝色/银色/绿色”等带“色”或不在枚举里的值；颜色细节写入 car_color_detail。
+D) video_usage 归一化（只允许标准枚举）：
+   - video_usage(list) 必须从：{_join_choices(index_v2_enums.VIDEO_USAGE_CHOICES)}
+   - 同义归并：品牌传达/品牌形象传达 -> 品牌/形象传达；权益说明 -> 权益/价格说明；路跑场景展示 -> 使用场景展示。
+E) product_status_scene 不允许带括号备注：
+   - product_status_scene 必须从：{_join_choices(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}
+   - 像“含动态灯语/充电状态/节日装饰”等细节，请写入 product_status_scene_text（如果 schema 不支持该字段则放入 extra_tags）。
 """.strip()
 
 
@@ -458,7 +480,8 @@ async def main():
     frame_interval = 2.0
     out_dir = Path(__file__).resolve().parent / "sample"
     # Analyze ALL videos under BASE_VIDEO_DIR (no sampling)
-    videos = [str(p) for p in _list_all_mp4(BASE_VIDEO_DIR)]
+    videos = [str(p) for p in build_test_set()]
+    # videos = [str(p) for p in _list_all_mp4(BASE_VIDEO_DIR)]
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if not videos:
@@ -498,6 +521,49 @@ async def main():
     ok = sum(1 for r in results if r.get("success"))
     fail = len(results) - ok
     print(f"\nSummary: ok={ok}, fail={fail}, total={len(results)}")
+
+    # Quick sanity checks for label purity (legacy issues we saw in the old index).
+    # This helps verify prompt-level normalization rules are taking effect.
+    def _count_bad() -> Dict[str, int]:
+        bad = {
+            "shot_style_is_shot_type": 0,  # e.g. shot_style == "特写"
+            "weather_is_time": 0,  # e.g. weather == "白天"
+            "car_color_has_色_suffix": 0,  # e.g. 黑色/白色/蓝色/银色
+            "video_usage_non_enum_synonym": 0,  # brand/rights variants that should be normalized
+        }
+        shot_type_set = set(index_v2_enums.SHOT_TYPE_CHOICES)
+        time_set = set(index_v2_enums.TIME_CHOICES)
+        bad_usage_aliases = {"品牌传达", "品牌形象传达", "权益说明", "路跑场景展示"}
+
+        for r in results:
+            if not r.get("success"):
+                continue
+            data = r.get("result") or {}
+            if not isinstance(data, dict):
+                continue
+
+            shot_style = str(data.get("shot_style") or "")
+            if shot_style and shot_style in shot_type_set:
+                bad["shot_style_is_shot_type"] += 1
+
+            weather = str(data.get("weather") or "")
+            if weather and weather in time_set:
+                bad["weather_is_time"] += 1
+
+            car_color = str(data.get("car_color") or "")
+            if car_color.endswith("色"):
+                bad["car_color_has_色_suffix"] += 1
+
+            vu = data.get("video_usage") or []
+            if isinstance(vu, str):
+                vu = [vu]
+            if isinstance(vu, list) and any((str(x) in bad_usage_aliases) for x in vu):
+                bad["video_usage_non_enum_synonym"] += 1
+
+        return bad
+
+    bad_counts = _count_bad()
+    print("\nLabel purity checks:", bad_counts)
 
     # Persist failure reasons for quick triage.
     failures: List[Dict[str, Any]] = []

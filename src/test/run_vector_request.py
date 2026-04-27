@@ -2,12 +2,11 @@
 """
 run_vector_request.py
 
-Execute an OpenSearch DevTools-style request stored in a text file (e.g. vector.txt),
-then persist the raw response to JSON for debugging.
-
-Supported input format:
-  GET index/_search
-  { ...json body... }
+Run a hybrid search (BM25 + single KNN) from in-file inputs:
+- Define a list of query strings
+- Embed each query (SentenceTransformer)
+- Execute hybrid search against a single vector field + a few text fields
+- Persist raw + summary JSON per query
 
 Run:
   python -m src.test.run_vector_request
@@ -16,12 +15,12 @@ Run:
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import os
-import re
 import sys
 from pathlib import Path
-from typing import Any, Dict, Tuple
+from typing import Any, Dict, List, Optional
 
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -32,102 +31,121 @@ if SRC_DIR not in sys.path:
 from infra.storage.opensearch_connector import opensearch_connector
 
 
-INPUT_TXT = Path(__file__).resolve().parent / "vector.txt"
-# Persist both:
-# - raw response (may be very large)
-# - small summary for quick inspection (recommended to open first)
-OUTPUT_RAW_JSON = Path(__file__).resolve().parent / "vector_response_raw.json"
-OUTPUT_SUMMARY_JSON = Path(__file__).resolve().parent / "vector_response_summary.json"
+# === Configure here ===
+INDEX = "car_interior_analysis_v2"
+SEARCH_PIPELINE: Optional[str] = "nlp-search-pipeline"  # set None to disable
 
+VECTOR_FIELD = "marketing_phrases_vector"  # pick ONE vector field
+TEXT_FIELDS = ["description", "marketing_phrases", "function_selling_points", "scene_location"]
 
-_REQ_LINE_RE = re.compile(r"^(GET|POST)\s+([^\s]+)\s*$", re.IGNORECASE)
+BM25_BOOST = 0.5
+KNN_BOOST = 0.5
+SIZE = 10
 
+# Define your input queries here.
+INPUTS: List[str] = [
+    "地库 一键泊车",
+    "雨夜 补盲",
+    "冰雪 爬坡",
+]
 
-def _parse_devtools_request(text: str) -> Tuple[str, str, Dict[str, Any]]:
-    lines = [ln.rstrip("\n") for ln in (text or "").splitlines() if ln.strip()]
-    if not lines:
-        raise ValueError("Empty request file")
-
-    m = _REQ_LINE_RE.match(lines[0])
-    if not m:
-        raise ValueError(f"Invalid first line (expected 'GET index/_search'): {lines[0]!r}")
-
-    method = m.group(1).upper()
-    path = m.group(2)
-
-    body_text = "\n".join(lines[1:])
-    try:
-        body = json.loads(body_text)
-    except Exception as e:
-        raise ValueError(f"Failed to parse JSON body: {e}") from e
-
-    if not isinstance(body, dict):
-        raise ValueError("Request body must be a JSON object")
-
-    return method, path, body
+OUT_DIR = Path(__file__).resolve().parent / "vector_requests_outputs"
 
 
 async def main():
-    raw = INPUT_TXT.read_text(encoding="utf-8")
-    method, path, body = _parse_devtools_request(raw)
+    try:
+        from sentence_transformers import SentenceTransformer  # type: ignore
+    except Exception as e:
+        raise RuntimeError(
+            "sentence-transformers is required for embedding queries in this script. "
+            "Install it in your env (pip/conda) and retry."
+        ) from e
 
-    # Extract index from "index/_search" path.
-    # Examples:
-    #   car_interior_analysis_v2/_search
-    #   /car_interior_analysis_v2/_search
-    p = path.lstrip("/")
-    if "/_search" not in p:
-        raise ValueError(f"Only _search supported for now, got path={path!r}")
-    index = p.split("/_search", 1)[0].strip("/")
-    if not index:
-        raise ValueError(f"Failed to parse index from path: {path!r}")
+    model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 
     await opensearch_connector.ensure_init()
     c = await opensearch_connector.get_client()
 
     try:
-        # Always use .search for _search requests; method is informational here.
-        resp = await c.search(index=index, body=body)
+        OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+        for q in [s.strip() for s in (INPUTS or []) if s and s.strip()]:
+            qv = model.encode(q).tolist()
+
+            body: Dict[str, Any] = {
+                "size": SIZE,
+                "_source": {"excludes": ["*vector*"]},
+                "query": {
+                    "hybrid": {
+                        "queries": [
+                            {
+                                "multi_match": {
+                                    "query": q,
+                                    "fields": TEXT_FIELDS,
+                                    "type": "best_fields",
+                                    "boost": BM25_BOOST,
+                                }
+                            },
+                            {
+                                "knn": {
+                                    VECTOR_FIELD: {
+                                        "vector": qv,
+                                        "k": SIZE,
+                                        "boost": KNN_BOOST,
+                                    }
+                                }
+                            },
+                        ]
+                    }
+                },
+            }
+
+            params = {"search_pipeline": SEARCH_PIPELINE} if SEARCH_PIPELINE else None
+            resp = await c.search(index=INDEX, body=body, params=params)
+
+            hits = ((resp.get("hits") or {}).get("hits") or [])
+            top = [{"_id": h.get("_id"), "_score": h.get("_score")} for h in hits[:10]]
+
+            # anomaly detection
+            seen = {}
+            dups = []
+            neg = []
+            for i, h in enumerate(hits[:50]):
+                doc_id = h.get("_id")
+                score = h.get("_score")
+                if doc_id in seen:
+                    dups.append({"_id": doc_id, "pos": i, "prev_pos": seen[doc_id]})
+                else:
+                    seen[doc_id] = i
+                try:
+                    if score is not None and float(score) < -1e6:
+                        neg.append({"_id": doc_id, "_score": score, "pos": i})
+                except Exception:
+                    pass
+
+            summary = {
+                "index": INDEX,
+                "search_pipeline": SEARCH_PIPELINE,
+                "query": q,
+                "vector_field": VECTOR_FIELD,
+                "text_fields": TEXT_FIELDS,
+                "took": resp.get("took"),
+                "timed_out": resp.get("timed_out"),
+                "hits_total": (resp.get("hits") or {}).get("total"),
+                "max_score": (resp.get("hits") or {}).get("max_score"),
+                "top_hits": top,
+                "anomaly": {"huge_negative_scores": neg, "duplicate_ids": dups},
+            }
+
+            safe = hashlib.sha1(q.encode("utf-8")).hexdigest()[:10]
+            raw_path = OUT_DIR / f"{safe}_raw.json"
+            sum_path = OUT_DIR / f"{safe}_summary.json"
+            raw_path.write_text(json.dumps(resp, ensure_ascii=False, indent=2), encoding="utf-8")
+            sum_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+            print("Wrote:", sum_path)
+            print("Top hits:", json.dumps(top, ensure_ascii=False))
     finally:
         await opensearch_connector.close()
-
-    hits = ((resp.get("hits") or {}).get("hits") or [])
-    top = [{"_id": h.get("_id"), "_score": h.get("_score")} for h in hits[:10]]
-
-    # Detect common hybrid anomalies quickly: duplicated ids and huge negative scores.
-    seen = {}
-    dups = []
-    neg = []
-    for i, h in enumerate(hits[:50]):
-        doc_id = h.get("_id")
-        score = h.get("_score")
-        if doc_id in seen:
-            dups.append({"_id": doc_id, "pos": i, "prev_pos": seen[doc_id]})
-        else:
-            seen[doc_id] = i
-        try:
-            if score is not None and float(score) < -1e6:
-                neg.append({"_id": doc_id, "_score": score, "pos": i})
-        except Exception:
-            pass
-
-    summary = {
-        "method": method,
-        "path": path,
-        "index": index,
-        "took": resp.get("took"),
-        "timed_out": resp.get("timed_out"),
-        "hits_total": (resp.get("hits") or {}).get("total"),
-        "max_score": (resp.get("hits") or {}).get("max_score"),
-        "top_hits": top,
-        "anomaly": {"huge_negative_scores": neg, "duplicate_ids": dups},
-    }
-
-    OUTPUT_RAW_JSON.write_text(json.dumps(resp, ensure_ascii=False, indent=2), encoding="utf-8")
-    OUTPUT_SUMMARY_JSON.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Wrote raw: {OUTPUT_RAW_JSON}")
-    print(f"Wrote summary: {OUTPUT_SUMMARY_JSON}")
-    print("Top hits:", json.dumps(top, ensure_ascii=False))
 
 
 if __name__ == "__main__":

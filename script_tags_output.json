@@ -1,0 +1,392 @@
+{
+  "segment_result": [
+    {
+      "index": 0,
+      "id": 1,
+      "segment_text": "这台智己LS6。",
+      "description": "车外固定机位展示整车正脸外观",
+      "movement": "静态展示",
+      "subject": "智己LS6",
+      "object": [],
+      "footage_type": "未知",
+      "shot_style": "固定机位",
+      "shot_type": "中景",
+      "video_usage": [
+        "产品展示"
+      ],
+      "scene_location": [
+        "户外停车场"
+      ],
+      "design_selling_points": [
+        "智己LS6车型"
+      ],
+      "function_selling_points": [],
+      "design_adjectives": [
+        "时尚",
+        "大气"
+      ],
+      "function_adjectives": [],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "智己LS6",
+        "智己LS6外观"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [],
+      "car_color": "未知",
+      "product_status_scene": "静态外观",
+      "has_presenter": null,
+      "weather": "未知",
+      "time": "未知",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 2,
+      "segment_text": "搭载65.9kWh行业超大增程电池。",
+      "description": "屏幕展示电池容量参数信息",
+      "movement": "静态展示",
+      "subject": "电池参数",
+      "object": [
+        "参数屏幕"
+      ],
+      "footage_type": "未知",
+      "shot_style": "屏幕录制",
+      "shot_type": "特写",
+      "video_usage": [
+        "功能讲解"
+      ],
+      "scene_location": [],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "超大增程电池"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "大容量"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "65.9kWh电池",
+        "超大增程电池"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [],
+      "car_color": "未知",
+      "product_status_scene": "未知",
+      "has_presenter": null,
+      "weather": "未知",
+      "time": "未知",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 3,
+      "segment_text": "纯电能跑450公里。",
+      "description": "中控屏展示纯电续航里程数据",
+      "movement": "静态展示",
+      "subject": "中控屏",
+      "object": [
+        "续航数据"
+      ],
+      "footage_type": "未知",
+      "shot_style": "屏幕录制",
+      "shot_type": "特写",
+      "video_usage": [
+        "功能讲解"
+      ],
+      "scene_location": [
+        "车内"
+      ],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "长纯电续航"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "够用"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "纯电续航450公里",
+        "长纯电续航"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [],
+      "car_color": "未知",
+      "product_status_scene": "静态内饰",
+      "has_presenter": null,
+      "weather": "未知",
+      "time": "室内",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 4,
+      "segment_text": "综合续航超过1500公里！",
+      "description": "屏幕展示总综合续航数据",
+      "movement": "静态展示",
+      "subject": "中控屏",
+      "object": [
+        "续航数据"
+      ],
+      "footage_type": "未知",
+      "shot_style": "屏幕录制",
+      "shot_type": "特写",
+      "video_usage": [
+        "功能讲解"
+      ],
+      "scene_location": [
+        "车内"
+      ],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "超长综合续航"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "超长"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "综合续航1500公里",
+        "超长综合续航"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [],
+      "car_color": "未知",
+      "product_status_scene": "静态内饰",
+      "has_presenter": null,
+      "weather": "未知",
+      "time": "室内",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 5,
+      "segment_text": "我通勤一周充一次电就够了！",
+      "description": "女司机日常通勤驾驶，车内POV视角",
+      "movement": "行驶",
+      "subject": "女司机",
+      "object": [
+        "方向盘",
+        "仪表盘"
+      ],
+      "footage_type": "未知",
+      "shot_style": "车内POV",
+      "shot_type": "中景",
+      "video_usage": [
+        "使用场景展示"
+      ],
+      "scene_location": [
+        "城市道路"
+      ],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "低充电频率",
+        "省心"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "省心",
+        "方便"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "通勤一周一充",
+        "省心用车"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [
+        "通勤上班族",
+        "女司机"
+      ],
+      "car_color": "未知",
+      "product_status_scene": "路跑内饰",
+      "has_presenter": true,
+      "weather": "未知",
+      "time": "未知",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 6,
+      "segment_text": "而且它转弯半径只有4.79米，",
+      "description": "屏幕展示转弯半径参数数据",
+      "movement": "静态展示",
+      "subject": "参数屏幕",
+      "object": [
+        "转弯半径数据"
+      ],
+      "footage_type": "未知",
+      "shot_style": "屏幕录制",
+      "shot_type": "特写",
+      "video_usage": [
+        "功能讲解"
+      ],
+      "scene_location": [],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "小转弯半径"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "灵活"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "4.79米转弯半径",
+        "小转弯半径"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [],
+      "car_color": "未知",
+      "product_status_scene": "未知",
+      "has_presenter": null,
+      "weather": "未知",
+      "time": "未知",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 7,
+      "segment_text": "比紧凑级轿车还小，",
+      "description": "智己LS6和紧凑级轿车同框对比占位",
+      "movement": "静态展示",
+      "subject": "智己LS6",
+      "object": [
+        "紧凑级轿车"
+      ],
+      "footage_type": "未知",
+      "shot_style": "固定机位",
+      "shot_type": "中景",
+      "video_usage": [
+        "对比评测"
+      ],
+      "scene_location": [
+        "停车场"
+      ],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "小转弯半径"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "小巧灵活"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "转弯半径对比",
+        "小转弯半径优势"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [],
+      "car_color": "未知",
+      "product_status_scene": "静态外观",
+      "has_presenter": null,
+      "weather": "未知",
+      "time": "未知",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 8,
+      "segment_text": "我这种新手女司机在狭窄地库掉头，",
+      "description": "狭窄地库内车辆准备掉头，车外跟拍",
+      "movement": "掉头",
+      "subject": "智己LS6",
+      "object": [
+        "地库墙面",
+        "车位"
+      ],
+      "footage_type": "未知",
+      "shot_style": "车外跟拍",
+      "shot_type": "中景",
+      "video_usage": [
+        "使用场景展示"
+      ],
+      "scene_location": [
+        "地下车库"
+      ],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "窄场景掉头方便"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "轻松"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "地库掉头",
+        "新手开车"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [
+        "新手司机",
+        "女司机"
+      ],
+      "car_color": "未知",
+      "product_status_scene": "路跑外观",
+      "has_presenter": true,
+      "weather": "未知",
+      "time": "室内",
+      "extra_tags": null
+    },
+    {
+      "index": 0,
+      "id": 9,
+      "segment_text": "一把就过了！",
+      "description": "车内POV视角，完成掉头顺利驶出地库",
+      "movement": "掉头",
+      "subject": "女司机",
+      "object": [
+        "方向盘",
+        "地库出口"
+      ],
+      "footage_type": "未知",
+      "shot_style": "车内POV",
+      "shot_type": "中景",
+      "video_usage": [
+        "使用场景展示"
+      ],
+      "scene_location": [
+        "地下车库"
+      ],
+      "design_selling_points": [],
+      "function_selling_points": [
+        "一把掉头好操控"
+      ],
+      "design_adjectives": [],
+      "function_adjectives": [
+        "轻松",
+        "好开"
+      ],
+      "scenario_a": [],
+      "scenario_b": [],
+      "marketing_phrases": [
+        "一把掉头",
+        "好操控"
+      ],
+      "marketing_tags": [],
+      "appealing_audience": [
+        "新手司机",
+        "女司机"
+      ],
+      "car_color": "未知",
+      "product_status_scene": "路跑内饰",
+      "has_presenter": true,
+      "weather": "未知",
+      "time": "室内",
+      "extra_tags": null
+    }
+  ]
+}

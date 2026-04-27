@@ -1,0 +1,704 @@
+{
+  "results": [
+    {
+      "segment_id": 1,
+      "segment_text": "这台智己LS6。",
+      "query_text": "这台智己LS6。 车外固定机位展示整车正脸外观 智己LS6 智己LS6外观 智己LS6车型 户外停车场",
+      "filters": [
+        {
+          "term": {
+            "movement": "静态展示"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "产品展示"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "固定机位",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "中景",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态外观",
+              "boost": 1.1
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012739_21634dc8a3_scene_001",
+          "_score": 13.233411,
+          "history_id": "v2_20260428_012739_21634dc8a3",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-武汉洪山户外车阵-1.mp4"
+        },
+        {
+          "_id": "v2_20260428_012806_58219c7d10_scene_001",
+          "_score": 12.563629,
+          "history_id": "v2_20260428_012806_58219c7d10",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-9.mp4"
+        },
+        {
+          "_id": "v2_20260428_012743_cbfbbe06da_scene_001",
+          "_score": 11.87677,
+          "history_id": "v2_20260428_012743_cbfbbe06da",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (7).mp4"
+        },
+        {
+          "_id": "v2_20260428_012754_cc834d4fb5_scene_001",
+          "_score": 11.838458,
+          "history_id": "v2_20260428_012754_cc834d4fb5",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度1 (22).mp4"
+        },
+        {
+          "_id": "v2_20260428_012738_8a71e9910a_scene_001",
+          "_score": 11.626864,
+          "history_id": "v2_20260428_012738_8a71e9910a",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (5).mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 2,
+      "segment_text": "搭载65.9kWh行业超大增程电池。",
+      "query_text": "搭载65.9kWh行业超大增程电池。 屏幕展示电池容量参数信息 65.9kWh电池 超大增程电池",
+      "filters": [
+        {
+          "term": {
+            "movement": "静态展示"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "功能讲解"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "屏幕录制",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "特写",
+              "boost": 1.1
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012542_494d103fbc_scene_001",
+          "_score": 17.03917,
+          "history_id": "v2_20260428_012542_494d103fbc",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4"
+        },
+        {
+          "_id": "v2_20260428_012717_d50ec52a6d_scene_001",
+          "_score": 10.946826,
+          "history_id": "v2_20260428_012717_d50ec52a6d",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后备箱 (5).mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_fddc2e284c_scene_001",
+          "_score": 10.573238,
+          "history_id": "v2_20260428_012542_fddc2e284c",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-车身结构（撞击） (2).mp4"
+        },
+        {
+          "_id": "v2_20260428_012749_1c79f62886_scene_001",
+          "_score": 10.45772,
+          "history_id": "v2_20260428_012749_1c79f62886",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-23.mp4"
+        },
+        {
+          "_id": "v2_20260428_012732_154d544761_scene_001",
+          "_score": 10.236858,
+          "history_id": "v2_20260428_012732_154d544761",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 3,
+      "segment_text": "纯电能跑450公里。",
+      "query_text": "纯电能跑450公里。 中控屏展示纯电续航里程数据 纯电续航450公里 长纯电续航 车内",
+      "filters": [
+        {
+          "term": {
+            "movement": "静态展示"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "功能讲解"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "屏幕录制",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "特写",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态内饰",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012542_494d103fbc_scene_001",
+          "_score": 16.062263,
+          "history_id": "v2_20260428_012542_494d103fbc",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4"
+        },
+        {
+          "_id": "v2_20260428_012732_533242b16a_scene_001",
+          "_score": 9.270885,
+          "history_id": "v2_20260428_012732_533242b16a",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-36.mp4"
+        },
+        {
+          "_id": "v2_20260428_012749_1c79f62886_scene_001",
+          "_score": 7.6606345,
+          "history_id": "v2_20260428_012749_1c79f62886",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-23.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_ee89719399_scene_001",
+          "_score": 7.3195467,
+          "history_id": "v2_20260428_012542_ee89719399",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-智慧屏功能细节-1.mp4"
+        },
+        {
+          "_id": "v2_20260428_012732_154d544761_scene_001",
+          "_score": 7.177057,
+          "history_id": "v2_20260428_012732_154d544761",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 4,
+      "segment_text": "综合续航超过1500公里！",
+      "query_text": "综合续航超过1500公里！ 屏幕展示总综合续航数据 综合续航1500公里 超长综合续航 车内",
+      "filters": [
+        {
+          "term": {
+            "movement": "静态展示"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "功能讲解"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "屏幕录制",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "特写",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态内饰",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012743_25b40d2c54_scene_001",
+          "_score": 8.886044,
+          "history_id": "v2_20260428_012743_25b40d2c54",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-1.mp4"
+        },
+        {
+          "_id": "v2_20260428_012732_533242b16a_scene_001",
+          "_score": 7.7889957,
+          "history_id": "v2_20260428_012732_533242b16a",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-36.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_494d103fbc_scene_001",
+          "_score": 6.6332173,
+          "history_id": "v2_20260428_012542_494d103fbc",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4"
+        },
+        {
+          "_id": "v2_20260428_012732_154d544761_scene_001",
+          "_score": 6.3695154,
+          "history_id": "v2_20260428_012732_154d544761",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
+        },
+        {
+          "_id": "v2_20260428_012749_1c79f62886_scene_001",
+          "_score": 6.1985283,
+          "history_id": "v2_20260428_012749_1c79f62886",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-23.mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 5,
+      "segment_text": "我通勤一周充一次电就够了！",
+      "query_text": "我通勤一周充一次电就够了！ 女司机日常通勤驾驶，车内POV视角 通勤一周一充 省心用车 低充电频率 省心 城市道路",
+      "filters": [
+        {
+          "term": {
+            "movement": "行驶"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "使用场景展示"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "车内POV",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "中景",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "路跑内饰",
+              "boost": 1.1
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012542_0eb396ce44_scene_001",
+          "_score": 10.64796,
+          "history_id": "v2_20260428_012542_0eb396ce44",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-3.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_b2e25bf36a_scene_001",
+          "_score": 9.402416,
+          "history_id": "v2_20260428_012542_b2e25bf36a",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-4.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_b7dc8f3069_scene_001",
+          "_score": 8.992049,
+          "history_id": "v2_20260428_012542_b7dc8f3069",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-33.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_4bb2fdcaf7_scene_001",
+          "_score": 8.978046,
+          "history_id": "v2_20260428_012542_4bb2fdcaf7",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-32.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_bb55afede0_scene_001",
+          "_score": 8.142511,
+          "history_id": "v2_20260428_012542_bb55afede0",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-45.mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 6,
+      "segment_text": "而且它转弯半径只有4.79米，",
+      "query_text": "而且它转弯半径只有4.79米， 屏幕展示转弯半径参数数据 4.79米转弯半径 小转弯半径",
+      "filters": [
+        {
+          "term": {
+            "movement": "静态展示"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "功能讲解"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "屏幕录制",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "特写",
+              "boost": 1.1
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012757_347ae407e0_scene_001",
+          "_score": 5.6426363,
+          "history_id": "v2_20260428_012757_347ae407e0",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-49.mp4"
+        },
+        {
+          "_id": "v2_20260428_012735_7c0eb1094b_scene_001",
+          "_score": 5.576623,
+          "history_id": "v2_20260428_012735_7c0eb1094b",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-8.mp4"
+        },
+        {
+          "_id": "v2_20260428_012732_154d544761_scene_001",
+          "_score": 5.1692657,
+          "history_id": "v2_20260428_012732_154d544761",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_a995eb814a_scene_001",
+          "_score": 5.0721936,
+          "history_id": "v2_20260428_012542_a995eb814a",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-防侧翻-2.mp4"
+        },
+        {
+          "_id": "v2_20260428_012751_e3f9bb0eaa_scene_001",
+          "_score": 4.8084655,
+          "history_id": "v2_20260428_012751_e3f9bb0eaa",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (11).mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 7,
+      "segment_text": "比紧凑级轿车还小，",
+      "query_text": "比紧凑级轿车还小， 智己LS6和紧凑级轿车同框对比占位 转弯半径对比 小转弯半径优势 小转弯半径 停车场",
+      "filters": [
+        {
+          "term": {
+            "movement": "静态展示"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "对比评测"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "固定机位",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "中景",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态外观",
+              "boost": 1.1
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012743_5c107f7c47_scene_001",
+          "_score": 8.013916,
+          "history_id": "v2_20260428_012743_5c107f7c47",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (6).mp4"
+        },
+        {
+          "_id": "v2_20260428_012804_f91ace4389_scene_001",
+          "_score": 5.5892286,
+          "history_id": "v2_20260428_012804_f91ace4389",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (15).mp4"
+        },
+        {
+          "_id": "v2_20260428_012751_e3f9bb0eaa_scene_001",
+          "_score": 5.5032597,
+          "history_id": "v2_20260428_012751_e3f9bb0eaa",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (11).mp4"
+        },
+        {
+          "_id": "v2_20260428_012757_347ae407e0_scene_001",
+          "_score": 5.4956107,
+          "history_id": "v2_20260428_012757_347ae407e0",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-49.mp4"
+        },
+        {
+          "_id": "v2_20260428_012735_7c0eb1094b_scene_001",
+          "_score": 5.064828,
+          "history_id": "v2_20260428_012735_7c0eb1094b",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-8.mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 8,
+      "segment_text": "我这种新手女司机在狭窄地库掉头，",
+      "query_text": "我这种新手女司机在狭窄地库掉头， 狭窄地库内车辆准备掉头，车外跟拍 地库掉头 新手开车 窄场景掉头方便 地下车库",
+      "filters": [
+        {
+          "term": {
+            "movement": "掉头"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "使用场景展示"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "车外跟拍",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "中景",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "路跑外观",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012542_ade335fc39_scene_001",
+          "_score": 12.615009,
+          "history_id": "v2_20260428_012542_ade335fc39",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-一键泊车-2.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_496fa33b0d_scene_001",
+          "_score": 11.249804,
+          "history_id": "v2_20260428_012542_496fa33b0d",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-小转弯半径-4.mp4"
+        }
+      ]
+    },
+    {
+      "segment_id": 9,
+      "segment_text": "一把就过了！",
+      "query_text": "一把就过了！ 车内POV视角，完成掉头顺利驶出地库 一把掉头 好操控 一把掉头好操控 地下车库",
+      "filters": [
+        {
+          "term": {
+            "movement": "掉头"
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "使用场景展示"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "车内POV",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "中景",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "路跑内饰",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "marketing_phrases_vector"
+      ],
+      "top_hits": [
+        {
+          "_id": "v2_20260428_012542_ade335fc39_scene_001",
+          "_score": 13.475644,
+          "history_id": "v2_20260428_012542_ade335fc39",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-一键泊车-2.mp4"
+        },
+        {
+          "_id": "v2_20260428_012542_496fa33b0d_scene_001",
+          "_score": 11.888753,
+          "history_id": "v2_20260428_012542_496fa33b0d",
+          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-小转弯半径-4.mp4"
+        }
+      ]
+    }
+  ]
+}

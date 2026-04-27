@@ -204,9 +204,20 @@ class CarInteriorAnalysisV2(BaseIndex):
         )
 
     @staticmethod
-    def _generate_embedding(text: str, model) -> List[float]:
+    def _generate_embedding(text: str, model) -> Optional[List[float]]:
+        """
+        Return None for empty text to avoid indexing a zero-vector.
+        Some OpenSearch knn_vector configs (e.g. cosinesimil) reject zero vectors.
+        """
         if not text:
-            return [0.0] * 384
+            return None
         emb = model.encode(text)
-        return emb.tolist()
+        v = emb.tolist()
+        # Defensive: if an upstream model ever returns a zero vector, skip it.
+        try:
+            if all(float(x) == 0.0 for x in v):
+                return None
+        except Exception:
+            pass
+        return v
 
