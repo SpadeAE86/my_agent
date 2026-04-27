@@ -29,3 +29,13 @@ src/video_analysis_workspace/**
 **/video_analysis_workspace/
 **/video_analysis_workspace/**
 
+# Test outputs (large, generated)
+src/test/sample/
+src/test/sample/**
+src/test/workspace/
+src/test/workspace/**
+**/sample/
+**/sample/**
+**/workspace/
+**/workspace/**
+

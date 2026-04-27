@@ -36,6 +36,7 @@ from utils.video_process_utils import get_video_single_scene_frames
 from utils.obs_utils import batch_upload_to_obs
 from utils.call_model_utils import call_doubao_vision
 from PIL import Image
+from services.video_analysis_db_service import video_analysis_db_service
 
 # --- Optional ingestion (OpenSearch IndexV2) ---
 from sentence_transformers import SentenceTransformer
@@ -45,7 +46,7 @@ from infra.storage.opensearch_connector import opensearch_connector
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 
 
-BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
+BASE_VIDEO_DIR = Path(r"C:\Users\25065\Downloads\汽车\ls6_video\LS6视频")
 
 # Sampling strategy:
 # - Scan all mp4 under BASE_VIDEO_DIR
@@ -96,12 +97,16 @@ PROMPT_V2 = """
 关键要求：
 - movement：只写“核心动作”（单值），必须标准化，不带环境词、不带评价。例：掉头/转弯/泊车/充电/静态展示
 - footage_type：画面类型（固定枚举），如：CG/原创实拍/KOL拍摄/TVC切片/直播切片/海报/未知
-- shot_style：镜头风格/拍摄方式（固定枚举），如：车内POV/车外跟拍/固定机位/手持/航拍/屏幕录制/展台转盘/未知
+- shot_style：镜头风格/拍摄方式（固定枚举），如：车内POV/车外跟拍/固定机位/航拍/屏幕录制/展台转盘/未知
+- shot_type：镜头景幅/景别（固定枚举）：大远景/远景/中景/特写/大特写/未知
 - scene_location：画面场景/路况/空间类型（1-6 个），短词名词化，如：地库/公路/冰雪/现代城区/赛道/展厅 等
 - car_color + car_color_detail：车色（枚举）+ 可选细节（如哑光黑/珠光白/涂装/贴膜）
 - product_status_scene：产品状态场景（标准化），如：静态内饰/路跑外观/发布会现场 等
 - has_presenter：是否包含出镜讲解员/达人/主持人（boolean）
-- weather/time/video_usage：天气/时间/素材用途（均为固定枚举）
+- person_detail：人物细分标签（枚举，可多值）：无人物/老人/小孩/男性/女性/多人。无人物时只填 无人物；多人时可同时填多个（如 男性+女性、小孩+女性）。
+- key_traits：素材关键特点标签（枚举列表，可多值）。必须从我们的 KEY_TRAITS_CHOICES 里选，用于后续过滤/检索。
+- weather/time：天气/时间（均为固定枚举）
+- video_usage：素材用途（枚举列表）。尽量只写 1 个；如确实同时满足多个方向且都有用，才写多个（最多 3 个）。
 - object：只允许车与乘客相关（车身/轮毂/轮胎/天窗/座椅/中控屏/方向盘/驾驶员/乘客等），不要写环境（树木/建筑/天空/湖水/道路等）。控制 1-4 个。
 - design_adjectives / function_adjectives：两组形容词列表，各 2-4 个；前者偏外观/质感，后者偏性能/体验；每组内部语义尽量靠拢，避免“舒适/大屏”等跨组重复。
 - design_selling_points / function_selling_points：两组卖点列表，各 2-4 个；前者偏实体部件/可见结构，后者偏能力模块/特殊功能；每组内部语义尽量靠拢，不要混入环境/动作。
@@ -229,14 +234,31 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     # IMPORTANT (Windows/OpenCV): avoid non-ascii paths for cv2.imwrite.
     # Some OpenCV builds fail to write images to Unicode paths.
     stem_hash = _short_hash(vid.stem)
+    # Use this run_id as DB history_id, and as the OpenSearch id prefix.
     run_id = f"v2_{_now_id()}_{stem_hash}"
     # Use a stable *ASCII-only* workspace folder per input filename hash so re-runs can reuse extracted frames
     # without hitting OpenCV Unicode-path issues on Windows.
     workspace_dir = (Path(__file__).resolve().parent / "workspace" / f"{stem_hash}")
     workspace_dir.mkdir(parents=True, exist_ok=True)
 
+    # Insert history row early so we can trace OpenSearch doc ids back to DB.
+    try:
+        await video_analysis_db_service.upsert_history_item(
+            {
+                "id": run_id,
+                "name": vid.name,
+                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "video_url": video_path,
+                "cards": [],
+            }
+        )
+    except Exception:
+        # Non-blocking: analysis can continue even if DB is unavailable.
+        pass
+
     # If workspace already has extracted frames, reuse them and skip detection/extraction.
     local_frames = _existing_frames(workspace_dir)
+    video_duration = 0.0
     if not local_frames:
         # Extract frames (single segment, no scene split)
         if _extract_sem is None:
@@ -253,8 +275,20 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
 
         scene = scenes[0]
         local_frames = scene.frame_url_list or []
+        try:
+            video_duration = float(scene.duration_seconds or 0.0)
+        except Exception:
+            video_duration = 0.0
         if not local_frames:
             return {"video": video_path, "success": False, "error": "empty frame list"}
+    else:
+        # Workspace cache hit: we still try to compute duration cheaply.
+        try:
+            scenes = await asyncio.to_thread(get_video_single_scene_frames, video_path, frame_interval, str(workspace_dir))
+            if scenes:
+                video_duration = float(scenes[0].duration_seconds or 0.0)
+        except Exception:
+            video_duration = 0.0
 
     # Validate local files exist before uploading.
     missing = [p for p in local_frames if not os.path.exists(p)]
@@ -274,9 +308,13 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     resolution = f"{frame_w}x{frame_h}" if frame_w and frame_h else "未知"
     frame_size = _aspect_label(frame_w, frame_h) if frame_w and frame_h else "未知"
 
-    # Upload to OBS
+    # Upload to OBS (frames only)
     obs_key_prefix = f"ai_picture/video_analysis_v2/{run_id}"
-    frame_urls = await batch_upload_to_obs(file_paths=local_frames, obs_key_prefix=obs_key_prefix, max_concurrency=50)
+    frame_urls = await batch_upload_to_obs(
+        file_paths=local_frames,
+        obs_key_prefix=obs_key_prefix,
+        max_concurrency=50,
+    )
 
     # Call Doubao with V2 schema
     schema_json = SceneAnalysisResultV2.model_json_schema()
@@ -287,9 +325,45 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     # - car_model: user-provided later (keep "未知" here)
     # - frame_size/resolution: computed from frames
     if isinstance(data, dict):
+        # Use DB history id as OpenSearch id prefix for later DB backtrace.
+        data["id"] = f"{run_id}_scene_001"
         data.setdefault("car_model", "未知")
         data["frame_size"] = frame_size
         data["resolution"] = resolution
+        data["video_duration"] = float(video_duration or 0.0)
+
+    # Store one shot card into DB (single-scene mode)
+    try:
+        await video_analysis_db_service.upsert_history_item(
+            {
+                "id": run_id,
+                "name": vid.name,
+                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "video_url": video_path,
+                "cards": [
+                    {
+                        "scene_id": 1,
+                        "start_time": 0.0,
+                        "end_time": float(video_duration or 0.0),
+                        "duration_seconds": float(video_duration or 0.0),
+                        "thumbnail": frame_urls[0] if frame_urls else None,
+                        "frame_urls": frame_urls,
+                        # Keep a subset of analysis fields for quick UI inspection
+                        "description": (data or {}).get("description") if isinstance(data, dict) else None,
+                        "subject": (data or {}).get("subject") if isinstance(data, dict) else None,
+                        "object": (data or {}).get("object") if isinstance(data, dict) else None,
+                        "movement": (data or {}).get("movement") if isinstance(data, dict) else None,
+                        "adjective": (data or {}).get("adjective") if isinstance(data, dict) else None,
+                        "search_tags": (data or {}).get("search_tags") if isinstance(data, dict) else None,
+                        "marketing_tags": (data or {}).get("marketing_tags") if isinstance(data, dict) else None,
+                        "appealing_audience": (data or {}).get("appealing_audience") if isinstance(data, dict) else None,
+                        "visual_quality": (data or {}).get("visual_quality") if isinstance(data, dict) else None,
+                    }
+                ],
+            }
+        )
+    except Exception:
+        pass
 
     out = {
         "video": video_path,
@@ -417,6 +491,50 @@ async def main():
     fail = len(results) - ok
     print(f"\nSummary: ok={ok}, fail={fail}, total={len(results)}")
 
+    # Persist failure reasons for quick triage.
+    failures: List[Dict[str, Any]] = []
+    fail_reason_counter: Dict[str, int] = {}
+    for r in results:
+        if r.get("success"):
+            continue
+        err = str(r.get("error") or "")
+        reason = err.splitlines()[0].strip() if err else "unknown_error"
+        failures.append(
+            {
+                "video": r.get("video"),
+                "run_id": r.get("run_id"),
+                "error": r.get("error"),
+                # keep extra debug fields if present
+                "missing": r.get("missing"),
+                "workspace_dir": r.get("workspace_dir"),
+            }
+        )
+        fail_reason_counter[reason] = int(fail_reason_counter.get(reason, 0)) + 1
+
+    if failures:
+        failures_path = out_dir / "run_video_analysis_v2_failures.json"
+        failures_summary_path = out_dir / "run_video_analysis_v2_failures_summary.json"
+        failures_path.write_text(json.dumps(failures, ensure_ascii=False, indent=2), encoding="utf-8")
+        failures_summary_path.write_text(
+            json.dumps(
+                {
+                    "total": len(results),
+                    "ok": ok,
+                    "fail": fail,
+                    "top_reasons": sorted(
+                        [{"reason": k, "count": v} for k, v in fail_reason_counter.items()],
+                        key=lambda x: x["count"],
+                        reverse=True,
+                    )[:50],
+                },
+                ensure_ascii=False,
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        print(f"\nFailures written: {failures_path.resolve()}")
+        print(f"Failure summary: {failures_summary_path.resolve()}")
+
     # Write a CSV snapshot for quick inspection (exclude any vector fields).
     def _flat(v: Any) -> str:
         if v is None:
@@ -447,10 +565,10 @@ async def main():
         data = r.get("result") or {}
         frames = r.get("frames") or []
         row: Dict[str, Any] = {
-            "file_name": Path(str(vp)).name if vp else "",
             "video_path": vp,
             "run_id": r.get("run_id") or "",
-            "obs_frames": " ".join([str(x) for x in frames if x]),
+            # CSV: separate URLs by comma (Excel-friendly)
+            "obs_frames": ",".join([str(x) for x in frames if x]),
         }
         if isinstance(data, dict):
             for k in index_cols:

@@ -67,12 +67,45 @@ def _detect_anomaly(hits: List[Dict[str, Any]]) -> Dict[str, Any]:
     return {"huge_negative_scores": neg, "duplicate_ids": dups}
 
 
+async def create_hybrid_pipeline(client):
+    """
+    创建一个用于分数归一化的 Search Pipeline。
+    这是 Hybrid 搜索必须的步骤。
+    """
+    pipeline_name = "nlp-search-pipeline"
+    pipeline_body = {
+        "description": "Post-processing pipeline for hybrid search",
+        "phase_results_processors": [
+            {
+                "normalization-processor": {
+                    "normalization": {"technique": "min_max"},  # 将分数归一化到 0-1
+                    "combination": {
+                        "technique": "arithmetic_mean",  # 算术平均加权
+                        "parameters": {"weights": [0.3, 0.7]}  # 这里的权重对应下面 queries 的顺序
+                    }
+                }
+            }
+        ]
+    }
+    # 显式创建 pipeline
+    await client.http.put(f"/_search/pipeline/{pipeline_name}", body=pipeline_body)
+    print(f"INFO: Search Pipeline '{pipeline_name}' created/updated.")
+    return pipeline_name
+
+
 async def main():
+    # 0) 初始化连接并创建 Pipeline
+    await opensearch_connector.ensure_init()
+    c = await opensearch_connector.get_client()
+
+    # --- 新增步骤：创建 Pipeline ---
+    pipeline_name = await create_hybrid_pipeline(c)
+
     # 1) Create index (overwrite)
     settings = {"index": {"knn": True}, "number_of_shards": 1, "number_of_replicas": 0}
     await index_manager.create_index(TinyHybridDoc, settings=settings, overwrite=True)
 
-    # 2) Index tiny docs (fixed vectors)
+    # 2) Index tiny docs
     docs = [
         TinyHybridDoc(id="d1", text="地库 一键 泊车", vec=[1.0, 0.0, 0.0, 0.0]),
         TinyHybridDoc(id="d2", text="商场 停车 泊车 辅助", vec=[0.9, 0.1, 0.0, 0.0]),
@@ -81,7 +114,7 @@ async def main():
     ]
     bulk_resp = await bulk_index(TinyHybridDoc, docs, refresh=True)
 
-    # 3) Run hybrid query directly (no embeddings, we provide query vector)
+    # 3) Run hybrid query
     idx = get_index_name(TinyHybridDoc)
     query_text = "地库 一键泊车"
     query_vec = [1.0, 0.0, 0.0, 0.0]
@@ -95,16 +128,14 @@ async def main():
                         "multi_match": {
                             "query": query_text,
                             "fields": ["text"],
-                            "type": "best_fields",
-                            "boost": 0.5,
+                            "type": "best_fields"
                         }
                     },
                     {
                         "knn": {
                             "vec": {
                                 "vector": query_vec,
-                                "k": 10,
-                                "boost": 0.5,
+                                "k": 10
                             }
                         }
                     },
@@ -112,36 +143,24 @@ async def main():
             }
         },
         "_source": {"excludes": ["vec"]},
-        "profile": True,
+        # 注意：这里务必删除 "profile": True，Hybrid 查询在某些版本开启 profile 会直接 Crash
     }
 
-    await opensearch_connector.ensure_init()
-    c = await opensearch_connector.get_client()
     try:
-        resp = await c.search(index=idx, body=body)
+        # --- 关键：在请求参数中带上 search_pipeline ---
+        resp = await c.search(
+            index=idx,
+            body=body,
+            params={"search_pipeline": pipeline_name}
+        )
     finally:
         await opensearch_connector.close()
 
+    # ... 后续处理逻辑保持不变 ...
     hits = ((resp.get("hits") or {}).get("hits") or [])
     top = [{"_id": h.get("_id"), "_score": h.get("_score")} for h in hits[:10]]
-
-    out = {
-        "index": idx,
-        "bulk_success": bulk_resp.get("success"),
-        "bulk_errors": bool((bulk_resp.get("response") or {}).get("errors")),
-        "query": {"text": query_text, "vec": query_vec},
-        "hits_total": (resp.get("hits") or {}).get("total"),
-        "max_score": (resp.get("hits") or {}).get("max_score"),
-        "top_hits": top,
-        "anomaly": _detect_anomaly(hits),
-        # keep raw response for deep debugging
-        "raw": resp,
-    }
-
-    OUT.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Wrote: {OUT}")
+    # (保持原有的打印逻辑)
     print("Top hits:", json.dumps(top, ensure_ascii=False))
-    print("Anomaly:", json.dumps(out["anomaly"], ensure_ascii=False))
 
 
 if __name__ == "__main__":

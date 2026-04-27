@@ -3,7 +3,13 @@ import os
 import time
 
 from openai import OpenAI, AsyncOpenAI
-from typing import Optional
+from typing import Optional, Any
+
+try:
+    # pydantic v2
+    from pydantic import BaseModel
+except Exception:  # pragma: no cover
+    BaseModel = Any  # type: ignore
 
 from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResult
 from models.pydantic.request import SEEDREAM_MODEL_MAP, SEEDTEXT_MODEL_MAP, SEEDANCE_MODEL_MAP
@@ -140,7 +146,8 @@ async def call_doubao_seedtext(
     model: str = "Seed 2.0 Pro",
     system_prompt: Optional[str] = None,
     video_duration: Optional[int] = None,
-    thinking = False
+    thinking = False,
+    output_schema: Optional[Any] = None,
 ) -> Optional[str]:
     """
     调用豆包 Seed 文本模型生成文本
@@ -199,15 +206,29 @@ async def call_doubao_seedtext(
                 },
             ],
         })
-        extra_body = {
+        extra_body: dict = {
             "thinking": {
                 "type": "disabled"
             }
         } if not thinking else {}
+
+        response_format = None
+        if output_schema is not None:
+            try:
+                schema_json = output_schema.model_json_schema()
+                response_format = {
+                    "type": "json_schema",
+                    "json_schema": {"name": getattr(output_schema, "__name__", "OutputSchema"), "schema": schema_json},
+                }
+            except Exception as e:
+                print(f"警告：output_schema 无法生成 schema，将忽略。err={e}")
+                response_format = None
+
         response = await client.responses.create(
             model=real_model,
             input=input_messages,
-            extra_body=extra_body
+            extra_body=extra_body,
+            response_format=response_format,
         )
 
         result = response.output_text

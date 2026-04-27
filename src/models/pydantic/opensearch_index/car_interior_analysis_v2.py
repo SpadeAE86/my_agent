@@ -5,7 +5,11 @@ from typing import Annotated, List, Optional
 from pydantic import Field
 
 from .base_index import BaseIndex
-from .markers import Boolean, Keyword, Text, Vector
+from .markers import Boolean, Keyword, Text, Vector, Float
+from . import index_v2_enums
+
+
+CN_ANALYZER = "standard"  # change to "ik_max_word" after installing IK plugin
 
 
 class CarInteriorAnalysisV2(BaseIndex):
@@ -18,8 +22,7 @@ class CarInteriorAnalysisV2(BaseIndex):
 
     class Meta:
         index_name = "car_interior_analysis_v2"
-        # If your OpenSearch cluster has IK plugin installed, you don't need extra analysis settings
-        # to use "ik_max_word" analyzer. Keep defaults here; override if your cluster requires it.
+        # If your OpenSearch cluster has IK plugin installed, set CN_ANALYZER="ik_max_word".
         settings = None
 
     # --- Identity / linkage ---
@@ -31,23 +34,30 @@ class CarInteriorAnalysisV2(BaseIndex):
     resolution: Annotated[str, Keyword(0.7)] = Field(
         "未知", description="分辨率（如 1920x1080；由帧宽高计算，用于区分素材质量）"
     )
+    video_duration: Annotated[float, Float()] = Field(
+        0.0, description="视频/分镜时长（秒）。用于过滤不满足时长的片段。"
+    )
 
     footage_type: Annotated[str, Keyword(1.2)] = Field("未知", description="画面类型（固定枚举，如 CG/实拍/直播切片等）")
     shot_style: Annotated[str, Keyword(1.0)] = Field("未知", description="镜头风格/拍摄方式（固定枚举）")
+    shot_type: Annotated[str, Keyword(1.0)] = Field(
+        "未知",
+        description=f"镜头景幅/景别（枚举）：{index_v2_enums.SHOT_TYPE_CHOICES}。",
+    )
 
-    scene_location: Annotated[List[str], Text(1.0, analyzer="ik_max_word")] = Field(
+    scene_location: Annotated[List[str], Text(1.0, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="画面场景（可多值，偏地点/路况/空间类型）"
     )
 
     car_color: Annotated[str, Keyword(1.0)] = Field("未知", description="车色（固定枚举）")
-    car_color_detail: Annotated[str, Text(0.7, analyzer="ik_max_word")] = Field(
+    car_color_detail: Annotated[str, Text(0.7, analyzer=CN_ANALYZER)] = Field(
         "", description="车色细节补充（如 哑光黑/珠光白/涂装/贴膜 等）"
     )
 
     product_status_scene: Annotated[str, Keyword(1.0)] = Field(
         "未知", description="产品状态场景（标准化：静态/路跑 + 内饰/外观/空间/发布会 等）"
     )
-    product_status_scene_text: Annotated[str, Text(0.6, analyzer="ik_max_word")] = Field(
+    product_status_scene_text: Annotated[str, Text(0.6, analyzer=CN_ANALYZER)] = Field(
         "", description="产品状态场景（文本兜底，便于检索 内饰/外观 等关键词）"
     )
 
@@ -55,25 +65,37 @@ class CarInteriorAnalysisV2(BaseIndex):
         None, description="是否包含出镜讲解员/达人/主持人"
     )
 
+    person_detail: Annotated[List[str], Keyword(1.0)] = Field(
+        default_factory=list,
+        description=f"人物细分标签（枚举，可多值）：{index_v2_enums.PERSON_DETAIL_CHOICES}。多人时可同时包含多个（如 男性+女性 或 成人+小孩）。",
+    )
+
+    key_traits: Annotated[List[str], Keyword(1.0)] = Field(
+        default_factory=list,
+        description=f"素材关键特点（枚举，可多值）：{index_v2_enums.KEY_TRAITS_CHOICES}。",
+    )
+
     weather: Annotated[str, Keyword(1.0)] = Field("未知", description="天气（固定枚举）")
     time: Annotated[str, Keyword(1.0)] = Field("未知", description="时间（固定枚举，如 白天/夜晚/黄昏/室内）")
-    video_usage: Annotated[str, Keyword(1.0)] = Field("未知", description="素材用途（固定枚举）")
+    video_usage: Annotated[List[str], Keyword(1.0)] = Field(
+        default_factory=list, description="素材用途（枚举，可多值；尽量 1 个，必要时可多个）"
+    )
 
     # --- Core understanding fields ---
-    description: Annotated[str, Text(2.0, analyzer="ik_max_word")] = Field("", description="画面客观描述（可全文检索）")
+    description: Annotated[str, Text(2.0, analyzer=CN_ANALYZER)] = Field("", description="画面客观描述（可全文检索）")
     movement: Annotated[str, Keyword(1.2)] = Field("未知", description="核心动作（固定枚举，单值）")
 
-    subject: Annotated[str, Text(1.3, analyzer="ik_max_word")] = Field("", description="主体（文本，允许多表述）")
-    object: Annotated[List[str], Text(1.0, analyzer="ik_max_word")] = Field(
+    subject: Annotated[str, Text(1.3, analyzer=CN_ANALYZER)] = Field("", description="主体（文本，允许多表述）")
+    object: Annotated[List[str], Text(1.0, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="客体/部件/乘客相关对象（多值文本）"
     )
 
     # --- Two-list design to force semantic cohesion ---
     # Selling points: design/entity-focused vs performance/function-focused
-    design_selling_points: Annotated[List[str], Text(1.2, analyzer="ik_max_word")] = Field(
+    design_selling_points: Annotated[List[str], Text(1.2, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="外观/设计卖点（偏实体/部件/可见结构）"
     )
-    function_selling_points: Annotated[List[str], Text(1.5, analyzer="ik_max_word")] = Field(
+    function_selling_points: Annotated[List[str], Text(1.5, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="性能/功能卖点（偏能力模块/抽象功能）"
     )
 
@@ -85,18 +107,18 @@ class CarInteriorAnalysisV2(BaseIndex):
         default_factory=list, description="性能/体验类形容词（keyword，多值）"
     )
 
-    scenario_a: Annotated[List[str], Text(1.0, analyzer="ik_max_word")] = Field(
+    scenario_a: Annotated[List[str], Text(1.0, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="生活/用车场景列表 A（语义尽量靠拢）"
     )
-    scenario_b: Annotated[List[str], Text(1.0, analyzer="ik_max_word")] = Field(
+    scenario_b: Annotated[List[str], Text(1.0, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="生活/用车场景列表 B（与 A 语义尽量不同）"
     )
 
-    marketing_phrases: Annotated[List[str], Text(1.4, analyzer="ik_max_word")] = Field(
+    marketing_phrases: Annotated[List[str], Text(1.4, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="营销短句/口播式检索短语（用户会怎么搜/怎么说）"
     )
 
-    appealing_audience: Annotated[List[str], Text(0.8, analyzer="ik_max_word")] = Field(
+    appealing_audience: Annotated[List[str], Text(0.8, analyzer=CN_ANALYZER)] = Field(
         default_factory=list, description="目标受众（文本，多值）"
     )
 
@@ -142,17 +164,25 @@ class CarInteriorAnalysisV2(BaseIndex):
             car_model=analysis_result.get("car_model", "未知"),
             frame_size=analysis_result.get("frame_size", "未知"),
             resolution=analysis_result.get("resolution", "未知"),
+            video_duration=float(analysis_result.get("video_duration", 0.0) or 0.0),
             footage_type=analysis_result.get("footage_type", "未知"),
             shot_style=analysis_result.get("shot_style", "未知"),
+            shot_type=analysis_result.get("shot_type", "未知"),
             scene_location=analysis_result.get("scene_location", []) or [],
             car_color=analysis_result.get("car_color", "未知"),
             car_color_detail=analysis_result.get("car_color_detail", "") or "",
             product_status_scene=analysis_result.get("product_status_scene", "未知"),
             product_status_scene_text=analysis_result.get("product_status_scene_text", "") or "",
             has_presenter=analysis_result.get("has_presenter", None),
+            person_detail=analysis_result.get("person_detail", []) or [],
+            key_traits=analysis_result.get("key_traits", []) or [],
             weather=analysis_result.get("weather", "未知"),
             time=analysis_result.get("time", "未知"),
-            video_usage=analysis_result.get("video_usage", "未知"),
+            video_usage=(
+                [analysis_result.get("video_usage")]
+                if isinstance(analysis_result.get("video_usage"), str)
+                else (analysis_result.get("video_usage", []) or [])
+            ),
             description=description,
             movement=analysis_result.get("movement", "未知"),
             subject=analysis_result.get("subject", "") or "",

@@ -164,9 +164,10 @@ async def batch_upload_to_obs(
 
     async def _upload(path: str):
         async with sem:
-            file_name = os.path.basename(path)
-            obs_key = f"{obs_key_prefix}/{file_name}"
-            url = await upload_to_obs(path, obs_key)
+            # NOTE:
+            # upload_to_obs expects an OBS *prefix* (folder), and will append the file basename.
+            # Do NOT append basename here, otherwise the objectKey becomes ".../file.webp/file.webp".
+            url = await upload_to_obs(path, obs_key_prefix)
             return url
 
     tasks = [_upload(p) for p in file_paths]

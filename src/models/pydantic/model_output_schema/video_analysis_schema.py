@@ -1,6 +1,16 @@
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
+from models.pydantic.opensearch_index import index_v2_enums
+
+
+def _enum_hint(choices: List[str]) -> str:
+    """
+    Build a compact enum hint string for prompt/schema descriptions.
+    Example: "固定枚举，可选：A/B/C"
+    """
+    return "固定枚举，可选：" + "/".join([c for c in choices if c])
+
 
 class SceneAnalysisResult(BaseModel):
     description: str = Field(..., description="对当前视频片段画面的整体客观描述，包含场景、人物、光线等")
@@ -37,7 +47,7 @@ class SceneAnalysisResultV2(BaseModel):
         ...,
         description=(
             "画面核心主体（1 个），尽量使用“具体可检索”的名称："
-            "例如“智己LS6汽车”“驾驶员”“中控大屏”“后排座椅”。"
+            "例如“智己LS6汽车”“驾驶员”“中控大屏”“后排座椅”“激光雷达”“电池”。"
             "避免使用泛化词（如“车辆”“东西”）。"
         ),
         examples=["智己LS6汽车"],
@@ -55,7 +65,7 @@ class SceneAnalysisResultV2(BaseModel):
         ...,
         description=(
             "核心动作（单值）。从标准动作候选集中选择，不包含环境信息、不包含结果或评价。"
-            "示例：转弯/掉头/泊车/充电/静态展示"
+            f"{_enum_hint(index_v2_enums.MOVEMENT_CHOICES)}"
         ),
         examples=["掉头"],
     )
@@ -63,24 +73,32 @@ class SceneAnalysisResultV2(BaseModel):
     # === Fields that Doubao needs to understand for IndexV2 ===
     footage_type: str = Field(
         ...,
-        description="画面类型（固定枚举），如：CG/原创实拍/KOL拍摄/TVC切片/直播切片/海报/未知。",
+        description=f"画面类型（{_enum_hint(index_v2_enums.FOOTAGE_TYPE_CHOICES)}）。",
         examples=["CG"],
     )
     shot_style: str = Field(
         ...,
-        description="镜头风格/拍摄方式（固定枚举），如：车内POV/车外跟拍/固定机位/手持/航拍/屏幕录制/展台转盘/未知。",
+        description=f"镜头风格/拍摄方式（{_enum_hint(index_v2_enums.SHOT_STYLE_CHOICES)}）。",
         examples=["车内POV"],
+    )
+    shot_type: str = Field(
+        ...,
+        description=(
+            f"镜头景幅/景别（{_enum_hint(index_v2_enums.SHOT_TYPE_CHOICES)}）。"
+            "决定主体在画面中的占比：大远景/远景/中景/特写/大特写。"
+        ),
+        examples=["特写"],
     )
     scene_location: List[str] = Field(
         ...,
-        description="画面场景/路况/空间类型（1-4 个），短词名词化，如：地库/公路/冰雪/现代城区/赛道/展厅 等。",
-        examples=[["地库", "城市道路"]],
+        description="画面场景/路况/空间类型（1-4 个），短词名词化，如：山路/沙漠/地库/公路/冰雪/城市道路/狭窄街道/赛道/展厅 等。",
+        examples=[["地库", "城市道路", "冰雪"]],
         min_length=1,
         max_length=4,
     )
     car_color: str = Field(
         ...,
-        description="车色（固定枚举），如：黑/白/灰/红/蓝/黄/紫/粉/茶/多种/其他涂装/未知。",
+        description=f"车色（{_enum_hint(index_v2_enums.CAR_COLOR_CHOICES)}）。",
         examples=["黑"],
     )
     car_color_detail: str = Field(
@@ -90,7 +108,7 @@ class SceneAnalysisResultV2(BaseModel):
     )
     product_status_scene: str = Field(
         ...,
-        description="产品状态场景（标准化短词），如：静态内饰/静态外观/静态空间/路跑内饰/路跑外观/发布会现场/未知。",
+        description=f"产品状态场景（{_enum_hint(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}）。",
         examples=["静态内饰"],
     )
     has_presenter: bool = Field(
@@ -98,20 +116,47 @@ class SceneAnalysisResultV2(BaseModel):
         description="是否包含出镜讲解员/达人/主持人（只根据画面可见判断）。",
         examples=[False],
     )
+
+    person_detail: List[str] = Field(
+        ...,
+        description=(
+            f"人物细分标签（{_enum_hint(index_v2_enums.PERSON_DETAIL_CHOICES)}）。"
+            "无人物时只填 [无人物]；多人时可以填多个，例如 [男性, 女性] 或 [小孩, 女性]。"
+        ),
+        examples=[["无人物"], ["男性"], ["男性", "女性"]],
+        min_length=1,
+        max_length=3,
+    )
+
+    key_traits: List[str] = Field(
+        ...,
+        description=(
+            f"素材关键特点标签（{_enum_hint(index_v2_enums.KEY_TRAITS_CHOICES)}）。"
+            "这是素材里最重要的可过滤特点。可多选，但不要误选，必须从枚举里选。"
+        ),
+        examples=[["续航", "大电池", "充电快", "路跑"], ["地库掉头", "狭窄街道", "新手"], ["安静", "降噪", "带人的内饰"]],
+        min_length=1,
+        max_length=12,
+    )
     weather: str = Field(
         ...,
-        description="天气（固定枚举），如：晴天/阴天/雨天/雪天/雾天/夜雨/室内/未知。",
+        description=f"天气（{_enum_hint(index_v2_enums.WEATHER_CHOICES)}）。",
         examples=["雪天"],
     )
     time: str = Field(
         ...,
-        description="时间（固定枚举），如：白天/夜晚/黄昏/清晨/室内/未知。",
+        description=f"时间（{_enum_hint(index_v2_enums.TIME_CHOICES)}）。",
         examples=["白天"],
     )
-    video_usage: str = Field(
+    video_usage: List[str] = Field(
         ...,
-        description="素材用途（固定枚举），如：产品展示/使用场景/功能讲解/对比评测/直播切片/海报静帧/未知。",
-        examples=["功能讲解"],
+        description=(
+            f"素材用途（{_enum_hint(index_v2_enums.VIDEO_USAGE_CHOICES)}）。"
+            "尽量只给 1 个；如确实同时满足两个方向且都有用，才给多个。"
+        ),
+        examples=[["功能讲解"], ["建立空间感", "烘托氛围"]],
+        min_length=1,
+        max_length=3,
     )
 
     # Split adjectives + selling points into two cohesive lists
@@ -139,7 +184,7 @@ class SceneAnalysisResultV2(BaseModel):
     function_selling_points: List[str] = Field(
         ...,
         description="性能/功能卖点（2-4 个），偏能力模块/特殊功能（不要写环境/动作）。",
-        examples=[["一键AI泊车", "雨夜模式", "爆胎稳定控制"]],
+        examples=[["一键AI泊车", "雨夜模式", "爆胎稳定控制","快充"]],
         min_length=2,
         max_length=4,
     )
