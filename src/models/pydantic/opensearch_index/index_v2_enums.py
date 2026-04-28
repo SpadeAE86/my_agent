@@ -27,7 +27,6 @@ SHOT_STYLE_CHOICES: Final[List[str]] = [
     "车外跟拍",
     "固定机位",
     "航拍",
-    "屏幕录制",
     "展台转盘",
 ]
 
@@ -63,8 +62,8 @@ VIDEO_USAGE_CHOICES: Final[List[str]] = [
 FOOTAGE_TYPE_CHOICES: Final[List[str]] = [
     UNKNOWN,
     "CG",
-    "原创实拍",
-    "KOL拍摄",
+    "生活实拍",
+    "专业摄影",
     "TVC切片",
     "直播切片",
     "海报/静帧",
@@ -142,6 +141,7 @@ MOVEMENT_CHOICES: Final[List[str]] = [
     "起步",
     "变道",
     "转弯",
+    "爬坡",
     "掉头",
     "泊车",
     "倒车",
@@ -157,6 +157,8 @@ KEY_TRAITS_CHOICES: Final[List[str]] = [
     "充电快",
     "路跑",
     "充电",
+    # 测试种类
+    "麋鹿测试",
     # --- 操控/动作/动态事件 ---
     "加速",
     "起步",
@@ -184,5 +186,22 @@ KEY_TRAITS_CHOICES: Final[List[str]] = [
     "声道",
     "音箱",
     "空调",
+]
+
+# --- High-level topics for matching long scripts to footage ---
+# These are "what this clip is mainly about" buckets.
+TOPIC_CHOICES: Final[List[str]] = [
+    UNKNOWN,
+    "电池",
+    "速度",
+    "操作性",
+    "舒适",
+    "娱乐设施",
+    "智驾",
+    "恶劣路况天气",
+    "露营",
+    "外观",
+    "冬季表现",
+    "夏季表现",
 ]
 

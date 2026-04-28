@@ -33,9 +33,14 @@ SCRIPT_TAGS_PATH = Path(__file__).resolve().parent.parent.parent / "script_tags_
 OUT_PATH = Path(__file__).resolve().parent / "script_tags_search_results.json"
 
 SEARCH_PIPELINE: Optional[str] = "nlp-search-pipeline"  # set None to disable (may break hybrid stability)
-MODE: str = "lite"  # lite/full
+# Retrieval modes:
+# - "lite"/"full"/"zero": per-segment retrieval
+# - "global_then_segment": global once (k=200) -> per-segment (k=TOP_K)
+# - "global_then_segment_zero"/"global_then_segment_lite"/"global_then_segment_full": choose segment-stage mode
+MODE: str = "global_then_segment"  # recommended default for many segments / many vector fields
 
 TOP_K = 5
+GLOBAL_K = 200
 
 def _load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -54,6 +59,7 @@ async def main():
         results = await match_script_tags_segments(
             [s for s in segs if isinstance(s, dict)],
             top_k=TOP_K,
+            global_k=GLOBAL_K,
             search_pipeline=SEARCH_PIPELINE,
             mode=MODE,
         )

@@ -39,8 +39,8 @@ except Exception:
 INDEX_FIELD_HINTS = """
 你要输出的字段将用于 OpenSearch 索引 car_interior_analysis_v2 的以下字段（请尽量让值可命中）：
 - frame_size / resolution / footage_type / shot_style
-- scene_location[] / car_color / car_color_detail
-- product_status_scene / product_status_scene_text
+- scene_location[] / car_color
+- product_status_scene
 - has_presenter / weather / time / video_usage
 - description / movement / subject / object[]
 - design_selling_points[] / function_selling_points[]
@@ -67,18 +67,28 @@ MODEL_CANDIDATES = [
 
 SYSTEM_PROMPT_STAGE1 = f"""你是一个“汽车短视频口播脚本 → 分镜规划(StoryBoard)”的结构化生成器。
 
-目标：把一段口播脚本，拆成多个“3秒口播分段”，并为每个分段给出可拍的镜头规划。
+目标：把一段口播脚本，改写成“可用于汽车宣传片混剪”的分镜规划（StoryBoard）。
+要求：节奏要像真实混剪，而不是死跟广告词逐句复述。
 注意：此阶段不要强行把所有字段拆成严格标签；更像“分镜脚本”，但要结构稳定。
 
 硬性规则（非常重要）：
 1) 只输出严格 JSON（不要 Markdown，不要解释，不要多余文本）。
 2) 分段规则：
-   - 素材平均时长只有 3 秒：请把长句再切碎成“3秒口播短句”，符合广告分镜的分段节奏；每段口播最好控制在 6~60字/词，过长会导致匹配到的素材候选不足。
+   - 【时长与节奏最重要】每条分镜都必须填写 duration（秒），用“广告口播常见语速：1 秒≈5 个汉字”估算。
+     - 计算方法：duration ≈ 字数/5（允许小数，保留 1 位小数）。
+     - 正常混剪的节奏分布建议：多数 2.0s，少量 3.0s，偶尔 1.0s（用于转场/情绪点/极致特写）。
+   - 分段长度不要求固定 3 秒：要长短错落，像剪辑节奏一样自然。
+   - 口播内容不要堆：每段聚焦 1 个核心信息点（1 个卖点/1 个动作/1 个场景/1 个情绪点）。
    - 优先按中文标点切分：逗号/顿号/分号/冒号/感叹号/句号；必要时可额外断句
    - 【非常重要：一句话内也要拆】同一句话只要出现“逗号/顿号/分号”等，且各分句表达的是不同信息点（功能参数 vs 使用场景 vs 情绪代入），必须拆成多个段；不要把多个信息点塞进一个 segment。
    - 【片段的功能,场景,景幅出现变化就拆】如果用于搭配同一句话的所需片段里同时包含“功能讲解”和“场景演示/代入”，必须拆开，并给不同的 video_usage / movement（如需要）。
-   - 每段只聚焦 1 个核心卖点或 1 个具体场景，不要把所有卖点塞进一段
-   - segment_text 要像“口播分段”一样自然，但不要长篇复读原文
+   - segment_text 要像“口播分段/混剪台词”一样自然，但不要长篇复读原文
+3) 混剪经验（必须遵守，决定检索可用性）：
+   - 允许不严格按原文顺序：你可以把“路跑/氛围/空间感”的镜头穿插在硬卖点之间，让整条片更像宣传片。
+   - 路跑镜头可以连续 2~4 条（不同镜头语言）：例如 远景→航拍→车外跟拍→车内POV→特写。
+   - 镜头语言要有节奏点：每 6~10 条分镜里，至少出现 2 条远景/航拍（建立空间感），至少 2 条特写/大特写（材质/屏幕/UI/轮毂/灯语/按键）。
+   - “路跑”可以作为万能过渡：参数/功能讲解后，插一条路跑（风噪/静谧/稳定/速度感/安全感）提高混剪观感。
+   - 不要每段都“说功能”：适当加入 1 秒情绪点（如：安静/高级/推背感/稳/爽/安心）和画面点（如：屏幕数字/灯语文字）。
 3) 你必须严格按 schema 输出：{STAGE1_SCHEMA_JSON}
 4) 禁止输出大段原文；列表都要“短、可检索、去重、无空字符串”。
 6) 字段约束：
@@ -99,6 +109,16 @@ SYSTEM_PROMPT_STAGE1 = f"""你是一个“汽车短视频口播脚本 → 分镜
 1) “转弯半径4.79米。”
 2) “狭窄地库一把掉头，新手也不慌。”
 
+混剪节奏示例（只示意分镜顺序，不示意全部字段）：
+输入句（示例）：
+“充电快、开起来稳、地库也好停。”
+一个更像宣传片混剪的拆法可能是：
+1)（2.0s）“15分钟补能，出门不等。”（功能讲解）
+2)（2.0s）“路跑一镜到底，稳得像老司机。”（使用场景展示/建立空间感）
+3)（1.0s）“来个特写：屏幕上‘15分钟/310公里’。”（展示细节）
+4)（2.0s）“地库一把入库，新手也不慌。”（功能讲解/使用场景展示）
+5)（2.0s）“航拍掠过车身，切远景收尾。”（建立空间感/烘托氛围）
+
 """
 
 
@@ -112,6 +132,16 @@ SYSTEM_PROMPT_STAGE2 = f"""你是一个“分镜规划(StoryBoard) → 严格检
 2) 你必须严格按 schema 输出：{STAGE2_SCHEMA_JSON}
 3) 枚举/keyword 字段必须从 choices 中选择；不确定就用“未知”或 null（按 schema）。
 4) 同一概念不要堆叠同义词；短词化；去重；不要输出空字符串。
+5) duration 必须继承：Stage2 的 duration 必须与 Stage1 对应分镜的 duration 完全一致（直接复制，不要改写/不要猜）。
+6) 提高命中率（强烈建议）：
+   - scene_location / function_selling_points / design_selling_points / design_adjectives / function_adjectives / scenario_a / scenario_b / marketing_tags / marketing_phrases 请尽量多给一些（在 schema 上限内），不要只给 0-1 个。
+   - object 与 scene_location 允许“同义扩展/想象力扩展”：例如 storyboard 写“户外停车场”，可以补充“户外/停车场/路边/城市道路/开放场地/园区停车场”等同类可命中词；宁可多给候选，也不要太少。
+   - footage_type 尽量不要填“未知”：如果描述明显是实拍（户外/车内POV/跟拍等），优先填“生活实拍 ”；如果是从非常精致的角度，非常漂亮的色彩光泽运镜创意，优先填写“TVC切片”；如果是拍摄角度画面构图挑选的很好，但质量达不到成品，优先填写“专业摄影”，优先填写“专业拍摄”。只有完全无法判断才用“未知”。
+   - topic 尽量不要填“未知”：必须从 topic 枚举里选 1 个最贴近的主题，用于脚本与素材对齐。
+   - text 字段尽量补充：把 storyboard 描述里出现的关键 UI 文案/功能名/数值单位提取出来（比如 NOA/Auto Park/800V/15分钟/310公里/1500km/4.79米/5K 等）。
+   - extra_tags 鼓励填“有想象力但合理”的检索词（短词/短语），用来兜底召回（比如：新手友好/地库掉头/雨夜看得清/后排休息/露营自驾/高速巡航 等）。
+   - weather/time/car_color 尽量不要填“未知”：允许根据 storyboard 画面描述做保守推断（宁可给一个常见值，也不要全未知）。
+   - 对于找不到归类的字段细节，鼓励额外放一份到 extra_tags 列表里，他们会被放在每个路召回的检索后面，尝试对每路都做检索。
 
 规范化与纠错（必须遵守）：
 A) shot_type vs shot_style 不可混用：
@@ -123,13 +153,13 @@ B) weather vs time 不可混用：
    - 禁止把“白天/夜晚/黄昏/室内”写进 weather；禁止把“雨天/雪天/阴天/晴天/极寒”等写进 time。
 C) car_color 归一化（禁止输出同义变体）：
    - car_color 必须严格从：{_join_choices(index_v2_enums.CAR_COLOR_CHOICES)}
-   - 禁止输出“黑色/白色/蓝色/银色/绿色”等带“色”或不在枚举里的值；颜色细节写入 car_color_detail。
+   - 禁止输出“黑色/白色/蓝色/银色/绿色”等带“色”或不在枚举里的值；如果脚本强调“哑光/珠光/贴膜”等细节，请放进 extra_tags 或 marketing_phrases。
 D) video_usage 归一化（只允许标准枚举）：
    - video_usage(list) 必须从：{_join_choices(index_v2_enums.VIDEO_USAGE_CHOICES)}
    - 同义归并：品牌传达/品牌形象传达 -> 品牌/形象传达；权益说明 -> 权益/价格说明；路跑场景展示 -> 使用场景展示。
 E) product_status_scene 不允许带括号备注：
    - product_status_scene 必须从：{_join_choices(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}
-   - 像“含动态灯语/充电状态/节日装饰”等细节，请写入 product_status_scene_text（若 schema 没有该字段则放入 extra_tags）。
+   - 像“含动态灯语/充电状态/节日装饰”等细节，请放入 extra_tags（用于多路兜底召回）。
 
 枚举可选值（必须从中选）：
 - movement: {index_v2_enums.MOVEMENT_CHOICES}

@@ -37,6 +37,12 @@ class CarInteriorAnalysisV2(BaseIndex):
     video_duration: Annotated[float, Float()] = Field(
         0.0, description="视频/分镜时长（秒）。用于过滤不满足时长的片段。"
     )
+    start_time: Annotated[float, Float()] = Field(
+        0.0, description="分镜起始时间（秒）。用于混剪回查/切片。"
+    )
+    end_time: Annotated[float, Float()] = Field(
+        0.0, description="分镜结束时间（秒）。用于混剪回查/切片。"
+    )
 
     footage_type: Annotated[str, Keyword(1.2)] = Field("未知", description="画面类型（固定枚举，如 CG/实拍/直播切片等）")
     shot_style: Annotated[str, Keyword(1.0)] = Field("未知", description="镜头风格/拍摄方式（固定枚举）")
@@ -50,15 +56,9 @@ class CarInteriorAnalysisV2(BaseIndex):
     )
 
     car_color: Annotated[str, Keyword(1.0)] = Field("未知", description="车色（固定枚举）")
-    car_color_detail: Annotated[str, Text(0.7, analyzer=CN_ANALYZER)] = Field(
-        "", description="车色细节补充（如 哑光黑/珠光白/涂装/贴膜 等）"
-    )
 
     product_status_scene: Annotated[str, Keyword(1.0)] = Field(
         "未知", description="产品状态场景（标准化：静态/路跑 + 内饰/外观/空间/发布会 等）"
-    )
-    product_status_scene_text: Annotated[str, Text(0.6, analyzer=CN_ANALYZER)] = Field(
-        "", description="产品状态场景（文本兜底，便于检索 内饰/外观 等关键词）"
     )
 
     has_presenter: Annotated[Optional[bool], Boolean()] = Field(
@@ -73,6 +73,16 @@ class CarInteriorAnalysisV2(BaseIndex):
     key_traits: Annotated[List[str], Keyword(1.0)] = Field(
         default_factory=list,
         description=f"素材关键特点（枚举，可多值）：{index_v2_enums.KEY_TRAITS_CHOICES}。",
+    )
+
+    topic: Annotated[str, Keyword(1.0)] = Field(
+        "未知",
+        description=f"主题（枚举，单值，用于脚本 topic 匹配）：{index_v2_enums.TOPIC_CHOICES}。",
+    )
+
+    text: Annotated[List[str], Keyword(0.8)] = Field(
+        default_factory=list,
+        description="画面中出现的关键文字与数值（keyword 多值）。例如：NOA/Auto Park/15分钟/310公里/1500km/4.79米/27.1英寸/5K/800V 等。",
     )
 
     weather: Annotated[str, Keyword(1.0)] = Field("未知", description="天气（固定枚举）")
@@ -165,17 +175,19 @@ class CarInteriorAnalysisV2(BaseIndex):
             frame_size=analysis_result.get("frame_size", "未知"),
             resolution=analysis_result.get("resolution", "未知"),
             video_duration=float(analysis_result.get("video_duration", 0.0) or 0.0),
+            start_time=float(analysis_result.get("start_time", 0.0) or 0.0),
+            end_time=float(analysis_result.get("end_time", 0.0) or 0.0),
             footage_type=analysis_result.get("footage_type", "未知"),
             shot_style=analysis_result.get("shot_style", "未知"),
             shot_type=analysis_result.get("shot_type", "未知"),
             scene_location=analysis_result.get("scene_location", []) or [],
             car_color=analysis_result.get("car_color", "未知"),
-            car_color_detail=analysis_result.get("car_color_detail", "") or "",
             product_status_scene=analysis_result.get("product_status_scene", "未知"),
-            product_status_scene_text=analysis_result.get("product_status_scene_text", "") or "",
             has_presenter=analysis_result.get("has_presenter", None),
             person_detail=analysis_result.get("person_detail", []) or [],
             key_traits=analysis_result.get("key_traits", []) or [],
+            topic=analysis_result.get("topic", "未知") or "未知",
+            text=analysis_result.get("text", []) or [],
             weather=analysis_result.get("weather", "未知"),
             time=analysis_result.get("time", "未知"),
             video_usage=(

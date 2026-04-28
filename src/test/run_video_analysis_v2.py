@@ -32,8 +32,8 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResultV2
-from utils.video_process_utils import get_video_single_scene_frames
-from utils.obs_utils import batch_upload_to_obs
+from utils.video_process_utils import get_video_scenes
+from utils.obs_utils import batch_upload_to_obs, upload_to_obs, obs_key_exists, OBS_BASE_URL
 from utils.call_model_utils import call_doubao_vision
 from PIL import Image
 from services.video_analysis_db_service import video_analysis_db_service
@@ -43,11 +43,16 @@ from sentence_transformers import SentenceTransformer
 from infra.storage.opensearch.create_index import index_manager
 from infra.storage.opensearch.document_writer import bulk_index
 from infra.storage.opensearch_connector import opensearch_connector
+from infra.storage.mysql_connector import mysql_connector
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 
 
-BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
-
+BASE_VIDEO_DIR = Path(r"C:\Users\25065\Downloads\汽车\ls6_video\LS6视频")
+# For reproducible cache tests: when non-empty, only analyze these videos.
+OVERRIDE_VIDEOS: List[str] = [
+    r"D:\wsn_data\aigc_data\数字人素材（LS9、全新L6）\LS9\冰雪\20251216-LS9官号-双车漂移-1.mp4"
+]
+CAR_MODEL = "LS6"
 # Sampling strategy:
 # - Scan all mp4 under BASE_VIDEO_DIR
 # - Bucket by filename keywords (roughly "subject/topic")
@@ -84,9 +89,15 @@ THREADPOOL_WORKERS = 50
 # Persist sampled testset + analysis results to reduce rework across runs.
 TESTSET_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "testset_v2.json"
 ANALYSIS_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "analysis_cache_v2.json"
+# Cache for OBS source video upload so we don't re-upload the same video repeatedly.
+VIDEO_UPLOAD_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "video_upload_cache_v2.json"
+USE_ANALYSIS_CACHE = False  # keep False to observe upload/frame cache logs when debugging
 
 # Ingest into OpenSearch after analysis (can turn off quickly).
 ENABLE_INGEST = True
+SPLIT_SCENES = True
+MIN_SCENE_SECONDS = 2.0  # merge scenes shorter than this threshold (avoid too-fragmented cuts)
+MAX_SCENE_CONCURRENCY = 10
 
 
 def _join_choices(xs: List[str]) -> str:
@@ -104,7 +115,7 @@ PROMPT_V2 = f"""
 - shot_style：镜头风格/拍摄方式（固定枚举）：{_join_choices(index_v2_enums.SHOT_STYLE_CHOICES)}
 - shot_type：镜头景幅/景别（固定枚举）：{_join_choices(index_v2_enums.SHOT_TYPE_CHOICES)}
 - scene_location：画面场景/路况/空间类型（1-6 个），短词名词化，如：地库/公路/冰雪/现代城区/赛道/展厅 等
-- car_color + car_color_detail：车色（枚举）+ 可选细节（如哑光黑/珠光白/涂装/贴膜）
+- car_color：车色（枚举）
 - product_status_scene：产品状态场景（标准化），如：静态内饰/路跑外观/发布会现场 等
 - has_presenter：是否包含出镜讲解员/达人/主持人（boolean）
 - person_detail：人物细分标签（枚举，可多值）：无人物/老人/小孩/男性/女性/多人。无人物时只填 无人物；多人时可同时填多个（如 男性+女性、小孩+女性）。
@@ -115,6 +126,8 @@ PROMPT_V2 = f"""
 - design_selling_points / function_selling_points：两组卖点列表，各 2-4 个；前者偏实体部件/可见结构，后者偏能力模块/特殊功能；每组内部语义尽量靠拢，不要混入环境/动作。
 - scenario_a / scenario_b：两组生活/用车场景列表，各 1-4 个；A 内部语义尽量靠拢，B 与 A 尽量不同。
 - marketing_phrases：营销短句/口播式检索短语（1-6 个），贴近用户语言，不要用“演示/展示”。例：雨夜看得清、堵车跟车不累、地库一把掉头、停车一把进
+- topic：视频所属的大致主题（枚举，单值）。只能从:{_join_choices(index_v2_enums.TOPIC_CHOICES)} 范围里选，比如：节能快充属于电池，麋鹿测试属于恶劣路况天气，转向属于操作性，路跑属于外观
+- text：画面关键文字与数值（列表）。尽量收集屏幕/UI/字幕里出现的关键词与数值：NOA/Auto Park/800V/15分钟/310公里/1500km/4.79米/27.1英寸/5K 等。
 - key_traits：客户要求的额外标签（枚举列表，可多值），没有看到对应的要素就不要填，只能从给定的枚举范围里选：{_join_choices(index_v2_enums.KEY_TRAITS_CHOICES)}
 
 关于key_trait的特殊标签的额外说明:
@@ -143,13 +156,13 @@ B) weather vs time 不可混用：
    - 禁止把“白天/夜晚/黄昏/室内”写进 weather；禁止把“雨天/雪天/阴天/晴天/极寒”等写进 time。
 C) car_color 归一化（禁止输出同义变体）：
    - car_color 必须严格从：{_join_choices(index_v2_enums.CAR_COLOR_CHOICES)}
-   - 禁止输出“黑色/白色/蓝色/银色/绿色”等带“色”或不在枚举里的值；颜色细节写入 car_color_detail。
+   - 禁止输出“黑色/白色/蓝色/银色/绿色”等带“色”或不在枚举里的值；颜色细节若很关键请写进 description 或 text。
 D) video_usage 归一化（只允许标准枚举）：
    - video_usage(list) 必须从：{_join_choices(index_v2_enums.VIDEO_USAGE_CHOICES)}
    - 同义归并：品牌传达/品牌形象传达 -> 品牌/形象传达；权益说明 -> 权益/价格说明；路跑场景展示 -> 使用场景展示。
 E) product_status_scene 不允许带括号备注：
    - product_status_scene 必须从：{_join_choices(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}
-   - 像“含动态灯语/充电状态/节日装饰”等细节，请写入 product_status_scene_text（如果 schema 不支持该字段则放入 extra_tags）。
+   - 像“含动态灯语/充电状态/节日装饰”等细节，请尽量写进 description 或 text（如果有明确屏幕文案/数字）。
 """.strip()
 
 
@@ -195,6 +208,27 @@ def _analysis_cache_key(video_path: str, *, frame_interval: float) -> str:
     sig = f"{video_path}|{mtime}|{size}|{frame_interval}|{PROMPT_V2}|{schema_sig}"
     return hashlib.sha1(sig.encode("utf-8")).hexdigest()
 
+
+def _video_sig(video_path: str) -> str:
+    """
+    Stable signature for a local video file. Used for:
+    - video_id stability (so frame folders are discoverable)
+    - OBS upload de-duplication
+    """
+    try:
+        st = os.stat(video_path)
+        mtime = int(st.st_mtime)
+        size = int(st.st_size)
+    except Exception:
+        mtime = 0
+        size = 0
+    s = f"{os.path.abspath(video_path)}|{mtime}|{size}"
+    return hashlib.sha1(s.encode("utf-8")).hexdigest()[:12]
+
+
+def _video_id_for(video_path: str) -> str:
+    return f"v2_{_video_sig(video_path)}"
+
 def _safe_stem(name: str) -> str:
     """
     Make a filesystem-friendly stem for workspace folder names.
@@ -216,6 +250,117 @@ def _existing_frames(workspace_dir: Path) -> List[str]:
     # Sort by filename (frame index is zero-padded)
     frames = sorted([p for p in frames if p.is_file()], key=lambda p: p.name)
     return [str(p) for p in frames]
+
+
+def _merge_short_scenes(scenes, *, min_seconds: float):
+    """
+    Merge very short scenes into previous one to avoid over-fragmentation.
+    Scenes are SceneSplitResult dataclasses.
+    """
+    if not scenes:
+        return scenes
+    out = []
+    for s in scenes:
+        try:
+            dur = float(getattr(s, "duration_seconds", 0.0) or 0.0)
+        except Exception:
+            dur = 0.0
+        if out and dur > 0 and dur < float(min_seconds or 0.0):
+            prev = out[-1]
+            # merge frame lists + extend end_time/duration
+            prev.frame_url_list = (prev.frame_url_list or []) + (s.frame_url_list or [])
+            try:
+                prev.end_time = float(getattr(s, "end_time", prev.end_time) or prev.end_time)
+            except Exception:
+                pass
+            try:
+                prev.duration_seconds = float(prev.end_time) - float(prev.start_time)
+            except Exception:
+                # fallback: add durations
+                try:
+                    prev.duration_seconds = float(getattr(prev, "duration_seconds", 0.0) or 0.0) + dur
+                except Exception:
+                    pass
+            continue
+        out.append(s)
+    # re-number scene_id to keep contiguous _scene_001..
+    for i, s in enumerate(out):
+        try:
+            s.scene_id = i + 1
+        except Exception:
+            pass
+    return out
+
+
+def _load_video_upload_cache() -> Dict[str, Any]:
+    return _load_json(VIDEO_UPLOAD_CACHE_PATH, default={}) or {}
+
+
+def _save_video_upload_cache(d: Dict[str, Any]):
+    _save_json(VIDEO_UPLOAD_CACHE_PATH, d or {})
+
+
+def _normalize_model_output(data: Any) -> Any:
+    """
+    Defensive normalization for model outputs to match our index schema.
+    Some models still return list for single-value enum fields.
+    """
+    if not isinstance(data, dict):
+        return data
+
+    def _first_str(v: Any) -> str:
+        if isinstance(v, list):
+            xs = [str(x).strip() for x in v if str(x).strip()]
+            return xs[0] if xs else "未知"
+        if isinstance(v, str) and v.strip():
+            return v.strip()
+        return "未知"
+
+    # Index expects string for these fields.
+    if isinstance(data.get("shot_style"), list) or not isinstance(data.get("shot_style"), str):
+        data["shot_style"] = _first_str(data.get("shot_style"))
+    if isinstance(data.get("shot_type"), list) or not isinstance(data.get("shot_type"), str):
+        data["shot_type"] = _first_str(data.get("shot_type"))
+    return data
+
+
+async def _upload_source_video_once(video_path: str, *, video_id: str) -> str:
+    """
+    Upload the original video to OBS under:
+      ai_picture/car_video_analysis/source_video/{video_id}/<basename>
+
+    Uses a local cache file + OBS headObject check to avoid repeated uploads.
+    Returns the OBS URL (https://.../key).
+    """
+    cache = _load_video_upload_cache()
+    sig = _video_sig(video_path)
+    cached = cache.get(sig) if isinstance(cache, dict) else None
+    if isinstance(cached, dict):
+        url = str(cached.get("obs_url") or "").strip()
+        if url:
+            print(f"[VIDEO_UPLOAD_CACHE_HIT] sig={sig} video_id={video_id} url={url}")
+            return url
+
+    obs_prefix = f"ai_picture/car_video_analysis/source_video/{CAR_MODEL}/{video_id}/"
+    fname = os.path.basename(video_path)
+    obs_key = os.path.join(obs_prefix, fname).replace("\\", "/")
+
+    # If already exists on OBS, skip uploading.
+    if obs_key_exists(obs_key):
+        url = f"{OBS_BASE_URL}/{obs_key}"
+        print(f"[VIDEO_UPLOAD_OBS_EXISTS] video_id={video_id} key={obs_key} url={url}")
+    else:
+        print(f"[VIDEO_UPLOAD_PUT] video_id={video_id} key={obs_key}")
+        url = await upload_to_obs(video_path, obs_prefix)
+
+    cache[sig] = {
+        "video_id": video_id,
+        "video_path": os.path.abspath(video_path),
+        "obs_key": obs_key,
+        "obs_url": url,
+    }
+    _save_video_upload_cache(cache)
+    return url
 
 
 def _get_first_frame_size(local_frames: List[str]) -> tuple[int, int] | None:
@@ -250,35 +395,54 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     cache_key = _analysis_cache_key(video_path, frame_interval=frame_interval)
     cache = _load_json(ANALYSIS_CACHE_PATH, default={})
     cached = cache.get(cache_key)
-    if isinstance(cached, dict) and cached.get("success") and isinstance(cached.get("result"), dict):
+    if (
+        USE_ANALYSIS_CACHE
+        and isinstance(cached, dict)
+        and cached.get("success")
+        and isinstance(cached.get("scene_results"), list)
+    ):
+        # Normalize cached results in case a previous run crashed before normalization was introduced.
+        for sr in cached.get("scene_results") or []:
+            if isinstance(sr, dict) and isinstance(sr.get("result"), dict):
+                sr["result"] = _normalize_model_output(sr.get("result"))
+        print(f"[ANALYSIS_CACHE_HIT] key={cache_key} video={video_path}")
         return {
             "video": video_path,
-            "run_id": cached.get("run_id") or f"v2_cache_{_now_id()}_{_short_hash(video_path)}",
+            "video_id": cached.get("video_id") or _video_id_for(video_path),
+            "obs_video_url": cached.get("obs_video_url") or "",
+            "workspace_dir": cached.get("workspace_dir") or "",
             "frames": cached.get("frames") or [],
-            "result": cached.get("result"),
+            "scene_results": cached.get("scene_results") or [],
             "success": True,
             "cached": True,
         }
 
     vid = Path(video_path)
-    # IMPORTANT (Windows/OpenCV): avoid non-ascii paths for cv2.imwrite.
-    # Some OpenCV builds fail to write images to Unicode paths.
-    stem_hash = _short_hash(vid.stem)
-    # Use this run_id as DB history_id, and as the OpenSearch id prefix.
-    run_id = f"v2_{_now_id()}_{stem_hash}"
-    # Use a stable *ASCII-only* workspace folder per input filename hash so re-runs can reuse extracted frames
-    # without hitting OpenCV Unicode-path issues on Windows.
-    workspace_dir = (Path(__file__).resolve().parent / "workspace" / f"{stem_hash}")
+    # Stable video id so:
+    # - frame folder is discoverable for this video
+    # - OpenSearch doc ids stay stable (video_id + scene_id)
+    video_id = _video_id_for(video_path)
+
+    # Keep extracted frames under a stable, ASCII-only folder keyed by video_id.
+    workspace_dir = (Path(__file__).resolve().parent / "workspace" / "frames" / f"{video_id}")
     workspace_dir.mkdir(parents=True, exist_ok=True)
+
+    # Upload original source video to OBS (cached), and store OBS url into DB history.
+    obs_video_url = ""
+    try:
+        obs_video_url = await _upload_source_video_once(video_path, video_id=video_id)
+    except Exception:
+        obs_video_url = ""
 
     # Insert history row early so we can trace OpenSearch doc ids back to DB.
     try:
         await video_analysis_db_service.upsert_history_item(
             {
-                "id": run_id,
+                "id": video_id,
                 "name": vid.name,
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "video_url": video_path,
+                # Store OBS source video path for mix/cut workflows; fallback to local path if upload failed.
+                "video_url": obs_video_url or video_path,
                 "cards": [],
             }
         )
@@ -286,46 +450,47 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
         # Non-blocking: analysis can continue even if DB is unavailable.
         pass
 
-    # If workspace already has extracted frames, reuse them and skip detection/extraction.
+    # If workspace already has extracted frames, reuse them and skip extraction.
     local_frames = _existing_frames(workspace_dir)
-    video_duration = 0.0
+    scenes = None
     if not local_frames:
-        # Extract frames (single segment, no scene split)
+        print(f"[FRAMES_CACHE_MISS] video_id={video_id} workspace_dir={workspace_dir}")
+        # Extract frames with optional scene splitting.
         if _extract_sem is None:
             scenes = await asyncio.to_thread(
-                get_video_single_scene_frames, video_path, frame_interval, str(workspace_dir)
+                get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir)
             )
         else:
             async with _extract_sem:
                 scenes = await asyncio.to_thread(
-                    get_video_single_scene_frames, video_path, frame_interval, str(workspace_dir)
+                    get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir)
                 )
-        if not scenes:
-            return {"video": video_path, "success": False, "error": "no frames extracted"}
-
-        scene = scenes[0]
-        local_frames = scene.frame_url_list or []
-        try:
-            video_duration = float(scene.duration_seconds or 0.0)
-        except Exception:
-            video_duration = 0.0
-        if not local_frames:
-            return {"video": video_path, "success": False, "error": "empty frame list"}
     else:
-        # Workspace cache hit: we still try to compute duration cheaply.
+        print(
+            f"[FRAMES_CACHE_HIT] video_id={video_id} reused_frames={len(local_frames)} workspace_dir={workspace_dir}"
+        )
+        # Workspace cache hit: still re-run scene detect to get start/end times (cheap compared to re-extract).
         try:
-            scenes = await asyncio.to_thread(get_video_single_scene_frames, video_path, frame_interval, str(workspace_dir))
-            if scenes:
-                video_duration = float(scenes[0].duration_seconds or 0.0)
+            scenes = await asyncio.to_thread(get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir))
         except Exception:
-            video_duration = 0.0
+            scenes = None
 
-    # Validate local files exist before uploading.
+    if not scenes:
+        return {"video": video_path, "success": False, "error": "no scenes extracted"}
+
+    if SPLIT_SCENES and MIN_SCENE_SECONDS and len(scenes) > 1:
+        scenes = _merge_short_scenes(scenes, min_seconds=float(MIN_SCENE_SECONDS))
+
+    # Validate local files exist before uploading (for all scenes).
+    local_frames = []
+    for s in scenes:
+        local_frames.extend(s.frame_url_list or [])
+
     missing = [p for p in local_frames if not os.path.exists(p)]
     if missing:
         return {
             "video": video_path,
-            "run_id": run_id,
+            "video_id": video_id,
             "success": False,
             "error": f"missing {len(missing)} extracted frames",
             "missing": missing[:5],
@@ -338,58 +503,98 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     resolution = f"{frame_w}x{frame_h}" if frame_w and frame_h else "未知"
     frame_size = _aspect_label(frame_w, frame_h) if frame_w and frame_h else "未知"
 
-    # Upload to OBS (frames only)
-    obs_key_prefix = f"ai_picture/video_analysis_v2/{run_id}"
-    frame_urls = await batch_upload_to_obs(
+    # Upload frames to OBS (frames only)
+    obs_key_prefix = f"ai_picture/video_analysis_v2/{video_id}"
+    obs_frame_urls = await batch_upload_to_obs(
         file_paths=local_frames,
         obs_key_prefix=obs_key_prefix,
         max_concurrency=50,
     )
+    # Build a quick map from local frame path to OBS url.
+    frame_url_map = {os.path.basename(lp): url for lp, url in zip(local_frames, obs_frame_urls)}
 
-    # Call Doubao with V2 schema
     schema_json = SceneAnalysisResultV2.model_json_schema()
-    raw = await call_doubao_vision(PROMPT_V2, frame_urls, schema_json)
-    data = raw if isinstance(raw, dict) else json.loads(raw)
 
-    # Inject deterministic fields that users provide or we compute (not asked from the model).
-    # - car_model: user-provided later (keep "未知" here)
-    # - frame_size/resolution: computed from frames
-    if isinstance(data, dict):
-        # Use DB history id as OpenSearch id prefix for later DB backtrace.
-        data["id"] = f"{run_id}_scene_001"
-        data.setdefault("car_model", "未知")
-        data["frame_size"] = frame_size
-        data["resolution"] = resolution
-        data["video_duration"] = float(video_duration or 0.0)
+    sem_scene = asyncio.Semaphore(MAX_SCENE_CONCURRENCY)
 
-    # Store one shot card into DB (single-scene mode)
+    async def _analyze_scene(scene_obj):
+        async with sem_scene:
+            sid = int(getattr(scene_obj, "scene_id", 1) or 1)
+            st = float(getattr(scene_obj, "start_time", 0.0) or 0.0)
+            et = float(getattr(scene_obj, "end_time", 0.0) or 0.0)
+            dur = float(getattr(scene_obj, "duration_seconds", max(0.0, et - st)) or 0.0)
+            local_scene_frames = scene_obj.frame_url_list or []
+            scene_frame_urls = []
+            for p in local_scene_frames:
+                u = frame_url_map.get(os.path.basename(p))
+                if u:
+                    scene_frame_urls.append(u)
+            # Safety: avoid empty calls.
+            if not scene_frame_urls:
+                return {"scene_id": sid, "success": False, "error": "empty scene frame urls"}
+
+            raw = await call_doubao_vision(PROMPT_V2, scene_frame_urls, schema_json)
+            data = raw if isinstance(raw, dict) else json.loads(raw)
+            if isinstance(data, dict):
+                data = _normalize_model_output(data)
+
+                data["id"] = f"{video_id}_scene_{sid:03d}"
+                data.setdefault("car_model", "未知")
+                data["frame_size"] = frame_size
+                data["resolution"] = resolution
+                data["video_duration"] = float(dur or 0.0)
+                data["start_time"] = float(st or 0.0)
+                data["end_time"] = float(et or 0.0)
+            return {
+                "scene_id": sid,
+                "start_time": st,
+                "end_time": et,
+                "duration_seconds": dur,
+                "frame_urls": scene_frame_urls,
+                "result": data,
+                "success": True,
+            }
+
+    scene_results = await asyncio.gather(*[asyncio.create_task(_analyze_scene(s)) for s in scenes])
+    for sr in scene_results:
+        if isinstance(sr, dict) and isinstance(sr.get("result"), dict):
+            sr["result"] = _normalize_model_output(sr.get("result"))
+    ok_scene_results = [r for r in scene_results if r.get("success") and isinstance(r.get("result"), dict)]
+
+    # Store shot cards into DB (multi-scene mode)
     try:
+        cards = []
+        for r in ok_scene_results:
+            data = r.get("result") or {}
+            frame_urls = r.get("frame_urls") or []
+            cards.append(
+                {
+                    "scene_id": int(r.get("scene_id") or 0),
+                    "start_time": float(r.get("start_time") or 0.0),
+                    "end_time": float(r.get("end_time") or 0.0),
+                    "duration_seconds": float(r.get("duration_seconds") or 0.0),
+                    "thumbnail": frame_urls[0] if frame_urls else None,
+                    "frame_urls": frame_urls,
+                    # Keep a subset of analysis fields for quick UI inspection
+                    "description": data.get("description"),
+                    "subject": data.get("subject"),
+                    "object": data.get("object"),
+                    "movement": data.get("movement"),
+                    "adjective": data.get("adjective"),
+                    "search_tags": data.get("search_tags"),
+                    "marketing_tags": data.get("marketing_tags"),
+                    "appealing_audience": data.get("appealing_audience"),
+                    "visual_quality": data.get("visual_quality"),
+                }
+            )
+
         await video_analysis_db_service.upsert_history_item(
             {
-                "id": run_id,
+                "id": video_id,
                 "name": vid.name,
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "video_url": video_path,
-                "cards": [
-                    {
-                        "scene_id": 1,
-                        "start_time": 0.0,
-                        "end_time": float(video_duration or 0.0),
-                        "duration_seconds": float(video_duration or 0.0),
-                        "thumbnail": frame_urls[0] if frame_urls else None,
-                        "frame_urls": frame_urls,
-                        # Keep a subset of analysis fields for quick UI inspection
-                        "description": (data or {}).get("description") if isinstance(data, dict) else None,
-                        "subject": (data or {}).get("subject") if isinstance(data, dict) else None,
-                        "object": (data or {}).get("object") if isinstance(data, dict) else None,
-                        "movement": (data or {}).get("movement") if isinstance(data, dict) else None,
-                        "adjective": (data or {}).get("adjective") if isinstance(data, dict) else None,
-                        "search_tags": (data or {}).get("search_tags") if isinstance(data, dict) else None,
-                        "marketing_tags": (data or {}).get("marketing_tags") if isinstance(data, dict) else None,
-                        "appealing_audience": (data or {}).get("appealing_audience") if isinstance(data, dict) else None,
-                        "visual_quality": (data or {}).get("visual_quality") if isinstance(data, dict) else None,
-                    }
-                ],
+                "video_url": obs_video_url or video_path,
+                "cards": cards,
             }
         )
     except Exception:
@@ -397,9 +602,11 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
 
     out = {
         "video": video_path,
-        "run_id": run_id,
-        "frames": frame_urls,
-        "result": data,
+        "video_id": video_id,
+        "obs_video_url": obs_video_url,
+        "workspace_dir": str(workspace_dir),
+        "frames": obs_frame_urls,
+        "scene_results": scene_results,
         "success": True,
     }
 
@@ -412,10 +619,12 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
             cache = _load_json(ANALYSIS_CACHE_PATH, default={})
             cache[cache_key] = {
                 "success": True,
-                "run_id": run_id,
-                "frames": frame_urls,
-                "result": data,
+                "video_id": video_id,
+                "obs_video_url": obs_video_url,
+                "frames": obs_frame_urls,
+                "scene_results": scene_results,
                 "video": video_path,
+                "workspace_dir": str(workspace_dir),
             }
             _save_json(ANALYSIS_CACHE_PATH, cache)
     except Exception:
@@ -479,9 +688,9 @@ async def main():
 
     frame_interval = 2.0
     out_dir = Path(__file__).resolve().parent / "sample"
-    # Analyze ALL videos under BASE_VIDEO_DIR (no sampling)
-    videos = [str(p) for p in build_test_set()]
+    # Analyze override videos when provided; otherwise analyze all under BASE_VIDEO_DIR.
     # videos = [str(p) for p in _list_all_mp4(BASE_VIDEO_DIR)]
+    videos = [str(p) for p in build_test_set()]
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if not videos:
@@ -538,27 +747,28 @@ async def main():
         for r in results:
             if not r.get("success"):
                 continue
-            data = r.get("result") or {}
-            if not isinstance(data, dict):
-                continue
+            for sr in (r.get("scene_results") or []):
+                data = (sr or {}).get("result") if isinstance(sr, dict) else None
+                if not isinstance(data, dict):
+                    continue
 
-            shot_style = str(data.get("shot_style") or "")
-            if shot_style and shot_style in shot_type_set:
-                bad["shot_style_is_shot_type"] += 1
+                shot_style = str(data.get("shot_style") or "")
+                if shot_style and shot_style in shot_type_set:
+                    bad["shot_style_is_shot_type"] += 1
 
-            weather = str(data.get("weather") or "")
-            if weather and weather in time_set:
-                bad["weather_is_time"] += 1
+                weather = str(data.get("weather") or "")
+                if weather and weather in time_set:
+                    bad["weather_is_time"] += 1
 
-            car_color = str(data.get("car_color") or "")
-            if car_color.endswith("色"):
-                bad["car_color_has_色_suffix"] += 1
+                car_color = str(data.get("car_color") or "")
+                if car_color.endswith("色"):
+                    bad["car_color_has_色_suffix"] += 1
 
-            vu = data.get("video_usage") or []
-            if isinstance(vu, str):
-                vu = [vu]
-            if isinstance(vu, list) and any((str(x) in bad_usage_aliases) for x in vu):
-                bad["video_usage_non_enum_synonym"] += 1
+                vu = data.get("video_usage") or []
+                if isinstance(vu, str):
+                    vu = [vu]
+                if isinstance(vu, list) and any((str(x) in bad_usage_aliases) for x in vu):
+                    bad["video_usage_non_enum_synonym"] += 1
 
         return bad
 
@@ -576,7 +786,7 @@ async def main():
         failures.append(
             {
                 "video": r.get("video"),
-                "run_id": r.get("run_id"),
+                "video_id": r.get("video_id"),
                 "error": r.get("error"),
                 # keep extra debug fields if present
                 "missing": r.get("missing"),
@@ -629,25 +839,32 @@ async def main():
     ]
 
     csv_rows: List[Dict[str, Any]] = []
-    base_cols = ["file_name", "video_path", "run_id", "obs_frames"]
+    base_cols = ["file_name", "video_path", "obs_video_url", "video_id", "scene_id", "obs_frames"]
     csv_cols = base_cols + index_cols
 
     for r in results:
         if not r.get("success"):
             continue
         vp = r.get("video") or ""
-        data = r.get("result") or {}
-        frames = r.get("frames") or []
-        row: Dict[str, Any] = {
-            "video_path": vp,
-            "run_id": r.get("run_id") or "",
-            # CSV: separate URLs by comma (Excel-friendly)
-            "obs_frames": ",".join([str(x) for x in frames if x]),
-        }
-        if isinstance(data, dict):
-            for k in index_cols:
-                row[k] = _flat(data.get(k))
-        csv_rows.append(row)
+        obs_video_url = r.get("obs_video_url") or ""
+        video_id = r.get("video_id") or ""
+        for sr in (r.get("scene_results") or []):
+            if not isinstance(sr, dict) or not sr.get("success"):
+                continue
+            data = sr.get("result") or {}
+            frames = sr.get("frame_urls") or []
+            row: Dict[str, Any] = {
+                "video_path": vp,
+                "obs_video_url": obs_video_url,
+                "video_id": video_id,
+                "scene_id": sr.get("scene_id"),
+                # CSV: separate URLs by comma (Excel-friendly)
+                "obs_frames": ",".join([str(x) for x in frames if x]),
+            }
+            if isinstance(data, dict):
+                for k in index_cols:
+                    row[k] = _flat(data.get(k))
+            csv_rows.append(row)
 
     csv_path = out_dir / "run_video_analysis_v2.csv"
     try:
@@ -660,42 +877,56 @@ async def main():
     except Exception as e:
         print("CSV write failed:", str(e))
 
-    # Ingest into OpenSearch index_v2 (optional).
-    if ENABLE_INGEST:
+    try:
+        # Ingest into OpenSearch index_v2 (optional).
+        if ENABLE_INGEST:
+            try:
+                print("\n=== Ingesting to OpenSearch (car_interior_analysis_v2) ...")
+                # Ensure index exists (no-op if already exists; overwrite handled elsewhere).
+                await index_manager.create_index(model_class=CarInteriorAnalysisV2, overwrite=False)
+
+                emb = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+                docs = []
+                for r in results:
+                    if not r.get("success"):
+                        continue
+                    for sr in (r.get("scene_results") or []):
+                        if not isinstance(sr, dict) or not sr.get("success"):
+                            continue
+                        data = sr.get("result") or {}
+                        if isinstance(data, dict):
+                            data = _normalize_model_output(data)
+                        if not isinstance(data, dict):
+                            continue
+                        # id is injected as {video_id}_scene_{sid:03d} already
+                        doc = CarInteriorAnalysisV2.from_analysis_result(data, emb)
+                        docs.append(doc)
+
+                resp = await bulk_index(CarInteriorAnalysisV2, docs, refresh=True)
+                # Print a small, useful summary for debugging dashboard visibility.
+                r = resp.get("response") or {}
+                items = r.get("items") or []
+                errors = bool(r.get("errors"))
+                took = r.get("took")
+                print(
+                    "Ingest done:",
+                    {"success": resp.get("success"), "errors": errors, "took": took, "items": len(items)},
+                )
+                if errors and items:
+                    # show first failure reason if any
+                    for it in items:
+                        action = (it.get("index") or it.get("create") or it.get("update") or {})
+                        if action.get("error"):
+                            print("First bulk error:", action.get("error"))
+                            break
+            finally:
+                await opensearch_connector.close()
+    finally:
+        # Avoid "Event loop is closed" warnings from aiomysql connection __del__.
         try:
-            print("\n=== Ingesting to OpenSearch (car_interior_analysis_v2) ...")
-            # Ensure index exists (no-op if already exists; overwrite handled elsewhere).
-            await index_manager.create_index(model_class=CarInteriorAnalysisV2, overwrite=False)
-
-            emb = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
-            docs = []
-            for r in results:
-                if not r.get("success"):
-                    continue
-                data = r.get("result") or {}
-                if not isinstance(data, dict):
-                    continue
-                # Use run_id as doc id to avoid collisions in quick testing.
-                data.setdefault("id", r.get("run_id"))
-                doc = CarInteriorAnalysisV2.from_analysis_result(data, emb)
-                docs.append(doc)
-
-            resp = await bulk_index(CarInteriorAnalysisV2, docs, refresh=True)
-            # Print a small, useful summary for debugging dashboard visibility.
-            r = resp.get("response") or {}
-            items = r.get("items") or []
-            errors = bool(r.get("errors"))
-            took = r.get("took")
-            print("Ingest done:", {"success": resp.get("success"), "errors": errors, "took": took, "items": len(items)})
-            if errors and items:
-                # show first failure reason if any
-                for it in items:
-                    action = (it.get("index") or it.get("create") or it.get("update") or {})
-                    if action.get("error"):
-                        print("First bulk error:", action.get("error"))
-                        break
-        finally:
-            await opensearch_connector.close()
+            await mysql_connector.close()
+        except Exception:
+            pass
 
     print(f"\nDone. Results written to: {out_dir.resolve()}")
 

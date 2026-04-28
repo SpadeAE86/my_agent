@@ -1,0 +1,508 @@
+{
+  "id": 1,
+  "topic": "续航焦虑终结者",
+  "title": "一周只充一次电？这车也太省心了吧",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 1,
+        "id": 1,
+        "segment_text": "这台智己LS6",
+        "duration": 1.0,
+        "description": "整车远景外观静态展示",
+        "movement": "静态展示",
+        "subject": "智己LS6",
+        "object": [
+          "车身外观"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "外观",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [
+          "新一代LS6"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "时尚"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "城市道路"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "新一代智己LS6"
+        ],
+        "marketing_tags": [
+          "新车展示",
+          "新能源汽车"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "新能源爱好者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "白天",
+        "extra_tags": [
+          "新能源汽车"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 2,
+        "segment_text": "搭载65.9kWh行业超大增程电池",
+        "duration": 2.6,
+        "description": "电池参数信息特写展示",
+        "movement": "静态展示",
+        "subject": "增程电池",
+        "object": [
+          "参数铭牌"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "电池",
+        "text": [
+          "65.9kWh"
+        ],
+        "shot_style": "未知",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "超大增程电池"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "大容量"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "超大增程电池",
+          "大容量电池"
+        ],
+        "marketing_tags": [
+          "增程技术",
+          "电池技术"
+        ],
+        "appealing_audience": [
+          "续航焦虑用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "未知",
+        "extra_tags": [
+          "增程电动车"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 3,
+        "segment_text": "纯电能跑450公里",
+        "duration": 1.4,
+        "description": "中控屏幕显示纯电续航数值",
+        "movement": "静态展示",
+        "subject": "中控屏幕",
+        "object": [
+          "续航数字",
+          "中控屏"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "电池",
+        "text": [
+          "450公里"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "长纯电续航"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "够用"
+        ],
+        "scenario_a": [
+          "车内"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "纯电续航450公里",
+          "长纯电续航"
+        ],
+        "marketing_tags": [
+          "长续航"
+        ],
+        "appealing_audience": [
+          "通勤用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车机显示续航"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 4,
+        "segment_text": "综合续航超过1500公里",
+        "duration": 1.6,
+        "description": "中控屏幕显示综合续航参数",
+        "movement": "静态展示",
+        "subject": "中控屏幕",
+        "object": [
+          "续航数字",
+          "中控屏"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "电池",
+        "text": [
+          "1500公里"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "大特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "超长综合续航"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "超长"
+        ],
+        "scenario_a": [
+          "车内"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "综合续航1500公里",
+          "超长续航"
+        ],
+        "marketing_tags": [
+          "长续航",
+          "增程续航"
+        ],
+        "appealing_audience": [
+          "长途出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车机参数显示"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 5,
+        "segment_text": "我通勤一周充一次电就够了",
+        "duration": 2.0,
+        "description": "航拍城市道路智己LS6正常巡航",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "城市道路车流"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "建立空间感",
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "低补能频率"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "省心",
+          "轻松"
+        ],
+        "scenario_a": [
+          "城市通勤"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "一周充一次电",
+          "通勤省心"
+        ],
+        "marketing_tags": [
+          "低补能频率",
+          "通勤友好"
+        ],
+        "appealing_audience": [
+          "通勤上班族"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "未知",
+        "time": "白天",
+        "extra_tags": [
+          "城市通勤",
+          "路跑巡航"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 6,
+        "segment_text": "而且它转弯半径只有4.79米",
+        "duration": 2.2,
+        "description": "车机屏幕显示转弯半径参数",
+        "movement": "静态展示",
+        "subject": "中控屏幕",
+        "object": [
+          "参数界面",
+          "车机"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "操作性",
+        "text": [
+          "4.79米"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "极小转弯半径"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "灵活"
+        ],
+        "scenario_a": [
+          "车内"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "转弯半径4.79米",
+          "极小转弯半径"
+        ],
+        "marketing_tags": [
+          "灵活操控",
+          "转弯优势"
+        ],
+        "appealing_audience": [
+          "城市用车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "操控参数"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 7,
+        "segment_text": "比紧凑级轿车还小",
+        "duration": 1.4,
+        "description": "智己LS6和紧凑级轿车转弯轨迹对比",
+        "movement": "静态展示",
+        "subject": "智己LS6",
+        "object": [
+          "紧凑级轿车",
+          "转弯轨迹"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "video_usage": [
+          "对比评测"
+        ],
+        "scene_location": [
+          "封闭测试场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "转弯半径优势"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "灵活"
+        ],
+        "scenario_a": [
+          "测试场"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "转弯半径比紧凑级小",
+          "转弯半径优势"
+        ],
+        "marketing_tags": [
+          "操控对比",
+          "产品优势"
+        ],
+        "appealing_audience": [
+          "新手司机"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "白天",
+        "extra_tags": [
+          "对比测试"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 8,
+        "segment_text": "我这种新手女司机在狭窄地库掉头",
+        "duration": 2.8,
+        "description": "车内POV视角，女司机操控方向盘掉头",
+        "movement": "掉头",
+        "subject": "女司机",
+        "object": [
+          "方向盘",
+          "地库墙"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "地库",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "窄路掉头方便"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "好开",
+          "轻松"
+        ],
+        "scenario_a": [
+          "地库",
+          "窄路"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "新手女司机好开",
+          "狭窄地库掉头"
+        ],
+        "marketing_tags": [
+          "新手友好",
+          "好开好停"
+        ],
+        "appealing_audience": [
+          "新手司机",
+          "女司机"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "has_presenter": true,
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "地库掉头"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 9,
+        "segment_text": "一把就过了！",
+        "duration": 1.0,
+        "description": "倒车影像显示掉头完成，车身顺利驶出",
+        "movement": "倒车",
+        "subject": "智己LS6",
+        "object": [
+          "倒车影像",
+          "地库车位"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解",
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "地库",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "掉头轻松"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "省心",
+          "好开"
+        ],
+        "scenario_a": [
+          "地库"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "掉头一把过",
+          "轻松掉头"
+        ],
+        "marketing_tags": [
+          "新手友好",
+          "好开好停"
+        ],
+        "appealing_audience": [
+          "新手司机",
+          "女司机"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "倒车影像"
+        ]
+      }
+    ]
+  }
+}

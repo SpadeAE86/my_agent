@@ -1,0 +1,188 @@
+{
+  "id": 3,
+  "topic": "南方车主的夏日神器",
+  "title": "40度高温也能跑？这车太硬核了",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 3,
+        "id": 1,
+        "segment_text": "智己LS6的增程电池",
+        "duration": 1.6,
+        "description": "车外远景展示烈日下新一代LS6的整车外观",
+        "video_usage": "产品展示",
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "subject": "智己LS6",
+        "object": [
+          "车身",
+          "增程电池标识"
+        ],
+        "scene_location": [
+          "高温柏油公路",
+          "户外"
+        ],
+        "selling_point": [
+          "增程电池"
+        ],
+        "adjective": [
+          "硬核",
+          "可靠"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 2,
+        "segment_text": "40度高温电量依然稳定",
+        "duration": 2.0,
+        "description": "特写中控屏幕的电池管理UI，显示电量保持稳定",
+        "video_usage": "功能讲解",
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "subject": "中控屏幕",
+        "object": [
+          "电量UI",
+          "温度显示"
+        ],
+        "scene_location": [
+          "车内",
+          "高温户外"
+        ],
+        "selling_point": [
+          "高温电量稳定"
+        ],
+        "adjective": [
+          "稳定",
+          "靠谱"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 3,
+        "segment_text": "空调制冷给力",
+        "duration": 1.2,
+        "description": "特写空调出风口，冷雾涌出，旁侧温度计显示温度下降",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "车载空调",
+        "object": [
+          "出风口",
+          "温度计"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "强劲制冷"
+        ],
+        "adjective": [
+          "凉爽",
+          "给力"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 4,
+        "segment_text": "南方夏天照样畅行无忧",
+        "duration": 2.0,
+        "description": "航拍大远景，LS6在南方城市高架路顺畅行驶，远处可见热浪",
+        "video_usage": "使用场景展示",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己LS6",
+        "object": [
+          "城市高架",
+          "车流"
+        ],
+        "scene_location": [
+          "城市道路",
+          "高温户外"
+        ],
+        "selling_point": [
+          "高温畅行"
+        ],
+        "adjective": [
+          "顺畅",
+          "无忧"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 5,
+        "segment_text": "先进的爆胎稳定控制",
+        "duration": 1.8,
+        "description": "特写中控安全配置界面，显示爆胎稳定控制功能标识",
+        "video_usage": "功能讲解",
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "subject": "中控屏幕",
+        "object": [
+          "安全功能UI"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "爆胎稳定控制"
+        ],
+        "adjective": [
+          "先进",
+          "安全"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 6,
+        "segment_text": "高温路面爆胎都能稳稳刹停",
+        "duration": 2.4,
+        "description": "车外中景跟拍，车辆爆胎后平稳减速直至刹停",
+        "video_usage": "功能讲解",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "轮胎",
+          "刹车盘"
+        ],
+        "scene_location": [
+          "高温柏油路面"
+        ],
+        "selling_point": [
+          "爆胎稳刹"
+        ],
+        "adjective": [
+          "稳定",
+          "可控"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 7,
+        "segment_text": "全家出行安全感拉满",
+        "duration": 1.8,
+        "description": "车内中景，一家人轻松出行的愉悦状态",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "乘车家人",
+        "object": [
+          "后排座椅",
+          "出行物品"
+        ],
+        "scene_location": [
+          "车内",
+          "公路"
+        ],
+        "selling_point": [
+          "出行安全"
+        ],
+        "adjective": [
+          "安心",
+          "安全感满满"
+        ]
+      }
+    ]
+  }
+}

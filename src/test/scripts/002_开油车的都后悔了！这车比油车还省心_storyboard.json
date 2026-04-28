@@ -1,0 +1,250 @@
+{
+  "id": 2,
+  "topic": "油车车主的真香时刻",
+  "title": "开油车的都后悔了！这车比油车还省心",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 2,
+        "id": 1,
+        "segment_text": "智己新一代LS6超级增程",
+        "duration": 2.0,
+        "description": "城市快速路航拍智己LS6行驶画面",
+        "video_usage": "产品展示",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己新一代LS6",
+        "object": [
+          "城市道路"
+        ],
+        "scene_location": [
+          "城市快速路"
+        ],
+        "selling_point": [
+          "超级增程动力"
+        ],
+        "adjective": [
+          "流畅",
+          "大气"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 2,
+        "segment_text": "亏电油耗不到5.32升",
+        "duration": 1.4,
+        "description": "车内仪表盘特写显示亏电油耗数值",
+        "video_usage": "功能讲解",
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "subject": "智己LS6仪表盘",
+        "object": [
+          "油耗显示屏"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "低亏电油耗"
+        ],
+        "adjective": [
+          "省油"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 3,
+        "segment_text": "还能加92号油",
+        "duration": 1.2,
+        "description": "加油枪加注92号汽油的特写",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "加油枪",
+        "object": [
+          "油箱口",
+          "92号油标识"
+        ],
+        "scene_location": [
+          "加油站"
+        ],
+        "selling_point": [
+          "低燃油要求"
+        ],
+        "adjective": [
+          "省钱"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 4,
+        "segment_text": "一年两箱油就够了",
+        "duration": 1.4,
+        "description": "车主将油卡放入钱包，体现用油少",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "车主",
+        "object": [
+          "油卡",
+          "钱包"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "极低油耗"
+        ],
+        "adjective": [
+          "省心"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 5,
+        "segment_text": "用车成本直接砍半！",
+        "duration": 1.6,
+        "description": "车外跟拍智己LS6在城市道路平稳行驶",
+        "video_usage": "烘托氛围",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "城市道路"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "低用车成本"
+        ],
+        "adjective": [
+          "平稳",
+          "划算"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 6,
+        "segment_text": "关键是它后排空间超大",
+        "duration": 2.0,
+        "description": "打开后排车门展示完整后排空间",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己LS6后排",
+        "object": [
+          "后排车门",
+          "后排座椅"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "超大后排空间"
+        ],
+        "adjective": [
+          "宽敞"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 7,
+        "segment_text": "近90%得房率",
+        "duration": 1.2,
+        "description": "中控屏幕显示空间得房率参数的特写",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己LS6中控屏",
+        "object": [
+          "空间参数文字"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "高空间利用率"
+        ],
+        "adjective": [
+          "实用"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 8,
+        "segment_text": "一米八大个子坐后排还能翘二郎腿",
+        "duration": 3.0,
+        "description": "一米八体验者坐在后排，展示腿部空间并翘起二郎腿",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "体验者",
+        "object": [
+          "后排座椅",
+          "腿部空间"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "宽敞后排空间"
+        ],
+        "adjective": [
+          "宽松",
+          "舒适"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 9,
+        "segment_text": "孩子都能在后排跑！",
+        "duration": 1.6,
+        "description": "小朋友在后排站立走动，展示空间充足",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "小朋友",
+        "object": [
+          "后排地板"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "超大后排空间"
+        ],
+        "adjective": [
+          "宽敞",
+          "实用"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 10,
+        "segment_text": "这车比油车还省心",
+        "duration": 2.0,
+        "description": "黄昏时分智己LS6在城郊公路行驶的航拍远景",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "subject": "智己LS6",
+        "object": [
+          "城郊公路",
+          "黄昏"
+        ],
+        "scene_location": [
+          "城郊公路"
+        ],
+        "selling_point": [
+          "省心好开"
+        ],
+        "adjective": [
+          "惬意",
+          "安心"
+        ]
+      }
+    ]
+  }
+}

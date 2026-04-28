@@ -3,25 +3,23 @@
     {
       "index": 0,
       "id": 1,
-      "segment_text": "这台智己LS6。",
+      "segment_text": "这台就是智己LS6。",
       "duration": 3.0,
-      "description": "车辆整体外观展示，镜头从车头慢慢推近，呈现整车造型。",
+      "description": "车外远景展示整车外观，车辆停放在城市道路旁。",
       "video_usage": "产品展示",
       "shot_style": "固定机位",
-      "shot_type": "中景",
+      "shot_type": "远景",
       "subject": "智己LS6",
-      "object": [
-        "车身"
-      ],
+      "object": [],
       "scene_location": [
-        "户外"
+        "城市道路"
       ],
       "selling_point": [
-        "车型亮相"
+        "智己LS6车型"
       ],
       "adjective": [
-        "大气",
-        "时尚"
+        "时尚",
+        "大气"
       ]
     },
     {
@@ -29,15 +27,17 @@
       "id": 2,
       "segment_text": "搭载65.9kWh行业超大增程电池。",
       "duration": 3.0,
-      "description": "屏幕展示电池容量参数，突出大容量属性。",
+      "description": "特写展示电池参数标注，突出大容量属性。",
       "video_usage": "功能讲解",
-      "shot_style": "屏幕录制",
+      "shot_style": "固定机位",
       "shot_type": "特写",
-      "subject": "智己LS6电池",
+      "subject": "智己LS6增程电池",
       "object": [
-        "参数屏幕"
+        "参数标识"
       ],
-      "scene_location": [],
+      "scene_location": [
+        "展厅"
+      ],
       "selling_point": [
         "超大增程电池"
       ],
@@ -50,15 +50,17 @@
       "id": 3,
       "segment_text": "纯电能跑450公里。",
       "duration": 3.0,
-      "description": "屏幕显示纯电续航里程数据，突出纯电续航表现。",
+      "description": "特写中控屏幕显示的纯电续航里程数据。",
       "video_usage": "功能讲解",
       "shot_style": "屏幕录制",
       "shot_type": "特写",
-      "subject": "智己LS6续航",
+      "subject": "中控屏幕",
       "object": [
-        "里程数据"
+        "续航数据"
       ],
-      "scene_location": [],
+      "scene_location": [
+        "车内"
+      ],
       "selling_point": [
         "长纯电续航"
       ],
@@ -71,13 +73,13 @@
       "id": 4,
       "segment_text": "综合续航超过1500公里！",
       "duration": 3.0,
-      "description": "屏幕高亮显示综合续航总里程，突出超长续航优势。",
+      "description": "放大展示综合续航数值，突出超长续航。",
       "video_usage": "功能讲解",
       "shot_style": "屏幕录制",
-      "shot_type": "特写",
-      "subject": "智己LS6续航",
+      "shot_type": "大特写",
+      "subject": "综合续航数据",
       "object": [
-        "总续航数据"
+        "数值展示"
       ],
       "scene_location": [],
       "selling_point": [
@@ -92,22 +94,24 @@
       "id": 5,
       "segment_text": "我通勤一周充一次电就够了！",
       "duration": 3.0,
-      "description": "城市道路行驶，展示日常通勤的使用场景。",
+      "description": "车内POV视角，女司机轻松扶方向盘通勤。",
       "video_usage": "使用场景展示",
-      "shot_style": "车外跟拍",
+      "shot_style": "车内POV",
       "shot_type": "中景",
-      "subject": "智己LS6",
+      "subject": "女司机",
       "object": [
-        "女司机"
+        "方向盘"
       ],
       "scene_location": [
         "城市道路"
       ],
       "selling_point": [
+        "续航充足",
         "低充电频率"
       ],
       "adjective": [
-        "省心"
+        "省心",
+        "方便"
       ]
     },
     {
@@ -115,17 +119,17 @@
       "id": 6,
       "segment_text": "而且它转弯半径只有4.79米。",
       "duration": 3.0,
-      "description": "屏幕展示转弯半径参数，突出极小转弯半径优势。",
+      "description": "屏幕展示转弯半径参数，突出数值优势。",
       "video_usage": "功能讲解",
       "shot_style": "屏幕录制",
       "shot_type": "特写",
-      "subject": "智己LS6转向参数",
+      "subject": "转弯半径参数",
       "object": [
-        "参数屏幕"
+        "参数图"
       ],
       "scene_location": [],
       "selling_point": [
-        "极小转弯半径"
+        "小转弯半径"
       ],
       "adjective": [
         "灵活"
@@ -136,7 +140,7 @@
       "id": 7,
       "segment_text": "比紧凑级轿车还小。",
       "duration": 3.0,
-      "description": "智己LS6和紧凑级轿车并排摆放对比，体现尺寸优势。",
+      "description": "同框对比智己LS6和紧凑级轿车的转弯半径。",
       "video_usage": "对比评测",
       "shot_style": "固定机位",
       "shot_type": "中景",
@@ -144,9 +148,11 @@
       "object": [
         "紧凑级轿车"
       ],
-      "scene_location": [],
+      "scene_location": [
+        "测试场地"
+      ],
       "selling_point": [
-        "转弯半径更小"
+        "更小转弯半径"
       ],
       "adjective": [
         "灵活"
@@ -155,47 +161,49 @@
     {
       "index": 0,
       "id": 8,
-      "segment_text": "新手女司机在狭窄地库掉头，",
+      "segment_text": "新手女司机在狭窄地库掉头。",
       "duration": 3.0,
-      "description": "车内POV视角，展示女司机准备在地库掉头的场景。",
+      "description": "车外跟拍车辆驶入狭窄地库掉头区域。",
       "video_usage": "使用场景展示",
-      "shot_style": "车内POV",
+      "shot_style": "车外跟拍",
       "shot_type": "中景",
       "subject": "智己LS6",
       "object": [
-        "女司机",
-        "方向盘"
+        "女司机"
       ],
       "scene_location": [
         "地库"
       ],
       "selling_point": [
-        "窄路掉头方便"
+        "狭窄场景好操控"
       ],
       "adjective": [
-        "好开"
+        "轻松"
       ]
     },
     {
       "index": 0,
       "id": 9,
-      "segment_text": "一把就过了！",
+      "segment_text": "一把就顺利完成掉头！",
       "duration": 3.0,
-      "description": "车外固定机位拍摄车辆一把完成掉头，顺利驶出。",
+      "description": "拍摄车辆一把完成掉头的完整动作。",
       "video_usage": "使用场景展示",
-      "shot_style": "固定机位",
+      "shot_style": "车外跟拍",
       "shot_type": "中景",
       "subject": "智己LS6",
-      "object": [],
+      "object": [
+        "地库车位"
+      ],
       "scene_location": [
         "地库"
       ],
       "selling_point": [
-        "一把掉头"
+        "一把掉头",
+        "好操控"
       ],
       "adjective": [
-        "轻松",
-        "省心"
+        "省心",
+        "好开"
       ]
     }
   ]

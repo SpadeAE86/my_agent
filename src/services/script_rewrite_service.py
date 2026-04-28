@@ -24,18 +24,29 @@ MODEL_CANDIDATES = [
 
 SYSTEM_PROMPT_STAGE1 = f"""你是一个“汽车短视频口播脚本 → 分镜规划(StoryBoard)”的结构化生成器。
 
-目标：把一段口播脚本，拆成多个“3秒口播分段”，并为每个分段给出可拍的镜头规划。
+目标：把一段口播脚本，改写成“可用于汽车宣传片混剪”的分镜规划（StoryBoard）。
+要求：节奏要像真实混剪，而不是死跟广告词逐句复述。
 注意：此阶段不要强行把所有字段拆成严格标签；更像“分镜脚本”，但要结构稳定。
 
 硬性规则（非常重要）：
 1) 只输出严格 JSON（不要 Markdown，不要解释，不要多余文本）。
 2) 分段规则：
-   - 素材平均时长只有 3 秒：请把长句再切碎成“3秒口播短句”，符合广告分镜的分段节奏
+   - 【时长与节奏最重要】每条分镜都必须填写 duration（秒），用“广告口播常见语速：1 秒≈5 个汉字”估算。
+     - 计算方法：duration ≈ 字数/5（允许小数，保留 1 位小数）。
+     - 正常混剪的节奏分布建议：多数 2.0s，少量 3.0s，偶尔 1.0s（用于转场/情绪点/极致特写）。
+   - 分段长度不要求固定 3 秒：要长短错落，像剪辑节奏一样自然。
    - 优先按中文标点切分：逗号/顿号/分号/冒号/感叹号/句号；必要时可额外断句
    - 【非常重要：一句话内也要拆】同一句话只要出现“逗号/顿号/分号”等，且各分句表达的是不同信息点（功能参数 vs 使用场景 vs 情绪代入），必须拆成多个段
    - 每段只聚焦 1 个核心卖点或 1 个具体场景
 3) 你必须严格按 schema 输出（由调用方提供 json_schema）
 4) 禁止输出大段原文；列表都要“短、可检索、去重、无空字符串”。
+
+混剪经验（必须遵守，决定检索可用性）：
+- 允许不严格按原文顺序：你可以把“路跑/氛围/空间感”的镜头穿插在硬卖点之间，让整条片更像宣传片。
+- 路跑镜头可以连续 2~4 条（不同镜头语言）：例如 远景→航拍→车外跟拍→车内POV→特写。
+- 镜头语言要有节奏点：每 6~10 条分镜里，至少出现 2 条远景/航拍（建立空间感），至少 2 条特写/大特写（材质/屏幕/UI/轮毂/灯语/按键）。
+- “路跑”可以作为万能过渡：参数/功能讲解后，插一条路跑（风噪/静谧/稳定/速度感/安全感）提高混剪观感。
+- 不要每段都“说功能”：适当加入 1 秒情绪点（如：安静/高级/推背感/稳/爽/安心）和画面点（如：屏幕数字/灯语文字）。
 
 枚举可选值（必须从中选）：
 - shot_style: {_join_choices(index_v2_enums.SHOT_STYLE_CHOICES)}
@@ -64,7 +75,7 @@ B) weather vs time 不可混用：
    - weather 只能从：{_join_choices(index_v2_enums.WEATHER_CHOICES)}
 C) car_color 归一化：
    - car_color 必须严格从：{_join_choices(index_v2_enums.CAR_COLOR_CHOICES)}
-   - 禁止输出“黑色/白色/蓝色/银色/绿色”等变体；细节写入 car_color_detail
+   - 禁止输出“黑色/白色/蓝色/银色/绿色”等变体；如脚本强调“哑光/珠光/贴膜”等细节，请放入 extra_tags 或 marketing_phrases
 D) video_usage 归一化：
    - video_usage(list) 必须从：{_join_choices(index_v2_enums.VIDEO_USAGE_CHOICES)}
    - 同义归并：品牌传达/品牌形象传达 -> 品牌/形象传达；权益说明 -> 权益/价格说明；路跑场景展示 -> 使用场景展示
@@ -106,6 +117,9 @@ def _extract_json_text(s: str) -> str:
 async def rewrite_script_to_storyboard_and_tags(
     script: str,
     *,
+    topic: str | None = None,
+    title: str | None = None,
+    car_model: str | None = None,
     index: int = 0,
 ) -> Tuple[SeedtextStoryboardEnvelope, SeedtextIndexTagsEnvelope]:
     """
@@ -117,8 +131,21 @@ async def rewrite_script_to_storyboard_and_tags(
     if not script:
         raise ValueError("script is empty")
 
+    # Provide additional context (topic/title/car_model) to guide a more coherent storyboard.
+    # Keep it plain text to avoid confusing the model with nested JSON in the user prompt.
+    ctx_lines: List[str] = []
+    if isinstance(topic, str) and topic.strip():
+        ctx_lines.append(f"【主题】{topic.strip()}")
+    if isinstance(title, str) and title.strip():
+        ctx_lines.append(f"【标题】{title.strip()}")
+    if isinstance(car_model, str) and car_model.strip():
+        ctx_lines.append(f"【车型】{car_model.strip()}")
+    ctx_lines.append("【口播脚本】")
+    ctx_lines.append(script)
+    stage1_prompt = "\n".join(ctx_lines).strip()
+
     stage1_raw = await _call_seedtext_with_fallback(
-        prompt=script,
+        prompt=stage1_prompt,
         system_prompt=SYSTEM_PROMPT_STAGE1,
         output_schema=SeedtextStoryboardEnvelope,
     )

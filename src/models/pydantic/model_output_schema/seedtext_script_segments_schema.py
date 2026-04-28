@@ -117,13 +117,44 @@ class SeedtextIndexTagsSegment(BaseModel):
     id: int = Field(..., description="分镜序号（与 Stage1 对齐）")
 
     segment_text: str = Field(..., description="对应的口播短句（来自 Stage1）")
+    duration: float = Field(
+        ...,
+        description="该分镜的目标时长（秒）。必须与 Stage1 对应分镜的 duration 完全一致（直接复制，不要改写）。",
+        ge=0.5,
+        le=10.0,
+        examples=[3.0],
+    )
 
     description: str = Field(..., description="可检索的画面描述（短句，客观）")
     movement: str = Field(..., description=f"核心动作（{_enum_hint(index_v2_enums.MOVEMENT_CHOICES)}）。")
     subject: str = Field(..., description="画面核心主体（短词）")
-    object: Optional[List[str]] = Field(default=None, description="客体（车或乘客相关，1-6 个短词）", max_length=6)
+    object: Optional[List[str]] = Field(
+        default=None,
+        description=(
+            "客体（车或乘客相关短词）。允许做同义扩展以提高命中率，例如："
+            "后排/后排座椅/乘客/人坐后排；方向盘/中控屏/车机/仪表盘；轮胎/轮毂/刹车等。"
+        ),
+        max_length=10,
+    )
 
-    footage_type: str = Field(index_v2_enums.UNKNOWN, description=f"画面类型（{_enum_hint(index_v2_enums.FOOTAGE_TYPE_CHOICES)}）。")
+    footage_type: str = Field(
+        index_v2_enums.UNKNOWN,
+        description=(
+            f"画面类型（{_enum_hint(index_v2_enums.FOOTAGE_TYPE_CHOICES)}）。"
+            "尽量不要填 未知：实拍优先选 原创实拍；车机/界面优先选 屏幕录制；无法判断再选 未知。"
+        ),
+    )
+
+    topic: str = Field(
+        index_v2_enums.UNKNOWN,
+        description=f"主题 topic（{_enum_hint(index_v2_enums.TOPIC_CHOICES)}）。单值，用于脚本 topic 匹配。",
+    )
+
+    text: List[str] = Field(
+        default_factory=list,
+        description="画面关键文字与数值（keyword 列表）。尽量收集屏幕/UI/字幕出现的文字与数值：NOA/Auto Park/800V/15分钟/310公里/1500km/4.79米/27.1英寸/5K 等。",
+        max_length=16,
+    )
     shot_style: str = Field(index_v2_enums.UNKNOWN, description=f"镜头风格（{_enum_hint(index_v2_enums.SHOT_STYLE_CHOICES)}）。")
     shot_type: str = Field(index_v2_enums.UNKNOWN, description=f"镜头景别（{_enum_hint(index_v2_enums.SHOT_TYPE_CHOICES)}）。")
     video_usage: List[str] = Field(
@@ -133,36 +164,69 @@ class SeedtextIndexTagsSegment(BaseModel):
         max_length=2,
     )
 
-    scene_location: List[str] = Field(default_factory=list, description="场景（1-4 个短词）", max_length=4)
+    scene_location: List[str] = Field(
+        default_factory=list,
+        description="场景（尽量填 2-4 个短词以提高命中率，例如：地库/高速/山路/街区/露营/充电站/展厅）。",
+        max_length=6,
+    )
 
     # Loose -> strict splits (still keep them small)
-    design_selling_points: List[str] = Field(default_factory=list, description="设计/实体卖点（0-4 个）", max_length=4)
-    function_selling_points: List[str] = Field(default_factory=list, description="功能/性能卖点（0-4 个）", max_length=4)
-    design_adjectives: List[str] = Field(default_factory=list, description="设计/质感形容词（0-4 个）", max_length=4)
-    function_adjectives: List[str] = Field(default_factory=list, description="体验/性能形容词（0-4 个）", max_length=4)
+    design_selling_points: List[str] = Field(
+        default_factory=list, description="设计/实体卖点（尽量填 2-4 个短词/短语）", max_length=6
+    )
+    function_selling_points: List[str] = Field(
+        default_factory=list, description="功能/性能卖点（尽量填 2-4 个短词/短语）", max_length=6
+    )
+    design_adjectives: List[str] = Field(
+        default_factory=list, description="设计/质感形容词（尽量填 2-4 个）", max_length=6
+    )
+    function_adjectives: List[str] = Field(
+        default_factory=list, description="体验/性能形容词（尽量填 2-4 个）", max_length=6
+    )
 
-    scenario_a: List[str] = Field(default_factory=list, description="场景 A（0-4 个）", max_length=4)
-    scenario_b: List[str] = Field(default_factory=list, description="场景 B（0-4 个）", max_length=4)
+    scenario_a: List[str] = Field(default_factory=list, description="场景 A（尽量填 2-4 个）", max_length=6)
+    scenario_b: List[str] = Field(default_factory=list, description="场景 B（尽量填 2-4 个）", max_length=6)
 
     marketing_phrases: List[str] = Field(
         default_factory=list,
-        description="口播式检索短语（1-6 个），贴近用户会搜的说法。",
-        max_length=6,
+        description="口播式检索短语（尽量填 3-8 个），贴近用户会搜的说法（短、口语化）。",
+        max_length=10,
     )
-    marketing_tags: List[str] = Field(default_factory=list, description="营销场景标签（0-4 个）", max_length=4)
-    appealing_audience: List[str] = Field(default_factory=list, description="目标受众（0-6 个）", max_length=6)
+    marketing_tags: List[str] = Field(default_factory=list, description="营销场景标签（尽量填 2-6 个）", max_length=8)
+    appealing_audience: List[str] = Field(default_factory=list, description="目标受众（尽量填 2-6 个）", max_length=8)
 
-    # Fields that Stage 2 may not be able to infer reliably from script; keep as optional/unknown.
-    car_color: str = Field(index_v2_enums.UNKNOWN, description=f"车色（{_enum_hint(index_v2_enums.CAR_COLOR_CHOICES)}）。")
+    # Fields that Stage 2 may not be able to infer reliably from script; still try best-effort.
+    car_color: str = Field(
+        index_v2_enums.UNKNOWN,
+        description=(
+            f"车色（{_enum_hint(index_v2_enums.CAR_COLOR_CHOICES)}）。"
+            "尽量不要填 未知：如果 storyboard/画面描述没有明确颜色，可按常见拍摄素材做保守推断（如 黑/白/灰），或结合产品/场景描述推断。"
+        ),
+    )
     product_status_scene: str = Field(
         index_v2_enums.UNKNOWN,
         description=f"产品状态场景（{_enum_hint(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}）。",
     )
     has_presenter: Optional[bool] = Field(default=None, description="是否含达人/讲解员（脚本无法判断可为 null）")
-    weather: str = Field(index_v2_enums.UNKNOWN, description=f"天气（{_enum_hint(index_v2_enums.WEATHER_CHOICES)}）。")
-    time: str = Field(index_v2_enums.UNKNOWN, description=f"时间（{_enum_hint(index_v2_enums.TIME_CHOICES)}）。")
+    weather: str = Field(
+        index_v2_enums.UNKNOWN,
+        description=(
+            f"天气（{_enum_hint(index_v2_enums.WEATHER_CHOICES)}）。"
+            "尽量不要填 未知：可根据 storyboard 里的场景词推断（如 雨夜->夜雨/雨天；冰雪->雪天/极寒；夏天/高温->酷暑；室内->阴天或晴天均可选其一）。"
+        ),
+    )
+    time: str = Field(
+        index_v2_enums.UNKNOWN,
+        description=(
+            f"时间（{_enum_hint(index_v2_enums.TIME_CHOICES)}）。"
+            "尽量不要填 未知：室内->室内；出现夜/雨夜->夜晚；出现清晨/日出->清晨；否则默认白天。"
+        ),
+    )
 
-    extra_tags: Optional[List[str]] = Field(default=None, description="无法归类但可能有助检索的额外短标签")
+    extra_tags: Optional[List[str]] = Field(
+        default=None,
+        description="无法归类但可能有助检索的额外短标签（鼓励有想象力，尽量 3-10 个；短词）。",
+    )
 
 
 class SeedtextIndexTagsEnvelope(BaseModel):

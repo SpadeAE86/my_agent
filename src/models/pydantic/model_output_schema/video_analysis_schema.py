@@ -46,11 +46,11 @@ class SceneAnalysisResultV2(BaseModel):
     subject: str = Field(
         ...,
         description=(
-            "画面核心主体（1 个），尽量使用“具体可检索”的名称："
-            "例如“智己LS6汽车”“驾驶员”“中控大屏”“后排座椅”“激光雷达”“电池”。"
+            "画面核心主体（1 个），尽量使用“具体可检索”的名称, 也可以是说话人"
+            "例如“智己汽车”“中控大屏”“后排座椅”“激光雷达”“电池”“悬挂系统”。"
             "避免使用泛化词（如“车辆”“东西”）。"
         ),
-        examples=["智己LS6汽车"],
+        examples=["智己汽车","男说话人"],
     )
 
     object: Optional[List[str]] = Field(
@@ -101,11 +101,6 @@ class SceneAnalysisResultV2(BaseModel):
         description=f"车色（{_enum_hint(index_v2_enums.CAR_COLOR_CHOICES)}）。",
         examples=["黑"],
     )
-    car_color_detail: str = Field(
-        "",
-        description="车色细节补充（可选），如：哑光黑/珠光白/渐变涂装/贴膜等；没有就留空。",
-        examples=["哑光黑"],
-    )
     product_status_scene: str = Field(
         ...,
         description=f"产品状态场景（{_enum_hint(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}）。",
@@ -137,6 +132,25 @@ class SceneAnalysisResultV2(BaseModel):
         examples=[["续航", "大电池", "充电快", "路跑"], ["地库掉头", "狭窄街道", "新手"], ["安静", "降噪", "带人的内饰"]],
         min_length=1,
         max_length=12,
+    )
+
+    topic: str = Field(
+        ...,
+        description=(
+            f"主题 topic（{_enum_hint(index_v2_enums.TOPIC_CHOICES)}）。"
+            "用于把脚本的 topic 与素材对齐。单值，必须从枚举里选。"
+        ),
+        examples=["电池", "智驾"],
+    )
+
+    text: List[str] = Field(
+        default_factory=list,
+        description=(
+            "画面中出现的关键文字/数值（keyword 列表）。"
+            "包括车机 UI 文案、屏幕标签、功能名、数值与单位。例：NOA/Auto Park/800V/15分钟/310公里/1500km/4.79米/27.1英寸/5K/MiniLED。"
+        ),
+        examples=[["Auto Park", "NOA", "15分钟", "310公里", "800V"]],
+        max_length=16,
     )
     weather: str = Field(
         ...,
