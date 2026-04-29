@@ -1,0 +1,723 @@
+{
+    "audio_config": [
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts0_alivoice_1777380058142_6_24c83e.wav",
+            "end": 1.2,
+            "offset": 0.0,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts1_alivoice_1777380058142_6_24c83e.wav",
+            "end": 2.43,
+            "offset": 1.2,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts2_alivoice_1777380058142_6_24c83e.wav",
+            "end": 3.5,
+            "offset": 2.43,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts3_alivoice_1777380058142_6_24c83e.wav",
+            "end": 4.5,
+            "offset": 3.5,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts4_alivoice_1777380058142_6_24c83e.wav",
+            "end": 5.87,
+            "offset": 4.5,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts5_alivoice_1777380058142_6_24c83e.wav",
+            "end": 6.73,
+            "offset": 5.87,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts12_alivoice_1777380058142_6_24c83e.wav",
+            "end": 7.89,
+            "offset": 6.73,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts13_alivoice_1777380058142_6_24c83e.wav",
+            "end": 9.39,
+            "offset": 7.89,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts14_alivoice_1777380058142_6_24c83e.wav",
+            "end": 10.59,
+            "offset": 9.39,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts15_alivoice_1777380058142_6_24c83e.wav",
+            "end": 11.73,
+            "offset": 10.59,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts23_alivoice_1777380058142_6_24c83e.wav",
+            "end": 12.73,
+            "offset": 11.73,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts24_alivoice_1777380058142_6_24c83e.wav",
+            "end": 13.73,
+            "offset": 12.73,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts25_alivoice_1777380058142_6_24c83e.wav",
+            "end": 14.730000000000002,
+            "offset": 13.73,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts26_alivoice_1777380058142_6_24c83e.wav",
+            "end": 15.930000000000001,
+            "offset": 14.730000000000002,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts27_alivoice_1777380058142_6_24c83e.wav",
+            "end": 16.93,
+            "offset": 15.930000000000001,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts28_alivoice_1777380058142_6_24c83e.wav",
+            "end": 17.96,
+            "offset": 16.93,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts29_alivoice_1777380058142_6_24c83e.wav",
+            "end": 19.130000000000003,
+            "offset": 17.96,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts36_alivoice_1777380058142_6_24c83e.wav",
+            "end": 20.200000000000003,
+            "offset": 19.130000000000003,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts37_alivoice_1777380058142_6_24c83e.wav",
+            "end": 21.53,
+            "offset": 20.200000000000003,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts38_alivoice_1777380058142_6_24c83e.wav",
+            "end": 22.700000000000003,
+            "offset": 21.53,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts39_alivoice_1777380058142_6_24c83e.wav",
+            "end": 24.200000000000003,
+            "offset": 22.700000000000003,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts40_alivoice_1777380058142_6_24c83e.wav",
+            "end": 25.660000000000004,
+            "offset": 24.200000000000003,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts45_alivoice_1777380058142_6_24c83e.wav",
+            "end": 27.330000000000002,
+            "offset": 25.660000000000004,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts46_alivoice_1777380058142_6_24c83e.wav",
+            "end": 29.26,
+            "offset": 27.330000000000002,
+            "start": 0.0
+        },
+        {
+            "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts47_alivoice_1777380058142_6_24c83e.wav",
+            "end": 29.830000000000005,
+            "offset": 29.26,
+            "start": 0.0
+        }
+    ],
+    "biz_id": 6226,
+    "cap_config": {
+        "caption_list": [
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts0_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "对你是不是也这样",
+                "color": "#FFFFFF",
+                "end": 1.2,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 0.0
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts1_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "每次涂口红稳稳",
+                "color": "#FFFFFF",
+                "end": 2.43,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 1.2
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts2_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "不到两小时就",
+                "color": "#FFFFFF",
+                "end": 3.5,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 2.43
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts3_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "拔干起皮",
+                "color": "#FFFFFF",
+                "end": 4.5,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 3.5
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts4_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "嘴角全是尴尬的",
+                "color": "#FFFFFF",
+                "end": 5.87,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 4.5
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts5_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "死皮屑？",
+                "color": "#FFFFFF",
+                "end": 6.73,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 5.87
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts12_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "越补妆越显脏",
+                "color": "#FFFFFF",
+                "end": 7.89,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 6.73
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts13_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "撕死皮还疼到出血",
+                "color": "#FFFFFF",
+                "end": 9.39,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 7.89
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts14_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "好好的约会全被",
+                "color": "#FFFFFF",
+                "end": 10.59,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 9.39
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts15_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "这张干裂的嘴给毁了",
+                "color": "#FFFFFF",
+                "end": 11.73,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 10.59
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts23_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "别再硬撑了",
+                "color": "#FFFFFF",
+                "end": 12.73,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 11.73
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts24_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "试试这支 yu",
+                "color": "#FFFFFF",
+                "end": 13.73,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 12.73
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts25_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "它一抹化水",
+                "color": "#FFFFFF",
+                "end": 14.730000000000002,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 13.73
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts26_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "瞬间把干瘪的",
+                "color": "#FFFFFF",
+                "end": 15.930000000000001,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 14.730000000000002
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts27_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "唇纹填平",
+                "color": "#FFFFFF",
+                "end": 16.93,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 15.930000000000001
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts28_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "就像给嘴唇",
+                "color": "#FFFFFF",
+                "end": 17.96,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 16.93
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts29_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "做了个深层 SPA",
+                "color": "#FFFFFF",
+                "end": 19.130000000000003,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 17.96
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts36_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "看这前后对比",
+                "color": "#FFFFFF",
+                "end": 20.200000000000003,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 19.130000000000003
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts37_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "刚才还卡粉结块",
+                "color": "#FFFFFF",
+                "end": 21.53,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 20.200000000000003
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts38_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "现在立马变成",
+                "color": "#FFFFFF",
+                "end": 22.700000000000003,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 21.53
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts39_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "饱满的水光嘟嘟唇",
+                "color": "#FFFFFF",
+                "end": 24.200000000000003,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 22.700000000000003
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts40_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "一整天都不带拔干的",
+                "color": "#FFFFFF",
+                "end": 25.660000000000004,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 24.200000000000003
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts45_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "别再忍那些干裂脱皮了",
+                "color": "#FFFFFF",
+                "end": 27.330000000000002,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 25.660000000000004
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts46_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "现在就换这种更省事的画法",
+                "color": "#FFFFFF",
+                "end": 29.26,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 27.330000000000002
+            },
+            {
+                "absolute_x": 0.0,
+                "absolute_y": 0.2,
+                "audioUrl": "https://obs.freeuuu.com/aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts47_alivoice_1777380058142_6_24c83e.wav",
+                "background_type": 0,
+                "cap": "点击左下角把 yu 带回家",
+                "color": "#FFFFFF",
+                "end": 29.830000000000005,
+                "font_size": 60,
+                "font_type": "PingFang SC Regular",
+                "outline_color": "transparent",
+                "rotation": 0.0,
+                "scale": 1.0,
+                "start": 29.26
+            }
+        ]
+    },
+    "crop_config": [
+        {
+            "end": 6.73,
+            "mirror": false,
+            "rotation": 0.0,
+            "scale": 1.0,
+            "speed": 1.0,
+            "start": 0.0,
+            "translate_x": 0.0,
+            "translate_y": 0.0
+        },
+        {
+            "end": 5.0,
+            "mirror": false,
+            "rotation": 0.0,
+            "scale": 1.0,
+            "speed": 1.0,
+            "start": 0.0,
+            "translate_x": 0.0,
+            "translate_y": 0.0
+        },
+        {
+            "end": 7.4,
+            "mirror": false,
+            "rotation": 0.0,
+            "scale": 1.0,
+            "speed": 1.0,
+            "start": 0.0,
+            "translate_x": 0.0,
+            "translate_y": 0.0
+        },
+        {
+            "end": 6.53,
+            "mirror": false,
+            "rotation": 0.0,
+            "scale": 1.0,
+            "speed": 1.0,
+            "start": 0.0,
+            "translate_x": 0.0,
+            "translate_y": 0.0
+        },
+        {
+            "end": 4.17,
+            "mirror": false,
+            "rotation": 0.0,
+            "scale": 1.0,
+            "speed": 1.0,
+            "start": 0.0,
+            "translate_x": 0.0,
+            "translate_y": 0.0
+        }
+    ],
+    "filter_config": [
+        {
+            "filter_configs": [
+                {
+                    "type": "tint",
+                    "value": 0
+                },
+                {
+                    "type": "temperature",
+                    "value": 0
+                },
+                {
+                    "type": "saturation",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "filter_configs": [
+                {
+                    "type": "tint",
+                    "value": 0
+                },
+                {
+                    "type": "temperature",
+                    "value": 0
+                },
+                {
+                    "type": "saturation",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "filter_configs": [
+                {
+                    "type": "tint",
+                    "value": 0
+                },
+                {
+                    "type": "temperature",
+                    "value": 0
+                },
+                {
+                    "type": "saturation",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "filter_configs": [
+                {
+                    "type": "tint",
+                    "value": 0
+                },
+                {
+                    "type": "temperature",
+                    "value": 0
+                },
+                {
+                    "type": "saturation",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "filter_configs": [
+                {
+                    "type": "tint",
+                    "value": 0
+                },
+                {
+                    "type": "temperature",
+                    "value": 0
+                },
+                {
+                    "type": "saturation",
+                    "value": 1
+                }
+            ]
+        }
+    ],
+    "fps": 30,
+    "mute_config": [
+        true,
+        true,
+        true,
+        true,
+        true
+    ],
+    "obs_audio_path_list": [
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts0_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts1_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts2_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts3_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts4_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts5_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts12_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts13_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts14_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts15_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts23_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts24_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts25_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts26_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts27_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts28_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts29_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts36_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts37_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts38_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts39_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts40_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts45_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts46_alivoice_1777380058142_6_24c83e.wav",
+        "aigc/aigc_feature_prod/alivoice_1777380058142_6_24c83e/alitts47_alivoice_1777380058142_6_24c83e.wav"
+    ],
+    "obs_video_path_list": [
+        "aigc/aigc_prod/38/2045018391624683521/0/video/transcode_2045018457071607809_1776405383197/65f2e2aa-fb9c-4999-aa2e-24fee8d47289_H.264_3840x2160_AAC_5600.mp4",
+        "aigc/aigc_prod/38/2045018391624683521/0/video/transcode_2045018457067413506_1776405376659/5a5837de-a0ae-4107-a613-8e8582117e9f_H.264_1920x1080_2100.mp4",
+        "aigc/aigc_prod/38/2045018391624683521/0/video/transcode_2045018457071607810_1776405387387/f9f03fe4-c570-415d-9452-0c25c21ad324_H.264_1920x1080_AAC_2100.mp4",
+        "aigc/aigc_prod/38/2045018391624683521/0/video/transcode_2045018457071607810_1776405387387/f9f03fe4-c570-415d-9452-0c25c21ad324_H.264_1920x1080_AAC_2100.mp4",
+        "aigc/aigc_prod/38/2045018391624683521/0/video/transcode_2045018457067413505_1776405384261/795b3438-c226-4250-890e-04f4d919912d_H.264_3840x2160_AAC_5600.mp4"
+    ],
+    "request_data": {
+        "bizTypeContext": "videoMixFull",
+        "full_mix_video": true
+    },
+    "resolution": "2k",
+    "user_id": 38,
+    "videoMaterialIdList": [
+        "2045018457071607809",
+        "2045018457067413506",
+        "2045018457071607810",
+        "2045018457071607810",
+        "2045018457067413505"
+    ]
+}

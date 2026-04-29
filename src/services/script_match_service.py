@@ -12,6 +12,12 @@ from services.video_analysis_db_service import video_analysis_db_service
 
 INDEX_NAME = "car_interior_analysis_v2"
 
+# Stage2 script segments schema: models/pydantic/model_output_schema/seedtext_script_segments_schema.py
+# (SeedtextIndexTagsSegment). Index vectors on CarInteriorAnalysisV2:
+#   scenario_vector           ← embed(join(scenario_a) + join(scenario_b))
+#   design_adjectives_vector  ← embed(design_adjectives)
+#   function_adjectives_vector ← embed(function_adjectives)
+
 # Global BM25 step (global_then_segment_*): merged segment text can become huge; IK analysis then
 # expands to > Lucene's BooleanQuery.maxClauseCount (default 1024) → TransportError 500.
 # Mitigation: split deduped query phrases into multiple chunks → parallel BM25 → merge by max(_score).
@@ -342,6 +348,10 @@ def _build_should_boosts(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 
 def _choose_vector_fields(seg: Dict[str, Any], *, mode: str, primary: str) -> List[str]:
+    """
+    Pick knn fields aligned with index mapping: scenario_vector uses scenario_a/scenario_b lists;
+    design/function adjective vectors use their respective lists.
+    """
     if mode == "zero":
         return []
     if mode == "lite":
@@ -355,8 +365,9 @@ def _choose_vector_fields(seg: Dict[str, Any], *, mode: str, primary: str) -> Li
         "function_selling_points_vector",
         "design_selling_points_vector",
         "description_vector",
-        "scenario_a_vector",
-        "scenario_b_vector",
+        "scenario_vector",
+        "design_adjectives_vector",
+        "function_adjectives_vector",
     ]
 
     pruned: List[str] = []
@@ -365,9 +376,11 @@ def _choose_vector_fields(seg: Dict[str, Any], *, mode: str, primary: str) -> Li
             continue
         if f == "design_selling_points_vector" and not has_list("design_selling_points"):
             continue
-        if f == "scenario_a_vector" and not has_list("scenario_a"):
+        if f == "scenario_vector" and not (has_list("scenario_a") or has_list("scenario_b")):
             continue
-        if f == "scenario_b_vector" and not has_list("scenario_b"):
+        if f == "design_adjectives_vector" and not has_list("design_adjectives"):
+            continue
+        if f == "function_adjectives_vector" and not has_list("function_adjectives"):
             continue
         pruned.append(f)
 
@@ -401,7 +414,9 @@ async def match_script_tags_segments(
     mode: str = "lite",
 ) -> List[Dict[str, Any]]:
     """
-    For each script segment (Stage2 tags), search OpenSearch and map hits to DB paths.
+    For each script segment (Stage2 tags, SeedtextIndexTagsSegment), search OpenSearch and map hits to DB paths.
+    Vector sub-queries follow CarInteriorAnalysisV2 (_choose_vector_fields): merged scenario_vector plus separate
+    design/function adjective vectors when the segment lists are non-empty.
     Returns a list of segment-level results with top_k hits.
     """
     # Text fields used for BM25 multi_match within hybrid.

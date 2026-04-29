@@ -1,0 +1,485 @@
+{
+  "id": 22,
+  "topic": "一键泊车的精准控制",
+  "title": "泊车位置还能自己选？这功能太贴心",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 22,
+        "id": 1,
+        "segment_text": "智己LS6的一键AI泊车",
+        "duration": 1.8,
+        "description": "整体展示新一代LS6停放在停车场车位旁，引入功能主题",
+        "movement": "静态展示",
+        "subject": "智己LS6",
+        "object": [
+          "停车场车位"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "城市停车场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "一键AI泊车"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "智能"
+        ],
+        "scenario_a": [
+          "泊车场景"
+        ],
+        "scenario_b": [
+          "城市停车"
+        ],
+        "marketing_phrases": [
+          "智己LS6一键AI泊车",
+          "智能停车"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "泊车功能"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "城市通勤用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "智己LS6",
+          "AI泊车"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 2,
+        "segment_text": "支持侧方、垂直车位泊车",
+        "duration": 2.0,
+        "description": "车内视角，中控大屏显示识别到的不同类型车位",
+        "movement": "泊车",
+        "subject": "中控大屏",
+        "object": [
+          "泊车识别UI",
+          "车位"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内",
+          "城市停车场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "多车位适配",
+          "AI泊车"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "全面"
+        ],
+        "scenario_a": [
+          "车内中控"
+        ],
+        "scenario_b": [
+          "城市停车"
+        ],
+        "marketing_phrases": [
+          "支持侧方泊车",
+          "支持垂直车位泊车"
+        ],
+        "marketing_tags": [
+          "智能泊车",
+          "多场景适配"
+        ],
+        "appealing_audience": [
+          "城市车主",
+          "停车困难用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "泊车UI",
+          "车位识别"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 3,
+        "segment_text": "偏左居中偏右位置自定义",
+        "duration": 2.2,
+        "description": "特写中控屏上的三种泊车位置选项，展示自定义功能",
+        "movement": "静态展示",
+        "subject": "中控大屏",
+        "object": [
+          "泊车位置选项UI"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "自定义泊车位置",
+          "AI泊车"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "贴心",
+          "灵活"
+        ],
+        "scenario_a": [
+          "车内中控"
+        ],
+        "scenario_b": [
+          "泊车设置"
+        ],
+        "marketing_phrases": [
+          "自定义泊车位置",
+          "泊车位置随心选"
+        ],
+        "marketing_tags": [
+          "智能泊车",
+          "个性化功能"
+        ],
+        "appealing_audience": [
+          "追求个性化用户",
+          "城市车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "自定义泊车",
+          "中控屏交互"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 4,
+        "segment_text": "怎么停都听你的",
+        "duration": 1.0,
+        "description": "车外视角展示车辆稳稳停在用户选择的自定义位置",
+        "movement": "泊车",
+        "subject": "智己LS6",
+        "object": [
+          "车位线"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市停车场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "自定义泊车",
+          "AI泊车"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "省心",
+          "贴心"
+        ],
+        "scenario_a": [
+          "城市停车"
+        ],
+        "scenario_b": [
+          "自定义泊车"
+        ],
+        "marketing_phrases": [
+          "怎么停都听你的",
+          "自定义泊车"
+        ],
+        "marketing_tags": [
+          "智能泊车",
+          "人性化设计"
+        ],
+        "appealing_audience": [
+          "停车困难用户",
+          "城市车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "自定义泊车位置",
+          "智己LS6"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 5,
+        "segment_text": "配合灵蜥底盘",
+        "duration": 1.0,
+        "description": "低角度特写底盘悬挂结构，展示底盘素质",
+        "movement": "静态展示",
+        "subject": "灵蜥底盘",
+        "object": [
+          "悬挂结构"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "举升工位"
+        ],
+        "design_selling_points": [
+          "灵蜥底盘"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "扎实",
+          "精准"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "底盘展示"
+        ],
+        "scenario_b": [
+          "维修工位"
+        ],
+        "marketing_phrases": [
+          "灵蜥底盘",
+          "扎实底盘素质"
+        ],
+        "marketing_tags": [
+          "底盘调校",
+          "操控性能"
+        ],
+        "appealing_audience": [
+          "操控爱好者",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "悬挂结构",
+          "底盘调校"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 6,
+        "segment_text": "4.79米超小转弯半径",
+        "duration": 1.6,
+        "description": "特写车载仪表显示转弯半径参数",
+        "movement": "静态展示",
+        "subject": "车载仪表",
+        "object": [
+          "参数显示"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "操作性",
+        "text": [
+          "4.79米"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "超小转弯半径"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "灵活"
+        ],
+        "scenario_a": [
+          "车内仪表"
+        ],
+        "scenario_b": [
+          "参数展示"
+        ],
+        "marketing_phrases": [
+          "4.79米超小转弯半径",
+          "灵活转向"
+        ],
+        "marketing_tags": [
+          "操控性能",
+          "小转弯半径"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "操控爱好者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "转弯半径",
+          "车载仪表"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 7,
+        "segment_text": "狭窄胡同也能轻松入库",
+        "duration": 3.0,
+        "description": "航拍大远景展示车辆在狭窄胡同内转弯入库的全过程，体现空间优势",
+        "movement": "转弯",
+        "subject": "智己LS6",
+        "object": [
+          "狭窄胡同",
+          "围墙",
+          "车位"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "建立空间感",
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市狭窄胡同"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "窄路轻松入库",
+          "超小转弯半径"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "轻松",
+          "灵活"
+        ],
+        "scenario_a": [
+          "窄路行驶",
+          "胡同停车"
+        ],
+        "scenario_b": [
+          "城市老城区"
+        ],
+        "marketing_phrases": [
+          "狭窄胡同轻松入库",
+          "超小转弯半径好用"
+        ],
+        "marketing_tags": [
+          "操控优势",
+          "窄路停车"
+        ],
+        "appealing_audience": [
+          "老城区车主",
+          "城市通勤用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "未知",
+        "time": "白天",
+        "extra_tags": [
+          "窄路转弯",
+          "胡同停车"
+        ]
+      },
+      {
+        "index": 22,
+        "id": 8,
+        "segment_text": "老司机都服",
+        "duration": 1.0,
+        "description": "车内驾驶员微笑点头，认可功能表现",
+        "movement": "静态展示",
+        "subject": "驾驶员",
+        "object": [
+          "方向盘"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "易用好停"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "省心",
+          "好用"
+        ],
+        "scenario_a": [
+          "车内体验",
+          "用户认可"
+        ],
+        "scenario_b": [
+          "智驾体验"
+        ],
+        "marketing_phrases": [
+          "老司机都服",
+          "智己LS6好开好停"
+        ],
+        "marketing_tags": [
+          "用户认可",
+          "产品口碑"
+        ],
+        "appealing_audience": [
+          "潜在购车用户",
+          "老司机"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "has_presenter": true,
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "用户体验",
+          "功能认可"
+        ]
+      }
+    ]
+  }
+}

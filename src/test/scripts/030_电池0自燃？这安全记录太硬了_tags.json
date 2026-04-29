@@ -1,0 +1,566 @@
+{
+  "id": 30,
+  "topic": "七重电池安全防护",
+  "title": "电池0自燃？这安全记录太硬了",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 30,
+        "id": 1,
+        "segment_text": "电池0自燃？这安全记录太硬了",
+        "duration": 2.2,
+        "description": "开场低角度远景展示新一代智己LS6整车外观",
+        "movement": "静态展示",
+        "subject": "新一代智己LS6",
+        "object": [
+          "车身外观"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "电池安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "硬核",
+          "安全"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "电池零自燃",
+          "安全记录硬",
+          "智己LS6"
+        ],
+        "marketing_tags": [
+          "新能源汽车",
+          "电池安全"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "整车外观",
+          "智己汽车"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 2,
+        "segment_text": "智己LS6增程电池，七重安全防护设计",
+        "duration": 2.4,
+        "description": "透视镜头展示电池包整体防护结构",
+        "movement": "静态展示",
+        "subject": "增程电池包",
+        "object": [
+          "电池包结构"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "研发试验室"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "七重安全防护"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "可靠",
+          "安全"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "增程电池",
+          "七重安全防护",
+          "智己LS6"
+        ],
+        "marketing_tags": [
+          "电池安全",
+          "新能源汽车"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "电池结构",
+          "防护设计"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 3,
+        "segment_text": "宁德时代电芯",
+        "duration": 0.8,
+        "description": "大特写展示电芯品牌标识细节",
+        "movement": "静态展示",
+        "subject": "动力电池电芯",
+        "object": [
+          "品牌标识"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [
+          "宁德时代"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "试验室"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "宁德时代电芯"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "优质",
+          "可靠"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "宁德时代电芯",
+          "优质电芯"
+        ],
+        "marketing_tags": [
+          "电池安全",
+          "核心配件"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "电芯品牌",
+          "品牌标识"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 4,
+        "segment_text": "7乘24小时云端监控",
+        "duration": 1.6,
+        "description": "中控屏幕展示云端电池状态监控界面",
+        "movement": "静态展示",
+        "subject": "智己车机系统",
+        "object": [
+          "中控屏幕",
+          "监控UI"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "电池",
+        "text": [
+          "7乘24小时",
+          "云端监控"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "全天候实时监控"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "实时"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "云端电池监控",
+          "全天候监控"
+        ],
+        "marketing_tags": [
+          "智能车机",
+          "电池安全"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "电池监控",
+          "车机功能"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 5,
+        "segment_text": "提前满足2026新国标",
+        "duration": 1.8,
+        "description": "屏幕弹出2026新国标达标认证字样",
+        "movement": "静态展示",
+        "subject": "安全认证",
+        "object": [
+          "认证文字"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "电池",
+        "text": [
+          "2026新国标",
+          "达标认证"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "符合最新国标"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "超前",
+          "合规"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "满足2026新国标",
+          "安全合规"
+        ],
+        "marketing_tags": [
+          "安全认证",
+          "国标合规"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "未知",
+        "extra_tags": [
+          "安全认证",
+          "新国标"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 6,
+        "segment_text": "智己LS6公路行驶",
+        "duration": 2.0,
+        "description": "航拍智己LS6在开阔城郊公路平稳行驶",
+        "movement": "行驶",
+        "subject": "新一代智己LS6",
+        "object": [
+          "公路",
+          "远景车流"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "建立空间感"
+        ],
+        "scene_location": [
+          "城郊公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "行车安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "平稳",
+          "顺畅"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "公路行驶",
+          "平稳行车",
+          "智己LS6"
+        ],
+        "marketing_tags": [
+          "行车安全",
+          "公路驾驶"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "家用购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "城郊公路",
+          "航拍行车"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 7,
+        "segment_text": "三重冗余开门系统",
+        "duration": 1.4,
+        "description": "拆解特写展示车门锁体的冗余机械结构",
+        "movement": "静态展示",
+        "subject": "车门锁机构",
+        "object": [
+          "锁体结构"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [
+          "三重冗余开门"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "试验室"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "三重冗余开门"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "可靠",
+          "安全"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "三重冗余开门",
+          "安全开门"
+        ],
+        "marketing_tags": [
+          "车身安全",
+          "逃生设计"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "门锁结构",
+          "冗余设计"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 8,
+        "segment_text": "事故时车内乘员可及时逃生",
+        "duration": 2.2,
+        "description": "模拟事故场景，车内乘员拉动开门装置成功开门",
+        "movement": "未知",
+        "subject": "车内乘员",
+        "object": [
+          "开门拉手",
+          "车门"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "车内",
+          "模拟事故现场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "乘员逃生保障"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "及时",
+          "安心"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "事故逃生",
+          "车内开门逃生"
+        ],
+        "marketing_tags": [
+          "安全设计",
+          "逃生保障"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "模拟事故",
+          "逃生场景"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 9,
+        "segment_text": "救援人员也能第一时间开门",
+        "duration": 2.2,
+        "description": "车外救援人员操作外部开门装置打开车门",
+        "movement": "未知",
+        "subject": "救援人员",
+        "object": [
+          "车门",
+          "救援开关"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "模拟事故现场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "外部救援保障"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "高效",
+          "安全"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "外部救援开门",
+          "救援保障"
+        ],
+        "marketing_tags": [
+          "安全设计",
+          "救援保障"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "外部救援",
+          "事故救援"
+        ]
+      },
+      {
+        "index": 30,
+        "id": 10,
+        "segment_text": "新一代LS6，给你全场景安全保障",
+        "duration": 2.4,
+        "description": "远景展示智己LS6停在户外开阔场地，带出品牌LOGO",
+        "movement": "静态展示",
+        "subject": "新一代智己LS6",
+        "object": [
+          "品牌LOGO"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "品牌/形象传达"
+        ],
+        "scene_location": [
+          "户外开阔场地"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "全场景安全防护"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "高级"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "全场景安全保障",
+          "新一代智己LS6"
+        ],
+        "marketing_tags": [
+          "品牌形象",
+          "安全汽车"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "潜在消费者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "品牌LOGO",
+          "户外展示"
+        ]
+      }
+    ]
+  }
+}

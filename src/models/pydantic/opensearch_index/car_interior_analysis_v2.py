@@ -21,9 +21,9 @@ class CarInteriorAnalysisV2(BaseIndex):
     向量字段说明（384-d，cosinesimil）：
     - description_vector：已由 `description` 入库时 embed（画面客观描述）。若集群里看不到该字段，
       说明 mapping 是旧版，需要 delete index → `build_car_interior_index_v2` → 重灌文档。
-    - marketing / selling / scenario_*：各列表单独 embed。
-    - adjectives_vector：design_adjectives + function_adjectives 合并成一句再 embed（可选精排，
-      避免再拆两路向量）。
+    - marketing / selling：各列表单独 embed。
+    - scenario_a + scenario_b：合并拼接后一路 scenario_vector embed（两列表无语义分路必要）。
+    - design_adjectives_vector / function_adjectives_vector：两组形容词各一路 embed。
 
     向量是否「太多」：
     - 存储上：每个文档多一路向量多一份 HNSW 存储与 merge 成本；通常仍可接受。
@@ -155,19 +155,17 @@ class CarInteriorAnalysisV2(BaseIndex):
     design_selling_points_vector: Annotated[Optional[List[float]], Vector(384, 0.9)] = Field(
         None, description="design_selling_points 的向量"
     )
-    scenario_a_vector: Annotated[Optional[List[float]], Vector(384, 0.7)] = Field(
-        None, description="scenario_a 的向量"
-    )
-    scenario_b_vector: Annotated[Optional[List[float]], Vector(384, 0.7)] = Field(
-        None, description="scenario_b 的向量"
+    scenario_vector: Annotated[Optional[List[float]], Vector(384, 0.7)] = Field(
+        None, description="scenario_a + scenario_b 拼接文本的向量"
     )
     marketing_phrases_vector: Annotated[Optional[List[float]], Vector(384, 1.3)] = Field(
         None, description="marketing_phrases 的向量"
     )
-    # Single merged channel for tone/vibe (optional rerank); avoids two extra vectors for design vs function adj.
-    adjectives_vector: Annotated[Optional[List[float]], Vector(384, 0.65)] = Field(
-        None,
-        description="design_adjectives + function_adjectives 拼接后 embed；用于精排/辅路，不必默认加入 hybrid",
+    design_adjectives_vector: Annotated[Optional[List[float]], Vector(384, 0.65)] = Field(
+        None, description="design_adjectives 拼接后 embed"
+    )
+    function_adjectives_vector: Annotated[Optional[List[float]], Vector(384, 0.65)] = Field(
+        None, description="function_adjectives 拼接后 embed"
     )
 
     @classmethod
@@ -188,7 +186,7 @@ class CarInteriorAnalysisV2(BaseIndex):
         marketing_phrases = analysis_result.get("marketing_phrases", []) or []
         design_adj = analysis_result.get("design_adjectives", []) or []
         function_adj = analysis_result.get("function_adjectives", []) or []
-        adjectives_text = join_list(list(design_adj) + list(function_adj))
+        scenario_text = join_list(list(scenario_a) + list(scenario_b))
 
         return cls(
             id=analysis_result.get("id"),
@@ -231,10 +229,10 @@ class CarInteriorAnalysisV2(BaseIndex):
             description_vector=cls._generate_embedding(description, embedding_model),
             function_selling_points_vector=cls._generate_embedding(join_list(function_sp), embedding_model),
             design_selling_points_vector=cls._generate_embedding(join_list(design_sp), embedding_model),
-            scenario_a_vector=cls._generate_embedding(join_list(scenario_a), embedding_model),
-            scenario_b_vector=cls._generate_embedding(join_list(scenario_b), embedding_model),
+            scenario_vector=cls._generate_embedding(scenario_text, embedding_model),
             marketing_phrases_vector=cls._generate_embedding(join_list(marketing_phrases), embedding_model),
-            adjectives_vector=cls._generate_embedding(adjectives_text, embedding_model),
+            design_adjectives_vector=cls._generate_embedding(join_list(design_adj), embedding_model),
+            function_adjectives_vector=cls._generate_embedding(join_list(function_adj), embedding_model),
         )
 
     @staticmethod

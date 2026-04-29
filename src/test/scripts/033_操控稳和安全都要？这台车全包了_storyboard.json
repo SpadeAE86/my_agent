@@ -1,0 +1,175 @@
+{
+  "id": 33,
+  "topic": "底盘+安全双守护",
+  "title": "操控稳和安全都要？这台车全包了",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 33,
+        "id": 1,
+        "segment_text": "智己LS6灵蜥底盘爆胎稳定控制",
+        "duration": 2.4,
+        "description": "展示智己LS6灵蜥底盘的结构设计，镜头对准底盘部位",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "灵蜥底盘"
+        ],
+        "scene_location": [
+          "研发实验室"
+        ],
+        "selling_point": [
+          "灵蜥底盘",
+          "爆胎稳定控制"
+        ],
+        "adjective": [
+          "稳定"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 2,
+        "segment_text": "高速爆胎稳稳刹停",
+        "duration": 1.6,
+        "description": "高速场景下模拟爆胎，车辆保持直线平稳刹停",
+        "video_usage": "功能讲解",
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "subject": "智己LS6",
+        "object": [
+          "高速路面"
+        ],
+        "scene_location": [
+          "高速公路"
+        ],
+        "selling_point": [
+          "爆胎稳定刹停"
+        ],
+        "adjective": [
+          "平稳",
+          "安全"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 3,
+        "segment_text": "减少45%侧倾风险！",
+        "duration": 1.2,
+        "description": "车载中控屏显示侧倾风险降低百分比数据",
+        "video_usage": "功能讲解",
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "subject": "车载中控屏",
+        "object": [
+          "数据界面"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "降低侧倾风险"
+        ],
+        "adjective": [
+          "稳定",
+          "安全"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 4,
+        "segment_text": "十纵十横潜艇笼式车身",
+        "duration": 2.0,
+        "description": "展示车身潜艇笼式框架的剖面结构",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己LS6车身",
+        "object": [
+          "笼式框架"
+        ],
+        "scene_location": [
+          "研发车间"
+        ],
+        "selling_point": [
+          "潜艇笼式车身"
+        ],
+        "adjective": [
+          "坚固"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 5,
+        "segment_text": "超高强度钢占比27.5%",
+        "duration": 1.4,
+        "description": "特写展示超高强度钢的材质参数标识",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "高强度钢材",
+        "object": [
+          "参数标识"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "高强度车身材质"
+        ],
+        "adjective": [
+          "坚固"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 6,
+        "segment_text": "全家出行",
+        "duration": 0.8,
+        "description": "车内视角，一家人乘坐车辆，神态轻松愉悦",
+        "video_usage": "使用场景展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "出行家人",
+        "object": [
+          "后排座椅",
+          "车内空间"
+        ],
+        "scene_location": [
+          "城际公路"
+        ],
+        "selling_point": [
+          "出行安全"
+        ],
+        "adjective": [
+          "安心",
+          "舒适"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 7,
+        "segment_text": "就是移动安全堡垒！",
+        "duration": 1.4,
+        "description": "航拍智己LS6在开阔公路平稳行驶，展示整车姿态",
+        "video_usage": "烘托氛围",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己LS6",
+        "object": [
+          "公路"
+        ],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "selling_point": [
+          "全方位安全防护"
+        ],
+        "adjective": [
+          "安全",
+          "稳重"
+        ]
+      }
+    ]
+  }
+}

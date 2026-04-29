@@ -1,0 +1,204 @@
+{
+  "id": 25,
+  "topic": "零重力座椅的午休神器",
+  "title": "午休在车里躺平？这座椅太会了",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 25,
+        "id": 1,
+        "segment_text": "午休在车里躺平？",
+        "duration": 1.6,
+        "description": "城市商圈露天停车场远景，智己LS6平稳停放在车位中",
+        "video_usage": "建立空间感",
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "subject": "新一代智己LS6",
+        "object": [
+          "停车场车位"
+        ],
+        "scene_location": [
+          "城市停车场"
+        ],
+        "selling_point": [
+          "车载午休场景"
+        ],
+        "adjective": [
+          "安静",
+          "惬意"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 2,
+        "segment_text": "这座椅太会了",
+        "duration": 1.0,
+        "description": "特写副驾座椅完全放倒后的平整姿态",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "零重力座椅",
+        "object": [
+          "放倒的副驾"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "零重力座椅"
+        ],
+        "adjective": [
+          "舒适",
+          "惊艳"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 3,
+        "segment_text": "智己LS6副驾零重力模式",
+        "duration": 2.0,
+        "description": "车内中景展示副驾零重力模式展开后的整体形态",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "副驾座椅"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "零重力模式"
+        ],
+        "adjective": [
+          "宽大"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 4,
+        "segment_text": "符合NASA标准的全身压力最小姿态",
+        "duration": 2.8,
+        "description": "特写座椅贴合人体腰臀背部的支撑轮廓，展示填充材质",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "零重力座椅",
+        "object": [
+          "支撑结构",
+          "座椅填充"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "NASA认证姿态标准"
+        ],
+        "adjective": [
+          "贴合",
+          "减压"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 5,
+        "segment_text": "躺上去就是漂浮感！",
+        "duration": 1.4,
+        "description": "车内POV视角，展示体验者放松躺靠的状态",
+        "video_usage": "使用场景展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "体验者",
+        "object": [
+          "零重力座椅"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "漂浮感舒适体验"
+        ],
+        "adjective": [
+          "轻盈",
+          "放松"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 6,
+        "segment_text": "配合27.1英寸5K MiniLED大屏",
+        "duration": 2.4,
+        "description": "镜头从副驾座椅平滑移向中控，展示大屏整体尺寸",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己LS6中控",
+        "object": [
+          "27.1英寸大屏",
+          "MiniLED屏"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "高清中控大屏"
+        ],
+        "adjective": [
+          "清晰",
+          "高级"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 7,
+        "segment_text": "追剧休息两不误",
+        "duration": 1.2,
+        "description": "大特写显示大屏正在播放的影视剧画面，展示细腻色彩",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "中控大屏",
+        "object": [
+          "剧集播放界面"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "影音娱乐功能"
+        ],
+        "adjective": [
+          "清晰",
+          "惬意"
+        ]
+      },
+      {
+        "index": 25,
+        "id": 8,
+        "segment_text": "午休时间直接升级成头等舱享受！",
+        "duration": 2.6,
+        "description": "航拍视角俯视停车场，整体展示整台车的静谧午休场景",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己LS6",
+        "object": [
+          "停车场"
+        ],
+        "scene_location": [
+          "城市停车场"
+        ],
+        "selling_point": [
+          "高端车载午休体验"
+        ],
+        "adjective": [
+          "舒适",
+          "高端",
+          "静谧"
+        ]
+      }
+    ]
+  }
+}
