@@ -44,7 +44,9 @@ from infra.storage.opensearch.create_index import index_manager
 from infra.storage.opensearch.document_writer import bulk_index
 from infra.storage.opensearch_connector import opensearch_connector
 from infra.storage.mysql_connector import mysql_connector
+from infra.storage.sqlmodel_init import create_tables_if_not_exists
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
+from services.video_upload_cache_service import video_upload_cache_service
 
 
 BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
@@ -89,8 +91,7 @@ THREADPOOL_WORKERS = 50
 # Persist sampled testset + analysis results to reduce rework across runs.
 TESTSET_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "testset_v2.json"
 ANALYSIS_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "analysis_cache_v2.json"
-# Cache for OBS source video upload so we don't re-upload the same video repeatedly.
-VIDEO_UPLOAD_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "video_upload_cache_v2.json"
+# OBS source video upload cache: moved to MySQL (see models.sqlmodel.video_upload_cache).
 USE_ANALYSIS_CACHE = True  # keep False to observe upload/frame cache logs when debugging
 
 # Ingest into OpenSearch after analysis (can turn off quickly).
@@ -292,14 +293,6 @@ def _merge_short_scenes(scenes, *, min_seconds: float):
     return out
 
 
-def _load_video_upload_cache() -> Dict[str, Any]:
-    return _load_json(VIDEO_UPLOAD_CACHE_PATH, default={}) or {}
-
-
-def _save_video_upload_cache(d: Dict[str, Any]):
-    _save_json(VIDEO_UPLOAD_CACHE_PATH, d or {})
-
-
 def _normalize_model_output(data: Any) -> Any:
     """
     Defensive normalization for model outputs to match our index schema.
@@ -329,17 +322,41 @@ async def _upload_source_video_once(video_path: str, *, video_id: str) -> str:
     Upload the original video to OBS under:
       ai_picture/car_video_analysis/source_video/{video_id}/<basename>
 
-    Uses a local cache file + OBS headObject check to avoid repeated uploads.
+    Uses MySQL cache + OBS headObject check to avoid repeated uploads.
     Returns the OBS URL (https://.../key).
     """
-    cache = _load_video_upload_cache()
     sig = _video_sig(video_path)
-    cached = cache.get(sig) if isinstance(cache, dict) else None
+    abs_path = os.path.abspath(video_path)
+    try:
+        st = os.stat(video_path)
+        mtime = int(st.st_mtime)
+        size = int(st.st_size)
+    except Exception:
+        mtime = 0
+        size = 0
+
+    # Ensure table exists (best-effort). If DB is down, we still attempt upload.
+    try:
+        await create_tables_if_not_exists()
+    except Exception:
+        pass
+
+    try:
+        cached = await video_upload_cache_service.get_by_sig(sig)
+    except Exception:
+        cached = None
+
     if isinstance(cached, dict):
         url = str(cached.get("obs_url") or "").strip()
+        key = str(cached.get("obs_key") or "").strip()
         if url:
-            print(f"[VIDEO_UPLOAD_CACHE_HIT] sig={sig} video_id={video_id} url={url}")
-            return url
+            if key and obs_key_exists(key):
+                print(f"[VIDEO_UPLOAD_DB_CACHE_HIT] sig={sig} video_id={video_id} url={url}")
+                return url
+            if not key:
+                # No key stored; trust url as best-effort.
+                print(f"[VIDEO_UPLOAD_DB_CACHE_HIT_NO_KEY] sig={sig} video_id={video_id} url={url}")
+                return url
 
     obs_prefix = f"ai_picture/car_video_analysis/source_video/{CAR_MODEL}/{video_id}/"
     fname = os.path.basename(video_path)
@@ -353,13 +370,19 @@ async def _upload_source_video_once(video_path: str, *, video_id: str) -> str:
         print(f"[VIDEO_UPLOAD_PUT] video_id={video_id} key={obs_key}")
         url = await upload_to_obs(video_path, obs_prefix)
 
-    cache[sig] = {
-        "video_id": video_id,
-        "video_path": os.path.abspath(video_path),
-        "obs_key": obs_key,
-        "obs_url": url,
-    }
-    _save_video_upload_cache(cache)
+    # Persist to DB cache (best-effort; do not break analysis flow).
+    try:
+        await video_upload_cache_service.upsert(
+            sig=sig,
+            file_name=fname,
+            abs_path=abs_path,
+            file_size=size,
+            file_mtime=mtime,
+            obs_key=obs_key,
+            obs_url=url,
+        )
+    except Exception:
+        pass
     return url
 
 
@@ -531,11 +554,31 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
                     scene_frame_urls.append(u)
             # Safety: avoid empty calls.
             if not scene_frame_urls:
-                return {"scene_id": sid, "success": False, "error": "empty scene frame urls"}
+                return {
+                    "scene_id": sid,
+                    "success": False,
+                    "error": "empty scene frame urls",
+                    "failure_response": None,
+                }
 
-            raw = await call_doubao_vision(PROMPT_V2, scene_frame_urls, schema_json)
-            data = raw if isinstance(raw, dict) else json.loads(raw)
-            if isinstance(data, dict):
+            raw = None
+            try:
+                raw = await call_doubao_vision(PROMPT_V2, scene_frame_urls, schema_json)
+                if raw is None:
+                    return {
+                        "scene_id": sid,
+                        "success": False,
+                        "error": "doubao_vision returned None",
+                        "failure_response": None,
+                    }
+                data = raw if isinstance(raw, dict) else json.loads(raw)
+                if not isinstance(data, dict):
+                    return {
+                        "scene_id": sid,
+                        "success": False,
+                        "error": f"unexpected model output type: {type(data).__name__}",
+                        "failure_response": raw,
+                    }
                 data = _normalize_model_output(data)
 
                 data["id"] = f"{video_id}_scene_{sid:03d}"
@@ -545,15 +588,23 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
                 data["video_duration"] = float(dur or 0.0)
                 data["start_time"] = float(st or 0.0)
                 data["end_time"] = float(et or 0.0)
-            return {
-                "scene_id": sid,
-                "start_time": st,
-                "end_time": et,
-                "duration_seconds": dur,
-                "frame_urls": scene_frame_urls,
-                "result": data,
-                "success": True,
-            }
+                return {
+                    "scene_id": sid,
+                    "start_time": st,
+                    "end_time": et,
+                    "duration_seconds": dur,
+                    "frame_urls": scene_frame_urls,
+                    "result": data,
+                    "success": True,
+                }
+            except Exception as e:
+                return {
+                    "scene_id": sid,
+                    "success": False,
+                    "error": str(e),
+                    # raw may be None => upstream call failed or returned empty
+                    "failure_response": raw,
+                }
 
     scene_results = await asyncio.gather(*[asyncio.create_task(_analyze_scene(s)) for s in scenes])
     for sr in scene_results:
@@ -716,7 +767,7 @@ async def main():
             try:
                 r = await analyze_one(vp, frame_interval=float(frame_interval))
             except Exception as e:
-                r = {"video": vp, "success": False, "error": str(e)}
+                r = {"video": vp, "success": False, "error": str(e), "failure_response": None}
 
             _out_file_for(vp).write_text(json.dumps(r, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -788,6 +839,7 @@ async def main():
                 "video": r.get("video"),
                 "video_id": r.get("video_id"),
                 "error": r.get("error"),
+                "failure_response": r.get("failure_response"),
                 # keep extra debug fields if present
                 "missing": r.get("missing"),
                 "workspace_dir": r.get("workspace_dir"),

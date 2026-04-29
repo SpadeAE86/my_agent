@@ -1,19 +1,143 @@
 {
+  "input_source": "C:\\AI\\AiGithubProject\\DIYProject\\src\\test\\scripts\\005_这增程车安静得像纯电？我不信_tags.json",
+  "segment_count": 7,
   "results": [
     {
       "segment_id": 1,
-      "segment_text": "这台智己LS6。",
-      "query_text": "这台智己LS6。 车外固定机位展示整车正脸外观 智己LS6 智己LS6外观 智己LS6车型 户外停车场",
+      "segment_text": "智己LS6有行业首创的ERNC主动降噪",
+      "query_text": "智己LS6有行业首创的ERNC主动降噪 静态展示车辆前舱的增程与降噪模块，突出首创技术配置 首创主动降噪 智己LS6降噪 增程器降噪 静音技术 配置卖点 增程车型 ERNC主动降噪 行业首创 静谧 室内展台 购车看车 静态体验 智己LS6 前舱模块 增程技术 舒适 ERNC",
       "filters": [
         {
           "term": {
-            "movement": "静态展示"
+            "movement": {
+              "value": "静态展示"
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态外观"
+            }
+          }
+        },
+        {
+          "term": {
+            "topic": {
+              "value": "舒适"
+            }
           }
         },
         {
           "terms": {
             "video_usage": [
-              "产品展示"
+              "功能讲解"
+            ]
+          }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
             ]
           }
         }
@@ -37,57 +161,58 @@
         },
         {
           "term": {
-            "product_status_scene": {
-              "value": "静态外观",
+            "footage_type": {
+              "value": "专业摄影",
               "boost": 1.1
             }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "terms": {
+            "text": [
+              "ERNC"
+            ],
+            "boost": 1.25
           }
         }
       ],
       "vector_fields": [
-        "marketing_phrases_vector"
+        "description_vector"
       ],
-      "top_hits": [
-        {
-          "_id": "v2_20260428_012739_21634dc8a3_scene_001",
-          "_score": 13.233411,
-          "history_id": "v2_20260428_012739_21634dc8a3",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-武汉洪山户外车阵-1.mp4"
-        },
-        {
-          "_id": "v2_20260428_012806_58219c7d10_scene_001",
-          "_score": 12.563629,
-          "history_id": "v2_20260428_012806_58219c7d10",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度-9.mp4"
-        },
-        {
-          "_id": "v2_20260428_012743_cbfbbe06da_scene_001",
-          "_score": 11.87677,
-          "history_id": "v2_20260428_012743_cbfbbe06da",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (7).mp4"
-        },
-        {
-          "_id": "v2_20260428_012754_cc834d4fb5_scene_001",
-          "_score": 11.838458,
-          "history_id": "v2_20260428_012754_cc834d4fb5",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250924-新一代LS6-车身多角度1 (22).mp4"
-        },
-        {
-          "_id": "v2_20260428_012738_8a71e9910a_scene_001",
-          "_score": 11.626864,
-          "history_id": "v2_20260428_012738_8a71e9910a",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-户外车阵 (5).mp4"
-        }
-      ]
+      "top_hits": []
     },
     {
       "segment_id": 2,
-      "segment_text": "搭载65.9kWh行业超大增程电池。",
-      "query_text": "搭载65.9kWh行业超大增程电池。 屏幕展示电池容量参数信息 65.9kWh电池 超大增程电池",
+      "segment_text": "怠速噪音不到36分贝",
+      "query_text": "怠速噪音不到36分贝 车内杯架放置一杯清水，水面平稳无波动，直观展示怠速安静 怠速噪音低 智己LS6安静 车内安静 静音测试 配置卖点 舒适体验 低怠速噪音 安静 平稳 静止车内 车内 怠速停车 车内体验 静态测试 怠速测试 水杯测噪音 舒适 36分贝",
       "filters": [
         {
           "term": {
-            "movement": "静态展示"
+            "movement": {
+              "value": "静态展示"
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态内饰"
+            }
+          }
+        },
+        {
+          "term": {
+            "topic": {
+              "value": "舒适"
+            }
           }
         },
         {
@@ -96,13 +221,119 @@
               "功能讲解"
             ]
           }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
+            ]
+          }
         }
       ],
       "should_boosts": [
         {
           "term": {
             "shot_style": {
-              "value": "屏幕录制",
+              "value": "固定机位",
               "boost": 1.2
             }
           }
@@ -114,234 +345,180 @@
               "boost": 1.1
             }
           }
+        },
+        {
+          "term": {
+            "footage_type": {
+              "value": "专业摄影",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "terms": {
+            "text": [
+              "36分贝"
+            ],
+            "boost": 1.25
+          }
         }
       ],
       "vector_fields": [
-        "marketing_phrases_vector"
+        "description_vector"
       ],
       "top_hits": [
         {
-          "_id": "v2_20260428_012542_494d103fbc_scene_001",
-          "_score": 17.03917,
-          "history_id": "v2_20260428_012542_494d103fbc",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4"
-        },
-        {
-          "_id": "v2_20260428_012717_d50ec52a6d_scene_001",
-          "_score": 10.946826,
-          "history_id": "v2_20260428_012717_d50ec52a6d",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-后备箱 (5).mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_fddc2e284c_scene_001",
-          "_score": 10.573238,
-          "history_id": "v2_20260428_012542_fddc2e284c",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-车身结构（撞击） (2).mp4"
-        },
-        {
-          "_id": "v2_20260428_012749_1c79f62886_scene_001",
-          "_score": 10.45772,
-          "history_id": "v2_20260428_012749_1c79f62886",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-23.mp4"
-        },
-        {
-          "_id": "v2_20260428_012732_154d544761_scene_001",
-          "_score": 10.236858,
-          "history_id": "v2_20260428_012732_154d544761",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
+          "_id": "v2_fe056c28740e_scene_001",
+          "_score": 0.3,
+          "history_id": "v2_fe056c28740e",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_fe056c28740e/20250911-CG-贝果按摩座椅-1.mp4"
         }
       ]
     },
     {
       "segment_id": 3,
-      "segment_text": "纯电能跑450公里。",
-      "query_text": "纯电能跑450公里。 中控屏展示纯电续航里程数据 纯电续航450公里 长纯电续航 车内",
+      "segment_text": "增程器介入时噪音最低只有0.01分贝",
+      "query_text": "增程器介入时噪音最低只有0.01分贝 车内POV视角，驾驶员正常操作车辆，增程器启动时驾驶员表情自然无察觉 增程器低噪 开车安静 无感介入 增程技术 舒适驾乘 静音体验 增程器低噪音 静谧 无感 城市道路 车内 日常通勤 城市行驶 增程器工作 车内POV 增程介入 舒适 0.01分贝",
       "filters": [
         {
           "term": {
-            "movement": "静态展示"
-          }
-        },
-        {
-          "terms": {
-            "video_usage": [
-              "功能讲解"
-            ]
-          }
-        }
-      ],
-      "should_boosts": [
-        {
-          "term": {
-            "shot_style": {
-              "value": "屏幕录制",
-              "boost": 1.2
-            }
-          }
-        },
-        {
-          "term": {
-            "shot_type": {
-              "value": "特写",
-              "boost": 1.1
+            "movement": {
+              "value": "行驶"
             }
           }
         },
         {
           "term": {
             "product_status_scene": {
-              "value": "静态内饰",
-              "boost": 1.1
+              "value": "路跑内饰"
             }
           }
         },
         {
           "term": {
-            "time": {
-              "value": "室内",
-              "boost": 1.05
+            "topic": {
+              "value": "舒适"
             }
-          }
-        }
-      ],
-      "vector_fields": [
-        "marketing_phrases_vector"
-      ],
-      "top_hits": [
-        {
-          "_id": "v2_20260428_012542_494d103fbc_scene_001",
-          "_score": 16.062263,
-          "history_id": "v2_20260428_012542_494d103fbc",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4"
-        },
-        {
-          "_id": "v2_20260428_012732_533242b16a_scene_001",
-          "_score": 9.270885,
-          "history_id": "v2_20260428_012732_533242b16a",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-36.mp4"
-        },
-        {
-          "_id": "v2_20260428_012749_1c79f62886_scene_001",
-          "_score": 7.6606345,
-          "history_id": "v2_20260428_012749_1c79f62886",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-23.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_ee89719399_scene_001",
-          "_score": 7.3195467,
-          "history_id": "v2_20260428_012542_ee89719399",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-智慧屏功能细节-1.mp4"
-        },
-        {
-          "_id": "v2_20260428_012732_154d544761_scene_001",
-          "_score": 7.177057,
-          "history_id": "v2_20260428_012732_154d544761",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
-        }
-      ]
-    },
-    {
-      "segment_id": 4,
-      "segment_text": "综合续航超过1500公里！",
-      "query_text": "综合续航超过1500公里！ 屏幕展示总综合续航数据 综合续航1500公里 超长综合续航 车内",
-      "filters": [
-        {
-          "term": {
-            "movement": "静态展示"
-          }
-        },
-        {
-          "terms": {
-            "video_usage": [
-              "功能讲解"
-            ]
-          }
-        }
-      ],
-      "should_boosts": [
-        {
-          "term": {
-            "shot_style": {
-              "value": "屏幕录制",
-              "boost": 1.2
-            }
-          }
-        },
-        {
-          "term": {
-            "shot_type": {
-              "value": "特写",
-              "boost": 1.1
-            }
-          }
-        },
-        {
-          "term": {
-            "product_status_scene": {
-              "value": "静态内饰",
-              "boost": 1.1
-            }
-          }
-        },
-        {
-          "term": {
-            "time": {
-              "value": "室内",
-              "boost": 1.05
-            }
-          }
-        }
-      ],
-      "vector_fields": [
-        "marketing_phrases_vector"
-      ],
-      "top_hits": [
-        {
-          "_id": "v2_20260428_012743_25b40d2c54_scene_001",
-          "_score": 8.886044,
-          "history_id": "v2_20260428_012743_25b40d2c54",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250815-智己LS6增程-外观-1.mp4"
-        },
-        {
-          "_id": "v2_20260428_012732_533242b16a_scene_001",
-          "_score": 7.7889957,
-          "history_id": "v2_20260428_012732_533242b16a",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-36.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_494d103fbc_scene_001",
-          "_score": 6.6332173,
-          "history_id": "v2_20260428_012542_494d103fbc",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-电池-1.mp4"
-        },
-        {
-          "_id": "v2_20260428_012732_154d544761_scene_001",
-          "_score": 6.3695154,
-          "history_id": "v2_20260428_012732_154d544761",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
-        },
-        {
-          "_id": "v2_20260428_012749_1c79f62886_scene_001",
-          "_score": 6.1985283,
-          "history_id": "v2_20260428_012749_1c79f62886",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-23.mp4"
-        }
-      ]
-    },
-    {
-      "segment_id": 5,
-      "segment_text": "我通勤一周充一次电就够了！",
-      "query_text": "我通勤一周充一次电就够了！ 女司机日常通勤驾驶，车内POV视角 通勤一周一充 省心用车 低充电频率 省心 城市道路",
-      "filters": [
-        {
-          "term": {
-            "movement": "行驶"
           }
         },
         {
           "terms": {
             "video_usage": [
               "使用场景展示"
+            ]
+          }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
             ]
           }
         }
@@ -365,63 +542,185 @@
         },
         {
           "term": {
-            "product_status_scene": {
-              "value": "路跑内饰",
+            "footage_type": {
+              "value": "生活实拍",
               "boost": 1.1
             }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "白天",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "term": {
+            "weather": {
+              "value": "晴天",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "terms": {
+            "text": [
+              "0.01分贝"
+            ],
+            "boost": 1.25
           }
         }
       ],
       "vector_fields": [
-        "marketing_phrases_vector"
+        "description_vector"
       ],
       "top_hits": [
         {
-          "_id": "v2_20260428_012542_0eb396ce44_scene_001",
-          "_score": 10.64796,
-          "history_id": "v2_20260428_012542_0eb396ce44",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-3.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_b2e25bf36a_scene_001",
-          "_score": 9.402416,
-          "history_id": "v2_20260428_012542_b2e25bf36a",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-低温优化 电池-4.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_b7dc8f3069_scene_001",
-          "_score": 8.992049,
-          "history_id": "v2_20260428_012542_b7dc8f3069",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-33.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_4bb2fdcaf7_scene_001",
-          "_score": 8.978046,
-          "history_id": "v2_20260428_012542_4bb2fdcaf7",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-32.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_bb55afede0_scene_001",
-          "_score": 8.142511,
-          "history_id": "v2_20260428_012542_bb55afede0",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20240924-新一代LS6-NOA-45.mp4"
+          "_id": "v2_79cd74e181c2_scene_001",
+          "_score": 0.3,
+          "history_id": "v2_79cd74e181c2",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_79cd74e181c2/20250123-新一代LS6新年外景-驾驶屏-1.mp4"
         }
       ]
     },
     {
-      "segment_id": 6,
-      "segment_text": "而且它转弯半径只有4.79米，",
-      "query_text": "而且它转弯半径只有4.79米， 屏幕展示转弯半径参数数据 4.79米转弯半径 小转弯半径",
+      "segment_id": 4,
+      "segment_text": "安静到让你忘记它是增程车",
+      "query_text": "安静到让你忘记它是增程车 航拍视角，智己LS6在开阔城市道路平稳巡航，展现车辆整体状态 增程车安静 智己LS6 舒适驾乘 增程车型 静谧驾乘 整车展示 增程静谧性 安静 舒适 城市道路 开阔道路 城市巡航 日常出行 路跑展示 航拍",
       "filters": [
         {
           "term": {
-            "movement": "静态展示"
+            "movement": {
+              "value": "行驶"
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "路跑外观"
+            }
+          }
+        },
+        {
+          "term": {
+            "topic": {
+              "value": "舒适"
+            }
           }
         },
         {
           "terms": {
             "video_usage": [
-              "功能讲解"
+              "建立空间感"
+            ]
+          }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
             ]
           }
         }
@@ -430,7 +729,194 @@
         {
           "term": {
             "shot_style": {
-              "value": "屏幕录制",
+              "value": "航拍",
+              "boost": 1.2
+            }
+          }
+        },
+        {
+          "term": {
+            "shot_type": {
+              "value": "远景",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "footage_type": {
+              "value": "专业摄影",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "白天",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "term": {
+            "weather": {
+              "value": "晴天",
+              "boost": 1.05
+            }
+          }
+        }
+      ],
+      "vector_fields": [
+        "description_vector"
+      ],
+      "top_hits": []
+    },
+    {
+      "segment_id": 5,
+      "segment_text": "搭配21鎏金天籁声学单元",
+      "query_text": "搭配21鎏金天籁声学单元 特写车门内嵌的音响单元，展示鎏金外观的精致工艺 高品质音响 鎏金声学单元 车载音响 音响配置 内饰质感 影音体验 高品质音响单元 高级 精致 车内 车内影音 静态体验 内饰欣赏 音响单元 鎏金工艺 娱乐设施 21鎏金天籁",
+      "filters": [
+        {
+          "term": {
+            "movement": {
+              "value": "静态展示"
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态内饰"
+            }
+          }
+        },
+        {
+          "term": {
+            "topic": {
+              "value": "娱乐设施"
+            }
+          }
+        },
+        {
+          "terms": {
+            "video_usage": [
+              "展示细节"
+            ]
+          }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
+            ]
+          }
+        }
+      ],
+      "should_boosts": [
+        {
+          "term": {
+            "shot_style": {
+              "value": "固定机位",
               "boost": 1.2
             }
           }
@@ -442,58 +928,204 @@
               "boost": 1.1
             }
           }
+        },
+        {
+          "term": {
+            "footage_type": {
+              "value": "专业摄影",
+              "boost": 1.1
+            }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "terms": {
+            "text": [
+              "21鎏金天籁"
+            ],
+            "boost": 1.25
+          }
         }
       ],
       "vector_fields": [
-        "marketing_phrases_vector"
+        "description_vector"
       ],
       "top_hits": [
         {
-          "_id": "v2_20260428_012757_347ae407e0_scene_001",
-          "_score": 5.6426363,
-          "history_id": "v2_20260428_012757_347ae407e0",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-49.mp4"
+          "_id": "v2_398047ab02de_scene_001",
+          "_score": 0.9958147,
+          "history_id": "v2_398047ab02de",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_398047ab02de/20250911-CG-喇叭-1.mp4"
         },
         {
-          "_id": "v2_20260428_012735_7c0eb1094b_scene_001",
-          "_score": 5.576623,
-          "history_id": "v2_20260428_012735_7c0eb1094b",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-8.mp4"
+          "_id": "v2_3c198de4544d_scene_001",
+          "_score": 0.3,
+          "history_id": "v2_3c198de4544d",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_3c198de4544d/20250911-CG-音响-1.mp4"
         },
         {
-          "_id": "v2_20260428_012732_154d544761_scene_001",
-          "_score": 5.1692657,
-          "history_id": "v2_20260428_012732_154d544761",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-42.mp4"
+          "_id": "v2_7f4ad9bd3d6e_scene_001",
+          "_score": 0.20386179,
+          "history_id": "v2_7f4ad9bd3d6e",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_7f4ad9bd3d6e/20250911-CG-悬浮音响-1.mp4"
         },
         {
-          "_id": "v2_20260428_012542_a995eb814a_scene_001",
-          "_score": 5.0721936,
-          "history_id": "v2_20260428_012542_a995eb814a",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-防侧翻-2.mp4"
+          "_id": "v2_7c60474ed225_scene_001",
+          "_score": 0.049559638,
+          "history_id": "v2_7c60474ed225",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_7c60474ed225/20250911-CG-智慧屏功能细节-1.mp4"
         },
         {
-          "_id": "v2_20260428_012751_e3f9bb0eaa_scene_001",
-          "_score": 4.8084655,
-          "history_id": "v2_20260428_012751_e3f9bb0eaa",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (11).mp4"
+          "_id": "v2_a64c658ef7a5_scene_002",
+          "_score": 0.0003,
+          "history_id": "v2_a64c658ef7a5",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_a64c658ef7a5/20251013-青蓝山野-智慧屏-1.mp4"
         }
       ]
     },
     {
-      "segment_id": 7,
-      "segment_text": "比紧凑级轿车还小，",
-      "query_text": "比紧凑级轿车还小， 智己LS6和紧凑级轿车同框对比占位 转弯半径对比 小转弯半径优势 小转弯半径 停车场",
+      "segment_id": 6,
+      "segment_text": "7.1.4声道布局",
+      "query_text": "7.1.4声道布局 车机屏幕展示音响声道布局示意图，清晰呈现配置规格 专业声道布局 车载音响配置 7.1.4声道 音响配置 功能规格 影音体验 专业 高端 车内 车内配置 功能展示 车机展示 音响布局 娱乐设施",
       "filters": [
         {
           "term": {
-            "movement": "静态展示"
+            "movement": {
+              "value": "静态展示"
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态内饰"
+            }
+          }
+        },
+        {
+          "term": {
+            "topic": {
+              "value": "娱乐设施"
+            }
           }
         },
         {
           "terms": {
             "video_usage": [
-              "对比评测"
+              "功能讲解"
+            ]
+          }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
             ]
           }
         }
@@ -517,63 +1149,183 @@
         },
         {
           "term": {
-            "product_status_scene": {
-              "value": "静态外观",
+            "footage_type": {
+              "value": "专业摄影",
               "boost": 1.1
             }
+          }
+        },
+        {
+          "term": {
+            "time": {
+              "value": "室内",
+              "boost": 1.05
+            }
+          }
+        },
+        {
+          "terms": {
+            "text": [
+              "7.1.4声道"
+            ],
+            "boost": 1.25
           }
         }
       ],
       "vector_fields": [
-        "marketing_phrases_vector"
+        "description_vector"
       ],
       "top_hits": [
         {
-          "_id": "v2_20260428_012743_5c107f7c47_scene_001",
-          "_score": 8.013916,
-          "history_id": "v2_20260428_012743_5c107f7c47",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250915-展厅爆满 (6).mp4"
+          "_id": "v2_7f4ad9bd3d6e_scene_001",
+          "_score": 0.3,
+          "history_id": "v2_7f4ad9bd3d6e",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_7f4ad9bd3d6e/20250911-CG-悬浮音响-1.mp4"
         },
         {
-          "_id": "v2_20260428_012804_f91ace4389_scene_001",
-          "_score": 5.5892286,
-          "history_id": "v2_20260428_012804_f91ace4389",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (15).mp4"
-        },
-        {
-          "_id": "v2_20260428_012751_e3f9bb0eaa_scene_001",
-          "_score": 5.5032597,
-          "history_id": "v2_20260428_012751_e3f9bb0eaa",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20260120-新一代LS6外景拍摄-车身多角度 (11).mp4"
-        },
-        {
-          "_id": "v2_20260428_012757_347ae407e0_scene_001",
-          "_score": 5.4956107,
-          "history_id": "v2_20260428_012757_347ae407e0",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-49.mp4"
-        },
-        {
-          "_id": "v2_20260428_012735_7c0eb1094b_scene_001",
-          "_score": 5.064828,
-          "history_id": "v2_20260428_012735_7c0eb1094b",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250814-智己LS6增程-外观-8.mp4"
+          "_id": "v2_a64c658ef7a5_scene_002",
+          "_score": 0.0003,
+          "history_id": "v2_a64c658ef7a5",
+          "video_path": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/ai_picture/car_video_analysis/source_video/LS6/v2_a64c658ef7a5/20251013-青蓝山野-智慧屏-1.mp4"
         }
       ]
     },
     {
-      "segment_id": 8,
-      "segment_text": "我这种新手女司机在狭窄地库掉头，",
-      "query_text": "我这种新手女司机在狭窄地库掉头， 狭窄地库内车辆准备掉头，车外跟拍 地库掉头 新手开车 窄场景掉头方便 地下车库",
+      "segment_id": 7,
+      "segment_text": "整个车厢就是个移动音乐厅",
+      "query_text": "整个车厢就是个移动音乐厅 中景展示车厢内，乘客放松聆听音乐，氛围舒适惬意 移动音乐厅 沉浸式音响体验 舒适车厢 影音体验 舒适驾乘 高端配置 高级 舒适 沉浸 车内 车内听歌 休闲出行 驾乘享受 音响体验 舒适氛围 娱乐设施",
       "filters": [
         {
           "term": {
-            "movement": "掉头"
+            "movement": {
+              "value": "静态展示"
+            }
+          }
+        },
+        {
+          "term": {
+            "product_status_scene": {
+              "value": "静态内饰"
+            }
+          }
+        },
+        {
+          "term": {
+            "topic": {
+              "value": "娱乐设施"
+            }
           }
         },
         {
           "terms": {
             "video_usage": [
-              "使用场景展示"
+              "烘托氛围"
+            ]
+          }
+        },
+        {
+          "ids": {
+            "values": [
+              "v2_7f4ad9bd3d6e_scene_001",
+              "v2_d30d42af19a6_scene_001",
+              "v2_17a6bc414c8a_scene_001",
+              "v2_fa3487460a1e_scene_001",
+              "v2_398047ab02de_scene_001",
+              "v2_4340ba9dd06c_scene_001",
+              "v2_ef954a9ba193_scene_001",
+              "v2_6bec9907c8f3_scene_001",
+              "v2_5900b8d9f2cc_scene_001",
+              "v2_3c198de4544d_scene_001",
+              "v2_f2ddf10b1c45_scene_001",
+              "v2_bc47c1b50e45_scene_001",
+              "v2_4739b4b37515_scene_001",
+              "v2_dc4d7722624d_scene_001",
+              "v2_fa11d5b27aad_scene_001",
+              "v2_9134de14adf7_scene_001",
+              "v2_5b6d9a92c589_scene_001",
+              "v2_cfb9a1cda263_scene_001",
+              "v2_6be5925b1cc2_scene_001",
+              "v2_9b7e3102dc6f_scene_001",
+              "v2_ac88ede39167_scene_001",
+              "v2_28e81fa307c9_scene_001",
+              "v2_563a9c2a658e_scene_002",
+              "v2_8a87ce54bdd8_scene_001",
+              "v2_fe056c28740e_scene_001",
+              "v2_27d11119d54b_scene_001",
+              "v2_d30d42af19a6_scene_002",
+              "v2_fbe2c1ae4997_scene_001",
+              "v2_6f02ebc98a5d_scene_001",
+              "v2_9fc281b4be63_scene_001",
+              "v2_b2fb469bfc09_scene_001",
+              "v2_a9f1a65dbf01_scene_001",
+              "v2_9ddc8634a666_scene_001",
+              "v2_1c3927ec6240_scene_001",
+              "v2_49915817b911_scene_001",
+              "v2_9c957a20ea85_scene_001",
+              "v2_2999d2495bd2_scene_001",
+              "v2_2e9dc54517e6_scene_001",
+              "v2_cfda1c208bcd_scene_001",
+              "v2_46ef6b0c17f1_scene_001",
+              "v2_f0823577cf4f_scene_001",
+              "v2_cafaed5b5828_scene_002",
+              "v2_ed62cf2e3be4_scene_001",
+              "v2_10be5dc545a6_scene_001",
+              "v2_d5a9f54c1d0a_scene_001",
+              "v2_a3ade421e659_scene_001",
+              "v2_093de4711467_scene_001",
+              "v2_5ea30c3ce7ad_scene_001",
+              "v2_fa2a2187a3ff_scene_001",
+              "v2_90d65a258272_scene_001",
+              "v2_4bd833df14b8_scene_001",
+              "v2_79cd74e181c2_scene_001",
+              "v2_08bb4f2091c6_scene_001",
+              "v2_34a9ac068141_scene_001",
+              "v2_7dcd1546f9c5_scene_001",
+              "v2_338706145cf8_scene_001",
+              "v2_81b871905a75_scene_001",
+              "v2_1641d2fa4f49_scene_001",
+              "v2_b2d37076bc8f_scene_001",
+              "v2_2770ae22ac06_scene_001",
+              "v2_ea6f8a932b3d_scene_001",
+              "v2_7c60474ed225_scene_001",
+              "v2_42dbe0336d17_scene_001",
+              "v2_1fba3029742a_scene_001",
+              "v2_b13f86b97278_scene_002",
+              "v2_b400aa8e7bd1_scene_002",
+              "v2_63fc67da0a15_scene_001",
+              "v2_7ace58e5d9ea_scene_001",
+              "v2_cfd6faa5b720_scene_001",
+              "v2_49225d777d52_scene_001",
+              "v2_ce8558fd5c3b_scene_001",
+              "v2_860217a87e8c_scene_001",
+              "v2_2b26e0625f10_scene_001",
+              "v2_2cf1b06a23dc_scene_001",
+              "v2_c58f4d8f9e99_scene_001",
+              "v2_b400aa8e7bd1_scene_001",
+              "v2_00765e444efe_scene_001",
+              "v2_389ecc316261_scene_001",
+              "v2_c9cdfb95104c_scene_001",
+              "v2_4e628cd51d03_scene_001",
+              "v2_9c3e037a695a_scene_001",
+              "v2_c2007e87f0a2_scene_001",
+              "v2_fd8e2694f538_scene_001",
+              "v2_a64c658ef7a5_scene_002",
+              "v2_a32ee9bb6017_scene_001",
+              "v2_0813918eb310_scene_001",
+              "v2_de5f5fdada63_scene_001",
+              "v2_cafaed5b5828_scene_001",
+              "v2_b13f86b97278_scene_001",
+              "v2_563a9c2a658e_scene_001",
+              "v2_7abd361d2af0_scene_001",
+              "v2_a4e1e2574b69_scene_001",
+              "v2_4b2fdde1669c_scene_001",
+              "v2_c0c12ea43f98_scene_001",
+              "v2_9b73707f8fdc_scene_001",
+              "v2_a64c658ef7a5_scene_001",
+              "v2_60084e6223c0_scene_001",
+              "v2_ef8a2da46dea_scene_001",
+              "v2_7fd10288af5a_scene_001",
+              "v2_723044129275_scene_001"
             ]
           }
         }
@@ -582,7 +1334,7 @@
         {
           "term": {
             "shot_style": {
-              "value": "车外跟拍",
+              "value": "固定机位",
               "boost": 1.2
             }
           }
@@ -597,8 +1349,8 @@
         },
         {
           "term": {
-            "product_status_scene": {
-              "value": "路跑外观",
+            "footage_type": {
+              "value": "专业摄影",
               "boost": 1.1
             }
           }
@@ -613,92 +1365,9 @@
         }
       ],
       "vector_fields": [
-        "marketing_phrases_vector"
+        "description_vector"
       ],
-      "top_hits": [
-        {
-          "_id": "v2_20260428_012542_ade335fc39_scene_001",
-          "_score": 12.615009,
-          "history_id": "v2_20260428_012542_ade335fc39",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-一键泊车-2.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_496fa33b0d_scene_001",
-          "_score": 11.249804,
-          "history_id": "v2_20260428_012542_496fa33b0d",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-小转弯半径-4.mp4"
-        }
-      ]
-    },
-    {
-      "segment_id": 9,
-      "segment_text": "一把就过了！",
-      "query_text": "一把就过了！ 车内POV视角，完成掉头顺利驶出地库 一把掉头 好操控 一把掉头好操控 地下车库",
-      "filters": [
-        {
-          "term": {
-            "movement": "掉头"
-          }
-        },
-        {
-          "terms": {
-            "video_usage": [
-              "使用场景展示"
-            ]
-          }
-        }
-      ],
-      "should_boosts": [
-        {
-          "term": {
-            "shot_style": {
-              "value": "车内POV",
-              "boost": 1.2
-            }
-          }
-        },
-        {
-          "term": {
-            "shot_type": {
-              "value": "中景",
-              "boost": 1.1
-            }
-          }
-        },
-        {
-          "term": {
-            "product_status_scene": {
-              "value": "路跑内饰",
-              "boost": 1.1
-            }
-          }
-        },
-        {
-          "term": {
-            "time": {
-              "value": "室内",
-              "boost": 1.05
-            }
-          }
-        }
-      ],
-      "vector_fields": [
-        "marketing_phrases_vector"
-      ],
-      "top_hits": [
-        {
-          "_id": "v2_20260428_012542_ade335fc39_scene_001",
-          "_score": 13.475644,
-          "history_id": "v2_20260428_012542_ade335fc39",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20251013-特特特别方盒子-一键泊车-2.mp4"
-        },
-        {
-          "_id": "v2_20260428_012542_496fa33b0d_scene_001",
-          "_score": 11.888753,
-          "history_id": "v2_20260428_012542_496fa33b0d",
-          "video_path": "C:\\Users\\admin\\Downloads\\LS6视频\\20250911-CG-小转弯半径-4.mp4"
-        }
-      ]
+      "top_hits": []
     }
   ]
 }

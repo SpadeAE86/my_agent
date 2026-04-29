@@ -1,0 +1,460 @@
+{
+  "id": 4,
+  "topic": "15分钟补能的真相",
+  "title": "买杯咖啡的工夫就能充满？我是真信了",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 4,
+        "id": 1,
+        "segment_text": "智己LS6支持800伏高压快充",
+        "duration": 2.0,
+        "description": "新一代LS6停在商场充电站充电桩旁，展示车身整体",
+        "movement": "静态展示",
+        "subject": "新一代LS6",
+        "object": [
+          "充电桩"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "电池",
+        "text": [
+          "800伏"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "商场停车场",
+          "充电站"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "800伏高压快充"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "高效"
+        ],
+        "scenario_a": [
+          "商场补能",
+          "外出补能"
+        ],
+        "scenario_b": [
+          "城市出行",
+          "停车充电"
+        ],
+        "marketing_phrases": [
+          "800伏高压快充",
+          "智己LS6快充",
+          "补能快"
+        ],
+        "marketing_tags": [
+          "新能源车",
+          "快充",
+          "智己LS6"
+        ],
+        "appealing_audience": [
+          "上班族",
+          "购车用户",
+          "新能源车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "智己LS6",
+          "新能源车"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 2,
+        "segment_text": "15分钟就能补能310公里",
+        "duration": 2.0,
+        "description": "充电枪插入车辆充电口，展示充电状态",
+        "movement": "充电",
+        "subject": "充电接口",
+        "object": [
+          "充电枪"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "电池",
+        "text": [
+          "15分钟",
+          "310公里"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "商场充电站"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "快速补能"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "快速"
+        ],
+        "scenario_a": [
+          "充电补能",
+          "商场补能"
+        ],
+        "scenario_b": [
+          "快速补能",
+          "城市补能"
+        ],
+        "marketing_phrases": [
+          "15分钟补能310公里",
+          "快充",
+          "快速补能"
+        ],
+        "marketing_tags": [
+          "快充技术",
+          "新能源车",
+          "智己LS6"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "新能源车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "充电口",
+          "充电枪"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 3,
+        "segment_text": "我在商场买杯咖啡的工夫",
+        "duration": 2.0,
+        "description": "车主在商场咖啡店接过店员递来的咖啡",
+        "movement": "静态展示",
+        "subject": "车主",
+        "object": [
+          "咖啡杯"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "商场咖啡店",
+          "商场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "补能便捷"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "轻松",
+          "省心"
+        ],
+        "scenario_a": [
+          "逛街购物",
+          "休闲补能"
+        ],
+        "scenario_b": [
+          "城市生活",
+          "碎片化补能"
+        ],
+        "marketing_phrases": [
+          "补能方便",
+          "喝咖啡补能",
+          "补能不费时"
+        ],
+        "marketing_tags": [
+          "便捷补能",
+          "新能源车",
+          "智己LS6"
+        ],
+        "appealing_audience": [
+          "年轻车主",
+          "上班族",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车主生活",
+          "碎片化时间"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 4,
+        "segment_text": "电就充好了！",
+        "duration": 1.0,
+        "description": "车内仪表盘显示补能完成的续航数值",
+        "movement": "静态展示",
+        "subject": "车载仪表盘",
+        "object": [
+          "续航显示"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "电池",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "补能效率高"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "高效"
+        ],
+        "scenario_a": [
+          "车内显示",
+          "补能完成"
+        ],
+        "scenario_b": [
+          "续航显示",
+          "快充完成"
+        ],
+        "marketing_phrases": [
+          "补能快",
+          "充电快",
+          "高效补能"
+        ],
+        "marketing_tags": [
+          "新能源车",
+          "快充",
+          "智己LS6"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "新能源车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "仪表盘",
+          "续航显示"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 5,
+        "segment_text": "而且它有27.1英寸5K MiniLED大屏",
+        "duration": 2.6,
+        "description": "车内中控整体取景，展示大屏的整体尺寸",
+        "movement": "静态展示",
+        "subject": "中控大屏",
+        "object": [
+          "车内内饰"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "娱乐设施",
+        "text": [
+          "27.1英寸",
+          "5K",
+          "MiniLED"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [
+          "大尺寸高清屏"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "大气"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "车内中控",
+          "车载大屏"
+        ],
+        "scenario_b": [
+          "影音娱乐",
+          "智能座舱"
+        ],
+        "marketing_phrases": [
+          "27.1英寸大屏",
+          "5K大屏",
+          "MiniLED大屏"
+        ],
+        "marketing_tags": [
+          "智能座舱",
+          "车载大屏",
+          "智己LS6",
+          "新能源车"
+        ],
+        "appealing_audience": [
+          "影音爱好者",
+          "购车用户",
+          "年轻车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "中控屏",
+          "车机大屏"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 6,
+        "segment_text": "显示效果比我家的电视还清晰",
+        "duration": 2.4,
+        "description": "特写大屏显示的高清画面细节，展示细腻效果",
+        "movement": "静态展示",
+        "subject": "中控大屏",
+        "object": [
+          "高清画面"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "娱乐设施",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "高清显示"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "清晰",
+          "细腻"
+        ],
+        "scenario_a": [
+          "高清显示",
+          "大屏细节"
+        ],
+        "scenario_b": [
+          "车载影音",
+          "视觉体验"
+        ],
+        "marketing_phrases": [
+          "高清显示",
+          "大屏清晰",
+          "细腻显示"
+        ],
+        "marketing_tags": [
+          "车载大屏",
+          "高清屏",
+          "智己LS6",
+          "智能座舱"
+        ],
+        "appealing_audience": [
+          "影音爱好者",
+          "购车用户",
+          "年轻车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "画面细节",
+          "显示效果"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 7,
+        "segment_text": "追剧看综艺太爽了！",
+        "duration": 1.6,
+        "description": "车主斜靠在驾驶座，惬意观看大屏播放的内容",
+        "movement": "静态展示",
+        "subject": "车主",
+        "object": [
+          "中控大屏",
+          "驾驶座"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "娱乐设施",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "影音娱乐体验"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "舒适",
+          "惬意"
+        ],
+        "scenario_a": [
+          "车内追剧",
+          "休闲娱乐"
+        ],
+        "scenario_b": [
+          "停车休息",
+          "影音体验"
+        ],
+        "marketing_phrases": [
+          "车内追剧",
+          "看综艺",
+          "影音娱乐爽"
+        ],
+        "marketing_tags": [
+          "车载娱乐",
+          "智己LS6",
+          "新能源车",
+          "舒适体验"
+        ],
+        "appealing_audience": [
+          "年轻车主",
+          "影音爱好者",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "影音娱乐",
+          "停车休闲"
+        ]
+      }
+    ]
+  }
+}

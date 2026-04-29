@@ -1,6 +1,10 @@
 from __future__ import annotations
 
+import asyncio
 import json
+import os
+from pathlib import Path
+from tempfile import mkdtemp
 from typing import Any, Dict, List, Optional, Tuple
 
 from models.pydantic.opensearch_index import index_v2_enums
@@ -9,6 +13,12 @@ from models.pydantic.model_output_schema.seedtext_script_segments_schema import 
     SeedtextIndexTagsEnvelope,
 )
 from utils.call_model_utils import call_doubao_seedtext
+from utils.alivoice_utils import AliTTS
+
+try:
+    from pymediainfo import MediaInfo
+except Exception:  # pragma: no cover
+    MediaInfo = None  # type: ignore
 
 
 def _join_choices(xs: List[str]) -> str:
@@ -16,6 +26,15 @@ def _join_choices(xs: List[str]) -> str:
 
 
 MODEL_CANDIDATES = ["Seed 2.0 Lite"]
+
+# --- Optional: use AliTTS + pymediainfo to compute accurate durations ---
+# Flip to False (or comment out the block in rewrite_script_to_storyboard_and_tags) to skip.
+ENABLE_TTS_DURATION = True
+TTS_VOICE = "zhimao"
+TTS_SPEED = 0
+TTS_VOLUME = 80
+TTS_DURATION_PAD_SECONDS = 0.4
+TTS_MAX_CONCURRENCY = 4
 
 
 SYSTEM_PROMPT_STAGE1 = f"""你是一个“汽车短视频口播脚本 → 分镜规划(StoryBoard)”的结构化生成器。
@@ -122,6 +141,74 @@ def _extract_json_text(s: str) -> str:
     return t
 
 
+def _mediainfo_duration_seconds(path: str) -> Optional[float]:
+    """
+    Return duration in seconds from pymediainfo, if available.
+    """
+    if not path or not os.path.exists(path):
+        return None
+    if MediaInfo is None:
+        return None
+    try:
+        mi = MediaInfo.parse(path)
+        # Prefer "General" track duration (ms)
+        for tr in (mi.tracks or []):
+            if getattr(tr, "track_type", None) == "General":
+                d = getattr(tr, "duration", None)
+                if d is not None:
+                    return float(d) / 1000.0
+        # Fallback: any track duration
+        for tr in (mi.tracks or []):
+            d = getattr(tr, "duration", None)
+            if d is not None:
+                return float(d) / 1000.0
+    except Exception:
+        return None
+    return None
+
+
+async def _apply_tts_durations_inplace(storyboard: SeedtextStoryboardEnvelope) -> None:
+    """
+    Mutate storyboard.storyboard[*].duration using AliTTS audio length + padding.
+    Any errors fall back to existing duration.
+    """
+    if not storyboard or not getattr(storyboard, "storyboard", None):
+        return
+
+    # Create a temp workspace folder for wavs.
+    out_dir = Path(mkdtemp(prefix="tts_dur_"))
+
+    sem = asyncio.Semaphore(int(TTS_MAX_CONCURRENCY))
+
+    async def one(i: int) -> None:
+        seg = storyboard.storyboard[i]
+        text = (seg.segment_text or "").strip()
+        if not text:
+            return
+        wav_path = str(out_dir / f"seg_{i:04d}.wav")
+        try:
+            async with sem:
+                tts = AliTTS(
+                    tid=f"tts_dur_{i}",
+                    test_file=wav_path,
+                    voice=TTS_VOICE,
+                    speed=TTS_SPEED,
+                    volume=TTS_VOLUME,
+                )
+                # Generate wav
+                await tts.async_start(text)
+            dur = _mediainfo_duration_seconds(wav_path)
+            if dur is None:
+                return
+            dur2 = float(dur) + float(TTS_DURATION_PAD_SECONDS)
+            # Keep a sane floor; avoid 0 duration.
+            seg.duration = max(0.5, round(dur2, 2))
+        except Exception:
+            return
+
+    await asyncio.gather(*[one(i) for i in range(len(storyboard.storyboard))])
+
+
 async def rewrite_script_to_storyboard_and_tags(
     script: str,
     *,
@@ -162,6 +249,11 @@ async def rewrite_script_to_storyboard_and_tags(
     # ensure index field is consistent
     for seg in storyboard.storyboard:
         seg.index = index
+
+    # --- Optional: TTS precise duration step (can be toggled off) ---
+    # If you want to skip, set ENABLE_TTS_DURATION = False.
+    if ENABLE_TTS_DURATION:
+        await _apply_tts_durations_inplace(storyboard)
 
     stage2_prompt = (
         "下面是 Stage1 生成的 storyboard JSON，请基于它输出 Stage2 的严格标签。\n\n"

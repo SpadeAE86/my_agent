@@ -1,0 +1,215 @@
+{
+  "id": 2,
+  "topic": "油车车主的真香时刻",
+  "title": "开油车的都后悔了！这车比油车还省心",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 2,
+        "id": 1,
+        "segment_text": "智己LS6超级增程",
+        "duration": 1.4,
+        "description": "城市道路远景拍摄智己LS6平稳行驶",
+        "video_usage": "产品展示",
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "subject": "智己LS6",
+        "object": [],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "超级增程动力"
+        ],
+        "adjective": [
+          "动感"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 2,
+        "segment_text": "亏电油耗不到5.32升",
+        "duration": 2.0,
+        "description": "侧跟拍智己LS6在城市快速路行驶",
+        "video_usage": "产品展示",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [],
+        "scene_location": [
+          "城市快速路"
+        ],
+        "selling_point": [
+          "低亏电油耗"
+        ],
+        "adjective": [
+          "省油"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 3,
+        "segment_text": "还能加92号油",
+        "duration": 1.2,
+        "description": "固定机位拍摄加油枪插入车辆加油口",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "车辆加油口",
+        "object": [
+          "加油枪"
+        ],
+        "scene_location": [
+          "加油站"
+        ],
+        "selling_point": [
+          "低油品兼容性"
+        ],
+        "adjective": [
+          "省心"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 4,
+        "segment_text": "一年两箱油就够了",
+        "duration": 1.6,
+        "description": "航拍智己LS6沿开阔公路行驶",
+        "video_usage": "建立空间感",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己LS6",
+        "object": [],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "selling_point": [
+          "低使用成本"
+        ],
+        "adjective": [
+          "省心",
+          "省钱"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 5,
+        "segment_text": "用车成本直接砍半",
+        "duration": 1.4,
+        "description": "车主微笑着坐在主驾驶位",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "车主",
+        "object": [
+          "方向盘",
+          "驾驶位"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "低用车成本"
+        ],
+        "adjective": [
+          "划算",
+          "省心"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 6,
+        "segment_text": "关键是它后排空间超大",
+        "duration": 1.8,
+        "description": "打开车门拍摄后排整体空间",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "后排座舱",
+        "object": [
+          "后排座椅"
+        ],
+        "scene_location": [
+          "静态车内"
+        ],
+        "selling_point": [
+          "大后排空间"
+        ],
+        "adjective": [
+          "宽敞"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 7,
+        "segment_text": "近90%得房率",
+        "duration": 1.0,
+        "description": "大特写平整的后排贯通地板",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "后排地板",
+        "object": [],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "高空间得房率"
+        ],
+        "adjective": [
+          "宽敞"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 8,
+        "segment_text": "我一米八的大个子坐后排还能翘二郎腿",
+        "duration": 3.2,
+        "description": "一米八身高乘客坐在后排，展示腿部空间并翘起二郎腿",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "乘客",
+        "object": [
+          "后排座椅",
+          "腿部空间"
+        ],
+        "scene_location": [
+          "静态车内"
+        ],
+        "selling_point": [
+          "大后排空间"
+        ],
+        "adjective": [
+          "宽敞",
+          "舒适"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 9,
+        "segment_text": "孩子都能在后排跑",
+        "duration": 1.6,
+        "description": "小朋友在后排站立走动展示空间余量",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "儿童乘客",
+        "object": [
+          "后排空间"
+        ],
+        "scene_location": [
+          "静态车内"
+        ],
+        "selling_point": [
+          "超大后排空间"
+        ],
+        "adjective": [
+          "宽敞",
+          "实用"
+        ]
+      }
+    ]
+  }
+}
