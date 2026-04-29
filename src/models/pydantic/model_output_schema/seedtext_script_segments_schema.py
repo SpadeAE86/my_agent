@@ -141,7 +141,7 @@ class SeedtextIndexTagsSegment(BaseModel):
         index_v2_enums.UNKNOWN,
         description=(
             f"画面类型（{_enum_hint(index_v2_enums.FOOTAGE_TYPE_CHOICES)}）。"
-            "尽量不要填 未知：实拍优先选 原创实拍；车机/界面优先选 屏幕录制；无法判断再选 未知。"
+            "尽量不要填“未知”：如果描述明显是实拍（户外/车内POV/跟拍等），优先填“生活实拍 ”；如果是从非常精致的角度，非常漂亮的色彩光泽运镜创意，优先填写“TVC切片”；如果是拍摄角度画面构图挑选的很好，但质量达不到成品，优先填写“专业摄影”，优先填写“专业拍摄”。只有完全无法判断才用“未知”。"
         ),
     )
 

@@ -16,8 +16,21 @@ class CarInteriorAnalysisV2(BaseIndex):
     """
     Index V2:
     - More structured filter fields (keyword/boolean)
-    - Fewer, more targeted vector fields (方案A：按字段分别向量)
-    - Avoids OpenSearch multi-field by using explicit *_text companions when needed.
+    - Multiple knn_vector fields (方案 A：按语义通道分向量，便于按查询选路)
+
+    向量字段说明（384-d，cosinesimil）：
+    - description_vector：已由 `description` 入库时 embed（画面客观描述）。若集群里看不到该字段，
+      说明 mapping 是旧版，需要 delete index → `build_car_interior_index_v2` → 重灌文档。
+    - marketing / selling / scenario_*：各列表单独 embed。
+    - adjectives_vector：design_adjectives + function_adjectives 合并成一句再 embed（可选精排，
+      避免再拆两路向量）。
+
+    向量是否「太多」：
+    - 存储上：每个文档多一路向量多一份 HNSW 存储与 merge 成本；通常仍可接受。
+    - 查询上：`hybrid` 子查询数量有限，检索时只选 2～4 路 KNN + BM25 即可（不必每路都进 hybrid）。
+      其余向量留给二次排序、msearch 分路或离线打分。
+    - 业界常见：简单场景 1 条 embedding；内容检索常见「标题向量 + 正文向量」2 路；
+      再多就属于细分语义通道（和你们现状类似），重点是查询阶段控制子查询数量。
     """
 
     class Meta:
@@ -151,6 +164,11 @@ class CarInteriorAnalysisV2(BaseIndex):
     marketing_phrases_vector: Annotated[Optional[List[float]], Vector(384, 1.3)] = Field(
         None, description="marketing_phrases 的向量"
     )
+    # Single merged channel for tone/vibe (optional rerank); avoids two extra vectors for design vs function adj.
+    adjectives_vector: Annotated[Optional[List[float]], Vector(384, 0.65)] = Field(
+        None,
+        description="design_adjectives + function_adjectives 拼接后 embed；用于精排/辅路，不必默认加入 hybrid",
+    )
 
     @classmethod
     def from_analysis_result(cls, analysis_result: dict, embedding_model) -> "CarInteriorAnalysisV2":
@@ -168,6 +186,9 @@ class CarInteriorAnalysisV2(BaseIndex):
         scenario_a = analysis_result.get("scenario_a", []) or []
         scenario_b = analysis_result.get("scenario_b", []) or []
         marketing_phrases = analysis_result.get("marketing_phrases", []) or []
+        design_adj = analysis_result.get("design_adjectives", []) or []
+        function_adj = analysis_result.get("function_adjectives", []) or []
+        adjectives_text = join_list(list(design_adj) + list(function_adj))
 
         return cls(
             id=analysis_result.get("id"),
@@ -213,6 +234,7 @@ class CarInteriorAnalysisV2(BaseIndex):
             scenario_a_vector=cls._generate_embedding(join_list(scenario_a), embedding_model),
             scenario_b_vector=cls._generate_embedding(join_list(scenario_b), embedding_model),
             marketing_phrases_vector=cls._generate_embedding(join_list(marketing_phrases), embedding_model),
+            adjectives_vector=cls._generate_embedding(adjectives_text, embedding_model),
         )
 
     @staticmethod

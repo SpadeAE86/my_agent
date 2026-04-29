@@ -9,61 +9,57 @@
         "index": 3,
         "id": 1,
         "segment_text": "智己LS6的增程电池",
-        "duration": 1.6,
-        "description": "车外远景展示烈日下新一代LS6的整车外观",
+        "duration": 1.4,
+        "description": "特写车头智己LS6车型标识，车辆停放在烈日下的室外场地",
         "movement": "静态展示",
         "subject": "智己LS6",
         "object": [
-          "车身",
-          "增程电池标识"
+          "车型标识",
+          "车身"
         ],
         "footage_type": "专业摄影",
-        "topic": "电池",
+        "topic": "夏季表现",
         "text": [],
-        "shot_style": "车外跟拍",
-        "shot_type": "远景",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
         "video_usage": [
           "产品展示"
         ],
         "scene_location": [
-          "高温柏油公路",
-          "户外"
+          "室外停车场",
+          "高温户外"
         ],
-        "design_selling_points": [
+        "design_selling_points": [],
+        "function_selling_points": [
           "增程电池"
         ],
-        "function_selling_points": [],
         "design_adjectives": [],
         "function_adjectives": [
-          "硬核",
-          "可靠"
+          "硬核"
         ],
         "scenario_a": [
-          "户外公路"
+          "高温户外",
+          "室外停车场"
         ],
-        "scenario_b": [
-          "高温场景"
-        ],
+        "scenario_b": [],
         "marketing_phrases": [
-          "智己LS6",
-          "增程电池",
-          "高温耐测"
+          "智己LS6增程电池",
+          "高温车辆表现"
         ],
         "marketing_tags": [
           "夏季用车",
-          "电池技术"
+          "新能源汽车"
         ],
         "appealing_audience": [
-          "购车用户",
-          "家庭用户"
+          "新能源购车者",
+          "家用车用户"
         ],
         "car_color": "未知",
         "product_status_scene": "静态外观",
         "weather": "酷暑",
         "time": "白天",
         "extra_tags": [
-          "整车外观",
-          "高温测试"
+          "车头车型标识"
         ]
       },
       {
@@ -71,25 +67,27 @@
         "id": 2,
         "segment_text": "40度高温电量依然稳定",
         "duration": 2.0,
-        "description": "特写中控屏幕的电池管理UI，显示电量保持稳定",
-        "movement": "静态展示",
-        "subject": "中控屏幕",
+        "description": "车内POV视角，仪表盘显示电量数值稳定，窗外是烈日下的道路",
+        "movement": "行驶",
+        "subject": "智己LS6",
         "object": [
-          "电量UI",
-          "温度显示"
+          "仪表盘",
+          "电量显示",
+          "车机"
         ],
-        "footage_type": "专业摄影",
-        "topic": "电池",
+        "footage_type": "生活实拍",
+        "topic": "夏季表现",
         "text": [
           "40度"
         ],
         "shot_style": "车内POV",
-        "shot_type": "特写",
+        "shot_type": "中景",
         "video_usage": [
           "功能讲解"
         ],
         "scene_location": [
           "车内",
+          "城市道路",
           "高温户外"
         ],
         "design_selling_points": [],
@@ -99,34 +97,31 @@
         "design_adjectives": [],
         "function_adjectives": [
           "稳定",
-          "靠谱"
+          "可靠"
         ],
         "scenario_a": [
-          "车内"
+          "车内行车",
+          "高温环境"
         ],
-        "scenario_b": [
-          "高温场景"
-        ],
+        "scenario_b": [],
         "marketing_phrases": [
           "高温电量稳定",
-          "电池管理",
-          "智己LS6"
+          "40度高温用车"
         ],
         "marketing_tags": [
           "夏季用车",
-          "电池性能"
+          "新能源汽车"
         ],
         "appealing_audience": [
-          "购车用户",
-          "家用车主"
+          "家用用户",
+          "南方用车用户"
         ],
         "car_color": "未知",
-        "product_status_scene": "静态内饰",
+        "product_status_scene": "路跑内饰",
         "weather": "酷暑",
-        "time": "白天",
+        "time": "室内",
         "extra_tags": [
-          "中控屏幕",
-          "电池UI"
+          "仪表盘电量显示"
         ]
       },
       {
@@ -134,20 +129,19 @@
         "id": 3,
         "segment_text": "空调制冷给力",
         "duration": 1.2,
-        "description": "特写空调出风口，冷雾涌出，旁侧温度计显示温度下降",
+        "description": "特写车载空调出风口，带出冷雾效果",
         "movement": "静态展示",
         "subject": "车载空调",
         "object": [
-          "出风口",
-          "温度计"
+          "空调出风口"
         ],
         "footage_type": "专业摄影",
-        "topic": "舒适",
+        "topic": "夏季表现",
         "text": [],
         "shot_style": "固定机位",
         "shot_type": "特写",
         "video_usage": [
-          "功能讲解"
+          "展示细节"
         ],
         "scene_location": [
           "车内"
@@ -159,26 +153,24 @@
         "design_adjectives": [],
         "function_adjectives": [
           "凉爽",
-          "给力"
+          "舒适"
         ],
         "scenario_a": [
-          "车内"
+          "车内降温",
+          "夏季用车"
         ],
-        "scenario_b": [
-          "高温场景"
-        ],
+        "scenario_b": [],
         "marketing_phrases": [
           "空调制冷给力",
-          "车载空调",
-          "降温快"
+          "车内凉爽舒适"
         ],
         "marketing_tags": [
           "夏季用车",
-          "舒适配置"
+          "舒适出行"
         ],
         "appealing_audience": [
-          "家用购车用户",
-          "出行用户"
+          "家用出行用户",
+          "南方用户"
         ],
         "car_color": "未知",
         "product_status_scene": "静态内饰",
@@ -186,7 +178,7 @@
         "time": "室内",
         "extra_tags": [
           "空调出风口",
-          "快速降温"
+          "冷雾效果"
         ]
       },
       {
@@ -194,12 +186,12 @@
         "id": 4,
         "segment_text": "南方夏天照样畅行无忧",
         "duration": 2.0,
-        "description": "航拍大远景，LS6在南方城市高架路顺畅行驶，远处可见热浪",
+        "description": "航拍视角，车辆在南方城市公路顺畅行驶，烈日晴空",
         "movement": "行驶",
         "subject": "智己LS6",
         "object": [
-          "城市高架",
-          "车流"
+          "公路",
+          "城市风光"
         ],
         "footage_type": "专业摄影",
         "topic": "夏季表现",
@@ -207,16 +199,16 @@
         "shot_style": "航拍",
         "shot_type": "大远景",
         "video_usage": [
-          "使用场景展示"
+          "建立空间感"
         ],
         "scene_location": [
-          "城市道路",
+          "城市公路",
           "高温户外",
-          "高架路"
+          "南方城市"
         ],
         "design_selling_points": [],
         "function_selling_points": [
-          "高温畅行"
+          "夏季畅行"
         ],
         "design_adjectives": [],
         "function_adjectives": [
@@ -224,55 +216,56 @@
           "无忧"
         ],
         "scenario_a": [
-          "城市道路"
+          "城市公路行驶",
+          "夏季户外"
         ],
-        "scenario_b": [
-          "夏季出行"
-        ],
+        "scenario_b": [],
         "marketing_phrases": [
           "南方夏天畅行",
-          "高温行车",
-          "智己LS6"
+          "夏季畅行无忧"
         ],
         "marketing_tags": [
-          "夏季用车",
-          "城市出行"
+          "夏季出行",
+          "城市通勤"
         ],
         "appealing_audience": [
-          "城市用户",
-          "购车用户",
-          "家庭用户"
+          "通勤用户",
+          "家用用户",
+          "南方用户"
         ],
         "car_color": "未知",
         "product_status_scene": "路跑外观",
         "weather": "酷暑",
         "time": "白天",
         "extra_tags": [
-          "航拍路况",
-          "热浪路面"
+          "航拍车辆",
+          "城市道路行驶"
         ]
       },
       {
         "index": 3,
         "id": 5,
         "segment_text": "先进的爆胎稳定控制",
-        "duration": 1.8,
-        "description": "特写中控安全配置界面，显示爆胎稳定控制功能标识",
-        "movement": "静态展示",
-        "subject": "中控屏幕",
+        "duration": 1.6,
+        "description": "车内POV，驾驶员手握方向盘，稳定系统指示灯亮起",
+        "movement": "行驶",
+        "subject": "智己LS6",
         "object": [
-          "安全功能UI"
+          "方向盘",
+          "系统指示灯",
+          "驾驶位"
         ],
-        "footage_type": "专业摄影",
-        "topic": "智驾",
+        "footage_type": "生活实拍",
+        "topic": "夏季表现",
         "text": [],
         "shot_style": "车内POV",
-        "shot_type": "特写",
+        "shot_type": "中景",
         "video_usage": [
           "功能讲解"
         ],
         "scene_location": [
-          "车内"
+          "车内",
+          "道路"
         ],
         "design_selling_points": [],
         "function_selling_points": [
@@ -284,32 +277,29 @@
           "安全"
         ],
         "scenario_a": [
-          "车内"
+          "行车安全",
+          "车内驾驶"
         ],
-        "scenario_b": [
-          "安全场景"
-        ],
+        "scenario_b": [],
         "marketing_phrases": [
           "爆胎稳定控制",
-          "行车安全",
-          "先进安全配置"
+          "行车安全"
         ],
         "marketing_tags": [
-          "安全配置",
-          "行车安全"
+          "安全出行",
+          "夏季用车"
         ],
         "appealing_audience": [
           "购车用户",
-          "家庭用户",
-          "出行用户"
+          "家用用户"
         ],
         "car_color": "未知",
-        "product_status_scene": "静态内饰",
+        "product_status_scene": "路跑内饰",
         "weather": "酷暑",
         "time": "室内",
         "extra_tags": [
-          "安全配置UI",
-          "中控界面"
+          "方向盘",
+          "稳定系统指示灯"
         ]
       },
       {
@@ -317,15 +307,16 @@
         "id": 6,
         "segment_text": "高温路面爆胎都能稳稳刹停",
         "duration": 2.4,
-        "description": "车外中景跟拍，车辆爆胎后平稳减速直至刹停",
+        "description": "车外跟拍，车辆在高温柏油路面爆胎后平稳制动停下",
         "movement": "刹车",
         "subject": "智己LS6",
         "object": [
           "轮胎",
-          "刹车盘"
+          "刹车系统",
+          "柏油路面"
         ],
-        "footage_type": "专业摄影",
-        "topic": "智驾",
+        "footage_type": "生活实拍",
+        "topic": "夏季表现",
         "text": [],
         "shot_style": "车外跟拍",
         "shot_type": "中景",
@@ -333,68 +324,68 @@
           "功能讲解"
         ],
         "scene_location": [
-          "高温柏油路面"
+          "柏油路面",
+          "高温户外"
         ],
         "design_selling_points": [],
         "function_selling_points": [
-          "爆胎稳刹"
+          "爆胎稳停"
         ],
         "design_adjectives": [],
         "function_adjectives": [
           "稳定",
-          "可控"
+          "安全"
         ],
         "scenario_a": [
-          "公路路面"
+          "高温路面",
+          "紧急情况"
         ],
-        "scenario_b": [
-          "应急场景"
-        ],
+        "scenario_b": [],
         "marketing_phrases": [
-          "爆胎稳刹",
-          "高温路面行车",
-          "行车安全"
+          "爆胎稳稳刹停",
+          "高温路面爆胎"
         ],
         "marketing_tags": [
-          "安全性能",
-          "高温测试"
+          "安全行车",
+          "夏季用车"
         ],
         "appealing_audience": [
-          "购车用户",
-          "家用车主"
+          "所有车主",
+          "购车用户"
         ],
         "car_color": "未知",
         "product_status_scene": "路跑外观",
         "weather": "酷暑",
         "time": "白天",
         "extra_tags": [
-          "爆胎测试",
-          "刹车性能"
+          "爆胎制动",
+          "平稳刹车"
         ]
       },
       {
         "index": 3,
         "id": 7,
         "segment_text": "全家出行安全感拉满",
-        "duration": 1.8,
-        "description": "车内中景，一家人轻松出行的愉悦状态",
+        "duration": 1.6,
+        "description": "车内中景，后排坐着一家人，神情放松愉悦，车辆平稳行驶",
         "movement": "行驶",
-        "subject": "乘车家人",
+        "subject": "智己LS6",
         "object": [
-          "后排座椅",
-          "出行物品"
+          "后排乘客",
+          "家人",
+          "后排空间"
         ],
-        "footage_type": "专业摄影",
-        "topic": "舒适",
+        "footage_type": "生活实拍",
+        "topic": "夏季表现",
         "text": [],
         "shot_style": "固定机位",
         "shot_type": "中景",
         "video_usage": [
-          "烘托氛围"
+          "使用场景展示"
         ],
         "scene_location": [
           "车内",
-          "公路"
+          "行驶途中"
         ],
         "design_selling_points": [],
         "function_selling_points": [
@@ -403,27 +394,24 @@
         "design_adjectives": [],
         "function_adjectives": [
           "安心",
-          "安全感满满"
+          "舒适"
         ],
         "scenario_a": [
-          "车内"
-        ],
-        "scenario_b": [
-          "家庭出行"
-        ],
-        "marketing_phrases": [
           "全家出行",
-          "安全感拉满",
-          "出行无忧"
+          "车内乘坐"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "全家出行安全感",
+          "出行安全舒适"
         ],
         "marketing_tags": [
-          "家庭出行",
+          "家用出行",
           "安全出行"
         ],
         "appealing_audience": [
           "家庭用户",
-          "购车用户",
-          "多孩家庭"
+          "全家出行用户"
         ],
         "car_color": "未知",
         "product_status_scene": "路跑内饰",
@@ -431,7 +419,7 @@
         "time": "室内",
         "extra_tags": [
           "后排空间",
-          "家人出行"
+          "全家出行"
         ]
       }
     ]

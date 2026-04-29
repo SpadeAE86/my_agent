@@ -47,7 +47,7 @@ from infra.storage.mysql_connector import mysql_connector
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 
 
-BASE_VIDEO_DIR = Path(r"C:\Users\25065\Downloads\汽车\ls6_video\LS6视频")
+BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
 # For reproducible cache tests: when non-empty, only analyze these videos.
 OVERRIDE_VIDEOS: List[str] = [
     r"D:\wsn_data\aigc_data\数字人素材（LS9、全新L6）\LS9\冰雪\20251216-LS9官号-双车漂移-1.mp4"
@@ -91,7 +91,7 @@ TESTSET_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "testset_v2
 ANALYSIS_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "analysis_cache_v2.json"
 # Cache for OBS source video upload so we don't re-upload the same video repeatedly.
 VIDEO_UPLOAD_CACHE_PATH = Path(__file__).resolve().parent / "workspace" / "video_upload_cache_v2.json"
-USE_ANALYSIS_CACHE = False  # keep False to observe upload/frame cache logs when debugging
+USE_ANALYSIS_CACHE = True  # keep False to observe upload/frame cache logs when debugging
 
 # Ingest into OpenSearch after analysis (can turn off quickly).
 ENABLE_INGEST = True

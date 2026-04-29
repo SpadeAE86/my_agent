@@ -32,6 +32,7 @@ VECTOR_FIELDS = [
     "scenario_a_vector",
     "scenario_b_vector",
     "marketing_phrases_vector",
+    "adjectives_vector",
 ]
 
 

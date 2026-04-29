@@ -9,26 +9,25 @@
         "index": 3,
         "id": 1,
         "segment_text": "智己LS6的增程电池",
-        "duration": 1.6,
-        "description": "车外远景展示烈日下新一代LS6的整车外观",
+        "duration": 1.4,
+        "description": "特写车头智己LS6车型标识，车辆停放在烈日下的室外场地",
         "video_usage": "产品展示",
-        "shot_style": "车外跟拍",
-        "shot_type": "远景",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
         "subject": "智己LS6",
         "object": [
-          "车身",
-          "增程电池标识"
+          "车型标识",
+          "车身"
         ],
         "scene_location": [
-          "高温柏油公路",
-          "户外"
+          "室外停车场",
+          "高温户外"
         ],
         "selling_point": [
           "增程电池"
         ],
         "adjective": [
-          "硬核",
-          "可靠"
+          "硬核"
         ]
       },
       {
@@ -36,25 +35,25 @@
         "id": 2,
         "segment_text": "40度高温电量依然稳定",
         "duration": 2.0,
-        "description": "特写中控屏幕的电池管理UI，显示电量保持稳定",
+        "description": "车内POV视角，仪表盘显示电量数值稳定，窗外是烈日下的道路",
         "video_usage": "功能讲解",
         "shot_style": "车内POV",
-        "shot_type": "特写",
-        "subject": "中控屏幕",
+        "shot_type": "中景",
+        "subject": "智己LS6",
         "object": [
-          "电量UI",
-          "温度显示"
+          "仪表盘",
+          "电量显示"
         ],
         "scene_location": [
           "车内",
-          "高温户外"
+          "城市道路"
         ],
         "selling_point": [
           "高温电量稳定"
         ],
         "adjective": [
           "稳定",
-          "靠谱"
+          "可靠"
         ]
       },
       {
@@ -62,14 +61,13 @@
         "id": 3,
         "segment_text": "空调制冷给力",
         "duration": 1.2,
-        "description": "特写空调出风口，冷雾涌出，旁侧温度计显示温度下降",
-        "video_usage": "功能讲解",
+        "description": "特写车载空调出风口，带出冷雾效果",
+        "video_usage": "展示细节",
         "shot_style": "固定机位",
         "shot_type": "特写",
         "subject": "车载空调",
         "object": [
-          "出风口",
-          "温度计"
+          "空调出风口"
         ],
         "scene_location": [
           "车内"
@@ -79,7 +77,7 @@
         ],
         "adjective": [
           "凉爽",
-          "给力"
+          "舒适"
         ]
       },
       {
@@ -87,21 +85,21 @@
         "id": 4,
         "segment_text": "南方夏天照样畅行无忧",
         "duration": 2.0,
-        "description": "航拍大远景，LS6在南方城市高架路顺畅行驶，远处可见热浪",
-        "video_usage": "使用场景展示",
+        "description": "航拍视角，车辆在南方城市公路顺畅行驶，烈日晴空",
+        "video_usage": "建立空间感",
         "shot_style": "航拍",
         "shot_type": "大远景",
         "subject": "智己LS6",
         "object": [
-          "城市高架",
-          "车流"
+          "公路",
+          "城市风光"
         ],
         "scene_location": [
-          "城市道路",
+          "城市公路",
           "高温户外"
         ],
         "selling_point": [
-          "高温畅行"
+          "夏季畅行"
         ],
         "adjective": [
           "顺畅",
@@ -112,14 +110,15 @@
         "index": 3,
         "id": 5,
         "segment_text": "先进的爆胎稳定控制",
-        "duration": 1.8,
-        "description": "特写中控安全配置界面，显示爆胎稳定控制功能标识",
+        "duration": 1.6,
+        "description": "车内POV，驾驶员手握方向盘，稳定系统指示灯亮起",
         "video_usage": "功能讲解",
         "shot_style": "车内POV",
-        "shot_type": "特写",
-        "subject": "中控屏幕",
+        "shot_type": "中景",
+        "subject": "智己LS6",
         "object": [
-          "安全功能UI"
+          "方向盘",
+          "系统指示灯"
         ],
         "scene_location": [
           "车内"
@@ -137,50 +136,50 @@
         "id": 6,
         "segment_text": "高温路面爆胎都能稳稳刹停",
         "duration": 2.4,
-        "description": "车外中景跟拍，车辆爆胎后平稳减速直至刹停",
+        "description": "车外跟拍，车辆在高温柏油路面爆胎后平稳制动停下",
         "video_usage": "功能讲解",
         "shot_style": "车外跟拍",
         "shot_type": "中景",
         "subject": "智己LS6",
         "object": [
           "轮胎",
-          "刹车盘"
+          "刹车系统"
         ],
         "scene_location": [
-          "高温柏油路面"
+          "柏油路面",
+          "高温户外"
         ],
         "selling_point": [
-          "爆胎稳刹"
+          "爆胎稳停"
         ],
         "adjective": [
           "稳定",
-          "可控"
+          "安全"
         ]
       },
       {
         "index": 3,
         "id": 7,
         "segment_text": "全家出行安全感拉满",
-        "duration": 1.8,
-        "description": "车内中景，一家人轻松出行的愉悦状态",
-        "video_usage": "烘托氛围",
+        "duration": 1.6,
+        "description": "车内中景，后排坐着一家人，神情放松愉悦，车辆平稳行驶",
+        "video_usage": "使用场景展示",
         "shot_style": "固定机位",
         "shot_type": "中景",
-        "subject": "乘车家人",
+        "subject": "智己LS6",
         "object": [
-          "后排座椅",
-          "出行物品"
+          "后排乘客",
+          "家人"
         ],
         "scene_location": [
-          "车内",
-          "公路"
+          "车内"
         ],
         "selling_point": [
           "出行安全"
         ],
         "adjective": [
           "安心",
-          "安全感满满"
+          "舒适"
         ]
       }
     ]

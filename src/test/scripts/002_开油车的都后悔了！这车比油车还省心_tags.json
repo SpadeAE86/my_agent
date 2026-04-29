@@ -8,85 +8,87 @@
       {
         "index": 2,
         "id": 1,
-        "segment_text": "智己新一代LS6超级增程",
-        "duration": 2.0,
-        "description": "城市快速路航拍智己LS6行驶画面",
+        "segment_text": "智己LS6超级增程",
+        "duration": 1.4,
+        "description": "航拍城市道路上行驶的智己LS6整车",
         "movement": "行驶",
-        "subject": "智己新一代LS6",
+        "subject": "智己LS6",
         "object": [
-          "城市道路"
+          "整车"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
         "topic": "未知",
-        "text": [],
+        "text": [
+          "超级增程"
+        ],
         "shot_style": "航拍",
         "shot_type": "大远景",
         "video_usage": [
           "产品展示"
         ],
         "scene_location": [
-          "城市快速路"
+          "城市道路"
         ],
         "design_selling_points": [],
         "function_selling_points": [
-          "超级增程动力"
+          "超级增程"
         ],
         "design_adjectives": [
           "大气"
         ],
-        "function_adjectives": [
-          "流畅"
-        ],
+        "function_adjectives": [],
         "scenario_a": [
-          "城市公路"
+          "城市通勤"
         ],
-        "scenario_b": [],
+        "scenario_b": [
+          "高速路跑"
+        ],
         "marketing_phrases": [
-          "新一代LS6",
+          "智己LS6",
           "超级增程"
         ],
         "marketing_tags": [
-          "新车宣传",
-          "新能源汽车"
+          "新能源汽车",
+          "增程车型",
+          "家用车"
         ],
         "appealing_audience": [
-          "购车用户",
-          "家庭用户"
+          "家用购车用户",
+          "通勤用户"
         ],
         "car_color": "未知",
         "product_status_scene": "路跑外观",
         "weather": "晴天",
         "time": "白天",
         "extra_tags": [
-          "公路行驶",
-          "城市通勤"
+          "智己LS6",
+          "增程电动车",
+          "城市路跑"
         ]
       },
       {
         "index": 2,
         "id": 2,
         "segment_text": "亏电油耗不到5.32升",
-        "duration": 1.4,
-        "description": "车内仪表盘特写显示亏电油耗数值",
+        "duration": 2.0,
+        "description": "静态展示车辆，特写车辆加油口",
         "movement": "静态展示",
-        "subject": "智己LS6仪表盘",
+        "subject": "智己LS6",
         "object": [
-          "油耗显示屏",
-          "仪表盘"
+          "加油口"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
         "topic": "未知",
         "text": [
-          "5.32升",
-          "亏电油耗"
+          "5.32升"
         ],
-        "shot_style": "车内POV",
+        "shot_style": "固定机位",
         "shot_type": "特写",
         "video_usage": [
           "功能讲解"
         ],
         "scene_location": [
-          "车内"
+          "停车场"
         ],
         "design_selling_points": [],
         "function_selling_points": [
@@ -97,48 +99,50 @@
           "省油"
         ],
         "scenario_a": [
-          "车内"
+          "日常加油"
         ],
         "scenario_b": [],
         "marketing_phrases": [
-          "亏电油耗低",
-          "不到5.32升"
+          "亏电油耗不到5.32升",
+          "低亏电油耗",
+          "省油"
         ],
         "marketing_tags": [
-          "省油汽车"
+          "低油耗",
+          "增程省油"
         ],
         "appealing_audience": [
-          "购车用户",
-          "燃油敏感用户"
+          "家用购车用户",
+          "在意油耗用户"
         ],
         "car_color": "未知",
-        "product_status_scene": "路跑内饰",
-        "weather": "未知",
-        "time": "室内",
+        "product_status_scene": "静态外观",
+        "weather": "晴天",
+        "time": "白天",
         "extra_tags": [
-          "油耗显示",
-          "车机仪表"
+          "智己LS6",
+          "低亏电油耗"
         ]
       },
       {
         "index": 2,
         "id": 3,
         "segment_text": "还能加92号油",
-        "duration": 1.2,
-        "description": "加油枪加注92号汽油的特写",
+        "duration": 1.0,
+        "description": "特写油枪插入油箱加注汽油的动作",
         "movement": "未知",
         "subject": "加油枪",
         "object": [
-          "油箱口",
-          "92号油标识"
+          "油枪",
+          "油箱"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
         "topic": "未知",
         "text": [
-          "92号"
+          "92号油"
         ],
         "shot_style": "固定机位",
-        "shot_type": "特写",
+        "shot_type": "大特写",
         "video_usage": [
           "功能讲解"
         ],
@@ -154,97 +158,104 @@
           "省钱"
         ],
         "scenario_a": [
-          "加油站"
+          "加油站加油"
         ],
         "scenario_b": [],
         "marketing_phrases": [
           "可以加92号油",
-          "用车省钱"
+          "低燃油要求",
+          "省钱"
         ],
         "marketing_tags": [
-          "低用车成本"
+          "低用车成本",
+          "省钱用车"
         ],
         "appealing_audience": [
-          "购车用户",
-          "家用用户"
+          "家用购车用户",
+          "预算有限用户"
         ],
         "car_color": "未知",
-        "product_status_scene": "未知",
+        "product_status_scene": "静态外观",
         "weather": "晴天",
         "time": "白天",
         "extra_tags": [
-          "加油场景",
-          "燃油适配"
+          "智己LS6",
+          "92号汽油"
         ]
       },
       {
         "index": 2,
         "id": 4,
         "segment_text": "一年两箱油就够了",
-        "duration": 1.4,
-        "description": "车主将油卡放入钱包，体现用油少",
-        "movement": "静态展示",
+        "duration": 1.6,
+        "description": "车主轻松走过加油站便利店的中景画面",
+        "movement": "未知",
         "subject": "车主",
         "object": [
-          "油卡",
-          "钱包"
+          "购物袋",
+          "便利店"
         ],
-        "footage_type": "生活实拍",
+        "footage_type": "TVC切片",
         "topic": "未知",
         "text": [],
         "shot_style": "固定机位",
         "shot_type": "中景",
         "video_usage": [
-          "功能讲解"
+          "使用场景展示"
         ],
         "scene_location": [
-          "车内"
+          "加油站",
+          "便利店"
         ],
         "design_selling_points": [],
         "function_selling_points": [
-          "极低油耗"
+          "低使用频率"
         ],
         "design_adjectives": [],
         "function_adjectives": [
           "省心"
         ],
         "scenario_a": [
-          "车内"
+          "日常出行"
         ],
-        "scenario_b": [],
+        "scenario_b": [
+          "加油站购物"
+        ],
         "marketing_phrases": [
           "一年两箱油",
-          "用车省心"
+          "低用车频率",
+          "省心"
         ],
         "marketing_tags": [
           "低油耗",
-          "低用车成本"
+          "省心用车"
         ],
         "appealing_audience": [
-          "家用购车用户"
+          "家用车主",
+          "通勤用户"
         ],
         "car_color": "未知",
-        "product_status_scene": "静态空间",
-        "has_presenter": true,
-        "weather": "未知",
-        "time": "室内",
+        "product_status_scene": "未知",
+        "weather": "晴天",
+        "time": "白天",
         "extra_tags": [
-          "车主日常",
-          "低油耗体验"
+          "智己LS6",
+          "低油耗用车"
         ]
       },
       {
         "index": 2,
         "id": 5,
         "segment_text": "用车成本直接砍半！",
-        "duration": 1.6,
-        "description": "车外跟拍智己LS6在城市道路平稳行驶",
+        "duration": 1.4,
+        "description": "车外跟拍智己LS6在高速路平稳行驶",
         "movement": "行驶",
         "subject": "智己LS6",
         "object": [
-          "城市道路"
+          "护栏",
+          "路牌"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
         "topic": "未知",
         "text": [],
         "shot_style": "车外跟拍",
@@ -253,7 +264,7 @@
           "烘托氛围"
         ],
         "scene_location": [
-          "城市道路"
+          "高速路"
         ],
         "design_selling_points": [],
         "function_selling_points": [
@@ -261,50 +272,54 @@
         ],
         "design_adjectives": [],
         "function_adjectives": [
-          "平稳",
-          "划算"
+          "顺畅",
+          "省心"
         ],
         "scenario_a": [
-          "城市道路"
+          "高速出行"
         ],
-        "scenario_b": [],
+        "scenario_b": [
+          "长途驾驶"
+        ],
         "marketing_phrases": [
+          "低用车成本",
           "用车成本砍半",
-          "划算买车"
+          "高速平稳行驶"
         ],
         "marketing_tags": [
-          "高性价比",
-          "低用车成本"
+          "低成本用车",
+          "长途出行"
         ],
         "appealing_audience": [
-          "预算有限购车用户"
+          "长途出行用户",
+          "家用用户"
         ],
         "car_color": "未知",
         "product_status_scene": "路跑外观",
         "weather": "晴天",
         "time": "白天",
         "extra_tags": [
-          "城市行驶",
-          "平稳驾驶"
+          "智己LS6",
+          "高速路跑"
         ]
       },
       {
         "index": 2,
         "id": 6,
         "segment_text": "关键是它后排空间超大",
-        "duration": 2.0,
-        "description": "打开后排车门展示完整后排空间",
+        "duration": 1.8,
+        "description": "打开车门，远景展示后排整体空间",
         "movement": "静态展示",
-        "subject": "智己LS6后排",
+        "subject": "后排座椅",
         "object": [
-          "后排车门",
-          "后排座椅"
+          "车门",
+          "后排靠背"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
         "topic": "舒适",
         "text": [],
         "shot_style": "固定机位",
-        "shot_type": "中景",
+        "shot_type": "远景",
         "video_usage": [
           "产品展示"
         ],
@@ -312,7 +327,7 @@
           "车内"
         ],
         "design_selling_points": [
-          "超大后排空间"
+          "大后排空间"
         ],
         "function_selling_points": [],
         "design_adjectives": [
@@ -320,18 +335,80 @@
         ],
         "function_adjectives": [],
         "scenario_a": [
+          "车内乘坐"
+        ],
+        "scenario_b": [
+          "多人出行"
+        ],
+        "marketing_phrases": [
+          "后排空间超大",
+          "大空间后排"
+        ],
+        "marketing_tags": [
+          "大空间",
+          "家用大空间"
+        ],
+        "appealing_audience": [
+          "多孩家庭",
+          "家用用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态空间",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "智己LS6",
+          "大空间车内"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 7,
+        "segment_text": "近90%得房率",
+        "duration": 1.0,
+        "description": "特写后排腿部到前排靠背的空余距离",
+        "movement": "静态展示",
+        "subject": "后排空间",
+        "object": [
+          "前排靠背",
+          "脚垫"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "舒适",
+        "text": [
+          "90%"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
           "车内"
+        ],
+        "design_selling_points": [
+          "大后排空间",
+          "高空间得房率"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "宽敞"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "车内空间展示"
         ],
         "scenario_b": [],
         "marketing_phrases": [
-          "后排空间超大",
-          "大空间SUV"
+          "近90%得房率",
+          "高空间利用率"
         ],
         "marketing_tags": [
-          "大空间汽车"
+          "高得房率",
+          "大空间"
         ],
         "appealing_audience": [
-          "家庭用户",
+          "家用用户",
           "多人出行用户"
         ],
         "car_color": "未知",
@@ -339,81 +416,23 @@
         "weather": "未知",
         "time": "室内",
         "extra_tags": [
-          "后排空间展示",
-          "家用空间"
-        ]
-      },
-      {
-        "index": 2,
-        "id": 7,
-        "segment_text": "近90%得房率",
-        "duration": 1.2,
-        "description": "中控屏幕显示空间得房率参数的特写",
-        "movement": "静态展示",
-        "subject": "智己LS6中控屏",
-        "object": [
-          "空间参数文字",
-          "中控屏"
-        ],
-        "footage_type": "专业摄影",
-        "topic": "舒适",
-        "text": [
-          "90%",
-          "得房率"
-        ],
-        "shot_style": "固定机位",
-        "shot_type": "特写",
-        "video_usage": [
-          "功能讲解"
-        ],
-        "scene_location": [
-          "车内"
-        ],
-        "design_selling_points": [
-          "高空间利用率"
-        ],
-        "function_selling_points": [],
-        "design_adjectives": [
-          "实用"
-        ],
-        "function_adjectives": [],
-        "scenario_a": [
-          "车内"
-        ],
-        "scenario_b": [],
-        "marketing_phrases": [
-          "近90%空间得房率",
-          "高空间利用率"
-        ],
-        "marketing_tags": [
-          "大空间",
-          "实用设计"
-        ],
-        "appealing_audience": [
-          "家用购车用户"
-        ],
-        "car_color": "未知",
-        "product_status_scene": "静态内饰",
-        "weather": "未知",
-        "time": "室内",
-        "extra_tags": [
-          "中控屏显示",
-          "空间参数"
+          "智己LS6",
+          "空间利用率高"
         ]
       },
       {
         "index": 2,
         "id": 8,
-        "segment_text": "一米八大个子坐后排还能翘二郎腿",
-        "duration": 3.0,
-        "description": "一米八体验者坐在后排，展示腿部空间并翘起二郎腿",
+        "segment_text": "一米八的大个子坐后排",
+        "duration": 2.0,
+        "description": "中景展示一米八身高成年人坐在后排",
         "movement": "静态展示",
-        "subject": "体验者",
+        "subject": "成年乘客",
         "object": [
-          "后排座椅",
-          "腿部空间"
+          "座椅",
+          "头枕"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
         "topic": "舒适",
         "text": [
           "一米八"
@@ -427,55 +446,109 @@
           "车内"
         ],
         "design_selling_points": [
-          "宽敞后排空间"
+          "大后排空间"
         ],
         "function_selling_points": [],
-        "design_adjectives": [
-          "宽松"
-        ],
+        "design_adjectives": [],
         "function_adjectives": [
           "舒适"
         ],
         "scenario_a": [
-          "车内"
+          "多人乘坐"
         ],
-        "scenario_b": [],
+        "scenario_b": [
+          "长途出行"
+        ],
         "marketing_phrases": [
-          "大个子坐后排",
-          "翘二郎腿",
-          "宽敞后排"
+          "一米八坐后排",
+          "大空间不拥挤"
         ],
         "marketing_tags": [
-          "大空间",
-          "舒适出行"
+          "舒适乘坐",
+          "大空间"
         ],
         "appealing_audience": [
-          "家庭用户",
-          "多人出行"
+          "家用用户",
+          "高个子用户"
         ],
         "car_color": "未知",
         "product_status_scene": "静态空间",
-        "has_presenter": true,
         "weather": "未知",
         "time": "室内",
         "extra_tags": [
-          "空间体验",
-          "后排乘坐"
+          "智己LS6",
+          "宽松后排"
         ]
       },
       {
         "index": 2,
         "id": 9,
-        "segment_text": "孩子都能在后排跑！",
-        "duration": 1.6,
-        "description": "小朋友在后排站立走动，展示空间充足",
-        "movement": "未知",
-        "subject": "小朋友",
+        "segment_text": "还能翘二郎腿",
+        "duration": 1.2,
+        "description": "特写乘客在后排翘起二郎腿的动作",
+        "movement": "静态展示",
+        "subject": "乘客腿部",
         "object": [
-          "后排地板",
-          "后排空间"
+          "腿部",
+          "座椅"
         ],
-        "footage_type": "专业摄影",
+        "footage_type": "TVC切片",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [
+          "大后排空间"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "宽松"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "后排乘坐"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "后排可以翘二郎腿",
+          "宽松后排空间"
+        ],
+        "marketing_tags": [
+          "舒适乘坐",
+          "大空间"
+        ],
+        "appealing_audience": [
+          "家用用户",
+          "出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态空间",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "智己LS6",
+          "宽松后排空间"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 10,
+        "segment_text": "孩子都能在后排跑",
+        "duration": 1.6,
+        "description": "中景展示小孩在后排站立走动",
+        "movement": "未知",
+        "subject": "小孩乘客",
+        "object": [
+          "座椅",
+          "扶手"
+        ],
+        "footage_type": "TVC切片",
         "topic": "舒适",
         "text": [],
         "shot_style": "固定机位",
@@ -496,84 +569,30 @@
         ],
         "function_adjectives": [],
         "scenario_a": [
-          "车内"
+          "带娃出行"
         ],
-        "scenario_b": [],
+        "scenario_b": [
+          "多人出行"
+        ],
         "marketing_phrases": [
-          "孩子后排跑",
+          "小孩后排走动",
           "超大后排空间"
         ],
         "marketing_tags": [
-          "大空间家用车"
+          "带娃出行",
+          "大空间家用"
         ],
         "appealing_audience": [
-          "育儿家庭",
-          "多孩家庭"
-        ],
-        "car_color": "未知",
-        "product_status_scene": "静态空间",
-        "has_presenter": true,
-        "weather": "未知",
-        "time": "室内",
-        "extra_tags": [
-          "亲子出行",
-          "后排空间体验"
-        ]
-      },
-      {
-        "index": 2,
-        "id": 10,
-        "segment_text": "这车比油车还省心",
-        "duration": 2.0,
-        "description": "黄昏时分智己LS6在城郊公路行驶的航拍远景",
-        "movement": "行驶",
-        "subject": "智己LS6",
-        "object": [
-          "城郊公路"
-        ],
-        "footage_type": "专业摄影",
-        "topic": "未知",
-        "text": [],
-        "shot_style": "航拍",
-        "shot_type": "远景",
-        "video_usage": [
-          "品牌/形象传达"
-        ],
-        "scene_location": [
-          "城郊公路"
-        ],
-        "design_selling_points": [],
-        "function_selling_points": [
-          "省心好开"
-        ],
-        "design_adjectives": [],
-        "function_adjectives": [
-          "惬意",
-          "安心"
-        ],
-        "scenario_a": [
-          "城郊公路"
-        ],
-        "scenario_b": [],
-        "marketing_phrases": [
-          "比油车省心",
-          "省心好开"
-        ],
-        "marketing_tags": [
-          "省心用车",
-          "增程汽车"
-        ],
-        "appealing_audience": [
-          "新手司机",
+          "多孩家庭",
           "家用用户"
         ],
         "car_color": "未知",
-        "product_status_scene": "路跑外观",
-        "weather": "晴天",
-        "time": "黄昏",
+        "product_status_scene": "静态空间",
+        "weather": "未知",
+        "time": "室内",
         "extra_tags": [
-          "城郊出行",
-          "公路行驶"
+          "智己LS6",
+          "带娃出行大空间"
         ]
       }
     ]

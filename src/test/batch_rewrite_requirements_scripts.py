@@ -128,7 +128,7 @@ async def main():
         raise ValueError("需求脚本.json must be an object with items: []")
 
     sem = asyncio.Semaphore(MAX_CONCURRENCY)
-    results = await asyncio.gather(*[asyncio.create_task(_run_one(it, sem)) for it in items if isinstance(it, dict)])
+    results = await asyncio.gather(*[asyncio.create_task(_run_one(it, sem)) for it in items[:5] if isinstance(it, dict)])
 
     ok = [r for r in results if r.get("success")]
     fail = [r for r in results if not r.get("success")]

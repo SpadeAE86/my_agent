@@ -8,23 +8,24 @@
       {
         "index": 1,
         "id": 1,
-        "segment_text": "这台智己LS6",
+        "segment_text": "这台新一代智己LS6",
         "duration": 1.0,
-        "description": "整车远景外观静态展示",
+        "description": "远景整车静态展示，车辆停在开阔户外，展示整体造型",
         "video_usage": "产品展示",
         "shot_style": "固定机位",
         "shot_type": "远景",
-        "subject": "智己LS6",
+        "subject": "新一代智己LS6",
         "object": [
-          "车身外观"
+          "整车"
         ],
         "scene_location": [
-          "城市道路"
+          "城市户外"
         ],
         "selling_point": [
-          "新一代LS6"
+          "全新车型展示"
         ],
         "adjective": [
+          "大气",
           "时尚"
         ]
       },
@@ -32,35 +33,38 @@
         "index": 1,
         "id": 2,
         "segment_text": "搭载65.9kWh行业超大增程电池",
-        "duration": 2.6,
-        "description": "电池参数信息特写展示",
-        "video_usage": "功能讲解",
-        "shot_style": "未知",
-        "shot_type": "特写",
-        "subject": "增程电池",
+        "duration": 2.0,
+        "description": "中景展示车辆侧面，体现大电池带来的车身布局",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己LS6",
         "object": [
-          "参数铭牌"
+          "车身"
         ],
-        "scene_location": [],
+        "scene_location": [
+          "展台"
+        ],
         "selling_point": [
-          "超大增程电池"
+          "超大容量增程电池"
         ],
         "adjective": [
-          "大容量"
+          "大续航"
         ]
       },
       {
         "index": 1,
         "id": 3,
         "segment_text": "纯电能跑450公里",
-        "duration": 1.4,
-        "description": "中控屏幕显示纯电续航数值",
+        "duration": 1.0,
+        "description": "特写车内仪表盘，显示纯电续航数值",
         "video_usage": "功能讲解",
-        "shot_style": "车内POV",
+        "shot_style": "固定机位",
         "shot_type": "特写",
-        "subject": "中控屏幕",
+        "subject": "智己LS6仪表盘",
         "object": [
-          "续航数字"
+          "仪表盘",
+          "续航显示"
         ],
         "scene_location": [
           "车内"
@@ -77,36 +81,39 @@
         "id": 4,
         "segment_text": "综合续航超过1500公里",
         "duration": 1.6,
-        "description": "中控屏幕显示综合续航参数",
-        "video_usage": "功能讲解",
-        "shot_style": "车内POV",
-        "shot_type": "大特写",
-        "subject": "中控屏幕",
+        "description": "航拍大远景，车辆在开阔公路上行驶，展现长续航出行场景",
+        "video_usage": "建立空间感",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己LS6",
         "object": [
-          "续航数字"
+          "公路",
+          "车流"
         ],
         "scene_location": [
-          "车内"
+          "城市快速路"
         ],
         "selling_point": [
           "超长综合续航"
         ],
         "adjective": [
-          "超长"
+          "持久",
+          "省心"
         ]
       },
       {
         "index": 1,
         "id": 5,
         "segment_text": "我通勤一周充一次电就够了",
-        "duration": 2.0,
-        "description": "航拍城市道路智己LS6正常巡航",
-        "video_usage": "建立空间感",
-        "shot_style": "航拍",
-        "shot_type": "大远景",
-        "subject": "智己LS6",
+        "duration": 2.4,
+        "description": "车内POV视角，女车主日常开车通勤，展现日常使用场景",
+        "video_usage": "使用场景展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "女车主",
         "object": [
-          "城市道路车流"
+          "方向盘",
+          "前挡风玻璃"
         ],
         "scene_location": [
           "城市道路"
@@ -116,7 +123,7 @@
         ],
         "adjective": [
           "省心",
-          "轻松"
+          "便捷"
         ]
       },
       {
@@ -124,13 +131,14 @@
         "id": 6,
         "segment_text": "而且它转弯半径只有4.79米",
         "duration": 2.2,
-        "description": "车机屏幕显示转弯半径参数",
+        "description": "特写方向盘转动，展示转向灵活度",
         "video_usage": "功能讲解",
         "shot_style": "车内POV",
-        "shot_type": "中景",
-        "subject": "中控屏幕",
+        "shot_type": "特写",
+        "subject": "方向盘",
         "object": [
-          "参数界面"
+          "方向盘",
+          "双手"
         ],
         "scene_location": [
           "车内"
@@ -146,20 +154,20 @@
         "index": 1,
         "id": 7,
         "segment_text": "比紧凑级轿车还小",
-        "duration": 1.4,
-        "description": "智己LS6和紧凑级轿车转弯轨迹对比",
+        "duration": 1.2,
+        "description": "车外跟拍车辆转弯，对比紧凑级轿车的转弯幅度",
         "video_usage": "对比评测",
-        "shot_style": "固定机位",
-        "shot_type": "远景",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
         "subject": "智己LS6",
         "object": [
           "紧凑级轿车"
         ],
         "scene_location": [
-          "封闭测试场"
+          "城市路口"
         ],
         "selling_point": [
-          "转弯半径优势"
+          "转弯半径更小"
         ],
         "adjective": [
           "灵活"
@@ -168,22 +176,22 @@
       {
         "index": 1,
         "id": 8,
-        "segment_text": "我这种新手女司机在狭窄地库掉头",
-        "duration": 2.8,
-        "description": "车内POV视角，女司机操控方向盘掉头",
+        "segment_text": "新手女司机狭窄地库掉头",
+        "duration": 2.4,
+        "description": "车外中景拍摄，车辆在狭窄地库进行掉头操作",
         "video_usage": "使用场景展示",
-        "shot_style": "车内POV",
+        "shot_style": "固定机位",
         "shot_type": "中景",
-        "subject": "女司机",
+        "subject": "智己LS6",
         "object": [
-          "方向盘",
-          "地库墙"
+          "地库墙面",
+          "停车位"
         ],
         "scene_location": [
-          "地库"
+          "地下停车场"
         ],
         "selling_point": [
-          "窄路掉头方便"
+          "窄路掉头轻松"
         ],
         "adjective": [
           "好开",
@@ -195,24 +203,24 @@
         "id": 9,
         "segment_text": "一把就过了！",
         "duration": 1.0,
-        "description": "倒车影像显示掉头完成，车身顺利驶出",
-        "video_usage": "功能讲解",
+        "description": "大特写车辆掉头时的轮毂转动，体现一把完成的顺畅感",
+        "video_usage": "烘托氛围",
         "shot_style": "固定机位",
-        "shot_type": "中景",
-        "subject": "智己LS6",
+        "shot_type": "大特写",
+        "subject": "车辆轮毂",
         "object": [
-          "倒车影像",
-          "地库车位"
+          "轮胎",
+          "地库地面"
         ],
         "scene_location": [
-          "地库"
+          "地下停车场"
         ],
         "selling_point": [
-          "掉头轻松"
+          "一把掉头轻松"
         ],
         "adjective": [
-          "省心",
-          "好开"
+          "顺畅",
+          "省心"
         ]
       }
     ]

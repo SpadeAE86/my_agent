@@ -58,11 +58,7 @@ def _join_choices(xs: List[str]) -> str:
 
 # Choose an available model in your Ark account.
 # The script will try them in order until one works.
-MODEL_CANDIDATES = [
-    "Seed 2.0 Pro",
-    "Seed 2.0 Lite",
-    "Seed 2.0 Mini",
-]
+MODEL_CANDIDATES = ["Seed 2.0 Lite"]
 
 
 SYSTEM_PROMPT_STAGE1 = f"""你是一个“汽车短视频口播脚本 → 分镜规划(StoryBoard)”的结构化生成器。

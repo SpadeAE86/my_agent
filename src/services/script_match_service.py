@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 from typing import Any, Dict, List, Optional
 
 from infra.storage.opensearch.query_builder import QueryBuilder
@@ -10,6 +11,14 @@ from services.video_analysis_db_service import video_analysis_db_service
 
 
 INDEX_NAME = "car_interior_analysis_v2"
+
+# Global BM25 step (global_then_segment_*): merged segment text can become huge; IK analysis then
+# expands to > Lucene's BooleanQuery.maxClauseCount (default 1024) → TransportError 500.
+# Mitigation: split deduped query phrases into multiple chunks → parallel BM25 → merge by max(_score).
+GLOBAL_CHUNK_MAX_CHARS = 420
+GLOBAL_MAX_CHUNKS = 16
+GLOBAL_STAGE_MAX_ITEMS_PER_LIST_FIELD = 80
+
 
 def _truthy_list(v: Any) -> List[str]:
     if isinstance(v, list):
@@ -27,7 +36,7 @@ def _history_id_from_doc_id(doc_id: str) -> str:
     return doc_id
 
 
-def _segment_query_text(seg: Dict[str, Any]) -> str:
+def _segment_query_parts(seg: Dict[str, Any]) -> List[str]:
     parts: List[str] = []
     for k in ["segment_text", "description"]:
         v = str(seg.get(k) or "").strip()
@@ -64,13 +73,66 @@ def _segment_query_text(seg: Dict[str, Any]) -> str:
         parts.extend([str(x).strip() for x in tx if str(x).strip()])
 
     seen = set()
-    out = []
+    out: List[str] = []
     for p in parts:
         if p in seen:
             continue
         seen.add(p)
         out.append(p)
-    return " ".join(out)
+    return out
+
+
+def _segment_query_text(seg: Dict[str, Any]) -> str:
+    return " ".join(_segment_query_parts(seg))
+
+
+def _chunks_from_query_parts(
+    parts: List[str],
+    *,
+    max_chars: int = GLOBAL_CHUNK_MAX_CHARS,
+    max_chunks: int = GLOBAL_MAX_CHUNKS,
+) -> List[str]:
+    """
+    Pack deduped phrases into <=max_chunks strings, each under ~max_chars, for independent BM25 calls.
+    """
+    chunks: List[str] = []
+    cur: List[str] = []
+    cur_len = 0
+
+    def flush() -> None:
+        nonlocal cur, cur_len
+        if cur:
+            chunks.append(" ".join(cur))
+            cur = []
+            cur_len = 0
+
+    for p in parts:
+        if len(chunks) >= max_chunks:
+            break
+        piece = str(p or "").strip()
+        if not piece:
+            continue
+
+        if len(piece) > max_chars:
+            flush()
+            for i in range(0, len(piece), max_chars):
+                if len(chunks) >= max_chunks:
+                    break
+                chunks.append(piece[i : i + max_chars])
+            continue
+
+        add_len = len(piece) + (1 if cur else 0)
+        if cur and cur_len + add_len > max_chars:
+            flush()
+
+        if len(chunks) >= max_chunks:
+            break
+
+        cur.append(piece)
+        cur_len += add_len
+
+    flush()
+    return [c for c in chunks if c.strip()]
 
 
 def _merge_segments_for_global(segments: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -138,6 +200,74 @@ def _merge_segments_for_global(segments: List[Dict[str, Any]]) -> Dict[str, Any]
             break
 
     return merged
+
+
+def _cap_global_merged_lists(
+    merged: Dict[str, Any],
+    *,
+    max_each: int = GLOBAL_STAGE_MAX_ITEMS_PER_LIST_FIELD,
+) -> Dict[str, Any]:
+    """Trim unioned list fields so terms{} boosts stay small."""
+    out = dict(merged)
+    for k, v in list(out.items()):
+        if isinstance(v, list) and len(v) > max_each:
+            out[k] = v[:max_each]
+    return out
+
+
+async def _global_bm25_chunked_merge_top_k(
+    qb: QueryBuilder,
+    client: Any,
+    *,
+    query_chunks: List[str],
+    global_seg: Dict[str, Any],
+    global_k: int,
+    text_fields: List[str],
+    search_pipeline: Optional[str],
+) -> List[str]:
+    """
+    Run BM25-only global recall per chunk (same should boosts on merged segment),
+    merge hits by max score across chunks, return top global_k doc _ids.
+    """
+    should_g = _build_should_boosts(global_seg)
+    params_g = {"search_pipeline": search_pipeline} if search_pipeline else None
+    size = max(1, int(global_k))
+
+    async def one(chunk_q: str):
+        body = qb.build_bm25_only_search(
+            model_class=CarInteriorAnalysisV2,
+            query=chunk_q,
+            size=size,
+            search_fields=text_fields,
+        )
+        if should_g:
+            body["query"] = {
+                "bool": {"must": body["query"], "should": should_g, "minimum_should_match": 0}
+            }
+        return await client.search(index=INDEX_NAME, body=body, params=params_g)
+
+    if not query_chunks:
+        return []
+
+    if len(query_chunks) == 1:
+        resp = await one(query_chunks[0])
+        hits = (((resp or {}).get("hits") or {}).get("hits") or [])
+        out = [str(h.get("_id")) for h in hits if h.get("_id")]
+        return out[:size]
+
+    responses = await asyncio.gather(*[one(cq) for cq in query_chunks])
+    best: Dict[str, float] = {}
+    for resp in responses:
+        for h in (((resp or {}).get("hits") or {}).get("hits") or []):
+            doc_id = str(h.get("_id") or "")
+            if not doc_id:
+                continue
+            sc = float(h.get("_score") or 0.0)
+            prev = best.get(doc_id)
+            if prev is None or sc > prev:
+                best[doc_id] = sc
+    ranked = sorted(best.keys(), key=lambda x: best[x], reverse=True)
+    return ranked[:size]
 
 
 def _build_filters(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
@@ -299,24 +429,20 @@ async def match_script_tags_segments(
     candidate_ids: Optional[List[str]] = None
     if mode.startswith("global_then_segment"):
         global_seg = _merge_segments_for_global([s for s in segments if isinstance(s, dict)])
-        qg = _segment_query_text(global_seg)
-        should_g = _build_should_boosts(global_seg)
-
-        # Keep global recall cheap & stable: BM25-only + should boosts.
-        body_g = qb.build_bm25_only_search(
-            model_class=CarInteriorAnalysisV2,
-            query=qg,
-            size=int(global_k),
-            search_fields=text_fields,
+        global_seg = _cap_global_merged_lists(global_seg)
+        q_parts = _segment_query_parts(global_seg)
+        query_chunks = _chunks_from_query_parts(
+            q_parts, max_chars=GLOBAL_CHUNK_MAX_CHARS, max_chunks=GLOBAL_MAX_CHUNKS
         )
-        if should_g:
-            body_g["query"] = {
-                "bool": {"must": body_g["query"], "should": should_g, "minimum_should_match": 0}
-            }
-        params_g = {"search_pipeline": search_pipeline} if search_pipeline else None
-        resp_g = await c.search(index=INDEX_NAME, body=body_g, params=params_g)
-        hits_g = (((resp_g or {}).get("hits") or {}).get("hits") or [])
-        candidate_ids = [str(h.get("_id")) for h in hits_g if h.get("_id")]
+        candidate_ids = await _global_bm25_chunked_merge_top_k(
+            qb,
+            c,
+            query_chunks=query_chunks,
+            global_seg=global_seg,
+            global_k=int(global_k),
+            text_fields=text_fields,
+            search_pipeline=search_pipeline,
+        )
 
     out: List[Dict[str, Any]] = []
     for seg in segments:
