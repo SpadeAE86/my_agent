@@ -1,0 +1,215 @@
+{
+  "id": 23,
+  "topic": "横向避让的极限操作",
+  "title": "边刹边躲也能做到？这辅助驾驶太硬核",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 23,
+        "id": 1,
+        "segment_text": "边刹边躲也能做到？这辅助驾驶太硬核",
+        "duration": 2.6,
+        "description": "航拍远景展示智己LS6在道路高速行驶，遇前方障碍准备避让",
+        "video_usage": "烘托氛围",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "新一代智己LS6",
+        "object": [
+          "前方障碍"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "辅助驾驶"
+        ],
+        "adjective": [
+          "硬核"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 2,
+        "segment_text": "智己LS6基于端到端大模型的横向紧急避让",
+        "duration": 3.4,
+        "description": "车外跟拍智己LS6完成横向避让障碍物的动作",
+        "video_usage": "功能讲解",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "道路障碍物"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "端到端大模型",
+          "横向紧急避让"
+        ],
+        "adjective": [
+          "智能"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 3,
+        "segment_text": "支持连续避让",
+        "duration": 1.0,
+        "description": "快切展示辅助驾驶连续避让的运动轨迹",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "辅助驾驶系统",
+        "object": [
+          "轨迹标线"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "连续避让"
+        ],
+        "adjective": [
+          "灵敏"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 4,
+        "segment_text": "窄路避让",
+        "duration": 1.0,
+        "description": "车内POV视角展示窄路场景下侧向避让障碍",
+        "video_usage": "使用场景展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "两侧路障"
+        ],
+        "scene_location": [
+          "窄路"
+        ],
+        "selling_point": [
+          "窄路避让"
+        ],
+        "adjective": [
+          "精准"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 5,
+        "segment_text": "边刹边躲！",
+        "duration": 1.0,
+        "description": "刹车灯亮起同时完成横向避让的特写镜头",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己LS6",
+        "object": [
+          "刹车灯"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "边刹边躲"
+        ],
+        "adjective": [
+          "稳定"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 6,
+        "segment_text": "还有灵蜥爆胎稳定控制加持",
+        "duration": 2.0,
+        "description": "车外跟拍车辆爆胎后仍稳定保持行驶路线",
+        "video_usage": "功能讲解",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "轮胎",
+          "轮毂"
+        ],
+        "scene_location": [
+          "铺装道路"
+        ],
+        "selling_point": [
+          "灵蜥爆胎稳定控制"
+        ],
+        "adjective": [
+          "稳定"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 7,
+        "segment_text": "紧急情况下系统瞬间介入",
+        "duration": 2.2,
+        "description": "中控屏弹出系统介入提示的特写",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "中控大屏",
+        "object": [
+          "系统提示弹窗"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "快速系统介入"
+        ],
+        "adjective": [
+          "敏捷",
+          "安全"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 8,
+        "segment_text": "减少45%侧倾风险！",
+        "duration": 1.6,
+        "description": "侧倾风险数据对比图表的特写展示",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "数据图表",
+        "object": [
+          "侧倾数据"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "降低侧倾风险"
+        ],
+        "adjective": [
+          "安全"
+        ]
+      },
+      {
+        "index": 23,
+        "id": 9,
+        "segment_text": "新一代LS6，硬核辅助守护安全",
+        "duration": 2.4,
+        "description": "远景航拍智己LS6在开阔公路平稳行驶",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "subject": "智己LS6",
+        "object": [],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "selling_point": [
+          "硬核安全辅助"
+        ],
+        "adjective": [
+          "安心",
+          "平稳"
+        ]
+      }
+    ]
+  }
+}

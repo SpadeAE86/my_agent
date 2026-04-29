@@ -1,0 +1,157 @@
+{
+  "id": 19,
+  "topic": "超大空间的装载力",
+  "title": "皮划艇都能装下？这空间太离谱",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 19,
+        "id": 1,
+        "segment_text": "智己LS6近90%超高得房率",
+        "duration": 2.2,
+        "description": "车外跟拍展示整车侧面轮廓，突出车内空间比例",
+        "video_usage": "产品展示",
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "subject": "新一代LS6",
+        "object": [
+          "车身"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "超高空间得房率"
+        ],
+        "adjective": [
+          "宽敞"
+        ]
+      },
+      {
+        "index": 19,
+        "id": 2,
+        "segment_text": "后排放倒+副驾翻折收纳",
+        "duration": 2.0,
+        "description": "特写展示座椅放倒翻折后的平整车内空间",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "新一代LS6座椅",
+        "object": [
+          "后排座椅",
+          "副驾座椅"
+        ],
+        "scene_location": [
+          "室内展厅"
+        ],
+        "selling_point": [
+          "灵活座椅布局"
+        ],
+        "adjective": [
+          "灵活"
+        ]
+      },
+      {
+        "index": 19,
+        "id": 3,
+        "segment_text": "皮划艇和桨板都轻松装下",
+        "duration": 2.4,
+        "description": "中景展示放入皮划艇桨板后的整体车内空间",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "新一代LS6车内空间",
+        "object": [
+          "皮划艇",
+          "桨板"
+        ],
+        "scene_location": [
+          "郊外停车场"
+        ],
+        "selling_point": [
+          "超大装载力"
+        ],
+        "adjective": [
+          "能装",
+          "宽松"
+        ]
+      },
+      {
+        "index": 19,
+        "id": 4,
+        "segment_text": "周末带全家出游",
+        "duration": 1.0,
+        "description": "航拍大远景展示LS6停在郊野营地边",
+        "video_usage": "烘托氛围",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "新一代LS6",
+        "object": [
+          "营地",
+          "人群"
+        ],
+        "scene_location": [
+          "郊野营地"
+        ],
+        "selling_point": [
+          "出游场景适配"
+        ],
+        "adjective": [
+          "惬意",
+          "休闲"
+        ]
+      },
+      {
+        "index": 19,
+        "id": 5,
+        "segment_text": "后备箱能并排放两辆折叠自行车",
+        "duration": 2.6,
+        "description": "打开后备箱展示两辆折叠自行车并排摆放状态",
+        "video_usage": "使用场景展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "新一代LS6后备箱",
+        "object": [
+          "折叠自行车",
+          "后备箱门"
+        ],
+        "scene_location": [
+          "郊野停车场"
+        ],
+        "selling_point": [
+          "超大后备箱空间"
+        ],
+        "adjective": [
+          "宽敞",
+          "能装"
+        ]
+      },
+      {
+        "index": 19,
+        "id": 6,
+        "segment_text": "什么热爱都能装得下",
+        "duration": 2.0,
+        "description": "车外跟拍LS6驶向开阔郊野风景",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "subject": "新一代LS6",
+        "object": [
+          "公路",
+          "山野风景"
+        ],
+        "scene_location": [
+          "郊野公路"
+        ],
+        "selling_point": [
+          "多元生活承载"
+        ],
+        "adjective": [
+          "自由",
+          "轻松"
+        ]
+      }
+    ]
+  }
+}

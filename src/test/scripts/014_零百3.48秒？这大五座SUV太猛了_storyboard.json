@@ -1,0 +1,198 @@
+{
+  "id": 14,
+  "topic": "百万级跑车的驾驶爽感",
+  "title": "零百3.48秒？这大五座SUV太猛了",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 14,
+        "id": 1,
+        "segment_text": "零百3.48秒？这大五座SUV太猛了",
+        "duration": 2.6,
+        "description": "远景展示新一代智己LS6大五座车身外观，开篇引出车型",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "subject": "新一代智己LS6",
+        "object": [
+          "车身"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "零百加速3.48秒",
+          "大五座"
+        ],
+        "adjective": [
+          "强劲",
+          "大气"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 2,
+        "segment_text": "智己LS6四驱版峰值功率500千瓦",
+        "duration": 2.0,
+        "description": "中控屏弹出动力参数，清晰展示峰值功率数值",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己LS6",
+        "object": [
+          "中控屏",
+          "参数字幕"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "峰值功率500千瓦"
+        ],
+        "adjective": [
+          "强劲"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 3,
+        "segment_text": "峰值扭矩800牛米",
+        "duration": 1.2,
+        "description": "大特写展示扭矩参数数值，强化动力卖点",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "参数字幕",
+        "object": [
+          "数字"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "峰值扭矩800牛米"
+        ],
+        "adjective": [
+          "充沛"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 4,
+        "segment_text": "这动力水准，油车时代百万级超跑才有",
+        "duration": 3.0,
+        "description": "航拍智己LS6在开阔公路快速行驶，展现运动姿态",
+        "video_usage": "对比评测",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己LS6",
+        "object": [
+          "公路"
+        ],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "selling_point": [
+          "百万级动力水准"
+        ],
+        "adjective": [
+          "迅猛",
+          "顶级"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 5,
+        "segment_text": "百公里刹停距离只要33.6米",
+        "duration": 2.2,
+        "description": "车外跟拍车辆从高速状态紧急刹停的全过程，车身姿态稳定",
+        "video_usage": "功能讲解",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己LS6",
+        "object": [
+          "刹车卡钳",
+          "轮胎"
+        ],
+        "scene_location": [
+          "测试跑道"
+        ],
+        "selling_point": [
+          "短刹停距离"
+        ],
+        "adjective": [
+          "安全",
+          "稳定"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 6,
+        "segment_text": "电控阻尼减振器",
+        "duration": 1.0,
+        "description": "特写展示电控阻尼减振器部件外观，体现高端配置",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "电控阻尼减振器",
+        "object": [
+          "减振器部件"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "高端减振配置"
+        ],
+        "adjective": [
+          "精密",
+          "高级"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 7,
+        "segment_text": "10毫秒自动调节",
+        "duration": 1.0,
+        "description": "动画演示阻尼快速调节的过程，体现响应速度",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "阻尼调节动画",
+        "object": [
+          "动画演示"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "快速阻尼调节"
+        ],
+        "adjective": [
+          "灵敏",
+          "精准"
+        ]
+      },
+      {
+        "index": 14,
+        "id": 8,
+        "segment_text": "操控稳如轨道车！",
+        "duration": 1.2,
+        "description": "车内POV拍摄过弯过程，杯架水杯水面几乎无波动，展示稳定性",
+        "video_usage": "使用场景展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "方向盘+杯架",
+        "object": [
+          "方向盘",
+          "水杯"
+        ],
+        "scene_location": [
+          "山区弯道"
+        ],
+        "selling_point": [
+          "操控稳定"
+        ],
+        "adjective": [
+          "平稳",
+          "扎实"
+        ]
+      }
+    ]
+  }
+}

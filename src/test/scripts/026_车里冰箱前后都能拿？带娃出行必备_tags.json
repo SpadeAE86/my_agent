@@ -1,0 +1,523 @@
+{
+  "id": 26,
+  "topic": "双开门冰箱的实用性",
+  "title": "车里冰箱前后都能拿？带娃出行必备",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 26,
+        "id": 1,
+        "segment_text": "新一代智己LS6",
+        "duration": 2.0,
+        "description": "整车外观在城市道路缓行，远景展示整车姿态",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "城市道路"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "外观",
+        "text": [
+          "新一代"
+        ],
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [
+          "全新改款车型"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "时尚",
+          "大气"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "城市出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "新一代智己LS6",
+          "智己LS6外观",
+          "全新改款车型"
+        ],
+        "marketing_tags": [
+          "新车展示",
+          "外观展示"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "新能源买家"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "新能源汽车",
+          "智己"
+        ]
+      },
+      {
+        "index": 26,
+        "id": 2,
+        "segment_text": "配11L双开门冰箱",
+        "duration": 1.4,
+        "description": "特写打开车载双开门冰箱，展示双开门结构",
+        "movement": "静态展示",
+        "subject": "车载冰箱",
+        "object": [
+          "双开门冰箱"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [
+          "11L"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [
+          "双开门结构"
+        ],
+        "function_selling_points": [
+          "11L大容量"
+        ],
+        "design_adjectives": [
+          "规整",
+          "宽大"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "车内出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "11L双开门冰箱",
+          "智己LS6车载冰箱",
+          "大容量车载冰箱"
+        ],
+        "marketing_tags": [
+          "配置展示",
+          "舒适配置"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车载冰箱"
+        ]
+      },
+      {
+        "index": 26,
+        "id": 3,
+        "segment_text": "前后排都能拿取",
+        "duration": 1.2,
+        "description": "分别拍摄前排、后排伸手打开冰箱拿取饮料的动作",
+        "movement": "静态展示",
+        "subject": "车载冰箱",
+        "object": [
+          "前排座椅",
+          "后排座椅",
+          "饮料"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "前后排可拿取"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "方便",
+          "实用"
+        ],
+        "scenario_a": [
+          "车内出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "前后排都能拿取",
+          "车载冰箱方便拿取"
+        ],
+        "marketing_tags": [
+          "功能展示",
+          "舒适配置"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": []
+      },
+      {
+        "index": 26,
+        "id": 4,
+        "segment_text": "-6℃到50℃可调",
+        "duration": 1.2,
+        "description": "大特写拍摄冰箱控制屏的温度调节UI",
+        "movement": "静态展示",
+        "subject": "冰箱控制面板",
+        "object": [
+          "温度UI"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [
+          "-6℃",
+          "50℃"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "宽温区可调"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "智能"
+        ],
+        "scenario_a": [
+          "车内出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "温度可调车载冰箱",
+          "宽温区可调冰箱"
+        ],
+        "marketing_tags": [
+          "功能展示",
+          "智能配置"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "控制面板"
+        ]
+      },
+      {
+        "index": 26,
+        "id": 5,
+        "segment_text": "同级领先的大容量",
+        "duration": 1.4,
+        "description": "展示冰箱塞满多瓶饮料的状态，体现容积优势",
+        "movement": "静态展示",
+        "subject": "车载冰箱",
+        "object": [
+          "饮料",
+          "食材"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "同级领先大容量"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "能装"
+        ],
+        "scenario_a": [
+          "长途出行"
+        ],
+        "scenario_b": [
+          "短途出行"
+        ],
+        "marketing_phrases": [
+          "同级领先大容量",
+          "能装的车载冰箱"
+        ],
+        "marketing_tags": [
+          "产品展示",
+          "容积优势"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": []
+      },
+      {
+        "index": 26,
+        "id": 6,
+        "segment_text": "搭配近90%超高得房率大空间",
+        "duration": 2.0,
+        "description": "车内全景展示前后排空间，体现整体宽敞感",
+        "movement": "静态展示",
+        "subject": "智己LS6车内",
+        "object": [
+          "前排",
+          "后排"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [
+          "90%"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "video_usage": [
+          "建立空间感"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [
+          "高得房率",
+          "大空间"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "宽敞"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "家庭出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "超高得房率大空间",
+          "智己LS6宽敞空间"
+        ],
+        "marketing_tags": [
+          "空间展示",
+          "大空间"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "多人出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态空间",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": []
+      },
+      {
+        "index": 26,
+        "id": 7,
+        "segment_text": "孩子还能在后排跑",
+        "duration": 1.4,
+        "description": "拍摄小孩在后排空区域自由走动玩耍",
+        "movement": "静态展示",
+        "subject": "后排空间",
+        "object": [
+          "儿童"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "后排空间充裕"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "自在"
+        ],
+        "scenario_a": [
+          "带娃出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "后排空间大",
+          "孩子后排跑动",
+          "宽敞后排空间"
+        ],
+        "marketing_tags": [
+          "空间展示",
+          "带娃出行"
+        ],
+        "appealing_audience": [
+          "有娃家庭",
+          "家庭用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态空间",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": []
+      },
+      {
+        "index": 26,
+        "id": 8,
+        "segment_text": "夏天带娃出行再也不愁",
+        "duration": 1.8,
+        "description": "一家人出行，孩子在后排拿冰饮开心笑的画面",
+        "movement": "行驶",
+        "subject": "一家人出行",
+        "object": [
+          "儿童",
+          "冰饮"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "夏季表现",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "车内",
+          "公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "带娃出行实用"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "舒心",
+          "省心"
+        ],
+        "scenario_a": [
+          "夏天出行",
+          "带娃出行"
+        ],
+        "scenario_b": [
+          "公路出行"
+        ],
+        "marketing_phrases": [
+          "夏天带娃出行",
+          "带娃出行不愁",
+          "车载冰饮"
+        ],
+        "marketing_tags": [
+          "场景展示",
+          "夏季出行",
+          "带娃出行"
+        ],
+        "appealing_audience": [
+          "有娃家庭",
+          "家庭用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "酷暑",
+        "time": "白天",
+        "extra_tags": []
+      },
+      {
+        "index": 26,
+        "id": 9,
+        "segment_text": "出行更惬意",
+        "duration": 1.0,
+        "description": "大远景航拍智己LS6在开阔公路行驶",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "公路",
+          "城市景观"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "城市公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "舒适出行"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "顺畅",
+          "惬意"
+        ],
+        "scenario_a": [
+          "城市出行",
+          "公路出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "舒适出行",
+          "惬意出行",
+          "智己LS6出行"
+        ],
+        "marketing_tags": [
+          "氛围烘托",
+          "舒适出行"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "城市用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "航拍"
+        ]
+      }
+    ]
+  }
+}

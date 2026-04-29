@@ -1,0 +1,183 @@
+{
+  "id": 28,
+  "topic": "莫奈鸢影的艺术座舱",
+  "title": "内饰藏着莫奈的画？这车太有艺术感了",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 28,
+        "id": 1,
+        "segment_text": "智己LS6内饰有莫奈鸢影装饰艺术",
+        "duration": 2.6,
+        "description": "展车座舱全景俯拍，整体展示内饰风格",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "新一代LS6座舱",
+        "object": [
+          "内饰饰板"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "莫奈鸢影艺术内饰"
+        ],
+        "adjective": [
+          "艺术感",
+          "高级"
+        ]
+      },
+      {
+        "index": 28,
+        "id": 2,
+        "segment_text": "像莫奈的印象派画作",
+        "duration": 1.6,
+        "description": "特写内饰饰板，叠化莫奈印象派原作做呼应",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "内饰饰板",
+        "object": [
+          "纹理",
+          "莫奈画作"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "艺术化设计"
+        ],
+        "adjective": [
+          "浪漫",
+          "艺术"
+        ]
+      },
+      {
+        "index": 28,
+        "id": 3,
+        "segment_text": "隐藏着若隐若现的花脉与诗意",
+        "duration": 2.2,
+        "description": "微距镜头缓慢扫过饰板，展现花脉纹理细节",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "饰板纹理",
+        "object": [
+          "花脉纹理"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "细节艺术设计"
+        ],
+        "adjective": [
+          "细腻",
+          "诗意"
+        ]
+      },
+      {
+        "index": 28,
+        "id": 4,
+        "segment_text": "浮光跃金饰艺",
+        "duration": 1.0,
+        "description": "光影落在饰板上，展现整体质感",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "内饰饰板",
+        "object": [
+          "光影"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "浮光跃金饰艺"
+        ],
+        "adjective": [
+          "灵动",
+          "高级"
+        ]
+      },
+      {
+        "index": 28,
+        "id": 5,
+        "segment_text": "随着光线角度变化",
+        "duration": 2.0,
+        "description": "展示不同光线角度下，饰板呈现的不同视觉效果",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "内饰饰板",
+        "object": [
+          "光线",
+          "光影"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "可变光影效果"
+        ],
+        "adjective": [
+          "灵动",
+          "高级"
+        ]
+      },
+      {
+        "index": 28,
+        "id": 6,
+        "segment_text": "就像光的雕塑",
+        "duration": 1.2,
+        "description": "慢放光影流动轮廓，突出光影塑造的立体感",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "光影轮廓",
+        "object": [
+          "饰板"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "艺术质感"
+        ],
+        "adjective": [
+          "立体",
+          "高级"
+        ]
+      },
+      {
+        "index": 28,
+        "id": 7,
+        "segment_text": "豪华艺术座舱名不虚传",
+        "duration": 2.0,
+        "description": "拉开机位展现整个座舱全景，突出整体氛围感",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "新一代LS6座舱",
+        "object": [
+          "中控",
+          "方向盘",
+          "内饰饰板"
+        ],
+        "scene_location": [
+          "室内展场"
+        ],
+        "selling_point": [
+          "豪华艺术座舱"
+        ],
+        "adjective": [
+          "豪华",
+          "有格调",
+          "艺术"
+        ]
+      }
+    ]
+  }
+}

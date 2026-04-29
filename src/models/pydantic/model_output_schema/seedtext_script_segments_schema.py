@@ -111,6 +111,10 @@ class SeedtextIndexTagsSegment(BaseModel):
     - 字段尽量对齐 `car_interior_analysis_v2` 的 schema
     - 需要枚举/keyword 时必须从 choices 里选（允许“未知”兜底）
     - 输出用于检索/入库，不追求文学表达
+
+    与 OpenSearch `car_interior_analysis_v2` 向量字段（见 `script_match_service.match_script_tags_segments`）：
+    - `design_adjectives` / `function_adjectives` 各对应一路 knn：`design_adjectives_vector`、`function_adjectives_vector`。
+    - `scenario_a` / `scenario_b` 仍是两组文本列表（BM25 可分开命中）；入库向量将两组拼接后 embed 为单一 `scenario_vector`。
     """
 
     index: int = Field(0, description="原始脚本序号（与 Stage1 对齐）")
@@ -178,14 +182,26 @@ class SeedtextIndexTagsSegment(BaseModel):
         default_factory=list, description="功能/性能卖点（尽量填 2-4 个短词/短语）", max_length=6
     )
     design_adjectives: List[str] = Field(
-        default_factory=list, description="设计/质感形容词（尽量填 2-4 个）", max_length=6
+        default_factory=list,
+        description="设计/质感形容词（尽量填 2-4 个）。索引向量字段：design_adjectives_vector。",
+        max_length=6,
     )
     function_adjectives: List[str] = Field(
-        default_factory=list, description="体验/性能形容词（尽量填 2-4 个）", max_length=6
+        default_factory=list,
+        description="体验/性能形容词（尽量填 2-4 个）。索引向量字段：function_adjectives_vector。",
+        max_length=6,
     )
 
-    scenario_a: List[str] = Field(default_factory=list, description="场景 A（尽量填 2-4 个）", max_length=6)
-    scenario_b: List[str] = Field(default_factory=list, description="场景 B（尽量填 2-4 个）", max_length=6)
+    scenario_a: List[str] = Field(
+        default_factory=list,
+        description="用车/生活场景 A（尽量填 2-4 个）。与 B 分列便于多样化产出；向量入库与 B 合并为 scenario_vector。",
+        max_length=6,
+    )
+    scenario_b: List[str] = Field(
+        default_factory=list,
+        description="用车/生活场景 B（尽量填 2-4 个），语义尽量与 A 区分；向量入库与 A 合并为 scenario_vector。",
+        max_length=6,
+    )
 
     marketing_phrases: List[str] = Field(
         default_factory=list,

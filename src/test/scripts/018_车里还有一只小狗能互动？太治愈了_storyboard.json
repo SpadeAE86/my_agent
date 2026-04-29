@@ -1,0 +1,184 @@
+{
+  "id": 18,
+  "topic": "萌宠屏保的情绪价值",
+  "title": "车里还有一只小狗能互动？太治愈了",
+  "car_model": "新一代LS6",
+  "storyboard": {
+    "storyboard": [
+      {
+        "index": 18,
+        "id": 1,
+        "segment_text": "智己LS6全新萌宠小狗屏保",
+        "duration": 2.2,
+        "description": "中控大屏点亮，整体展示萌宠小狗屏保界面",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "新一代LS6",
+        "object": [
+          "中控大屏",
+          "萌宠小狗屏保"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "全新萌宠小狗屏保"
+        ],
+        "adjective": [
+          "治愈",
+          "新奇"
+        ]
+      },
+      {
+        "index": 18,
+        "id": 2,
+        "segment_text": "渲染效果细腻到连绒毛都看得清",
+        "duration": 2.6,
+        "description": "放大特写屏保上小狗的绒毛纹理，突出渲染质感",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "萌宠小狗屏保",
+        "object": [
+          "中控大屏",
+          "绒毛纹理"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "细腻渲染效果"
+        ],
+        "adjective": [
+          "细腻",
+          "清晰"
+        ]
+      },
+      {
+        "index": 18,
+        "id": 3,
+        "segment_text": "点它还会跟你互动",
+        "duration": 1.6,
+        "description": "手指点击大屏，小狗做出互动反馈动作",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "互动操作",
+        "object": [
+          "手指",
+          "中控大屏",
+          "萌宠小狗"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "可互动屏保"
+        ],
+        "adjective": [
+          "有趣",
+          "生动"
+        ]
+      },
+      {
+        "index": 18,
+        "id": 4,
+        "segment_text": "配合27.1英寸5K MiniLED大屏",
+        "duration": 2.4,
+        "description": "拉远镜头，展示整块大屏在中控的整体尺寸",
+        "video_usage": "产品展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "27.1英寸中控大屏",
+        "object": [
+          "中控台",
+          "车内内饰"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "大尺寸高清大屏"
+        ],
+        "adjective": [
+          "宽大",
+          "高级"
+        ]
+      },
+      {
+        "index": 18,
+        "id": 5,
+        "segment_text": "显示效果极其细腻",
+        "duration": 1.4,
+        "description": "展示大屏显示的色彩和细节，突出高清质感",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "中控大屏显示效果",
+        "object": [
+          "大屏屏幕"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "高清显示效果"
+        ],
+        "adjective": [
+          "细腻",
+          "清晰"
+        ]
+      },
+      {
+        "index": 18,
+        "id": 6,
+        "segment_text": "治愈系+科技感",
+        "duration": 1.2,
+        "description": "展示整个车内座舱氛围，搭配大屏柔和光线",
+        "video_usage": "烘托氛围",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "新一代LS6座舱",
+        "object": [
+          "中控大屏",
+          "内饰"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "情绪价值"
+        ],
+        "adjective": [
+          "治愈",
+          "科技感"
+        ]
+      },
+      {
+        "index": 18,
+        "id": 7,
+        "segment_text": "情绪价值拉满",
+        "duration": 1.0,
+        "description": "小狗做出治愈互动表情的大特写，传递愉悦感",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "萌宠小狗互动表情",
+        "object": [
+          "中控大屏"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "高情绪价值"
+        ],
+        "adjective": [
+          "治愈",
+          "舒心"
+        ]
+      }
+    ]
+  }
+}

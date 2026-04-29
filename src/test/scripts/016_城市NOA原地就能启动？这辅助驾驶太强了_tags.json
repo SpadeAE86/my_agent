@@ -1,0 +1,524 @@
+{
+  "id": 16,
+  "topic": "智能驾驶的满血进化",
+  "title": "城市NOA原地就能启动？这辅助驾驶太强了",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 16,
+        "id": 1,
+        "segment_text": "智己LS6搭载满血版Momenta赋能的IMAD 3.0",
+        "duration": 3.0,
+        "description": "展示智己LS6车头品牌标识，中控屏幕弹出IMAD 3.0系统标识",
+        "movement": "静态展示",
+        "subject": "智己LS6",
+        "object": [
+          "品牌标识",
+          "车机屏幕"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "IMAD 3.0",
+          "Momenta"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "城市展厅"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "IMAD 3.0智能驾驶",
+          "Momenta全能力赋能"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "先进",
+          "满血"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "满血IMAD 3.0",
+          "智己LS6智驾"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "新车发布"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "智驾关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "品牌标识",
+          "中控屏",
+          "系统标识"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 2,
+        "segment_text": "城市领航辅助支持路边开启",
+        "duration": 2.0,
+        "description": "车内视角，驾驶员在城市路边停车点击屏幕启动NOA功能",
+        "movement": "静态展示",
+        "subject": "智己LS6",
+        "object": [
+          "中控屏幕",
+          "启动按键",
+          "驾驶员"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "NOA",
+          "城市领航辅助"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "城市路边",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "城市领航辅助",
+          "路边可启动"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "便捷"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "路边启动NOA",
+          "城市领航辅助"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "城市NOA"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "NOA启动",
+          "车内视角"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 3,
+        "segment_text": "支持原地起步",
+        "duration": 1.0,
+        "description": "车机屏幕显示「NOA启动成功」的文字大特写",
+        "movement": "静态展示",
+        "subject": "车机屏幕",
+        "object": [
+          "NOA启动文字"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "智驾",
+        "text": [
+          "NOA启动成功"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "原地启动NOA"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "快捷",
+          "方便"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "原地启动NOA",
+          "NOA启动成功"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "车机交互"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "智驾关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车机界面",
+          "文字特写"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 4,
+        "segment_text": "城市NOA启动太方便了",
+        "duration": 2.0,
+        "description": "车外跟拍智己LS6从路边平稳起步汇入城市车流",
+        "movement": "起步",
+        "subject": "智己LS6",
+        "object": [
+          "城市车流"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "NOA"
+        ],
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市道路",
+          "城市路边"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "智能驾驶便捷性"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "顺畅",
+          "省心"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "城市NOA",
+          "起步汇入车流"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "城市通勤"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "车外跟拍",
+          "城市行驶"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 5,
+        "segment_text": "还有基于端到端大模型的横向紧急避让",
+        "duration": 3.0,
+        "description": "中控屏幕显示端到端智驾算法的工作界面，识别侧方障碍物",
+        "movement": "静态展示",
+        "subject": "智己LS6车机系统",
+        "object": [
+          "智驾界面",
+          "障碍物识别框"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "智驾",
+        "text": [
+          "端到端大模型",
+          "横向紧急避让"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "端到端大模型",
+          "横向紧急避让"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "智能",
+          "安全"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "端到端大模型",
+          "横向紧急避让"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "安全智驾"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "智驾关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "智驾算法",
+          "障碍物识别"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 6,
+        "segment_text": "连续避让都能搞定",
+        "duration": 2.0,
+        "description": "车内POV视角，智驾系统连续识别多个侧方障碍物",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "多个障碍物识别框"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "城市道路",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "连续避让功能"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "灵敏",
+          "可靠"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "连续避让障碍物",
+          "智驾连续避让"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "安全智驾"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "障碍物识别",
+          "车内POV"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 7,
+        "segment_text": "窄路避让轻松应对",
+        "duration": 2.0,
+        "description": "车外远景拍摄，智己LS6在城市窄路避让路边非机动车",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "非机动车",
+          "路边护栏"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市窄路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "窄路避让功能"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "稳健",
+          "从容"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "窄路避让",
+          "城市窄路智驾"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "复杂路况智驾"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "窄路行驶",
+          "避让非机动车"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 8,
+        "segment_text": "边刹边躲也能实现",
+        "duration": 2.0,
+        "description": "车内POV视角，车辆紧急制动同时平稳躲避侧方闯入障碍物",
+        "movement": "刹车",
+        "subject": "智己LS6",
+        "object": [
+          "方向盘",
+          "障碍物"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "城市道路",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "应急避障功能"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "快速",
+          "稳妥"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "边刹边躲",
+          "应急避障"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "安全智驾"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "智驾关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "紧急制动",
+          "应急避障"
+        ]
+      },
+      {
+        "index": 16,
+        "id": 9,
+        "segment_text": "智能驾驶安全性拉满",
+        "duration": 3.0,
+        "description": "航拍大远景，智己LS6平稳行驶在城市开放道路车流中",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "城市建筑群",
+          "城市车流"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "建立空间感"
+        ],
+        "scene_location": [
+          "城市核心道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "高智能驾驶安全性"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "安心",
+          "顺畅"
+        ],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "智能驾驶安全",
+          "城市智驾行驶"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "安全智驾"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "航拍大远景",
+          "城市开放道路"
+        ]
+      }
+    ]
+  }
+}

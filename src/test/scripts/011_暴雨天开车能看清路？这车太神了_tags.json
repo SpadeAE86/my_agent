@@ -1,0 +1,506 @@
+{
+  "id": 11,
+  "topic": "暴雨夜的安心护航",
+  "title": "暴雨天开车能看清路？这车太神了",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 11,
+        "id": 1,
+        "segment_text": "智己LS6的雨夜模式升级了！",
+        "duration": 2.0,
+        "description": "雨夜公路上，智己LS6开启车灯向前行驶，展示车辆整体姿态",
+        "movement": "行驶",
+        "subject": "新一代智己LS6",
+        "object": [
+          "前大灯",
+          "雨幕",
+          "公路"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "公路",
+          "雨夜公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "雨夜模式升级"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "智能",
+          "安心"
+        ],
+        "scenario_a": [
+          "雨夜出行",
+          "公路出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "智己LS6雨夜模式",
+          "雨夜行车安全"
+        ],
+        "marketing_tags": [
+          "新车升级",
+          "智驾功能"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "家庭用户",
+          "自驾爱好者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "新能源汽车"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 2,
+        "segment_text": "全新AI增强算法",
+        "duration": 1.2,
+        "description": "车载中控屏幕特写，显示AI影像处理交互界面",
+        "movement": "静态展示",
+        "subject": "智己LS6车机屏幕",
+        "object": [
+          "车机UI",
+          "AI算法标识",
+          "中控屏幕"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "智驾",
+        "text": [
+          "AI增强算法"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "AI增强算法"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "先进",
+          "清晰"
+        ],
+        "scenario_a": [
+          "车内交互",
+          "雨夜行车"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "全新AI增强算法",
+          "智己LS6车机AI"
+        ],
+        "marketing_tags": [
+          "智驾升级",
+          "AI功能"
+        ],
+        "appealing_audience": [
+          "科技爱好者",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "夜雨",
+        "time": "室内",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "车机交互"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 3,
+        "segment_text": "让夜间画面清晰如白天",
+        "duration": 2.0,
+        "description": "车内POV视角，前方雨夜道路视野通透清晰",
+        "movement": "行驶",
+        "subject": "前挡风驾驶视野",
+        "object": [
+          "雨夜道路",
+          "车机影像",
+          "前挡风玻璃"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "车内",
+          "雨夜公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "夜视清晰"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "清晰",
+          "通透"
+        ],
+        "scenario_a": [
+          "雨夜行车",
+          "夜间驾驶"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "夜间画面清晰",
+          "雨夜驾驶视野好"
+        ],
+        "marketing_tags": [
+          "智驾夜视",
+          "行车安全"
+        ],
+        "appealing_audience": [
+          "夜间出行用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "夜雨",
+        "time": "室内",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "夜间智驾"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 4,
+        "segment_text": "周围风险一目了然！",
+        "duration": 1.6,
+        "description": "车机屏幕特写，AI清晰标注出前方雨夜中的障碍物",
+        "movement": "静态展示",
+        "subject": "智己LS6车机屏幕",
+        "object": [
+          "AI识别框",
+          "障碍物标识",
+          "车机屏幕"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "智驾",
+        "text": [
+          "AI识别"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内",
+          "雨夜"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "风险识别"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "直观"
+        ],
+        "scenario_a": [
+          "雨夜行车",
+          "危险识别"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "AI风险识别",
+          "雨夜行车更安全"
+        ],
+        "marketing_tags": [
+          "智驾安全",
+          "风险识别"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "注重安全用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "夜雨",
+        "time": "室内",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "AI智驾"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 5,
+        "segment_text": "搭配灵蜥底盘爆胎稳定控制",
+        "duration": 2.4,
+        "description": "低角度车外跟拍，展示智己LS6在雨夜路面行驶的底盘姿态",
+        "movement": "行驶",
+        "subject": "新一代智己LS6",
+        "object": [
+          "轮毂",
+          "轮胎",
+          "底盘"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "恶劣路况天气",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "高速",
+          "雨夜路面"
+        ],
+        "design_selling_points": [
+          "灵蜥底盘"
+        ],
+        "function_selling_points": [
+          "爆胎稳定控制"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "扎实",
+          "稳定"
+        ],
+        "scenario_a": [
+          "高速行驶",
+          "雨夜行车"
+        ],
+        "scenario_b": [
+          "突发状况"
+        ],
+        "marketing_phrases": [
+          "灵蜥底盘",
+          "爆胎稳定控制"
+        ],
+        "marketing_tags": [
+          "底盘升级",
+          "行车安全"
+        ],
+        "appealing_audience": [
+          "高速出行用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "底盘技术"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 6,
+        "segment_text": "就算高速爆胎也能稳稳刹停",
+        "duration": 2.4,
+        "description": "航拍视角，高速雨夜中智己LS6爆胎后保持直线平稳刹停",
+        "movement": "刹车",
+        "subject": "新一代智己LS6",
+        "object": [
+          "高速路面",
+          "雨幕",
+          "轮胎"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "恶劣路况天气",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "高速",
+          "雨夜"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "爆胎稳定制动"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "平稳",
+          "安全"
+        ],
+        "scenario_a": [
+          "高速爆胎",
+          "雨夜突发状况"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "高速爆胎稳刹停",
+          "爆胎稳定制动"
+        ],
+        "marketing_tags": [
+          "安全性能",
+          "突发情况应对"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "高速出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "安全性能"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 7,
+        "segment_text": "全家出行的安全感直接拉满！",
+        "duration": 2.2,
+        "description": "车内中景，后排一家人安稳乘坐，表情轻松自然",
+        "movement": "静态展示",
+        "subject": "车内乘客",
+        "object": [
+          "后排座椅",
+          "车窗雨珠",
+          "乘客"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "车内",
+          "雨夜"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "出行安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "舒适",
+          "安稳"
+        ],
+        "scenario_a": [
+          "全家出行",
+          "雨夜出行"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "全家出行安全感拉满",
+          "舒适出行"
+        ],
+        "marketing_tags": [
+          "家庭出行",
+          "舒适安全"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "夜雨",
+        "time": "室内",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "家用车"
+        ]
+      },
+      {
+        "index": 11,
+        "id": 8,
+        "segment_text": "新一代LS6",
+        "duration": 1.0,
+        "description": "雨夜背景下，智己LS6车型标识特写",
+        "movement": "静态展示",
+        "subject": "智己品牌标识",
+        "object": [
+          "新一代LS6标识"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [
+          "新一代LS6"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "品牌/形象传达"
+        ],
+        "scene_location": [
+          "雨夜"
+        ],
+        "design_selling_points": [
+          "品牌车型"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "可靠",
+          "安心"
+        ],
+        "scenario_a": [
+          "新车发布",
+          "品牌展示"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "新一代智己LS6",
+          "智己新车"
+        ],
+        "marketing_tags": [
+          "新车上市",
+          "品牌展示"
+        ],
+        "appealing_audience": [
+          "潜在购车用户",
+          "品牌关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "智己汽车",
+          "智己LS6",
+          "新车上市"
+        ]
+      }
+    ]
+  }
+}

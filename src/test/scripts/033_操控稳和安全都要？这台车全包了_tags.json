@@ -1,0 +1,418 @@
+{
+  "id": 33,
+  "topic": "底盘+安全双守护",
+  "title": "操控稳和安全都要？这台车全包了",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 33,
+        "id": 1,
+        "segment_text": "智己LS6灵蜥底盘爆胎稳定控制",
+        "duration": 2.4,
+        "description": "展示智己LS6灵蜥底盘的结构设计，镜头对准底盘部位",
+        "movement": "静态展示",
+        "subject": "智己LS6",
+        "object": [
+          "灵蜥底盘"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "研发实验室"
+        ],
+        "design_selling_points": [
+          "灵蜥底盘"
+        ],
+        "function_selling_points": [
+          "爆胎稳定控制"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "稳定"
+        ],
+        "scenario_a": [
+          "静态展示"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "灵蜥底盘",
+          "爆胎稳定控制"
+        ],
+        "marketing_tags": [
+          "底盘技术",
+          "安全性能"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "关注安全用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "底盘结构",
+          "车身安全"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 2,
+        "segment_text": "高速爆胎稳稳刹停",
+        "duration": 1.6,
+        "description": "高速场景下模拟爆胎，车辆保持直线平稳刹停",
+        "movement": "爆胎",
+        "subject": "智己LS6",
+        "object": [
+          "高速路面",
+          "轮胎"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "操作性",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "高速公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "爆胎稳定刹停"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "平稳",
+          "安全"
+        ],
+        "scenario_a": [
+          "高速行驶"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "高速爆胎",
+          "稳稳刹停",
+          "安全行驶"
+        ],
+        "marketing_tags": [
+          "安全性能",
+          "高速性能"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "长途出行用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "高速安全",
+          "爆胎应急"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 3,
+        "segment_text": "减少45%侧倾风险！",
+        "duration": 1.2,
+        "description": "车载中控屏显示侧倾风险降低百分比数据",
+        "movement": "静态展示",
+        "subject": "车载中控屏",
+        "object": [
+          "数据界面",
+          "车机"
+        ],
+        "footage_type": "屏幕录制",
+        "topic": "操作性",
+        "text": [
+          "45%"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解",
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "降低侧倾风险"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "稳定",
+          "安全"
+        ],
+        "scenario_a": [
+          "行驶途中"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "减少侧倾",
+          "降低侧倾风险"
+        ],
+        "marketing_tags": [
+          "操控性能",
+          "底盘技术"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "关注操控用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车机界面",
+          "数据展示"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 4,
+        "segment_text": "十纵十横潜艇笼式车身",
+        "duration": 2.0,
+        "description": "展示车身潜艇笼式框架的剖面结构",
+        "movement": "静态展示",
+        "subject": "智己LS6车身",
+        "object": [
+          "笼式框架",
+          "车身结构"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [
+          "十纵十横"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "研发车间"
+        ],
+        "design_selling_points": [
+          "潜艇笼式车身"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "坚固"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "静态展示"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "潜艇笼式车身",
+          "十纵十横车身结构"
+        ],
+        "marketing_tags": [
+          "车身安全",
+          "车身强度"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "关注安全用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车身结构",
+          "高强度车身"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 5,
+        "segment_text": "超高强度钢占比27.5%",
+        "duration": 1.4,
+        "description": "特写展示超高强度钢的材质参数标识",
+        "movement": "静态展示",
+        "subject": "高强度钢材",
+        "object": [
+          "参数标识",
+          "材质"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [
+          "27.5%",
+          "超高强度钢"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "展示细节",
+          "产品展示"
+        ],
+        "scene_location": [],
+        "design_selling_points": [
+          "高强度车身材质"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "坚固"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "超高强度钢",
+          "高强度车身"
+        ],
+        "marketing_tags": [
+          "车身安全",
+          "材质强度"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "安全关注者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车身材质",
+          "参数展示"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 6,
+        "segment_text": "全家出行",
+        "duration": 0.8,
+        "description": "车内视角，一家人乘坐车辆，神态轻松愉悦",
+        "movement": "行驶",
+        "subject": "出行家人",
+        "object": [
+          "后排座椅",
+          "车内空间",
+          "乘客"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "舒适",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城际公路",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "出行安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "舒适"
+        ],
+        "scenario_a": [
+          "家庭出行"
+        ],
+        "scenario_b": [
+          "城际出行"
+        ],
+        "marketing_phrases": [
+          "全家出行",
+          "舒适出行",
+          "安全出行"
+        ],
+        "marketing_tags": [
+          "家庭出行",
+          "舒适空间"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "家庭出行",
+          "车内空间"
+        ]
+      },
+      {
+        "index": 33,
+        "id": 7,
+        "segment_text": "就是移动安全堡垒！",
+        "duration": 1.4,
+        "description": "航拍智己LS6在开阔公路平稳行驶，展示整车姿态",
+        "movement": "行驶",
+        "subject": "智己LS6",
+        "object": [
+          "公路",
+          "整车"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "全方位安全防护"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "稳重"
+        ],
+        "scenario_a": [
+          "公路行驶"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "移动安全堡垒",
+          "安全车身",
+          "平稳行驶"
+        ],
+        "marketing_tags": [
+          "安全防护",
+          "品牌形象"
+        ],
+        "appealing_audience": [
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "extra_tags": [
+          "整车姿态",
+          "安全防护"
+        ]
+      }
+    ]
+  }
+}

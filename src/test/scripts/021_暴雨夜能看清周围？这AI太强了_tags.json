@@ -1,0 +1,431 @@
+{
+  "id": 21,
+  "topic": "雨夜模式的AI进化",
+  "title": "暴雨夜能看清周围？这AI太强了",
+  "car_model": "新一代LS6",
+  "tags": {
+    "segment_result": [
+      {
+        "index": 21,
+        "id": 1,
+        "segment_text": "智己LS6全新AI增强算法",
+        "duration": 2.0,
+        "description": "航拍大远景，智己LS6雨夜在城市高架行驶，大灯点亮",
+        "movement": "行驶",
+        "subject": "新一代LS6",
+        "object": [
+          "LED大灯",
+          "雨夜道路"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "AI增强算法"
+        ],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "城市高架"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "AI增强算法",
+          "雨夜模式"
+        ],
+        "design_adjectives": [
+          "高级"
+        ],
+        "function_adjectives": [
+          "静谧"
+        ],
+        "scenario_a": [
+          "夜间出行",
+          "雨夜"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "智己LS6 AI算法",
+          "雨夜行驶清晰"
+        ],
+        "marketing_tags": [
+          "新能源汽车",
+          "智驾安全"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "关注安全车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "夜间行驶",
+          "LED大灯"
+        ]
+      },
+      {
+        "index": 21,
+        "id": 2,
+        "segment_text": "让补盲画面夜晚清晰如白天",
+        "duration": 2.4,
+        "description": "车内POV，展示中控屏上AI处理后的雨夜补盲画面",
+        "movement": "行驶",
+        "subject": "新一代LS6",
+        "object": [
+          "中控屏",
+          "补盲画面",
+          "雨夜道路",
+          "车机"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "AI补盲"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内",
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "夜视补盲",
+          "AI画面增强"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "清晰",
+          "通透"
+        ],
+        "scenario_a": [
+          "夜间出行",
+          "雨夜"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "夜晚补盲清晰",
+          "智己LS6夜视"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "夜间安全"
+        ],
+        "appealing_audience": [
+          "夜间开车用户",
+          "智驾爱好者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "中控屏显示",
+          "AI画面处理"
+        ]
+      },
+      {
+        "index": 21,
+        "id": 3,
+        "segment_text": "DZT2.0动态追踪",
+        "duration": 1.0,
+        "description": "大特写中控屏上追踪框锁定前方障碍物",
+        "movement": "行驶",
+        "subject": "新一代LS6",
+        "object": [
+          "中控屏",
+          "动态追踪框",
+          "障碍物"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "DZT2.0"
+        ],
+        "shot_style": "车内POV",
+        "shot_type": "大特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "DZT2.0动态追踪",
+          "风险锁定"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "精准",
+          "灵敏"
+        ],
+        "scenario_a": [
+          "夜间出行",
+          "雨夜"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "动态追踪障碍物",
+          "精准锁定风险"
+        ],
+        "marketing_tags": [
+          "智能驾驶",
+          "主动安全"
+        ],
+        "appealing_audience": [
+          "关注安全车主",
+          "智驾爱好者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "障碍物锁定",
+          "智驾功能"
+        ]
+      },
+      {
+        "index": 21,
+        "id": 4,
+        "segment_text": "精准锁定夜间风险",
+        "duration": 2.0,
+        "description": "车外跟拍智己LS6雨夜顺利避让障碍物",
+        "movement": "行驶",
+        "subject": "新一代LS6",
+        "object": [
+          "障碍物",
+          "雨夜道路"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [
+          "夜间风险"
+        ],
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "风险识别",
+          "主动安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "平稳"
+        ],
+        "scenario_a": [
+          "夜间出行",
+          "雨夜"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "避让障碍物",
+          "夜间出行安全"
+        ],
+        "marketing_tags": [
+          "主动安全",
+          "智能驾驶"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "夜间开车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "主动避让",
+          "雨夜行驶"
+        ]
+      },
+      {
+        "index": 21,
+        "id": 5,
+        "segment_text": "搭配潜艇笼式车身",
+        "duration": 1.6,
+        "description": "固定机位展示LS6车身车架结构透视图",
+        "movement": "静态展示",
+        "subject": "新一代LS6",
+        "object": [
+          "潜艇笼式车身",
+          "车架"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "展台"
+        ],
+        "design_selling_points": [
+          "笼式车身结构"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "坚固",
+          "扎实"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "产品展示",
+          "展台"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "潜艇笼式车身",
+          "坚固车身"
+        ],
+        "marketing_tags": [
+          "车身安全",
+          "产品设计"
+        ],
+        "appealing_audience": [
+          "关注安全车主",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "车身结构",
+          "碰撞安全"
+        ]
+      },
+      {
+        "index": 21,
+        "id": 6,
+        "segment_text": "全向碰撞保护设计",
+        "duration": 1.8,
+        "description": "动画展示车身全向碰撞保护覆盖区域",
+        "movement": "静态展示",
+        "subject": "新一代LS6",
+        "object": [
+          "碰撞保护区域",
+          "车身"
+        ],
+        "footage_type": "CG",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "全向碰撞保护"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "可靠"
+        ],
+        "scenario_a": [
+          "安全设计",
+          "产品展示"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "全向碰撞保护",
+          "车身安全"
+        ],
+        "marketing_tags": [
+          "被动安全",
+          "车身设计"
+        ],
+        "appealing_audience": [
+          "关注安全车主",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "extra_tags": [
+          "碰撞保护",
+          "被动安全"
+        ]
+      },
+      {
+        "index": 21,
+        "id": 7,
+        "segment_text": "夜间出行安全感直接拉满",
+        "duration": 2.6,
+        "description": "车外低角度跟拍LS6雨夜平稳行驶，灯光划过雨幕",
+        "movement": "行驶",
+        "subject": "新一代LS6",
+        "object": [
+          "雨幕",
+          "LED大灯"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "品牌/形象传达"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "夜间出行安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "稳健"
+        ],
+        "scenario_a": [
+          "夜间出行",
+          "雨夜"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "夜间出行安全",
+          "智己LS6安全感"
+        ],
+        "marketing_tags": [
+          "品牌形象",
+          "智驾安全"
+        ],
+        "appealing_audience": [
+          "城市通勤用户",
+          "夜间开车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "夜雨",
+        "time": "夜晚",
+        "extra_tags": [
+          "雨夜行驶",
+          "LED大灯"
+        ]
+      }
+    ]
+  }
+}
