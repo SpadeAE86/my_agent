@@ -29,10 +29,10 @@ VECTOR_FIELDS = [
     "description_vector",
     "function_selling_points_vector",
     "design_selling_points_vector",
-    "scenario_a_vector",
-    "scenario_b_vector",
+    "scenario_vector",
     "marketing_phrases_vector",
-    "adjectives_vector",
+    "design_adjectives_vector",
+    "function_adjectives_vector",
 ]
 
 
