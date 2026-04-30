@@ -44,7 +44,7 @@ from services.script_match_service import match_script_tags_segments  # noqa: E4
 INPUT_MODE = "file"  # "file" | "inline"
 
 # file 模式下的路径（可改为任意 `_tags.json`；相对路径会先相对本脚本目录再找 cwd）
-TAGS_JSON_PATH = Path(__file__).resolve().parent / "scripts" / "001_一周只充一次电？这车也太省心了吧_tags.json"
+TAGS_JSON_PATH = Path(__file__).resolve().parent / "scripts" / "005_这增程车安静得像纯电？我不信_tags.json"
 
 # 备选：项目根目录旧的 script_tags_output.json（需要时可改掉 TAGS_JSON_PATH 指向它）
 # TAGS_JSON_PATH = Path(__file__).resolve().parent.parent.parent / "script_tags_output.json"
@@ -62,6 +62,7 @@ MODE: str = "global_then_segment"
 
 TOP_K = 5
 GLOBAL_K = 200
+PRINT_TOP1 = True
 
 
 def _load_json(path: Path) -> Any:
@@ -123,6 +124,7 @@ async def run_search(segments: List[Dict[str, Any]], *, meta_input: str) -> None
             global_k=GLOBAL_K,
             search_pipeline=SEARCH_PIPELINE,
             mode=MODE,
+            vector_field="description_vector",
         )
 
         OUT_PATH.write_text(
@@ -135,6 +137,28 @@ async def run_search(segments: List[Dict[str, Any]], *, meta_input: str) -> None
         )
         print("Wrote:", str(OUT_PATH))
         print("input_source:", meta_input)
+
+        if PRINT_TOP1:
+            print("\n=== Top1 per segment (video_url) ===")
+            for seg in results or []:
+                if not isinstance(seg, dict):
+                    continue
+                seg_id = seg.get("segment_id")
+                seg_text = str(seg.get("segment_text") or "").strip()
+                top_hits = seg.get("top_hits") or []
+                if not isinstance(top_hits, list) or not top_hits:
+                    print(f"- seg_id={seg_id} top1=<none> text={seg_text}")
+                    continue
+                h0 = top_hits[0] or {}
+                print(
+                    "- seg_id={seg_id} _id={doc_id} score={score} video_url={video_url} text={text}".format(
+                        seg_id=seg_id,
+                        doc_id=h0.get("_id"),
+                        score=h0.get("_score"),
+                        video_url=h0.get("video_path") or "",
+                        text=seg_text,
+                    )
+                )
     finally:
         try:
             await opensearch_connector.close()
