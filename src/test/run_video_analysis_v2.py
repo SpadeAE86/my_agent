@@ -49,7 +49,7 @@ from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInterio
 from services.video_upload_cache_service import video_upload_cache_service
 
 
-BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
+BASE_VIDEO_DIR = Path(r"C:\Users\25065\Downloads\汽车\ls6_video\LS6视频")
 # For reproducible cache tests: when non-empty, only analyze these videos.
 OVERRIDE_VIDEOS: List[str] = [
     r"D:\wsn_data\aigc_data\数字人素材（LS9、全新L6）\LS9\冰雪\20251216-LS9官号-双车漂移-1.mp4"

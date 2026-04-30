@@ -71,7 +71,7 @@ class CarInteriorAnalysisV2(BaseIndex):
     car_color: Annotated[str, Keyword(1.0)] = Field("未知", description="车色（固定枚举）")
 
     product_status_scene: Annotated[str, Keyword(1.0)] = Field(
-        "未知", description="产品状态场景（标准化：静态/路跑 + 内饰/外观/空间/发布会 等）"
+        "未知", description=f"产品状态场景（标准化：静态/路跑 + 内饰/外观/空间/发布会 等）：{index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES}"
     )
 
     has_presenter: Annotated[Optional[bool], Boolean()] = Field(
