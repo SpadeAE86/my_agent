@@ -149,6 +149,67 @@ def _segment_query_text(seg: Dict[str, Any]) -> str:
     return " ".join(_segment_query_parts(seg))
 
 
+def _extract_key_traits(seg: Dict[str, Any]) -> List[str]:
+    """
+    Best-effort extract key_traits signals from a Stage2 segment.
+    Priority:
+    - explicit seg["key_traits"] if present
+    - inferred from other tag fields that often carry enum values
+    """
+
+    def _dedup_keep_order(xs: List[str]) -> List[str]:
+        seen = set()
+        out: List[str] = []
+        for x in xs:
+            if not x or x in seen:
+                continue
+            seen.add(x)
+            out.append(x)
+        return out
+
+    explicit = [t for t in _truthy_list(seg.get("key_traits")) if t in index_v2_enums.KEY_TRAITS_CHOICES]
+    if explicit:
+        return _dedup_keep_order(explicit)
+
+    inferred: List[str] = []
+    for t in (
+        _truthy_list(seg.get("extra_tags"))
+        + _truthy_list(seg.get("marketing_phrases"))
+        + _truthy_list(seg.get("function_selling_points"))
+        + _truthy_list(seg.get("design_selling_points"))
+        + _truthy_list(seg.get("scene_location"))
+        + _truthy_list(seg.get("object"))
+    ):
+        if t in index_v2_enums.KEY_TRAITS_CHOICES:
+            inferred.append(t)
+    return _dedup_keep_order(inferred)
+
+
+async def _index_has_key_traits_match(
+    client: Any,
+    *,
+    key_traits: List[str],
+    base_filters: List[Dict[str, Any]],
+) -> bool:
+    """
+    Lightweight probe: do there exist documents that match these key_traits terms?
+    Used ONLY to decide whether to relax hard partitions (topic/product_status_scene)
+    in the GLOBAL recall stage.
+    """
+    traits = [t for t in (key_traits or []) if t]
+    if not traits:
+        return False
+    body: Dict[str, Any] = {
+        "query": {"bool": {"filter": (base_filters or []) + [{"terms": {"key_traits": traits}}]}},
+    }
+    try:
+        resp = await client.count(index=INDEX_NAME, body=body)
+        return int((resp or {}).get("count") or 0) > 0
+    except Exception:
+        # fail-open (conservative): if probe fails, do not assume match
+        return False
+
+
 def _chunks_from_query_parts(
     parts: List[str],
     *,
@@ -313,6 +374,7 @@ async def _global_bm25_chunked_merge_top_k(
     *,
     query_chunks: List[str],
     global_seg: Dict[str, Any],
+    global_filters: Optional[List[Dict[str, Any]]] = None,
     global_k: int,
     text_fields: List[str],
     search_pipeline: Optional[str],
@@ -332,9 +394,15 @@ async def _global_bm25_chunked_merge_top_k(
             size=size,
             search_fields=text_fields,
         )
-        if should_g:
+        # Apply global hard filters (optional) + should boosts.
+        if (global_filters or []) or should_g:
             body["query"] = {
-                "bool": {"must": body["query"], "should": should_g, "minimum_should_match": 0}
+                "bool": {
+                    "filter": global_filters or [],
+                    "must": body["query"],
+                    "should": should_g or [],
+                    "minimum_should_match": 0,
+                }
             }
         return await client.search(index=INDEX_NAME, body=body, params=params_g)
 
@@ -386,7 +454,7 @@ async def _global_knn_top_k(
     return [str(h.get("_id")) for h in hits if h.get("_id")]
 
 
-def _build_filters(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
+def _build_filters(seg: Dict[str, Any], *, relax_partitions: bool = False) -> List[Dict[str, Any]]:
     filters: List[Dict[str, Any]] = []
 
     mv = str(seg.get("movement") or "").strip()
@@ -395,20 +463,22 @@ def _build_filters(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     # Hard partitions (filter semantics are stable with hybrid):
     # - product_status_scene: 静态内饰/静态外观/路跑外观/... must not mix
-    pss = str(seg.get("product_status_scene") or "").strip()
-    if pss and pss != "未知":
-        filters.append({"term": {"product_status_scene": {"value": pss}}})
+    if not relax_partitions:
+        pss = str(seg.get("product_status_scene") or "").strip()
+        if pss and pss != "未知":
+            filters.append({"term": {"product_status_scene": {"value": pss}}})
 
     # - topic: treat as disjoint buckets in script-tag matching
-    tp = seg.get("topic")
-    if isinstance(tp, str):
-        tv = tp.strip()
-        if tv and tv != "未知":
-            filters.append({"term": {"topic": {"value": tv}}})
-    elif isinstance(tp, list) and tp:
-        tv = str(tp[0]).strip()
-        if tv and tv != "未知":
-            filters.append({"term": {"topic": {"value": tv}}})
+    if not relax_partitions:
+        tp = seg.get("topic")
+        if isinstance(tp, str):
+            tv = tp.strip()
+            if tv and tv != "未知":
+                filters.append({"term": {"topic": {"value": tv}}})
+        elif isinstance(tp, list) and tp:
+            tv = str(tp[0]).strip()
+            if tv and tv != "未知":
+                filters.append({"term": {"topic": {"value": tv}}})
 
     vu = seg.get("video_usage")
     if isinstance(vu, list):
@@ -447,19 +517,8 @@ def _build_should_boosts(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
 
     add_terms("person_detail", _truthy_list(seg.get("person_detail")), 1.05)
 
-    # Boost key_traits recall: any script tag that matches the KEY_TRAITS enum should boost.
-    trait_candidates: List[str] = []
-    for t in (
-        _truthy_list(seg.get("extra_tags"))
-        + _truthy_list(seg.get("marketing_phrases"))
-        + _truthy_list(seg.get("function_selling_points"))
-        + _truthy_list(seg.get("design_selling_points"))
-        + _truthy_list(seg.get("scene_location"))
-        + _truthy_list(seg.get("object"))
-    ):
-        if t in index_v2_enums.KEY_TRAITS_CHOICES and t not in trait_candidates:
-            trait_candidates.append(t)
-    add_terms("key_traits", trait_candidates, 1.3)
+    # Boost key_traits recall: treat it as a high-priority intent channel.
+    add_terms("key_traits", _extract_key_traits(seg), 1.3)
 
     # Boost text recall if script provides a list of key on-screen strings/numbers.
     add_terms("text", _truthy_list(seg.get("text")), 1.25)
@@ -578,11 +637,37 @@ async def match_script_tags_segments(
         # Global BM25 fields: keep small to avoid maxClauseCount
         global_bm25_fields = [f for f in GLOBAL_BM25_FIELDS if f in (text_fields or [])] or ["marketing_phrases"]
 
+        # GLOBAL recall partitions:
+        #   where (key_traits IN doc.key_traits) OR (topic AND product_status_scene)
+        # This is expressed as a bool.should with minimum_should_match=1.
+        # IMPORTANT: the key_traits branch is a real terms match (NOT "field exists").
+        base_filters = _build_filters(global_seg, relax_partitions=True)  # movement/video_usage only
+        strict_filters = _build_filters(global_seg, relax_partitions=False)  # includes topic/product_status_scene if present
+
+        global_traits = _extract_key_traits(global_seg)
+        if global_traits:
+            key_traits_branch = list(base_filters) + [{"terms": {"key_traits": global_traits}}]
+            global_filters = [
+                {
+                    "bool": {
+                        "should": [
+                            {"bool": {"filter": key_traits_branch}},
+                            {"bool": {"filter": strict_filters}},
+                        ],
+                        "minimum_should_match": 1,
+                    }
+                }
+            ]
+        else:
+            # No key_traits signal → just use the strict partitions to control noise.
+            global_filters = strict_filters
+
         bm25_ranked = await _global_bm25_chunked_merge_top_k(
             qb,
             c,
             query_chunks=query_chunks,
             global_seg=global_seg,
+            global_filters=global_filters,
             global_k=int(global_k),
             text_fields=global_bm25_fields,
             search_pipeline=search_pipeline,
@@ -609,7 +694,7 @@ async def match_script_tags_segments(
         if not isinstance(seg, dict):
             continue
         q = _segment_query_text(seg)
-        filters = _build_filters(seg)
+        filters = _build_filters(seg, relax_partitions=False)
         should_boosts = _build_should_boosts(seg)
         # If we are in cascade mode, segment stage can choose the underlying segment mode.
         seg_mode = mode
