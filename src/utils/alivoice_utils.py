@@ -10,8 +10,6 @@ from infra.logging.logger import logger as log
 from utils.post_utils import post
 import httpx
 URL = "wss://nls-gateway-cn-shanghai.aliyuncs.com/ws/v1"
-# TOKEN = getToken("", "")
-# APPKEY = ""  # 获取Appkey请前往控制台：https://nls-portal.console.aliyun.com/applist
 token = None
 expire_time = 0
 

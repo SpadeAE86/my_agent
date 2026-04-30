@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import asyncio
 from typing import Any, Dict, List, Optional
-
+from infra.logging.logger import logger as log
 from infra.storage.opensearch.query_builder import QueryBuilder
 from infra.storage.opensearch_connector import opensearch_connector
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
@@ -11,6 +11,53 @@ from services.video_analysis_db_service import video_analysis_db_service
 
 
 INDEX_NAME = "car_interior_analysis_v2"
+
+
+async def _ensure_hybrid_pipeline(client, *, pipeline_name: str, num_queries: int) -> str:
+    """
+    Cluster constraint: the search pipeline's normalization processor `weights` length must
+    match the number of sub-queries in `hybrid.queries`, otherwise OpenSearch errors:
+    "number of weights [x] must match number of sub-queries [y] in hybrid query".
+
+    We treat `pipeline_name` as the default for the common 2-route hybrid (BM25 + 1 KNN).
+    For other `num_queries`, we use a derived pipeline name and best-effort upsert it.
+    """
+    if not pipeline_name:
+        return ""
+    if num_queries <= 0:
+        return pipeline_name
+    if num_queries == 2:
+        return pipeline_name
+
+    derived = f"{pipeline_name}-q{num_queries}"
+    if num_queries == 1:
+        weights = [1.0]
+    else:
+        bm25_w = 0.3
+        vec_w = (1.0 - bm25_w) / float(num_queries - 1)
+        weights = [bm25_w] + [vec_w] * (num_queries - 1)
+
+    pipeline_body = {
+        "description": f"Auto-generated hybrid pipeline for {num_queries} sub-queries",
+        "phase_results_processors": [
+            {
+                "normalization-processor": {
+                    "normalization": {"technique": "min_max"},
+                    "combination": {
+                        "technique": "arithmetic_mean",
+                        "parameters": {"weights": weights},
+                    },
+                }
+            }
+        ],
+    }
+
+    try:
+        await client.http.put(f"/_search/pipeline/{derived}", body=pipeline_body)
+    except Exception:
+        return ""
+
+    return derived
 
 # Stage2 script segments schema: models/pydantic/model_output_schema/seedtext_script_segments_schema.py
 # (SeedtextIndexTagsSegment). Index vectors on CarInteriorAnalysisV2:
@@ -21,9 +68,19 @@ INDEX_NAME = "car_interior_analysis_v2"
 # Global BM25 step (global_then_segment_*): merged segment text can become huge; IK analysis then
 # expands to > Lucene's BooleanQuery.maxClauseCount (default 1024) → TransportError 500.
 # Mitigation: split deduped query phrases into multiple chunks → parallel BM25 → merge by max(_score).
-GLOBAL_CHUNK_MAX_CHARS = 420
+GLOBAL_CHUNK_MAX_CHARS = 160
+GLOBAL_CHUNK_MAX_PHRASES = 18
 GLOBAL_MAX_CHUNKS = 16
 GLOBAL_STAGE_MAX_ITEMS_PER_LIST_FIELD = 80
+
+# Global vector assist (optional): run a separate KNN on description_vector and fuse with BM25 via RRF.
+GLOBAL_USE_KNN_ASSIST = True
+GLOBAL_KNN_VECTOR_FIELD = "description_vector"
+GLOBAL_KNN_QUERY_MAX_CHARS = 260
+GLOBAL_RRF_K = 60
+
+# To reduce maxClauseCount risk, keep global BM25 fields small.
+GLOBAL_BM25_FIELDS = ["marketing_phrases", "function_selling_points", "design_selling_points"]
 
 
 def _truthy_list(v: Any) -> List[str]:
@@ -96,6 +153,7 @@ def _chunks_from_query_parts(
     parts: List[str],
     *,
     max_chars: int = GLOBAL_CHUNK_MAX_CHARS,
+    max_phrases: int = GLOBAL_CHUNK_MAX_PHRASES,
     max_chunks: int = GLOBAL_MAX_CHUNKS,
 ) -> List[str]:
     """
@@ -128,7 +186,7 @@ def _chunks_from_query_parts(
             continue
 
         add_len = len(piece) + (1 if cur else 0)
-        if cur and cur_len + add_len > max_chars:
+        if (cur and cur_len + add_len > max_chars) or (cur and len(cur) >= max_phrases):
             flush()
 
         if len(chunks) >= max_chunks:
@@ -139,6 +197,34 @@ def _chunks_from_query_parts(
 
     flush()
     return [c for c in chunks if c.strip()]
+
+
+def _truncate_chars(s: str, *, max_chars: int) -> str:
+    t = (s or "").strip()
+    if len(t) <= max_chars:
+        return t
+    return t[:max_chars]
+
+
+def _rrf_fuse_ranked_lists(
+    ranked_lists: List[List[str]],
+    *,
+    k: int = GLOBAL_RRF_K,
+    top_n: int = 200,
+) -> List[str]:
+    """
+    Reciprocal Rank Fusion (RRF):
+      score(d) = sum_i 1 / (k + rank_i(d)), rank is 1-based.
+    """
+    scores: Dict[str, float] = {}
+    for lst in ranked_lists:
+        for idx, doc_id in enumerate(lst or []):
+            if not doc_id:
+                continue
+            rank = idx + 1
+            scores[doc_id] = float(scores.get(doc_id, 0.0)) + 1.0 / (float(k) + float(rank))
+    out = sorted(scores.keys(), key=lambda x: scores[x], reverse=True)
+    return out[: int(top_n)]
 
 
 def _merge_segments_for_global(segments: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -276,12 +362,53 @@ async def _global_bm25_chunked_merge_top_k(
     return ranked[:size]
 
 
+async def _global_knn_top_k(
+    qb: QueryBuilder,
+    client: Any,
+    *,
+    query_text: str,
+    global_k: int,
+    vector_field: str,
+    search_pipeline: Optional[str],
+) -> List[str]:
+    q = _truncate_chars(query_text, max_chars=GLOBAL_KNN_QUERY_MAX_CHARS)
+    if not q:
+        return []
+    body = qb.build_knn_only_search(
+        model_class=CarInteriorAnalysisV2,
+        query=q,
+        size=max(1, int(global_k)),
+        vector_field=vector_field,
+    )
+    params = {"search_pipeline": search_pipeline} if search_pipeline else None
+    resp = await client.search(index=INDEX_NAME, body=body, params=params)
+    hits = (((resp or {}).get("hits") or {}).get("hits") or [])
+    return [str(h.get("_id")) for h in hits if h.get("_id")]
+
+
 def _build_filters(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
     filters: List[Dict[str, Any]] = []
 
     mv = str(seg.get("movement") or "").strip()
     if mv and mv != "未知":
-        filters.append({"term": {"movement": mv}})
+        filters.append({"term": {"movement": {"value": mv}}})
+
+    # Hard partitions (filter semantics are stable with hybrid):
+    # - product_status_scene: 静态内饰/静态外观/路跑外观/... must not mix
+    pss = str(seg.get("product_status_scene") or "").strip()
+    if pss and pss != "未知":
+        filters.append({"term": {"product_status_scene": {"value": pss}}})
+
+    # - topic: treat as disjoint buckets in script-tag matching
+    tp = seg.get("topic")
+    if isinstance(tp, str):
+        tv = tp.strip()
+        if tv and tv != "未知":
+            filters.append({"term": {"topic": {"value": tv}}})
+    elif isinstance(tp, list) and tp:
+        tv = str(tp[0]).strip()
+        if tv and tv != "未知":
+            filters.append({"term": {"topic": {"value": tv}}})
 
     vu = seg.get("video_usage")
     if isinstance(vu, list):
@@ -314,16 +441,9 @@ def _build_should_boosts(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
     add_term("shot_style", str(seg.get("shot_style") or ""), 1.2)
     add_term("shot_type", str(seg.get("shot_type") or ""), 1.1)
     add_term("footage_type", str(seg.get("footage_type") or ""), 1.1)
-    add_term("product_status_scene", str(seg.get("product_status_scene") or ""), 1.1)
     add_term("car_color", str(seg.get("car_color") or ""), 1.1)
     add_term("time", str(seg.get("time") or ""), 1.05)
     add_term("weather", str(seg.get("weather") or ""), 1.05)
-    # topic is a single keyword in the index (string).
-    tp = seg.get("topic")
-    if isinstance(tp, str):
-        add_term("topic", tp, 1.25)
-    elif isinstance(tp, list) and tp:
-        add_term("topic", str(tp[0]), 1.25)
 
     add_terms("person_detail", _truthy_list(seg.get("person_detail")), 1.05)
 
@@ -347,6 +467,8 @@ def _build_should_boosts(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
     return should
 
 
+
+
 def _choose_vector_fields(seg: Dict[str, Any], *, mode: str, primary: str) -> List[str]:
     """
     Pick knn fields aligned with index mapping: scenario_vector uses scenario_a/scenario_b lists;
@@ -355,6 +477,7 @@ def _choose_vector_fields(seg: Dict[str, Any], *, mode: str, primary: str) -> Li
     if mode == "zero":
         return []
     if mode == "lite":
+        log.info(f"Mode=lite: using only primary vector field {primary} for stability and cost control.")
         return [primary]
 
     def has_list(k: str) -> bool:
@@ -447,17 +570,39 @@ async def match_script_tags_segments(
         global_seg = _cap_global_merged_lists(global_seg)
         q_parts = _segment_query_parts(global_seg)
         query_chunks = _chunks_from_query_parts(
-            q_parts, max_chars=GLOBAL_CHUNK_MAX_CHARS, max_chunks=GLOBAL_MAX_CHUNKS
+            q_parts,
+            max_chars=GLOBAL_CHUNK_MAX_CHARS,
+            max_phrases=GLOBAL_CHUNK_MAX_PHRASES,
+            max_chunks=GLOBAL_MAX_CHUNKS,
         )
-        candidate_ids = await _global_bm25_chunked_merge_top_k(
+        # Global BM25 fields: keep small to avoid maxClauseCount
+        global_bm25_fields = [f for f in GLOBAL_BM25_FIELDS if f in (text_fields or [])] or ["marketing_phrases"]
+
+        bm25_ranked = await _global_bm25_chunked_merge_top_k(
             qb,
             c,
             query_chunks=query_chunks,
             global_seg=global_seg,
             global_k=int(global_k),
-            text_fields=text_fields,
+            text_fields=global_bm25_fields,
             search_pipeline=search_pipeline,
         )
+
+        if GLOBAL_USE_KNN_ASSIST:
+            # Use a short query for vector recall (prefer description/segment_text if present, else fall back).
+            vec_query = " ".join([str(x) for x in q_parts[:60] if str(x).strip()])
+            knn_ranked = await _global_knn_top_k(
+                qb,
+                c,
+                query_text=vec_query,
+                global_k=int(global_k),
+                vector_field=GLOBAL_KNN_VECTOR_FIELD,
+                search_pipeline=search_pipeline,
+            )
+            fused = _rrf_fuse_ranked_lists([bm25_ranked, knn_ranked], k=GLOBAL_RRF_K, top_n=int(global_k))
+            candidate_ids = fused
+        else:
+            candidate_ids = bm25_ranked
 
     out: List[Dict[str, Any]] = []
     for seg in segments:
@@ -499,16 +644,54 @@ async def match_script_tags_segments(
             filters.append({"ids": {"values": candidate_ids}})
 
         if filters or should_boosts:
-            body["query"] = {
-                "bool": {
-                    "filter": filters or [],
-                    "must": body["query"],
-                    "should": should_boosts or [],
-                    "minimum_should_match": 0,
+            # IMPORTANT: OpenSearch `hybrid` queries do not reliably respect an outer `bool.filter`
+            # wrapper in some versions/configs. To ensure hard filters apply in hybrid mode, we
+            # push the same filters into EACH sub-query inside `hybrid.queries`.
+            #
+            # Symptom this fixes: `topic` / `product_status_scene` filters work in BM25-only,
+            # but appear ignored when the query becomes `hybrid` (BM25 + kNN).
+            q0 = body.get("query") or {}
+            if isinstance(q0, dict) and "hybrid" in q0 and isinstance(q0.get("hybrid"), dict):
+                hybrid_obj: Dict[str, Any] = q0["hybrid"]
+                subqs = hybrid_obj.get("queries") or []
+                wrapped_subqs: List[Dict[str, Any]] = []
+                for subq in subqs:
+                    if not isinstance(subq, dict):
+                        continue
+                    wrapped_subqs.append(
+                        {
+                            "bool": {
+                                "filter": filters or [],
+                                "must": [subq],
+                                "should": should_boosts or [],
+                                "minimum_should_match": 0,
+                            }
+                        }
+                    )
+                # If the original hybrid object carried `weights`, they may no longer match after
+                # wrapping. Dropping them is safer than risking a 400 due to mismatch.
+                body["query"] = {"hybrid": {"queries": wrapped_subqs}}
+            else:
+                must_list: List[Dict[str, Any]] = [body["query"]]
+                body["query"] = {
+                    "bool": {
+                        "filter": filters or [],
+                        "must": must_list,
+                        "should": should_boosts or [],
+                        "minimum_should_match": 0,
+                    }
                 }
-            }
 
-        params = {"search_pipeline": search_pipeline} if search_pipeline else None
+        params = None
+        if search_pipeline:
+            qobj = body.get("query") or {}
+            if isinstance(qobj, dict) and "hybrid" in qobj and isinstance(qobj.get("hybrid"), dict):
+                n_q = len(qobj["hybrid"].get("queries") or [])
+                pipeline_name = await _ensure_hybrid_pipeline(c, pipeline_name=search_pipeline, num_queries=n_q)
+                if pipeline_name:
+                    params = {"search_pipeline": pipeline_name}
+            else:
+                params = {"search_pipeline": search_pipeline}
         resp = await c.search(index=INDEX_NAME, body=body, params=params)
         hits = (((resp or {}).get("hits") or {}).get("hits") or [])
         top = [{"_id": h.get("_id"), "_score": h.get("_score")} for h in hits[: int(top_k)]]
