@@ -5,6 +5,8 @@
 #   POST /video-analysis/history   — 覆盖写入全部历史记录
 #   POST /video-analysis/history/update — 追加/更新单条历史记录
 
+import asyncio
+import functools
 import os
 import sys
 import uuid
@@ -13,7 +15,7 @@ from typing import Optional
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from fastapi import APIRouter, File, UploadFile, Form, HTTPException
+from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Query
 from pydantic import BaseModel, Field
 from typing import List
 
@@ -29,7 +31,12 @@ from infra.logging.logger import logger as log
 from infra.storage.opensearch_connector import opensearch_connector
 from infra.storage.opensearch.query_builder import query_builder
 from models.pydantic.opensearch_index.car_interior_analysis import CarInteriorAnalysis
-from models.pydantic.opensearch_index.base_index import get_index_name
+from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
+from models.pydantic.opensearch_index.base_index import (
+    get_index_name, get_vector_fields, get_searchable_fields, get_field_weights, get_vector_weights,
+)
+from services.script_match_recall import ensure_hybrid_pipeline
+from core.workspace import list_workspaces, DEFAULT_WORKSPACE_KEY
 
 
 video_analysis_router = APIRouter(prefix="/video-analysis", tags=["video-analysis"])
@@ -41,6 +48,18 @@ UPLOAD_TMP_DIR = os.path.join(
 )
 
 
+# ---------------- Workspace 接口 ----------------
+
+@video_analysis_router.get("/workspaces")
+async def get_workspaces():
+    """返回当前支持的 workspace 列表（key / label / description）及默认值。"""
+    return {
+        "success": True,
+        "workspaces": list_workspaces(),
+        "default": DEFAULT_WORKSPACE_KEY,
+    }
+
+
 # ---------------- 历史记录接口 ----------------
 
 @video_analysis_router.get("/history")
@@ -50,28 +69,36 @@ async def get_history():
 
 
 @video_analysis_router.get("/history/{history_id}")
-async def get_history_item(history_id: str):
-    item = await video_analysis_db_service.get_history_item(history_id)
+async def get_history_item(
+    history_id: str,
+    shot_cards_version: str = Query("v1", description="分镜表版本：v1 旧卡片 / v2 对齐 SceneAnalysisResultV2"),
+):
+    ver = shot_cards_version if shot_cards_version in ("v1", "v2") else "v1"
+    item = await video_analysis_db_service.get_history_item(history_id, shot_cards_version=ver)
     if item is None:
         raise HTTPException(status_code=404, detail="history not found")
     return {"success": True, "item": item}
 
 
 @video_analysis_router.get("/cards")
-async def get_cards(history_id: Optional[str] = None):
+async def get_cards(
+    history_id: Optional[str] = None,
+    shot_cards_version: str = Query("v1", description="分镜表版本：v1 / v2"),
+):
     """
     Get cards by history_id.
     - history_id=__all__ or missing => all cards across histories
     - else => cards of one history (from DB)
     """
+    ver = shot_cards_version if shot_cards_version in ("v1", "v2") else "v1"
     if not history_id or history_id == "__all__":
-        cards = await video_analysis_db_service.list_all_cards()
-        return {"success": True, "cards": cards}
+        cards = await video_analysis_db_service.list_all_cards(shot_cards_version=ver)
+        return {"success": True, "cards": cards, "shot_cards_version": ver}
 
-    item = await video_analysis_db_service.get_history_item(history_id)
+    item = await video_analysis_db_service.get_history_item(history_id, shot_cards_version=ver)
     if item is None:
         raise HTTPException(status_code=404, detail="history not found")
-    return {"success": True, "cards": item.get("cards", [])}
+    return {"success": True, "cards": item.get("cards", []), "shot_cards_version": ver}
 
 class VideoAnalysisSearchToken(BaseModel):
     text: str
@@ -83,6 +110,7 @@ class VideoAnalysisSearchRequest(BaseModel):
     fuzzy: bool = False
     history_id: Optional[str] = None
     size: int = 50
+    workspace: Optional[str] = None  # "v1" | "v2"
 
 def _parse_doc_id(doc_id: str) -> Optional[tuple[str, int]]:
     """
@@ -104,6 +132,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
     """
     Search cards via OpenSearch (hybrid: keyword + vector).
     Returns full ShotCard payloads from DB (source of truth) ordered by OpenSearch score.
+    精准匹配(fuzzy=False): BM25 only  /  模糊匹配(fuzzy=True): BM25 + KNN hybrid
     """
     tokens = [t.text.strip() for t in (req.tokens or []) if t.text and t.text.strip()]
     if not tokens:
@@ -111,54 +140,132 @@ async def search_cards(req: VideoAnalysisSearchRequest):
 
     query_text = " ".join(tokens)
     size = max(1, min(int(req.size or 50), 200))
+    mode = "fuzzy(BM25+KNN)" if req.fuzzy else "precise(BM25)"
+    ws = (req.workspace or "").strip() or "default"
+    history_id = (req.history_id or "").strip()
 
-    # Build base hybrid query (exclude vectors by default)
-    body = query_builder.build_dynamic_hybrid_search(
-        CarInteriorAnalysis,
-        query_text,
-        size=size,
-        bm25_factor=0.5,
-        vector_factor=0.5,
+    token_texts = [t.text for t in (req.tokens or [])[:10]]
+    log.info(
+        f"[search] query={query_text!r}  mode={mode}  size={size}"
+        f"  workspace={ws}  history={history_id or '*'}  tokens={token_texts}"
     )
 
-    # Optional history filter (restrict to one analysis run)
-    history_id = (req.history_id or "").strip()
+    # Workspace-aware index model: v2 uses CarInteriorAnalysisV2, else v1
+    IndexModel = CarInteriorAnalysisV2 if ws == "v2" else CarInteriorAnalysis
+
+    # ── Query body ────────────────────────────────────────────────────────────
+    # Precise mode: plain multi_match BM25 — no hybrid query type, no pipeline needed.
+    #   Scores are standard Lucene BM25 (always positive, comparable across docs).
+    # Fuzzy mode: hybrid (BM25 + KNN) with a normalization pipeline.
+    #   The `hybrid` query type REQUIRES search_pipeline; without it OpenSearch returns
+    #   raw internal scores that can be huge negatives (known cluster bug).
+    await opensearch_connector.ensure_init()
+    client = await opensearch_connector.get_client()
+
+    vec_fields = get_vector_fields(IndexModel)
+    pipeline_param: Optional[str] = None
+
+    if not req.fuzzy:
+        # ── Precise: pure BM25 multi_match ────────────────────────────────
+        text_fields = get_searchable_fields(IndexModel)
+        weights = get_field_weights(IndexModel)
+        weighted_fields = [f"{f}^{weights.get(f, 1.0)}" for f in text_fields]
+        body: dict = {
+            "size": size,
+            "query": {
+                "multi_match": {
+                    "query": query_text,
+                    "fields": weighted_fields,
+                    "type": "best_fields",
+                }
+            },
+            "_source": {"excludes": vec_fields},
+        }
+    else:
+        # ── Fuzzy: hybrid BM25 + KNN with normalization pipeline ──────────
+        # OpenSearch hybrid query has a hard sub-query cap (typically 5).
+        # v2 has 7 vector fields → 1 BM25 + 7 KNN = 8, which exceeds the limit.
+        # Sort by marker weight and keep only the top 2 KNN paths (total = 3).
+        vec_weight_map = get_vector_weights(IndexModel)
+        top_vecs = sorted(vec_fields, key=lambda f: vec_weight_map.get(f, 1.0), reverse=True)[:2]
+        # Embedding 在默认线程池执行，避免阻塞 asyncio 事件循环（否则 /health 等接口卡顿）
+        q_vec = await asyncio.get_running_loop().run_in_executor(
+            None,
+            functools.partial(query_builder._generate_embedding, query_text),
+        )
+        body = query_builder.build_dynamic_hybrid_search(
+            IndexModel, query_text, size=size, bm25_factor=0.3, vector_factor=0.7,
+            vector_fields=top_vecs,
+            query_vector=q_vec,
+        )
+        # num_queries = 1 (multi_match) + len(top_vecs)
+        num_q = 1 + len(top_vecs)
+        pipeline_param = await ensure_hybrid_pipeline(
+            client, pipeline_name="nlp-search-pipeline", num_queries=num_q
+        )
+
+    # Optional history filter
     if history_id and history_id != "__all__":
-        # Filter by doc id prefix: "{history_id}_scene_"
         prefix = f"{history_id}_scene_"
         q = body.get("query") or {}
-        body["query"] = {
-            "bool": {
-                "must": [q],
-                "filter": [{"prefix": {"id": prefix}}],
-            }
-        }
+        body["query"] = {"bool": {"must": [q], "filter": [{"prefix": {"id": prefix}}]}}
+
+    # Highlight matched terms in text fields → "命中路径" drawer section
+    _HIGHLIGHT_FIELDS = [
+        "description", "subject", "object",
+        "design_selling_points", "function_selling_points",
+        "scenario_a", "scenario_b",
+        "marketing_phrases", "appealing_audience", "scene_location",
+    ]
+    body["highlight"] = {
+        "pre_tags": ["<em>"],
+        "post_tags": ["</em>"],
+        "require_field_match": False,
+        "fields": {f: {"number_of_fragments": 2, "fragment_size": 80} for f in _HIGHLIGHT_FIELDS},
+    }
 
     try:
-        await opensearch_connector.ensure_init()
-        client = await opensearch_connector.get_client()
-        index_name = get_index_name(CarInteriorAnalysis)
-        resp = await client.search(index=index_name, body=body)
+        index_name = get_index_name(IndexModel)
+        search_params = {"search_pipeline": pipeline_param} if pipeline_param else None
+        resp = await client.search(index=index_name, body=body, params=search_params)
         hits = ((resp.get("hits") or {}).get("hits") or [])
     except Exception as e:
         log.error(f"video-analysis search failed: {e}")
         return {"success": False, "error": str(e), "cards": []}
 
-    # Map OpenSearch doc ids -> (history_id, scene_id)
+    top5 = [(h.get("_id"), round(float(h.get("_score") or 0), 4)) for h in hits[:5]]
+    log.info(f"[search] hits={len(hits)}  top5={top5}")
+
+    # Map OpenSearch doc ids -> (history_id, scene_id) + capture per-doc score
     keys_in_order: List[tuple[str, int]] = []
+    meta_by_key: dict[tuple[str, int], dict] = {}
     for h in hits:
         doc_id = h.get("_id") or (h.get("_source") or {}).get("id")
         k = _parse_doc_id(str(doc_id)) if doc_id else None
         if k:
             keys_in_order.append(k)
+            meta: dict = {}
+            raw_score = h.get("_score")
+            if raw_score is not None:
+                meta["_score"] = float(raw_score)
+            raw_hl = h.get("highlight")
+            if raw_hl:
+                meta["_highlight"] = raw_hl
+            meta_by_key[k] = meta
 
     if not keys_in_order:
         return {"success": True, "cards": []}
 
-    cards = await video_analysis_db_service.get_cards_by_keys(keys_in_order)
+    cards = await video_analysis_db_service.get_cards_by_keys(keys_in_order, shot_cards_version="v2")
     by_key = {(c.get("history_id"), int(c.get("scene_id") or 0)): c for c in (cards or [])}
-    ordered = [by_key[k] for k in keys_in_order if k in by_key]
-    return {"success": True, "cards": ordered}
+    ordered = []
+    for k in keys_in_order:
+        if k not in by_key:
+            continue
+        card = dict(by_key[k])
+        card.update(meta_by_key.get(k) or {})
+        ordered.append(card)
+    return {"success": True, "cards": ordered, "search_mode": mode}
 
 class VideoAnalysisReindexRequest(BaseModel):
     history_id: str
@@ -179,13 +286,17 @@ async def reindex_cards(req: VideoAnalysisReindexRequest):
 
     # mark as pending first (best effort)
     try:
-        await video_analysis_db_service.update_cards_index_status(keys, status="PENDING", error=None)
+        await video_analysis_db_service.update_cards_index_status(
+            keys, status="PENDING", error=None, shot_cards_version="v2"
+        )
     except Exception as e:
         log.warning(f"reindex: failed to mark PENDING: {e}")
 
-    rows = await video_analysis_db_service.get_cards_by_keys(keys)
+    rows = await video_analysis_db_service.get_cards_by_keys(keys, shot_cards_version="v2")
     if not rows:
-        await video_analysis_db_service.update_cards_index_status(keys, status="FAILED", error="cards not found in db")
+        await video_analysis_db_service.update_cards_index_status(
+            keys, status="FAILED", error="cards not found in db", shot_cards_version="v2"
+        )
         return {"success": False, "error": "cards not found", "updated": []}
 
     cards: List[PydShotCard] = []
@@ -205,17 +316,23 @@ async def reindex_cards(req: VideoAnalysisReindexRequest):
             log.warning(f"reindex: parse ShotCard failed for {k}: {e}")
 
     if not cards:
-        await video_analysis_db_service.update_cards_index_status(keys, status="FAILED", error="no valid cards to reindex")
+        await video_analysis_db_service.update_cards_index_status(
+            keys, status="FAILED", error="no valid cards to reindex", shot_cards_version="v2"
+        )
         return {"success": False, "error": "no valid cards", "updated": []}
 
     try:
         await index_shotcards_to_opensearch(cards, id_prefix=history_id, refresh=bool(req.refresh))
-        await video_analysis_db_service.update_cards_index_status(ok_keys, status="OK", error=None)
+        await video_analysis_db_service.update_cards_index_status(
+            ok_keys, status="OK", error=None, shot_cards_version="v2"
+        )
     except Exception as e:
-        await video_analysis_db_service.update_cards_index_status(ok_keys, status="FAILED", error=str(e))
+        await video_analysis_db_service.update_cards_index_status(
+            ok_keys, status="FAILED", error=str(e), shot_cards_version="v2"
+        )
         return {"success": False, "error": str(e), "updated": []}
 
-    updated_rows = await video_analysis_db_service.get_cards_by_keys(ok_keys)
+    updated_rows = await video_analysis_db_service.get_cards_by_keys(ok_keys, shot_cards_version="v2")
     return {
         "success": True,
         "updated": updated_rows,

@@ -1,5 +1,5 @@
 import os
-from typing import List
+from typing import List, Optional
 
 import cv2
 from scenedetect import detect, ContentDetector, open_video, SceneManager, VideoStreamCv2, VideoStream
@@ -8,18 +8,39 @@ from models.pydantic.dataclass.scene_split_result import SceneSplitResult
 from scenedetect.scene_manager import save_images
 
 def save_scene_frames(frame, scene_id, frame_id, output_dir):
-    # --- 保存为 WebP ---
-    os.makedirs(output_dir, exist_ok=True)
+    # --- 保存为 WebP（失败则尝试 PNG；均失败则抛错，避免 frame_url_list 指向不存在的路径）
+    out_dir = os.path.abspath(output_dir)
+    os.makedirs(out_dir, exist_ok=True)
     webp_filename = f"scene_{scene_id:03d}_frame_{frame_id:06d}.webp"
-    webp_path = os.path.join(output_dir, webp_filename)
+    webp_path = os.path.join(out_dir, webp_filename)
     # 使用 cv2 保存，质量参数设为 90 (默认75，100最高)
     # cv2.imread/imwrite 处理的是 BGR 格式，scenedetect 返回的也是 BGR，可以直接存
     import cv2
-    ok = cv2.imwrite(webp_path, frame, [cv2.IMWRITE_WEBP_QUALITY, 90])
-    # print(ok)
-    return webp_path
 
-def get_video_scenes(video_path, frame_interval = 2, threshold=30.0, workspace_dir="./scene_detect_output") -> List[SceneSplitResult]:
+    ok = cv2.imwrite(webp_path, frame, [cv2.IMWRITE_WEBP_QUALITY, 90])
+    if ok and os.path.isfile(webp_path):
+        return webp_path
+    if ok and not os.path.isfile(webp_path):
+        log.warning("cv2.imwrite reported ok but file missing: %s", webp_path)
+
+    root, _ext = os.path.splitext(webp_path)
+    png_path = root + ".png"
+    ok2 = cv2.imwrite(png_path, frame)
+    if ok2 and os.path.isfile(png_path):
+        log.warning("WebP save failed, using PNG: webp_ok=%s path=%s -> %s", ok, webp_path, png_path)
+        return png_path
+
+    raise OSError(
+        f"cv2.imwrite failed for scene={scene_id} frame_id={frame_id} webp_ok={ok} png_ok={ok2} dir={out_dir!r}"
+    )
+
+def get_video_scenes(
+    video_path,
+    frame_interval=2,
+    threshold=30.0,
+    workspace_dir="./scene_detect_output",
+    min_scene_seconds: Optional[float] = 1.5,
+) -> List[SceneSplitResult]:
     """
     检测视频场景并返回首尾帧及时间点
 
@@ -93,8 +114,17 @@ def get_video_scenes(video_path, frame_interval = 2, threshold=30.0, workspace_d
 
             if is_target:
                 if frame is not None:
-                    frame_path = save_scene_frames(frame, scene_no, tmp_frame, workspace_dir)
-                    scene_frame_list.append(frame_path)
+                    try:
+                        frame_path = save_scene_frames(frame, scene_no, tmp_frame, workspace_dir)
+                        scene_frame_list.append(frame_path)
+                    except OSError as e:
+                        # 单帧写盘失败时不占位路径，避免下游「missing extracted frames」与列表不一致
+                        log.warning(
+                            "save_scene_frames failed scene=%s frame_no=%s: %s",
+                            scene_no,
+                            tmp_frame,
+                            e,
+                        )
                 target_f = min(end_f - 1, target_f + skip_frames)
 
         scene_result = SceneSplitResult(

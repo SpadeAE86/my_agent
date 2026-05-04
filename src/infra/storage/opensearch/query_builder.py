@@ -105,7 +105,8 @@ class QueryBuilder:
         search_fields: Optional[List[str]] = None,
         vector_fields: Optional[List[str]] = None,
         field_weight_overrides: Optional[Dict[str, float]] = None,
-        vector_weight_overrides: Optional[Dict[str, float]] = None
+        vector_weight_overrides: Optional[Dict[str, float]] = None,
+        query_vector: Optional[List[float]] = None,
     ) -> Dict[str, Any]:
         """
         Constructs a hybrid search query dynamically based on Pydantic field metadata (json_schema_extra).
@@ -143,8 +144,8 @@ class QueryBuilder:
                 
             weighted_text_fields.append(f"{field_name}^{weight}")
             
-        # 2. Resolve Vector Field Weights
-        query_vector = self._generate_embedding(query)
+        # 2. Resolve Vector Field Weights (optional precomputed vector — avoids blocking async event loop)
+        qv = query_vector if query_vector is not None else self._generate_embedding(query)
         vector_queries = []
         
         for field_name in vector_fields:
@@ -162,7 +163,7 @@ class QueryBuilder:
             vector_queries.append({
                 "knn": {
                     field_name: {
-                        "vector": query_vector,
+                        "vector": qv,
                         "k": size,
                         "boost": weight * vector_factor,
                     },

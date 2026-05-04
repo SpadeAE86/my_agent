@@ -39,6 +39,17 @@ SHOT_TYPE_CHOICES: Final[List[str]] = [
     "大特写",
 ]
 
+# --- Camera movement (运镜) ---
+CAMERA_MOVEMENT_CHOICES: Final[List[str]] = [
+    UNKNOWN,
+    "推",
+    "拉",
+    "摇",
+    "移",
+    "跟随",
+    "环绕",
+]
+
 FRAME_SIZE_CHOICES: Final[List[str]] = [
     UNKNOWN,
     "横版16:9",
@@ -149,7 +160,7 @@ MOVEMENT_CHOICES: Final[List[str]] = [
     "爆胎",
 ]
 
-KEY_TRAITS_CHOICES: Final[List[str]] = [
+KEY_WORDS_CHOICES: Final[List[str]] = [
     # --- 能源/补能/续航 ---
     "续航",
     "低油耗",
@@ -193,15 +204,36 @@ KEY_TRAITS_CHOICES: Final[List[str]] = [
 TOPIC_CHOICES: Final[List[str]] = [
     UNKNOWN,
     "电池",
+    "轮胎",
+    "发动机",
+    "底盘",
     "速度",
-    "操作性",
+    "转向",
+    "驾驶体验",
     "舒适",
-    "隔音"
-    "娱乐设施",
+    "整体内饰",
+    "整体外观",
+    "内饰纹理",
+    "车漆",
+    "加油口",
+    "车门",
+    "车窗按钮",
+    "冰箱",
+    "空调",
+    "车窗",
+    "座椅",
+    "车灯",
+    "车标",
+    "雷达感知",
+    "后视镜",
+    "后备箱",
+    "喇叭",
+    "中控屏",
     "智驾",
     "恶劣路况天气",
     "露营",
-    "外观",
+    "安静无噪",
+    "安全",
     "冬季表现",
     "夏季表现",
 ]

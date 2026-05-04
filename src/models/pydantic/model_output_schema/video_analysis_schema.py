@@ -69,6 +69,24 @@ class SceneAnalysisResultV2(BaseModel):
         ),
         examples=["掉头"],
     )
+    camera_movement: str = Field(
+        ...,
+        description=(
+            f"运镜/镜头运动方式（单值）。{_enum_hint(index_v2_enums.CAMERA_MOVEMENT_CHOICES)}。"
+            "根据画面客观判断：如镜头向前贴近主体为推，远离为拉，水平/垂直扫视为摇，"
+            "机位平移为移，跟车/跟人运动为跟随，绕车/环绕展示为环绕；固定机位无显著推拉摇移则选 未知。"
+        ),
+        examples=["跟随"],
+    )
+    generic_hq_road_run: bool = Field(
+        ...,
+        description=(
+            "是否属于「通用路跑高质量镜头」：画面为路跑类（路跑内饰/路跑外观），"
+            "且构图稳定、曝光与跟焦良好、无明显抖动与压缩块效应，可作为混剪无强主题匹配时的兜底素材。"
+            "静态展台、发布会、地库慢速泊车等不算此类。"
+        ),
+        examples=[False],
+    )
 
     # === Fields that Doubao needs to understand for IndexV2 ===
     footage_type: str = Field(
@@ -123,10 +141,10 @@ class SceneAnalysisResultV2(BaseModel):
         max_length=3,
     )
 
-    key_traits: List[str] = Field(
+    key_words: List[str] = Field(
         ...,
         description=(
-            f"素材关键特点标签（{_enum_hint(index_v2_enums.KEY_TRAITS_CHOICES)}）。"
+            f"素材关键特点标签（{_enum_hint(index_v2_enums.KEY_WORDS_CHOICES)}）。"
             "这是素材里最重要的可过滤特点。可多选，但不要误选，必须从枚举里选。"
         ),
         examples=[["续航", "大电池", "充电快", "路跑"], ["地库掉头", "狭窄街道", "新手"], ["安静", "降噪", "带人的内饰"]],

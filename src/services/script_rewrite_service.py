@@ -106,6 +106,9 @@ D) video_usage 归一化：
    - 同义归并：品牌传达/品牌形象传达 -> 品牌/形象传达；权益说明 -> 权益/价格说明；路跑场景展示 -> 使用场景展示
 E) product_status_scene 不允许带括号备注：
    - product_status_scene 必须从：{_join_choices(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}
+F) camera_movement（运镜）与 shot_style 区分：
+   - camera_movement 只能从：{_join_choices(index_v2_enums.CAMERA_MOVEMENT_CHOICES)}
+   - shot_style 表示拍摄机位/方式（如车内POV/跟拍），不要把“推/拉/摇”写进 shot_style
 
 """.strip()
 

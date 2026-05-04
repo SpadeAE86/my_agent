@@ -3,9 +3,10 @@ Test runner: analyze selected videos with SceneAnalysisResultV2 schema.
 
 - Skips scene splitting (single segment)
 - Extracts key frames
-- Uploads frames to OBS
+- Uploads frames to OBS（``ai_picture/video_analysis_frames/{video_key}/{scene_id}/``，``video_key`` 与 ``video_analysis_video_v2.video_key`` / 自增 id 对齐；本地抽帧目录为 ``workspace/frames/{video_key}/``，纯 ASCII，避免中文路径写盘失败）
 - Calls Doubao vision with JSON schema = SceneAnalysisResultV2
 - Writes outputs to a local JSONL file for inspection
+- 分镜结果写入 MySQL `video_analysis_shot_cards_v2`（常量 `SHOT_CARDS_VERSION`）
 
 Usage:
   python -m src.test.run_video_analysis_v2
@@ -21,9 +22,10 @@ import os
 import sys
 import random
 import hashlib
+import traceback
 from datetime import datetime
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 # Ensure we can import from src/ when running as a module or directly.
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -32,11 +34,12 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResultV2
+from models.pydantic.dataclass.scene_split_result import SceneSplitResult
 from utils.video_process_utils import get_video_scenes
-from utils.obs_utils import batch_upload_to_obs, upload_to_obs, obs_key_exists, OBS_BASE_URL
+from utils.obs_utils import batch_upload_to_obs, download_url_to_file, upload_to_obs, obs_key_exists, OBS_BASE_URL
 from utils.call_model_utils import call_doubao_vision
 from PIL import Image
-from services.video_analysis_db_service import video_analysis_db_service
+from services.video_analysis_db_service import video_analysis_db_service, shot_card_v2_item_dict_from_scene
 from models.pydantic.opensearch_index import index_v2_enums
 # --- Optional ingestion (OpenSearch IndexV2) ---
 from sentence_transformers import SentenceTransformer
@@ -49,7 +52,7 @@ from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInterio
 from services.video_upload_cache_service import video_upload_cache_service
 
 
-BASE_VIDEO_DIR = Path(r"C:\Users\25065\Downloads\汽车\ls6_video\LS6视频")
+BASE_VIDEO_DIR = Path(r"C:\Users\admin\Downloads\LS6视频")
 # For reproducible cache tests: when non-empty, only analyze these videos.
 OVERRIDE_VIDEOS: List[str] = [
     r"D:\wsn_data\aigc_data\数字人素材（LS9、全新L6）\LS9\冰雪\20251216-LS9官号-双车漂移-1.mp4"
@@ -96,9 +99,13 @@ USE_ANALYSIS_CACHE = True  # keep False to observe upload/frame cache logs when 
 
 # Ingest into OpenSearch after analysis (can turn off quickly).
 ENABLE_INGEST = True
+# 分镜入库：写入 MySQL `video_analysis_shot_cards_v2`（与 SceneAnalysisResultV2 对齐）。
+SHOT_CARDS_VERSION = "v2"
 SPLIT_SCENES = True
 MIN_SCENE_SECONDS = 2.0  # merge scenes shorter than this threshold (avoid too-fragmented cuts)
 MAX_SCENE_CONCURRENCY = 10
+# True：重新抽帧+分镜并覆盖库里的参考帧与分镜行；False：沿用库里已有参考帧与分镜时间轴（仍跑视觉理解）。
+FRAME_OVERWRITE = True
 
 
 def _join_choices(xs: List[str]) -> str:
@@ -106,12 +113,14 @@ def _join_choices(xs: List[str]) -> str:
 
 
 PROMPT_V2 = f"""
-你是一个专业的视频分镜分析师，擅长把“可检索的结构化标签”从画面中抽取出来，支持后续营销脚本混剪检索。
+你是一个专业的智己汽车视频素材分析师，擅长把“可检索的结构化标签”从画面中抽取出来，支持后续营销脚本混剪检索。
 
-请仅根据画面可见信息输出 JSON（必须符合给定 schema），不要输出解释。
+请仅根据这些首帧+2秒间隔的关键帧画面+尾帧的可见信息输出 JSON（必须符合给定 schema），不要输出解释。
 
 关键要求：
 - movement：只写“核心动作”（单值），必须标准化，不带环境词、不带评价。例：掉头/转弯/泊车/充电/静态展示
+- camera_movement：运镜（单值，固定枚举）：{_join_choices(index_v2_enums.CAMERA_MOVEMENT_CHOICES)}。与 shot_style（车内POV/跟拍等拍摄方式）区分；无明确推拉摇移跟随环绕则填 未知
+- generic_hq_road_run：boolean。仅当画面为高质量展示路跑外观的镜头（稳定、清晰、可作无主题兜底）时为 true；否则 false
 - footage_type：画面类型（固定枚举）：{_join_choices(index_v2_enums.FOOTAGE_TYPE_CHOICES)}
 - shot_style：镜头风格/拍摄方式（固定枚举）：{_join_choices(index_v2_enums.SHOT_STYLE_CHOICES)}
 - shot_type：镜头景幅/景别（固定枚举）：{_join_choices(index_v2_enums.SHOT_TYPE_CHOICES)}
@@ -129,15 +138,7 @@ PROMPT_V2 = f"""
 - marketing_phrases：营销短句/口播式检索短语（1-6 个），贴近用户语言，不要用“演示/展示”。例：雨夜看得清、堵车跟车不累、地库一把掉头、停车一把进
 - topic：视频所属的大致主题（枚举，单值）。只能从:{_join_choices(index_v2_enums.TOPIC_CHOICES)} 范围里选，比如：节能快充属于电池，麋鹿测试属于恶劣路况天气，转向属于操作性，路跑属于外观
 - text：画面关键文字与数值（列表）。尽量收集屏幕/UI/字幕里出现的关键词与数值：NOA/Auto Park/800V/15分钟/310公里/1500km/4.79米/27.1英寸/5K 等。
-- key_traits：客户要求的额外标签（枚举列表，可多值），没有看到对应的要素就不要填，只能从给定的枚举范围里选：{_join_choices(index_v2_enums.KEY_TRAITS_CHOICES)}
-
-关于key_trait的特殊标签的额外说明:
-    看到带人的内饰，人开车，人谈话、休息，可以打上安静和降噪的标签
-    看到车的音响和喇叭，可以打上声道和音响的标签
-    看到空调出风口，屏幕上有空调的标志，可以打上空调的标签
-    看到轮胎转弯，可以打上转弯的标签
-    有人坐后排，可以打上后排的标签
-    看到路跑，充电，可以打上续航，低油耗，大电池，充电快的标签
+- key_words：重要关键字（枚举列表，可多值），没有看到对应的要素就不要填，只能从给定的枚举范围里选：{_join_choices(index_v2_enums.KEY_WORDS_CHOICES)}
 
 禁止：
 - 不要编造画面看不到的具体数值参数（如续航km、电池kWh等）
@@ -146,6 +147,7 @@ PROMPT_V2 = f"""
 - design_* 只写“看得见/摸得着”的实体与外观：如 轮毂/车漆/门把手/座椅/中控台/屏幕/灯组/线条/材质
 - function_* 只写“能力/功能/算法/性能”：如 一键AI泊车/雨夜模式/NOA/爆胎稳定控制/四轮转向/快充/主动降噪
 - 同一个词不要同时出现在 design_* 与 function_*（必要时放到更匹配的一侧）
+- 对于画面观感上的描述，比如画风，氛围，情绪等，不要混入设计/功能卖点和形容词里，直接放在description里 里（例：沉稳大气、科技感满满、未来感十足、年轻活力）
 
 规范化与纠错（必须遵守）：
 A) shot_type vs shot_style 不可混用：
@@ -164,8 +166,12 @@ D) video_usage 归一化（只允许标准枚举）：
 E) product_status_scene 不允许带括号备注：
    - product_status_scene 必须从：{_join_choices(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}
    - 像“含动态灯语/充电状态/节日装饰”等细节，请尽量写进 description 或 text（如果有明确屏幕文案/数字）。
+   
 """.strip()
 
+def random_pick(k: int, xs: List[str|Path]) -> List[str]:
+    random.seed(RANDOM_SEED)
+    return random.sample(xs, min(k, len(xs)))
 
 def _now_id() -> str:
     return datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -230,14 +236,6 @@ def _video_sig(video_path: str) -> str:
 def _video_id_for(video_path: str) -> str:
     return f"v2_{_video_sig(video_path)}"
 
-def _safe_stem(name: str) -> str:
-    """
-    Make a filesystem-friendly stem for workspace folder names.
-    Keep ascii letters/numbers and common separators; replace others with '_'.
-    """
-    s = "".join([c if (c.isalnum() or c in ("-", "_", ".", " ")) else "_" for c in (name or "")]).strip()
-    return s or "video"
-
 def _existing_frames(workspace_dir: Path) -> List[str]:
     """
     Return existing extracted frame file paths if workspace already contains them.
@@ -251,6 +249,53 @@ def _existing_frames(workspace_dir: Path) -> List[str]:
     # Sort by filename (frame index is zero-padded)
     frames = sorted([p for p in frames if p.is_file()], key=lambda p: p.name)
     return [str(p) for p in frames]
+
+
+def _is_remote_frame_path(p: str) -> bool:
+    s = str(p or "").strip().lower()
+    return s.startswith("http://") or s.startswith("https://")
+
+
+async def _ensure_local_split_frames_for_scenes(
+    workspace_dir: Path,
+    *,
+    video_db_id: int,
+    scenes: List[SceneSplitResult],
+) -> None:
+    """
+    先检查各镜 ``frame_url_list`` 是否已是存在的本地路径；否则按顺序：
+    1) ``video_analysis_scene_split_frames_cache`` 中该 ``video_id``+``scene_id`` 的 OBS URL；
+    2) 仍无则使用当前列表里已有的 http(s) URL；
+    再按 ``scene_{sid:03d}_frame_{idx:06d}.webp`` 下载缺失文件并回写 ``frame_url_list``。
+    """
+    if video_db_id <= 0 or not scenes:
+        return
+    workspace_dir.mkdir(parents=True, exist_ok=True)
+    urls_map = await video_analysis_db_service.get_split_frame_obs_cache(video_db_id)
+    for s in scenes:
+        sid = int(getattr(s, "scene_id", 0) or 0)
+        if sid <= 0:
+            continue
+        paths = list(s.frame_url_list or [])
+        locals_ok = bool(paths) and all(
+            (not _is_remote_frame_path(str(p))) and os.path.isfile(str(p)) for p in paths
+        )
+        if locals_ok:
+            continue
+        cand = urls_map.get(sid)
+        if not cand:
+            cand = [str(p).strip() for p in paths if _is_remote_frame_path(str(p))]
+        if not cand:
+            continue
+        new_locals: List[str] = []
+        for i, url in enumerate(cand):
+            dest = workspace_dir / f"scene_{sid:03d}_frame_{i:06d}.webp"
+            if dest.is_file():
+                new_locals.append(str(dest))
+                continue
+            await download_url_to_file(str(url), str(dest))
+            new_locals.append(str(dest))
+        s.frame_url_list = new_locals
 
 
 def _merge_short_scenes(scenes, *, min_seconds: float):
@@ -314,19 +359,118 @@ def _normalize_model_output(data: Any) -> Any:
         data["shot_style"] = _first_str(data.get("shot_style"))
     if isinstance(data.get("shot_type"), list) or not isinstance(data.get("shot_type"), str):
         data["shot_type"] = _first_str(data.get("shot_type"))
+    if isinstance(data.get("camera_movement"), list) or not isinstance(data.get("camera_movement"), str):
+        data["camera_movement"] = _first_str(data.get("camera_movement"))
+
+    ghq = data.get("generic_hq_road_run")
+    if isinstance(ghq, str):
+        data["generic_hq_road_run"] = ghq.strip().lower() in ("true", "1", "yes", "是")
+    elif ghq is None:
+        data["generic_hq_road_run"] = False
+    else:
+        data["generic_hq_road_run"] = bool(ghq)
     return data
 
 
-async def _upload_source_video_once(video_path: str, *, video_id: str) -> str:
+def _ok_scene_result_rows(scene_results: Any) -> List[Dict[str, Any]]:
+    out: List[Dict[str, Any]] = []
+    for r in scene_results or []:
+        if isinstance(r, dict) and r.get("success") and isinstance(r.get("result"), dict):
+            out.append(r)
+    return out
+
+
+def _frame_urls_from_scene_result_row(r: Dict[str, Any]) -> List[str]:
+    """Resolve OBS/local frame URLs from a scene_result envelope (top-level or nested in result)."""
+    fus = r.get("frame_urls")
+    if isinstance(fus, list) and fus:
+        return [str(x) for x in fus if x]
+    res = r.get("result") if isinstance(r.get("result"), dict) else {}
+    fus2 = res.get("frame_urls")
+    if isinstance(fus2, list) and fus2:
+        return [str(x) for x in fus2 if x]
+    return []
+
+
+async def _persist_v2_shot_cards_db(
+    *,
+    video_key: str,
+    video_name: str,
+    video_url: str,
+    scene_results: Any,
+) -> None:
+    """
+    Upsert v2 分镜表 + 分镜参考帧表（全量跑与缓存命中时调用）。
+    """
+    rows = _ok_scene_result_rows(scene_results)
+    if not rows:
+        return
+    try:
+        scene_frames: Dict[int, List[str]] = {}
+        for i, r in enumerate(rows):
+            if not isinstance(r, dict):
+                continue
+            res = r.get("result") if isinstance(r.get("result"), dict) else {}
+            sid = int(r.get("scene_id") or res.get("scene_id") or 0)
+            if sid <= 0:
+                sid = i + 1
+            scene_frames[sid] = _frame_urls_from_scene_result_row(r)
+        cards = [shot_card_v2_item_dict_from_scene(scene=r, analysis=r.get("result") or {}) for r in rows]
+        await video_analysis_db_service.upsert_history_item(
+            {
+                "id": video_key,
+                "name": video_name,
+                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "video_url": video_url,
+                "cards": cards,
+                "scene_frames": scene_frames,
+            },
+            shot_cards_version=SHOT_CARDS_VERSION,
+        )
+    except Exception:
+        print(f"[PERSIST_V2_DB_ERROR] video_key={video_key!r}\n{traceback.format_exc()}")
+
+
+async def _try_load_scenes_from_db_without_overwrite(video_key: str) -> Optional[List[SceneSplitResult]]:
+    """overwrite=False 时：从 MySQL 读已有分镜时间轴 + 参考帧 URL，跳过抽帧与分镜检测。"""
+    try:
+        item = await video_analysis_db_service.get_history_item(video_key, shot_cards_version=SHOT_CARDS_VERSION)
+    except Exception:
+        return None
+    if not isinstance(item, dict):
+        return None
+    cards = item.get("cards") or []
+    if not cards:
+        return None
+    scenes: List[SceneSplitResult] = []
+    for c in sorted(cards, key=lambda x: int(x.get("scene_id") or 0)):
+        fus = c.get("frame_urls") or []
+        if not fus:
+            return None
+        scenes.append(
+            SceneSplitResult(
+                scene_id=int(c.get("scene_id") or 0),
+                frame_url_list=list(fus),
+                start_time=float(c.get("start_time") or 0.0),
+                end_time=float(c.get("end_time") or 0.0),
+                duration_seconds=float(c.get("duration_seconds") or 0.0),
+            )
+        )
+    return scenes or None
+
+
+async def _upload_source_video_once(video_path: str) -> str:
     """
     Upload the original video to OBS under:
-      ai_picture/car_video_analysis/source_video/{video_id}/<basename>
+      ai_picture/car_video_analysis/source_video/{CAR_MODEL}/<basename>
 
-    Uses MySQL cache + OBS headObject check to avoid repeated uploads.
+    不按 analysis 的 video_id 分子目录，便于用文件名推断 OBS 路径。
+    上传缓存按 ``file_name``（basename）查 ``video_source_upload_cache``。
+
     Returns the OBS URL (https://.../key).
     """
-    sig = _video_sig(video_path)
     abs_path = os.path.abspath(video_path)
+    fname = os.path.basename(video_path)
     try:
         st = os.stat(video_path)
         mtime = int(st.st_mtime)
@@ -342,7 +486,7 @@ async def _upload_source_video_once(video_path: str, *, video_id: str) -> str:
         pass
 
     try:
-        cached = await video_upload_cache_service.get_by_sig(sig)
+        cached = await video_upload_cache_service.get_by_file_name(fname)
     except Exception:
         cached = None
 
@@ -351,29 +495,27 @@ async def _upload_source_video_once(video_path: str, *, video_id: str) -> str:
         key = str(cached.get("obs_key") or "").strip()
         if url:
             if key and obs_key_exists(key):
-                print(f"[VIDEO_UPLOAD_DB_CACHE_HIT] sig={sig} video_id={video_id} url={url}")
+                print(f"[VIDEO_UPLOAD_DB_CACHE_HIT] file_name={fname!r} url={url}")
                 return url
             if not key:
                 # No key stored; trust url as best-effort.
-                print(f"[VIDEO_UPLOAD_DB_CACHE_HIT_NO_KEY] sig={sig} video_id={video_id} url={url}")
+                print(f"[VIDEO_UPLOAD_DB_CACHE_HIT_NO_KEY] file_name={fname!r} url={url}")
                 return url
 
-    obs_prefix = f"ai_picture/car_video_analysis/source_video/{CAR_MODEL}/{video_id}/"
-    fname = os.path.basename(video_path)
+    obs_prefix = f"ai_picture/car_video_analysis/source_video/{CAR_MODEL}/"
     obs_key = os.path.join(obs_prefix, fname).replace("\\", "/")
 
     # If already exists on OBS, skip uploading.
     if obs_key_exists(obs_key):
         url = f"{OBS_BASE_URL}/{obs_key}"
-        print(f"[VIDEO_UPLOAD_OBS_EXISTS] video_id={video_id} key={obs_key} url={url}")
+        print(f"[VIDEO_UPLOAD_OBS_EXISTS] file_name={fname!r} key={obs_key} url={url}")
     else:
-        print(f"[VIDEO_UPLOAD_PUT] video_id={video_id} key={obs_key}")
+        print(f"[VIDEO_UPLOAD_PUT] file_name={fname!r} key={obs_key}")
         url = await upload_to_obs(video_path, obs_prefix)
 
     # Persist to DB cache (best-effort; do not break analysis flow).
     try:
         await video_upload_cache_service.upsert(
-            sig=sig,
             file_name=fname,
             abs_path=abs_path,
             file_size=size,
@@ -410,7 +552,12 @@ def _aspect_label(w: int, h: int) -> str:
     return "其他比例"
 
 
-async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, Any]:
+async def analyze_one(
+    video_path: str,
+    *,
+    frame_interval: float,
+    frame_overwrite: Optional[bool] = None,
+) -> Dict[str, Any]:
     if not os.path.exists(video_path):
         return {"video": video_path, "success": False, "error": "file not found"}
 
@@ -424,16 +571,28 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
         and cached.get("success")
         and isinstance(cached.get("scene_results"), list)
     ):
+        vk = str(cached.get("video_key") or cached.get("video_id") or _video_id_for(video_path))
         # Normalize cached results in case a previous run crashed before normalization was introduced.
         for sr in cached.get("scene_results") or []:
             if isinstance(sr, dict) and isinstance(sr.get("result"), dict):
                 sr["result"] = _normalize_model_output(sr.get("result"))
         print(f"[ANALYSIS_CACHE_HIT] key={cache_key} video={video_path}")
+        # 缓存命中仍同步写 v2 分镜表，否则 OpenSearch 有文档但 MySQL v2 无 cards，print 脚本等会落空。
+        vid_cached = Path(video_path)
+        ws_dir_hit = Path(__file__).resolve().parent / "workspace" / "frames" / str(vk)
+        await _persist_v2_shot_cards_db(
+            video_key=vk,
+            video_name=vid_cached.name,
+            video_url=str(cached.get("obs_video_url") or "").strip() or video_path,
+            scene_results=cached.get("scene_results"),
+        )
         return {
             "video": video_path,
-            "video_id": cached.get("video_id") or _video_id_for(video_path),
+            "video_key": vk,
+            "video_id": vk,
+            "db_video_id": cached.get("db_video_id"),
             "obs_video_url": cached.get("obs_video_url") or "",
-            "workspace_dir": cached.get("workspace_dir") or "",
+            "workspace_dir": str(ws_dir_hit),
             "frames": cached.get("frames") or [],
             "scene_results": cached.get("scene_results") or [],
             "success": True,
@@ -441,19 +600,37 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
         }
 
     vid = Path(video_path)
-    # Stable video id so:
-    # - frame folder is discoverable for this video
-    # - OpenSearch doc ids stay stable (video_id + scene_id)
-    video_id = _video_id_for(video_path)
+    fname = vid.name
 
-    # Keep extracted frames under a stable, ASCII-only folder keyed by video_id.
-    workspace_dir = (Path(__file__).resolve().parent / "workspace" / "frames" / f"{video_id}")
+    try:
+        await create_tables_if_not_exists()
+    except Exception:
+        pass
+
+    db_video_id = 0
+    video_key = ""
+    try:
+        db_video_id, video_key = await video_analysis_db_service.resolve_video_v2_for_source_file(file_name=fname)
+    except Exception:
+        db_video_id, video_key = 0, ""
+        print(f"[RESOLVE_VIDEO_V2_EXCEPTION] file={fname!r}\n{traceback.format_exc()}")
+
+    if db_video_id <= 0 or not video_key:
+        return {
+            "video": video_path,
+            "success": False,
+            "error": "mysql video_analysis_video_v2 resolve failed (resolve_video_v2_for_source_file); "
+            "see [RESOLVE_VIDEO_V2_EXCEPTION] traceback or add column video_analysis_video_v2.source_file_name.",
+        }
+
+    # 本地抽帧目录：仅用 video_key（= str(video_id)），避免中文/特殊字符路径导致 cv2 写盘失败
+    workspace_dir = Path(__file__).resolve().parent / "workspace" / "frames" / str(video_key)
     workspace_dir.mkdir(parents=True, exist_ok=True)
 
     # Upload original source video to OBS (cached), and store OBS url into DB history.
     obs_video_url = ""
     try:
-        obs_video_url = await _upload_source_video_once(video_path, video_id=video_id)
+        obs_video_url = await _upload_source_video_once(video_path)
     except Exception:
         obs_video_url = ""
 
@@ -461,42 +638,56 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     try:
         await video_analysis_db_service.upsert_history_item(
             {
-                "id": video_id,
+                "id": video_key,
                 "name": vid.name,
                 "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
                 # Store OBS source video path for mix/cut workflows; fallback to local path if upload failed.
                 "video_url": obs_video_url or video_path,
                 "cards": [],
-            }
+            },
+            shot_cards_version=SHOT_CARDS_VERSION,
         )
     except Exception:
         # Non-blocking: analysis can continue even if DB is unavailable.
         pass
 
-    # If workspace already has extracted frames, reuse them and skip extraction.
-    local_frames = _existing_frames(workspace_dir)
-    scenes = None
-    if not local_frames:
-        print(f"[FRAMES_CACHE_MISS] video_id={video_id} workspace_dir={workspace_dir}")
-        # Extract frames with optional scene splitting.
-        if _extract_sem is None:
-            scenes = await asyncio.to_thread(
-                get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir)
-            )
-        else:
-            async with _extract_sem:
+    frame_overwrite = bool(FRAME_OVERWRITE if frame_overwrite is None else frame_overwrite)
+
+    scenes: Optional[List[SceneSplitResult]] = None
+    if not frame_overwrite:
+        scenes = await _try_load_scenes_from_db_without_overwrite(video_key)
+        if scenes:
+            print(f"[SCENE_DB_REUSE] video_key={video_key} scenes={len(scenes)} overwrite=False")
+            try:
+                await _ensure_local_split_frames_for_scenes(
+                    workspace_dir, video_db_id=db_video_id, scenes=scenes
+                )
+            except Exception as e:
+                print(f"[SPLIT_FRAME_CACHE_HYDRATE_WARN] video_key={video_key} err={e}")
+
+    if scenes is None:
+        local_frames = _existing_frames(workspace_dir)
+        if not local_frames:
+            print(f"[FRAMES_CACHE_MISS] video_key={video_key} workspace_dir={workspace_dir}")
+            if _extract_sem is None:
                 scenes = await asyncio.to_thread(
                     get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir)
                 )
-    else:
-        print(
-            f"[FRAMES_CACHE_HIT] video_id={video_id} reused_frames={len(local_frames)} workspace_dir={workspace_dir}"
-        )
-        # Workspace cache hit: still re-run scene detect to get start/end times (cheap compared to re-extract).
-        try:
-            scenes = await asyncio.to_thread(get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir))
-        except Exception:
-            scenes = None
+            else:
+                async with _extract_sem:
+                    scenes = await asyncio.to_thread(
+                        get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir)
+                    )
+        else:
+            print(
+                f"[FRAMES_CACHE_HIT] video_key={video_key} reused_frames={len(local_frames)} workspace_dir={workspace_dir}"
+            )
+            try:
+                scenes = await asyncio.to_thread(
+                    get_video_scenes, video_path, frame_interval, 30.0, str(workspace_dir)
+                )
+            except Exception:
+                scenes = None
 
     if not scenes:
         return {"video": video_path, "success": False, "error": "no scenes extracted"}
@@ -504,55 +695,91 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     if SPLIT_SCENES and MIN_SCENE_SECONDS and len(scenes) > 1:
         scenes = _merge_short_scenes(scenes, min_seconds=float(MIN_SCENE_SECONDS))
 
-    # Validate local files exist before uploading (for all scenes).
-    local_frames = []
+    try:
+        await _ensure_local_split_frames_for_scenes(
+            workspace_dir, video_db_id=db_video_id, scenes=scenes
+        )
+    except Exception as e:
+        print(f"[SPLIT_FRAME_CACHE_HYDRATE_WARN] video_key={video_key} err={e}")
+
+    local_frames: List[str] = []
     for s in scenes:
-        local_frames.extend(s.frame_url_list or [])
+        for p in s.frame_url_list or []:
+            if not _is_remote_frame_path(str(p)):
+                local_frames.append(str(p))
 
     missing = [p for p in local_frames if not os.path.exists(p)]
     if missing:
         return {
             "video": video_path,
-            "video_id": video_id,
+            "video_key": video_key,
+            "video_id": video_key,
+            "db_video_id": db_video_id,
             "success": False,
             "error": f"missing {len(missing)} extracted frames",
             "missing": missing[:5],
             "workspace_dir": str(workspace_dir),
         }
 
-    # Compute resolution/aspect from extracted frames (deterministic metadata).
-    wh = _get_first_frame_size(local_frames)
+    locals_for_dim = [p for p in local_frames if os.path.exists(p)]
+    wh = _get_first_frame_size(locals_for_dim)
     frame_w, frame_h = wh if wh else (0, 0)
     resolution = f"{frame_w}x{frame_h}" if frame_w and frame_h else "未知"
     frame_size = _aspect_label(frame_w, frame_h) if frame_w and frame_h else "未知"
 
-    # Upload frames to OBS (frames only)
-    obs_key_prefix = f"ai_picture/video_analysis_v2/{video_id}"
-    obs_frame_urls = await batch_upload_to_obs(
-        file_paths=local_frames,
-        obs_key_prefix=obs_key_prefix,
-        max_concurrency=50,
-    )
-    # Build a quick map from local frame path to OBS url.
-    frame_url_map = {os.path.basename(lp): url for lp, url in zip(local_frames, obs_frame_urls)}
+    scene_frame_urls_by_sid: Dict[int, List[str]] = {}
+    obs_frame_urls: List[str] = []
+    if db_video_id <= 0:
+        return {
+            "video": video_path,
+            "video_key": video_key,
+            "video_id": video_key,
+            "db_video_id": 0,
+            "success": False,
+            "error": "mysql video_analysis_video_v2 id missing (resolve_video_v2_for_source_file returned invalid id)",
+        }
+
+    if local_frames:
+        for s in scenes:
+            sid = int(getattr(s, "scene_id", 1) or 1)
+            scene_locals = [str(p) for p in (s.frame_url_list or []) if not _is_remote_frame_path(str(p))]
+            if scene_locals:
+                # 抽帧结果与理解 schema 解耦：路径仅用稳定 video_key + scene_id（v1/v2 可共用同一套 OBS 帧）
+                prefix = f"ai_picture/video_analysis_frames/{video_key}/{sid}/"
+                urls = await batch_upload_to_obs(
+                    file_paths=scene_locals,
+                    obs_key_prefix=prefix,
+                    max_concurrency=50,
+                )
+                scene_frame_urls_by_sid[sid] = urls
+                obs_frame_urls.extend(urls)
+            else:
+                scene_frame_urls_by_sid[sid] = [str(u) for u in (s.frame_url_list or []) if u]
+                obs_frame_urls.extend(scene_frame_urls_by_sid[sid])
+    else:
+        for s in scenes:
+            sid = int(getattr(s, "scene_id", 1) or 1)
+            urls = [str(u) for u in (s.frame_url_list or []) if u]
+            scene_frame_urls_by_sid[sid] = urls
+            obs_frame_urls.extend(urls)
+
+    try:
+        await video_analysis_db_service.replace_split_frame_obs_cache(db_video_id, scene_frame_urls_by_sid)
+    except Exception as e:
+        print(f"[SPLIT_FRAME_CACHE_PERSIST_WARN] video_key={video_key} err={e}")
 
     schema_json = SceneAnalysisResultV2.model_json_schema()
 
     sem_scene = asyncio.Semaphore(MAX_SCENE_CONCURRENCY)
+    fn = os.path.basename(video_path)
 
-    async def _analyze_scene(scene_obj):
+    async def _analyze_scene(scene_obj: SceneSplitResult):
         async with sem_scene:
             sid = int(getattr(scene_obj, "scene_id", 1) or 1)
             st = float(getattr(scene_obj, "start_time", 0.0) or 0.0)
             et = float(getattr(scene_obj, "end_time", 0.0) or 0.0)
             dur = float(getattr(scene_obj, "duration_seconds", max(0.0, et - st)) or 0.0)
-            local_scene_frames = scene_obj.frame_url_list or []
-            scene_frame_urls = []
-            for p in local_scene_frames:
-                u = frame_url_map.get(os.path.basename(p))
-                if u:
-                    scene_frame_urls.append(u)
-            # Safety: avoid empty calls.
+            scene_frame_urls = list(scene_frame_urls_by_sid.get(sid) or [])
             if not scene_frame_urls:
                 return {
                     "scene_id": sid,
@@ -563,7 +790,7 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
 
             raw = None
             try:
-                raw = await call_doubao_vision(PROMPT_V2, scene_frame_urls, schema_json)
+                raw = await call_doubao_vision(PROMPT_V2 + f"\n可以额外参考视频名:{fn}", scene_frame_urls, schema_json)
                 if raw is None:
                     return {
                         "scene_id": sid,
@@ -581,7 +808,7 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
                     }
                 data = _normalize_model_output(data)
 
-                data["id"] = f"{video_id}_scene_{sid:03d}"
+                data["id"] = f"{video_key}_scene_{sid:03d}"
                 data.setdefault("car_model", "未知")
                 data["frame_size"] = frame_size
                 data["resolution"] = resolution
@@ -602,7 +829,6 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
                     "scene_id": sid,
                     "success": False,
                     "error": str(e),
-                    # raw may be None => upstream call failed or returned empty
                     "failure_response": raw,
                 }
 
@@ -610,50 +836,18 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
     for sr in scene_results:
         if isinstance(sr, dict) and isinstance(sr.get("result"), dict):
             sr["result"] = _normalize_model_output(sr.get("result"))
-    ok_scene_results = [r for r in scene_results if r.get("success") and isinstance(r.get("result"), dict)]
-
-    # Store shot cards into DB (multi-scene mode)
-    try:
-        cards = []
-        for r in ok_scene_results:
-            data = r.get("result") or {}
-            frame_urls = r.get("frame_urls") or []
-            cards.append(
-                {
-                    "scene_id": int(r.get("scene_id") or 0),
-                    "start_time": float(r.get("start_time") or 0.0),
-                    "end_time": float(r.get("end_time") or 0.0),
-                    "duration_seconds": float(r.get("duration_seconds") or 0.0),
-                    "thumbnail": frame_urls[0] if frame_urls else None,
-                    "frame_urls": frame_urls,
-                    # Keep a subset of analysis fields for quick UI inspection
-                    "description": data.get("description"),
-                    "subject": data.get("subject"),
-                    "object": data.get("object"),
-                    "movement": data.get("movement"),
-                    "adjective": data.get("adjective"),
-                    "search_tags": data.get("search_tags"),
-                    "marketing_tags": data.get("marketing_tags"),
-                    "appealing_audience": data.get("appealing_audience"),
-                    "visual_quality": data.get("visual_quality"),
-                }
-            )
-
-        await video_analysis_db_service.upsert_history_item(
-            {
-                "id": video_id,
-                "name": vid.name,
-                "time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "video_url": obs_video_url or video_path,
-                "cards": cards,
-            }
-        )
-    except Exception:
-        pass
+    await _persist_v2_shot_cards_db(
+        video_key=video_key,
+        video_name=vid.name,
+        video_url=obs_video_url or video_path,
+        scene_results=scene_results,
+    )
 
     out = {
         "video": video_path,
-        "video_id": video_id,
+        "video_key": video_key,
+        "video_id": video_key,
+        "db_video_id": db_video_id,
         "obs_video_url": obs_video_url,
         "workspace_dir": str(workspace_dir),
         "frames": obs_frame_urls,
@@ -661,7 +855,6 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
         "success": True,
     }
 
-    # Persist to cache (best-effort; keep it simple and robust).
     try:
         global _cache_lock
         if _cache_lock is None:
@@ -670,7 +863,9 @@ async def analyze_one(video_path: str, *, frame_interval: float) -> Dict[str, An
             cache = _load_json(ANALYSIS_CACHE_PATH, default={})
             cache[cache_key] = {
                 "success": True,
-                "video_id": video_id,
+                "video_key": video_key,
+                "video_id": video_key,
+                "db_video_id": db_video_id,
                 "obs_video_url": obs_video_url,
                 "frames": obs_frame_urls,
                 "scene_results": scene_results,
@@ -741,7 +936,11 @@ async def main():
     out_dir = Path(__file__).resolve().parent / "sample"
     # Analyze override videos when provided; otherwise analyze all under BASE_VIDEO_DIR.
     # videos = [str(p) for p in _list_all_mp4(BASE_VIDEO_DIR)]
-    videos = [str(p) for p in build_test_set()]
+    videos = [str(p) for p in random_pick(50, _list_all_mp4(BASE_VIDEO_DIR))]
+    print("test videos")
+    for v in videos:
+        print(v)
+
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if not videos:
@@ -772,7 +971,21 @@ async def main():
             _out_file_for(vp).write_text(json.dumps(r, ensure_ascii=False, indent=2), encoding="utf-8")
 
             if r.get("success"):
-                print("OK:", json.dumps(r.get("result"), ensure_ascii=False))
+                # analyze_one 返回的是 scene_results，没有顶层 result；避免 OK: null 误导
+                srs = r.get("scene_results") or []
+                ok_n = len(_ok_scene_result_rows(srs))
+                print(
+                    "OK:",
+                    json.dumps(
+                        {
+                            "video_id": r.get("video_id"),
+                            "cached": bool(r.get("cached")),
+                            "scene_results_ok": ok_n,
+                            "scene_results_total": len(srs),
+                        },
+                        ensure_ascii=False,
+                    ),
+                )
             else:
                 print("FAIL:", r.get("error"))
             return r

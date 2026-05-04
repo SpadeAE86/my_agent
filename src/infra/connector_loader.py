@@ -12,7 +12,7 @@ class ResourceLoader:
         self.connectors: List[ResourceConnector] = [
             redis_connector,
             mysql_connector,
-            rabbitmq_connector,
+            # rabbitmq_connector,
             opensearch_connector
         ]
 
