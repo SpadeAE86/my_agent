@@ -5,7 +5,7 @@ PyCharm-friendly helper:
 - Set DOC_ID below (default), or override via CLI
 - Fetch a single OpenSearch document by _id from index `car_interior_analysis_v2`
 - Print all non-vector fields (skip *_vector)
-- Also join MySQL `video_analysis_shot_cards` to print frame_urls/thumbnail for that scene.
+- Also join MySQL v2（分镜表 + 参考帧表）打印 frame_urls / obs_video_url。
 
 Run:
   python -m src.test.inspect_opensearch_doc
@@ -32,8 +32,7 @@ from infra.storage.opensearch_connector import opensearch_connector  # noqa: E40
 from infra.storage.mysql_connector import mysql_connector  # noqa: E402
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2  # noqa: E402
 from models.pydantic.opensearch_index.base_index import get_index_name, get_vector_fields  # noqa: E402
-from models.sqlmodel.video_analysis import VideoAnalysisShotCard  # noqa: E402
-from sqlmodel import select  # noqa: E402
+from services.video_analysis_db_service import video_analysis_db_service  # noqa: E402
 from pathlib import Path  # noqa: E402
 
 
@@ -71,29 +70,23 @@ def _parse_history_and_scene_id(doc_id: str) -> Tuple[Optional[str], Optional[in
 
 
 async def _fetch_shot_card_frames(history_id: str, scene_id: int) -> Optional[Dict[str, Any]]:
-    """
-    Fetch frame_urls/thumbnail from MySQL for (history_id, scene_id).
-    """
+    """Fetch frame_urls / obs_video_url from MySQL v2 for (video_key, scene_id)."""
     if not history_id or not scene_id:
         return None
-    async with mysql_connector.session_scope() as session:
-        res = await session.execute(
-            select(VideoAnalysisShotCard).where(
-                (VideoAnalysisShotCard.history_id == history_id)
-                & (VideoAnalysisShotCard.scene_id == int(scene_id))
-            )
-        )
-        row = res.scalars().first()
-        if not row:
-            return None
-        d = row.model_dump(exclude_none=True)
-        # Only keep the bits we want to print
-        return {
-            "history_id": history_id,
-            "scene_id": int(scene_id),
-            "thumbnail": d.get("thumbnail"),
-            "frame_urls": d.get("frame_urls") or [],
-        }
+    rows = await video_analysis_db_service.get_cards_by_keys(
+        [(history_id, int(scene_id))],
+        shot_cards_version="v2",
+    )
+    if not rows:
+        return None
+    d = rows[0]
+    return {
+        "video_key": d.get("video_key") or history_id,
+        "history_id": history_id,
+        "scene_id": int(scene_id),
+        "obs_video_url": d.get("obs_video_url"),
+        "frame_urls": d.get("frame_urls") or [],
+    }
 
 def _parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(add_help=True)

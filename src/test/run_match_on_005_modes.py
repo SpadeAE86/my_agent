@@ -34,12 +34,12 @@ async def _run(mode: str) -> None:
     for i, seg in enumerate(out):
         top1 = (seg.get("top_hits") or [{}])[0]
         print(
-            f"[{mode}] seg={i+1} top1_id={top1.get('_id')} score={top1.get('_score')} video={top1.get('video_path')}"
+            f"[{mode}] seg={i+1} top1_id={top1.get('_id')} score={top1.get('_score')} video={top1.get('video_path')} segment_text={seg.get('segment_text')!r} description={seg.get('description')!r}",
         )
 
 
 async def main() -> None:
-    for mode in ["global_then_segment_zero", "lite", "full"]:
+    for mode in ["field_aligned_hybrid"]:
         try:
             await _run(mode)
         except Exception as e:

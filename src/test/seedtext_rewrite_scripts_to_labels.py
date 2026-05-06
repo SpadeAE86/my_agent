@@ -156,9 +156,13 @@ D) video_usage 归一化（只允许标准枚举）：
 E) product_status_scene 不允许带括号备注：
    - product_status_scene 必须从：{_join_choices(index_v2_enums.PRODUCT_STATUS_SCENE_CHOICES)}
    - 像“含动态灯语/充电状态/节日装饰”等细节，请放入 extra_tags（用于多路兜底召回）。
+F) camera_movement（运镜）与 shot_style 区分：
+   - camera_movement 只能从：{_join_choices(index_v2_enums.CAMERA_MOVEMENT_CHOICES)}
+   - shot_style 表示拍摄机位/方式（车内POV/跟拍等），不要把推/拉/摇写进 shot_style
 
 枚举可选值（必须从中选）：
 - movement: {index_v2_enums.MOVEMENT_CHOICES}
+- camera_movement: {index_v2_enums.CAMERA_MOVEMENT_CHOICES}
 - shot_style: {index_v2_enums.SHOT_STYLE_CHOICES}
 - shot_type: {index_v2_enums.SHOT_TYPE_CHOICES}
 - video_usage(list): {index_v2_enums.VIDEO_USAGE_CHOICES}

@@ -131,6 +131,10 @@ class SeedtextIndexTagsSegment(BaseModel):
 
     description: str = Field(..., description="可检索的画面描述（短句，客观）")
     movement: str = Field(..., description=f"核心动作（{_enum_hint(index_v2_enums.MOVEMENT_CHOICES)}）。")
+    camera_movement: str = Field(
+        index_v2_enums.UNKNOWN,
+        description=f"建议运镜/镜头运动（{_enum_hint(index_v2_enums.CAMERA_MOVEMENT_CHOICES)}）。与 shot_style（拍摄方式）区分：此处只填推拉摇移跟随环绕。",
+    )
     subject: str = Field(..., description="画面核心主体（短词）")
     object: Optional[List[str]] = Field(
         default=None,

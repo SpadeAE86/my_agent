@@ -10,26 +10,25 @@ from sqlalchemy.dialects.mysql import VARCHAR, BIGINT
 
 class VideoSourceUploadCache(SQLModel, table=True):
     """
-    Cache: local video file fingerprint -> OBS object path/url.
+    缓存：本地源视频文件名 -> OBS key/url（避免同一文件名重复上传）。
 
-    Motivation:
-    - `run_video_analysis_v2.py` used a local JSON cache to avoid re-uploading the same file.
-    - Move that cache into MySQL so it is shared across runs / machines.
+    键：``file_name`` 使用 ``os.path.basename(path)``（与 OBS 对象名一致），
+    便于按 ``ai_picture/car_video_analysis/source_video/{CAR_MODEL}/{file_name}`` 推断路径。
 
-    Fingerprint choice:
-    - We reuse `_video_sig(video_path)` (abs_path + mtime + size) => sha1[:12]
-    - This is stable enough for "same file at same path"; if file changes, mtime/size changes -> new key.
+    若曾使用旧版 ``sig`` 主键表，需迁移或重建本表。
     """
 
     __tablename__ = "video_source_upload_cache"
 
-    # same as _video_sig(video_path) (12 hex chars) but allow a bit more room
-    sig: str = Field(sa_column=Column(VARCHAR(32), primary_key=True, nullable=False))
+    id: Optional[int] = Field(default=None, primary_key=True)
 
-    file_name: str = Field(sa_column=Column(VARCHAR(255), nullable=False))
-    abs_path: str = Field(sa_column=Column(Text, nullable=False))
-    file_size: int = Field(sa_column=Column(BIGINT, nullable=False))
-    file_mtime: int = Field(sa_column=Column(BIGINT, nullable=False))
+    file_name: str = Field(
+        sa_column=Column(VARCHAR(512), nullable=False, unique=True, index=True),
+        description="视频文件名（basename），与 OBS 上对象名一致",
+    )
+    abs_path: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
+    file_size: Optional[int] = Field(default=None, sa_column=Column(BIGINT, nullable=True))
+    file_mtime: Optional[int] = Field(default=None, sa_column=Column(BIGINT, nullable=True))
 
     obs_key: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
     obs_url: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
@@ -40,4 +39,3 @@ class VideoSourceUploadCache(SQLModel, table=True):
     updated_at: datetime = Field(
         sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now())
     )
-

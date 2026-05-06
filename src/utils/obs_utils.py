@@ -175,6 +175,26 @@ async def batch_upload_to_obs(
 
     return obs_keys
 
+async def download_url_to_file(url: str, dest_path: str) -> str:
+    """
+    将可公网访问的 URL（如 OBS HTTPS 对象 URL）下载到指定本地路径。
+    用于分镜参考帧等图片；不经过 ``download_from_obs`` 的扩展名白名单限制。
+    """
+    import httpx
+    from pathlib import Path
+
+    u = decode_chinese_url(str(url or "").strip())
+    if not u:
+        raise ServiceException(code=440, message="empty download url")
+    dest = Path(dest_path)
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    async with httpx.AsyncClient(timeout=120.0, follow_redirects=True) as client:
+        resp = await client.get(u)
+        resp.raise_for_status()
+        dest.write_bytes(resp.content)
+    return str(dest)
+
+
 def obs_key_exists(obs_path: str) -> bool:
     """
     判断 OBS 对象是否存在

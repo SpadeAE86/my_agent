@@ -16,6 +16,8 @@ Run:
 Optional env vars:
   LIMIT=0        # 0 means no limit (default)
   PAGE_SIZE=200  # page size for OpenSearch
+
+分镜数据从 MySQL `video_analysis_shot_cards_v2` 读取（与 run_video_analysis_v2 入库一致）。
 """
 
 from __future__ import annotations
@@ -24,6 +26,8 @@ import os
 import sys
 import asyncio
 from typing import Any, Dict, List, Optional, Set
+
+from infra.storage.mysql_connector import mysql_connector
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.dirname(CURRENT_DIR)
@@ -35,6 +39,8 @@ from services.video_analysis_db_service import video_analysis_db_service
 
 
 INDEX_NAME = "car_interior_analysis_v2"
+# 与 run_video_analysis_v2 的 SHOT_CARDS_VERSION 一致：查 v2 分镜表
+SHOT_CARDS_VERSION = "v2"
 
 
 def _history_id_from_doc_id(doc_id: str) -> str:
@@ -112,25 +118,44 @@ async def main() -> None:
         seen_h.add(hid)
         history_ids_uniq.append(hid)
 
-    url_cache: Dict[str, str] = {}
-    urls: List[str] = []
+    # 按 history_id 逐条打印；不要用 (url, cards) 去重——无历史行时全是 ("", []) 会并成 1 条。
+    rows: List[Dict[str, Any]] = []
     for hid in history_ids_uniq:
-        item = await video_analysis_db_service.get_history_item(hid)
-        url = str((item or {}).get("video_url") or "")
-        url_cache[hid] = url
-        if url and url not in urls:
-            urls.append(url)
+        item = await video_analysis_db_service.get_history_item(hid, shot_cards_version=SHOT_CARDS_VERSION)
+        if item is None:
+            rows.append({"history_id": hid, "found": False, "video_url": "", "cards": []})
+        else:
+            rows.append(
+                {
+                    "history_id": hid,
+                    "found": True,
+                    "video_url": str(item.get("video_url") or ""),
+                    "cards": list(item.get("cards") or []),
+                }
+            )
 
-    print("index:", INDEX_NAME)
+    found_hist = sum(1 for x in rows if x["found"])
+    with_cards = sum(1 for x in rows if x["found"] and x["cards"])
+    nonempty_urls = {x["video_url"] for x in rows if x["video_url"]}
+
+    print("index:", INDEX_NAME, "shot_cards:", SHOT_CARDS_VERSION)
     print("docs:", len(doc_ids))
     print("history_ids:", len(history_ids_uniq))
-    print("unique_obs_urls:", len(urls))
+    print("mysql_history_found:", found_hist, "mysql_rows_with_cards:", with_cards)
+    print("distinct_nonempty_video_urls:", len(nonempty_urls))
     print("")
-    for u in urls:
-        print(u)
+    for x in rows:
+        hid = x["history_id"]
+        if not x["found"]:
+            print(f"[{hid}] NO history row in MySQL (or DB error)")
+            continue
+        u = x["video_url"]
+        print(f"[{hid}] video_url={u!r}")
+        for c in x["cards"]:
+            print(" -", c, "\n")
 
     await opensearch_connector.close()
-
+    await mysql_connector.close()
 
 if __name__ == "__main__":
     asyncio.run(main())

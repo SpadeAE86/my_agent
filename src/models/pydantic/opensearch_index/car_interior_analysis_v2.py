@@ -58,7 +58,7 @@ class CarInteriorAnalysisV2(BaseIndex):
     )
 
     footage_type: Annotated[str, Keyword(1.2)] = Field("未知", description="画面类型（固定枚举，如 CG/实拍/直播切片等）")
-    shot_style: Annotated[str, Keyword(1.0)] = Field("未知", description="镜头风格/拍摄方式（固定枚举）")
+    shot_style: Annotated[str, Keyword(1.0)] = Field("未知", description=f"镜头风格/拍摄方式（固定枚举）： {index_v2_enums.SHOT_STYLE_CHOICES}。")
     shot_type: Annotated[str, Keyword(1.0)] = Field(
         "未知",
         description=f"镜头景幅/景别（枚举）：{index_v2_enums.SHOT_TYPE_CHOICES}。",
@@ -83,9 +83,9 @@ class CarInteriorAnalysisV2(BaseIndex):
         description=f"人物细分标签（枚举，可多值）：{index_v2_enums.PERSON_DETAIL_CHOICES}。多人时可同时包含多个（如 男性+女性 或 成人+小孩）。",
     )
 
-    key_traits: Annotated[List[str], Keyword(1.0)] = Field(
+    key_words: Annotated[List[str], Keyword(1.0)] = Field(
         default_factory=list,
-        description=f"素材关键特点（枚举，可多值）：{index_v2_enums.KEY_TRAITS_CHOICES}。",
+        description=f"素材关键特点（枚举，可多值）：{index_v2_enums.KEY_WORDS_CHOICES}。",
     )
 
     topic: Annotated[str, Keyword(1.0)] = Field(
@@ -107,6 +107,14 @@ class CarInteriorAnalysisV2(BaseIndex):
     # --- Core understanding fields ---
     description: Annotated[str, Text(2.0, analyzer=CN_ANALYZER)] = Field("", description="画面客观描述（可全文检索）")
     movement: Annotated[str, Keyword(1.2)] = Field("未知", description="核心动作（固定枚举，单值）")
+    camera_movement: Annotated[str, Keyword(1.0)] = Field(
+        "未知",
+        description=f"运镜/镜头运动方式（单值，固定枚举）：{index_v2_enums.CAMERA_MOVEMENT_CHOICES}。",
+    )
+    generic_hq_road_run: Annotated[bool, Boolean()] = Field(
+        False,
+        description="是否属于展示路跑外观的高质量镜头（构图稳定、画质清晰、可作无特定主题时的通用兜底素材）。",
+    )
 
     subject: Annotated[str, Text(1.3, analyzer=CN_ANALYZER)] = Field("", description="主体（文本，允许多表述）")
     object: Annotated[List[str], Text(1.0, analyzer=CN_ANALYZER)] = Field(
@@ -204,7 +212,7 @@ class CarInteriorAnalysisV2(BaseIndex):
             product_status_scene=analysis_result.get("product_status_scene", "未知"),
             has_presenter=analysis_result.get("has_presenter", None),
             person_detail=analysis_result.get("person_detail", []) or [],
-            key_traits=analysis_result.get("key_traits", []) or [],
+            key_words=analysis_result.get("key_traits", []) or [],
             topic=analysis_result.get("topic", "未知") or "未知",
             text=analysis_result.get("text", []) or [],
             weather=analysis_result.get("weather", "未知"),
@@ -216,6 +224,8 @@ class CarInteriorAnalysisV2(BaseIndex):
             ),
             description=description,
             movement=analysis_result.get("movement", "未知"),
+            camera_movement=analysis_result.get("camera_movement", "未知") or "未知",
+            generic_hq_road_run=bool(analysis_result.get("generic_hq_road_run", False)),
             subject=analysis_result.get("subject", "") or "",
             object=analysis_result.get("object", []) or [],
             design_selling_points=design_sp,
