@@ -212,7 +212,7 @@ class CarInteriorAnalysisV2(BaseIndex):
             product_status_scene=analysis_result.get("product_status_scene", "未知"),
             has_presenter=analysis_result.get("has_presenter", None),
             person_detail=analysis_result.get("person_detail", []) or [],
-            key_words=analysis_result.get("key_traits", []) or [],
+            key_words=analysis_result.get("key_words", []) or [],
             topic=analysis_result.get("topic", "未知") or "未知",
             text=analysis_result.get("text", []) or [],
             weather=analysis_result.get("weather", "未知"),

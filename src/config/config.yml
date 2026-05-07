@@ -156,9 +156,9 @@ pbase: https://freeuuu.obs.cn-east-3.myhuaweicloud.com/
 
 mysql:
   local:
-    host: 1.94.143.208
-    username: freeu
-    database: ai_recommend_test
+    host: 127.0.0.1
+    username: root
+    database: mark
     port: 3306
     password: RootDev123
   test:
@@ -266,7 +266,7 @@ log:
 
 cache_config:
   local:
-    cache_dir: C:/cache # 内存盘，IO极快
+    cache_dir: C:/cache/my_bot_advance # 内存盘，IO极快
     cache_max_size: 10737418240  # 10GB
     cache_ttl: 86400  # 24小时
   test:

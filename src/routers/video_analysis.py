@@ -25,7 +25,9 @@ from models.pydantic.video_analysis_request import (
     VideoAnalysisHistoryItem,
     ShotCard as PydShotCard,
 )
+from models.pydantic.model_output_schema.seedtext_script_segments_schema import SeedtextIndexTagsEnvelope
 from services.analysis_video import analyze_video, index_shotcards_to_opensearch
+from services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
 from services.video_analysis_db_service import video_analysis_db_service
 from infra.logging.logger import logger as log
 from infra.storage.opensearch_connector import opensearch_connector
@@ -60,11 +62,125 @@ async def get_workspaces():
     }
 
 
+# ---------------- 搜索策略接口 ----------------
+
+@video_analysis_router.get("/index-fields")
+async def get_index_fields(workspace: str = Query("v2")):
+    """获取指定 workspace 下索引的可用字段，用于前端动态生成权重调节滑块"""
+    IndexModel = CarInteriorAnalysisV2 if workspace == "v2" else CarInteriorAnalysis
+    text_fields = get_searchable_fields(IndexModel)
+    vector_fields = get_vector_fields(IndexModel)
+    return {
+        "success": True,
+        "text_fields": text_fields,
+        "vector_fields": vector_fields
+    }
+
+class SearchStrategyCreate(BaseModel):
+    name: str
+    bm25_weight: float
+    vector_weight: float
+    text_weights: Optional[dict] = None
+    vector_weights: Optional[dict] = None
+    is_default: bool = False
+
+@video_analysis_router.get("/search-strategies")
+async def list_search_strategies():
+    """获取所有搜索策略配置"""
+    from infra.storage.mysql_connector import mysql_connector
+    from sqlmodel import select
+    from models.sqlmodel.video_analysis import VideoAnalysisSearchStrategy
+    
+    await mysql_connector.ensure_init()
+    engine = await mysql_connector.get_engine()
+    
+    # Use async generator correctly
+    async with mysql_connector.client() as conn:
+        stmt = select(VideoAnalysisSearchStrategy).order_by(VideoAnalysisSearchStrategy.id)
+        res = await conn.execute(stmt)
+        strategies = res.scalars().all()
+        
+    return {"success": True, "strategies": [s.model_dump() for s in strategies]}
+
+@video_analysis_router.post("/search-strategies")
+async def save_search_strategy(req: SearchStrategyCreate):
+    """保存或更新搜索策略配置"""
+    from infra.storage.mysql_connector import mysql_connector
+    from sqlmodel import select
+    from models.sqlmodel.video_analysis import VideoAnalysisSearchStrategy
+    from sqlalchemy import update
+    
+    await mysql_connector.ensure_init()
+    
+    async with mysql_connector.client() as conn:
+        try:
+            # 如果设为默认，先把其他的取消默认
+            if req.is_default:
+                await conn.execute(
+                    update(VideoAnalysisSearchStrategy).values(is_default=False)
+                )
+                
+            # 检查是否已存在同名策略
+            stmt = select(VideoAnalysisSearchStrategy).where(VideoAnalysisSearchStrategy.name == req.name)
+            res = await conn.execute(stmt)
+            existing = res.scalars().first()
+            
+            if existing:
+                await conn.execute(
+                    update(VideoAnalysisSearchStrategy)
+                    .where(VideoAnalysisSearchStrategy.id == existing.id)
+                    .values(
+                        bm25_weight=req.bm25_weight,
+                        vector_weight=req.vector_weight,
+                        text_weights=req.text_weights,
+                        vector_weights=req.vector_weights,
+                        is_default=req.is_default
+                    )
+                )
+            else:
+                new_strategy = VideoAnalysisSearchStrategy(
+                    name=req.name,
+                    bm25_weight=req.bm25_weight,
+                    vector_weight=req.vector_weight,
+                    text_weights=req.text_weights,
+                    vector_weights=req.vector_weights,
+                    is_default=req.is_default
+                )
+                conn.add(new_strategy)
+                
+            await conn.commit()
+        except Exception as e:
+            await conn.rollback()
+            raise e
+            
+    return {"success": True}
+
+@video_analysis_router.delete("/search-strategies/{strategy_id}")
+async def delete_search_strategy(strategy_id: int):
+    """删除搜索策略"""
+    from infra.storage.mysql_connector import mysql_connector
+    from sqlalchemy import delete
+    from models.sqlmodel.video_analysis import VideoAnalysisSearchStrategy
+    
+    await mysql_connector.ensure_init()
+    async with mysql_connector.client() as conn:
+        try:
+            await conn.execute(
+                delete(VideoAnalysisSearchStrategy).where(VideoAnalysisSearchStrategy.id == strategy_id)
+            )
+            await conn.commit()
+        except Exception as e:
+            await conn.rollback()
+            raise e
+            
+    return {"success": True}
+
+
 # ---------------- 历史记录接口 ----------------
 
 @video_analysis_router.get("/history")
-async def get_history():
-    history = await video_analysis_db_service.list_history()
+async def get_history(workspace: Optional[str] = Query(None, description="工作区标识，如 v1 / v2")):
+    history = await video_analysis_db_service.list_history(workspace=workspace)
     return {"success": True, "history": history}
 
 
@@ -84,6 +200,7 @@ async def get_history_item(
 async def get_cards(
     history_id: Optional[str] = None,
     shot_cards_version: str = Query("v1", description="分镜表版本：v1 / v2"),
+    workspace: Optional[str] = Query(None, description="工作区标识，如 v1 / v2"),
 ):
     """
     Get cards by history_id.
@@ -92,7 +209,7 @@ async def get_cards(
     """
     ver = shot_cards_version if shot_cards_version in ("v1", "v2") else "v1"
     if not history_id or history_id == "__all__":
-        cards = await video_analysis_db_service.list_all_cards(shot_cards_version=ver)
+        cards = await video_analysis_db_service.list_all_cards(shot_cards_version=ver, workspace=workspace)
         return {"success": True, "cards": cards, "shot_cards_version": ver}
 
     item = await video_analysis_db_service.get_history_item(history_id, shot_cards_version=ver)
@@ -104,6 +221,7 @@ class VideoAnalysisSearchToken(BaseModel):
     text: str
     join: Optional[str] = "AND"
     not_: bool = Field(False, alias="not")
+    type: Optional[str] = "keyword"
 
 class VideoAnalysisSearchRequest(BaseModel):
     tokens: List[VideoAnalysisSearchToken] = Field(default_factory=list)
@@ -111,19 +229,22 @@ class VideoAnalysisSearchRequest(BaseModel):
     history_id: Optional[str] = None
     size: int = 50
     workspace: Optional[str] = None  # "v1" | "v2"
+    bm25_weight: float = Field(default=0.3, description="BM25 搜索权重")
+    vector_weight: float = Field(default=0.7, description="向量搜索权重")
+    text_weights: Optional[dict] = Field(default=None, description="文本字段权重")
+    vector_weights: Optional[dict] = Field(default=None, description="向量字段权重")
 
 def _parse_doc_id(doc_id: str) -> Optional[tuple[str, int]]:
     """
-    doc_id format: "{history_id}_scene_{scene_id:03d}"
+    doc_id format: "{history_id}_{scene_id}"
     """
     try:
         if not doc_id:
             return None
-        marker = "_scene_"
-        if marker not in doc_id:
+        parts = doc_id.rsplit("_", 1)
+        if len(parts) != 2:
             return None
-        hid, sid = doc_id.split(marker, 1)
-        return hid, int(sid)
+        return parts[0], int(parts[1])
     except Exception:
         return None
 
@@ -169,6 +290,8 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         # ── Precise: pure BM25 multi_match ────────────────────────────────
         text_fields = get_searchable_fields(IndexModel)
         weights = get_field_weights(IndexModel)
+        if req.text_weights:
+            weights.update(req.text_weights)
         weighted_fields = [f"{f}^{weights.get(f, 1.0)}" for f in text_fields]
         body: dict = {
             "size": size,
@@ -177,6 +300,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
                     "query": query_text,
                     "fields": weighted_fields,
                     "type": "best_fields",
+                    "_name": "bm25_text_match"
                 }
             },
             "_source": {"excludes": vec_fields},
@@ -194,9 +318,13 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             functools.partial(query_builder._generate_embedding, query_text),
         )
         body = query_builder.build_dynamic_hybrid_search(
-            IndexModel, query_text, size=size, bm25_factor=0.3, vector_factor=0.7,
+            IndexModel, query_text, size=size, 
+            bm25_factor=req.bm25_weight, 
+            vector_factor=req.vector_weight,
             vector_fields=top_vecs,
             query_vector=q_vec,
+            field_weight_overrides=req.text_weights,
+            vector_weight_overrides=req.vector_weights,
         )
         # num_queries = 1 (multi_match) + len(top_vecs)
         num_q = 1 + len(top_vecs)
@@ -206,7 +334,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
 
     # Optional history filter
     if history_id and history_id != "__all__":
-        prefix = f"{history_id}_scene_"
+        prefix = f"{history_id}_"
         q = body.get("query") or {}
         body["query"] = {"bool": {"must": [q], "filter": [{"prefix": {"id": prefix}}]}}
 
@@ -233,7 +361,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         log.error(f"video-analysis search failed: {e}")
         return {"success": False, "error": str(e), "cards": []}
 
-    top5 = [(h.get("_id"), round(float(h.get("_score") or 0), 4)) for h in hits[:5]]
+    top5 = [(h.get("_id"), round(float(h.get("_score") or 0), 4), h.get("matched_queries", [])) for h in hits[:5]]
     log.info(f"[search] hits={len(hits)}  top5={top5}")
 
     # Map OpenSearch doc ids -> (history_id, scene_id) + capture per-doc score
@@ -251,6 +379,9 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             raw_hl = h.get("highlight")
             if raw_hl:
                 meta["_highlight"] = raw_hl
+            matched_queries = h.get("matched_queries")
+            if matched_queries:
+                meta["_matched_queries"] = matched_queries
             meta_by_key[k] = meta
 
     if not keys_in_order:
@@ -322,7 +453,7 @@ async def reindex_cards(req: VideoAnalysisReindexRequest):
         return {"success": False, "error": "no valid cards", "updated": []}
 
     try:
-        await index_shotcards_to_opensearch(cards, id_prefix=history_id, refresh=bool(req.refresh))
+        await index_shotcards_to_opensearch(cards, id_prefix=history_id, refresh=bool(req.refresh), workspace="v2")
         await video_analysis_db_service.update_cards_index_status(
             ok_keys, status="OK", error=None, shot_cards_version="v2"
         )
@@ -358,6 +489,37 @@ async def update_single_history(req: HistoryUpdateRequest):
     return {"success": True, "replaced": replaced}
 
 
+class RewriteScriptRequest(BaseModel):
+    script: str = Field(..., description="需要提取的口播脚本或自然语言描述")
+    topic: Optional[str] = None
+    title: Optional[str] = None
+    car_model: Optional[str] = None
+
+@video_analysis_router.post("/rewrite-script")
+async def rewrite_script_endpoint(req: RewriteScriptRequest):
+    """
+    调用大模型将自然语言脚本提取为结构化的检索标签。
+    直接返回 SeedtextIndexTagsEnvelope 格式的字典。
+    """
+    log.info(f"[rewrite-script] received request: script={req.script!r} topic={req.topic!r} title={req.title!r} car_model={req.car_model!r}")
+    if not req.script.strip():
+        return {"success": False, "error": "script cannot be empty"}
+    
+    try:
+        # 调用现有的 service 逻辑
+        storyboard, tags = await rewrite_script_to_storyboard_and_tags(
+            script=req.script,
+            topic=req.topic,
+            title=req.title,
+            car_model=req.car_model,
+            index=0
+        )
+        return {"success": True, "tags": tags.model_dump(exclude_none=True)}
+    except Exception as e:
+        log.error(f"rewrite_script failed: {e}")
+        return {"success": False, "error": str(e)}
+
+
 # ---------------- 视频分析主接口 ----------------
 
 @video_analysis_router.post("")
@@ -367,8 +529,11 @@ async def analyze_video_endpoint(
     threshold: float = Form(30.0),
     custom_prompt: Optional[str] = Form(None),
     split_scenes: bool = Form(True),
+    workspace: str = Form("v1"),
+    car_model: Optional[str] = Form(None),
 ):
     """接收上传视频并执行完整分析流水线, 直接返回分镜卡片列表"""
+    log.info(f"[analyze_video_endpoint] received POST request: filename={file.filename}, workspace={workspace}, car_model={car_model}, frame_interval={frame_interval}, threshold={threshold}, split_scenes={split_scenes}")
     if not file.filename:
         raise HTTPException(status_code=400, detail="缺少文件名")
 
@@ -387,6 +552,12 @@ async def analyze_video_endpoint(
         raise HTTPException(status_code=500, detail=f"保存上传文件失败: {e}")
 
     try:
+        log.info(f"[{project_id}] 收到视频分析请求: workspace={workspace}, frame_interval={frame_interval}, threshold={threshold}, split_scenes={split_scenes}")
+        
+        # 尝试从缓存获取源视频 OBS URL，或上传
+        from services.analysis_video import _get_or_upload_source_video
+        obs_video_url = await _get_or_upload_source_video(local_path, project_id)
+        
         cards = await analyze_video(
             local_video_path=local_path,
             project_id=project_id,
@@ -395,6 +566,8 @@ async def analyze_video_endpoint(
             custom_prompt=custom_prompt,
             split_scenes=split_scenes,
             cleanup_workspace=True,
+            workspace=workspace,
+            car_model=car_model,
         )
 
         # 打包成一条历史记录
@@ -402,11 +575,16 @@ async def analyze_video_endpoint(
             id=project_id,
             name=file.filename,
             time=datetime.now().isoformat(timespec="seconds"),
-            video_url=None,
+            video_url=obs_video_url,
+            workspace=workspace,
             cards=cards,
         )
         # 顺便写入历史(DB)
-        await video_analysis_db_service.upsert_history_item(history_item.model_dump(exclude_none=True))
+        # 根据 workspace 决定写入 v1 还是 v2 的卡片表
+        await video_analysis_db_service.upsert_history_item(
+            history_item.model_dump(exclude_none=True),
+            shot_cards_version=workspace
+        )
 
         # 同步：入库 OpenSearch 并写回状态，确保前端拿到的卡片就是最终状态
         keys_ok = [(project_id, c.scene_id) for c in cards if not c.error]
@@ -417,15 +595,16 @@ async def analyze_video_endpoint(
                 keys_failed,
                 status="FAILED",
                 error="analysis failed",
+                shot_cards_version=workspace
             )
 
         if keys_ok:
             try:
-                await index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=False)
-                await video_analysis_db_service.update_cards_index_status(keys_ok, status="OK", error=None)
+                await index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=False, workspace=workspace)
+                await video_analysis_db_service.update_cards_index_status(keys_ok, status="OK", error=None, shot_cards_version=workspace)
                 log.info(f"[{project_id}] OpenSearch 入库完成并已写回状态")
             except Exception as _e:
-                await video_analysis_db_service.update_cards_index_status(keys_ok, status="FAILED", error=str(_e))
+                await video_analysis_db_service.update_cards_index_status(keys_ok, status="FAILED", error=str(_e), shot_cards_version=workspace)
                 log.error(f"[{project_id}] OpenSearch 入库失败并已写回状态: {_e}")
 
         # 返回 DB 中最新的 item（包含 os_index_status / os_index_error）

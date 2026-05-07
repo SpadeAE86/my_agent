@@ -9,6 +9,31 @@ from sqlalchemy.dialects.mysql import JSON as MySQLJSON, VARCHAR
 from sqlalchemy import String
 
 
+class VideoAnalysisSearchStrategy(SQLModel, table=True):
+    """
+    搜索策略配置表：保存用户自定义的 BM25 和 Vector 权重，以及名称等。
+    """
+    __tablename__ = "video_analysis_search_strategy"
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    name: str = Field(sa_column=Column(VARCHAR(128), nullable=False, unique=True))
+    bm25_weight: float = Field(default=0.3, nullable=False)
+    vector_weight: float = Field(default=0.7, nullable=False)
+    
+    # 细粒度的字段权重配置
+    text_weights: Optional[dict] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
+    vector_weights: Optional[dict] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
+    
+    is_default: bool = Field(default=False, nullable=False)
+    
+    created_at: datetime = Field(
+        sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now())
+    )
+    updated_at: datetime = Field(
+        sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now())
+    )
+
+
 class VideoAnalysisHistory(SQLModel, table=True):
     """
     One analysis run (one uploaded video) = one history row.
@@ -21,6 +46,7 @@ class VideoAnalysisHistory(SQLModel, table=True):
     name: str = Field(sa_column=Column(Text, nullable=False))
     time: str = Field(sa_column=Column(Text, nullable=False))
     video_url: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
+    workspace: str = Field(default="v1", sa_column=Column(VARCHAR(32), nullable=False, server_default="v1"))
 
     created_at: datetime = Field(
         sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now())

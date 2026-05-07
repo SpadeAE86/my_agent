@@ -20,7 +20,7 @@ class ShotCard(BaseModel):
     duration_seconds: float
     thumbnail: Optional[str] = Field(default=None, description="分镜首帧 OBS 公网 URL")
     frame_urls: List[str] = Field(default_factory=list, description="该分镜所有抽帧的 OBS 公网 URL 列表")
-    # 豆包视觉模型返回的结构化字段
+    # 豆包视觉模型返回的结构化字段 (v1 & v2 混合)
     description: Optional[str] = None
     subject: Optional[str] = None
     object: Optional[List[str]] = None
@@ -30,6 +30,37 @@ class ShotCard(BaseModel):
     marketing_tags: Optional[List[str]] = None
     appealing_audience: Optional[List[str]] = None
     visual_quality: Optional[List[float]] = None
+    
+    # v2 新增字段
+    car_model: Optional[str] = None
+    frame_size: Optional[str] = None
+    resolution: Optional[str] = None
+    video_duration: Optional[float] = None
+    footage_type: Optional[str] = None
+    shot_style: Optional[str] = None
+    shot_type: Optional[str] = None
+    camera_movement: Optional[str] = None
+    scene_location: Optional[List[str]] = None
+    car_color: Optional[str] = None
+    product_status_scene: Optional[str] = None
+    has_presenter: Optional[bool] = None
+    generic_hq_road_run: Optional[bool] = None
+    person_detail: Optional[List[str]] = None
+    key_words: Optional[List[str]] = None
+    text: Optional[List[str]] = None
+    video_usage: Optional[List[str]] = None
+    design_adjectives: Optional[List[str]] = None
+    function_adjectives: Optional[List[str]] = None
+    design_selling_points: Optional[List[str]] = None
+    function_selling_points: Optional[List[str]] = None
+    scenario_a: Optional[List[str]] = None
+    scenario_b: Optional[List[str]] = None
+    marketing_phrases: Optional[List[str]] = None
+    topic: Optional[str] = None
+    weather: Optional[str] = None
+    time: Optional[str] = None
+
+    analysis_doc_id: Optional[str] = Field(default=None, description="OpenSearch 文档 ID")
     error: Optional[str] = Field(default=None, description="若该分镜分析失败, 这里记录错误信息")
 
 
@@ -39,6 +70,7 @@ class VideoAnalysisHistoryItem(BaseModel):
     name: str = Field(..., description="展示用名称, 通常为上传视频文件名+时间戳")
     time: str = Field(..., description="生成时间 ISO 字符串")
     video_url: Optional[str] = Field(default=None, description="原视频的 OBS 公网 URL（可选）")
+    workspace: str = Field(default="v1", description="工作区标识，如 v1 / v2")
     cards: List[ShotCard] = Field(default_factory=list, description="该次分析的分镜卡片列表")
 
 

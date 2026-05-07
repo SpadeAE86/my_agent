@@ -308,11 +308,13 @@ class VideoAnalysisDBService:
         except Exception as e:
             log.warning("replace_split_frame_obs_cache failed (table missing?): %s", e)
 
-    async def list_history(self) -> List[Dict[str, Any]]:
+    async def list_history(self, workspace: Optional[str] = None) -> List[Dict[str, Any]]:
         async with mysql_connector.session_scope() as session:
-            res = await session.execute(
-                select(VideoAnalysisHistory).order_by(VideoAnalysisHistory.created_at.desc())
-            )
+            stmt = select(VideoAnalysisHistory)
+            if workspace:
+                stmt = stmt.where(VideoAnalysisHistory.workspace == workspace)
+            stmt = stmt.order_by(VideoAnalysisHistory.created_at.desc())
+            res = await session.execute(stmt)
             return [row.model_dump(exclude_none=True) for row in res.scalars().all()]
 
     async def get_history_item(
@@ -401,12 +403,15 @@ class VideoAnalysisDBService:
                         name=item.get("name") or "",
                         time=item.get("time") or "",
                         video_url=item.get("video_url"),
+                        workspace=item.get("workspace") or "v1",
                     )
                 )
             else:
                 existing.name = item.get("name") or existing.name
                 existing.time = item.get("time") or existing.time
                 existing.video_url = item.get("video_url", existing.video_url)
+                if "workspace" in item:
+                    existing.workspace = item["workspace"]
 
             if shot_cards_version == "v2":
                 vres = await session.execute(
@@ -527,12 +532,13 @@ class VideoAnalysisDBService:
                 id_to_key[int(r.id)] = r.video_key
         return key_to_id, id_to_key
 
-    async def list_all_cards(self, *, shot_cards_version: ShotCardsVersion = "v1") -> List[Dict[str, Any]]:
+    async def list_all_cards(self, *, shot_cards_version: ShotCardsVersion = "v1", workspace: Optional[str] = None) -> List[Dict[str, Any]]:
         """
         Return all shot cards across all histories.
         """
         async with mysql_connector.session_scope() as session:
             if shot_cards_version == "v2":
+                # Only include v2 cards from histories matching the workspace
                 res = await session.execute(
                     select(VideoAnalysisShotCardV2).order_by(
                         VideoAnalysisShotCardV2.video_id.desc(),
@@ -549,14 +555,31 @@ class VideoAnalysisDBService:
 
                 keys_hist = list({id_to_key.get(r.video_id, "") for r in shot_rows if id_to_key.get(r.video_id)})
                 hist_map: Dict[str, Optional[str]] = {}
+                valid_vids = set()
+                
                 for hk in keys_hist:
                     if not hk:
                         continue
                     h = await session.get(VideoAnalysisHistory, hk)
-                    hist_map[hk] = h.video_url if h else None
+                    if h:
+                        if workspace and h.workspace != workspace:
+                            continue
+                        hist_map[hk] = h.video_url
+                        
+                # Filter shot_rows to only include those whose history matched the workspace
+                filtered_shot_rows = []
+                for r in shot_rows:
+                    vk = id_to_key.get(r.video_id, "")
+                    if vk in hist_map:
+                        filtered_shot_rows.append(r)
+                        valid_vids.add(r.video_id)
+                shot_rows = filtered_shot_rows
+                
+                if not shot_rows:
+                    return []
 
                 fres = await session.execute(
-                    select(VideoAnalysisSceneFrames).where(VideoAnalysisSceneFrames.video_id.in_(vids))
+                    select(VideoAnalysisSceneFrames).where(VideoAnalysisSceneFrames.video_id.in_(list(valid_vids)))
                 )
                 frames_lookup: Dict[Tuple[int, int], List[str]] = {}
                 for fr in fres.scalars().all():
@@ -570,12 +593,18 @@ class VideoAnalysisDBService:
                     out.append(_v2_card_to_api_dict(c, video_key=vk, obs_video_url=obs_url, frame_urls=fus))
                 return out
 
-            res = await session.execute(
-                select(VideoAnalysisShotCard).order_by(
-                    VideoAnalysisShotCard.history_id.desc(),
-                    VideoAnalysisShotCard.scene_id.asc(),
-                )
+            # For v1
+            stmt = select(VideoAnalysisShotCard)
+            if workspace:
+                # Need to join with history to filter by workspace
+                stmt = stmt.join(VideoAnalysisHistory, VideoAnalysisShotCard.history_id == VideoAnalysisHistory.id)
+                stmt = stmt.where(VideoAnalysisHistory.workspace == workspace)
+            
+            stmt = stmt.order_by(
+                VideoAnalysisShotCard.history_id.desc(),
+                VideoAnalysisShotCard.scene_id.asc(),
             )
+            res = await session.execute(stmt)
             return [c.model_dump(exclude_none=True) for c in res.scalars().all()]
 
     async def get_cards_by_keys(

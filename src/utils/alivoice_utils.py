@@ -7,14 +7,17 @@ import nls
 from config.config import MY_CONFIG
 import threading
 from infra.logging.logger import logger as log
+from dotenv import load_dotenv
 from utils.post_utils import post
-import httpx
+import httpx, os
 URL = "wss://nls-gateway-cn-shanghai.aliyuncs.com/ws/v1"
 token = None
 expire_time = 0
 
 TEXT = '曙光重临，一款治愈系Q萌画风的沉浸式抓宠游戏'
-
+load_dotenv()
+AK = os.getenv("ALI_AUDIO_AK", "AK NOT FOUND")
+SK = os.getenv("ALI_AUDIO_SK", "SK NOT FOUND")
 
 # 以下代码会根据上述TEXT文本反复进行语音合成
 class AliTTS:
@@ -24,8 +27,7 @@ class AliTTS:
         global token, expire_time
         if token is None or time.time() > expire_time:
             log.info(f"token has expired or not initialized")
-            token = getToken(MY_CONFIG['audio']['Ali']['access_key_id'],
-                                  MY_CONFIG['audio']['Ali']['access_key_secret'])
+            token = getToken(AK, SK)
             expire_time = time.time() + 86400
         self.TOKEN = token
         self.APPKEY = MY_CONFIG['audio']['Ali']['app_key']

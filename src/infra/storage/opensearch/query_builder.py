@@ -178,9 +178,16 @@ class QueryBuilder:
                     "query": query,
                     "fields": weighted_text_fields,
                     "type": "best_fields",
-                    "boost": bm25_factor
+                    "boost": bm25_factor,
+                    "_name": "bm25_text_match"
                 }
             })
+            
+        # Add _name to vector queries
+        for vq in vector_queries:
+            # Extract the field name to use as the _name
+            field_name = list(vq["knn"].keys())[0]
+            vq["knn"][field_name]["_name"] = f"knn_{field_name}"
             
         queries.extend(vector_queries)
         
@@ -317,7 +324,8 @@ class QueryBuilder:
                 "multi_match": {
                     "query": query,
                     "fields": fields,
-                    "type": query_type
+                    "type": query_type,
+                    "_name": "bm25_text_match"
                 }
             },
             "_source": {
