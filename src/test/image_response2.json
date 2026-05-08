@@ -1,0 +1,24 @@
+{
+  "created": 1777887896,
+  "background": null,
+  "data": [
+    {
+      "b64_json": null,
+      "revised_prompt": null,
+      "url": "https://oss.filenest.top/uploads/68631beb-0ce9-403b-aa92-c32806a9199a.png"
+    }
+  ],
+  "output_format": null,
+  "quality": null,
+  "size": null,
+  "usage": {
+    "input_tokens": 788,
+    "input_tokens_details": {
+      "image_tokens": 560,
+      "text_tokens": 228
+    },
+    "output_tokens": 1105,
+    "total_tokens": 1893,
+    "output_tokens_details": null
+  }
+}

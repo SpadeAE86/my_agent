@@ -1,0 +1,41 @@
+{
+  "id": "chatcmpl-89D0WLrJlcGWdc7pFs6Dt6dMJIH0T",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": "\n\n> 🎨 生成中...\n\n![https://pro.filesystem.site/cdn/20260504/7e59c7d1ff6ea8e2b321e5c2bb7ebc.png](https://pro.filesystem.site/cdn/20260504/7e59c7d1ff6ea8e2b321e5c2bb7ebc.png)\n\n[点击下载](https://pro.filesystem.site/cdn/download/20260504/7e59c7d1ff6ea8e2b321e5c2bb7ebc.png)",
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": null
+      }
+    }
+  ],
+  "created": 1777870897,
+  "model": "gpt-image-2",
+  "object": "chat.completion",
+  "service_tier": null,
+  "system_fingerprint": null,
+  "usage": {
+    "completion_tokens": 129,
+    "prompt_tokens": 28,
+    "total_tokens": 157,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": null,
+      "rejected_prediction_tokens": null,
+      "content_tokens": 129
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cached_tokens": null,
+      "text_tokens": 21
+    }
+  }
+}
