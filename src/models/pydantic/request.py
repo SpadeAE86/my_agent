@@ -9,6 +9,7 @@ class SeedreamModel(str, Enum):
     V4_0 = "Seedream 4.0"
     V4_5 = "Seedream 4.5"
     V5_0 = "Seedream 5.0"
+    GPT_IMAGE_2 = "gpt-image-2"
 
 
 class SeedTextModel(str, Enum):
@@ -49,6 +50,9 @@ class ImageGenerateRequest(BaseModel):
     size: str = Field(default="720x1280", description="图片尺寸，如 720x1280、2K、4K 等")
     model: SeedreamModel = Field(default=SeedreamModel.V5_0, description="使用的模型版本")
     reference_image_list: Optional[list[str]] = Field(default=None, description="参考图公网URL列表")
+    ratio: Optional[str] = Field(default=None, description="图片宽高比")
+    resolution: Optional[str] = Field(default=None, description="分辨率等级如 1K/2K")
+    type: Optional[str] = Field(default="t2i", description="生成类型: t2i, i2i")
 
 
 class TextGenerateRequest(BaseModel):

@@ -18,6 +18,7 @@ from utils.call_model_utils import call_doubao_seedream, call_doubao_seedtext
 from infra.logging.logger import logger as log
 from services.image_history_db_service import image_history_db_service
 from services.media_mirror_service import mirror_remote_url_to_obs, is_obs_url
+from services.image_generate_service import generate_image as service_generate_image
 import asyncio
 
 image_router = APIRouter(prefix="", tags=["image", "text"])
@@ -131,7 +132,7 @@ async def generate_image(req: ImageGenerateRequest):
         log.info(f"收到图片生成请求: model={req.model}, size={req.size}")
         log.info(f"提示词: {req.prompt}")
         
-        image_url = await call_doubao_seedream(
+        image_url = await service_generate_image(
             prompt=req.prompt,
             model=req.model.value,
             size=req.size,
