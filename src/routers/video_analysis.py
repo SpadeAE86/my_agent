@@ -261,7 +261,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
 
     query_text = " ".join(tokens)
     size = max(1, min(int(req.size or 50), 200))
-    mode = "fuzzy(BM25+KNN)" if req.fuzzy else "precise(BM25)"
+    mode = "fuzzy" if req.fuzzy else "precise"
     ws = (req.workspace or "").strip() or "default"
     history_id = (req.history_id or "").strip()
 
@@ -309,9 +309,15 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         # ── Fuzzy: hybrid BM25 + KNN with normalization pipeline ──────────
         # OpenSearch hybrid query has a hard sub-query cap (typically 5).
         # v2 has 7 vector fields → 1 BM25 + 7 KNN = 8, which exceeds the limit.
-        # Sort by marker weight and keep only the top 2 KNN paths (total = 3).
-        vec_weight_map = get_vector_weights(IndexModel)
-        top_vecs = sorted(vec_fields, key=lambda f: vec_weight_map.get(f, 1.0), reverse=True)[:2]
+        # So we merge default weights and user overrides, drop weights <= 0,
+        # and pick the top 4 vector paths (4 KNN + 1 BM25 = 5 sub-queries).
+        vec_weight_map = get_vector_weights(IndexModel).copy()
+        if req.vector_weights:
+            vec_weight_map.update(req.vector_weights)
+            
+        active_vecs = [f for f in vec_fields if vec_weight_map.get(f, 1.0) > 0]
+        top_vecs = sorted(active_vecs, key=lambda f: vec_weight_map.get(f, 1.0), reverse=True)[:4]
+        
         # Embedding 在默认线程池执行，避免阻塞 asyncio 事件循环（否则 /health 等接口卡顿）
         q_vec = await asyncio.get_running_loop().run_in_executor(
             None,
@@ -351,6 +357,12 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         "require_field_match": False,
         "fields": {f: {"number_of_fragments": 2, "fragment_size": 80} for f in _HIGHLIGHT_FIELDS},
     }
+    
+    # Request explanation to get scoring details
+    body["explain"] = True
+    
+    # We also need to request the _explanation field to be returned in the hits
+    # Wait, explain=True already puts _explanation in the hit object.
 
     try:
         index_name = get_index_name(IndexModel)
@@ -382,6 +394,9 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             matched_queries = h.get("matched_queries")
             if matched_queries:
                 meta["_matched_queries"] = matched_queries
+            explanation = h.get("_explanation")
+            if explanation:
+                meta["_explanation"] = explanation
             meta_by_key[k] = meta
 
     if not keys_in_order:
