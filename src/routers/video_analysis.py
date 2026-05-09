@@ -11,13 +11,12 @@ import os
 import sys
 import uuid
 from datetime import datetime
-from typing import Optional
+from typing import Any, Dict, List, Optional
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Query
 from pydantic import BaseModel, Field
-from typing import List
 
 from models.pydantic.video_analysis_request import (
     HistorySaveRequest,
@@ -37,7 +36,8 @@ from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInterio
 from models.pydantic.opensearch_index.base_index import (
     get_index_name, get_vector_fields, get_searchable_fields, get_field_weights, get_vector_weights,
 )
-from services.script_match_recall import ensure_hybrid_pipeline
+from services.script_match_recall import ensure_hybrid_pipeline, ensure_rrf_pipeline
+from utils.search_utils import reciprocal_rank_fuse
 from core.workspace import list_workspaces, DEFAULT_WORKSPACE_KEY
 
 
@@ -83,6 +83,7 @@ class SearchStrategyCreate(BaseModel):
     text_weights: Optional[dict] = None
     vector_weights: Optional[dict] = None
     is_default: bool = False
+    use_rrf: bool = False
 
 @video_analysis_router.get("/search-strategies")
 async def list_search_strategies():
@@ -134,7 +135,8 @@ async def save_search_strategy(req: SearchStrategyCreate):
                         vector_weight=req.vector_weight,
                         text_weights=req.text_weights,
                         vector_weights=req.vector_weights,
-                        is_default=req.is_default
+                        is_default=req.is_default,
+                        use_rrf=req.use_rrf,
                     )
                 )
             else:
@@ -144,7 +146,8 @@ async def save_search_strategy(req: SearchStrategyCreate):
                     vector_weight=req.vector_weight,
                     text_weights=req.text_weights,
                     vector_weights=req.vector_weights,
-                    is_default=req.is_default
+                    is_default=req.is_default,
+                    use_rrf=req.use_rrf,
                 )
                 conn.add(new_strategy)
                 
@@ -233,6 +236,7 @@ class VideoAnalysisSearchRequest(BaseModel):
     vector_weight: float = Field(default=0.7, description="向量搜索权重")
     text_weights: Optional[dict] = Field(default=None, description="文本字段权重")
     vector_weights: Optional[dict] = Field(default=None, description="向量字段权重")
+    use_rrf: bool = Field(default=False, description="模糊检索时使用 RRF（关闭则用 min_max+加权平均融合）")
 
 def _parse_doc_id(doc_id: str) -> Optional[tuple[str, int]]:
     """
@@ -248,12 +252,107 @@ def _parse_doc_id(doc_id: str) -> Optional[tuple[str, int]]:
     except Exception:
         return None
 
+
+HYBRID_MAX_KNN = 4
+RRF_RANK_CONSTANT = 60
+
+
+async def _video_analysis_client_rrf_hits(
+    client: Any,
+    *,
+    index_name: str,
+    IndexModel: type,
+    query_text: str,
+    q_vec: List[float],
+    ordered_vec_fields: List[str],
+    vec_weight_map: dict,
+    text_weights: Optional[dict],
+    size: int,
+    history_id: str,
+) -> List[dict]:
+    """
+    When active KNN routes exceed OpenSearch hybrid cap, run BM25 + one KNN search per field
+    via ``_msearch`` and merge with weighted RRF in-process.
+    """
+    import json
+
+    recall = min(500, max(size * 5, 100))
+    prefix = ""
+    if history_id and history_id != "__all__":
+        prefix = f"{history_id}_"
+
+    text_fields = get_searchable_fields(IndexModel)
+    weights = get_field_weights(IndexModel).copy()
+    if text_weights:
+        weights.update(text_weights)
+    weighted_fields = [f"{f}^{weights.get(f, 1.0)}" for f in text_fields]
+
+    mm = {
+        "multi_match": {
+            "query": query_text,
+            "fields": weighted_fields,
+            "type": "best_fields",
+            "_name": "bm25_text_match",
+        }
+    }
+    if prefix:
+        bm25_query: dict = {"bool": {"must": [mm], "filter": [{"prefix": {"id": prefix}}]}}
+    else:
+        bm25_query = mm
+    bm25_body = {"size": recall, "query": bm25_query, "_source": False}
+
+    knn_bodies: List[dict] = []
+    for field in ordered_vec_fields:
+        boost = float(vec_weight_map.get(field, 1.0))
+        knn_clause = {
+            "knn": {
+                field: {
+                    "vector": q_vec,
+                    "k": recall,
+                    "boost": boost,
+                },
+            },
+        }
+        if prefix:
+            knn_q = {"bool": {"must": [knn_clause], "filter": [{"prefix": {"id": prefix}}]}}
+        else:
+            knn_q = knn_clause
+        knn_bodies.append({"size": recall, "query": knn_q, "_source": False})
+
+    nd_parts: List[str] = []
+    hdr = json.dumps({"index": index_name})
+    for b in [bm25_body] + knn_bodies:
+        nd_parts.append(hdr)
+        nd_parts.append(json.dumps(b))
+    nd_body = "\n".join(nd_parts) + "\n"
+
+    resp = await client.msearch(body=nd_body)
+    responses = resp.get("responses") or []
+    ranked_lists: List[List[str]] = []
+    for r in responses:
+        hh = ((r or {}).get("hits") or {}).get("hits") or []
+        ranked_lists.append([str(h.get("_id") or "") for h in hh if h.get("_id")])
+
+    raw_w = [1.0] + [float(vec_weight_map.get(f, 1.0)) for f in ordered_vec_fields]
+    ssum = sum(raw_w) or 1.0
+    rrf_weights = [x / ssum for x in raw_w]
+
+    fused = reciprocal_rank_fuse(
+        ranked_lists,
+        rrf_weights,
+        rank_constant=RRF_RANK_CONSTANT,
+        top_n=size,
+    )
+    return [{"_id": doc_id, "_score": sc, "matched_queries": []} for doc_id, sc in fused]
+
+
 @video_analysis_router.post("/search")
 async def search_cards(req: VideoAnalysisSearchRequest):
     """
     Search cards via OpenSearch (hybrid: keyword + vector).
     Returns full ShotCard payloads from DB (source of truth) ordered by OpenSearch score.
     精准匹配(fuzzy=False): BM25 only  /  模糊匹配(fuzzy=True): BM25 + KNN hybrid
+    （可选 use_rrf：RRF 排名融合；宏观 bm25_weight/vector_weight 不参与，仅以字段级权重推导子路权重）
     """
     tokens = [t.text.strip() for t in (req.tokens or []) if t.text and t.text.strip()]
     if not tokens:
@@ -261,122 +360,155 @@ async def search_cards(req: VideoAnalysisSearchRequest):
 
     query_text = " ".join(tokens)
     size = max(1, min(int(req.size or 50), 200))
-    mode = "fuzzy" if req.fuzzy else "precise"
     ws = (req.workspace or "").strip() or "default"
     history_id = (req.history_id or "").strip()
 
     token_texts = [t.text for t in (req.tokens or [])[:10]]
     log.info(
-        f"[search] query={query_text!r}  mode={mode}  size={size}"
+        f"[search] query={query_text!r}  fuzzy={req.fuzzy}  use_rrf={req.use_rrf}  size={size}"
         f"  workspace={ws}  history={history_id or '*'}  tokens={token_texts}"
     )
 
-    # Workspace-aware index model: v2 uses CarInteriorAnalysisV2, else v1
     IndexModel = CarInteriorAnalysisV2 if ws == "v2" else CarInteriorAnalysis
 
-    # ── Query body ────────────────────────────────────────────────────────────
-    # Precise mode: plain multi_match BM25 — no hybrid query type, no pipeline needed.
-    #   Scores are standard Lucene BM25 (always positive, comparable across docs).
-    # Fuzzy mode: hybrid (BM25 + KNN) with a normalization pipeline.
-    #   The `hybrid` query type REQUIRES search_pipeline; without it OpenSearch returns
-    #   raw internal scores that can be huge negatives (known cluster bug).
     await opensearch_connector.ensure_init()
     client = await opensearch_connector.get_client()
 
     vec_fields = get_vector_fields(IndexModel)
+    body: Optional[dict] = None
     pipeline_param: Optional[str] = None
+    hits: Optional[List[dict]] = None
+    search_mode = "precise"
 
     if not req.fuzzy:
-        # ── Precise: pure BM25 multi_match ────────────────────────────────
         text_fields = get_searchable_fields(IndexModel)
         weights = get_field_weights(IndexModel)
         if req.text_weights:
             weights.update(req.text_weights)
         weighted_fields = [f"{f}^{weights.get(f, 1.0)}" for f in text_fields]
-        body: dict = {
+        body = {
             "size": size,
             "query": {
                 "multi_match": {
                     "query": query_text,
                     "fields": weighted_fields,
                     "type": "best_fields",
-                    "_name": "bm25_text_match"
+                    "_name": "bm25_text_match",
                 }
             },
             "_source": {"excludes": vec_fields},
         }
+        search_mode = "precise"
     else:
-        # ── Fuzzy: hybrid BM25 + KNN with normalization pipeline ──────────
-        # OpenSearch hybrid query has a hard sub-query cap (typically 5).
-        # v2 has 7 vector fields → 1 BM25 + 7 KNN = 8, which exceeds the limit.
-        # So we merge default weights and user overrides, drop weights <= 0,
-        # and pick the top 4 vector paths (4 KNN + 1 BM25 = 5 sub-queries).
         vec_weight_map = get_vector_weights(IndexModel).copy()
         if req.vector_weights:
             vec_weight_map.update(req.vector_weights)
-            
-        active_vecs = [f for f in vec_fields if vec_weight_map.get(f, 1.0) > 0]
-        top_vecs = sorted(active_vecs, key=lambda f: vec_weight_map.get(f, 1.0), reverse=True)[:4]
-        
-        # Embedding 在默认线程池执行，避免阻塞 asyncio 事件循环（否则 /health 等接口卡顿）
+
+        active_vecs = [f for f in vec_fields if float(vec_weight_map.get(f, 1.0) or 0) > 0]
+        ordered_vecs = sorted(
+            active_vecs, key=lambda f: float(vec_weight_map.get(f, 1.0)), reverse=True
+        )
+
         q_vec = await asyncio.get_running_loop().run_in_executor(
             None,
             functools.partial(query_builder._generate_embedding, query_text),
         )
-        body = query_builder.build_dynamic_hybrid_search(
-            IndexModel, query_text, size=size, 
-            bm25_factor=req.bm25_weight, 
-            vector_factor=req.vector_weight,
-            vector_fields=top_vecs,
-            query_vector=q_vec,
-            field_weight_overrides=req.text_weights,
-            vector_weight_overrides=req.vector_weights,
-        )
-        # num_queries = 1 (multi_match) + len(top_vecs)
-        num_q = 1 + len(top_vecs)
-        pipeline_param = await ensure_hybrid_pipeline(
-            client, pipeline_name="nlp-search-pipeline", num_queries=num_q
-        )
 
-    # Optional history filter
-    if history_id and history_id != "__all__":
-        prefix = f"{history_id}_"
-        q = body.get("query") or {}
-        body["query"] = {"bool": {"must": [q], "filter": [{"prefix": {"id": prefix}}]}}
+        use_rrf = bool(req.use_rrf) and len(ordered_vecs) > 0
 
-    # Highlight matched terms in text fields → "命中路径" drawer section
+        if use_rrf and len(ordered_vecs) > HYBRID_MAX_KNN:
+            try:
+                hits = await _video_analysis_client_rrf_hits(
+                    client,
+                    index_name=get_index_name(IndexModel),
+                    IndexModel=IndexModel,
+                    query_text=query_text,
+                    q_vec=q_vec,
+                    ordered_vec_fields=ordered_vecs,
+                    vec_weight_map=vec_weight_map,
+                    text_weights=req.text_weights,
+                    size=size,
+                    history_id=history_id,
+                )
+                search_mode = "fuzzy_rrf"
+            except Exception as e:
+                log.error(f"video-analysis client RRF search failed: {e}")
+                return {"success": False, "error": str(e), "cards": []}
+        else:
+            top_vecs = ordered_vecs if use_rrf else ordered_vecs[:HYBRID_MAX_KNN]
+            body = query_builder.build_dynamic_hybrid_search(
+                IndexModel,
+                query_text,
+                size=size,
+                bm25_factor=1.0 if use_rrf else req.bm25_weight,
+                vector_factor=1.0 if use_rrf else req.vector_weight,
+                vector_fields=top_vecs,
+                query_vector=q_vec,
+                field_weight_overrides=req.text_weights,
+                vector_weight_overrides=req.vector_weights,
+            )
+            num_q = 1 + len(top_vecs)
+            if use_rrf:
+                raw_w = [1.0] + [float(vec_weight_map.get(f, 1.0)) for f in top_vecs]
+                ssum = sum(raw_w) or 1.0
+                rrf_w = [x / ssum for x in raw_w]
+                pipeline_param = await ensure_rrf_pipeline(
+                    client,
+                    base_name="video-analysis-rrf",
+                    num_queries=num_q,
+                    weights=rrf_w,
+                )
+                search_mode = "fuzzy_rrf"
+            else:
+                pipeline_param = await ensure_hybrid_pipeline(
+                    client, pipeline_name="nlp-search-pipeline", num_queries=num_q
+                )
+                search_mode = "fuzzy"
+
     _HIGHLIGHT_FIELDS = [
-        "description", "subject", "object",
-        "design_selling_points", "function_selling_points",
-        "scenario_a", "scenario_b",
-        "marketing_phrases", "appealing_audience", "scene_location",
+        "description",
+        "subject",
+        "object",
+        "design_selling_points",
+        "function_selling_points",
+        "scenario_a",
+        "scenario_b",
+        "marketing_phrases",
+        "appealing_audience",
+        "scene_location",
     ]
-    body["highlight"] = {
-        "pre_tags": ["<em>"],
-        "post_tags": ["</em>"],
-        "require_field_match": False,
-        "fields": {f: {"number_of_fragments": 2, "fragment_size": 80} for f in _HIGHLIGHT_FIELDS},
-    }
-    
-    # Request explanation to get scoring details
-    body["explain"] = True
-    
-    # We also need to request the _explanation field to be returned in the hits
-    # Wait, explain=True already puts _explanation in the hit object.
+
+    if body is not None:
+        if history_id and history_id != "__all__":
+            prefix = f"{history_id}_"
+            q = body.get("query") or {}
+            body["query"] = {"bool": {"must": [q], "filter": [{"prefix": {"id": prefix}}]}}
+        body["highlight"] = {
+            "pre_tags": ["<em>"],
+            "post_tags": ["</em>"],
+            "require_field_match": False,
+            "fields": {f: {"number_of_fragments": 2, "fragment_size": 80} for f in _HIGHLIGHT_FIELDS},
+        }
+        body["explain"] = search_mode != "fuzzy_rrf"
 
     try:
         index_name = get_index_name(IndexModel)
-        search_params = {"search_pipeline": pipeline_param} if pipeline_param else None
-        resp = await client.search(index=index_name, body=body, params=search_params)
-        hits = ((resp.get("hits") or {}).get("hits") or [])
+        if hits is None:
+            assert body is not None
+            search_params = {"search_pipeline": pipeline_param} if pipeline_param else None
+            resp = await client.search(index=index_name, body=body, params=search_params)
+            hits = ((resp.get("hits") or {}).get("hits") or [])
     except Exception as e:
         log.error(f"video-analysis search failed: {e}")
         return {"success": False, "error": str(e), "cards": []}
 
-    top5 = [(h.get("_id"), round(float(h.get("_score") or 0), 4), h.get("matched_queries", [])) for h in hits[:5]]
-    log.info(f"[search] hits={len(hits)}  top5={top5}")
+    assert hits is not None
+    top5 = [
+        (h.get("_id"), round(float(h.get("_score") or 0), 4), h.get("matched_queries", []))
+        for h in hits[:5]
+    ]
+    log.info(f"[search] hits={len(hits)}  mode={search_mode}  top5={top5}")
 
-    # Map OpenSearch doc ids -> (history_id, scene_id) + capture per-doc score
     keys_in_order: List[tuple[str, int]] = []
     meta_by_key: dict[tuple[str, int], dict] = {}
     for h in hits:
@@ -384,7 +516,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         k = _parse_doc_id(str(doc_id)) if doc_id else None
         if k:
             keys_in_order.append(k)
-            meta: dict = {}
+            meta = {}
             raw_score = h.get("_score")
             if raw_score is not None:
                 meta["_score"] = float(raw_score)
@@ -400,7 +532,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             meta_by_key[k] = meta
 
     if not keys_in_order:
-        return {"success": True, "cards": []}
+        return {"success": True, "cards": [], "search_mode": search_mode}
 
     cards = await video_analysis_db_service.get_cards_by_keys(keys_in_order, shot_cards_version="v2")
     by_key = {(c.get("history_id"), int(c.get("scene_id") or 0)): c for c in (cards or [])}
@@ -411,7 +543,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         card = dict(by_key[k])
         card.update(meta_by_key.get(k) or {})
         ordered.append(card)
-    return {"success": True, "cards": ordered, "search_mode": mode}
+    return {"success": True, "cards": ordered, "search_mode": search_mode}
 
 class VideoAnalysisReindexRequest(BaseModel):
     history_id: str

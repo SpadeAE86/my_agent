@@ -14,6 +14,7 @@ Public surface expected by script_match_service:
 from __future__ import annotations
 
 import asyncio
+import hashlib
 from typing import Any, Dict, List, Optional
 
 from infra.logging.logger import logger as log
@@ -40,21 +41,25 @@ from utils.search_utils import truncate_chars
 
 async def ensure_hybrid_pipeline(client: Any, *, pipeline_name: str, num_queries: int) -> str:
     """
-    The OpenSearch normalization processor ``weights`` length must match
-    ``hybrid.queries`` count.  For the standard 2-route case we reuse the
-    existing pipeline; for other sizes we derive a name and upsert the body.
+    Upsert a normalization pipeline whose ``weights`` length matches ``hybrid.queries`` count.
+
+    * ``num_queries == 1`` → ``{pipeline_name}-q1``
+    * ``num_queries == 2`` → ``{pipeline_name}`` (base id, always PUT so cloud/local need no manual bootstrap)
+    * ``num_queries >= 3`` → ``{pipeline_name}-q{num_queries}``
     """
     if not pipeline_name:
         return ""
     if num_queries <= 0:
         return pipeline_name
-    if num_queries == 2:
-        return pipeline_name
 
-    derived = f"{pipeline_name}-q{num_queries}"
     if num_queries == 1:
+        derived = f"{pipeline_name}-q1"
         weights = [1.0]
     else:
+        if num_queries == 2:
+            derived = pipeline_name
+        else:
+            derived = f"{pipeline_name}-q{num_queries}"
         bm25_w = 0.3
         vec_w = (1.0 - bm25_w) / float(num_queries - 1)
         weights = [bm25_w] + [vec_w] * (num_queries - 1)
@@ -79,6 +84,50 @@ async def ensure_hybrid_pipeline(client: Any, *, pipeline_name: str, num_queries
     except Exception:
         return ""
 
+    return derived
+
+
+async def ensure_rrf_pipeline(
+    client: Any,
+    *,
+    base_name: str,
+    num_queries: int,
+    weights: List[float],
+    rank_constant: int = 60,
+) -> str:
+    """
+    PUT a ``score-ranker-processor`` pipeline using ``technique: rrf``.
+    ``weights`` length must equal ``hybrid.queries`` count (BM25 first, then each KNN).
+    """
+    if not base_name or num_queries <= 0:
+        return ""
+    w = [float(x) for x in weights]
+    if len(w) != num_queries:
+        log.warning(f"ensure_rrf_pipeline: weights len {len(w)} != num_queries {num_queries}")
+        return ""
+    ssum = sum(w) or 1.0
+    w = [x / ssum for x in w]
+    wkey = hashlib.md5(",".join(f"{x:.8f}" for x in w).encode()).hexdigest()[:10]
+    derived = f"{base_name}-rrf-q{num_queries}-{wkey}"
+    body: Dict[str, Any] = {
+        "description": f"RRF fusion for {num_queries} hybrid sub-queries",
+        "phase_results_processors": [
+            {
+                "score-ranker-processor": {
+                    "combination": {
+                        "technique": "rrf",
+                        "rank_constant": int(rank_constant),
+                        "parameters": {"weights": w},
+                    },
+                },
+            },
+        ],
+    }
+    try:
+        await client.http.put(f"/_search/pipeline/{derived}", body=body)
+    except Exception:
+        log.exception("ensure_rrf_pipeline: PUT pipeline failed")
+        return ""
     return derived
 
 

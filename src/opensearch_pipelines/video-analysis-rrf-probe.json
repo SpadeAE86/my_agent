@@ -1,0 +1,14 @@
+{
+  "description": "RRF score-ranker for hybrid (2 sub-queries, equal weights). Same shape as test.rrf_pipeline_smoke default probe; app may also create video-analysis-rrf-q{N}-{hash} at search time.",
+  "phase_results_processors": [
+    {
+      "score-ranker-processor": {
+        "combination": {
+          "technique": "rrf",
+          "rank_constant": 60,
+          "parameters": { "weights": [0.5, 0.5] }
+        }
+      }
+    }
+  ]
+}

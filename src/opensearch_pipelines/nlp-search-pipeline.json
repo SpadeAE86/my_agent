@@ -1,0 +1,14 @@
+{
+  "description": "Hybrid: min_max + weighted arithmetic mean (1×BM25 + 1×KNN). Same as ensure_hybrid_pipeline PUT for num_queries=2 (id: nlp-search-pipeline).",
+  "phase_results_processors": [
+    {
+      "normalization-processor": {
+        "normalization": { "technique": "min_max" },
+        "combination": {
+          "technique": "arithmetic_mean",
+          "parameters": { "weights": [0.3, 0.7] }
+        }
+      }
+    }
+  ]
+}

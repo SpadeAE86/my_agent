@@ -1,0 +1,14 @@
+{
+  "description": "Hybrid normalization pipeline for 3 sub-queries (auto-derived name nlp-search-pipeline-q3, same weight rule as ensure_hybrid_pipeline).",
+  "phase_results_processors": [
+    {
+      "normalization-processor": {
+        "normalization": { "technique": "min_max" },
+        "combination": {
+          "technique": "arithmetic_mean",
+          "parameters": { "weights": [0.3, 0.35, 0.35] }
+        }
+      }
+    }
+  ]
+}

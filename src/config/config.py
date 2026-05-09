@@ -78,4 +78,5 @@ ENV = os.getenv('env')
 if not ENV:
     ENV = MY_CONFIG['env']
     logging.warning(f"未找到 .env 文件，环境变量加载失败, 回退到config.yml环境{ENV}")
-
+else:
+    logging.info(f"环境变量加载成功，当前环境: {ENV}")

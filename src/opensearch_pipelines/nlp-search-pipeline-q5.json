@@ -1,0 +1,14 @@
+{
+  "description": "Hybrid normalization pipeline for 5 sub-queries (nlp-search-pipeline-q5, max hybrid size used in video-analysis fuzzy).",
+  "phase_results_processors": [
+    {
+      "normalization-processor": {
+        "normalization": { "technique": "min_max" },
+        "combination": {
+          "technique": "arithmetic_mean",
+          "parameters": { "weights": [0.3, 0.175, 0.175, 0.175, 0.175] }
+        }
+      }
+    }
+  ]
+}

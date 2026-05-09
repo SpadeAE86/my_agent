@@ -12,6 +12,10 @@ from sqlalchemy import String
 class VideoAnalysisSearchStrategy(SQLModel, table=True):
     """
     搜索策略配置表：保存用户自定义的 BM25 和 Vector 权重，以及名称等。
+
+    新库首次部署建议执行::
+        ALTER TABLE video_analysis_search_strategy
+        ADD COLUMN use_rrf TINYINT(1) NOT NULL DEFAULT 0;
     """
     __tablename__ = "video_analysis_search_strategy"
 
@@ -23,6 +27,9 @@ class VideoAnalysisSearchStrategy(SQLModel, table=True):
     # 细粒度的字段权重配置
     text_weights: Optional[dict] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
     vector_weights: Optional[dict] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
+
+    # True: 模糊检索使用 RRF（排名融合）；macro bm25_weight/vector_weight 不参与，以字段级权重 + RRF 子路权重为主
+    use_rrf: bool = Field(default=False, nullable=False)
     
     is_default: bool = Field(default=False, nullable=False)
     

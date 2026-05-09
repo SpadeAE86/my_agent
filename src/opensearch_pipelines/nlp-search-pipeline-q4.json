@@ -1,0 +1,16 @@
+{
+  "description": "Hybrid normalization pipeline for 4 sub-queries (nlp-search-pipeline-q4).",
+  "phase_results_processors": [
+    {
+      "normalization-processor": {
+        "normalization": { "technique": "min_max" },
+        "combination": {
+          "technique": "arithmetic_mean",
+          "parameters": {
+            "weights": [0.3, 0.23333333333333334, 0.23333333333333334, 0.23333333333333334]
+          }
+        }
+      }
+    }
+  ]
+}

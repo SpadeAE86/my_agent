@@ -94,3 +94,31 @@ def rrf_fuse_ranked_lists(
             scores[doc_id] = float(scores.get(doc_id, 0.0)) + 1.0 / (float(k) + float(rank))
     out = sorted(scores.keys(), key=lambda x: scores[x], reverse=True)
     return out[:int(top_n)]
+
+
+def reciprocal_rank_fuse(
+    ranked_lists: List[List[str]],
+    weights: List[float],
+    *,
+    rank_constant: int = 60,
+    top_n: int = 200,
+) -> List[tuple[str, float]]:
+    """
+    Weighted RRF: score(d) += weight_i / (k + rank_i(d)), rank is 1-based.
+    Returns (doc_id, fused_score) sorted by score descending.
+    """
+    if len(ranked_lists) != len(weights):
+        raise ValueError("ranked_lists and weights must have the same length")
+    scores: Dict[str, float] = {}
+    k = float(rank_constant)
+    for lst, w in zip(ranked_lists, weights):
+        if float(w) <= 0.0:
+            continue
+        wf = float(w)
+        for idx, doc_id in enumerate(lst or []):
+            if not doc_id:
+                continue
+            rank = float(idx + 1)
+            scores[str(doc_id)] = scores.get(str(doc_id), 0.0) + wf / (k + rank)
+    out = sorted(scores.items(), key=lambda x: -x[1])
+    return out[: int(top_n)]
