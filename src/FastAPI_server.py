@@ -11,6 +11,7 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from routers import *
 from infra.logging.logger import logger as log
+from services.analysis_video import get_embedding_model
 # from utils.obs_utils import *
 
 from config.config import *
@@ -26,6 +27,12 @@ from infra.storage.sqlmodel_init import create_tables_if_not_exists
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    # --- 环境预设 ---
+    # 使用国内 HF 镜像加速模型下载
+    os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+    # 开启加速下载
+    os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
+
     log.info("FastAPI started")
     log.info("inject main loop")
     loop = asyncio.get_running_loop()
@@ -50,6 +57,16 @@ async def lifespan(app: FastAPI):
         await connector_loader.startup()
         # Create SQLModel tables if missing
         await create_tables_if_not_exists()
+        
+        # --- 模型预热 ---
+        # 在启动阶段预加载向量模型，避免在请求时实时下载导致 504
+        log.info("开始预热向量模型 (SentenceTransformer)...")
+        try:
+            await asyncio.to_thread(get_embedding_model)
+            log.info("向量模型预热完成。")
+        except Exception as e:
+            log.error(f"向量模型预热失败: {e}")
+            
         yield
     finally:
         # 停止健康监控服务
