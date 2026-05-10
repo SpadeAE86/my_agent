@@ -28,11 +28,13 @@ class OpenSearchConnector(ResourceConnector):
         verify_certs = bool(cfg.get("verify_certs", use_ssl))
 
         # 注意：这里切换为 AsyncOpenSearch 以匹配整体异步架构
+        log.info(f"OpenSearch 连接配置: host={host}, port={port}, use_ssl={use_ssl}, verify_certs={verify_certs}")
         self._client = AsyncOpenSearch(
             hosts=[{'host': host, 'port': port}],
-            http_auth=(user, pwd),
+            http_auth=(user, pwd) if user and pwd else None,
             use_ssl=use_ssl,
             verify_certs=verify_certs,
+            ssl_show_warn=False, # 隐藏自签名证书警告
             sniff_on_start=False,
             sniff_on_connection_fail=False,
             timeout=30,

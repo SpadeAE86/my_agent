@@ -291,13 +291,13 @@ opensearch:
     port: 9200
     username: admin
     password: "FreeU123"
-    use_ssl: false
+    use_ssl: true
     verify_certs: false
   prod:
     host: 192.168.0.107
     port: 9200
     username: admin
     password: "Freeu@123"
-    use_ssl: false
+    use_ssl: true
     verify_certs: false
 
