@@ -10,6 +10,7 @@ import functools
 import os
 import sys
 import uuid
+import hashlib
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
@@ -681,19 +682,22 @@ async def analyze_video_endpoint(
 ):
     """接收上传视频并执行完整分析流水线, 直接返回分镜卡片列表"""
     log.info(f"[analyze_video_endpoint] received POST request: filename={file.filename}, workspace={workspace}, car_model={car_model}, frame_interval={frame_interval}, threshold={threshold}, split_scenes={split_scenes}")
-    if not file.filename:
-        raise HTTPException(status_code=400, detail="缺少文件名")
-
-    project_id = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{uuid.uuid4().hex[:8]}"
+    # 暂时先用文件名生成一个临时的 ID 用于落盘
+    temp_id = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     os.makedirs(UPLOAD_TMP_DIR, exist_ok=True)
-    local_path = os.path.join(UPLOAD_TMP_DIR, f"{project_id}_{file.filename}")
+    local_path = os.path.join(UPLOAD_TMP_DIR, f"{temp_id}_{file.filename}")
 
     # 持久化上传文件
     try:
+        md5_hash = hashlib.md5()
         with open(local_path, "wb") as f:
             while chunk := await file.read(1024 * 1024):
                 f.write(chunk)
-        log.info(f"[{project_id}] 视频已落盘: {local_path}")
+                md5_hash.update(chunk)
+        
+        # 使用视频内容的 MD5 作为稳定的 project_id
+        project_id = md5_hash.hexdigest()[:16]
+        log.info(f"[{project_id}] 视频已落盘，MD5 计算完成: {local_path}")
     except Exception as e:
         log.error(f"保存上传文件失败: {e}")
         raise HTTPException(status_code=500, detail=f"保存上传文件失败: {e}")
