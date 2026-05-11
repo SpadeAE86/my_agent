@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Optional
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Query
+from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Query, BackgroundTasks
 from pydantic import BaseModel, Field
 
 from models.pydantic.video_analysis_request import (
