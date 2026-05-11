@@ -170,8 +170,8 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
                 return ImageGenerateResponse(success=False, error="图片生成失败")
         
         # 异步模式：先占位
-        from utils.browser import generateUUID
-        task_id = generateUUID()
+        import uuid
+        task_id = str(uuid.uuid4())
         now = datetime.datetime.now()
         time_str = now.strftime("%m-%d %H:%M")
         
