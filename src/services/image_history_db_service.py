@@ -20,6 +20,15 @@ class ImageHistoryDBService:
                 out.append(d)
             return out
 
+    async def get_by_id(self, item_id: str) -> Optional[Dict[str, Any]]:
+        async with mysql_connector.session_scope() as session:
+            item = await session.get(ImageHistoryCard, item_id)
+            if item:
+                d = item.model_dump(exclude_none=True)
+                d["url"] = d.get("obs_url") or d.get("doubao_url")
+                return d
+            return None
+
     async def upsert_many(self, items: List[Dict[str, Any]]) -> None:
         """
         Replace-by-id behavior for each row. This mirrors the existing JSON overwrite behavior.

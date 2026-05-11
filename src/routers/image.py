@@ -120,21 +120,19 @@ class ImageGenerateResponse(BaseModel):
 @image_router.get("/image/status/{task_id}")
 async def get_image_status(task_id: str):
     """查询异步生图任务状态"""
-    async with image_history_db_service.mysql_connector.session_scope() as session:
-        from models.sqlmodel.image_history import ImageHistoryCard
-        item = await session.get(ImageHistoryCard, task_id)
-        if not item:
-            raise HTTPException(status_code=404, detail="Task not found")
-        
-        status = item.status or "unknown"
-        url = item.obs_url or item.doubao_url
-        
-        return {
-            "success": True,
-            "status": status,
-            "url": url,
-            "error": item.error
-        }
+    item = await image_history_db_service.get_by_id(task_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Task not found")
+    
+    status = item.get("status") or "unknown"
+    url = item.get("url")
+    
+    return {
+        "success": True,
+        "status": status,
+        "url": url,
+        "error": item.get("error")
+    }
 
 
 class TextGenerateResponse(BaseModel):
