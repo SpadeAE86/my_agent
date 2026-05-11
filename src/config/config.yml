@@ -280,10 +280,10 @@ cache_config:
 
 opensearch:
   local:
-    host: 123.60.47.110
+    host: 127.0.0.1
     port: 9200
     username: admin
-    password: "FreeU123"
+    password: "myStrongPassword123!"
     use_ssl: true
     verify_certs: false
   test:

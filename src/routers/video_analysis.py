@@ -749,9 +749,10 @@ async def analyze_video_endpoint(
                 shot_cards_version=workspace
             )
 
-        if keys_ok:
+        if (keys_ok):
             try:
-                await index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=False, workspace=workspace)
+                # 强制刷新索引，确保前端立刻能搜到新入库的视频
+                await index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=True, workspace=workspace)
                 await video_analysis_db_service.update_cards_index_status(keys_ok, status="OK", error=None, shot_cards_version=workspace)
                 log.info(f"[{project_id}] OpenSearch 入库完成并已写回状态")
             except Exception as _e:
