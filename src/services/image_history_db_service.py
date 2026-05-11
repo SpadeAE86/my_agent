@@ -49,6 +49,15 @@ class ImageHistoryDBService:
             existing.obs_url = new_url
             await session.commit()
 
+    async def delete_by_id(self, item_id: str) -> bool:
+        async with mysql_connector.session_scope() as session:
+            existing = await session.get(ImageHistoryCard, item_id)
+            if existing is None:
+                return False
+            await session.delete(existing)
+            await session.commit()
+            return True
+
 
 image_history_db_service = ImageHistoryDBService()
 

@@ -97,6 +97,17 @@ async def update_image_history(req: HistorySaveRequest):
     asyncio.create_task(_mirror_and_update(payload))
     return {"success": True}
 
+@image_router.delete("/image/history/{item_id}")
+async def delete_image_history_item(item_id: str):
+    success = await image_history_db_service.delete_by_id(item_id)
+    if success:
+        log.info(f"历史记录已删除: {item_id}")
+        return {"success": True}
+    else:
+        log.warning(f"尝试删除不存在的历史记录: {item_id}")
+        from fastapi import HTTPException
+        raise HTTPException(status_code=404, detail="Item not found")
+
 class ImageGenerateResponse(BaseModel):
     """图片生成响应"""
     success: bool
