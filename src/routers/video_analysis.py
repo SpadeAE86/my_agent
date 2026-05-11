@@ -668,47 +668,46 @@ async def rewrite_script_endpoint(req: RewriteScriptRequest):
         return {"success": False, "error": str(e)}
 
 
-# ---------------- 视频分析主接口 ----------------
+# 全局变量存储任务状态 (临时, 后续可持久化到 Redis/DB)
+video_task_status: Dict[str, Dict[str, Any]] = {}
 
-@video_analysis_router.post("")
-async def analyze_video_endpoint(
-    file: UploadFile = File(..., description="待分析的视频文件"),
-    frame_interval: float = Form(2.0),
-    threshold: float = Form(30.0),
-    custom_prompt: Optional[str] = Form(None),
-    split_scenes: bool = Form(True),
-    workspace: str = Form("v1"),
-    car_model: Optional[str] = Form(None),
+@video_analysis_router.get("/status/{task_id}")
+async def get_video_status(task_id: str):
+    """查询视频分析任务状态"""
+    status = video_task_status.get(task_id)
+    if not status:
+        # 如果内存没有，尝试去 DB 查一下是否已完成
+        item = await video_analysis_db_service.get_history_item(task_id)
+        if item:
+            return {"success": True, "status": item.get("status", "SUCCESS"), "item": item}
+        return {"success": False, "error": "Task not found"}
+    return {"success": True, **status}
+
+async def _bg_analyze_video(
+    project_id: str,
+    local_path: str,
+    file_name: str,
+    frame_interval: float,
+    threshold: float,
+    custom_prompt: Optional[str],
+    split_scenes: bool,
+    workspace: str,
+    car_model: Optional[str],
+    obs_video_url: str,
 ):
-    """接收上传视频并执行完整分析流水线, 直接返回分镜卡片列表"""
-    log.info(f"[analyze_video_endpoint] received POST request: filename={file.filename}, workspace={workspace}, car_model={car_model}, frame_interval={frame_interval}, threshold={threshold}, split_scenes={split_scenes}")
-    # 暂时先用文件名生成一个临时的 ID 用于落盘
-    temp_id = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-    os.makedirs(UPLOAD_TMP_DIR, exist_ok=True)
-    local_path = os.path.join(UPLOAD_TMP_DIR, f"{temp_id}_{file.filename}")
-
-    # 持久化上传文件
-    try:
-        md5_hash = hashlib.md5()
-        with open(local_path, "wb") as f:
-            while chunk := await file.read(1024 * 1024):
-                f.write(chunk)
-                md5_hash.update(chunk)
-        
-        # 使用视频内容的 MD5 作为稳定的 project_id
-        project_id = md5_hash.hexdigest()[:16]
-        log.info(f"[{project_id}] 视频已落盘，MD5 计算完成: {local_path}")
-    except Exception as e:
-        log.error(f"保存上传文件失败: {e}")
-        raise HTTPException(status_code=500, detail=f"保存上传文件失败: {e}")
+    """后台分析任务逻辑"""
+    video_task_status[project_id] = {"status": "RUNNING", "progress": 0}
+    # 初始状态写入 DB
+    await video_analysis_db_service.upsert_history_item({
+        "id": project_id,
+        "name": file_name,
+        "time": datetime.now().isoformat(timespec="seconds"),
+        "video_url": obs_video_url,
+        "workspace": workspace,
+        "status": "RUNNING",
+    }, shot_cards_version=workspace)
 
     try:
-        log.info(f"[{project_id}] 收到视频分析请求: workspace={workspace}, frame_interval={frame_interval}, threshold={threshold}, split_scenes={split_scenes}")
-        
-        # 尝试从缓存获取源视频 OBS URL，或上传
-        from services.analysis_video import _get_or_upload_source_video
-        obs_video_url = await _get_or_upload_source_video(local_path, project_id)
-        
         cards = await analyze_video(
             local_video_path=local_path,
             project_id=project_id,
@@ -721,54 +720,97 @@ async def analyze_video_endpoint(
             car_model=car_model,
         )
 
-        # 打包成一条历史记录
         history_item = VideoAnalysisHistoryItem(
             id=project_id,
-            name=file.filename,
+            name=file_name,
             time=datetime.now().isoformat(timespec="seconds"),
             video_url=obs_video_url,
             workspace=workspace,
             cards=cards,
         )
-        # 顺便写入历史(DB)
-        # 根据 workspace 决定写入 v1 还是 v2 的卡片表
-        await video_analysis_db_service.upsert_history_item(
-            history_item.model_dump(exclude_none=True),
-            shot_cards_version=workspace
-        )
+        
+        # 写入结果并更新状态为 SUCCESS
+        await video_analysis_db_service.upsert_history_item({
+            **history_item.model_dump(exclude_none=True),
+            "status": "SUCCESS"
+        }, shot_cards_version=workspace)
 
-        # 同步：入库 OpenSearch 并写回状态，确保前端拿到的卡片就是最终状态
         keys_ok = [(project_id, c.scene_id) for c in cards if not c.error]
-        keys_failed = [(project_id, c.scene_id) for c in cards if c.error]
-        if keys_failed:
-            # 分镜分析本身失败的，标记为 FAILED（和“入库失败”同一状态，便于前端统一展示）
-            await video_analysis_db_service.update_cards_index_status(
-                keys_failed,
-                status="FAILED",
-                error="analysis failed",
-                shot_cards_version=workspace
-            )
-
-        if (keys_ok):
+        if keys_ok:
             try:
-                # 强制刷新索引，确保前端立刻能搜到新入库的视频
+                # 使用 refresh=True 确保即时性
                 await index_shotcards_to_opensearch(cards, id_prefix=project_id, refresh=True, workspace=workspace)
                 await video_analysis_db_service.update_cards_index_status(keys_ok, status="OK", error=None, shot_cards_version=workspace)
-                log.info(f"[{project_id}] OpenSearch 入库完成并已写回状态")
+                log.info(f"[{project_id}] OpenSearch 入库完成")
             except Exception as _e:
                 await video_analysis_db_service.update_cards_index_status(keys_ok, status="FAILED", error=str(_e), shot_cards_version=workspace)
-                log.error(f"[{project_id}] OpenSearch 入库失败并已写回状态: {_e}")
+                log.error(f"[{project_id}] OpenSearch 入库失败: {_e}")
 
-        # 返回 DB 中最新的 item（包含 os_index_status / os_index_error）
-        item = await video_analysis_db_service.get_history_item(project_id)
-        return {"success": True, "item": item or history_item.model_dump(exclude_none=True)}
+        # 获取最终完整的 item
+        final_item = await video_analysis_db_service.get_history_item(project_id)
+        video_task_status[project_id] = {"status": "SUCCESS", "item": final_item or history_item.model_dump()}
+        
     except Exception as e:
-        log.error(f"[{project_id}] 视频分析流程异常: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        log.error(f"[{project_id}] 视频分析任务异常: {e}")
+        video_task_status[project_id] = {"status": "FAILED", "error": str(e)}
     finally:
-        # 清理上传的临时视频文件(保留帧抽取的 workspace, 方便排查)
-        try:
-            if os.path.exists(local_path):
+        if os.path.exists(local_path):
+            try:
                 os.remove(local_path)
-        except Exception as cleanup_err:
-            log.warning(f"清理临时文件失败: {cleanup_err}")
+            except: pass
+
+@video_analysis_router.post("")
+async def analyze_video_endpoint(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(..., description="待分析的视频文件"),
+    frame_interval: float = Form(2.0),
+    threshold: float = Form(30.0),
+    custom_prompt: Optional[str] = Form(None),
+    split_scenes: bool = Form(True),
+    workspace: str = Form("v1"),
+    car_model: Optional[str] = Form(None),
+    async_mode: bool = True,
+):
+    """接收上传视频并执行分析流水线"""
+    log.info(f"[analyze_video_endpoint] received request: filename={file.filename}, async={async_mode}")
+    
+    # 计算 MD5
+    temp_id = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+    os.makedirs(UPLOAD_TMP_DIR, exist_ok=True)
+    local_path = os.path.join(UPLOAD_TMP_DIR, f"{temp_id}_{file.filename}")
+    
+    try:
+        md5_hash = hashlib.md5()
+        with open(local_path, "wb") as f:
+            while chunk := await file.read(1024 * 1024):
+                f.write(chunk)
+                md5_hash.update(chunk)
+        project_id = md5_hash.hexdigest()[:16]
+    except Exception as e:
+        if os.path.exists(local_path): os.remove(local_path)
+        raise HTTPException(status_code=500, detail=f"文件保存失败: {e}")
+
+    # 上传源视频
+    from services.analysis_video import _get_or_upload_source_video
+    obs_video_url = await _get_or_upload_source_video(local_path, project_id)
+
+    if async_mode:
+        background_tasks.add_task(
+            _bg_analyze_video,
+            project_id, local_path, file.filename,
+            frame_interval, threshold, custom_prompt,
+            split_scenes, workspace, car_model, obs_video_url
+        )
+        return {"success": True, "task_id": project_id, "status": "PENDING"}
+    else:
+        # 兼容同步模式
+        try:
+            await _bg_analyze_video(
+                project_id, local_path, file.filename,
+                frame_interval, threshold, custom_prompt,
+                split_scenes, workspace, car_model, obs_video_url
+            )
+            item = await video_analysis_db_service.get_history_item(project_id)
+            return {"success": True, "item": item}
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=str(e))

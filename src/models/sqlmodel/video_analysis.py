@@ -55,6 +55,10 @@ class VideoAnalysisHistory(SQLModel, table=True):
     video_url: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
     workspace: str = Field(default="v1", sa_column=Column(VARCHAR(32), nullable=False, server_default="v1"))
 
+    # 任务状态: PENDING / RUNNING / SUCCESS / FAILED
+    status: str = Field(default="SUCCESS", sa_column=Column(VARCHAR(32), nullable=False, server_default="SUCCESS"))
+    error_msg: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
+
     created_at: datetime = Field(
         sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now())
     )

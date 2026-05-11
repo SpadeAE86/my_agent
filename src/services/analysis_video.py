@@ -158,11 +158,20 @@ async def _cache_scenes_locally(
     except Exception as e:
         log.warning(f"写入本地 TTL 缓存失败: {e}")
 
-DEFAULT_VISION_PROMPT = """你是一个专业的视频分镜分析师，同时你也了解用户在搜索视频时的习惯。
+DEFAULT_VISION_PROMPT_V2 = """你是一个专业的视频分镜分析师，同时你也了解用户在搜索视频时的习惯。
 请分析这些视频片段里的画面。
+【核心目标】
+提取画面的客观特征、动作、空间、主体以及营销价值点，为视频检索提供高精度的标签。
+
 【重要规则】
-1. 提取 object 时，请使用最通用的词汇，贴合日常口语表达。
-2. search_tags 字段极其重要，请发挥联想，写出用户搜什么词时应该看到这个视频。
+1. 描述 (description) 要客观：主体+动作+场景+光影。
+2. 主体 (subject) 要具体：不要只写“车”，写“智己LS6”或“中控大屏”。
+3. 关键词 (key_words) 和 主题 (topic) 必须从给定的枚举中选择。
+4. 营销短句 (marketing_phrases) 要贴合用户搜索习惯，如“后备箱大空间”、“地库一把掉头”。
+"""
+
+DEFAULT_VISION_PROMPT_V1 = """你是一个专业的视频分镜分析师。
+请分析视频片段，提取 object、search_tags 并进行商业价值评估。
 
 ### 1. 营销场景标签
 - **场景类型**：判断属于哪种营销场景
@@ -352,7 +361,11 @@ async def analyze_video(
 
     workspace_dir = workspace_dir or f"./video_analysis_workspace/{project_id}"
     obs_key_prefix = f"ai_picture/video_analysis/{project_id}"
-    prompt = custom_prompt or DEFAULT_VISION_PROMPT
+    
+    if custom_prompt:
+        prompt = custom_prompt
+    else:
+        prompt = DEFAULT_VISION_PROMPT_V2 if workspace == "v2" else DEFAULT_VISION_PROMPT_V1
 
     # Step 1: 分镜检测 + 抽帧 (CPU 密集, 放到线程池)
     basename = os.path.basename(local_video_path)

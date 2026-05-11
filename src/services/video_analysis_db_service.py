@@ -404,6 +404,8 @@ class VideoAnalysisDBService:
                         time=item.get("time") or "",
                         video_url=item.get("video_url"),
                         workspace=item.get("workspace") or "v1",
+                        status=item.get("status") or "SUCCESS",
+                        error_msg=item.get("error_msg")
                     )
                 )
             else:
@@ -412,6 +414,10 @@ class VideoAnalysisDBService:
                 existing.video_url = item.get("video_url", existing.video_url)
                 if "workspace" in item:
                     existing.workspace = item["workspace"]
+                if "status" in item:
+                    existing.status = item["status"]
+                if "error_msg" in item:
+                    existing.error_msg = item["error_msg"]
 
             if shot_cards_version == "v2":
                 vres = await session.execute(
