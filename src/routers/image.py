@@ -8,10 +8,12 @@ import os
 import json
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from fastapi import APIRouter
+from fastapi import APIRouter, BackgroundTasks, HTTPException
 from pydantic import BaseModel, Field
 from typing import Optional, List
 from enum import Enum
+import asyncio
+import datetime
 
 from models.pydantic.request import ImageGenerateRequest, TextGenerateRequest
 from utils.call_model_utils import call_doubao_seedream, call_doubao_seedtext
@@ -112,7 +114,27 @@ class ImageGenerateResponse(BaseModel):
     """图片生成响应"""
     success: bool
     image_url: Optional[str] = None
+    task_id: Optional[str] = None
     error: Optional[str] = None
+
+@image_router.get("/image/status/{task_id}")
+async def get_image_status(task_id: str):
+    """查询异步生图任务状态"""
+    async with image_history_db_service.mysql_connector.session_scope() as session:
+        from models.sqlmodel.image_history import ImageHistoryCard
+        item = await session.get(ImageHistoryCard, task_id)
+        if not item:
+            raise HTTPException(status_code=404, detail="Task not found")
+        
+        status = item.status or "unknown"
+        url = item.obs_url or item.doubao_url
+        
+        return {
+            "success": True,
+            "status": status,
+            "url": url,
+            "error": item.error
+        }
 
 
 class TextGenerateResponse(BaseModel):
@@ -125,37 +147,92 @@ class TextGenerateResponse(BaseModel):
 import asyncio
 
 @image_router.post("/image", response_model=ImageGenerateResponse)
-async def generate_image(req: ImageGenerateRequest):
+async def generate_image(req: ImageGenerateRequest, background_tasks: BackgroundTasks, async_mode: bool = True):
     """
     调用豆包 Seedream 模型生成图片
-    
-    支持模型:
-    - Seedream 4.0
-    - Seedream 4.5
-    - Seedream 5.0 (默认)
-    
-    尺寸支持:
-    - 4.0: 1K, 2K, 4K, 或自定义宽高
-    - 4.5: 2K, 4K, 或自定义宽高
-    - 5.0: 2K, 3K, 或自定义宽高
     """
     try:
-        log.info(f"收到图片生成请求: model={req.model}, size={req.size}")
+        log.info(f"收到图片生成请求: model={req.model}, size={req.size}, async={async_mode}")
         log.info(f"提示词: {req.prompt}")
         
-        image_url = await service_generate_image(
-            prompt=req.prompt,
-            model=req.model.value,
-            size=req.size,
-            reference_image_list=req.reference_image_list
-        )
+        if not async_mode:
+            # 原有的同步模式（保留用于备选）
+            image_url = await service_generate_image(
+                prompt=req.prompt,
+                model=req.model.value,
+                size=req.size,
+                reference_image_list=req.reference_image_list
+            )
+            if image_url:
+                log.info(f"图片生成成功(同步): {image_url}")
+                return ImageGenerateResponse(success=True, image_url=image_url)
+            else:
+                return ImageGenerateResponse(success=False, error="图片生成失败")
         
-        if image_url:
-            log.info(f"图片生成成功: {image_url}")
-            return ImageGenerateResponse(success=True, image_url=image_url)
-        else:
-            log.error("图片生成失败")
-            return ImageGenerateResponse(success=False, error="图片生成失败，请检查提示词或重试")
+        # 异步模式：先占位
+        from utils.browser import generateUUID
+        task_id = generateUUID()
+        now = datetime.datetime.now()
+        time_str = now.strftime("%m-%d %H:%M")
+        
+        # 准备入库基础数据
+        payload = {
+            "id": task_id,
+            "prompt": req.prompt,
+            "model": req.model.value,
+            "size": req.size,
+            "ratio": req.ratio,
+            "time": time_str,
+            "type": "i2i" if req.reference_image_list else "t2i",
+            "status": "running",
+            "referenceMedia": [{"url": m, "type": "image"} for m in req.reference_image_list] if req.reference_image_list else None
+        }
+        await image_history_db_service.upsert_many([payload])
+        
+        # 定义后台处理逻辑
+        async def _do_generate(tid: str, r: ImageGenerateRequest):
+            try:
+                img_url = await service_generate_image(
+                    prompt=r.prompt,
+                    model=r.model.value,
+                    size=r.size,
+                    reference_image_list=r.reference_image_list
+                )
+                if img_url:
+                    # 自动镜像到 OBS 并更新状态
+                    prefix = "ai_picture/generated_image"
+                    try:
+                        from services.media_mirror_service import mirror_remote_url_to_obs
+                        obs_url = await mirror_remote_url_to_obs(img_url, obs_prefix=prefix)
+                        await image_history_db_service.upsert_many([{
+                            "id": tid,
+                            "obs_url": obs_url,
+                            "doubao_url": img_url,
+                            "status": "success"
+                        }])
+                    except Exception as e:
+                        log.warning(f"Mirror failed in background for {tid}: {e}")
+                        await image_history_db_service.upsert_many([{
+                            "id": tid,
+                            "doubao_url": img_url,
+                            "status": "success"
+                        }])
+                else:
+                    await image_history_db_service.upsert_many([{
+                        "id": tid,
+                        "status": "failed",
+                        "error": "生成失败，未获取到 URL"
+                    }])
+            except Exception as e:
+                log.error(f"Background generation error for {tid}: {e}")
+                await image_history_db_service.upsert_many([{
+                    "id": tid,
+                    "status": "failed",
+                    "error": str(e)
+                }])
+
+        background_tasks.add_task(_do_generate, task_id, req)
+        return ImageGenerateResponse(success=True, task_id=task_id)
             
     except Exception as e:
         log.error(f"图片生成异常: {e}")
