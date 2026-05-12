@@ -5,6 +5,7 @@ from typing import Optional
 
 from utils.call_model_utils import call_doubao_seedream
 from utils.call_gpt_image_utils import call_gpt_image_2
+from utils.call_gpt_image_wangsu_utils import call_gpt_image_wangsu_edge
 
 
 async def generate_image(
@@ -22,6 +23,12 @@ async def generate_image(
         return await call_gpt_image_2(
             prompt,
             model="gpt-image-2",
+            size=size,
+            reference_image_list=reference_image_list,
+        )
+    if model == "gpt-image-2-wangsu":
+        return await call_gpt_image_wangsu_edge(
+            prompt,
             size=size,
             reference_image_list=reference_image_list,
         )

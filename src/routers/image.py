@@ -14,6 +14,7 @@ from typing import Optional, List
 from enum import Enum
 import asyncio
 import datetime
+import time
 
 from models.pydantic.request import ImageGenerateRequest, TextGenerateRequest
 from utils.call_model_utils import call_doubao_seedream, call_doubao_seedtext
@@ -21,7 +22,7 @@ from infra.logging.logger import logger as log
 from services.image_history_db_service import image_history_db_service
 from services.media_mirror_service import mirror_remote_url_to_obs, is_obs_url
 from services.image_generate_service import generate_image as service_generate_image
-import asyncio
+from services.http_request_trace_service import http_request_trace_service
 
 image_router = APIRouter(prefix="", tags=["image", "text"])
 
@@ -60,6 +61,7 @@ class ImageHistoryItem(BaseModel):
     error: Optional[str] = None
     taskId: Optional[str] = None
     status: Optional[str] = None
+    request_id: Optional[str] = None
 
 class HistorySaveRequest(BaseModel):
     history: List[ImageHistoryItem]
@@ -68,6 +70,25 @@ class HistorySaveRequest(BaseModel):
 async def get_image_history():
     history = await image_history_db_service.list_all()
     return {"success": True, "history": history}
+
+
+@image_router.get("/image/history/{item_id}/detail")
+async def get_image_history_task_detail(item_id: str):
+    """任务看板：合成「HTTP 调用详情」；有 request_id 时联表 http_request_traces。"""
+    from services.task_detail_service import build_image_task_detail, merge_http_trace_into_detail
+
+    item_id = (item_id or "").strip()
+    if not item_id:
+        raise HTTPException(status_code=404, detail="Item not found")
+    row = await image_history_db_service.get_by_id_or_task_id(item_id)
+    if not row:
+        raise HTTPException(status_code=404, detail="Item not found")
+    base = build_image_task_detail(row)
+    trace_dict = None
+    rid = row.get("request_id")
+    if rid:
+        trace_dict = await http_request_trace_service.get_dict(str(rid))
+    return {"success": True, "detail": merge_http_trace_into_detail(base, trace_dict)}
 
 @image_router.post("/image/history")
 async def update_image_history(req: HistorySaveRequest):
@@ -142,8 +163,6 @@ class TextGenerateResponse(BaseModel):
     error: Optional[str] = None
 
 
-import asyncio
-
 @image_router.post("/image", response_model=ImageGenerateResponse)
 async def generate_image(req: ImageGenerateRequest, background_tasks: BackgroundTasks, async_mode: bool = True):
     """
@@ -167,12 +186,22 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
             else:
                 return ImageGenerateResponse(success=False, error="图片生成失败")
         
-        # 异步模式：先占位
+        # 异步模式：先占位 + HTTP 追踪行（任务看板详情联表）
         import uuid
+
         task_id = str(uuid.uuid4())
         now = datetime.datetime.now()
         time_str = now.strftime("%m-%d %H:%M")
-        
+
+        trace_id = await http_request_trace_service.create_initial(
+            request_url="/image",
+            http_method="POST",
+            request_body=req.model_dump(mode="json"),
+            business_type="IMAGE_GEN",
+            method_name="POST /image",
+            upstream_task_id=task_id,
+        )
+
         # 准备入库基础数据
         payload = {
             "id": task_id,
@@ -183,12 +212,39 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
             "time": time_str,
             "type": "i2i" if req.reference_image_list else "t2i",
             "status": "running",
+            "request_id": trace_id,
             "referenceMedia": [{"url": m, "type": "image"} for m in req.reference_image_list] if req.reference_image_list else None
         }
         await image_history_db_service.upsert_many([payload])
-        
+
         # 定义后台处理逻辑
-        async def _do_generate(tid: str, r: ImageGenerateRequest):
+        async def _do_generate(tid: str, r: ImageGenerateRequest, trace_rid: str):
+            t0 = time.monotonic()
+            duration_ms = 0
+
+            async def _finalize_ok(resp: dict):
+                nonlocal duration_ms
+                duration_ms = int((time.monotonic() - t0) * 1000)
+                await http_request_trace_service.finalize(
+                    trace_rid,
+                    status_code=200,
+                    response_body=resp,
+                    duration_ms=duration_ms,
+                    business_success=True,
+                )
+
+            async def _finalize_fail(msg: str, resp: Optional[dict] = None):
+                nonlocal duration_ms
+                duration_ms = int((time.monotonic() - t0) * 1000)
+                await http_request_trace_service.finalize(
+                    trace_rid,
+                    status_code=500,
+                    error_message=msg,
+                    response_body=resp or {"success": False, "error": msg},
+                    duration_ms=duration_ms,
+                    business_success=False,
+                )
+
             try:
                 img_url = await service_generate_image(
                     prompt=r.prompt,
@@ -208,6 +264,12 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
                             "doubao_url": img_url,
                             "status": "success"
                         }])
+                        await _finalize_ok({
+                            "success": True,
+                            "image_url": img_url,
+                            "obs_url": obs_url,
+                            "task_id": tid,
+                        })
                     except Exception as e:
                         log.warning(f"Mirror failed in background for {tid}: {e}")
                         await image_history_db_service.upsert_many([{
@@ -215,12 +277,19 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
                             "doubao_url": img_url,
                             "status": "success"
                         }])
+                        await _finalize_ok({
+                            "success": True,
+                            "image_url": img_url,
+                            "task_id": tid,
+                            "mirror_warning": str(e),
+                        })
                 else:
                     await image_history_db_service.upsert_many([{
                         "id": tid,
                         "status": "failed",
                         "error": "生成失败，未获取到 URL"
                     }])
+                    await _finalize_fail("生成失败，未获取到 URL")
             except Exception as e:
                 log.error(f"Background generation error for {tid}: {e}")
                 await image_history_db_service.upsert_many([{
@@ -228,8 +297,9 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
                     "status": "failed",
                     "error": str(e)
                 }])
+                await _finalize_fail(str(e))
 
-        background_tasks.add_task(_do_generate, task_id, req)
+        background_tasks.add_task(_do_generate, task_id, req, trace_id)
         return ImageGenerateResponse(success=True, task_id=task_id)
             
     except Exception as e:

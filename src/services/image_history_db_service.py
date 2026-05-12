@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
+from sqlalchemy import or_
 from sqlmodel import select
 
 from infra.storage.mysql_connector import mysql_connector
@@ -21,13 +22,28 @@ class ImageHistoryDBService:
             return out
 
     async def get_by_id(self, item_id: str) -> Optional[Dict[str, Any]]:
-        async with mysql_connector.session_scope() as session:
-            item = await session.get(ImageHistoryCard, item_id)
-            if item:
-                d = item.model_dump(exclude_none=True)
-                d["url"] = d.get("obs_url") or d.get("doubao_url")
-                return d
+        return await self.get_by_id_or_task_id(item_id)
+
+    async def get_by_id_or_task_id(self, item_id: str) -> Optional[Dict[str, Any]]:
+        """按主键 id 或 taskId 查找；一次查询避免 session.get 边界情况，并兼容两套键。"""
+        key = (item_id or "").strip()
+        if not key:
             return None
+        async with mysql_connector.session_scope() as session:
+            res = await session.execute(
+                select(ImageHistoryCard).where(
+                    or_(
+                        ImageHistoryCard.id == key,
+                        ImageHistoryCard.taskId == key,
+                    )
+                )
+            )
+            hit = res.scalars().first()
+            if hit is None:
+                return None
+            d = hit.model_dump(exclude_none=True)
+            d["url"] = d.get("obs_url") or d.get("doubao_url")
+            return d
 
     async def upsert_many(self, items: List[Dict[str, Any]]) -> None:
         """

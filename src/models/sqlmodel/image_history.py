@@ -41,6 +41,9 @@ class ImageHistoryCard(SQLModel, table=True):
     taskId: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
     status: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
 
+    # 联表 http_request_traces.id，保存上游 / 网关真实 request、response
+    request_id: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(36), nullable=True))
+
     created_at: datetime = Field(
         sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now())
     )

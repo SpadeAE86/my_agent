@@ -72,6 +72,7 @@ class VideoAnalysisHistoryItem(BaseModel):
     video_url: Optional[str] = Field(default=None, description="原视频的 OBS 公网 URL（可选）")
     workspace: str = Field(default="v1", description="工作区标识，如 v1 / v2")
     cards: List[ShotCard] = Field(default_factory=list, description="该次分析的分镜卡片列表")
+    request_id: Optional[str] = Field(default=None, description="联表 http_request_traces.id")
 
 
 class HistorySaveRequest(BaseModel):

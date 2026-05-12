@@ -317,6 +317,14 @@ class VideoAnalysisDBService:
             res = await session.execute(stmt)
             return [row.model_dump(exclude_none=True) for row in res.scalars().all()]
 
+    async def get_history_row(self, history_id: str) -> Optional[Dict[str, Any]]:
+        """仅取 ``video_analysis_history`` 一行（不含分镜），供任务看板等轻量接口。"""
+        async with mysql_connector.session_scope() as session:
+            hist = await session.get(VideoAnalysisHistory, history_id)
+            if hist is None:
+                return None
+            return hist.model_dump(exclude_none=True)
+
     async def get_history_item(
         self,
         history_id: str,
@@ -405,7 +413,8 @@ class VideoAnalysisDBService:
                         video_url=item.get("video_url"),
                         workspace=item.get("workspace") or "v1",
                         status=item.get("status") or "SUCCESS",
-                        error_msg=item.get("error_msg")
+                        error_msg=item.get("error_msg"),
+                        request_id=item.get("request_id"),
                     )
                 )
             else:
@@ -418,6 +427,8 @@ class VideoAnalysisDBService:
                     existing.status = item["status"]
                 if "error_msg" in item:
                     existing.error_msg = item["error_msg"]
+                if "request_id" in item:
+                    existing.request_id = item["request_id"]
 
             if shot_cards_version == "v2":
                 vres = await session.execute(

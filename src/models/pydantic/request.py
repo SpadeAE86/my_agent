@@ -10,6 +10,7 @@ class SeedreamModel(str, Enum):
     V4_5 = "Seedream 4.5"
     V5_0 = "Seedream 5.0"
     GPT_IMAGE_2 = "gpt-image-2"
+    GPT_IMAGE_2_WANGSU = "gpt-image-2-wangsu"
 
 
 class SeedTextModel(str, Enum):

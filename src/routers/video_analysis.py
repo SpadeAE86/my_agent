@@ -11,6 +11,7 @@ import os
 import sys
 import uuid
 import hashlib
+import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
@@ -29,6 +30,7 @@ from models.pydantic.model_output_schema.seedtext_script_segments_schema import 
 from services.analysis_video import analyze_video, index_shotcards_to_opensearch
 from services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
 from services.video_analysis_db_service import video_analysis_db_service
+from services.http_request_trace_service import http_request_trace_service
 from infra.logging.logger import logger as log
 from infra.storage.opensearch_connector import opensearch_connector
 from infra.storage.opensearch.query_builder import query_builder
@@ -186,6 +188,22 @@ async def delete_search_strategy(strategy_id: int):
 async def get_history(workspace: Optional[str] = Query(None, description="工作区标识，如 v1 / v2")):
     history = await video_analysis_db_service.list_history(workspace=workspace)
     return {"success": True, "history": history}
+
+
+@video_analysis_router.get("/history/{history_id}/detail")
+async def get_history_task_detail(history_id: str):
+    """任务看板：视频分析历史条目的 HTTP 详情；有 request_id 时联表 http_request_traces。"""
+    from services.task_detail_service import build_video_analysis_task_detail, merge_http_trace_into_detail
+
+    row = await video_analysis_db_service.get_history_row(history_id)
+    if row is None:
+        raise HTTPException(status_code=404, detail="history not found")
+    base = build_video_analysis_task_detail(row)
+    trace_dict = None
+    rid = row.get("request_id")
+    if rid:
+        trace_dict = await http_request_trace_service.get_dict(str(rid))
+    return {"success": True, "detail": merge_http_trace_into_detail(base, trace_dict)}
 
 
 @video_analysis_router.get("/history/{history_id}")
@@ -694,8 +712,10 @@ async def _bg_analyze_video(
     workspace: str,
     car_model: Optional[str],
     obs_video_url: str,
+    http_trace_id: str,
 ):
     """后台分析任务逻辑"""
+    t0 = time.monotonic()
     video_task_status[project_id] = {"status": "RUNNING", "progress": 0}
     # 初始状态写入 DB
     await video_analysis_db_service.upsert_history_item({
@@ -705,6 +725,7 @@ async def _bg_analyze_video(
         "video_url": obs_video_url,
         "workspace": workspace,
         "status": "RUNNING",
+        "request_id": http_trace_id,
     }, shot_cards_version=workspace)
 
     try:
@@ -727,6 +748,7 @@ async def _bg_analyze_video(
             video_url=obs_video_url,
             workspace=workspace,
             cards=cards,
+            request_id=http_trace_id,
         )
         
         # 写入结果并更新状态为 SUCCESS
@@ -749,10 +771,48 @@ async def _bg_analyze_video(
         # 获取最终完整的 item
         final_item = await video_analysis_db_service.get_history_item(project_id)
         video_task_status[project_id] = {"status": "SUCCESS", "item": final_item or history_item.model_dump()}
+
+        duration_ms = int((time.monotonic() - t0) * 1000)
+        await http_request_trace_service.finalize(
+            http_trace_id,
+            status_code=200,
+            response_body={
+                "status": "SUCCESS",
+                "project_id": project_id,
+                "scene_count": len(cards),
+            },
+            duration_ms=duration_ms,
+            business_success=True,
+        )
         
     except Exception as e:
         log.error(f"[{project_id}] 视频分析任务异常: {e}")
         video_task_status[project_id] = {"status": "FAILED", "error": str(e)}
+        duration_ms = int((time.monotonic() - t0) * 1000)
+        try:
+            await video_analysis_db_service.upsert_history_item({
+                "id": project_id,
+                "name": file_name,
+                "time": datetime.now().isoformat(timespec="seconds"),
+                "video_url": obs_video_url,
+                "workspace": workspace,
+                "status": "FAILED",
+                "error_msg": str(e),
+                "request_id": http_trace_id,
+            }, shot_cards_version=workspace)
+        except Exception as _db_e:
+            log.warning("persist FAILED video history: %s", _db_e)
+        try:
+            await http_request_trace_service.finalize(
+                http_trace_id,
+                status_code=500,
+                error_message=str(e),
+                response_body={"status": "FAILED", "project_id": project_id, "error": str(e)},
+                duration_ms=duration_ms,
+                business_success=False,
+            )
+        except Exception as _fe:
+            log.warning("finalize http trace: %s", _fe)
     finally:
         if os.path.exists(local_path):
             try:
@@ -794,12 +854,33 @@ async def analyze_video_endpoint(
     from services.analysis_video import _get_or_upload_source_video
     obs_video_url = await _get_or_upload_source_video(local_path, project_id)
 
+    va_trace_id = await http_request_trace_service.create_initial(
+        request_url="/video-analysis",
+        http_method="POST",
+        request_body={
+            "project_id": project_id,
+            "filename": file.filename,
+            "frame_interval": frame_interval,
+            "threshold": threshold,
+            "custom_prompt": custom_prompt,
+            "split_scenes": split_scenes,
+            "workspace": workspace,
+            "car_model": car_model,
+            "obs_video_url": obs_video_url,
+            "async_mode": async_mode,
+        },
+        business_type="VIDEO_ANALYSIS",
+        method_name="POST /video-analysis",
+        upstream_task_id=project_id,
+    )
+
     if async_mode:
         background_tasks.add_task(
             _bg_analyze_video,
             project_id, local_path, file.filename,
             frame_interval, threshold, custom_prompt,
-            split_scenes, workspace, car_model, obs_video_url
+            split_scenes, workspace, car_model, obs_video_url,
+            va_trace_id,
         )
         return {"success": True, "task_id": project_id, "status": "PENDING"}
     else:
@@ -808,7 +889,8 @@ async def analyze_video_endpoint(
             await _bg_analyze_video(
                 project_id, local_path, file.filename,
                 frame_interval, threshold, custom_prompt,
-                split_scenes, workspace, car_model, obs_video_url
+                split_scenes, workspace, car_model, obs_video_url,
+                va_trace_id,
             )
             item = await video_analysis_db_service.get_history_item(project_id)
             return {"success": True, "item": item}

@@ -47,22 +47,16 @@ def get_resolution(k_level: str, aspect_ratio: str = "1:1"):
     return f"{width}x{height}"
 
 
-async def call_gpt_image_2(prompt,
-                           model="gpt-image-2",
-                           size = "1440x2560",
-                           reference_image_list: Optional[list[str]] = None
-                           ):
+async def call_gpt_image_2(
+    prompt,
+    model="gpt-image-2",
+    size="1440x2560",
+    reference_image_list: Optional[list[str]] = None,
+):
     """
-    Sends a chat message to the OpenAI API and returns the response message object.
-
-    Args:
-        model (str): The model to use for the chat.
-        size (str): The size of the generated image, e.g., "1536x1024".
-        reference_image_list (Optional[list[str]]): A list of reference image URLs.
-    Returns:
-        The raw response message object (with .content and .tool_calls).
+    OpenAI 兼容 Images API（gpt-image-2），走 GPT_IMAGE_OPENAI_*。
+    网宿非标准 JSON/multipart 见 call_gpt_image_wangsu_utils。
     """
-
     extra_body = {
         "quality": "medium"
     }
@@ -74,7 +68,7 @@ async def call_gpt_image_2(prompt,
         prompt=prompt,
         size=size,
         response_format="url",
-        extra_body=extra_body
+        extra_body=extra_body,
     )
 
     image_url = images_response.data[0].url
