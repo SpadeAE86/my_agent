@@ -7,6 +7,7 @@ from sqlalchemy import func, update, delete
 from infra.logging.logger import logger as log  # noqa: F401 — used via log.exception in query layer
 from infra.storage.mysql_connector import mysql_connector
 from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
+from services.script_rewrite_service import synthesize_text_to_obs_wav
 from services.video_match_query import shot_row_to_api_dict
 
 logger = logging.getLogger(__name__)
