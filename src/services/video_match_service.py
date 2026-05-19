@@ -32,7 +32,8 @@ from services.script_rewrite_service import (
 from utils.frame_orientation import infer_frame_orientation
 
 from services.video_match_query import (
-    get_job_payload, get_shot_match_detail, get_material_match_board_detail, shot_row_to_api_dict
+    get_job_payload, get_shot_match_detail, get_material_match_board_detail,
+    shot_row_to_api_dict, _hydrate_shot_match_urls_for_response,
 )
 from services.video_match_lifecycle import (
     synthesize_shot_obs_audio, mark_interrupted_video_match_jobs_failed,
@@ -90,54 +91,6 @@ def _merge_job_constraints_into_segment_tags(
         if inf and inf != "未知":
             out["frame_orientation"] = inf
     return out
-
-
-async def _hydrate_shot_match_urls_for_response(
-    shot: Dict[str, Any],
-    *,
-    shot_cards_version: str,
-) -> None:
-    """
-    读取任务时补全展示字段：库内 ``top1_obs_url`` 可能因历史 bug 为空，但 ``match_top_hits_json``
-    里仍有 ``history_id``。用 ``resolve_source_video_url_for_index_key`` 再解析一次（含纯数字 video 键）。
-    """
-    if str(shot.get("top1_obs_url") or "").strip():
-        return
-    if str(shot.get("search_status") or "").lower() != "done":
-        return
-    hits = shot.get("match_top_hits_json")
-    if not isinstance(hits, list) or not hits:
-        return
-    ver: Any = "v2" if (shot_cards_version or "v1").strip() == "v2" else "v1"
-    new_hits: List[Any] = []
-    for h in hits:
-        if not isinstance(h, dict):
-            new_hits.append(h)
-            continue
-        nh = dict(h)
-        if not str(
-            nh.get("video_path") or nh.get("video_url") or nh.get("url") or nh.get("obs_video_url") or ""
-        ).strip():
-            hid = str(nh.get("history_id") or "").strip()
-            if hid:
-                url = await video_analysis_db_service.resolve_source_video_url_for_index_key(
-                    hid, shot_cards_version=ver
-                )
-                if url:
-                    nh["video_path"] = url
-        new_hits.append(nh)
-    t1 = _best_video_path_from_hits(new_hits)
-    if not t1:
-        log.debug(
-            "video_match hydrate: shot_order={} still no top1 (hits={})",
-            shot.get("shot_order"),
-            len(new_hits),
-        )
-        return
-    shot["match_top_hits_json"] = new_hits
-    shot["top1_obs_url"] = t1
-    shot["top5_video_urls"] = _top5_video_urls_from_hits(new_hits)
-    shot["match_hit_count"] = len(new_hits)
 
 
 async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, Any]:
