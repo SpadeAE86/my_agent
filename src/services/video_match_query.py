@@ -1,22 +1,15 @@
 
 import json
-import asyncio
-import logging
 from typing import Optional, List, Dict, Any
-from sqlalchemy import select, func, and_, or_, desc, asc
-from sqlmodel.ext.asyncio.session import AsyncSession
-from fastapi import HTTPException
-from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShot, VideoMatchJobStatus, MaterialMatchHistory
-from models.sqlmodel.video_analysis import VideoAnalysisVideo
-from routers.video_match import (
-    VideoMatchJobResponse, VideoMatchJobDto, VideoMatchShotDto,
-    MaterialMatchHistoryResponse, MaterialMatchBoardDetailResponse
-)
-from services.obs_client import OBSClient
-from config.settings import settings
-from utils.time_utils import datetime_now
 
-logger = logging.getLogger(__name__)
+from sqlmodel import select
+
+from infra.logging.logger import logger as log
+from infra.storage.mysql_connector import mysql_connector
+from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
+from models.sqlmodel.video_material_match import VideoMaterialMatchHistory
+from services.http_request_trace_service import http_request_trace_service
+from services.video_analysis_db_service import video_analysis_db_service
 
 def shot_row_to_api_dict(row: VideoMatchShotRow) -> Dict[str, Any]:
     tj = row.tags_json or {}
