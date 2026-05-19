@@ -1,20 +1,13 @@
 
-import json
-import asyncio
 import logging
-from typing import Optional, List, Dict, Any
-from sqlalchemy import select, func, and_, or_, desc, asc
-from sqlmodel.ext.asyncio.session import AsyncSession
-from fastapi import HTTPException
-from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShot, VideoMatchJobStatus, MaterialMatchHistory
-from models.sqlmodel.video_analysis import VideoAnalysisVideo
-from routers.video_match import (
-    VideoMatchJobResponse, VideoMatchJobDto, VideoMatchShotDto,
-    MaterialMatchHistoryResponse, MaterialMatchBoardDetailResponse
-)
-from services.obs_client import OBSClient
-from config.settings import settings
-from utils.time_utils import datetime_now
+from typing import Optional, Dict, Any
+
+from sqlalchemy import func, update, delete
+
+from infra.logging.logger import logger as log  # noqa: F401 — used via log.exception in query layer
+from infra.storage.mysql_connector import mysql_connector
+from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
+from services.video_match_query import shot_row_to_api_dict
 
 logger = logging.getLogger(__name__)
 
