@@ -47,6 +47,7 @@ class VideoMatchSearchBody(BaseModel):
     strategy_name: str = Field(..., min_length=1, description="与 video_analysis_search_strategy.name 一致")
     mode: str = Field(default="field_aligned_hybrid", description="match_script_tags_segments mode")
     top_k: int = Field(default=5, ge=1, le=50)
+    enable_road_run_fallback: bool = Field(default=True, description="开启路跑兜底")
 
 
 class MixComposeFromJobBody(BaseModel):
@@ -171,6 +172,14 @@ async def get_video_match_job(job_id: str, verbose: int = Query(0, ge=0, le=1)):
     return data
 
 
+@video_match_router.post("/jobs/{job_id}/extract")
+async def extract_tags_for_job_route(job_id: str, background_tasks: BackgroundTasks):
+    """批量提取标签 (Stage 2)"""
+    from services.video_match_service import run_job_extract_tags
+    background_tasks.add_task(run_job_extract_tags, job_id)
+    return {"success": True, "message": "extracting tags in background"}
+
+
 @video_match_router.post("/jobs/{job_id}/retry")
 async def retry_video_match_job(job_id: str, background_tasks: BackgroundTasks):
     """失败任务重试：转写失败则重新解析；仅检索失败则依赖 job 内记录的检索策略重新跑匹配（需曾成功发起过匹配）。"""
@@ -183,6 +192,14 @@ async def retry_video_match_job(job_id: str, background_tasks: BackgroundTasks):
     background_tasks.add_task(run_video_match_retry_background, job_id, kind, strategy_name)
     return {"success": True, "retry": kind}
 
+
+
+@video_match_router.post("/jobs/{job_id}/shots/{shot_row_id}/extract")
+async def extract_tags_for_shot_route(job_id: str, shot_row_id: int, background_tasks: BackgroundTasks):
+    """单条分镜提取标签"""
+    from services.video_match_service import run_shot_extract_tags
+    background_tasks.add_task(run_shot_extract_tags, job_id, shot_row_id)
+    return {"success": True, "message": "extracting shot tags in background"}
 
 @video_match_router.post("/jobs/{job_id}/shots/{shot_row_id}/rematch")
 async def rematch_video_match_shot_route(job_id: str, shot_row_id: int):
@@ -225,4 +242,5 @@ async def search_video_match_job(job_id: str, body: VideoMatchSearchBody):
         strategy_name=body.strategy_name,
         mode=body.mode,
         top_k=body.top_k,
+        enable_road_run_fallback=body.enable_road_run_fallback,
     )

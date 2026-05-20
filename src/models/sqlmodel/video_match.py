@@ -18,6 +18,11 @@ class VideoMatchJob(SQLModel, table=True):
 
     workspace: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(64), nullable=True))
 
+    serial_no: Optional[int] = Field(
+        default=None,
+        sa_column=Column(Integer, autoincrement=True, unique=True, index=True)
+    )
+
     script: str = Field(sa_column=Column(Text, nullable=False))
     topic: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
     title: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
@@ -33,6 +38,13 @@ class VideoMatchJob(SQLModel, table=True):
         description="pending | running | done | failed",
     )
     parse_error: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
+
+    extract_status: str = Field(
+        default="pending",
+        sa_column=Column(VARCHAR(32), nullable=False),
+        description="pending | running | done | failed",
+    )
+    extract_error: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
 
     search_status: str = Field(
         default="pending",
@@ -81,6 +93,12 @@ class VideoMatchShotRow(SQLModel, table=True):
     description: str = Field(sa_column=Column(Text, nullable=False))
 
     tags_json: Optional[Dict[str, Any]] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
+
+    extract_status: str = Field(
+        default="pending",
+        sa_column=Column(VARCHAR(32), nullable=False),
+    )
+    extract_request_id: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(36), nullable=True, index=True))
 
     search_status: str = Field(
         default="pending",

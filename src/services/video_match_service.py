@@ -26,7 +26,9 @@ from services.video_match_http_trace import (
     truncate_for_trace,
 )
 from services.script_rewrite_service import (
+    rewrite_script_to_storyboard,
     rewrite_script_to_storyboard_and_tags,
+    rewrite_storyboard_to_tags,
     synthesize_text_to_obs_wav,
 )
 from utils.frame_orientation import infer_frame_orientation
@@ -34,6 +36,7 @@ from utils.frame_orientation import infer_frame_orientation
 from services.video_match_query import (
     get_job_payload, get_shot_match_detail, get_material_match_board_detail,
     shot_row_to_api_dict, _hydrate_shot_match_urls_for_response,
+    _enrich_hits_with_resolved_urls, _top5_video_urls_from_hits, _mock_response_payload
 )
 from services.video_match_lifecycle import (
     synthesize_shot_obs_audio, mark_interrupted_video_match_jobs_failed,
@@ -312,10 +315,10 @@ async def _load_strategy_by_name(name: str) -> Optional[VideoAnalysisSearchStrat
 
 async def run_job_search(
     job_id: str,
-    *,
     strategy_name: str,
     mode: str = "field_aligned_hybrid",
     top_k: int = 5,
+    enable_road_run_fallback: bool = True,
 ) -> Dict[str, Any]:
     strategy_name = (strategy_name or "").strip()
     if not strategy_name:
@@ -447,6 +450,7 @@ async def run_job_search(
                     video_match_shot_row_id=row_id,
                     query_preview=seg_preview,
                     strategy_snapshot=snapshot,
+                    enable_road_run_fallback=enable_road_run_fallback,
                 )
                 session.add(hist)
                 row.match_top_hits_json = to_store
@@ -524,6 +528,7 @@ async def run_job_search(
             vector_factor=vec_f,
             use_rrf=bool(strategy.use_rrf),
             with_timings=True,
+            enable_road_run_fallback=enable_road_run_fallback,
             on_segment_done=persist_shot,
         )
     except Exception as e:
@@ -769,7 +774,13 @@ async def list_video_match_jobs(
         if ids_str:
             id_list = [i.strip() for i in ids_str.split(",") if i.strip()]
             if id_list:
-                stmt = stmt.where(VideoMatchJob.id.in_(id_list))
+                from sqlalchemy import or_
+                # Check if any id could be a serial_no
+                sn_list = [int(i) for i in id_list if i.isdigit()]
+                if sn_list:
+                    stmt = stmt.where(or_(VideoMatchJob.id.in_(id_list), VideoMatchJob.serial_no.in_(sn_list)))
+                else:
+                    stmt = stmt.where(VideoMatchJob.id.in_(id_list))
         res = await session.execute(stmt)
         jobs = list(res.scalars().all())
     items: List[Dict[str, Any]] = []
@@ -777,8 +788,10 @@ async def list_video_match_jobs(
         items.append(
             {
                 "id": j.id,
+                "serial_no": getattr(j, "serial_no", None),
                 "workspace": j.workspace,
                 "parse_status": j.parse_status,
+                "extract_status": getattr(j, "extract_status", "pending"),
                 "search_status": j.search_status,
                 "title": j.title,
                 "topic": j.topic,
@@ -842,6 +855,7 @@ async def list_material_match_histories(
                 "query_preview": h.query_preview,
                 "search_mode": h.search_mode,
                 "strategy_snapshot": h.strategy_snapshot,
+                "enable_road_run_fallback": h.enable_road_run_fallback,
                 "created_at": h.created_at.isoformat() if h.created_at else None,
                 "updated_at": h.updated_at.isoformat() if h.updated_at else None,
             }
@@ -937,18 +951,6 @@ async def _reparse_video_match_job_core(job_id: str) -> None:
 
     async with mysql_connector.session_scope() as session:
         for order, seg in enumerate(storyboard.storyboard):
-            tag_seg = _resolve_tag_segment(tags, seg.id, order)
-            tj: Optional[Dict[str, Any]]
-            if tag_seg is not None:
-                tj = tag_seg.model_dump(exclude_none=True)
-            else:
-                tj = {}
-            tj = _merge_job_constraints_into_segment_tags(
-                tj,
-                car_model=car_model,
-                frame_size=frame_size_job,
-                frame_orientation=frame_orientation_job,
-            )
             obs_url = tts_audio_urls[order] if order < len(tts_audio_urls) else None
             row = VideoMatchShotRow(
                 job_id=jid,
@@ -957,7 +959,8 @@ async def _reparse_video_match_job_core(job_id: str) -> None:
                 segment_text=seg.segment_text,
                 duration_sec=float(seg.duration),
                 description=seg.description,
-                tags_json=tj if tj else None,
+                tags_json=None,
+                extract_status="pending",
                 search_status="pending",
                 obs_audio_url=obs_url,
             )
@@ -980,3 +983,180 @@ async def _reparse_video_match_job_core(job_id: str) -> None:
         business_success=True,
         duration_ms=int((time.perf_counter() - t_parse0) * 1000),
     )
+
+
+async def run_job_extract_tags(job_id: str) -> Dict[str, Any]:
+    from models.pydantic.model_output_schema.seedtext_script_segments_schema import SeedtextStoryboardEnvelope, SeedtextStoryboardSegment
+    import time
+    
+    async with mysql_connector.session_scope() as session:
+        job = await session.get(VideoMatchJob, job_id)
+        if job is None:
+            return {"success": False, "error": "job not found"}
+        if job.parse_status != "done":
+            return {"success": False, "error": "parse not completed"}
+            
+        from sqlalchemy import select
+        res = await session.execute(
+            select(VideoMatchShotRow)
+            .where(VideoMatchShotRow.job_id == job_id)
+            .order_by(VideoMatchShotRow.shot_order)
+        )
+        rows = list(res.scalars().all())
+        if not rows:
+            return {"success": False, "error": "no shot rows"}
+            
+        job.extract_status = "running"
+        job.extract_error = None
+        for r in rows:
+            r.extract_status = "running"
+            session.add(r)
+        session.add(job)
+        await session.commit()
+        
+    t0 = time.perf_counter()
+    try:
+        segs = []
+        for r in rows:
+            tj = r.tags_json or {}
+            
+            # Map from tags_json if present, else fallback
+            video_usage_list = tj.get("video_usage", [])
+            video_usage = video_usage_list[0] if video_usage_list else "未知"
+            shot_style = tj.get("shot_style", "未知")
+            shot_type = tj.get("shot_type", "未知")
+            subject = tj.get("subject", "未知")
+            obj_list = tj.get("object", [])
+            if not obj_list:
+                obj_list = ["未知"]
+                
+            sp_list = tj.get("design_selling_points", []) + tj.get("function_selling_points", [])
+            if not sp_list:
+                sp_list = ["未知"]
+
+            segs.append(SeedtextStoryboardSegment(
+                id=str(r.storyboard_id),
+                index=0,
+                segment_text=r.segment_text,
+                duration=str(r.duration_sec),
+                description=r.description,
+                video_usage=video_usage,
+                shot_style=shot_style,
+                shot_type=shot_type,
+                subject=subject,
+                object=obj_list,
+                selling_point=sp_list
+            ))
+        storyboard = SeedtextStoryboardEnvelope(storyboard=segs)
+        
+        tags = await rewrite_storyboard_to_tags(
+            storyboard,
+            frame_size=job.frame_size,
+            frame_orientation=job.frame_orientation,
+            index=0
+        )
+    except Exception as e:
+        log.exception("extract tags failed: {}", e)
+        async with mysql_connector.session_scope() as session:
+            job = await session.get(VideoMatchJob, job_id)
+            if job:
+                job.extract_status = "failed"
+                job.extract_error = str(e)
+                session.add(job)
+            await session.commit()
+        return {"success": False, "error": str(e)}
+        
+    async with mysql_connector.session_scope() as session:
+        for order, r in enumerate(rows):
+            tag_seg = _resolve_tag_segment(tags, str(r.storyboard_id), order)
+            tj = {}
+            if tag_seg is not None:
+                tj = tag_seg.model_dump(exclude_none=True)
+            tj = _merge_job_constraints_into_segment_tags(
+                tj,
+                car_model=job.car_model,
+                frame_size=job.frame_size,
+                frame_orientation=job.frame_orientation,
+            )
+            
+            # Re-fetch row
+            r_db = await session.get(VideoMatchShotRow, r.id)
+            if r_db:
+                r_db.tags_json = tj
+                r_db.extract_status = "done"
+                session.add(r_db)
+                
+        job_db = await session.get(VideoMatchJob, job_id)
+        if job_db:
+            job_db.extract_status = "done"
+            job_db.extract_error = None
+            session.add(job_db)
+        await session.commit()
+        
+    return {"success": True, "duration_ms": int((time.perf_counter() - t0) * 1000)}
+
+
+async def run_shot_extract_tags(job_id: str, shot_row_id: int) -> Dict[str, Any]:
+    from models.pydantic.model_output_schema.seedtext_script_segments_schema import SeedtextStoryboardEnvelope, SeedtextScriptSegment
+    import time
+    
+    async with mysql_connector.session_scope() as session:
+        job = await session.get(VideoMatchJob, job_id)
+        if job is None:
+            return {"success": False, "error": "job not found"}
+            
+        r = await session.get(VideoMatchShotRow, shot_row_id)
+        if r is None or r.job_id != job_id:
+            return {"success": False, "error": "shot not found"}
+            
+        r.extract_status = "running"
+        session.add(r)
+        await session.commit()
+        
+    t0 = time.perf_counter()
+    try:
+        seg = SeedtextScriptSegment(
+            id=str(r.storyboard_id),
+            index=0,
+            segment_text=r.segment_text,
+            duration=str(r.duration_sec),
+            description=r.description
+        )
+        storyboard = SeedtextStoryboardEnvelope(storyboard=[seg])
+        
+        tags = await rewrite_storyboard_to_tags(
+            storyboard,
+            frame_size=job.frame_size,
+            frame_orientation=job.frame_orientation,
+            index=0
+        )
+    except Exception as e:
+        log.exception("extract shot tags failed: {}", e)
+        async with mysql_connector.session_scope() as session:
+            r_db = await session.get(VideoMatchShotRow, shot_row_id)
+            if r_db:
+                r_db.extract_status = "failed"
+                session.add(r_db)
+            await session.commit()
+        return {"success": False, "error": str(e)}
+        
+    async with mysql_connector.session_scope() as session:
+        tag_seg = _resolve_tag_segment(tags, str(r.storyboard_id), 0)
+        tj = {}
+        if tag_seg is not None:
+            tj = tag_seg.model_dump(exclude_none=True)
+        tj = _merge_job_constraints_into_segment_tags(
+            tj,
+            car_model=job.car_model,
+            frame_size=job.frame_size,
+            frame_orientation=job.frame_orientation,
+        )
+        
+        r_db = await session.get(VideoMatchShotRow, shot_row_id)
+        if r_db:
+            r_db.tags_json = tj
+            r_db.extract_status = "done"
+            session.add(r_db)
+        await session.commit()
+        
+    return {"success": True, "duration_ms": int((time.perf_counter() - t0) * 1000)}

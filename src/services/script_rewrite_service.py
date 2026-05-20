@@ -289,7 +289,7 @@ async def synthesize_text_to_obs_wav(
             pass
 
 
-async def rewrite_script_to_storyboard_and_tags(
+async def rewrite_script_to_storyboard(
     script: str,
     *,
     topic: str | None = None,
@@ -300,11 +300,9 @@ async def rewrite_script_to_storyboard_and_tags(
     index: int = 0,
     tts_obs_project_id: Optional[str] = None,
     out_obs_audio_urls: Optional[List[Optional[str]]] = None,
-) -> Tuple[SeedtextStoryboardEnvelope, SeedtextIndexTagsEnvelope]:
+) -> SeedtextStoryboardEnvelope:
     """
-    Two-stage rewrite:
     Stage1: script -> storyboard
-    Stage2: storyboard -> index tags (strict)
     """
     script = (script or "").strip()
     if not script:
@@ -321,12 +319,12 @@ async def rewrite_script_to_storyboard_and_tags(
         ctx_lines.append(f"【车型】{car_model.strip()}")
     fs_ctx = (frame_size or "").strip() if isinstance(frame_size, str) else ""
     fo_ctx = (frame_orientation or "").strip() if isinstance(frame_orientation, str) else ""
-    if fs_ctx and fs_ctx != "未知":
+    if fs_ctx:
         ctx_lines.append(
             f"【硬性约束·画面比例】素材索引 frame_size 须为「{fs_ctx}」。"
             f"Stage1 分镜描述与镜头规划应优先适合该比例；Stage2 输出每条 segment 的 frame_size 亦须与此一致。"
         )
-    if fo_ctx in ("横屏", "竖屏"):
+    if fo_ctx:
         ctx_lines.append(
             f"【硬性约束·横竖屏】素材索引 frame_orientation keyword 须为「{fo_ctx}」。"
             f"Stage1/Stage2 全部分镜须按{fo_ctx}构图与表述习惯规划（勿当作「未知」）。"
@@ -350,21 +348,36 @@ async def rewrite_script_to_storyboard_and_tags(
     # If you want to skip, set ENABLE_TTS_DURATION = False.
     if ENABLE_TTS_DURATION:
         if out_obs_audio_urls is not None:
-            out_obs_audio_urls.clear()
-            if tts_obs_project_id:
-                out_obs_audio_urls.extend([None] * len(storyboard.storyboard))
+            # Keep the caller-owned list stable and size it for index-based writes.
+            # Do not call clear() here; some callers hand in a fresh list and expect
+            # the function to only populate values in place.
+            out_obs_audio_urls[:] = [None] * len(storyboard.storyboard)
         await _apply_tts_durations_inplace(
             storyboard,
             obs_project_id=tts_obs_project_id,
             obs_audio_urls=out_obs_audio_urls if tts_obs_project_id else None,
         )
-    elif out_obs_audio_urls is not None:
-        out_obs_audio_urls.clear()
+
+    return storyboard
+
+
+async def rewrite_storyboard_to_tags(
+    storyboard: SeedtextStoryboardEnvelope,
+    *,
+    frame_size: str | None = None,
+    frame_orientation: str | None = None,
+    index: int = 0,
+) -> SeedtextIndexTagsEnvelope:
+    """
+    Stage2: storyboard -> index tags (strict)
+    """
+    fs_ctx = (frame_size or "").strip() if isinstance(frame_size, str) else ""
+    fo_ctx = (frame_orientation or "").strip() if isinstance(frame_orientation, str) else ""
 
     stage2_tail: List[str] = []
-    if fs_ctx and fs_ctx != "未知":
+    if fs_ctx:
         stage2_tail.append(f"每条 segment 的 frame_size 必须为「{fs_ctx}」。")
-    if fo_ctx in ("横屏", "竖屏"):
+    if fo_ctx:
         stage2_tail.append(
             f"每条 segment 须在输出 JSON 中包含 frame_orientation 字段且值为「{fo_ctx}」（与索引 keyword 一致）。"
         )
@@ -387,5 +400,38 @@ async def rewrite_script_to_storyboard_and_tags(
     for seg in tags.segment_result:
         seg.index = index
 
-    return storyboard, tags
+    return tags
 
+async def rewrite_script_to_storyboard_and_tags(
+    script: str,
+    *,
+    topic: str | None = None,
+    title: str | None = None,
+    car_model: str | None = None,
+    frame_size: str | None = None,
+    frame_orientation: str | None = None,
+    index: int = 0,
+    tts_obs_project_id: Optional[str] = None,
+    out_obs_audio_urls: Optional[List[Optional[str]]] = None,
+) -> Tuple[SeedtextStoryboardEnvelope, SeedtextIndexTagsEnvelope]:
+    """
+    Convenience wrapper to run both Stage 1 and Stage 2 sequentially.
+    """
+    storyboard = await rewrite_script_to_storyboard(
+        script=script,
+        topic=topic,
+        title=title,
+        car_model=car_model,
+        frame_size=frame_size,
+        frame_orientation=frame_orientation,
+        index=index,
+        tts_obs_project_id=tts_obs_project_id,
+        out_obs_audio_urls=out_obs_audio_urls,
+    )
+    tags = await rewrite_storyboard_to_tags(
+        storyboard=storyboard,
+        frame_size=frame_size,
+        frame_orientation=frame_orientation,
+        index=index,
+    )
+    return storyboard, tags

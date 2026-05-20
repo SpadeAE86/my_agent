@@ -264,6 +264,7 @@ async def fill_timeline_after_top1(
     seg_dur: float,
     text_fields: List[str],
     search_pipeline: Optional[str],
+    enable_road_run_fallback: bool = True,
 ) -> Dict[str, Any]:
     """
     时长补全：
@@ -361,7 +362,7 @@ async def fill_timeline_after_top1(
     # ------------------------------------------------------------------
     used_ids = [str(x.get("_id") or "") for x in filled if x.get("_id")]
 
-    if acc < seg_dur:
+    if acc < seg_dur and enable_road_run_fallback:
         fb_params = {"search_pipeline": search_pipeline} if search_pipeline else None
         fb_body = build_road_run_fallback_query_body(
             qb,

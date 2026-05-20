@@ -1,0 +1,1010 @@
+{
+  "success": true,
+  "source": {
+    "row_index": 2,
+    "topic": "零自燃+五星安全，放心开",
+    "title": "买电车就怕一件事？它摆平了。",
+    "car_model": "L6"
+  },
+  "stage1": {
+    "storyboard": [
+      {
+        "index": 2,
+        "id": 1,
+        "segment_text": "一说买电车，家里人最担心什么？",
+        "duration": 3.03,
+        "description": "竖屏9:16构图，中景拍一家人客厅讨论购车，带出对电车安全的顾虑",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "购车家庭",
+        "object": [
+          "汽车宣传单"
+        ],
+        "scene_location": [
+          "客厅"
+        ],
+        "selling_point": [
+          "电车安全顾虑"
+        ],
+        "adjective": [
+          "担忧"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 2,
+        "segment_text": "智己L6电池包层层防护做得很扎实",
+        "duration": 3.56,
+        "description": "竖屏9:16构图，特写展示智己L6电池包的层层防护结构",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己L6电池包",
+        "object": [
+          "电池防护结构"
+        ],
+        "scene_location": [
+          "展台"
+        ],
+        "selling_point": [
+          "电池防护"
+        ],
+        "adjective": [
+          "扎实",
+          "安全"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 3,
+        "segment_text": "至今零自燃记录",
+        "duration": 1.87,
+        "description": "竖屏9:16构图，大特写电池包安全认证标识",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "安全认证标识",
+        "object": [
+          "认证铭牌"
+        ],
+        "scene_location": [
+          "实验室"
+        ],
+        "selling_point": [
+          "零自燃"
+        ],
+        "adjective": [
+          "可靠",
+          "安心"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 4,
+        "segment_text": "安全测试拿了五星满分",
+        "duration": 2.38,
+        "description": "竖屏9:16构图，特写五星安全测试认证证书",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "五星安全证书",
+        "object": [
+          "测试证书"
+        ],
+        "scene_location": [
+          "测试中心"
+        ],
+        "selling_point": [
+          "五星安全"
+        ],
+        "adjective": [
+          "安全",
+          "靠谱"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 5,
+        "segment_text": "带家人出门心里有底",
+        "duration": 2.26,
+        "description": "竖屏9:16构图，车外跟拍智己L6载着一家人在城市道路行驶",
+        "video_usage": "使用场景展示",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [
+          "一家人"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "出行安全"
+        ],
+        "adjective": [
+          "安心",
+          "踏实"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 6,
+        "segment_text": "还有0首付起",
+        "duration": 1.6,
+        "description": "竖屏9:16构图，远景航拍智己L6行驶在开阔城郊公路",
+        "video_usage": "建立空间感",
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "subject": "智己L6",
+        "object": [
+          "公路"
+        ],
+        "scene_location": [
+          "城郊公路"
+        ],
+        "selling_point": [
+          "购车金融政策"
+        ],
+        "adjective": [
+          "轻松"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 7,
+        "segment_text": "前2年0息政策",
+        "duration": 1.96,
+        "description": "竖屏9:16构图，中景拍顾问讲解购车金融政策",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "购车政策讲解",
+        "object": [
+          "讲解平板"
+        ],
+        "scene_location": [
+          "门店"
+        ],
+        "selling_point": [
+          "0息政策"
+        ],
+        "adjective": [
+          "划算"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 8,
+        "segment_text": "月供最低几百块",
+        "duration": 2.04,
+        "description": "竖屏9:16构图，特写月供计算的数字展示",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "月供计算界面",
+        "object": [
+          "计算器"
+        ],
+        "scene_location": [
+          "门店"
+        ],
+        "selling_point": [
+          "低月供"
+        ],
+        "adjective": [
+          "亲民",
+          "轻松"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 9,
+        "segment_text": "具体金额私我帮你算",
+        "duration": 2.2,
+        "description": "竖屏9:16构图，博主近景对着镜头引导私信咨询",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "口播博主",
+        "object": [
+          "手机"
+        ],
+        "scene_location": [
+          "室内"
+        ],
+        "selling_point": [
+          "引导咨询"
+        ],
+        "adjective": [
+          "贴心"
+        ]
+      }
+    ]
+  },
+  "stage2": {
+    "segment_result": [
+      {
+        "index": 2,
+        "id": 1,
+        "segment_text": "一说买电车，家里人最担心什么？",
+        "duration": 3.03,
+        "description": "竖屏9:16构图，中景拍一家人客厅讨论购车，带出对电车安全的顾虑",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "购车家庭",
+        "object": [
+          "汽车宣传单"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "安全",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "客厅"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "电车安全顾虑"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "担忧"
+        ],
+        "scenario_a": [
+          "家庭购车",
+          "室内讨论"
+        ],
+        "scenario_b": [
+          "选车咨询"
+        ],
+        "marketing_phrases": [
+          "买电车家人担心",
+          "电车安全问题"
+        ],
+        "marketing_tags": [
+          "购车讨论",
+          "电车安全"
+        ],
+        "appealing_audience": [
+          "购车家庭",
+          "新能源意向用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "竖屏广告",
+          "购车疑问"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 2,
+        "segment_text": "智己L6电池包层层防护做得很扎实",
+        "duration": 3.56,
+        "description": "竖屏9:16构图，特写展示智己L6电池包的层层防护结构",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6电池包",
+        "object": [
+          "电池防护结构"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "展台"
+        ],
+        "design_selling_points": [
+          "层层防护结构"
+        ],
+        "function_selling_points": [
+          "电池防护"
+        ],
+        "design_adjectives": [
+          "扎实"
+        ],
+        "function_adjectives": [
+          "安全"
+        ],
+        "scenario_a": [
+          "产品展示",
+          "电池结构"
+        ],
+        "scenario_b": [
+          "新能源汽车安全"
+        ],
+        "marketing_phrases": [
+          "智己L6电池包",
+          "电池防护扎实"
+        ],
+        "marketing_tags": [
+          "电池安全",
+          "新能源汽车"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "关注安全的车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "电池防护",
+          "智己L6"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 3,
+        "segment_text": "至今零自燃记录",
+        "duration": 1.87,
+        "description": "竖屏9:16构图，大特写电池包安全认证标识",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "安全认证标识",
+        "object": [
+          "认证铭牌"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [
+          "零自燃"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "实验室"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "零自燃",
+          "电池安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "可靠",
+          "安心"
+        ],
+        "scenario_a": [
+          "安全认证",
+          "实验室检测"
+        ],
+        "scenario_b": [
+          "电池安全"
+        ],
+        "marketing_phrases": [
+          "零自燃记录",
+          "电池安全可靠"
+        ],
+        "marketing_tags": [
+          "电池安全",
+          "零自燃"
+        ],
+        "appealing_audience": [
+          "关注电车安全用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "安全认证",
+          "智己L6"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 4,
+        "segment_text": "安全测试拿了五星满分",
+        "duration": 2.38,
+        "description": "竖屏9:16构图，特写五星安全测试认证证书",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "五星安全证书",
+        "object": [
+          "测试证书"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "安全",
+        "text": [
+          "五星满分"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "测试中心"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "五星安全认证"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "靠谱"
+        ],
+        "scenario_a": [
+          "安全测试",
+          "认证证书"
+        ],
+        "scenario_b": [
+          "购车安全"
+        ],
+        "marketing_phrases": [
+          "五星安全测试",
+          "安全满分"
+        ],
+        "marketing_tags": [
+          "安全认证",
+          "电车安全"
+        ],
+        "appealing_audience": [
+          "购车家庭",
+          "安全敏感用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "安全证书",
+          "智己L6"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 5,
+        "segment_text": "带家人出门心里有底",
+        "duration": 2.26,
+        "description": "竖屏9:16构图，车外跟拍智己L6载着一家人在城市道路行驶",
+        "movement": "行驶",
+        "camera_movement": "跟随",
+        "subject": "智己L6",
+        "object": [
+          "一家人"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "安全",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "出行安全"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "踏实"
+        ],
+        "scenario_a": [
+          "城市出行",
+          "家庭出行"
+        ],
+        "scenario_b": [
+          "自驾出行"
+        ],
+        "marketing_phrases": [
+          "带家人出行",
+          "电车出行安全"
+        ],
+        "marketing_tags": [
+          "家庭出行",
+          "路跑场景"
+        ],
+        "appealing_audience": [
+          "购车家庭",
+          "家用车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "城市道路",
+          "智己L6"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 6,
+        "segment_text": "还有0首付起",
+        "duration": 1.6,
+        "description": "竖屏9:16构图，远景航拍智己L6行驶在开阔城郊公路",
+        "movement": "行驶",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "公路"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "未知",
+        "text": [
+          "0首付"
+        ],
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "建立空间感"
+        ],
+        "scene_location": [
+          "城郊公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "购车金融政策"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "轻松"
+        ],
+        "scenario_a": [
+          "城郊出行",
+          "开阔公路"
+        ],
+        "scenario_b": [
+          "长途出行"
+        ],
+        "marketing_phrases": [
+          "0首付购车",
+          "低首付买车"
+        ],
+        "marketing_tags": [
+          "金融政策",
+          "购车优惠"
+        ],
+        "appealing_audience": [
+          "预算有限购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "航拍",
+          "城郊公路",
+          "智己L6"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 7,
+        "segment_text": "前2年0息政策",
+        "duration": 1.96,
+        "description": "竖屏9:16构图，中景拍顾问讲解购车金融政策",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "购车政策讲解",
+        "object": [
+          "讲解平板"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "未知",
+        "text": [
+          "0息政策",
+          "前2年0息"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "门店"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "0息购车政策"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "划算"
+        ],
+        "scenario_a": [
+          "门店看车",
+          "政策讲解"
+        ],
+        "scenario_b": [
+          "购车咨询"
+        ],
+        "marketing_phrases": [
+          "0息政策",
+          "购车免息"
+        ],
+        "marketing_tags": [
+          "金融政策",
+          "购车优惠"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "预算有限用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "has_presenter": true,
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "门店购车",
+          "政策讲解"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 8,
+        "segment_text": "月供最低几百块",
+        "duration": 2.04,
+        "description": "竖屏9:16构图，特写月供计算的数字展示",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "月供计算界面",
+        "object": [
+          "计算器"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "未知",
+        "text": [
+          "月供几百块"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "门店"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "低月供"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "亲民",
+          "轻松"
+        ],
+        "scenario_a": [
+          "购车计算",
+          "月供规划"
+        ],
+        "scenario_b": [
+          "门店咨询"
+        ],
+        "marketing_phrases": [
+          "低月供购车",
+          "月供几百块"
+        ],
+        "marketing_tags": [
+          "金融政策",
+          "亲民购车"
+        ],
+        "appealing_audience": [
+          "预算有限购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "购车计算",
+          "月供"
+        ]
+      },
+      {
+        "index": 2,
+        "id": 9,
+        "segment_text": "具体金额私我帮你算",
+        "duration": 2.2,
+        "description": "竖屏9:16构图，博主近景对着镜头引导私信咨询",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "口播博主",
+        "object": [
+          "手机"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "室内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "引导咨询"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "贴心"
+        ],
+        "scenario_a": [
+          "直播口播",
+          "私信咨询"
+        ],
+        "scenario_b": [
+          "购车咨询"
+        ],
+        "marketing_phrases": [
+          "具体金额私我算",
+          "私信咨询"
+        ],
+        "marketing_tags": [
+          "引流私信",
+          "购车咨询"
+        ],
+        "appealing_audience": [
+          "意向购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "has_presenter": true,
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "口播引流",
+          "私信咨询"
+        ]
+      }
+    ]
+  },
+  "segment_and_filters": [
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    }
+  ],
+  "audio_urls": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0000.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0001.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0002.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0003.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0004.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0005.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0006.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0007.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_002/seg_0008.wav"
+  ],
+  "segment_durations": [
+    3.03,
+    3.56,
+    1.87,
+    2.38,
+    2.26,
+    1.6,
+    1.96,
+    2.04,
+    2.2
+  ]
+}

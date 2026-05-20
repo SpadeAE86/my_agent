@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Any, Dict, Optional
 
 from sqlmodel import SQLModel, Field
-from sqlalchemy import Column, DateTime, Text, Float, Integer, func
+from sqlalchemy import Column, DateTime, Text, Float, Integer, Boolean, func
 from sqlalchemy.dialects.mysql import JSON as MySQLJSON, VARCHAR
 
 
@@ -52,6 +52,12 @@ class VideoMaterialMatchHistory(SQLModel, table=True):
     strategy_snapshot: Optional[Dict[str, Any]] = Field(
         default=None,
         sa_column=Column(MySQLJSON, nullable=True),
+    )
+
+    enable_road_run_fallback: Optional[bool] = Field(
+        default=None,
+        sa_column=Column(Boolean, nullable=True),
+        description="前端传来的路跑兜底标识",
     )
 
     created_at: datetime = Field(

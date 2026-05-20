@@ -1,0 +1,1076 @@
+{
+  "success": true,
+  "source": {
+    "row_index": 4,
+    "topic": "推背感拉满，还特省电",
+    "title": "家用车踩不出推背感？试试这个。",
+    "car_model": "L6"
+  },
+  "stage1": {
+    "storyboard": [
+      {
+        "index": 4,
+        "id": 1,
+        "segment_text": "家用车能有多猛？",
+        "duration": 1.74,
+        "description": "竖屏构图，城市道路上智己L6远景待命，营造悬念氛围",
+        "video_usage": "烘托氛围",
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "subject": "智己L6",
+        "object": [],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "强劲动力"
+        ],
+        "adjective": [
+          "动感"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 2,
+        "segment_text": "一脚下去超出预期。",
+        "duration": 2.07,
+        "description": "竖屏构图，车内POV拍摄驾驶员脚踩油门踏板的动作",
+        "video_usage": "功能讲解",
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "subject": "油门踏板",
+        "object": [
+          "驾驶员脚部"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "迅猛动力"
+        ],
+        "adjective": [
+          "意外",
+          "强劲"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 3,
+        "segment_text": "智己L6电机两万多转",
+        "duration": 2.44,
+        "description": "竖屏构图，特写智己L6动力舱电机部位",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己L6电机",
+        "object": [
+          "动力舱"
+        ],
+        "scene_location": [
+          "展车区"
+        ],
+        "selling_point": [
+          "高转速电机"
+        ],
+        "adjective": [
+          "强劲",
+          "先进"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 4,
+        "segment_text": "一脚下去推背感直接拉满。",
+        "duration": 2.53,
+        "description": "竖屏构图，车内POV视角下前方道路快速后退，体现加速感",
+        "video_usage": "使用场景展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [
+          "前方道路"
+        ],
+        "scene_location": [
+          "城市快速路"
+        ],
+        "selling_point": [
+          "强推背感"
+        ],
+        "adjective": [
+          "刺激",
+          "迅猛"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 5,
+        "segment_text": "电耗还控制得好",
+        "duration": 1.74,
+        "description": "竖屏构图，特写仪表盘电耗显示区域",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己L6仪表盘",
+        "object": [
+          "电耗显示"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "低电耗"
+        ],
+        "adjective": [
+          "经济",
+          "节能"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 6,
+        "segment_text": "跑得快又不怎么费电",
+        "duration": 2.05,
+        "description": "竖屏航拍，智己L6在开阔公路平稳高速行驶",
+        "video_usage": "建立空间感",
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "subject": "智己L6",
+        "object": [
+          "公路"
+        ],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "selling_point": [
+          "高效能耗"
+        ],
+        "adjective": [
+          "顺畅",
+          "省心"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 7,
+        "segment_text": "爽还省。",
+        "duration": 1.34,
+        "description": "竖屏大特写，智己L6轮毂转动瞬间",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "智己L6轮毂",
+        "object": [],
+        "scene_location": [
+          "公路"
+        ],
+        "selling_point": [
+          "动力好又省电"
+        ],
+        "adjective": [
+          "畅快",
+          "划算"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 8,
+        "segment_text": "现在有活动",
+        "duration": 1.44,
+        "description": "竖屏中景，静态展示智己L6整车外观",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [],
+        "scene_location": [
+          "城市展车区"
+        ],
+        "selling_point": [
+          "购车活动"
+        ],
+        "adjective": [
+          "优惠"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 9,
+        "segment_text": "减钱还免费赠送电池包终身质保",
+        "duration": 3.21,
+        "description": "竖屏构图，车侧跟拍智己L6行驶画面，突出品质保障",
+        "video_usage": "权益/价格说明",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "购车优惠",
+          "电池终身质保"
+        ],
+        "adjective": [
+          "安心",
+          "划算"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 10,
+        "segment_text": "私我了解详情。",
+        "duration": 1.79,
+        "description": "竖屏固定机位，智己品牌logo居中展示",
+        "video_usage": "品牌/形象传达",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己品牌logo",
+        "object": [],
+        "scene_location": [],
+        "selling_point": [
+          "引流咨询"
+        ],
+        "adjective": [
+          "清晰"
+        ]
+      }
+    ]
+  },
+  "stage2": {
+    "segment_result": [
+      {
+        "index": 4,
+        "id": 1,
+        "segment_text": "家用车能有多猛？",
+        "duration": 1.74,
+        "description": "城市道路上智己L6远景待命，营造悬念氛围",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [],
+        "footage_type": "专业摄影",
+        "topic": "速度",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "强劲动力"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "动感"
+        ],
+        "scenario_a": [
+          "城市道路"
+        ],
+        "scenario_b": [
+          "家用出行"
+        ],
+        "marketing_phrases": [
+          "家用车动力",
+          "智己L6"
+        ],
+        "marketing_tags": [
+          "新能源汽车",
+          "家用轿车"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 2,
+        "segment_text": "一脚下去超出预期。",
+        "duration": 2.07,
+        "description": "车内POV拍摄驾驶员脚踩油门踏板的动作",
+        "movement": "加速",
+        "camera_movement": "未知",
+        "subject": "油门踏板",
+        "object": [
+          "驾驶员脚部"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "速度",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "迅猛动力"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "意外",
+          "强劲"
+        ],
+        "scenario_a": [
+          "车内驾驶"
+        ],
+        "scenario_b": [
+          "加速体验"
+        ],
+        "marketing_phrases": [
+          "油门加速",
+          "动力超出预期"
+        ],
+        "marketing_tags": [
+          "新能源汽车",
+          "动力体验"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "动力需求用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 3,
+        "segment_text": "智己L6电机两万多转",
+        "duration": 2.44,
+        "description": "特写智己L6动力舱电机部位",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6电机",
+        "object": [
+          "动力舱"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "速度",
+        "text": [
+          "两万多转"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "展车区"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "高转速电机",
+          "强劲动力"
+        ],
+        "design_adjectives": [
+          "先进"
+        ],
+        "function_adjectives": [
+          "强劲"
+        ],
+        "scenario_a": [
+          "动力展示"
+        ],
+        "scenario_b": [
+          "核心部件"
+        ],
+        "marketing_phrases": [
+          "高转速电机",
+          "智己L6电机"
+        ],
+        "marketing_tags": [
+          "核心技术",
+          "动力科技"
+        ],
+        "appealing_audience": [
+          "技术爱好者",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 4,
+        "segment_text": "一脚下去推背感直接拉满。",
+        "duration": 2.53,
+        "description": "车内POV视角下前方道路快速后退，体现加速感",
+        "movement": "加速",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "前方道路"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "驾驶体验",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "使用场景展示"
+        ],
+        "scene_location": [
+          "城市快速路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "强推背感"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "刺激",
+          "迅猛"
+        ],
+        "scenario_a": [
+          "城市快速路驾驶"
+        ],
+        "scenario_b": [
+          "加速体验"
+        ],
+        "marketing_phrases": [
+          "推背感拉满",
+          "加速迅猛"
+        ],
+        "marketing_tags": [
+          "动力体验",
+          "新能源汽车"
+        ],
+        "appealing_audience": [
+          "追求动力用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 5,
+        "segment_text": "电耗还控制得好",
+        "duration": 1.74,
+        "description": "特写仪表盘电耗显示区域",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6仪表盘",
+        "object": [
+          "电耗显示"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "中控屏",
+        "text": [
+          "电耗"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "低电耗"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "经济",
+          "节能"
+        ],
+        "scenario_a": [
+          "车内显示"
+        ],
+        "scenario_b": [
+          "能耗表现"
+        ],
+        "marketing_phrases": [
+          "电耗低",
+          "省电"
+        ],
+        "marketing_tags": [
+          "能耗表现",
+          "新能源汽车"
+        ],
+        "appealing_audience": [
+          "家庭用户",
+          "通勤用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 6,
+        "segment_text": "跑得快又不怎么费电",
+        "duration": 2.05,
+        "description": "竖屏航拍，智己L6在开阔公路平稳高速行驶",
+        "movement": "行驶",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "公路"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "速度",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "建立空间感"
+        ],
+        "scene_location": [
+          "开阔公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "高效能耗",
+          "强劲动力"
+        ],
+        "design_adjectives": [
+          "顺畅"
+        ],
+        "function_adjectives": [
+          "省心"
+        ],
+        "scenario_a": [
+          "公路行驶"
+        ],
+        "scenario_b": [
+          "高速出行"
+        ],
+        "marketing_phrases": [
+          "跑得快还省电",
+          "高速行驶"
+        ],
+        "marketing_tags": [
+          "新能源汽车",
+          "通勤出行"
+        ],
+        "appealing_audience": [
+          "长途出行用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 7,
+        "segment_text": "爽还省。",
+        "duration": 1.34,
+        "description": "竖屏大特写，智己L6轮毂转动瞬间",
+        "movement": "行驶",
+        "camera_movement": "未知",
+        "subject": "智己L6轮毂",
+        "object": [
+          "轮胎"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "轮胎",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "公路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "动力好又省电"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "畅快",
+          "划算"
+        ],
+        "scenario_a": [
+          "行驶展示"
+        ],
+        "scenario_b": [
+          "动力节能"
+        ],
+        "marketing_phrases": [
+          "动力好又省电",
+          "爽还省"
+        ],
+        "marketing_tags": [
+          "新能源汽车",
+          "高性价比"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "性价比用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 8,
+        "segment_text": "现在有活动",
+        "duration": 1.44,
+        "description": "竖屏中景，静态展示智己L6整车外观",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [],
+        "footage_type": "专业摄影",
+        "topic": "整体外观",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "城市展车区"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "购车活动"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "优惠"
+        ],
+        "scenario_a": [
+          "展车展示"
+        ],
+        "scenario_b": [
+          "购车优惠"
+        ],
+        "marketing_phrases": [
+          "购车活动",
+          "智己L6优惠"
+        ],
+        "marketing_tags": [
+          "购车优惠",
+          "新车活动"
+        ],
+        "appealing_audience": [
+          "意向购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 9,
+        "segment_text": "减钱还免费赠送电池包终身质保",
+        "duration": 3.21,
+        "description": "竖屏构图，车侧跟拍智己L6行驶画面，突出品质保障",
+        "movement": "行驶",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [],
+        "footage_type": "专业摄影",
+        "topic": "电池",
+        "text": [
+          "终身质保"
+        ],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "购车优惠",
+          "电池终身质保"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安心",
+          "划算"
+        ],
+        "scenario_a": [
+          "城市道路行驶"
+        ],
+        "scenario_b": [
+          "购车保障"
+        ],
+        "marketing_phrases": [
+          "电池终身质保",
+          "购车减钱"
+        ],
+        "marketing_tags": [
+          "购车优惠",
+          "质保服务"
+        ],
+        "appealing_audience": [
+          "意向购车用户",
+          "家庭用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "晴天",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己L6"
+        ]
+      },
+      {
+        "index": 4,
+        "id": 10,
+        "segment_text": "私我了解详情。",
+        "duration": 1.79,
+        "description": "竖屏固定机位，智己品牌logo居中展示",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己品牌logo",
+        "object": [],
+        "footage_type": "专业摄影",
+        "topic": "车标",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "品牌/形象传达"
+        ],
+        "scene_location": [],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "引流咨询"
+        ],
+        "design_adjectives": [
+          "清晰"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "品牌展示"
+        ],
+        "scenario_b": [
+          "引流咨询"
+        ],
+        "marketing_phrases": [
+          "私我了解详情",
+          "智己汽车"
+        ],
+        "marketing_tags": [
+          "品牌展示",
+          "引流获客"
+        ],
+        "appealing_audience": [
+          "意向购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己汽车",
+          "智己L6"
+        ]
+      }
+    ]
+  },
+  "segment_and_filters": [
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "加速"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "加速"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    }
+  ],
+  "audio_urls": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0000.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0001.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0002.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0003.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0004.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0005.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0006.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0007.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0008.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_004/seg_0009.wav"
+  ],
+  "segment_durations": [
+    1.74,
+    2.07,
+    2.44,
+    2.53,
+    1.74,
+    2.05,
+    1.34,
+    1.44,
+    3.21,
+    1.79
+  ]
+}

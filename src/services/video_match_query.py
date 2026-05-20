@@ -10,6 +10,7 @@ from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
 from models.sqlmodel.video_material_match import VideoMaterialMatchHistory
 from services.http_request_trace_service import http_request_trace_service
 from services.video_analysis_db_service import video_analysis_db_service
+from services.script_match_query_builder import INDEX_NAME
 
 def shot_row_to_api_dict(row: VideoMatchShotRow) -> Dict[str, Any]:
     tj = row.tags_json or {}
@@ -27,6 +28,7 @@ def shot_row_to_api_dict(row: VideoMatchShotRow) -> Dict[str, Any]:
         "description": row.description,
         "tags_summary": summary,
         "tags_json": tj,
+        "extract_status": getattr(row, "extract_status", "pending"),
         "search_status": row.search_status,
         "top1_obs_url": top1_effective,
         "top5_video_urls": _top5_video_urls_from_hits(hits),
@@ -59,6 +61,7 @@ async def get_job_payload(job_id: str) -> Optional[Dict[str, Any]]:
         "success": True,
         "mock": False,
         "job_id": job.id,
+        "serial_no": getattr(job, "serial_no", None),
         "request_id": job.request_id,
         "script": job.script,
         "topic": job.topic,
@@ -66,9 +69,10 @@ async def get_job_payload(job_id: str) -> Optional[Dict[str, Any]]:
         "car_model": job.car_model,
         "frame_size": job.frame_size,
         "frame_orientation": job.frame_orientation,
+        "workspace": job.workspace,
         "parse_status": job.parse_status,
         "parse_error": job.parse_error,
-        "workspace": job.workspace,
+        "extract_status": getattr(job, "extract_status", "pending"),
         "search_status": job.search_status,
         "search_total_ms": job.search_total_ms,
         "search_error": job.search_error,

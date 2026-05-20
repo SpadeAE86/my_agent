@@ -1,0 +1,4 @@
+{
+  "success": false,
+  "error": "1 validation error for SeedtextIndexTagsEnvelope\nsegment_result.3.marketing_phrases\n  Input should be a valid list [type=list_type, input_value='防晒天幕配齐', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.12/v/list_type"
+}

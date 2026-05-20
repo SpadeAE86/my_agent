@@ -204,6 +204,7 @@ async def _match_one_segment(
     vector_factor: float,
     use_rrf: bool,
     shot_cards_version: str,
+    enable_road_run_fallback: bool,
 ) -> Dict[str, Any]:
     q = segment_query_text(seg)
     filters = build_filters(seg, relax_partitions=False)
@@ -323,6 +324,7 @@ async def _match_one_segment(
             seg_dur=seg_dur,
             text_fields=text_fields,
             search_pipeline=pipeline_base,
+            enable_road_run_fallback=enable_road_run_fallback,
         )
         fhs = fill_block.get("filled_hits") or []
         extra_hids = list(dict.fromkeys([str(h.get("history_id") or "") for h in fhs if h.get("history_id")]))
@@ -377,6 +379,7 @@ async def match_script_tags_segments(
     vector_factor: float = 0.5,
     use_rrf: bool = False,
     with_timings: bool = False,
+    enable_road_run_fallback: bool = True,
     on_segment_done: Optional[Callable[[int, Dict[str, Any]], Awaitable[None]]] = None,
 ) -> List[Dict[str, Any]]:
     """
@@ -438,6 +441,7 @@ async def match_script_tags_segments(
             vector_factor=vector_factor,
             use_rrf=use_rrf,
             shot_cards_version=shot_cards_version,
+            enable_road_run_fallback=enable_road_run_fallback,
         )
         if with_timings:
             r["elapsed_ms"] = round((time.perf_counter() - t0) * 1000, 3)

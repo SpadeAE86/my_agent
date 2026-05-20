@@ -1,0 +1,981 @@
+{
+  "success": true,
+  "source": {
+    "row_index": 3,
+    "topic": "老小区停车，它都有招",
+    "title": "老小区停车只能硬扛？它有绝活。",
+    "car_model": "L6"
+  },
+  "stage1": {
+    "storyboard": [
+      {
+        "index": 3,
+        "id": 1,
+        "segment_text": "老小区停车有多难",
+        "duration": 2.23,
+        "description": "老小区狭窄道路挤满车辆，展示拥挤的停车场景，竖屏构图",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "subject": "老小区停车场",
+        "object": [
+          "拥挤车辆",
+          "狭窄车位"
+        ],
+        "scene_location": [
+          "老小区"
+        ],
+        "selling_point": [
+          "停车痛点"
+        ],
+        "adjective": [
+          "拥挤",
+          "麻烦"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 2,
+        "segment_text": "住过的都懂",
+        "duration": 1.32,
+        "description": "车主无奈摇头的情绪特写，竖屏构图",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "车主",
+        "object": [
+          "头部"
+        ],
+        "scene_location": [
+          "老小区车内"
+        ],
+        "selling_point": [
+          "停车痛点共鸣"
+        ],
+        "adjective": [
+          "无奈",
+          "头疼"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 3,
+        "segment_text": "智己L6能斜着走窄道",
+        "duration": 2.47,
+        "description": "智己L6斜向行驶通过老小区狭窄道路，展示灵活转向",
+        "video_usage": "功能讲解",
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [
+          "车轮",
+          "窄道"
+        ],
+        "scene_location": [
+          "老小区",
+          "狭窄道路"
+        ],
+        "selling_point": [
+          "斜向行驶",
+          "窄道通行"
+        ],
+        "adjective": [
+          "灵活"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 4,
+        "segment_text": "老小区拐角再也不怕剐蹭",
+        "duration": 2.53,
+        "description": "车内POV视角看智己L6转过狭窄拐角，车身贴近墙体",
+        "video_usage": "功能讲解",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [
+          "拐角墙体",
+          "方向盘"
+        ],
+        "scene_location": [
+          "老小区",
+          "拐角"
+        ],
+        "selling_point": [
+          "窄道转弯",
+          "防剐蹭"
+        ],
+        "adjective": [
+          "安全",
+          "省心"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 5,
+        "segment_text": "能自己贴边停进路边",
+        "duration": 2.27,
+        "description": "智己L6自动贴边停进老小区路边窄车位，车外固定拍摄",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [
+          "路边窄车位"
+        ],
+        "scene_location": [
+          "老小区路边"
+        ],
+        "selling_point": [
+          "自动贴边停车"
+        ],
+        "adjective": [
+          "精准"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 6,
+        "segment_text": "开进死胡同也能循迹倒出来",
+        "duration": 2.73,
+        "description": "航拍视角看智己L6从老小区死胡同顺利倒车驶出",
+        "video_usage": "建立空间感",
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "subject": "智己L6",
+        "object": [
+          "死胡同"
+        ],
+        "scene_location": [
+          "老小区",
+          "死胡同"
+        ],
+        "selling_point": [
+          "循迹倒车"
+        ],
+        "adjective": [
+          "轻松",
+          "便利"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 7,
+        "segment_text": "现在下订",
+        "duration": 1.27,
+        "description": "智己L6运动轮毂特写，展示产品精致质感",
+        "video_usage": "产品展示",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己L6",
+        "object": [
+          "轮毂"
+        ],
+        "scene_location": [
+          "老小区路边"
+        ],
+        "selling_point": [
+          "产品质感"
+        ],
+        "adjective": [
+          "高级",
+          "精致"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 8,
+        "segment_text": "现金直减18000元",
+        "duration": 2.39,
+        "description": "竖屏居中展示购车优惠金额信息",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "优惠信息",
+        "object": [
+          "优惠弹窗"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "现金优惠"
+        ],
+        "adjective": [
+          "划算"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 9,
+        "segment_text": "私信我教你薅",
+        "duration": 1.63,
+        "description": "博主手势引导点击私信，竖屏居中构图",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "博主",
+        "object": [
+          "私信入口"
+        ],
+        "scene_location": [],
+        "selling_point": [
+          "引流获客"
+        ],
+        "adjective": [
+          "诱人"
+        ]
+      }
+    ]
+  },
+  "stage2": {
+    "segment_result": [
+      {
+        "index": 3,
+        "id": 1,
+        "segment_text": "老小区停车有多难",
+        "duration": 2.23,
+        "description": "老小区狭窄道路挤满拥挤车辆，展示拥挤停车场景",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "老小区停车场",
+        "object": [
+          "拥挤车辆",
+          "狭窄车位"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "远景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "老小区"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "停车痛点"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "拥挤",
+          "麻烦"
+        ],
+        "scenario_a": [
+          "老小区停车"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "老小区停车难"
+        ],
+        "marketing_tags": [
+          "停车痛点"
+        ],
+        "appealing_audience": [
+          "小区车主",
+          "有停车困扰车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "狭窄车位"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 2,
+        "segment_text": "住过的都懂",
+        "duration": 1.32,
+        "description": "车主无奈摇头的情绪特写",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "车主",
+        "object": [
+          "头部"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "老小区",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "停车痛点共鸣"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "无奈",
+          "头疼"
+        ],
+        "scenario_a": [
+          "老小区停车"
+        ],
+        "scenario_b": [
+          "车内情绪"
+        ],
+        "marketing_phrases": [
+          "老小区停车难",
+          "住过的都懂"
+        ],
+        "marketing_tags": [
+          "痛点共鸣"
+        ],
+        "appealing_audience": [
+          "城市小区车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "has_presenter": true,
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "情绪共鸣"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 3,
+        "segment_text": "智己L6能斜着走窄道",
+        "duration": 2.47,
+        "description": "智己L6斜向行驶通过老小区狭窄道路，展示灵活转向",
+        "movement": "行驶",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "车轮",
+          "窄道"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "转向",
+        "text": [],
+        "shot_style": "车外跟拍",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "老小区",
+          "狭窄道路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "斜向行驶",
+          "窄道通行"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "灵活"
+        ],
+        "scenario_a": [
+          "老小区通行"
+        ],
+        "scenario_b": [
+          "窄道行驶"
+        ],
+        "marketing_phrases": [
+          "智己L6斜着走",
+          "窄道通行"
+        ],
+        "marketing_tags": [
+          "功能卖点",
+          "灵活转向"
+        ],
+        "appealing_audience": [
+          "城市车主",
+          "老小区车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "斜向行驶"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 4,
+        "segment_text": "老小区拐角再也不怕剐蹭",
+        "duration": 2.53,
+        "description": "车内POV视角看智己L6转过狭窄拐角，车身贴近墙体",
+        "movement": "转弯",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "拐角墙体",
+          "方向盘"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "转向",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "老小区",
+          "拐角"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "窄道转弯",
+          "防剐蹭"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安全",
+          "省心"
+        ],
+        "scenario_a": [
+          "老小区转弯"
+        ],
+        "scenario_b": [
+          "拐角通行"
+        ],
+        "marketing_phrases": [
+          "不怕剐蹭",
+          "老小区拐角"
+        ],
+        "marketing_tags": [
+          "安全驾驶",
+          "功能卖点"
+        ],
+        "appealing_audience": [
+          "新手车主",
+          "老小区车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "防剐蹭"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 5,
+        "segment_text": "能自己贴边停进路边",
+        "duration": 2.27,
+        "description": "智己L6自动贴边停进老小区路边窄车位",
+        "movement": "泊车",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "路边窄车位"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "老小区",
+          "路边"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "自动贴边停车"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "精准"
+        ],
+        "scenario_a": [
+          "路边停车"
+        ],
+        "scenario_b": [
+          "窄车位停车"
+        ],
+        "marketing_phrases": [
+          "自动贴边停车",
+          "窄车位停车"
+        ],
+        "marketing_tags": [
+          "自动泊车",
+          "智驾功能"
+        ],
+        "appealing_audience": [
+          "新手车主",
+          "城市车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "自动停车"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 6,
+        "segment_text": "开进死胡同也能循迹倒出来",
+        "duration": 2.73,
+        "description": "航拍视角看智己L6从老小区死胡同顺利倒车驶出",
+        "movement": "倒车",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "死胡同"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "智驾",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "远景",
+        "video_usage": [
+          "建立空间感"
+        ],
+        "scene_location": [
+          "老小区",
+          "死胡同"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "循迹倒车"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "轻松",
+          "便利"
+        ],
+        "scenario_a": [
+          "死胡同倒车"
+        ],
+        "scenario_b": [
+          "复杂场景停车"
+        ],
+        "marketing_phrases": [
+          "循迹倒车",
+          "死胡同倒车"
+        ],
+        "marketing_tags": [
+          "智驾功能",
+          "便利出行"
+        ],
+        "appealing_audience": [
+          "城市车主",
+          "新手车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "循迹倒车"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 7,
+        "segment_text": "现在下订",
+        "duration": 1.27,
+        "description": "智己L6运动轮毂特写，展示产品精致质感",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "轮毂"
+        ],
+        "footage_type": "专业摄影",
+        "topic": "轮胎",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "老小区路边"
+        ],
+        "design_selling_points": [
+          "产品质感",
+          "运动轮毂"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "高级",
+          "精致"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "产品展示"
+        ],
+        "scenario_b": [
+          "轮毂外观"
+        ],
+        "marketing_phrases": [
+          "智己L6",
+          "现在下订"
+        ],
+        "marketing_tags": [
+          "购车引导",
+          "产品展示"
+        ],
+        "appealing_audience": [
+          "意向购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "运动轮毂"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 8,
+        "segment_text": "现金直减18000元",
+        "duration": 2.39,
+        "description": "竖屏居中展示购车优惠金额信息",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "优惠信息",
+        "object": [
+          "优惠弹窗"
+        ],
+        "footage_type": "静帧",
+        "topic": "未知",
+        "text": [
+          "18000元",
+          "现金直减"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "现金优惠"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "划算"
+        ],
+        "scenario_a": [
+          "购车优惠"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "现金直减",
+          "现金优惠18000"
+        ],
+        "marketing_tags": [
+          "购车优惠",
+          "价格促销"
+        ],
+        "appealing_audience": [
+          "意向购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "未知",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "购车优惠"
+        ]
+      },
+      {
+        "index": 3,
+        "id": 9,
+        "segment_text": "私信我教你薅",
+        "duration": 1.63,
+        "description": "博主手势引导点击私信，竖屏居中构图",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "博主",
+        "object": [
+          "私信入口"
+        ],
+        "footage_type": "生活实拍",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "引流获客"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "诱人"
+        ],
+        "scenario_a": [
+          "购车引流"
+        ],
+        "scenario_b": [],
+        "marketing_phrases": [
+          "私信薅羊毛",
+          "教你薅优惠"
+        ],
+        "marketing_tags": [
+          "引流获客",
+          "促销引导"
+        ],
+        "appealing_audience": [
+          "意向购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "has_presenter": true,
+        "weather": "未知",
+        "time": "未知",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "私信引流"
+        ]
+      }
+    ]
+  },
+  "segment_and_filters": [
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "转弯"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "泊车"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "倒车"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    }
+  ],
+  "audio_urls": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0000.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0001.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0002.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0003.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0004.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0005.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0006.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0007.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_003/seg_0008.wav"
+  ],
+  "segment_durations": [
+    2.23,
+    1.32,
+    2.47,
+    2.53,
+    2.27,
+    2.73,
+    1.27,
+    2.39,
+    1.63
+  ]
+}

@@ -1,0 +1,1052 @@
+{
+  "success": true,
+  "source": {
+    "row_index": 1,
+    "topic": "关上门，世界都安静了",
+    "title": "车里能有多安静？关上就知道。",
+    "car_model": "L6"
+  },
+  "stage1": {
+    "storyboard": [
+      {
+        "index": 1,
+        "id": 1,
+        "segment_text": "关上车门之后",
+        "duration": 1.64,
+        "description": "特写手拉动车门把手关闭车门的动作，竖屏9:16构图，聚焦关门动作",
+        "video_usage": "烘托氛围",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己L6车门",
+        "object": [
+          "手",
+          "车门把手"
+        ],
+        "scene_location": [
+          "城市停车场"
+        ],
+        "selling_point": [
+          "静谧体验"
+        ],
+        "adjective": [
+          "安静"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 2,
+        "segment_text": "外面还有声音吗？",
+        "duration": 1.62,
+        "description": "关车门后车内POV视角，前挡风外是流动车流行人，车内静滞，竖屏构图",
+        "video_usage": "烘托氛围",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "智己L6车内",
+        "object": [
+          "前挡风玻璃",
+          "方向盘"
+        ],
+        "scene_location": [
+          "城市路边"
+        ],
+        "selling_point": [
+          "静谧体验"
+        ],
+        "adjective": [
+          "安静"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 3,
+        "segment_text": "智己L6双层玻璃加主动降噪",
+        "duration": 3.13,
+        "description": "特写车门玻璃边框，展示双层玻璃结构，竖屏构图",
+        "video_usage": "功能讲解",
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "subject": "智己L6",
+        "object": [
+          "车门玻璃"
+        ],
+        "scene_location": [
+          "展厅"
+        ],
+        "selling_point": [
+          "双层玻璃",
+          "主动降噪"
+        ],
+        "adjective": [
+          "科技",
+          "静谧"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 4,
+        "segment_text": "车里特别特别安静",
+        "duration": 2.07,
+        "description": "车内中景，中控台上的咖啡杯水面无波纹，直观展示静谧性，竖屏构图",
+        "video_usage": "产品展示",
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "subject": "智己L6车内",
+        "object": [
+          "咖啡杯",
+          "中控台"
+        ],
+        "scene_location": [
+          "城市道路"
+        ],
+        "selling_point": [
+          "车内静谧性"
+        ],
+        "adjective": [
+          "安静",
+          "平稳"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 5,
+        "segment_text": "顶棚材质摸着像家里布艺墙面",
+        "duration": 2.77,
+        "description": "大特写，手指轻轻划过车内顶棚布艺材质，展示纹理质感，竖屏构图",
+        "video_usage": "展示细节",
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "subject": "智己L6顶棚",
+        "object": [
+          "手",
+          "布艺材质"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "内饰材质"
+        ],
+        "adjective": [
+          "柔软",
+          "高级"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 6,
+        "segment_text": "安静又高级有质感",
+        "duration": 2.1,
+        "description": "航拍智己L6在城市快速路平稳行驶，竖屏构图展示车辆姿态，建立空间感",
+        "video_usage": "使用场景展示",
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "subject": "智己L6",
+        "object": [
+          "路面",
+          "路灯"
+        ],
+        "scene_location": [
+          "城市快速路"
+        ],
+        "selling_point": [
+          "行驶静谧性",
+          "高级质感"
+        ],
+        "adjective": [
+          "安静",
+          "平稳",
+          "高级"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 7,
+        "segment_text": "现在下订",
+        "duration": 1.27,
+        "description": "智己L6整车外观竖屏居中展示，竖屏9:16构图",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己L6",
+        "object": [
+          "整车外观"
+        ],
+        "scene_location": [
+          "展厅"
+        ],
+        "selling_point": [
+          "购车优惠"
+        ],
+        "adjective": [
+          "超值"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 8,
+        "segment_text": "送价值28800赛博大礼包",
+        "duration": 3.23,
+        "description": "中景展示智己L6精致内饰，烘托礼包价值感，竖屏构图",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "subject": "智己L6内饰",
+        "object": [
+          "座椅",
+          "中控"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "selling_point": [
+          "订车礼包",
+          "购车优惠"
+        ],
+        "adjective": [
+          "超值"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 9,
+        "segment_text": "私我领取",
+        "duration": 1.43,
+        "description": "片尾预留联系方式位置，竖屏9:16构图",
+        "video_usage": "权益/价格说明",
+        "shot_style": "固定机位",
+        "shot_type": "未知",
+        "subject": "品牌咨询入口",
+        "object": [
+          "联系方式"
+        ],
+        "scene_location": [
+          "片尾"
+        ],
+        "selling_point": [
+          "引导咨询"
+        ],
+        "adjective": []
+      }
+    ]
+  },
+  "stage2": {
+    "segment_result": [
+      {
+        "index": 1,
+        "id": 1,
+        "segment_text": "关上车门之后",
+        "duration": 1.64,
+        "description": "特写手拉动车门把手关闭车门的动作，聚焦关门动作",
+        "movement": "未知",
+        "camera_movement": "未知",
+        "subject": "智己L6车门",
+        "object": [
+          "手",
+          "车门把手"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "车门",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "城市停车场"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "静谧体验"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安静"
+        ],
+        "scenario_a": [
+          "城市停车"
+        ],
+        "scenario_b": [
+          "日常用车"
+        ],
+        "marketing_phrases": [
+          "智己L6关门",
+          "静谧座舱",
+          "安静车内"
+        ],
+        "marketing_tags": [
+          "新能源车",
+          "静态体验",
+          "静谧性"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "新能源买家",
+          "注重舒适用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "智己汽车",
+          "车门动作"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 2,
+        "segment_text": "外面还有声音吗？",
+        "duration": 1.62,
+        "description": "关车门后车内POV视角，前挡风外是流动车流行人，车内静滞",
+        "movement": "未知",
+        "camera_movement": "未知",
+        "subject": "智己L6车内",
+        "object": [
+          "前挡风玻璃",
+          "方向盘",
+          "车流",
+          "行人"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "安静无噪",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "烘托氛围"
+        ],
+        "scene_location": [
+          "城市路边",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "静谧体验"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安静"
+        ],
+        "scenario_a": [
+          "城市通勤",
+          "日常行车"
+        ],
+        "scenario_b": [
+          "车内体验"
+        ],
+        "marketing_phrases": [
+          "智己L6车内安静",
+          "关上车门世界安静",
+          "主动降噪"
+        ],
+        "marketing_tags": [
+          "新能源车",
+          "静谧座舱",
+          "舒适体验"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "追求舒适的车主",
+          "新能源消费者"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "车内视角",
+          "静谧体验"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 3,
+        "segment_text": "智己L6双层玻璃加主动降噪",
+        "duration": 3.13,
+        "description": "特写车门玻璃边框，展示双层玻璃结构",
+        "movement": "未知",
+        "camera_movement": "未知",
+        "subject": "智己L6车门玻璃",
+        "object": [
+          "车门玻璃",
+          "玻璃边框"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "车窗",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "特写",
+        "video_usage": [
+          "功能讲解"
+        ],
+        "scene_location": [
+          "展厅",
+          "车内"
+        ],
+        "design_selling_points": [
+          "双层玻璃"
+        ],
+        "function_selling_points": [
+          "主动降噪",
+          "静谧体验"
+        ],
+        "design_adjectives": [
+          "科技"
+        ],
+        "function_adjectives": [
+          "静谧"
+        ],
+        "scenario_a": [
+          "展厅看车",
+          "静态展示"
+        ],
+        "scenario_b": [
+          "配置讲解"
+        ],
+        "marketing_phrases": [
+          "双层玻璃",
+          "主动降噪",
+          "智己L6静谧性"
+        ],
+        "marketing_tags": [
+          "配置讲解",
+          "新能源车",
+          "科技配置"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "注重噪音控制用户",
+          "新能源买家"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "玻璃配置",
+          "噪音控制"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 4,
+        "segment_text": "车里特别特别安静",
+        "duration": 2.07,
+        "description": "车内中景，中控台上的咖啡杯水面无波纹，直观展示静谧性",
+        "movement": "未知",
+        "camera_movement": "未知",
+        "subject": "智己L6车内",
+        "object": [
+          "咖啡杯",
+          "中控台",
+          "水面"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "安静无噪",
+        "text": [],
+        "shot_style": "车内POV",
+        "shot_type": "中景",
+        "video_usage": [
+          "产品展示"
+        ],
+        "scene_location": [
+          "城市道路",
+          "车内"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "车内静谧性",
+          "行驶平稳"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [
+          "安静",
+          "平稳"
+        ],
+        "scenario_a": [
+          "城市路跑",
+          "日常行驶"
+        ],
+        "scenario_b": [
+          "静谧体验"
+        ],
+        "marketing_phrases": [
+          "车里特别安静",
+          "智己L6静谧性",
+          "平稳行驶"
+        ],
+        "marketing_tags": [
+          "产品展示",
+          "新能源车",
+          "舒适体验"
+        ],
+        "appealing_audience": [
+          "购车用户",
+          "追求舒适用户",
+          "通勤用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑内饰",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "直观展示",
+          "静谧性测试"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 5,
+        "segment_text": "顶棚材质摸着像家里布艺墙面",
+        "duration": 2.77,
+        "description": "大特写，手指轻轻划过车内顶棚布艺材质，展示纹理质感",
+        "movement": "未知",
+        "camera_movement": "未知",
+        "subject": "智己L6顶棚",
+        "object": [
+          "手",
+          "布艺材质",
+          "顶棚"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "内饰纹理",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "大特写",
+        "video_usage": [
+          "展示细节"
+        ],
+        "scene_location": [
+          "车内"
+        ],
+        "design_selling_points": [
+          "内饰材质",
+          "布艺顶棚"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "柔软",
+          "高级"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "内饰体验",
+          "静态看车"
+        ],
+        "scenario_b": [
+          "材质展示"
+        ],
+        "marketing_phrases": [
+          "顶棚材质柔软",
+          "高级布艺内饰",
+          "智己L6内饰"
+        ],
+        "marketing_tags": [
+          "内饰展示",
+          "细节展示",
+          "新能源车"
+        ],
+        "appealing_audience": [
+          "注重内饰质感用户",
+          "购车用户",
+          "精致车主"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "内饰质感",
+          "布艺材质"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 6,
+        "segment_text": "安静又高级有质感",
+        "duration": 2.1,
+        "description": "航拍智己L6在城市快速路平稳行驶，展示车辆姿态，建立空间感",
+        "movement": "行驶",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "路面",
+          "路灯"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "驾驶体验",
+        "text": [],
+        "shot_style": "航拍",
+        "shot_type": "大远景",
+        "video_usage": [
+          "使用场景展示",
+          "建立空间感"
+        ],
+        "scene_location": [
+          "城市快速路"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "行驶静谧性",
+          "行驶平稳"
+        ],
+        "design_adjectives": [
+          "高级"
+        ],
+        "function_adjectives": [
+          "安静",
+          "平稳"
+        ],
+        "scenario_a": [
+          "城市快速路",
+          "日常通勤"
+        ],
+        "scenario_b": [
+          "高速行驶"
+        ],
+        "marketing_phrases": [
+          "安静好开",
+          "智己L6行驶质感",
+          "高级质感"
+        ],
+        "marketing_tags": [
+          "行驶展示",
+          "新能源车",
+          "场景展示"
+        ],
+        "appealing_audience": [
+          "通勤用户",
+          "购车用户",
+          "爱好驾驶用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "路跑外观",
+        "weather": "未知",
+        "time": "白天",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "航拍",
+          "城市路跑"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 7,
+        "segment_text": "现在下订",
+        "duration": 1.27,
+        "description": "智己L6整车外观竖屏居中展示",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6",
+        "object": [
+          "整车外观"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "整体外观",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "展厅"
+        ],
+        "design_selling_points": [
+          "整车外观设计"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [],
+        "function_adjectives": [],
+        "scenario_a": [
+          "展厅看车",
+          "购车转化"
+        ],
+        "scenario_b": [
+          "下订引导"
+        ],
+        "marketing_phrases": [
+          "现在下订",
+          "智己L6购车",
+          "购车优惠"
+        ],
+        "marketing_tags": [
+          "购车福利",
+          "下订优惠",
+          "新能源车营销"
+        ],
+        "appealing_audience": [
+          "准车主",
+          "购车用户",
+          "意向用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态外观",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "下订引导",
+          "整车展示"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 8,
+        "segment_text": "送价值28800赛博大礼包",
+        "duration": 3.23,
+        "description": "中景展示智己L6精致内饰，烘托礼包价值感",
+        "movement": "静态展示",
+        "camera_movement": "未知",
+        "subject": "智己L6内饰",
+        "object": [
+          "座椅",
+          "中控"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "整体内饰",
+        "text": [
+          "28800",
+          "赛博大礼包"
+        ],
+        "shot_style": "固定机位",
+        "shot_type": "中景",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "展厅",
+          "车内"
+        ],
+        "design_selling_points": [
+          "精致内饰"
+        ],
+        "function_selling_points": [],
+        "design_adjectives": [
+          "精致",
+          "高级"
+        ],
+        "function_adjectives": [],
+        "scenario_a": [
+          "展厅看车",
+          "订车福利"
+        ],
+        "scenario_b": [
+          "内饰展示"
+        ],
+        "marketing_phrases": [
+          "订车送礼包",
+          "28800大礼包",
+          "智己L6福利"
+        ],
+        "marketing_tags": [
+          "购车优惠",
+          "订车礼包",
+          "营销活动"
+        ],
+        "appealing_audience": [
+          "意向购车用户",
+          "准车主",
+          "新能源买家"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "静态内饰",
+        "weather": "未知",
+        "time": "室内",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "购车福利",
+          "订车礼包"
+        ]
+      },
+      {
+        "index": 1,
+        "id": 9,
+        "segment_text": "私我领取",
+        "duration": 1.43,
+        "description": "片尾预留联系方式位置",
+        "movement": "未知",
+        "camera_movement": "未知",
+        "subject": "品牌咨询入口",
+        "object": [
+          "联系方式"
+        ],
+        "footage_type": "TVC切片",
+        "topic": "未知",
+        "text": [],
+        "shot_style": "固定机位",
+        "shot_type": "未知",
+        "video_usage": [
+          "权益/价格说明"
+        ],
+        "scene_location": [
+          "片尾"
+        ],
+        "design_selling_points": [],
+        "function_selling_points": [
+          "引导咨询"
+        ],
+        "design_adjectives": [],
+        "function_adjectives": [],
+        "scenario_a": [
+          "营销引流",
+          "片尾转化"
+        ],
+        "scenario_b": [
+          "福利领取"
+        ],
+        "marketing_phrases": [
+          "私我领取",
+          "咨询福利",
+          "领大礼包"
+        ],
+        "marketing_tags": [
+          "引流",
+          "营销转化",
+          "引导咨询"
+        ],
+        "appealing_audience": [
+          "意向用户",
+          "购车用户"
+        ],
+        "car_color": "未知",
+        "product_status_scene": "未知",
+        "weather": "未知",
+        "time": "未知",
+        "frame_size": "9:16",
+        "frame_orientation": "竖屏",
+        "extra_tags": [
+          "片尾引流",
+          "联系方式预留"
+        ]
+      }
+    ]
+  },
+  "segment_and_filters": [
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "未知"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "未知"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "未知"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "未知"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "未知"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "行驶"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "路跑外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态外观"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "静态展示"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "静态内饰"
+        }
+      ]
+    },
+    {
+      "operator": "AND",
+      "fields": [
+        {
+          "field": "frame_orientation",
+          "value": "竖屏"
+        },
+        {
+          "field": "car_model",
+          "value": "L6"
+        },
+        {
+          "field": "movement",
+          "value": "未知"
+        },
+        {
+          "field": "product_status_scene",
+          "value": "未知"
+        }
+      ]
+    }
+  ],
+  "audio_urls": [
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0000.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0001.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0002.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0003.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0004.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0005.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0006.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0007.wav",
+    "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/transcribe_001/seg_0008.wav"
+  ],
+  "segment_durations": [
+    1.64,
+    1.62,
+    3.13,
+    2.07,
+    2.77,
+    2.1,
+    1.27,
+    3.23,
+    1.43
+  ]
+}

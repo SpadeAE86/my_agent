@@ -1,22 +1,18 @@
 {
-  "biz_id": 652,
+  "biz_id": 785,
   "user_id": 0,
   "obs_video_path_list": [
-    "mpc_transcode_cache/23023/20240924-新一代LS6-NOA-23_H.264_1080x1920_AAC_2100.mp4",
-    "mpc_transcode_cache/23023/20260514_110405_20260226-陈龙-方向盘-1_H.264_1440x2560_AAC_4900.mp4",
-    "mpc_transcode_cache/23023/20260515_151734_20250911-CG-零重力座椅-1_H.264_3456x1080_AAC_5600.mp4",
-    "mpc_transcode_cache/23023/20240924-新一代LS6-NOA-23_H.264_1080x1920_AAC_2100.mp4",
-    "mpc_transcode_cache/23023/20260515_151734_20250911-CG-零重力座椅-1_H.264_3456x1080_AAC_5600.mp4",
-    "mpc_transcode_cache/23023/20260514_111024_20250911-CG-悬浮音响-1_H.264_2700x1080_AAC_4900.mp4",
-    "mpc_transcode_cache/23023/20260514_111024_20250911-CG-悬浮音响-1_H.264_2700x1080_AAC_4900.mp4",
-    "mpc_transcode_cache/23023/20260515_151734_20250911-CG-零重力座椅-1_H.264_3456x1080_AAC_5600.mp4",
-    "mpc_transcode_cache/23023/20260513_111254_20260226-陈龙-路跑-4_H.264_1440x2560_AAC_4900.mp4"
+    "mpc_transcode_cache/23023/20260414-又帅又能打车-四轮转向-3_H.264_1008x1792_AAC_2100.mp4",
+    "mpc_transcode_cache/23023/20251208-旺仔大漂亮-离车泊入-3_H.264_1080x1920_AAC_2100.mp4",
+    "mpc_transcode_cache/23023/20250116-LS9官号-音响-1_H.264_2560x1440_AAC_4900.mp4",
+    "mpc_transcode_cache/23023/20250116-LS9官号-音响-1_H.264_2560x1440_AAC_4900.mp4",
+    "mpc_transcode_cache/23023/20251105-LS9官摄素材-后视镜-2_H.264_1920x1080_AAC_2100.mp4"
   ],
   "fps": 30,
   "crop_config": [
     {
       "start": 0.0,
-      "end": 3.83,
+      "end": 2.22,
       "translate_x": 0.0,
       "translate_y": 0.0,
       "rotation": 0.0,
@@ -27,7 +23,7 @@
     },
     {
       "start": 0.0,
-      "end": 4.840000000000001,
+      "end": 2.57,
       "translate_x": 0.0,
       "translate_y": 0.0,
       "rotation": 0.0,
@@ -38,7 +34,7 @@
     },
     {
       "start": 0.0,
-      "end": 3.19,
+      "end": 3.44,
       "translate_x": 0.0,
       "translate_y": 0.0,
       "rotation": 0.0,
@@ -49,7 +45,7 @@
     },
     {
       "start": 0.0,
-      "end": 4.2,
+      "end": 2.8,
       "translate_x": 0.0,
       "translate_y": 0.0,
       "rotation": 0.0,
@@ -60,51 +56,7 @@
     },
     {
       "start": 0.0,
-      "end": 3.06,
-      "translate_x": 0.0,
-      "translate_y": 0.0,
-      "rotation": 0.0,
-      "scale": 1.0,
-      "mirror": false,
-      "speed": 1.0,
-      "cap_cnt": 1
-    },
-    {
-      "start": 0.0,
-      "end": 3.64,
-      "translate_x": 0.0,
-      "translate_y": 0.0,
-      "rotation": 0.0,
-      "scale": 1.0,
-      "mirror": false,
-      "speed": 1.0,
-      "cap_cnt": 1
-    },
-    {
-      "start": 0.0,
-      "end": 2.75,
-      "translate_x": 0.0,
-      "translate_y": 0.0,
-      "rotation": 0.0,
-      "scale": 1.0,
-      "mirror": false,
-      "speed": 1.0,
-      "cap_cnt": 1
-    },
-    {
-      "start": 0.0,
-      "end": 2.94,
-      "translate_x": 0.0,
-      "translate_y": 0.0,
-      "rotation": 0.0,
-      "scale": 1.0,
-      "mirror": false,
-      "speed": 1.0,
-      "cap_cnt": 1
-    },
-    {
-      "start": 0.0,
-      "end": 2.37,
+      "end": 3.12,
       "translate_x": 0.0,
       "translate_y": 0.0,
       "rotation": 0.0,
@@ -117,77 +69,45 @@
   "local_mode": false,
   "mute_config": [],
   "obs_audio_path_list": [
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0000.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0001.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0002.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0003.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0004.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0005.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0006.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0007.wav",
-    "aigc/aigc_local/d26e9dcb-eeee-4eaf-9332-742434b78f81/seg_0008.wav"
+    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0000.wav",
+    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0001.wav",
+    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0002.wav",
+    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0003.wav",
+    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0004.wav"
   ],
   "audio_config": [
     {
       "start": 0.0,
-      "end": 3.43,
+      "end": 1.82,
       "offset": 0.0,
       "volume": 1.0,
       "weight": 1.0
     },
     {
       "start": 0.0,
-      "end": 4.44,
-      "offset": 3.83,
+      "end": 2.17,
+      "offset": 2.22,
       "volume": 1.0,
       "weight": 1.0
     },
     {
       "start": 0.0,
-      "end": 2.79,
-      "offset": 8.670000000000002,
+      "end": 3.04,
+      "offset": 4.79,
       "volume": 1.0,
       "weight": 1.0
     },
     {
       "start": 0.0,
-      "end": 3.8,
-      "offset": 11.860000000000001,
+      "end": 2.4,
+      "offset": 8.23,
       "volume": 1.0,
       "weight": 1.0
     },
     {
       "start": 0.0,
-      "end": 2.66,
-      "offset": 16.060000000000002,
-      "volume": 1.0,
-      "weight": 1.0
-    },
-    {
-      "start": 0.0,
-      "end": 3.24,
-      "offset": 19.12,
-      "volume": 1.0,
-      "weight": 1.0
-    },
-    {
-      "start": 0.0,
-      "end": 2.35,
-      "offset": 22.76,
-      "volume": 1.0,
-      "weight": 1.0
-    },
-    {
-      "start": 0.0,
-      "end": 2.54,
-      "offset": 25.51,
-      "volume": 1.0,
-      "weight": 1.0
-    },
-    {
-      "start": 0.0,
-      "end": 1.97,
-      "offset": 28.450000000000003,
+      "end": 2.72,
+      "offset": 11.030000000000001,
       "volume": 1.0,
       "weight": 1.0
     }
