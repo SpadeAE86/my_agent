@@ -33,7 +33,7 @@ if str(_SRC) not in sys.path:
 from infra.connector_loader import connector_loader  # noqa: E402
 from infra.logging.logger import logger as log  # noqa: E402
 from infra.storage.sqlmodel_init import create_tables_if_not_exists  # noqa: E402
-from routers.video_analysis import _bg_analyze_video  # noqa: E402
+from routers.video_analysis.analysis import _bg_analyze_video  # noqa: E402
 from services.analysis_video import _get_or_upload_source_video  # noqa: E402
 from services.http_request_trace_service import http_request_trace_service  # noqa: E402
 
