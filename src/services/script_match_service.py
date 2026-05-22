@@ -54,6 +54,7 @@ from services.script_match_query_builder import (
     build_field_aligned_hybrid_query,
     build_filters,
     build_should_boosts,
+    build_must_nots,
     cap_global_merged_lists,
     choose_vector_fields,
     history_id_from_doc_id,
@@ -209,6 +210,7 @@ async def _match_one_segment(
     q = segment_query_text(seg)
     filters = build_filters(seg, relax_partitions=False)
     should_boosts = build_should_boosts(seg)
+    must_nots = build_must_nots(seg)
 
     seg_mode = _inner_seg_mode(outer_mode)
     vector_fields = choose_vector_fields(seg, mode=seg_mode, primary=vector_field)
@@ -239,7 +241,7 @@ async def _match_one_segment(
         filters = list(filters or [])
         filters.append({"ids": {"values": candidate_ids}})
 
-    if filters or should_boosts:
+    if filters or should_boosts or must_nots:
         q0 = body.get("query") or {}
         if isinstance(q0, dict) and "hybrid" in q0 and isinstance(q0.get("hybrid"), dict):
             hybrid_obj: Dict[str, Any] = q0["hybrid"]
@@ -248,6 +250,7 @@ async def _match_one_segment(
                 {
                     "bool": {
                         "filter": filters or [],
+                        "must_not": must_nots or [],
                         "must": [subq],
                         "should": should_boosts or [],
                         "minimum_should_match": 0,
@@ -261,6 +264,7 @@ async def _match_one_segment(
             body["query"] = {
                 "bool": {
                     "filter": filters or [],
+                    "must_not": must_nots or [],
                     "must": [body["query"]],
                     "should": should_boosts or [],
                     "minimum_should_match": 0,
@@ -325,6 +329,7 @@ async def _match_one_segment(
             text_fields=text_fields,
             search_pipeline=pipeline_base,
             enable_road_run_fallback=enable_road_run_fallback,
+            seg=seg,
         )
         fhs = fill_block.get("filled_hits") or []
         extra_hids = list(dict.fromkeys([str(h.get("history_id") or "") for h in fhs if h.get("history_id")]))

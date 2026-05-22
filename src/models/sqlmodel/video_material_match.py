@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 
 from sqlmodel import SQLModel, Field
 from sqlalchemy import Column, DateTime, Text, Float, Integer, Boolean, func
@@ -13,7 +13,7 @@ class VideoMaterialMatchHistory(SQLModel, table=True):
 
     __tablename__ = "video_material_match_history"
 
-    id: str = Field(sa_column=Column(VARCHAR(36), primary_key=True, nullable=False))
+    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, autoincrement=True, nullable=False))
 
     request_id: Optional[str] = Field(
         default=None,
@@ -34,7 +34,7 @@ class VideoMaterialMatchHistory(SQLModel, table=True):
     )
     error_message: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
 
-    video_match_job_id: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(36), nullable=True, index=True))
+    video_match_job_id: Optional[int] = Field(default=None, sa_column=Column(Integer, nullable=True, index=True))
     video_match_shot_row_id: Optional[int] = Field(default=None, sa_column=Column(Integer, nullable=True))
 
     va_context_history_id: Optional[str] = Field(
@@ -58,6 +58,18 @@ class VideoMaterialMatchHistory(SQLModel, table=True):
         default=None,
         sa_column=Column(Boolean, nullable=True),
         description="前端传来的路跑兜底标识",
+    )
+
+    top_hits_json: Optional[List[Any]] = Field(
+        default=None,
+        sa_column=Column(MySQLJSON, nullable=True),
+        description="Top 命中列表（最多20条），含 history_id / video_path / _score",
+    )
+
+    top5_obs_urls: Optional[List[str]] = Field(
+        default=None,
+        sa_column=Column(MySQLJSON, nullable=True),
+        description="Top5 命中视频 URL 列表（最多5个）",
     )
 
     created_at: datetime = Field(

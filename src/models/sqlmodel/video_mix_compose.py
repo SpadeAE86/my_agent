@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Any, Dict, Optional
 
 from sqlmodel import SQLModel, Field
-from sqlalchemy import Column, DateTime, Text, Boolean, func
+from sqlalchemy import Column, DateTime, Text, Boolean, Integer, func
 from sqlalchemy.dialects.mysql import JSON as MySQLJSON, VARCHAR
 
 
@@ -20,7 +20,7 @@ class VideoMixComposeJob(SQLModel, table=True):
     biz_id: str = Field(
         sa_column=Column(VARCHAR(36), nullable=False, unique=True, index=True),
     )
-    video_match_job_id: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(36), nullable=True, index=True))
+    video_match_job_id: Optional[int] = Field(default=None, sa_column=Column(Integer, nullable=True, index=True))
     status: str = Field(
         default="pending",
         sa_column=Column(VARCHAR(32), nullable=False),

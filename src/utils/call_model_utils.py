@@ -1,4 +1,5 @@
-import asyncio
+﻿import asyncio
+import builtins
 import os
 import time
 
@@ -25,9 +26,18 @@ BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
 
     # 🌟 核心魔法：直接用 Pydantic 对象生成标准 JSON Schema
 
+def _quiet_mode() -> bool:
+    return str(os.getenv("AI_BATCH_RUNNER_QUIET", "")).strip() == "1"
+
+
+def _svc_print(*args: Any, **kwargs: Any) -> None:
+    if not _quiet_mode():
+        builtins.print(*args, **kwargs)
+
+
 async def call_doubao_vision(prompt, image_url_list, schema_json = None):
     if not ARK_API_KEY:
-        print("错误：未在环境变量 FZ_API_KEY 中找到 API Key。")
+        _svc_print("错误：未在环境变量 FZ_API_KEY 中找到 API Key。")
         return
 
     client = AsyncOpenAI(
@@ -85,14 +95,14 @@ async def call_doubao_vision(prompt, image_url_list, schema_json = None):
             messages=messages,
             response_format=response_format
         )
-        print(f"完整响应:{response}")
+        _svc_print(f"完整响应:{response}")
         result = response.choices[0].message.content
-        print("====== 豆包 API 返回结果 ======")
-        print(result)
-        print("================================")
+        _svc_print("====== 豆包 API 返回结果 ======")
+        _svc_print(result)
+        _svc_print("================================")
         return result
     except Exception as e:
-        print(f"调用豆包 API 时发生错误: {e}")
+        _svc_print(f"调用豆包 API 时发生错误: {e}")
 
 
 async def call_doubao_seedream(
@@ -113,7 +123,7 @@ async def call_doubao_seedream(
         生成图片的 URL，失败返回 None
     """
     if not ARK_API_KEY:
-        print("错误：未找到 API Key。")
+        _svc_print("错误：未找到 API Key。")
         return None
 
     real_model = SEEDREAM_MODEL_MAP.get(model, model)
@@ -124,9 +134,9 @@ async def call_doubao_seedream(
     )
 
     try:
-        print(f"正在调用豆包 Seedream 生成图片...")
-        print(f"模型: {model} -> {real_model}, 尺寸: {size}")
-        print(f"提示词: {prompt}")
+        _svc_print(f"正在调用豆包 Seedream 生成图片...")
+        _svc_print(f"模型: {model} -> {real_model}, 尺寸: {size}")
+        _svc_print(f"提示词: {prompt}")
         
         extra_body = {
             "watermark": False,
@@ -145,12 +155,12 @@ async def call_doubao_seedream(
         )
 
         image_url = images_response.data[0].url
-        print("====== 豆包 Seedream 返回结果 ======")
-        print(f"图片 URL: {image_url}")
-        print("====================================")
+        _svc_print("====== 豆包 Seedream 返回结果 ======")
+        _svc_print(f"图片 URL: {image_url}")
+        _svc_print("====================================")
         return image_url
     except Exception as e:
-        print(f"调用豆包 Seedream API 时发生错误: {e}")
+        _svc_print(f"调用豆包 Seedream API 时发生错误: {e}")
         return None
 
 
@@ -174,7 +184,7 @@ async def call_doubao_seedtext(
         生成的文本，失败返回 None
     """
     if not ARK_API_KEY:
-        print("错误：未找到 API Key。")
+        _svc_print("错误：未找到 API Key。")
         return None
 
     real_model = SEEDTEXT_MODEL_MAP.get(model, model)
@@ -190,13 +200,13 @@ async def call_doubao_seedtext(
             extra = f"\n\n视频时长：\n{video_duration}秒\n"
             system_prompt = (system_prompt or "") + extra
 
-        print(f"正在调用豆包 Seed 文本模型...")
-        print(f"模型: {model} -> {real_model}")
+        _svc_print(f"正在调用豆包 Seed 文本模型...")
+        _svc_print(f"模型: {model} -> {real_model}")
         if system_prompt:
-            print(f"系统提示词(最终): {system_prompt}")
+            _svc_print(f"系统提示词(最终): {system_prompt}")
         if video_duration is not None:
-            print(f"视频时长入参: {video_duration}秒")
-        print(f"提示词: {prompt}")
+            _svc_print(f"视频时长入参: {video_duration}秒")
+        _svc_print(f"提示词: {prompt}")
         
         input_messages = []
         if system_prompt:
@@ -234,7 +244,7 @@ async def call_doubao_seedtext(
                     "json_schema": {"name": getattr(output_schema, "__name__", "OutputSchema"), "schema": schema_json},
                 }
             except Exception as e:
-                print(f"警告：output_schema 无法生成 schema，将忽略。err={e}")
+                _svc_print(f"警告：output_schema 无法生成 schema，将忽略。err={e}")
                 response_format = None
 
         # NOTE:
@@ -260,12 +270,12 @@ async def call_doubao_seedtext(
                 extra_body=extra_body,
             )
             result = response.output_text
-        print("====== 豆包 Seed 文本模型返回结果 ======")
-        print(result)
-        print("=========================================")
+        _svc_print("====== 豆包 Seed 文本模型返回结果 ======")
+        _svc_print(result)
+        _svc_print("=========================================")
         return result
     except Exception as e:
-        print(f"调用豆包 Seed 文本模型 API 时发生错误: {e}")
+        _svc_print(f"调用豆包 Seed 文本模型 API 时发生错误: {e}")
         return None
 
 
@@ -287,7 +297,7 @@ async def call_doubao_seedance(
         task_id: 视频生成任务的 ID，失败返回 None
     """
     if not ARK_API_KEY:
-        print("错误：未找到 API Key。")
+        _svc_print("错误：未找到 API Key。")
         return None
 
     real_model = SEEDANCE_MODEL_MAP.get(model, model)
@@ -343,8 +353,8 @@ async def call_doubao_seedance(
         payload["resolution"] = resolution
         
     try:
-        print(f"正在提交豆包 Seedance 视频生成任务...")
-        print(f"模型: {model} -> {real_model}, 分辨率: {resolution}, 比例: {ratio}, 时长: {duration}s")
+        _svc_print(f"正在提交豆包 Seedance 视频生成任务...")
+        _svc_print(f"模型: {model} -> {real_model}, 分辨率: {resolution}, 比例: {ratio}, 时长: {duration}s")
         
         async with httpx.AsyncClient() as client:
             response = await client.post(url, headers=headers, json=payload, timeout=30.0)
@@ -353,14 +363,14 @@ async def call_doubao_seedance(
             
             task_id = data.get("id")
             if task_id:
-                print(f"任务提交成功，Task ID: {task_id}")
+                _svc_print(f"任务提交成功，Task ID: {task_id}")
                 return task_id
             else:
-                print(f"任务提交失败，未返回 Task ID: {data}")
+                _svc_print(f"任务提交失败，未返回 Task ID: {data}")
                 return None
                 
     except Exception as e:
-        print(f"提交豆包 Seedance 任务时发生错误: {e}")
+        _svc_print(f"提交豆包 Seedance 任务时发生错误: {e}")
         return None
 
 async def get_seedance_task_status(task_id: str) -> dict:
@@ -403,7 +413,7 @@ async def get_seedance_task_status(task_id: str) -> dict:
             return result
             
     except Exception as e:
-        print(f"查询豆包 Seedance 任务状态时发生错误: {e}")
+        _svc_print(f"查询豆包 Seedance 任务状态时发生错误: {e}")
         return {"status": "failed", "error": str(e)}
 
 if __name__ == "__main__":
@@ -454,5 +464,6 @@ if __name__ == "__main__":
     # start = time.time()
     #
     # result = asyncio.run(call_doubao_seedtext(prompt, system_prompt=system_prompt, thinking=False))
-    # print(f"非深度思考的美化花费了{time.time()-start}秒")
-    print("最终结果：", result)
+    # _svc_print(f"非深度思考的美化花费了{time.time()-start}秒")
+    _svc_print("最终结果：", result)
+

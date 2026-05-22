@@ -28,6 +28,7 @@ def shot_row_to_api_dict(row: VideoMatchShotRow) -> Dict[str, Any]:
         "description": row.description,
         "tags_summary": summary,
         "tags_json": tj,
+        "search_tokens_json": row.search_tokens_json,
         "extract_status": getattr(row, "extract_status", "pending"),
         "search_status": row.search_status,
         "top1_obs_url": top1_effective,
@@ -135,6 +136,14 @@ async def get_material_match_board_detail(match_id: str) -> Optional[Dict[str, A
         row = await session.get(VideoMaterialMatchHistory, mid)
     if row is None:
         return None
+
+    # 分镜来源：先拉 shot_row 的 match_top_hits_json
+    shot_hits_json: Optional[List[Any]] = None
+    if row.video_match_shot_row_id:
+        async with mysql_connector.session_scope() as session:
+            shot_row = await session.get(VideoMatchShotRow, row.video_match_shot_row_id)
+        if shot_row is not None:
+            shot_hits_json = shot_row.match_top_hits_json
     d: Dict[str, Any] = {
         "id": row.id,
         "status": row.status,
@@ -156,7 +165,54 @@ async def get_material_match_board_detail(match_id: str) -> Optional[Dict[str, A
     base = build_video_material_match_task_detail(d)
     rid = (row.request_id or "").strip()
     trace_dict = await http_request_trace_service.get_dict(str(rid)) if rid else None
-    return merge_http_trace_into_detail(base, trace_dict)
+    detail = merge_http_trace_into_detail(base, trace_dict)
+
+    # top_hits_for_board 优先级：shot_row.match_top_hits_json > history.top_hits_json > trace > top1
+    top_hits_for_board: List[Dict[str, Any]] = []
+    raw_source = shot_hits_json or (row.top_hits_json if isinstance(row.top_hits_json, list) else None)
+    if raw_source:
+        for h in raw_source[:20]:
+            if not isinstance(h, dict):
+                continue
+            top_hits_for_board.append({
+                "_id": h.get("_id"),
+                "_score": h.get("_score"),
+                "history_id": h.get("history_id"),
+                "video_path": str(h.get("video_path") or "").strip() or None,
+            })
+    elif trace_dict:
+        rb = trace_dict.get("response_body")
+        if isinstance(rb, dict):
+            explain = rb.get("top_hits_explain")
+            if isinstance(explain, list):
+                for h in explain[:20]:
+                    if not isinstance(h, dict):
+                        continue
+                    vp = str(h.get("video_path") or "").strip()
+                    top_hits_for_board.append({
+                        "_id": h.get("_id"),
+                        "_score": h.get("_score"),
+                        "history_id": h.get("history_id"),
+                        "video_path": vp or None,
+                    })
+    # 最终兜底：仅有 top1 时至少能显示一条
+    if not top_hits_for_board and row.top1_obs_url:
+        top_hits_for_board.append({
+            "_id": None,
+            "_score": None,
+            "history_id": None,
+            "video_path": str(row.top1_obs_url).strip() or None,
+        })
+    detail["top_hits_for_board"] = top_hits_for_board
+
+    # top5_obs_urls：优先用新字段，兜底从 top_hits_for_board 提取
+    if isinstance(row.top5_obs_urls, list) and row.top5_obs_urls:
+        detail["top5_obs_urls"] = [u for u in row.top5_obs_urls if u][:5]
+    else:
+        detail["top5_obs_urls"] = [
+            h["video_path"] for h in top_hits_for_board[:5] if h.get("video_path")
+        ] or None
+    return detail
 
 
 

@@ -48,16 +48,26 @@ def _safe_name(name: str, index: int) -> str:
     return f"{index:03d}_{''.join(ch if ch.isalnum() or ch in ('-', '_') else '_' for ch in text)[:80]}"
 
 
-def _match_segments_input(stage2: Dict[str, Any]) -> List[Dict[str, Any]]:
+def _coerce_duration(value: Any) -> float:
+    try:
+        return max(0.0, float(value or 0.0))
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def _match_segments_input(stage2: Dict[str, Any], fallback_durations: Optional[List[Any]] = None) -> List[Dict[str, Any]]:
     segs = stage2.get("segment_result") if isinstance(stage2, dict) else []
     if not isinstance(segs, list):
         return []
     out: List[Dict[str, Any]] = []
-    for seg in segs:
+    for idx, seg in enumerate(segs):
         if not isinstance(seg, dict):
             continue
         seg2 = dict(seg)
-        seg2["duration"] = 0.0
+        duration = seg2.get("duration")
+        if duration in (None, "") and isinstance(fallback_durations, list) and idx < len(fallback_durations):
+            duration = fallback_durations[idx]
+        seg2["duration"] = _coerce_duration(duration)
         out.append(seg2)
     return out
 
@@ -68,7 +78,11 @@ async def _match_one(path: Path, index: int, total: int) -> Dict[str, Any]:
     data = _load_json(path)
     source = data.get("source") if isinstance(data, dict) else {}
     stage2 = data.get("stage2") if isinstance(data, dict) else {}
-    segments = _match_segments_input(stage2 if isinstance(stage2, dict) else {})
+    fallback_durations = data.get("segment_durations") if isinstance(data, dict) else []
+    segments = _match_segments_input(
+        stage2 if isinstance(stage2, dict) else {},
+        fallback_durations if isinstance(fallback_durations, list) else [],
+    )
     car_model = str((source or {}).get("car_model") or "").strip()
     top_k = DEFAULT_TOP_K
 
@@ -103,8 +117,13 @@ async def _match_one(path: Path, index: int, total: int) -> Dict[str, Any]:
         )
 
         out_segments: List[Dict[str, Any]] = []
-        for seg_in, res in zip(segments, results):
-            top_hits = res.get("top_hits") or []
+        total_segments = max(len(segments), len(results))
+        for i in range(total_segments):
+            seg_in = segments[i] if i < len(segments) else {}
+            res = results[i] if i < len(results) else {}
+            top_hits: List[Dict[str, Any]] = []
+            if isinstance(res, dict):
+                top_hits = res.get("top_hits") or []
             out_segments.append(
                 {
                     "segment_id": seg_in.get("id"),
@@ -121,7 +140,9 @@ async def _match_one(path: Path, index: int, total: int) -> Dict[str, Any]:
                         for h in top_hits[:5]
                         if isinstance(h, dict)
                     ],
-                    "top1_video_path": (top_hits[0].get("video_path") if top_hits and isinstance(top_hits[0], dict) else None),
+                    "top1_video_path": (
+                        top_hits[0].get("video_path") if top_hits and isinstance(top_hits[0], dict) else None
+                    ),
                     "search_status": "done" if top_hits else "failed",
                     "raw": res,
                 }

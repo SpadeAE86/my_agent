@@ -26,6 +26,8 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlparse
 
+os.environ.setdefault("AI_BATCH_RUNNER_QUIET", "1")
+
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.dirname(CURRENT_DIR)
 if SRC_DIR not in sys.path:
@@ -42,6 +44,7 @@ from utils.obs_utils import OBS_BASE_URL, download_from_obs, download_url_to_fil
 
 def _quiet_logs() -> None:
     # Keep this batch runner focused on progress output only.
+    # Service-level loggers are muted; this file prints its own progress lines.
     try:
         from loguru import logger as loguru_logger
 
@@ -342,20 +345,25 @@ async def _run_one_source(source: str, index: int, total: int) -> Dict[str, Any]
         if not video_key:
             raise RuntimeError(f"failed to resolve v2 video key for {source_name}")
 
-        buf = io.StringIO()
-        with contextlib.redirect_stdout(buf), contextlib.redirect_stderr(buf):
-            cards = await analyze_video(
-                local_video_path=local_path,
-                project_id=video_key,
-                frame_interval=FRAME_INTERVAL,
-                threshold=THRESHOLD,
-                split_scenes=SPLIT_SCENES,
-                cleanup_workspace=True,
-                workspace=WORKSPACE,
-                car_model=car_model,
-            )
-        elapsed_sec = time.perf_counter() - started_at
+        print(f"[{index}/{total}] analyze {source_name} ...")
+        analyze_started = time.perf_counter()
+        cards = await analyze_video(
+            local_video_path=local_path,
+            project_id=video_key,
+            frame_interval=FRAME_INTERVAL,
+            threshold=THRESHOLD,
+            split_scenes=SPLIT_SCENES,
+            cleanup_workspace=True,
+            workspace=WORKSPACE,
+            car_model=car_model,
+        )
+        analyze_elapsed = time.perf_counter() - analyze_started
+        print(
+            f"[{index}/{total}] analyze_done {source_name} cards={len(cards)} "
+            f"elapsed={analyze_elapsed:.1f}s"
+        )
 
+        persist_started = time.perf_counter()
         await _persist_v2_result(
             video_key=video_key,
             source_name=source_name,
@@ -363,14 +371,24 @@ async def _run_one_source(source: str, index: int, total: int) -> Dict[str, Any]
             car_model=car_model,
             cards=cards,
         )
+        persist_elapsed = time.perf_counter() - persist_started
+        print(f"[{index}/{total}] persist_done {source_name} elapsed={persist_elapsed:.1f}s")
 
+        index_started = time.perf_counter()
+        print(f"[{index}/{total}] index {source_name} ...")
         index_resp = await index_shotcards_to_opensearch(
             cards,
             id_prefix=video_key,
             workspace=WORKSPACE,
         )
+        index_elapsed = time.perf_counter() - index_started
 
-        print(f"[{index}/{total}] success {source_name} cards={len(cards)} elapsed={elapsed_sec:.1f}s")
+        elapsed_sec = time.perf_counter() - started_at
+
+        print(
+            f"[{index}/{total}] success {source_name} cards={len(cards)} "
+            f"elapsed={elapsed_sec:.1f}s index_elapsed={index_elapsed:.1f}s"
+        )
         return {
             "source": source,
             "source_name": source_name,

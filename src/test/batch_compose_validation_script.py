@@ -43,6 +43,26 @@ def _safe_name(name: str, index: int) -> str:
     return f"{index:03d}_{''.join(ch if ch.isalnum() or ch in ('-', '_') else '_' for ch in text)[:80]}"
 
 
+def _coerce_duration(value: Any) -> float:
+    try:
+        return max(0.0, float(value or 0.0))
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def _normalize_string_list(values: Any, expected_len: int) -> List[str]:
+    out: List[str] = []
+    if isinstance(values, list):
+        for value in values[:expected_len]:
+            if value is None:
+                out.append("")
+            else:
+                out.append(str(value).strip())
+    while len(out) < expected_len:
+        out.append("")
+    return out
+
+
 def _first_video_url(seg: Dict[str, Any]) -> str:
     if not isinstance(seg, dict):
         return ""
@@ -78,11 +98,10 @@ async def _create_temp_job(source: Dict[str, Any], transcribe: Dict[str, Any], m
     stage1 = transcribe.get("stage1") if isinstance(transcribe, dict) else {}
     audio_urls = transcribe.get("audio_urls") if isinstance(transcribe, dict) else []
     durations = transcribe.get("segment_durations") if isinstance(transcribe, dict) else []
-    if not isinstance(audio_urls, list):
-        audio_urls = []
+    segments = _segments_from_match(match)
+    audio_urls = _normalize_string_list(audio_urls, len(segments))
     if not isinstance(durations, list):
         durations = []
-    segments = _segments_from_match(match)
 
     async with mysql_connector.session_scope() as session:
         job = VideoMatchJob(
@@ -101,16 +120,14 @@ async def _create_temp_job(source: Dict[str, Any], transcribe: Dict[str, Any], m
         session.add(job)
         for order, seg in enumerate(segments):
             top1 = _first_video_url(seg)
-            dur = 0.0
-            if order < len(durations):
-                try:
-                    dur = float(durations[order] or 0.0)
-                except (TypeError, ValueError):
-                    dur = 0.0
+            dur = _coerce_duration(seg.get("duration"))
+            if dur <= 0 and order < len(durations):
+                dur = _coerce_duration(durations[order])
             if dur <= 0:
                 dur = 2.0
             tags_json = dict(seg)
-            tags_json["duration"] = 0.0
+            tags_json["duration"] = dur
+            audio_url = audio_urls[order] if order < len(audio_urls) else ""
             row = VideoMatchShotRow(
                 job_id=job_id,
                 shot_order=order,
@@ -122,7 +139,7 @@ async def _create_temp_job(source: Dict[str, Any], transcribe: Dict[str, Any], m
                 extract_status="done",
                 search_status="done",
                 top1_obs_url=top1,
-                obs_audio_url=str(audio_urls[order] if order < len(audio_urls) else ""),
+                obs_audio_url=str(audio_url or "").strip(),
             )
             session.add(row)
         await session.commit()
@@ -189,9 +206,10 @@ async def _compose_one(match_path: Path, transcribe_path: Path, index: int, tota
 
 
 async def main() -> None:
-    match_files = sorted([p for p in MATCH_DIR.glob("*.json") if p.is_file()])[:10]
-    transcribe_files = sorted([p for p in TRANSCRIBE_DIR.glob("*.json") if p.is_file()])[:10]
-    total = min(len(match_files), len(transcribe_files), 10)
+    match_files = {p.name: p for p in sorted([p for p in MATCH_DIR.glob("*.json") if p.is_file()])}
+    transcribe_files = {p.name: p for p in sorted([p for p in TRANSCRIBE_DIR.glob("*.json") if p.is_file()])}
+    paired_files = [(match_files[name], transcribe_files[name]) for name in sorted(match_files.keys() & transcribe_files.keys())][:10]
+    total = len(paired_files)
     if total == 0:
         print("No match/transcribe json files found.")
         return
@@ -200,8 +218,8 @@ async def main() -> None:
     TMP_VIDEO_DIR.mkdir(parents=True, exist_ok=True)
 
     results = []
-    for i in range(total):
-        results.append(await _compose_one(match_files[i], transcribe_files[i], i + 1, total))
+    for i, (match_path, transcribe_path) in enumerate(paired_files, start=1):
+        results.append(await _compose_one(match_path, transcribe_path, i, total))
 
     ok = sum(1 for r in results if r.get("success"))
     fail = len(results) - ok

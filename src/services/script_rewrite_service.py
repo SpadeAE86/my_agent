@@ -30,6 +30,15 @@ def _join_choices(xs: List[str]) -> str:
     return ", ".join([x for x in (xs or []) if x])
 
 
+def _format_ai_output_for_error(raw: str, *, limit: int = 4000) -> str:
+    text = (raw or "").strip()
+    if not text:
+        return ""
+    if len(text) <= limit:
+        return text
+    return text[:limit] + f"... [truncated {len(text) - limit} chars]"
+
+
 MODEL_CANDIDATES = ["Seed 2.0 Lite"]
 
 # --- Optional: use AliTTS + pymediainfo to compute accurate durations ---
@@ -338,7 +347,11 @@ async def rewrite_script_to_storyboard(
         system_prompt=system_prompt_stage1_for_car_model(car_model),
         output_schema=SeedtextStoryboardEnvelope,
     )
-    storyboard = SeedtextStoryboardEnvelope.model_validate(json.loads(_extract_json_text(stage1_raw)))
+    try:
+        storyboard = SeedtextStoryboardEnvelope.model_validate(json.loads(_extract_json_text(stage1_raw)))
+    except Exception as e:
+        raw_out = _format_ai_output_for_error(stage1_raw)
+        raise RuntimeError(f"Stage1 parse failed: {e}; ai_output={raw_out}") from e
 
     # ensure index field is consistent
     for seg in storyboard.storyboard:
@@ -396,7 +409,11 @@ async def rewrite_storyboard_to_tags(
         system_prompt=SYSTEM_PROMPT_STAGE2,
         output_schema=SeedtextIndexTagsEnvelope,
     )
-    tags = SeedtextIndexTagsEnvelope.model_validate(json.loads(_extract_json_text(stage2_raw)))
+    try:
+        tags = SeedtextIndexTagsEnvelope.model_validate(json.loads(_extract_json_text(stage2_raw)))
+    except Exception as e:
+        raw_out = _format_ai_output_for_error(stage2_raw)
+        raise RuntimeError(f"Stage2 parse failed: {e}; ai_output={raw_out}") from e
     for seg in tags.segment_result:
         seg.index = index
 

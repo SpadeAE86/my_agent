@@ -140,37 +140,52 @@ def _va_tokens_for_storage(tokens: List[VideoAnalysisSearchToken]) -> List[Dict[
     return out
 
 
-def _video_analysis_split_tokens(
-    raw_tokens: List[VideoAnalysisSearchToken],
-    *,
-    index_is_v2: bool,
-) -> tuple[str, List[dict], List[str]]:
-    allowed = TOKEN_JOIN_TERM_FIELDS_V2 if index_is_v2 else frozenset()
-    term_filters: List[dict] = []
-    rel_parts: List[str] = []
-    must_not_texts: List[str] = []
+def _reconstruct_pseudo_seg(
+    raw_tokens: List[VideoAnalysisSearchToken]
+) -> tuple[Dict[str, Any], str, bool, List[str]]:
+    """
+    Reconstruct a pseudo `tags_json` (seg) from the flat token list.
+    Returns: (pseudo_seg, unassigned_text, has_unassigned_or_empty_tags, unassigned_must_nots)
+    """
+    pseudo_seg: Dict[str, Any] = {"_search_tokens_json": []}
+    unassigned_parts: List[str] = []
+    unassigned_must_nots: List[str] = []
+    has_unassigned = False
 
     for tok in raw_tokens or []:
         text = (tok.text or "").strip()
         if not text or text == "未知":
             continue
-        if tok.not_:
-            must_not_texts.append(text)
-            continue
+
         join = (tok.join or "AND").strip().upper()
-        is_and = join == "AND"
+        is_not = bool(tok.not_)
         sf = (tok.source_field or "").strip()
-        if is_and and sf and sf in allowed:
-            term_val = normalize_v2_term_filter_value(sf, text)
-            term_filters.append({"term": {sf: term_val}})
+
+        # Add to _search_tokens_json for build_filters and build_must_nots
+        d = {
+            "text": text,
+            "join": join,
+            "not": is_not,
+            "type": (tok.type or "keyword").strip() or "keyword",
+            "sourceField": sf or None
+        }
+        pseudo_seg["_search_tokens_json"].append(d)
+
+        if is_not:
+            if not sf:
+                unassigned_must_nots.append(text)
+            continue
+
+        if sf:
+            if sf not in pseudo_seg:
+                pseudo_seg[sf] = []
+            pseudo_seg[sf].append(text)
         else:
-            rel_parts.append(text)
+            has_unassigned = True
+            unassigned_parts.append(text)
 
-    query_text = " ".join(rel_parts).strip()
-    if not query_text:
-        query_text = "素材"
-    return query_text, term_filters, must_not_texts
-
+    unassigned_text = " ".join(unassigned_parts).strip()
+    return pseudo_seg, unassigned_text, has_unassigned, unassigned_must_nots
 
 def _must_not_clauses_from_texts(texts: List[str], weighted_fields: List[str]) -> List[dict]:
     out: List[dict] = []
@@ -187,50 +202,43 @@ def _must_not_clauses_from_texts(texts: List[str], weighted_fields: List[str]) -
 def _build_fallback_filter_block(
     term_filters: List[dict],
     history_prefix: Optional[str],
-    enable_road_run_fallback: bool
+    is_fallback: bool = False
 ) -> List[dict]:
     filt = []
     if history_prefix:
         filt.append({"prefix": {"id": history_prefix}})
 
-    if not term_filters:
-        return filt
-
-    if not enable_road_run_fallback:
+    if not is_fallback:
         filt.extend(term_filters)
         return filt
-
-    fallback_block = {
-        "bool": {
-            "minimum_should_match": 1,
-            "should": [
-                {
-                    "bool": {
-                        "filter": list(term_filters),
-                        "_name": "strict_match"
-                    }
-                },
-                {
-                    "bool": {
-                        "filter": [{"term": {"generic_hq_road_run": True}}],
-                        "_name": "road_run_fallback"
-                    }
-                }
-            ]
-        }
-    }
-    filt.append(fallback_block)
+    
+    # In fallback mode, car_model, frame_size, and frame_orientation remain as strict filters
+    # plus the road run flag
+    strict_fields = {"car_model", "frame_size", "frame_orientation"}
+    for tf in term_filters:
+        if "term" in tf:
+            for field in tf["term"]:
+                if field in strict_fields:
+                    filt.append(tf)
+    
+    filt.append({"term": {"generic_hq_road_run": True}})
     return filt
 
 
-def _build_fallback_should_boosts(term_filters: List[dict], enable_road_run_fallback: bool) -> List[dict]:
-    if not enable_road_run_fallback or not term_filters:
-        return []
+def _build_fallback_should_boosts(term_filters: List[dict], is_fallback: bool = False) -> List[dict]:
     should_boosts = []
-    for tf in term_filters:
-        if "term" in tf:
-            for field, val in tf["term"].items():
-                should_boosts.append({"term": {field: {"value": val, "boost": 1.1}}})
+    
+    # In fallback mode, non-strict fields become should boosts
+    if is_fallback:
+        strict_fields = {"car_model", "frame_size", "frame_orientation"}
+        for tf in term_filters:
+            if "term" in tf:
+                for field, val in tf["term"].items():
+                    if field not in strict_fields:
+                        # Handle case where val is already a dict like {"value": "text"}
+                        actual_val = val.get("value") if isinstance(val, dict) else val
+                        should_boosts.append({"term": {field: {"value": actual_val, "boost": 1.1}}})
+                        
     return should_boosts
 
 
@@ -240,10 +248,13 @@ def _wrap_bool_query(
     history_prefix: Optional[str],
     term_filters: List[dict],
     must_not: Optional[List[dict]] = None,
-    enable_road_run_fallback: bool = False,
+    extra_shoulds: Optional[List[dict]] = None,
+    is_fallback: bool = False,
 ) -> dict:
-    filt = _build_fallback_filter_block(term_filters, history_prefix, enable_road_run_fallback)
-    should = _build_fallback_should_boosts(term_filters, enable_road_run_fallback)
+    filt = _build_fallback_filter_block(term_filters, history_prefix, is_fallback)
+    should = _build_fallback_should_boosts(term_filters, is_fallback)
+    if extra_shoulds:
+        should.extend(extra_shoulds)
     
     if not filt and not must_not and not should:
         return inner
@@ -264,14 +275,17 @@ def _wrap_hybrid_query_with_filters(
     history_prefix: Optional[str],
     term_filters: List[dict],
     must_not: Optional[List[dict]] = None,
-    enable_road_run_fallback: bool = False,
+    extra_shoulds: Optional[List[dict]] = None,
+    is_fallback: bool = False,
 ) -> dict:
     """
     OpenSearch 要求 ``hybrid`` 为顶层 query，不能包在 ``bool.must`` 里。
     将 filter / must_not 下推到 hybrid 的每个子查询外层的 ``bool``（与 script_match 一致）。
     """
-    filt = _build_fallback_filter_block(term_filters, history_prefix, enable_road_run_fallback)
-    should = _build_fallback_should_boosts(term_filters, enable_road_run_fallback)
+    filt = _build_fallback_filter_block(term_filters, history_prefix, is_fallback)
+    should = _build_fallback_should_boosts(term_filters, is_fallback)
+    if extra_shoulds:
+        should.extend(extra_shoulds)
 
     hy = hybrid_query.get("hybrid") if isinstance(hybrid_query, dict) else None
     if not isinstance(hy, dict):
@@ -327,6 +341,7 @@ async def _video_analysis_client_rrf_hits(
     hist_prefix_opt: Optional[str],
     extra_term_filters: Optional[List[dict]] = None,
     must_not_multi_matches: Optional[List[dict]] = None,
+    extra_shoulds: Optional[List[dict]] = None,
 ) -> List[dict]:
     """
     When active KNN routes exceed OpenSearch hybrid cap, run BM25 + one KNN search per field
@@ -348,6 +363,7 @@ async def _video_analysis_client_rrf_hits(
             history_prefix=hist_prefix_opt,
             term_filters=list(extra_term_filters or []),
             must_not=must_not_multi_matches if must_not_multi_matches else None,
+            extra_shoulds=extra_shoulds,
         )
 
     mm = {
@@ -436,9 +452,22 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             req.use_rrf = bool(st.use_rrf)
             req.fuzzy = req.vector_weight > 0
 
-    query_text, term_filters, must_not_texts = _video_analysis_split_tokens(
-        raw_tokens, index_is_v2=index_is_v2
+    pseudo_seg, unassigned_text, has_unassigned, unassigned_must_nots = _reconstruct_pseudo_seg(raw_tokens)
+
+    from services.script_match_query_builder import (
+        segment_query_text,
+        build_filters,
+        build_should_boosts,
+        build_must_nots,
+        choose_vector_fields
     )
+
+    query_text_struct = segment_query_text(pseudo_seg)
+    query_text = (unassigned_text + " " + query_text_struct).strip() or "素材"
+
+    term_filters = build_filters(pseudo_seg, relax_partitions=False) or []
+    should_boosts = build_should_boosts(pseudo_seg) or []
+    must_not_multi_matches = build_must_nots(pseudo_seg) or []
 
     hist_prefix_opt: Optional[str] = None
 
@@ -469,15 +498,13 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         business_type="VIDEO_ANALYSIS_CARD_SEARCH",
         request_body=audit_body,
     )
-    match_hist_id = str(uuid.uuid4())
-
     async def _audit_va_search_finish(
         *,
         api_ok: bool,
         search_mode_final: str,
         cards_result: Optional[List[Dict[str, Any]]] = None,
         err_msg: Optional[str] = None,
-    ) -> None:
+    ) -> Optional[int]:
         elapsed_ms = int((time.perf_counter() - t_search0) * 1000)
         cards = cards_result or []
         hit_n = len(cards)
@@ -495,6 +522,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
                     or None
                 )
         st_snap: Dict[str, Any] = {
+            "name": req.strategy_name or None,
             "bm25_weight": req.bm25_weight,
             "vector_weight": req.vector_weight,
             "use_rrf": req.use_rrf,
@@ -503,11 +531,61 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             "vector_weights": req.vector_weights,
             "search_tokens": token_payload,
         }
+        enable_fallback: bool = req.enable_road_run_fallback
+        # 构造 top_hits_json（最多20条）和 top5_obs_urls（前5条 URL）
+        top_hits_list: Optional[List[Dict[str, Any]]] = None
+        top5_urls: Optional[List[str]] = None
+        if api_ok and cards:
+            raw_hits = _va_ordered_cards_to_trace_hits(cards)
+            top_hits_list = [
+                {
+                    "_id": h.get("_id"),
+                    "_score": h.get("_score"),
+                    "history_id": h.get("history_id"),
+                    "video_path": h.get("video_path"),
+                }
+                for h in raw_hits[:20]
+                if isinstance(h, dict)
+            ]
+            top5_urls = [
+                h["video_path"]
+                for h in top_hits_list[:5]
+                if h.get("video_path")
+            ] or None
         trace_hit_payload: Any = None
         if api_ok and cards:
             trace_hit_payload = trace_response_top_hits_with_explain(
                 _va_ordered_cards_to_trace_hits(cards)
             )
+
+        match_hist_id: Optional[int] = None
+        try:
+            async with mysql_connector.session_scope() as session:
+                hist = VideoMaterialMatchHistory(
+                    request_id=trace_rid,
+                    source="video_analysis_search",
+                    workspace=ws if ws and ws != "default" else None,
+                    status="done" if api_ok else "failed",
+                    va_context_history_id=history_id or None,
+                    query_preview=(query_text or "")[:512] or None,
+                    search_mode=search_mode_final,
+                    hit_count=hit_n,
+                    top1_obs_url=top1,
+                    elapsed_ms=float(elapsed_ms),
+                    error_message=err_msg if not api_ok else None,
+                    strategy_snapshot=st_snap,
+                    enable_road_run_fallback=enable_fallback,
+                    top_hits_json=top_hits_list,
+                    top5_obs_urls=top5_urls,
+                )
+                session.add(hist)
+                await session.flush()
+                await session.refresh(hist)
+                match_hist_id = hist.id
+                await session.commit()
+        except Exception as ex:
+            log.warning("va search material history persist failed: %s", ex)
+
         resp_trace: Dict[str, Any] = {
             "hit_count": hit_n,
             "search_mode": search_mode_final,
@@ -527,27 +605,8 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             )
         except Exception as ex:
             log.warning("va search trace finalize failed: %s", ex)
-        try:
-            async with mysql_connector.session_scope() as session:
-                hist = VideoMaterialMatchHistory(
-                    id=match_hist_id,
-                    request_id=trace_rid,
-                    source="video_analysis_search",
-                    workspace=ws if ws and ws != "default" else None,
-                    status="done" if api_ok else "failed",
-                    va_context_history_id=history_id or None,
-                    query_preview=(query_text or "")[:512] or None,
-                    search_mode=search_mode_final,
-                    hit_count=hit_n,
-                    top1_obs_url=top1,
-                    elapsed_ms=float(elapsed_ms),
-                    error_message=err_msg if not api_ok else None,
-                    strategy_snapshot=st_snap,
-                )
-                session.add(hist)
-                await session.commit()
-        except Exception as ex:
-            log.warning("va search material history persist failed: %s", ex)
+            
+        return match_hist_id
 
     IndexModel = CarInteriorAnalysisV2 if index_is_v2 else CarInteriorAnalysis
 
@@ -560,8 +619,10 @@ async def search_cards(req: VideoAnalysisSearchRequest):
     if req.text_weights:
         weights.update(req.text_weights)
     weighted_fields = [f"{f}^{weights.get(f, 1.0)}" for f in text_fields]
-    must_not_mm = _must_not_clauses_from_texts(must_not_texts, weighted_fields)
-    must_not_opt = must_not_mm if must_not_mm else None
+    must_not_mm = _must_not_clauses_from_texts(unassigned_must_nots, weighted_fields)
+    if must_not_mm:
+        must_not_multi_matches.extend(must_not_mm)
+    must_not_opt = must_not_multi_matches if must_not_multi_matches else None
 
     body: Optional[dict] = None
     pipeline_param: Optional[str] = None
@@ -588,6 +649,16 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             vec_weight_map.update(req.vector_weights)
 
         active_vecs = [f for f in vec_fields if float(vec_weight_map.get(f, 1.0) or 0) > 0]
+        
+        # If the user assigned ALL tags to specific fields, strictly prune the vector routes
+        # based on which fields are actually present in the tags.
+        if not has_unassigned and len(pseudo_seg.get("_search_tokens_json", [])) > 0:
+            structured_vecs = choose_vector_fields(
+                pseudo_seg, mode="fuzzy", primary="knn_marketing_phrases_vector"
+            )
+            # Intersect active_vecs (UI configured weights) with structured_vecs (fields that have tags)
+            active_vecs = [f for f in active_vecs if f in structured_vecs]
+
         ordered_vecs = sorted(
             active_vecs, key=lambda f: float(vec_weight_map.get(f, 1.0)), reverse=True
         )
@@ -613,7 +684,8 @@ async def search_cards(req: VideoAnalysisSearchRequest):
                     size=size,
                     hist_prefix_opt=hist_prefix_opt,
                     extra_term_filters=term_filters,
-                    must_not_multi_matches=must_not_opt,
+                    must_not_multi_matches=must_not_multi_matches,
+                    extra_shoulds=should_boosts,
                 )
                 search_mode = "fuzzy_rrf"
             except Exception as e:
@@ -679,16 +751,18 @@ async def search_cards(req: VideoAnalysisSearchRequest):
                     inner_q,
                     history_prefix=hist_prefix_opt,
                     term_filters=term_filters,
-                    must_not=must_not_opt,
-                    enable_road_run_fallback=req.enable_road_run_fallback,
+                    must_not=must_not_multi_matches,
+                    extra_shoulds=should_boosts,
+                    is_fallback=False,
                 )
             else:
                 body["query"] = _wrap_bool_query(
                     inner_q,
                     history_prefix=hist_prefix_opt,
                     term_filters=term_filters,
-                    must_not=must_not_opt,
-                    enable_road_run_fallback=req.enable_road_run_fallback,
+                    must_not=must_not_multi_matches,
+                    extra_shoulds=should_boosts,
+                    is_fallback=False,
                 )
         body["highlight"] = {
             "pre_tags": ["<em>"],
@@ -705,9 +779,64 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             search_params = {"search_pipeline": pipeline_param} if pipeline_param else None
             resp = await client.search(index=index_name, body=body, params=search_params)
             hits = ((resp.get("hits") or {}).get("hits") or [])
+            
+            # --- START STAGE 1.5: 软降级 fallback（非严格字段从 filter → should boost）---
+            # 当 Stage-1 精确过滤返回 0 条且存在非严格 term filter 时，
+            # 把 car_model/frame_orientation/frame_size 以外的字段降为 should boost，
+            # 不强制加路跑兜底，以保留横竖屏/车型严格限制的同时扩大召回范围。
+            _STRICT_FIELDS = {"car_model", "frame_size", "frame_orientation"}
+            _non_strict_filters = [
+                tf for tf in term_filters
+                if "term" in tf and any(f not in _STRICT_FIELDS for f in tf["term"])
+            ]
+            if len(hits) == 0 and _non_strict_filters and inner_q is not None:
+                if isinstance(inner_q, dict) and "hybrid" in inner_q:
+                    body["query"] = _wrap_hybrid_query_with_filters(
+                        inner_q,
+                        history_prefix=hist_prefix_opt,
+                        term_filters=term_filters,
+                        must_not=must_not_opt,
+                        is_fallback="soft",
+                    )
+                else:
+                    body["query"] = _wrap_bool_query(
+                        inner_q,
+                        history_prefix=hist_prefix_opt,
+                        term_filters=term_filters,
+                        must_not=must_not_opt,
+                        is_fallback="soft",
+                    )
+                resp15 = await client.search(index=index_name, body=body, params=search_params)
+                hits = ((resp15.get("hits") or {}).get("hits") or [])
+                if hits:
+                    search_mode = f"{search_mode}_soft"
+            # --- END STAGE 1.5 ---
+
+            # --- START STAGE 2 FALLBACK ---
+            if len(hits) == 0 and req.enable_road_run_fallback and inner_q is not None:
+                if isinstance(inner_q, dict) and "hybrid" in inner_q:
+                    body["query"] = _wrap_hybrid_query_with_filters(
+                        inner_q,
+                        history_prefix=hist_prefix_opt,
+                        term_filters=term_filters,
+                        must_not=must_not_opt,
+                        is_fallback=True,
+                    )
+                else:
+                    body["query"] = _wrap_bool_query(
+                        inner_q,
+                        history_prefix=hist_prefix_opt,
+                        term_filters=term_filters,
+                        must_not=must_not_opt,
+                        is_fallback=True,
+                    )
+                resp2 = await client.search(index=index_name, body=body, params=search_params)
+                hits = ((resp2.get("hits") or {}).get("hits") or [])
+                search_mode = f"{search_mode}_fallback"
+            # --- END STAGE 2 FALLBACK ---
     except Exception as e:
         log.error(f"video-analysis search failed: {e}")
-        await _audit_va_search_finish(api_ok=False, search_mode_final=search_mode, err_msg=str(e))
+        match_hist_id = await _audit_va_search_finish(api_ok=False, search_mode_final=search_mode, err_msg=str(e))
         return {
             "success": False,
             "error": str(e),
@@ -747,7 +876,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
             meta_by_key[k] = meta
 
     if not keys_in_order:
-        await _audit_va_search_finish(api_ok=True, search_mode_final=search_mode, cards_result=[])
+        match_hist_id = await _audit_va_search_finish(api_ok=True, search_mode_final=search_mode, cards_result=[])
         return {
             "success": True,
             "cards": [],
@@ -765,7 +894,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
         card = dict(by_key[k])
         card.update(meta_by_key.get(k) or {})
         ordered.append(card)
-    await _audit_va_search_finish(api_ok=True, search_mode_final=search_mode, cards_result=ordered)
+    match_hist_id = await _audit_va_search_finish(api_ok=True, search_mode_final=search_mode, cards_result=ordered)
     return {
         "success": True,
         "cards": ordered,

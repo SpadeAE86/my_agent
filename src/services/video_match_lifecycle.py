@@ -48,7 +48,7 @@ async def synthesize_shot_obs_audio(job_id: str, shot_row_id: int) -> Dict[str, 
             return {"success": False, "error": "shot not found after synthesis"}
         row2.obs_audio_url = url
         if dur is not None:
-            row2.duration_sec = float(dur)
+            row2.duration_sec = round(float(dur) + 0.4, 2)
         session.add(row2)
         await session.commit()
         payload = shot_row_to_api_dict(row2)

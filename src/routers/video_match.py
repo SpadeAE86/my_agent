@@ -206,6 +206,15 @@ async def rematch_video_match_shot_route(job_id: str, shot_row_id: int):
     """对单条分镜重新执行素材检索（与整 job 匹配共用策略快照）。"""
     return await rematch_video_match_shot(job_id, shot_row_id)
 
+@video_match_router.put("/jobs/{job_id}/shots/{shot_row_id}/tokens")
+async def update_shot_tokens_route(job_id: str, shot_row_id: int, body: dict = Body(...)):
+    """更新分镜的结构化搜索标签（AND/OR/NOT 节点）"""
+    tokens = body.get("tokens")
+    if not isinstance(tokens, list):
+        raise HTTPException(status_code=400, detail="tokens must be a list")
+    from services.video_match_service import update_shot_tokens
+    return await update_shot_tokens(job_id, shot_row_id, tokens)
+
 
 @video_match_router.get("/jobs/{job_id}/shots/{shot_row_id}/detail")
 async def get_video_match_shot_detail(job_id: str, shot_row_id: int):

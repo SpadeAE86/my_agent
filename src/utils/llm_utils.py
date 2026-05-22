@@ -1,4 +1,4 @@
-from openai import AsyncOpenAI
+﻿from openai import AsyncOpenAI
 import asyncio
 
 SYSTEM_PROMPT = """你是一个人工智能助手，协助用户解答问题和提供信息。请根据用户的提问，尽可能准确和详细地回答。如果你不确定答案，可以说你不知道，但不要编造信息。"""
@@ -53,7 +53,7 @@ async def chat(client: AsyncOpenAI, messages,
         # TODO: Handle streams properly with tool calls if needed
         message_content = ""
         async for delta in process_stream_response(response):
-            print(delta.model_dump())
+            _svc_print(delta.model_dump())
             text = delta.content or delta.reasoning_content or ""
             message_content += text
         class DummyMsg:
@@ -73,4 +73,4 @@ if __name__ == "__main__":
         {"role": "user", "content": "Hello, how are you?"}
     ]
     result = asyncio.run(chat(client, messages,stream=True))
-    print(f"receive: {result}")
+    _svc_print(f"receive: {result}")

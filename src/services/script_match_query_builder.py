@@ -16,6 +16,7 @@ from models.pydantic.opensearch_index.base_index import get_vector_fields, get_v
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 from models.pydantic.opensearch_index import index_v2_enums
 from utils.search_utils import truthy_list, chunks_from_query_parts  # noqa: F401 (re-exported for convenience)
+from utils.frame_orientation import infer_frame_orientation
 
 # Single source-of-truth for the "unknown / not set" sentinel used across enum fields.
 _UNKNOWN = index_v2_enums.UNKNOWN  # "未知"
@@ -369,22 +370,27 @@ def cap_global_merged_lists(
 
 def build_filters(seg: Dict[str, Any], *, relax_partitions: bool = False) -> List[Dict[str, Any]]:
     """
-    relaxed (``relax_partitions=True``): movement + video_usage.
-
-    strict (``relax_partitions=False``):
-      (至少命中 movement / product_status_scene / car_model 之一) ∨ generic_hq_road_run；
-      frame_size 仅参与 should 加权，不作硬过滤。
-
-    The partition arm uses **whatever terms are available** (1-3), not only when
-    all three are present.  Requiring all three caused segments that lack
-    ``car_model`` (often supplied at the script level, not inside each segment
-    dict) to collapse to ``road_run=True`` only — filtering out all non-road-run
-    clips and returning zero hits.
+    Hard constraints (AND).
+    If _search_tokens_json is present, it uses custom manual tags for MUST constraints.
+    Otherwise, defaults to strict AND for movement, product_status_scene, car_model.
     """
     filters: List[Dict[str, Any]] = []
 
+    tokens_json = seg.get("_search_tokens_json")
+    if isinstance(tokens_json, list) and len(tokens_json) > 0:
+        for t in tokens_json:
+            if not isinstance(t, dict):
+                continue
+            sf = (t.get("sourceField") or "").strip()
+            join = (t.get("join") or "AND").strip().upper()
+            text = (t.get("text") or "").strip()
+            is_not = bool(t.get("not"))
+            if sf and text and not is_not and join == "AND":
+                filters.append({"term": {sf: {"value": text}}})
+        return filters
+
+    mv = str(seg.get("movement") or "").strip()
     if relax_partitions:
-        mv = str(seg.get("movement") or "").strip()
         if mv and mv != _UNKNOWN:
             filters.append({"term": {"movement": {"value": mv}}})
         vu = seg.get("video_usage")
@@ -392,44 +398,23 @@ def build_filters(seg: Dict[str, Any], *, relax_partitions: bool = False) -> Lis
             vu2 = [str(x).strip() for x in vu if str(x).strip() and str(x).strip() != _UNKNOWN]
             if vu2:
                 filters.append({"terms": {"video_usage": vu2}})
-        # frame_size 只作 should 加权（见 build_should_boosts），不作硬过滤，避免口播侧比例与素材库枚举不一致时整镜 0 命中。
         return filters
 
-    mv = str(seg.get("movement") or "").strip()
     pss = str(seg.get("product_status_scene") or "").strip()
     cm = str(seg.get("car_model") or "").strip()
+    
+    fs = str(seg.get("frame_size") or "").strip()
+    orient_raw = str(seg.get("frame_orientation") or "").strip()
+    orient = orient_raw if orient_raw and orient_raw != _UNKNOWN else infer_frame_orientation(fs)
 
-    partition_terms: List[Dict[str, Any]] = []
     if mv and mv != _UNKNOWN:
-        partition_terms.append({"term": {"movement": {"value": mv}}})
+        filters.append({"term": {"movement": {"value": mv}}})
     if pss and pss != _UNKNOWN:
-        partition_terms.append({"term": {"product_status_scene": {"value": pss}}})
+        filters.append({"term": {"product_status_scene": {"value": pss}}})
     if cm and cm != _UNKNOWN:
-        partition_terms.append({"term": {"car_model": {"value": cm}}})
-
-    # Build the OR: (any available partition dimension) OR road_run.
-    # 历史上误用 bool.filter 把多 term 连成 AND，与「1～3 个维度任意命中」的意图相反，且 car_model 口径（LS6 vs 智己LS6）易全盘不匹配。
-    should_parts: List[Dict[str, Any]] = []
-    if partition_terms:
-        should_parts.append(
-            {"bool": {"should": partition_terms, "minimum_should_match": 1}}
-        )
-    should_parts.append({"term": {"generic_hq_road_run": True}})
-
-    if len(should_parts) == 1:
-        # Only road_run available (0 partition fields) → hard-require it.
-        filters.append(should_parts[0])
-    else:
-        filters.append({"bool": {"should": should_parts, "minimum_should_match": 1}})
-
-    # frame_size：同上，仅软约束，避免硬 AND 清空结果集。
-
-    # video_usage is intentionally NOT added as a hard filter here.
-    # The script-side video_usage ("希望用来做什么") and the index-side video_usage
-    # ("AI labelled this clip as") come from different labelling contexts and often
-    # don't align exactly.  Adding it as AND would silently kill results for valid
-    # clips (e.g. script says "烘托氛围" but indexed as "使用场景展示").
-    # It is instead added as a soft should-boost in build_should_boosts().
+        filters.append({"term": {"car_model": {"value": cm}}})
+    if orient and orient != _UNKNOWN:
+        filters.append({"term": {"frame_orientation": {"value": orient}}})
 
     return filters
 
@@ -480,7 +465,33 @@ def build_should_boosts(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
     add_terms("text", truthy_list(seg.get("text")), float(w["text"]))
     add_terms("video_usage", truthy_list(seg.get("video_usage")), float(w["video_usage"]))
 
+    tokens_json = seg.get("_search_tokens_json")
+    if isinstance(tokens_json, list) and len(tokens_json) > 0:
+        for t in tokens_json:
+            if not isinstance(t, dict):
+                continue
+            sf = (t.get("sourceField") or "").strip()
+            join = (t.get("join") or "AND").strip().upper()
+            text = (t.get("text") or "").strip()
+            is_not = bool(t.get("not"))
+            if sf and text and not is_not and join == "OR":
+                should.append({"term": {sf: {"value": text, "boost": 2.0}}})
+
     return should
+
+def build_must_nots(seg: Dict[str, Any]) -> List[Dict[str, Any]]:
+    must_nots: List[Dict[str, Any]] = []
+    tokens_json = seg.get("_search_tokens_json")
+    if isinstance(tokens_json, list) and len(tokens_json) > 0:
+        for t in tokens_json:
+            if not isinstance(t, dict):
+                continue
+            sf = (t.get("sourceField") or "").strip()
+            text = (t.get("text") or "").strip()
+            is_not = bool(t.get("not"))
+            if sf and text and is_not:
+                must_nots.append({"term": {sf: {"value": text}}})
+    return must_nots
 
 
 def choose_vector_fields(seg: Dict[str, Any], *, mode: str, primary: str) -> List[str]:
@@ -533,6 +544,9 @@ def build_road_run_fallback_query_body(
     seg_dur: float,
     used_ids: List[str],
     use_duration_score: bool,
+    car_model: str = "",
+    frame_size: str = "",
+    frame_orientation: str = "",
 ) -> Dict[str, Any]:
     """Build the OpenSearch query body for the generic road-run fallback step."""
     fb_body = qb.build_bm25_only_search(
@@ -542,11 +556,21 @@ def build_road_run_fallback_query_body(
         search_fields=text_fields,
     )
     inner_q = fb_body.get("query") or {"match_all": {}}
+    must_clauses: List[Dict[str, Any]] = [
+        inner_q,
+        {"term": {"generic_hq_road_run": True}},
+    ]
+    if car_model and car_model != _UNKNOWN:
+        must_clauses.append({"term": {"car_model": {"value": car_model}}})
+    if frame_size and frame_size != _UNKNOWN:
+        must_clauses.append({"term": {"frame_size": {"value": frame_size}}})
+    
+    orient = frame_orientation if frame_orientation and frame_orientation != _UNKNOWN else infer_frame_orientation(frame_size)
+    if orient and orient != _UNKNOWN:
+        must_clauses.append({"term": {"frame_orientation": {"value": orient}}})
+
     bool_inner: Dict[str, Any] = {
-        "must": [
-            inner_q,
-            {"term": {"generic_hq_road_run": True}},
-        ],
+        "must": must_clauses,
     }
     if used_ids:
         bool_inner["must_not"] = [{"ids": {"values": used_ids}}]

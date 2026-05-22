@@ -14,14 +14,9 @@ class VideoMatchJob(SQLModel, table=True):
 
     __tablename__ = "video_match_job"
 
-    id: str = Field(sa_column=Column(VARCHAR(36), primary_key=True, nullable=False))
+    id: Optional[int] = Field(default=None, sa_column=Column(Integer, primary_key=True, autoincrement=True))
 
     workspace: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(64), nullable=True))
-
-    serial_no: Optional[int] = Field(
-        default=None,
-        sa_column=Column(Integer, autoincrement=True, unique=True, index=True)
-    )
 
     script: str = Field(sa_column=Column(Text, nullable=False))
     topic: Optional[str] = Field(default=None, sa_column=Column(Text, nullable=True))
@@ -76,9 +71,9 @@ class VideoMatchShotRow(SQLModel, table=True):
     __table_args__ = (Index("ix_video_match_shot_row_job_shot_order", "job_id", "shot_order"),)
 
     id: Optional[int] = Field(default=None, primary_key=True)
-    job_id: str = Field(
+    job_id: int = Field(
         sa_column=Column(
-            VARCHAR(36),
+            Integer,
             ForeignKey("video_match_job.id", ondelete="CASCADE"),
             nullable=False,
             index=True,
@@ -93,6 +88,7 @@ class VideoMatchShotRow(SQLModel, table=True):
     description: str = Field(sa_column=Column(Text, nullable=False))
 
     tags_json: Optional[Dict[str, Any]] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
+    search_tokens_json: Optional[List[Dict[str, Any]]] = Field(default=None, sa_column=Column(MySQLJSON, nullable=True))
 
     extract_status: str = Field(
         default="pending",
@@ -114,10 +110,10 @@ class VideoMatchShotRow(SQLModel, table=True):
     search_request_id: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(36), nullable=True, index=True))
 
     # 联表 video_material_match_history.id：当前/最近一次素材检索履历（任务看板素材匹配）
-    match_id: Optional[str] = Field(
+    match_id: Optional[int] = Field(
         default=None,
         sa_column=Column(
-            VARCHAR(36),
+            Integer,
             ForeignKey("video_material_match_history.id", ondelete="SET NULL"),
             nullable=True,
             index=True,

@@ -130,6 +130,32 @@ def _dump_any(value: Any) -> Any:
     return value
 
 
+def _coerce_string_list(values: Any, expected_len: int) -> List[str]:
+    out: List[str] = []
+    if isinstance(values, list):
+        for value in values[:expected_len]:
+            if value is None:
+                out.append("")
+                continue
+            out.append(str(value).strip())
+    while len(out) < expected_len:
+        out.append("")
+    return out
+
+
+def _coerce_float_list(values: Any, expected_len: int) -> List[float]:
+    out: List[float] = []
+    if isinstance(values, list):
+        for value in values[:expected_len]:
+            try:
+                out.append(float(value or 0.0))
+            except (TypeError, ValueError):
+                out.append(0.0)
+    while len(out) < expected_len:
+        out.append(0.0)
+    return out
+
+
 def _segment_and_filter(seg: Dict[str, Any], car_model: str) -> Dict[str, Any]:
     frame_orientation = str(seg.get("frame_orientation") or "").strip() or DEFAULT_FRAME_ORIENTATION
     return {
@@ -161,23 +187,61 @@ async def _rewrite_one(item: Dict[str, Any], *, total: int) -> Dict[str, Any]:
 
     try:
         tts_audio_urls: List[Optional[str]] = []
-        storyboard, tags = await rewrite_script_to_storyboard_and_tags(
-            script=script,
-            topic=topic or None,
-            title=title or None,
-            car_model=car_model or None,
-            frame_size=frame_size,
-            frame_orientation=frame_orientation,
-            index=idx,
-            tts_obs_project_id=f"transcribe_{idx:03d}",
-            out_obs_audio_urls=tts_audio_urls,
-        )
+        storyboard = None
+        tags = None
+        last_error: Optional[Exception] = None
+        for attempt in range(1, 3):
+            try:
+                tts_audio_urls = []
+                storyboard, tags = await rewrite_script_to_storyboard_and_tags(
+                    script=script,
+                    topic=topic or None,
+                    title=title or None,
+                    car_model=car_model or None,
+                    frame_size=frame_size,
+                    frame_orientation=frame_orientation,
+                    index=idx,
+                    tts_obs_project_id=f"transcribe_{idx:03d}",
+                    out_obs_audio_urls=tts_audio_urls,
+                )
+                break
+            except Exception as e:
+                last_error = e
+                if attempt >= 2:
+                    raise
+                print(f"[{idx}/{total}] retry {attempt}/2 after error: {e}")
+                await asyncio.sleep(1)
+
+        if storyboard is None or tags is None:
+            raise RuntimeError(f"rewrite failed: {last_error}")
 
         stage1_dump = _dump_any(storyboard)
         stage2_dump = _dump_any(tags)
         segments = stage2_dump.get("segment_result") if isinstance(stage2_dump, dict) else []
         if not isinstance(segments, list):
             segments = []
+
+        stage1_story = getattr(storyboard, "storyboard", [])
+        expected_len = max(len(stage1_story), len(segments), len(tts_audio_urls))
+        audio_urls = _coerce_string_list(tts_audio_urls, expected_len)
+        stage2_durations = _coerce_float_list(
+            [seg.get("duration") if isinstance(seg, dict) else None for seg in segments],
+            expected_len,
+        )
+        stage1_durations = _coerce_float_list(
+            [getattr(seg, "duration", None) for seg in stage1_story],
+            expected_len,
+        )
+        segment_durations: List[float] = []
+        for i in range(expected_len):
+            dur = stage2_durations[i] if i < len(stage2_durations) else 0.0
+            if dur <= 0 and i < len(stage1_durations):
+                dur = stage1_durations[i]
+            segment_durations.append(dur if dur > 0 else 0.0)
+        if len(stage1_story) != len(segments):
+            print(
+                f"[{idx}/{total}] segment count mismatch storyboard={len(stage1_story)} stage2={len(segments)}"
+            )
 
         payload = TranscribeOutput(
             success=True,
@@ -194,10 +258,8 @@ async def _rewrite_one(item: Dict[str, Any], *, total: int) -> Dict[str, Any]:
             segment_and_filters=[
                 _segment_and_filter(seg, car_model) for seg in segments if isinstance(seg, dict)
             ],
-            audio_urls=list(tts_audio_urls),
-            segment_durations=[
-                float(seg.get("duration") or 0.0) if isinstance(seg, dict) else 0.0 for seg in segments
-            ],
+            audio_urls=audio_urls,
+            segment_durations=segment_durations,
         ).model_dump(exclude_none=True)
         out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")

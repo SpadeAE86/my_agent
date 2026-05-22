@@ -136,6 +136,8 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
         await session.commit()
 
         seg = dict(row.tags_json or {})
+        if getattr(row, "search_tokens_json", None):
+            seg["_search_tokens_json"] = row.search_tokens_json
         ws = (job.workspace or "v1").strip()
         shot_ver = "v2" if ws == "v2" else "v1"
 
@@ -175,7 +177,6 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
             upstream_task_id=jid,
             request_body=body_for_trace,
         )
-        match_hist_id = str(uuid.uuid4())
         try:
             async with mysql_connector.session_scope() as session:
                 db_row = await session.get(VideoMatchShotRow, sid)
@@ -189,7 +190,6 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
                     return
                 seg_preview = (db_row.segment_text or "").strip()[:512] or None
                 hist = VideoMaterialMatchHistory(
-                    id=match_hist_id,
                     request_id=trace_rid,
                     source="video_match_shot",
                     workspace=ws or None,
@@ -200,6 +200,10 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
                     strategy_snapshot=snap if isinstance(snap, dict) else None,
                 )
                 session.add(hist)
+                await session.flush()
+                await session.refresh(hist)
+                match_hist_id = hist.id
+
                 db_row.match_top_hits_json = to_store
                 db_row.match_elapsed_ms = elapsed
                 db_row.search_status = "done" if match_ok else "failed"
@@ -402,7 +406,12 @@ async def run_job_search(
         shot_ver,
     )
 
-    segments = [dict(r.tags_json or {}) for r in rows]
+    segments = []
+    for r in rows:
+        seg = dict(r.tags_json or {})
+        if getattr(r, "search_tokens_json", None):
+            seg["_search_tokens_json"] = r.search_tokens_json
+        segments.append(seg)
 
     async def persist_shot(idx: int, m: Dict[str, Any]) -> None:
         if idx < 0 or idx >= len(row_ids):
@@ -427,7 +436,6 @@ async def run_job_search(
             upstream_task_id=job_id,
             request_body=body_for_trace,
         )
-        match_hist_id = str(uuid.uuid4())
         seg_preview = (rows[idx].segment_text or "").strip()[:512] or None
         try:
             async with mysql_connector.session_scope() as session:
@@ -441,7 +449,6 @@ async def run_job_search(
                     )
                     return
                 hist = VideoMaterialMatchHistory(
-                    id=match_hist_id,
                     request_id=trace_rid,
                     source="video_match_shot",
                     workspace=job_workspace_for_hist or None,
@@ -453,6 +460,10 @@ async def run_job_search(
                     enable_road_run_fallback=enable_road_run_fallback,
                 )
                 session.add(hist)
+                await session.flush()
+                await session.refresh(hist)
+                match_hist_id = hist.id
+
                 row.match_top_hits_json = to_store
                 row.match_elapsed_ms = elapsed
                 row.search_status = "done" if match_ok else "failed"
@@ -617,35 +628,34 @@ async def create_job_and_parse(
     if not script:
         return {"success": False, "error": "script cannot be empty"}
 
-    job_id = str(uuid.uuid4())
     ws = (workspace or "v1").strip() or "v1"
 
     fs_norm = (frame_size or "").strip() or None
     fo_norm = _norm_job_frame_orientation(frame_orientation)
 
     async with mysql_connector.session_scope() as session:
-        session.add(
-            VideoMatchJob(
-                id=job_id,
-                workspace=ws,
-                script=script,
-                topic=topic.strip() if topic else None,
-                title=title.strip() if title else None,
-                car_model=car_model.strip() if car_model else None,
-                frame_size=fs_norm,
-                frame_orientation=fo_norm,
-                parse_status="running",
-            )
+        job = VideoMatchJob(
+            workspace=ws,
+            script=script,
+            topic=topic.strip() if topic else None,
+            title=title.strip() if title else None,
+            car_model=car_model.strip() if car_model else None,
+            frame_size=fs_norm,
+            frame_orientation=fo_norm,
+            parse_status="running",
         )
+        session.add(job)
         await session.commit()
+        await session.refresh(job)
+        job_id = job.id
 
     parse_rid = await http_request_trace_service.create_initial(
         request_url="/internal/video-match/parse",
         http_method="POST",
         method_name="POST /video-match/jobs",
         business_type="VIDEO_MATCH_PARSE",
-        business_id=job_id,
-        upstream_task_id=job_id,
+        business_id=str(job_id),
+        upstream_task_id=str(job_id),
         request_body=truncate_for_trace(
             {
                 "job_id": job_id,
@@ -1160,3 +1170,25 @@ async def run_shot_extract_tags(job_id: str, shot_row_id: int) -> Dict[str, Any]
         await session.commit()
         
     return {"success": True, "duration_ms": int((time.perf_counter() - t0) * 1000)}
+
+async def update_shot_tokens(job_id: str, shot_row_id: int, tokens: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    保存用户手动编辑的 AND/OR/NOT 标签到 search_tokens_json。
+    """
+    jid = (job_id or "").strip()
+    try:
+        sid = int(shot_row_id)
+    except (TypeError, ValueError):
+        sid = 0
+    if not jid or sid <= 0:
+        return {"success": False, "error": "invalid id"}
+
+    async with mysql_connector.session_scope() as session:
+        row = await session.get(VideoMatchShotRow, sid)
+        if row is None or str(row.job_id) != jid:
+            return {"success": False, "error": "shot not found"}
+        
+        row.search_tokens_json = tokens
+        session.add(row)
+        await session.commit()
+        return {"success": True}

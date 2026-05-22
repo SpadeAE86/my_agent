@@ -265,6 +265,7 @@ async def fill_timeline_after_top1(
     text_fields: List[str],
     search_pipeline: Optional[str],
     enable_road_run_fallback: bool = True,
+    seg: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """
     时长补全：
@@ -362,7 +363,19 @@ async def fill_timeline_after_top1(
     # ------------------------------------------------------------------
     used_ids = [str(x.get("_id") or "") for x in filled if x.get("_id")]
 
-    if acc < seg_dur and enable_road_run_fallback:
+    # Only use road run fallback if the primary search found absolutely nothing.
+    if len(filled) == 0 and enable_road_run_fallback:
+        car_model = str((seg or {}).get("car_model") or "")
+        frame_size = str((seg or {}).get("frame_size") or "")
+        
+        # Check if frame_orientation is explicitly defined in _search_tokens_json
+        frame_orientation = str((seg or {}).get("frame_orientation") or "")
+        tokens_json = (seg or {}).get("_search_tokens_json")
+        if isinstance(tokens_json, list):
+            for t in tokens_json:
+                if isinstance(t, dict) and str(t.get("sourceField") or "").strip() == "frame_orientation":
+                    frame_orientation = str(t.get("text") or "").strip()
+        
         fb_params = {"search_pipeline": search_pipeline} if search_pipeline else None
         fb_body = build_road_run_fallback_query_body(
             qb,
@@ -371,6 +384,9 @@ async def fill_timeline_after_top1(
             seg_dur=float(seg_dur),
             used_ids=used_ids,
             use_duration_score=True,
+            car_model=car_model,
+            frame_size=frame_size,
+            frame_orientation=frame_orientation,
         )
         try:
             fb_resp = await client.search(index=INDEX_NAME, body=fb_body, params=fb_params)
@@ -383,6 +399,9 @@ async def fill_timeline_after_top1(
                 seg_dur=float(seg_dur),
                 used_ids=used_ids,
                 use_duration_score=False,
+                car_model=car_model,
+                frame_size=frame_size,
+                frame_orientation=frame_orientation,
             )
             try:
                 fb_resp = await client.search(index=INDEX_NAME, body=fb_body_plain, params=fb_params)

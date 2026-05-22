@@ -197,6 +197,8 @@ async def _ensure_video_match_columns() -> None:
         "ALTER TABLE video_match_shot_row ADD COLUMN extract_request_id VARCHAR(36) NULL",
         "ALTER TABLE video_match_shot_row ADD COLUMN tags_json JSON NULL",
         "ALTER TABLE video_material_match_history ADD COLUMN enable_road_run_fallback BOOLEAN NULL",
+        "ALTER TABLE video_material_match_history ADD COLUMN top_hits_json JSON NULL",
+        "ALTER TABLE video_material_match_history ADD COLUMN top5_obs_urls JSON NULL",
     ]
     async with engine.begin() as conn:
         for sql in stmts:

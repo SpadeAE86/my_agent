@@ -1,12 +1,12 @@
 {
-  "biz_id": 785,
+  "biz_id": 429,
   "user_id": 0,
   "obs_video_path_list": [
-    "mpc_transcode_cache/23023/20260414-又帅又能打车-四轮转向-3_H.264_1008x1792_AAC_2100.mp4",
-    "mpc_transcode_cache/23023/20251208-旺仔大漂亮-离车泊入-3_H.264_1080x1920_AAC_2100.mp4",
-    "mpc_transcode_cache/23023/20250116-LS9官号-音响-1_H.264_2560x1440_AAC_4900.mp4",
-    "mpc_transcode_cache/23023/20250116-LS9官号-音响-1_H.264_2560x1440_AAC_4900.mp4",
-    "mpc_transcode_cache/23023/20251105-LS9官摄素材-后视镜-2_H.264_1920x1080_AAC_2100.mp4"
+    "mpc_transcode_cache/23023/20251106-KN-老小区停车-2_H.264_1920x1080_AAC_2100.mp4",
+    "mpc_transcode_cache/23023/20260121-爱车哈士奇驾驶测评-自动泊车-3_H.264_960x544_AAC_700.mp4",
+    "mpc_transcode_cache/23023/20251114-贝塔拍车日记-音响 (2)_H.264_1920x1080_AAC_2100.mp4",
+    "mpc_transcode_cache/23023/20251104-LS9官摄素材-沉浸式氛围-5_H.264_1920x1080_AAC_2100.mp4",
+    "mpc_transcode_cache/23023/20251127-说车的小青-车身多角度-1_H.264_1080x1920_AAC_2100.mp4"
   ],
   "fps": 30,
   "crop_config": [
@@ -66,14 +66,109 @@
       "cap_cnt": 1
     }
   ],
+  "cap_config": {
+    "caption_list": [
+      {
+        "start": 0.0,
+        "end": 1.82,
+        "cap": "后轮能跟着转",
+        "rotation": 0.0,
+        "outline_width": 2.0,
+        "scale": 1.0,
+        "font_size": 40,
+        "font_type": "Source Han Sans CN",
+        "color": "#ffffff",
+        "outline_color": "#000000",
+        "background_type": 0,
+        "line_spacing": 0,
+        "letter_spacing": 0,
+        "word_config": []
+      },
+      {
+        "start": 2.22,
+        "end": 4.390000000000001,
+        "cap": "再窄的车位也能一把进去",
+        "rotation": 0.0,
+        "outline_width": 2.0,
+        "scale": 1.0,
+        "font_size": 40,
+        "font_type": "Source Han Sans CN",
+        "color": "#ffffff",
+        "outline_color": "#000000",
+        "background_type": 0,
+        "line_spacing": 0,
+        "letter_spacing": 0,
+        "word_config": []
+      },
+      {
+        "start": 4.79,
+        "end": 7.83,
+        "cap": "B&O音响的金属罩子特别有质感",
+        "rotation": 0.0,
+        "outline_width": 2.0,
+        "scale": 1.0,
+        "font_size": 40,
+        "font_type": "Source Han Sans CN",
+        "color": "#ffffff",
+        "outline_color": "#000000",
+        "background_type": 0,
+        "line_spacing": 0,
+        "letter_spacing": 0,
+        "word_config": []
+      },
+      {
+        "start": 8.23,
+        "end": 10.63,
+        "cap": "像百万豪车才有的东西",
+        "rotation": 0.0,
+        "outline_width": 2.0,
+        "scale": 1.0,
+        "font_size": 40,
+        "font_type": "Source Han Sans CN",
+        "color": "#ffffff",
+        "outline_color": "#000000",
+        "background_type": 0,
+        "line_spacing": 0,
+        "letter_spacing": 0,
+        "word_config": []
+      },
+      {
+        "start": 11.030000000000001,
+        "end": 13.750000000000002,
+        "cap": "停好车都忍不住多看两眼",
+        "rotation": 0.0,
+        "outline_width": 2.0,
+        "scale": 1.0,
+        "font_size": 40,
+        "font_type": "Source Han Sans CN",
+        "color": "#ffffff",
+        "outline_color": "#000000",
+        "background_type": 0,
+        "line_spacing": 0,
+        "letter_spacing": 0,
+        "word_config": []
+      }
+    ],
+    "font_size": 40,
+    "font_type": "Source Han Sans CN",
+    "cap_color": "#ffffff",
+    "cap_outline_color": "#000000",
+    "cap_outline_width": 2.0,
+    "cap_background_color": "#000000ff",
+    "cap_absolute_x": 0.0,
+    "cap_absolute_y": 0.25,
+    "cap_background_type": 0,
+    "cap_line_spacing": 10,
+    "cap_letter_indent": 2
+  },
   "local_mode": false,
   "mute_config": [],
   "obs_audio_path_list": [
-    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0000.wav",
-    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0001.wav",
-    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0002.wav",
-    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0003.wav",
-    "aigc/aigc_local/94813b7a-b236-4a69-9624-885cbe4a387b/seg_0004.wav"
+    "aigc/aigc_local/18/seg_s105_0_203ed2805f.wav",
+    "aigc/aigc_local/18/seg_s106_1_32edabf8af.wav",
+    "aigc/aigc_local/18/seg_s107_2_e9c3e64471.wav",
+    "aigc/aigc_local/18/seg_s108_3_ff20a3ace0.wav",
+    "aigc/aigc_local/18/seg_s109_4_fa16cb3606.wav"
   ],
   "audio_config": [
     {

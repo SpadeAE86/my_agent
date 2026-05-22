@@ -62,7 +62,7 @@ async def download_resource(path_list, output_dir=None):
     return path_list
 
 async def upload_audio(audio_path, project_id="test"):
-    print(f"开始上传音频{audio_path}")
+    log.info(f"开始上传音频{audio_path}")
     if not audio_path:
         return ""
     obs_audio_path = await upload_to_obs(audio_path, obs_audio_prefix, project_id)
@@ -215,4 +215,4 @@ if __name__ == "__main__":
     ]
     for path in test_paths:
         exists = obs_key_exists(path)
-        print(f"[TEST] obs_path={path}, exists={exists}")
+        _svc_print(f"[TEST] obs_path={path}, exists={exists}")
