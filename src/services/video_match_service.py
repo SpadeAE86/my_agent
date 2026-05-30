@@ -17,6 +17,8 @@ from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
 from services.http_request_trace_service import http_request_trace_service
 from services.script_match_query_builder import INDEX_NAME
 from services.script_match_service import match_script_tags_segments
+from infra.storage.elasticsearch.search_coordinator import match_script_tags_segments_es
+from config.config import MY_CONFIG
 from services.video_analysis_db_service import video_analysis_db_service
 from services.video_match_http_trace import (
     hits_for_db_with_truncated_explain,
@@ -274,18 +276,33 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
         )
 
     try:
-        await match_script_tags_segments(
-            [seg],
-            top_k=int(top_k),
-            mode=mode,
-            shot_cards_version=shot_ver,
-            concurrency=1,
-            bm25_factor=bm25_f,
-            vector_factor=vec_f,
-            use_rrf=bool(strategy.use_rrf),
-            with_timings=True,
-            on_segment_done=persist_one,
-        )
+        search_provider = MY_CONFIG.get("search_provider", "opensearch")
+        if search_provider == "elasticsearch":
+            await match_script_tags_segments_es(
+                [seg],
+                top_k=int(top_k),
+                mode=mode,
+                shot_cards_version=shot_ver,
+                concurrency=1,
+                bm25_factor=bm25_f,
+                vector_factor=vec_f,
+                use_rrf=bool(strategy.use_rrf),
+                with_timings=True,
+                on_segment_done=persist_one,
+            )
+        else:
+            await match_script_tags_segments(
+                [seg],
+                top_k=int(top_k),
+                mode=mode,
+                shot_cards_version=shot_ver,
+                concurrency=1,
+                bm25_factor=bm25_f,
+                vector_factor=vec_f,
+                use_rrf=bool(strategy.use_rrf),
+                with_timings=True,
+                on_segment_done=persist_one,
+            )
     except Exception as e:
         log.exception("video_match rematch shot failed: {}", e)
         async with mysql_connector.session_scope() as session:
@@ -529,19 +546,35 @@ async def run_job_search(
 
     t_wall0 = time.perf_counter()
     try:
-        matches = await match_script_tags_segments(
-            segments,
-            top_k=int(top_k),
-            mode=mode,
-            shot_cards_version=shot_ver,
-            concurrency=MATCH_CONCURRENCY,
-            bm25_factor=bm25_f,
-            vector_factor=vec_f,
-            use_rrf=bool(strategy.use_rrf),
-            with_timings=True,
-            enable_road_run_fallback=enable_road_run_fallback,
-            on_segment_done=persist_shot,
-        )
+        search_provider = MY_CONFIG.get("search_provider", "opensearch")
+        if search_provider == "elasticsearch":
+            matches = await match_script_tags_segments_es(
+                segments,
+                top_k=int(top_k),
+                mode=mode,
+                shot_cards_version=shot_ver,
+                concurrency=MATCH_CONCURRENCY,
+                bm25_factor=bm25_f,
+                vector_factor=vec_f,
+                use_rrf=bool(strategy.use_rrf),
+                with_timings=True,
+                enable_road_run_fallback=enable_road_run_fallback,
+                on_segment_done=persist_shot,
+            )
+        else:
+            matches = await match_script_tags_segments(
+                segments,
+                top_k=int(top_k),
+                mode=mode,
+                shot_cards_version=shot_ver,
+                concurrency=MATCH_CONCURRENCY,
+                bm25_factor=bm25_f,
+                vector_factor=vec_f,
+                use_rrf=bool(strategy.use_rrf),
+                with_timings=True,
+                enable_road_run_fallback=enable_road_run_fallback,
+                on_segment_done=persist_shot,
+            )
     except Exception as e:
         log.exception("video_match search failed: {}", e)
         async with mysql_connector.session_scope() as session:

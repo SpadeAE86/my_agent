@@ -37,6 +37,8 @@ from services.video_analysis_db_service import video_analysis_db_service
 from services.video_match_service import _load_strategy_by_name
 from services.http_request_trace_service import http_request_trace_service
 from infra.logging.logger import logger as log
+from config.config import MY_CONFIG
+from infra.storage.elasticsearch.search_coordinator import search_cards_es
 from infra.storage.opensearch_connector import opensearch_connector
 from infra.storage.opensearch.query_builder import query_builder
 from models.pydantic.opensearch_index.car_interior_analysis import CarInteriorAnalysis
@@ -629,148 +631,169 @@ async def search_cards(req: VideoAnalysisSearchRequest):
     hits: Optional[List[dict]] = None
     search_mode = "precise"
 
-    if not req.fuzzy:
-        body = {
-            "size": size,
-            "query": {
-                "multi_match": {
-                    "query": query_text,
-                    "fields": weighted_fields,
-                    "type": "best_fields",
-                    "_name": "bm25_text_match",
-                }
-            },
-            "_source": {"excludes": vec_fields},
-        }
-        search_mode = "precise"
-    else:
-        vec_weight_map = get_vector_weights(IndexModel).copy()
-        if req.vector_weights:
-            vec_weight_map.update(req.vector_weights)
-
-        active_vecs = [f for f in vec_fields if float(vec_weight_map.get(f, 1.0) or 0) > 0]
-        
-        # If the user assigned ALL tags to specific fields, strictly prune the vector routes
-        # based on which fields are actually present in the tags.
-        if not has_unassigned and len(pseudo_seg.get("_search_tokens_json", [])) > 0:
-            structured_vecs = choose_vector_fields(
-                pseudo_seg, mode="fuzzy", primary="knn_marketing_phrases_vector"
-            )
-            # Intersect active_vecs (UI configured weights) with structured_vecs (fields that have tags)
-            active_vecs = [f for f in active_vecs if f in structured_vecs]
-
-        ordered_vecs = sorted(
-            active_vecs, key=lambda f: float(vec_weight_map.get(f, 1.0)), reverse=True
-        )
-
-        q_vec = await asyncio.get_running_loop().run_in_executor(
-            None,
-            functools.partial(query_builder._generate_embedding, query_text),
-        )
-
-        use_rrf = bool(req.use_rrf) and len(ordered_vecs) > 0
-
-        if use_rrf and len(ordered_vecs) > HYBRID_MAX_KNN:
-            try:
-                hits = await _video_analysis_client_rrf_hits(
-                    client,
-                    index_name=get_index_name(IndexModel),
-                    IndexModel=IndexModel,
-                    query_text=query_text,
-                    q_vec=q_vec,
-                    ordered_vec_fields=ordered_vecs,
-                    vec_weight_map=vec_weight_map,
-                    text_weights=req.text_weights,
-                    size=size,
-                    hist_prefix_opt=hist_prefix_opt,
-                    extra_term_filters=term_filters,
-                    must_not_multi_matches=must_not_multi_matches,
-                    extra_shoulds=should_boosts,
-                )
-                search_mode = "fuzzy_rrf"
-            except Exception as e:
-                log.error(f"video-analysis client RRF search failed: {e}")
-                await _audit_va_search_finish(
-                    api_ok=False, search_mode_final="fuzzy_rrf", err_msg=str(e)
-                )
-                return {
-                    "success": False,
-                    "error": str(e),
-                    "cards": [],
-                    "match_history_id": match_hist_id,
-                }
-        else:
-            top_vecs = ordered_vecs if use_rrf else ordered_vecs[:HYBRID_MAX_KNN]
-            body = query_builder.build_dynamic_hybrid_search(
-                IndexModel,
-                query_text,
+    search_provider = MY_CONFIG.get("search_provider", "opensearch")
+    if search_provider == "elasticsearch":
+        try:
+            hits, search_mode = await search_cards_es(
+                query_text=query_text,
+                req=req,
+                term_filters=term_filters,
+                should_boosts=should_boosts,
+                must_not_multi_matches=must_not_multi_matches,
                 size=size,
-                bm25_factor=1.0 if use_rrf else req.bm25_weight,
-                vector_factor=1.0 if use_rrf else req.vector_weight,
-                vector_fields=top_vecs,
-                query_vector=q_vec,
-                field_weight_overrides=req.text_weights,
-                vector_weight_overrides=req.vector_weights,
             )
-            num_q = 1 + len(top_vecs)
-            if use_rrf:
-                raw_w = [1.0] + [float(vec_weight_map.get(f, 1.0)) for f in top_vecs]
-                ssum = sum(raw_w) or 1.0
-                rrf_w = [x / ssum for x in raw_w]
-                pipeline_param = await ensure_rrf_pipeline(
-                    client,
-                    base_name="video-analysis-rrf",
-                    num_queries=num_q,
-                    weights=rrf_w,
-                )
-                search_mode = "fuzzy_rrf"
-            else:
-                pipeline_param = await ensure_hybrid_pipeline(
-                    client, pipeline_name="nlp-search-pipeline", num_queries=num_q
-                )
-                search_mode = "fuzzy"
+        except Exception as e:
+            log.error(f"video-analysis ES search failed: {e}")
+            match_hist_id = await _audit_va_search_finish(api_ok=False, search_mode_final="precise", err_msg=str(e))
+            return {
+                "success": False,
+                "error": str(e),
+                "cards": [],
+                "match_history_id": match_hist_id,
+            }
+    else:
+        if not req.fuzzy:
+            body = {
+                "size": size,
+                "query": {
+                    "multi_match": {
+                        "query": query_text,
+                        "fields": weighted_fields,
+                        "type": "best_fields",
+                        "_name": "bm25_text_match",
+                    }
+                },
+                "_source": {"excludes": vec_fields},
+            }
+            search_mode = "precise"
+        else:
+            vec_weight_map = get_vector_weights(IndexModel).copy()
+            if req.vector_weights:
+                vec_weight_map.update(req.vector_weights)
 
-    _HIGHLIGHT_FIELDS = [
-        "description",
-        "subject",
-        "object",
-        "design_selling_points",
-        "function_selling_points",
-        "scenario_a",
-        "scenario_b",
-        "marketing_phrases",
-        "appealing_audience",
-        "scene_location",
-    ]
+            active_vecs = [f for f in vec_fields if float(vec_weight_map.get(f, 1.0) or 0) > 0]
+            
+            # If the user assigned ALL tags to specific fields, strictly prune the vector routes
+            # based on which fields are actually present in the tags.
+            if not has_unassigned and len(pseudo_seg.get("_search_tokens_json", [])) > 0:
+                structured_vecs = choose_vector_fields(
+                    pseudo_seg, mode="fuzzy", primary="knn_marketing_phrases_vector"
+                )
+                # Intersect active_vecs (UI configured weights) with structured_vecs (fields that have tags)
+                active_vecs = [f for f in active_vecs if f in structured_vecs]
 
-    if body is not None:
-        inner_q = body.get("query")
-        if inner_q is not None:
-            if isinstance(inner_q, dict) and "hybrid" in inner_q:
-                body["query"] = _wrap_hybrid_query_with_filters(
-                    inner_q,
-                    history_prefix=hist_prefix_opt,
-                    term_filters=term_filters,
-                    must_not=must_not_multi_matches,
-                    extra_shoulds=should_boosts,
-                    is_fallback=False,
-                )
+            ordered_vecs = sorted(
+                active_vecs, key=lambda f: float(vec_weight_map.get(f, 1.0)), reverse=True
+            )
+
+            q_vec = await asyncio.get_running_loop().run_in_executor(
+                None,
+                functools.partial(query_builder._generate_embedding, query_text),
+            )
+
+            use_rrf = bool(req.use_rrf) and len(ordered_vecs) > 0
+
+            if use_rrf and len(ordered_vecs) > HYBRID_MAX_KNN:
+                try:
+                    hits = await _video_analysis_client_rrf_hits(
+                        client,
+                        index_name=get_index_name(IndexModel),
+                        IndexModel=IndexModel,
+                        query_text=query_text,
+                        q_vec=q_vec,
+                        ordered_vec_fields=ordered_vecs,
+                        vec_weight_map=vec_weight_map,
+                        text_weights=req.text_weights,
+                        size=size,
+                        hist_prefix_opt=hist_prefix_opt,
+                        extra_term_filters=term_filters,
+                        must_not_multi_matches=must_not_multi_matches,
+                        extra_shoulds=should_boosts,
+                    )
+                    search_mode = "fuzzy_rrf"
+                except Exception as e:
+                    log.error(f"video-analysis client RRF search failed: {e}")
+                    await _audit_va_search_finish(
+                        api_ok=False, search_mode_final="fuzzy_rrf", err_msg=str(e)
+                    )
+                    return {
+                        "success": False,
+                        "error": str(e),
+                        "cards": [],
+                        "match_history_id": match_hist_id,
+                    }
             else:
-                body["query"] = _wrap_bool_query(
-                    inner_q,
-                    history_prefix=hist_prefix_opt,
-                    term_filters=term_filters,
-                    must_not=must_not_multi_matches,
-                    extra_shoulds=should_boosts,
-                    is_fallback=False,
+                top_vecs = ordered_vecs if use_rrf else ordered_vecs[:HYBRID_MAX_KNN]
+                body = query_builder.build_dynamic_hybrid_search(
+                    IndexModel,
+                    query_text,
+                    size=size,
+                    bm25_factor=1.0 if use_rrf else req.bm25_weight,
+                    vector_factor=1.0 if use_rrf else req.vector_weight,
+                    vector_fields=top_vecs,
+                    query_vector=q_vec,
+                    field_weight_overrides=req.text_weights,
+                    vector_weight_overrides=req.vector_weights,
                 )
-        body["highlight"] = {
-            "pre_tags": ["<em>"],
-            "post_tags": ["</em>"],
-            "require_field_match": False,
-            "fields": {f: {"number_of_fragments": 2, "fragment_size": 80} for f in _HIGHLIGHT_FIELDS},
-        }
-        body["explain"] = search_mode != "fuzzy_rrf"
+                num_q = 1 + len(top_vecs)
+                if use_rrf:
+                    raw_w = [1.0] + [float(vec_weight_map.get(f, 1.0)) for f in top_vecs]
+                    ssum = sum(raw_w) or 1.0
+                    rrf_w = [x / ssum for x in raw_w]
+                    pipeline_param = await ensure_rrf_pipeline(
+                        client,
+                        base_name="video-analysis-rrf",
+                        num_queries=num_q,
+                        weights=rrf_w,
+                    )
+                    search_mode = "fuzzy_rrf"
+                else:
+                    pipeline_param = await ensure_hybrid_pipeline(
+                        client, pipeline_name="nlp-search-pipeline", num_queries=num_q
+                    )
+                    search_mode = "fuzzy"
+
+        _HIGHLIGHT_FIELDS = [
+            "description",
+            "subject",
+            "object",
+            "design_selling_points",
+            "function_selling_points",
+            "scenario_a",
+            "scenario_b",
+            "marketing_phrases",
+            "appealing_audience",
+            "scene_location",
+        ]
+
+        if body is not None:
+            inner_q = body.get("query")
+            if inner_q is not None:
+                if isinstance(inner_q, dict) and "hybrid" in inner_q:
+                    body["query"] = _wrap_hybrid_query_with_filters(
+                        inner_q,
+                        history_prefix=hist_prefix_opt,
+                        term_filters=term_filters,
+                        must_not=must_not_multi_matches,
+                        extra_shoulds=should_boosts,
+                        is_fallback=False,
+                    )
+                else:
+                    body["query"] = _wrap_bool_query(
+                        inner_q,
+                        history_prefix=hist_prefix_opt,
+                        term_filters=term_filters,
+                        must_not=must_not_multi_matches,
+                        extra_shoulds=should_boosts,
+                        is_fallback=False,
+                    )
+            body["highlight"] = {
+                "pre_tags": ["<em>"],
+                "post_tags": ["</em>"],
+                "require_field_match": False,
+                "fields": {f: {"number_of_fragments": 2, "fragment_size": 80} for f in _HIGHLIGHT_FIELDS},
+            }
+            body["explain"] = search_mode != "fuzzy_rrf"
 
     try:
         index_name = get_index_name(IndexModel)

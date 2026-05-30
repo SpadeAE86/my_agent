@@ -245,6 +245,7 @@ monitoring:
   ttl: 604800  # 数据有效期（秒，7天）
 
 need_callback: false
+search_provider: opensearch
 # HTTP 请求配置
 http:
   post:

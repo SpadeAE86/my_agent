@@ -23,6 +23,7 @@ from models.pydantic.model_output_schema.video_analysis_schema import SceneAnaly
 from models.pydantic.video_analysis_request import ShotCard
 from models.pydantic.opensearch_index.car_interior_analysis import CarInteriorAnalysis
 from infra.storage.opensearch.document_writer import bulk_index
+from config.config import MY_CONFIG
 from infra.logging.logger import logger as log
 from core.workspace import get_workspace
 
@@ -661,7 +662,11 @@ async def map_shotcards_to_car_interior_docs(
             continue
         
         if workspace == "v2":
-            from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
+            search_provider = MY_CONFIG.get("search_provider", "opensearch")
+            if search_provider == "elasticsearch":
+                from models.elasticsearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
+            else:
+                from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
             analysis_result = {
                 "id": f"{id_prefix}_{c.scene_id}",
                 "description": c.description or "",
@@ -740,10 +745,21 @@ async def index_shotcards_to_opensearch(
         return {"success": True, "items": 0}
     
     ws_cfg = get_workspace(workspace)
-    resp = await bulk_index(
-        ws_cfg.index_class,
-        docs,
-        refresh=refresh,
-        index_name_override=opensearch_index_name,
-    )
+    search_provider = MY_CONFIG.get("search_provider", "opensearch")
+    if search_provider == "elasticsearch":
+        from infra.storage.elasticsearch.document_writer import bulk_index as es_bulk_index
+        from models.elasticsearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
+        resp = await es_bulk_index(
+            CarInteriorAnalysisV2 if workspace == "v2" else ws_cfg.index_class,
+            docs,
+            refresh=refresh,
+            index_name_override=opensearch_index_name,
+        )
+    else:
+        resp = await bulk_index(
+            ws_cfg.index_class,
+            docs,
+            refresh=refresh,
+            index_name_override=opensearch_index_name,
+        )
     return {"success": True, "items": len(docs), "opensearch": resp}
