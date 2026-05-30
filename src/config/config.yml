@@ -302,6 +302,30 @@ opensearch:
     use_ssl: true
     verify_certs: false
 
+elasticsearch:
+  local:
+    host: 127.0.0.1
+    port: 9201
+    username: elastic
+    password: "myStrongPassword123!"
+    use_ssl: true
+    verify_certs: false
+  test:
+    host: 123.60.47.110
+    port: 9201
+    username: elastic
+    password: "FreeU123"
+    use_ssl: true
+    verify_certs: false
+  prod:
+    host: 192.168.0.107
+    port: 9201
+    username: elastic
+    password: "Freeu@123"
+    use_ssl: true
+    verify_certs: false
+
+
 mix_compose:
   mock: false
   # 根地址无路径；实际 POST = api_base + edit_path → …/api/v1/video/edit

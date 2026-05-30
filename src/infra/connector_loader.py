@@ -5,6 +5,7 @@ from infra.cache.redis_connector import redis_connector
 from infra.storage.mysql_connector import mysql_connector
 from infra.mq.rabbitmq_connector import rabbitmq_connector
 from infra.storage.opensearch_connector import opensearch_connector
+from infra.storage.elasticsearch_connector import elasticsearch_connector
 
 
 class ResourceLoader:
@@ -13,7 +14,8 @@ class ResourceLoader:
             redis_connector,
             mysql_connector,
             # rabbitmq_connector,
-            opensearch_connector
+            opensearch_connector,
+            elasticsearch_connector
         ]
 
     async def startup(self):
@@ -25,4 +27,4 @@ class ResourceLoader:
         for connector in reversed(self.connectors):
             await connector.close()
 
-connector_loader = ResourceLoader()
+connector_loader = ResourceLoader()
