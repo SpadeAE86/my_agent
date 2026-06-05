@@ -14,6 +14,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from utils.llm_utils import chat
+from core.agent.base_system_prompt import (
+    get_section_identity,
+    get_section_doing_tasks,
+    get_section_actions,
+    get_section_using_tools,
+    get_section_tone_style,
+    get_section_efficiency,
+)
 
 
 class Agent:
@@ -109,123 +117,27 @@ class Agent:
 
     def _section_identity(self) -> str:
         """身份与角色定义。"""
-        if self.mode == "coordinator":
-            return (
-                "# Identity\n\n"
-                "You are a Coordinator Agent. Your job is to:\n"
-                "- Help the user achieve their goal\n"
-                "- Direct workers to research, implement and verify code changes\n"
-                "- Synthesize results and communicate with the user\n"
-                "- Answer questions directly when possible — don't delegate work you can handle without tools"
-            )
-        elif self.is_base:
-            return (
-                "# Identity\n\n"
-                "You are the Main Agent, an AI assistant that helps users with software engineering tasks. "
-                "You can solve problems directly using your tools, or delegate complex sub-tasks to Sub Agents.\n\n"
-                "You are highly capable and should help users complete ambitious tasks that would otherwise "
-                "be too complex or take too long."
-            )
-        else:
-            return (
-                "# Identity\n\n"
-                "You are a Sub Agent, assisting the Main Agent. "
-                "Your task is to execute the specific objective assigned to you. "
-                "Complete the task fully — don't gold-plate, but don't leave it half-done.\n\n"
-                "When you complete the task, respond with a concise report covering what was done "
-                "and any key findings — the caller will relay this to the user."
-            )
+        return get_section_identity(self.mode, self.is_base)
 
     def _section_doing_tasks(self) -> str:
-        """做事规范 — 参考 claude-code getSimpleDoingTasksSection()。"""
-        return (
-            "# Doing Tasks\n\n"
-            "- Read and understand existing code before suggesting modifications.\n"
-            "- Do not create files unless absolutely necessary. Prefer editing existing files.\n"
-            "- Do not add features, refactor code, or make improvements beyond what was asked.\n"
-            "- If an approach fails, diagnose why before switching tactics — don't retry blindly.\n"
-            "- Be careful not to introduce security vulnerabilities.\n"
-            "- Report outcomes faithfully: if something failed, say so with the relevant output."
-        )
+        """做事规范 — 融合并扩展了 Claude Code 的做事准则与工程约束。"""
+        return get_section_doing_tasks()
 
     def _section_actions(self) -> str:
-        """行动准则 — 参考 claude-code getActionsSection()。"""
-        return (
-            "# Executing Actions\n\n"
-            "Carefully consider the reversibility and blast radius of actions. "
-            "For actions that are hard to reverse or affect shared systems, "
-            "check with the user before proceeding.\n\n"
-            "If the user has explicitly confirmed, approved, or asked you to follow instructions "
-            "(e.g., '按照我说的来', '直接执行', '确认', '继续吧'), proceed immediately with the actions/tools "
-            "without asking for confirmation again.\n\n"
-            "Examples requiring confirmation:\n"
-            "- Destructive operations: deleting files/branches, dropping tables\n"
-            "- Hard-to-reverse operations: force-pushing, git reset --hard\n"
-            "- Actions visible to others: pushing code, creating PRs, sending messages"
-        )
+        """行动准则 — 评估操作的可逆性与影响范围。"""
+        return get_section_actions()
 
     def _section_using_tools(self) -> str | None:
-        """工具使用指引 — 自动根据当前可用工具生成。"""
-        if self.tool_manager is None:
-            return None
-
-        tool_names = self.tool_manager.list_names()
-        if not tool_names:
-            return None
-
-        lines = ["# Using Your Tools\n"]
-
-        # 为 LLM 列出所有可用工具
-        for name in tool_names:
-            tool = self.tool_manager.get(name)
-            if tool:
-                lines.append(f"- **{tool.name}**: {tool.description}")
-
-        # 通用指引
-        lines.append("")
-        lines.append(
-            "You can call multiple tools in a single response. "
-            "If tools are independent, call them in parallel for efficiency. "
-            "If one depends on another's result, call them sequentially."
-        )
-
-        # 如果有 spawn_agent 工具，加上子 Agent 使用说明
-        if "spawn_agent" in tool_names:
-            lines.append("")
-            lines.append(
-                "## Spawning Sub Agents\n\n"
-                "Use the spawn_agent tool for complex sub-tasks that require multiple steps. "
-                "The sub-agent starts with zero context — brief it like a colleague who just walked in. "
-                "Explain what you're trying to accomplish, what you've already learned, "
-                "and give enough context for it to make judgment calls.\n\n"
-                "Do NOT delegate understanding. Don't write 'based on your findings, fix the bug'. "
-                "Write prompts that prove you understood: include file paths, line numbers, what to change."
-            )
-
-        return "\n".join(lines)
+        """工具使用指引 — 自动根据当前可用工具生成，并整合专属工具优先的规范。"""
+        return get_section_using_tools(self.tool_manager)
 
     def _section_tone_style(self) -> str:
         """语气与风格。"""
-        return (
-            "# Tone and Style\n\n"
-            "- Be concise. Keep responses short and direct.\n"
-            "- Lead with the answer or action, not the reasoning.\n"
-            "- Only use emojis if the user explicitly requests it.\n"
-            "- When referencing code, include file_path:line_number for easy navigation."
-        )
+        return get_section_tone_style()
 
     def _section_efficiency(self) -> str:
-        """输出效率 — 参考 claude-code getOutputEfficiencySection()。"""
-        return (
-            "# Output Efficiency\n\n"
-            "Go straight to the point. Try the simplest approach first. "
-            "Do not overdo it. Be extra concise.\n\n"
-            "Focus text output on:\n"
-            "- Decisions that need the user's input\n"
-            "- High-level status updates at natural milestones\n"
-            "- Errors or blockers that change the plan\n\n"
-            "If you can say it in one sentence, don't use three."
-        )
+        """输出效率。"""
+        return get_section_efficiency()
 
     def _section_env_info(self) -> str:
         """环境信息 — 参考 claude-code computeSimpleEnvInfo()。"""
