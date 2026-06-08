@@ -44,7 +44,10 @@ def print_event(event):
     t = event.event_type
     aid = getattr(event, "agent_id", "")
 
-    if t == "status_update":
+    if t == "session_compacted":
+        print(f"\n[COMPACTION] History compressed. Summary: {event.summary}")
+
+    elif t == "status_update":
         print(f"\n⏳ [{aid}] {event.message}")
 
     elif t == "agent_thought":

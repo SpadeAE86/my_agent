@@ -3,6 +3,12 @@ def get_section_doing_tasks() -> str:
     return (
         "# Doing Tasks\n\n"
         "The user will primarily request you to perform software engineering tasks. These may include solving bugs, adding new functionality, refactoring code, explaining code, and more. When given an unclear or generic instruction, consider it in the context of these software engineering tasks and the current working directory.\n\n"
+        "## Workspace and Directory Structure Guidelines\n"
+        "You should operate and store files within their designated paths to maintain workspace hygiene:\n"
+        "- **Codebase (Current Working Directory)**: Perform software engineering tasks (fixing bugs, implementing features) directly in the source tree (e.g., `src/`).\n"
+        "- **Data Persistence (`data/`)**: For any non-code outputs, generated assets, force-directed graphs, temporary files, downloaded media, or extracted text data, always write them under the `data/` directory (e.g., `data/`, `data/graphs/`). Do not pollute the source code directories with raw data or intermediate files.\n"
+        "- **Memory & History (`src/core/memory/`)**: Conversation history is managed automatically by the framework in `.jsonl` format. Do not manually edit or delete files in `src/core/memory/` unless explicitly instructed.\n"
+        "- **Skills SOPs (`src/skills/`)**: Standard operating procedures are stored here as skills. When performing specific workflows, check these files for instructions.\n\n"
         "## Core Task Execution Guidelines\n"
         "- **Read Relevant Code First**: In general, do not propose changes to code you haven't read. If a user asks about or wants you to modify a file, read it first. Understand existing code before suggesting modifications.\n"
         "- **Tightly Scoped Modifications**: Read relevant code before changing it and keep changes tightly scoped to the request. Don't add features, refactor code, or make 'improvements' beyond what was asked. A bug fix doesn't need surrounding code cleaned up. A simple feature doesn't need extra configurability. Don't add docstrings, comments, or type annotations to code you didn't change. Only add comments where the logic isn't self-evident.\n"

@@ -1,7 +1,36 @@
-# infra/scheduler/scheduler.py — APScheduler 封装
-# 职责:
-#   1. 封装 APScheduler, 提供 add_job / remove_job / pause_job 接口
-#   2. 支持 Cron 表达式 (如: 每天凌晨 3 点执行记忆压缩)
-#   3. 支持 Interval 触发 (如: 每 30 分钟心跳)
-#   4. 持久化 job store (重启后恢复已注册的任务)
-#   5. 与 FastAPI 生命周期集成 (startup/shutdown)
+# infra/scheduler/scheduler.py — AsyncIOScheduler Wrapper
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from infra.logging.logger import logger as log
+
+class AsyncIOSchedulerManager:
+    def __init__(self):
+        self._scheduler = AsyncIOScheduler()
+        self._is_running = False
+
+    def start(self):
+        if not self._is_running:
+            self._scheduler.start()
+            self._is_running = True
+            log.info("AsyncIOScheduler started successfully")
+
+    def shutdown(self):
+        if self._is_running:
+            self._scheduler.shutdown()
+            self._is_running = False
+            log.info("AsyncIOScheduler shutdown successfully")
+
+    def add_cron_job(self, func, job_id: str, hour: int = 0, minute: int = 0, args: list = None):
+        """Adds a daily cron job at the specified hour and minute."""
+        self._scheduler.add_job(
+            func,
+            trigger="cron",
+            hour=hour,
+            minute=minute,
+            id=job_id,
+            args=args or [],
+            replace_existing=True
+        )
+        log.info(f"Scheduled daily cron job '{job_id}' at {hour:02d}:{minute:02d}")
+
+# Singleton instance
+scheduler_manager = AsyncIOSchedulerManager()

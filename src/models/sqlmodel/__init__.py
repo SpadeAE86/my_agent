@@ -21,4 +21,5 @@ from .video_upload_cache import VideoSourceUploadCache  # noqa: F401
 from .video_material_match import VideoMaterialMatchHistory  # noqa: F401
 from .video_match import VideoMatchJob, VideoMatchShotRow  # noqa: F401
 from .video_mix_compose import VideoMixComposeJob  # noqa: F401
+from .workspace import Workspace, WorkspaceNode, WorkspaceEdge  # noqa: F401
 

@@ -1,6 +1,64 @@
-# core/memory/memory_manager.py — 记忆统一调度接口
-# 职责:
-#   1. 对外暴露统一的 read/write/search 方法
-#   2. 根据请求类型路由到对应的记忆层 (short/mid/long)
-#   3. 上下文组装: 为 prompt 自动拼接相关的短期 + 检索到的长期记忆
-#   4. 管理 diskcache 锁, 协调多 Agent 并发访问
+# core/memory/memory_manager.py — Unified Memory interface
+from pathlib import Path
+from core.memory import long_term
+
+MAX_ENTRYPOINT_LINES = 200
+MAX_ENTRYPOINT_BYTES = 25000
+
+def truncate_memory_content(raw: str) -> str:
+    """Truncates memory content to line and byte limits, appending a warning if exceeded."""
+    trimmed = raw.strip()
+    if not trimmed:
+        return ""
+        
+    lines = trimmed.split("\n")
+    line_count = len(lines)
+    byte_count = len(trimmed)
+    
+    was_line_truncated = line_count > MAX_ENTRYPOINT_LINES
+    was_byte_truncated = byte_count > MAX_ENTRYPOINT_BYTES
+    
+    if not was_line_truncated and not was_byte_truncated:
+        return trimmed
+        
+    # Truncate by lines first
+    truncated_lines = lines[:MAX_ENTRYPOINT_LINES]
+    truncated = "\n".join(truncated_lines)
+    
+    # Truncate by bytes if still too large
+    if len(truncated) > MAX_ENTRYPOINT_BYTES:
+        cut_at = truncated.rfind("\n", 0, MAX_ENTRYPOINT_BYTES)
+        truncated = truncated[:cut_at if cut_at > 0 else MAX_ENTRYPOINT_BYTES]
+        
+    reason = ""
+    if was_byte_truncated and not was_line_truncated:
+        reason = f"{byte_count} bytes (limit: {MAX_ENTRYPOINT_BYTES})"
+    elif was_line_truncated and not was_byte_truncated:
+        reason = f"{line_count} lines (limit: {MAX_ENTRYPOINT_LINES})"
+    else:
+        reason = f"{line_count} lines and {byte_count} bytes"
+        
+    warning = (
+        f"\n\n> WARNING: MEMORY.md is truncated due to exceeding {reason}. "
+        "Only part of it was loaded. Keep index entries to one line under ~200 chars; "
+        "move detail into topic files."
+    )
+    return truncated + warning
+
+async def get_memory_prompt(user_id: str, skip_memory: bool = False) -> str | None:
+    """
+    Reads MEMORY.md and constructs the memory section for the system prompt.
+    Returns None if skip_memory is True or memory is empty.
+    """
+    if skip_memory:
+        return None
+        
+    raw_memory = long_term.load_long_term_memory(user_id)
+    if not raw_memory.strip():
+        return None
+        
+    formatted = truncate_memory_content(raw_memory)
+    if not formatted.strip():
+        return None
+        
+    return f"# Memory\n\n{formatted}"

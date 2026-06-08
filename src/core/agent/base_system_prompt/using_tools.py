@@ -33,7 +33,10 @@ def get_section_using_tools(tool_manager: Any) -> str | None:
     lines.append(
         "You can call multiple tools in a single response. "
         "If you intend to call multiple tools and there are no dependencies between them, make all independent tool calls in parallel to increase efficiency. "
-        "However, if some tool calls depend on previous calls to inform dependent values, do NOT call these tools in parallel and instead call them sequentially."
+        "However, if some tool calls depend on previous calls to inform dependent values, do NOT call these tools in parallel and instead call them sequentially.\n\n"
+        "**CRITICAL FRAMEWORK CONSTRAINT / 框架核心约束**:\n"
+        "- If you decide to perform any action (such as reading the canvas, updating nodes, or generating images), you MUST output the corresponding tool calls *immediately* in the same response. Do NOT output a conversational response saying you 'will do it' or 'plan to do it' without attaching the tool call, because the framework will automatically terminate the loop and close the session if no tool calls are emitted.\n"
+        "- 如果你决定执行任何操作（例如读取画布、更新节点、读取/分析图片、生成图像等），你必须在当前回复中**立即**输出对应的工具调用（tool call）。绝对不能只在回复中说“我将去读取图片”、“我准备对比一下”等陈述性计划文本而不附带任何工具调用！因为如果没有输出工具调用，框架会自动认为任务已结束并终止运行会话。"
     )
 
     # 子 Agent 说明 (如存在 spawn_agent)

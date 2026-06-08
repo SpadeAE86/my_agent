@@ -64,6 +64,13 @@ async def lifespan(app: FastAPI):
     try:
         # Initialize infra connectors (mysql/redis/rabbitmq/opensearch)
         await connector_loader.startup()
+        
+        # Start background job scheduler
+        from infra.scheduler.scheduler import scheduler_manager
+        from infra.scheduler.jobs.memory_summary import run_job_sync
+        scheduler_manager.start()
+        scheduler_manager.add_cron_job(run_job_sync, "daily_memory_summary", hour=0, minute=0)
+        
         # Create SQLModel tables if missing
         await create_tables_if_not_exists()
 
@@ -101,6 +108,13 @@ async def lifespan(app: FastAPI):
         log.info("已向后台派发向量模型预热；HTTP 即将就绪（向量化入库前会等待预热完成）。")
         yield
     finally:
+        # Shutdown background job scheduler
+        try:
+            from infra.scheduler.scheduler import scheduler_manager
+            scheduler_manager.shutdown()
+        except Exception as se:
+            log.warning(f"scheduler shutdown failed: {se}")
+
         if warmup_task is not None and not warmup_task.done():
             warmup_task.cancel()
             with contextlib.suppress(asyncio.CancelledError):

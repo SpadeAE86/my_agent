@@ -42,6 +42,7 @@ src/test/workspace/
 src/test/workspace/**
 src/test/scripts/
 src/test/scripts/**
+data/
 **/sample/
 **/sample/**
 **/workspace/

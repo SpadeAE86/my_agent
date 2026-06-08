@@ -19,8 +19,8 @@ from infra.logging.logger import logger as log
 class GenerateImageInput(ToolInput):
     """generate_image 工具的入参。"""
     prompt: str = Field(..., description="生图提示词，详细描述想要生成的画面内容")
-    size: str = Field(default="720x1280", description="图片尺寸，如 '720x1280', '1280x720', '1024x1024'")
-    model: str = Field(default="Seedream 5.0", description="使用的生图模型，如 'Seedream 5.0', 'Seedream 4.5', 'gpt-image-2'")
+    size: str = Field(default="1440x2560", description="图片尺寸。注意：当使用 Seedream 5.0 时，总像素必须达到 3,686,400 像素以上（如 '1440x2560' (9:16), '2560x1440' (16:9), 或 '1920x1920' (1:1)）。默认使用 '1440x2560'。")
+    model: str = Field(default="Seedream 5.0", description="使用的生图模型，如 'Seedream 5.0' (要求使用 2K 级别的高分辨率尺寸，不支持 1K 尺寸), 'Seedream 4.5', 'gpt-image-2'")
     reference_image_list: Optional[List[str]] = Field(default=None, description="参考图URL列表")
     ratio: Optional[str] = Field(default=None, description="图片宽高比")
 

@@ -5,11 +5,22 @@ from core.skills.loader import skill_loader
 
 
 class SkillSelector:
-    def select_skills(self, query: str) -> List[Dict[str, Any]]:
+    def select_skills(self, query: str | list) -> List[Dict[str, Any]]:
         """
         根据用户查询匹配相关的技能。
         目前采用简单的关键词匹配策略。
         """
+        if isinstance(query, list):
+            text_parts = []
+            for part in query:
+                if isinstance(part, dict) and part.get("type") == "text":
+                    text_parts.append(part.get("text") or "")
+                elif isinstance(part, str):
+                    text_parts.append(part)
+            query = " ".join(text_parts)
+        elif not isinstance(query, str):
+            query = str(query)
+
         query_lower = query.lower()
         matched = []
         for skill in skill_loader.list_skills():

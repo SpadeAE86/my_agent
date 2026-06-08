@@ -354,39 +354,26 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
         log.info(f"收到图片生成请求: model={req.model}, size={req.size}, async={async_mode}")
         log.info(f"提示词: {req.prompt}")
         if req.reference_image_list:
-            log.info(f"参考图列表:\n {"\n".join(req.reference_image_list)}")
-        if not async_mode:
-            # 原有的同步模式（保留用于备选）
-            image_url = await service_generate_image(
-                prompt=req.prompt,
-                model=req.model.value,
-                size=req.size,
-                reference_image_list=req.reference_image_list
-            )
-            if image_url:
-                log.info(f"图片生成成功(同步): {image_url}")
-                return ImageGenerateResponse(success=True, image_url=image_url)
-            else:
-                return ImageGenerateResponse(success=False, error="图片生成失败")
-        
-        # 异步模式：先占位 + HTTP 追踪行（任务看板详情联表）
-        import uuid
+            log.info(f"参考图列表:\n " + "\n".join(req.reference_image_list))
 
+        import uuid
         task_id = str(uuid.uuid4())
         now = datetime.datetime.now()
         time_str = now.strftime("%m-%d %H:%M")
         run_start = datetime.datetime.now(datetime.timezone.utc)
 
+        # 异步模式下使用 /image，同步下使用 /image?async_mode=false 作为 trace_url
+        trace_url = "/image" if async_mode else "/image?async_mode=false"
         trace_id = await http_request_trace_service.create_initial(
-            request_url="/image",
+            request_url=trace_url,
             http_method="POST",
             request_body=req.model_dump(mode="json"),
             business_type="IMAGE_GEN",
-            method_name="POST /image",
+            method_name=f"POST {trace_url}",
             upstream_task_id=task_id,
         )
 
-        # 准备入库基础数据
+        # 统一写入初始的基础运行状态，使对比页面和历史看板能及时显示记录
         payload = {
             "id": task_id,
             "prompt": req.prompt,
@@ -402,6 +389,89 @@ async def generate_image(req: ImageGenerateRequest, background_tasks: Background
         }
         await image_history_db_service.upsert_many([payload])
 
+        if not async_mode:
+            # 同步模式下的生图执行
+            t0 = time.monotonic()
+            try:
+                image_url = await service_generate_image(
+                    prompt=req.prompt,
+                    model=req.model.value,
+                    size=req.size,
+                    reference_image_list=req.reference_image_list
+                )
+                duration_ms = int((time.monotonic() - t0) * 1000)
+
+                if image_url:
+                    prefix = "ai_picture/generated_image"
+                    obs_url = image_url
+                    try:
+                        obs_url = await mirror_remote_url_to_obs(image_url, obs_prefix=prefix)
+                        log.info(f"[mirror] updated {task_id} url -> {obs_url}")
+                    except Exception as e:
+                        log.warning(f"[mirror] failed for {task_id}: {e}")
+
+                    # 更新为成功状态并填充最终的 obs_url/doubao_url
+                    await image_history_db_service.upsert_many([
+                        {
+                            "id": task_id,
+                            "obs_url": obs_url,
+                            "doubao_url": image_url,
+                            "status": "success",
+                        }
+                    ])
+
+                    await http_request_trace_service.finalize(
+                        trace_id,
+                        status_code=200,
+                        response_body={
+                            "success": True,
+                            "image_url": image_url,
+                            "obs_url": obs_url,
+                            "task_id": task_id,
+                        },
+                        duration_ms=duration_ms,
+                        business_success=True,
+                    )
+                    log.info(f"图片生成成功(同步): {image_url}")
+                    return ImageGenerateResponse(success=True, image_url=obs_url, task_id=task_id)
+                else:
+                    await image_history_db_service.upsert_many([
+                        {
+                            "id": task_id,
+                            "status": "failed",
+                            "error": "生成失败，未获取到 URL",
+                        }
+                    ])
+                    await http_request_trace_service.finalize(
+                        trace_id,
+                        status_code=500,
+                        error_message="生成失败，未获取到 URL",
+                        response_body={"success": False, "error": "生成失败，未获取到 URL"},
+                        duration_ms=duration_ms,
+                        business_success=False,
+                    )
+                    return ImageGenerateResponse(success=False, error="图片生成失败")
+            except Exception as e:
+                duration_ms = int((time.monotonic() - t0) * 1000)
+                log.error(f"图片生成异常(同步): {e}")
+                await image_history_db_service.upsert_many([
+                    {
+                        "id": task_id,
+                        "status": "failed",
+                        "error": str(e),
+                    }
+                ])
+                await http_request_trace_service.finalize(
+                    trace_id,
+                    status_code=500,
+                    error_message=str(e),
+                    response_body={"success": False, "error": str(e)},
+                    duration_ms=duration_ms,
+                    business_success=False,
+                )
+                return ImageGenerateResponse(success=False, error=str(e))
+        
+        # 异步模式：提交至后台进程任务直接返回
         background_tasks.add_task(run_image_generation_job, task_id, req, trace_id)
         return ImageGenerateResponse(success=True, task_id=task_id)
             

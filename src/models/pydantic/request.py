@@ -78,6 +78,7 @@ class ChatRequest(BaseModel):
     user_id: str = Field(default="default_user", description="用户标识")
     model: str = Field(default="gpt-5.4", description="指定模型")
     max_iterations: int = Field(default=10, description="Agent 最大迭代轮次", ge=1, le=50)
+    reference_image_list: Optional[list[str]] = Field(default=None, description="参考图公网URL列表")
 
 class VideoGenerateRequest(BaseModel):
     """POST /video 的请求体"""

@@ -103,6 +103,12 @@ class StatusUpdate(BaseEvent):
     message: str = Field(default="", description="人类可读的状态描述")
 
 
+class SessionCompacted(BaseEvent):
+    """会话压缩事件"""
+    event_type: Literal["session_compacted"] = "session_compacted"
+    summary: str = Field(..., description="会话历史压缩生成的摘要内容")
+
+
 # ─── 联合类型（核心！）──────────────────────────────────────────
 # 用 Discriminated Union，Pydantic 可以根据 event_type 自动选择正确的子类反序列化
 AgentEvent = Union[
@@ -116,4 +122,5 @@ AgentEvent = Union[
     TaskComplete,
     ErrorEvent,
     StatusUpdate,
+    SessionCompacted,
 ]

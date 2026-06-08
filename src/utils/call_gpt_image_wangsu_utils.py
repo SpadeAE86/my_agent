@@ -56,7 +56,7 @@ def _size_str_to_aspect_ratio(size: str) -> str:
     return f"{w // g}:{h // g}"
 
 
-def _file_tuple_for_reference(img: str):
+def _file_tuple_for_reference(img: str, field_name: str = "image"):
     if img.startswith(("http://", "https://")):
         r = requests.get(img, timeout=120, proxies=_NO_PROXY)
         r.raise_for_status()
@@ -64,8 +64,8 @@ def _file_tuple_for_reference(img: str):
         if "/" not in ct:
             ct = "image/png"
         name = img.rstrip("/").rsplit("/", 1)[-1].split("?")[0] or "reference.png"
-        return ("image", (name, BytesIO(r.content), ct))
-    return ("image", open(img, "rb"))
+        return (field_name, (name, BytesIO(r.content), ct))
+    return (field_name, open(img, "rb"))
 
 
 def _parse_image_url_from_response(result: dict) -> str:
@@ -106,7 +106,9 @@ async def call_gpt_image_wangsu_edge(
         log.info(f"[WangsuImg] mode={'multipart' if use_form else 'json'} aspect={aspect_ratio} size={size}")
 
         if use_form:
-            files = [_file_tuple_for_reference(img) for img in reference_image_list or []]
+            ref_list = reference_image_list or []
+            field_name = "image[]" if len(ref_list) > 1 else "image"
+            files = [_file_tuple_for_reference(img, field_name) for img in ref_list]
             data = {
                 "prompt": prompt,
                 "aspect_ratio": aspect_ratio,

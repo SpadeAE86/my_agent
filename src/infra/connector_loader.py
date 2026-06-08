@@ -15,7 +15,7 @@ class ResourceLoader:
             mysql_connector,
             rabbitmq_connector,
             opensearch_connector,
-            elasticsearch_connector
+            # elasticsearch_connector
         ]
 
     async def startup(self):

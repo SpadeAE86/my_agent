@@ -104,7 +104,12 @@ async def chat_sse(req: ChatRequest):
             )
 
             # 3. 驱动 main_loop, 把每个 AgentEvent 序列化为 SSE data 行
-            async for event in main_loop(agent, req.message, tool_manager=_tool_manager):
+            async for event in main_loop(
+                agent,
+                req.message,
+                tool_manager=_tool_manager,
+                reference_image_list=req.reference_image_list
+            ):
                 # Pydantic model → dict → JSON string
                 payload = event.model_dump()
                 evt_type = payload.get('event_type', '?')
@@ -128,10 +133,25 @@ async def chat_sse(req: ChatRequest):
 
                 line = f"data: {json.dumps(payload, ensure_ascii=False)}\n\n"
 
-                # 日志: 工具失败时打印 error 内容到系统主日志
-                if evt_type == 'tool_result' and not payload.get('success'):
-                    log.error(f"SSE → {evt_type} FAILED: {payload.get('error', '?')}")
-                else:
+                # 精简并增强系统主日志的输出，避免 text_chunk 的过度刷屏，且为关键事件提供充足上下文
+                if evt_type == 'tool_call':
+                    log.info(f"SSE → tool_call: {payload.get('tool_name')}({json.dumps(payload.get('arguments', {}), ensure_ascii=False)})")
+                elif evt_type == 'tool_result':
+                    status = "SUCCESS" if payload.get('success') else "FAILED"
+                    out_err = payload.get('output') or payload.get('error') or ''
+                    preview = out_err[:200] + "..." if len(out_err) > 200 else out_err
+                    log.info(f"SSE → tool_result [{status}]: {payload.get('tool_name')} | {preview}")
+                elif evt_type == 'status_update':
+                    log.info(f"SSE → status_update: {payload.get('message')}")
+                elif evt_type == 'agent_thought':
+                    thought = payload.get('content') or ''
+                    preview = thought[:100].replace('\n', ' ') + "..." if len(thought) > 100 else thought.replace('\n', ' ')
+                    log.info(f"SSE → agent_thought: {preview}")
+                elif evt_type == 'task_complete':
+                    log.info(f"SSE → task_complete: {payload.get('summary')}")
+                elif evt_type == 'error':
+                    log.error(f"SSE → error: {payload.get('message') or payload.get('error', '?')}")
+                elif evt_type != 'text_chunk':
                     log.info(f"SSE → {evt_type}")
 
                 yield line
@@ -195,8 +215,8 @@ async def get_chat_sessions(page: int = Query(1, ge=1), page_size: int = Query(2
     """
     获取会话历史列表 (分页)
     """
-    current_dir = Path(__file__).resolve().parent
-    memory_dir = current_dir.parent / "core" / "memory"
+    project_root = Path(__file__).resolve().parent.parent.parent
+    memory_dir = project_root / "data" / "sessions"
     
     if not memory_dir.exists():
         return {"sessions": [], "has_more": False}
@@ -265,8 +285,8 @@ async def get_chat_history_events(session_id: str):
     """
     获取单个会话的完整历史事件流 (还原为前端 ChatEvent 格式)
     """
-    current_dir = Path(__file__).resolve().parent
-    memory_file = current_dir.parent / "core" / "memory" / f"{session_id}.jsonl"
+    project_root = Path(__file__).resolve().parent.parent.parent
+    memory_file = project_root / "data" / "sessions" / f"{session_id}.jsonl"
     
     events = []
     if not memory_file.exists():
@@ -295,13 +315,55 @@ async def get_chat_history_events(session_id: str):
         event_id = f"evt_hist_{session_id}_{idx}"
         
         if role == "user":
+            if msg.get("is_summary"):
+                # Clean up summary content wrapper "[Conversation Summary of previous turns:\n...]"
+                clean_content = content
+                if clean_content.startswith("[Conversation Summary of previous turns:\n"):
+                    clean_content = clean_content[len("[Conversation Summary of previous turns:\n"):]
+                if clean_content.endswith("]"):
+                    clean_content = clean_content[:-1]
+                
+                events.append({
+                    "id": event_id,
+                    "type": "compressed",
+                    "content": clean_content.strip(),
+                    "timestamp": ts
+                })
+                continue
+
+            text_content = ""
+            ref_imgs = []
+            if isinstance(content, list):
+                for part in content:
+                    if isinstance(part, dict):
+                        if part.get("type") == "text":
+                            text_content = part.get("text", "")
+                        elif part.get("type") == "image_url":
+                            img_obj = part.get("image_url", {})
+                            if isinstance(img_obj, dict) and img_obj.get("url"):
+                                ref_imgs.append(img_obj["url"])
+            else:
+                text_content = content
+
             events.append({
                 "id": event_id,
                 "type": "user",
-                "content": content,
-                "timestamp": ts
+                "content": text_content,
+                "timestamp": ts,
+                "reference_image_list": ref_imgs
             })
         elif role == "assistant":
+            # 如果包含历史思考内容，恢复为 thinking 事件，并赋予稍早的时间戳以保证前端渲染顺序
+            reasoning = msg.get("reasoning_content")
+            if reasoning and reasoning.strip():
+                events.append({
+                    "id": f"{event_id}_reasoning",
+                    "type": "thinking",
+                    "content": reasoning,
+                    "timestamp": ts - 500,
+                    "streaming": False
+                })
+                
             if content.strip():
                 events.append({
                     "id": event_id,
@@ -357,8 +419,8 @@ async def delete_chat_session(session_id: str):
     """
     删除会话历史文件
     """
-    current_dir = Path(__file__).resolve().parent
-    memory_file = current_dir.parent / "core" / "memory" / f"{session_id}.jsonl"
+    project_root = Path(__file__).resolve().parent.parent.parent
+    memory_file = project_root / "data" / "sessions" / f"{session_id}.jsonl"
     if memory_file.exists():
         try:
             memory_file.unlink()
@@ -373,8 +435,8 @@ async def export_chat_session(session_id: str):
     """
     导出并下载会话历史的 JSONL 文件
     """
-    current_dir = Path(__file__).resolve().parent
-    memory_file = current_dir.parent / "core" / "memory" / f"{session_id}.jsonl"
+    project_root = Path(__file__).resolve().parent.parent.parent
+    memory_file = project_root / "data" / "sessions" / f"{session_id}.jsonl"
     if memory_file.exists():
         return FileResponse(
             path=memory_file,
@@ -382,3 +444,18 @@ async def export_chat_session(session_id: str):
             media_type="application/json"
         )
     return {"error": "Session not found"}
+
+
+@chat_router.get("/models")
+async def get_supported_models():
+    """
+    获取支持的多模态模型列表
+    """
+    return [
+        {"display_name": "Doubao Seed 2.0 Pro", "real_name": "doubao-seed-2-0-pro-260215"},
+        {"display_name": "GPT 5.4 (默认)", "real_name": "gpt-5.4"},
+        {"display_name": "Gemini 3.5 Flash", "real_name": "gemini-3.5-flash"},
+        {"display_name": "Gemini 3.1 Pro", "real_name": "gemini-3.1-pro-preview"},
+        {"display_name": "Qwen 3.5 Plus", "real_name": "qwen3.5-plus"},
+        {"display_name": "Claude Sonnet 4.6", "real_name": "claude-sonnet-4-6"}
+    ]

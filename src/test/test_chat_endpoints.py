@@ -10,8 +10,8 @@ def test_endpoints():
     
     print("Testing chat history endpoints...")
     
-    # 1. Create a temporary session file to test with
-    memory_dir = Path(__file__).resolve().parent.parent / "core" / "memory"
+    project_root = Path(__file__).resolve().parent.parent
+    memory_dir = project_root / "data" / "sessions"
     memory_dir.mkdir(parents=True, exist_ok=True)
     
     temp_sid = "test_endpoint_session_temp"
