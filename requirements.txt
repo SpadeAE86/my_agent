@@ -20,6 +20,7 @@ python-dateutil
 psutil
 tabulate
 cachetools
+apscheduler
 
 # Database / Cache / MQ
 SQLAlchemy
@@ -54,6 +55,7 @@ tencentcloud-sdk-python
 cos-python-sdk-v5
 huaweicloudsdkcore
 openai
+apscheduler
 
 # Testing & Dev
 pytest
