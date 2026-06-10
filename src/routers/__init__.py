@@ -12,4 +12,5 @@ from routers.script_match import script_match_router as script_match_router
 from routers.video_match import video_match_router as video_match_router
 from routers.video_mix import video_mix_router as video_mix_router
 from routers.workspace import workspace_router as workspace_router
-all_router = [stack_router, chat_router, image_router, prompt_router, video_router, video_analysis_router, script_match_router, video_match_router, video_mix_router, workspace_router]
+from routers.collections import collections_router as collections_router
+all_router = [stack_router, chat_router, image_router, prompt_router, video_router, video_analysis_router, script_match_router, video_match_router, video_mix_router, workspace_router, collections_router]

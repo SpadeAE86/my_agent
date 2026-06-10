@@ -27,6 +27,7 @@ sqlmodel
 pymysql
 aiomysql
 opensearch-py
+elasticsearch>=8.0.0
 redis
 celery
 pika

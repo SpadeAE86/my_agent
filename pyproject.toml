@@ -29,6 +29,7 @@ dependencies = [
     "func-to-web>=0.9.13",
     "pymysql",
     "opensearch-py",
+    "elasticsearch>=8.0.0",
     "aio-pika",
     "aiomysql",
     "python-dotenv",
