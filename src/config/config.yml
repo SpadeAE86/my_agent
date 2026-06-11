@@ -104,7 +104,7 @@ ui:
 video: null
 #=============================================================================
 cache: false
-env: test
+env: local
 device: gpu
 feishu_robot: "https://open.feishu.cn/open-apis/bot/v2/hook/c004bc00-bcc5-416a-a1c3-c53b607da620"
 error_at: "49f92f95"

@@ -45,6 +45,7 @@ opencv-python
 opencv-python-headless
 scenedetect
 alibabacloud-nls-python-sdk
+tiktoken
 
 # Cloud SDKs (Based on your config.yml references)
 aliyun-python-sdk-core
