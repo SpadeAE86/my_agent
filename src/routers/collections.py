@@ -37,6 +37,11 @@ class MoveToSpaceRequest(BaseModel):
     space_id: Optional[str] = None
 
 
+class BatchMoveToSpaceRequest(BaseModel):
+    item_ids: List[str]
+    space_id: Optional[str] = None
+
+
 # ─── Endpoints ───────────────────────────────────────────────────
 
 @collections_router.get("")
@@ -201,3 +206,18 @@ async def move_to_space(item_id: str, req: MoveToSpaceRequest):
         session.add(item)
         await session.commit()
         return {"success": True, "item": item.model_dump()}
+
+
+@collections_router.post("/batch/space")
+async def batch_move_to_space(req: BatchMoveToSpaceRequest):
+    """
+    批量将收藏项分类移入或移出指定主题空间
+    """
+    async with mysql_connector.session_scope() as session:
+        for item_id in req.item_ids:
+            item = await session.get(CollectionItem, item_id)
+            if item:
+                item.space_id = req.space_id
+                session.add(item)
+        await session.commit()
+        return {"success": True}
