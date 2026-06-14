@@ -22,5 +22,6 @@ from .video_material_match import VideoMaterialMatchHistory  # noqa: F401
 from .video_match import VideoMatchJob, VideoMatchShotRow  # noqa: F401
 from .video_mix_compose import VideoMixComposeJob  # noqa: F401
 from .workspace import Workspace, WorkspaceNode, WorkspaceEdge  # noqa: F401
-from .collections import ThemeSpace, CollectionItem  # noqa: F401
+from .collections import ThemeSpace, CollectionItem, TagLibraryItem
+  # noqa: F401
 

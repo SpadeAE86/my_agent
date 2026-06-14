@@ -67,3 +67,21 @@ class CollectionItem(SQLModel, table=True):
     created_at: datetime = Field(
         sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now())
     )
+
+
+class TagLibraryItem(SQLModel, table=True):
+    """
+    标签库数据镜像表：用于将本地自组织标签库(AutoClusterOrchestrator pkl)的物理标签和逻辑软链接同步到MySQL，
+    以支持高效的SQL查询、审计、JOIN操作及备份。
+    """
+    __tablename__ = "tag_library"
+
+    tag: str = Field(sa_column=Column(VARCHAR(100), primary_key=True))
+    category_path: str = Field(sa_column=Column(VARCHAR(255), primary_key=True))
+    cluster_id: int = Field(default=-1)
+    concept_name: Optional[str] = Field(default=None, sa_column=Column(VARCHAR(100), nullable=True))
+    is_soft_link: bool = Field(default=False)
+    updated_at: datetime = Field(
+        sa_column=Column(DateTime(timezone=True), nullable=False, server_default=func.now(), onupdate=func.now())
+    )
+

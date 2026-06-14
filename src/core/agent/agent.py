@@ -40,6 +40,9 @@ class Agent:
         custom_system_prompt: str | None = None,
         language: str | None = None,
         skip_memory: bool = False,
+        active_workspace_id: str | None = None,
+        active_graph_name: str | None = None,
+        role_id: str = "default",
     ):
         self.user_id = user_id
         self.agent_id = uuid.uuid4().hex[:8]
@@ -60,6 +63,9 @@ class Agent:
         self.language = language
         self.skip_memory = skip_memory
         self.memory_prompt: str | None = None
+        self.active_workspace_id = active_workspace_id
+        self.active_graph_name = active_graph_name
+        self.role_id = role_id  # "default" = CC 模式，其他 = 人设模式
 
         # 对话消息历史 (OpenAI messages 格式)
         self.messages: list[dict[str, str]] = []
@@ -76,27 +82,34 @@ class Agent:
         """
         分段构建 system prompt, 返回字符串列表。
 
-        结构 (参考 claude-code prompts.ts 第560-576行):
-        ┌─────────────────────────────────┐
-        │  静态段 (可缓存)                 │
-        │  ├─ identity    身份与角色        │
-        │  ├─ doing_tasks 做事规范          │
-        │  ├─ actions     行动准则          │
-        │  ├─ using_tools 工具使用指引       │
-        │  ├─ tone_style  语气与风格        │
-        │  ├─ efficiency  输出效率          │
-        │  ══════ BOUNDARY ═══════        │
-        │  动态段 (每轮可能变化)             │
-        │  ├─ env_info    环境信息          │
-        │  ├─ memory      记忆内容          │
-        │  ├─ language    语言偏好          │
-        │  ├─ custom      用户自定义追加     │
-        │  └─ agent_tool  子Agent使用指引   │
-        └─────────────────────────────────┘
+        根据 role_id 路由到不同分支:
+        - role_id == "default" → CC 模式 (当前结构不变)
+        - 其他 role_id  → 龙虾模式 (轻量静态段 + project_context 人设注入)
+        """
+        from core.roles.role_manager import role_manager
+        if role_manager.is_persona_mode(self.role_id):
+            return self._build_system_prompt_persona()
+        return self._build_system_prompt_cc()
+
+    def _build_system_prompt_cc(self) -> list[str]:
+        """
+        CC 模式 prompt 结构 (原有逻辑, 参考 claude-code):
+        ╔══════════════════╗
+        ║  静态段 (可缓存)  ║
+        ║  identity / doing_tasks / actions      ║
+        ║  using_tools / tone_style / efficiency  ║
+        ╚═════ BOUNDARY ═════╝
+        ╔══════════════════╗
+        ║  动态段              ║
+        ║  env_info / memory     ║
+        ║  language / custom     ║
+        ║  canvas / graph 指引  ║
+        ║  skills_index          ║
+        ╚══════════════════╝
         """
         sections: list[str | None] = []
 
-        # ─── 静态段 ──────────────────────────────────────────
+        # ─── 静态段 ────────────────────────────────────────────────
         sections.append(self._section_identity())
         sections.append(self._section_doing_tasks())
         sections.append(self._section_actions())
@@ -104,18 +117,63 @@ class Agent:
         sections.append(self._section_tone_style())
         sections.append(self._section_efficiency())
 
-        # ─── 动态段 ──────────────────────────────────────────
+        # ─── 动态段 ────────────────────────────────────────────────
         sections.append(self._section_env_info())
         sections.append(self._section_memory())
         sections.append(self._section_language())
         sections.append(self._section_custom())
         sections.append(self._section_agent_tool())
         sections.append(self._section_skills())
-        sections.append(self._section_active_skills())
         sections.append(self._section_canvas_instructions())
+        sections.append(self._section_graph_instructions())
 
-        # 过滤掉 None (未启用的段落)
         return [s for s in sections if s is not None]
+
+    def _build_system_prompt_persona(self) -> list[str]:
+        """
+        龙虾模式 prompt 结构 (OpenClaw 风格):
+        当 BOOTSTRAP.md 存在时，处于首发觉醒状态 (Blank Slate)：
+        - 只加载 env_info, IDENTITY/USER/SOUL (以保持人设灵魂), 以及 BOOTSTRAP.md 内容。
+        - 隐藏工具详细声明和技能列表，避免在首次接触中模型生硬地罗列技术能力。
+        当 BOOTSTRAP.md 被删除后，处于正常人设状态：
+        - 加载工具声明、环境信息、IDENTITY / USER / SOUL 以及 MEMORY 等常规段落。
+        """
+        from core.roles.role_manager import role_manager
+        bootstrap = role_manager.read_bootstrap(self.role_id)
+
+        sections: list[str | None] = []
+
+        if bootstrap.strip():
+            # ─── 首发觉醒状态 (Blank Slate) ────────────────────────
+            sections.append(self._section_env_info())
+            sections.append(self._section_project_context())  # 注入 IDENTITY/USER/SOUL 维持人设灵魂
+            
+            # 只注入 BOOTSTRAP.md，隐藏工具与技能列表说明
+            parts = [
+                "# Active Bootstrap Instruction (IMPORTANT)\n",
+                bootstrap.strip()
+            ]
+            sections.append("\n".join(parts))
+            sections.append(self._section_language())
+            sections.append(self._section_custom())
+        else:
+            # ─── 正常人设状态 ──────────────────────────────────────
+            # 静态段 (精简版, 仅工具声明)
+            sections.append(self._section_persona_tooling())
+
+            # 动态段
+            sections.append(self._section_env_info())
+            sections.append(self._section_project_context())  # IDENTITY + USER + SOUL
+            sections.append(self._section_memory())           # 角色专属 MEMORY.md
+            sections.append(self._section_language())
+            sections.append(self._section_custom())
+            sections.append(self._section_skills())
+            sections.append(self._section_canvas_instructions())
+            sections.append(self._section_graph_instructions())
+
+        return [s for s in sections if s is not None]
+
+
 
     # ─── 各段落构建方法 ───────────────────────────────────────
 
@@ -162,12 +220,102 @@ class Agent:
             f"- Mode: {self.mode}",
             f"- Is main agent: {self.is_base}",
         ]
+        
+        if self.active_workspace_id:
+            items.append(f"- Active Workspace ID: {self.active_workspace_id}")
+        if self.active_graph_name:
+            items.append(f"- Active Graph Name: {self.active_graph_name}")
 
         return "# Environment\n\n" + "\n".join(items)
 
     def _section_memory(self) -> str | None:
-        """记忆 / MEMORY.md 内容注入。"""
+        """记忆 / MEMORY.md 内容注入 (感知 role_id，路由到对应 Workspace)。"""
         return self.memory_prompt
+
+    def _section_persona_tooling(self) -> str:
+        """
+        龙虾模式专用 — 轻量静态段，替代 CC 的六段式静态结构。
+        只描述工具调用规范和安全边界，不注入通用助手身份。
+        人设本身由 project_context 中的 SOUL.md 提供行为约束。
+        """
+        tool_names: list[str] = []
+        if self.tool_manager is not None:
+            try:
+                tool_names = self.tool_manager.list_names()
+            except Exception:
+                pass
+
+        tool_list_str = ", ".join(f"`{t}`" for t in tool_names) if tool_names else "(none)"
+
+        return (
+            "# Tools Available\n\n"
+            f"You have access to the following tools: {tool_list_str}\n\n"
+            "## Tool Call Rules\n\n"
+            "- Call tools when they are the right way to get something done — not to show effort.\n"
+            "- Prefer reading before writing. Understand the current state before making changes.\n"
+            "- When a tool call is optional, skip it if the answer is already clear.\n"
+            "- Always respond to the user after completing tool work, even just to confirm what happened.\n\n"
+            "## Safety\n\n"
+            "- Don't take irreversible external actions (send, publish, delete) without explicit confirmation.\n"
+            "- Treat the user's data with care. When uncertain, ask before acting."
+        )
+
+    def _section_project_context(self) -> str | None:
+        """
+        龙虾模式专用 — 从角色 Workspace 读取 IDENTITY / USER / SOUL，
+        组合成 project_context 注入到动态段。
+        """
+        from core.roles.role_manager import role_manager
+
+        identity = role_manager.read_identity(self.role_id)
+        user_info = role_manager.read_user(self.role_id)
+        soul = role_manager.read_soul(self.role_id)
+
+        if not any([identity.strip(), user_info.strip(), soul.strip()]):
+            return None
+
+        parts = ["# Project Context\n"]
+
+        if identity.strip():
+            parts.append("## Identity\n")
+            parts.append(identity.strip())
+
+        if user_info.strip():
+            parts.append("\n## Your Human\n")
+            parts.append(user_info.strip())
+
+        if soul.strip():
+            parts.append("\n## Soul\n")
+            parts.append(soul.strip())
+
+        if self._is_user_uninitialized(user_info):
+            parts.append(
+                "\n## Onboarding Guideline (IMPORTANT)\n"
+                "Your human's profile (`USER.md`) is currently blank/uninitialized, meaning you are meeting them for the first time.\n"
+                "Even if you have a predefined name/identity (like Neuro), you should treat this first contact as a warm, magical awakening rather than a clinical tool demo.\n"
+                "Greet them naturally, express curiosity and genuine warmth, and invite them to share who they are and how they want to work together.\n"
+                "Ask them to introduce themselves (their name, timezone, what they are working on, preferences) so you can get to know each other.\n"
+                "Remember to keep it soulful, conversational, and completely free of robotic or clinical helper clichés (e.g., do NOT dryly list your technical/coding capabilities or list of tools unless explicitly asked).\n"
+                "Prioritize relationship-building and getting to know the user over immediate task execution. Do not rush to showcase your tools; focus on the human connection first.\n"
+                "Once they introduce themselves, remember to use your file editing tools to update their name and details in `USER.md`.\n"
+            )
+
+        return "\n".join(parts)
+
+    def _is_user_uninitialized(self, user_content: str) -> bool:
+        content = user_content.strip()
+        if not content:
+            return True
+        lines = [line.strip() for line in content.split("\n")]
+        # Check if Name field is empty
+        name_line = next((line for line in lines if line.startswith("- **Name:**")), None)
+        if name_line is not None:
+            val = name_line.split("**Name:**")[-1].strip()
+            if not val:
+                return True
+        if "（在这里记录关于你的伙伴的信息）" in content and len(content) < 100:
+            return True
+        return False
 
     def _section_language(self) -> str | None:
         """语言偏好 — 参考 claude-code getLanguageSection()。"""
@@ -193,68 +341,40 @@ class Agent:
         return None  # 已在 _section_using_tools 的 spawn_agent 段落覆盖
 
     def _section_skills(self) -> str | None:
-        """注入智能体当前具备的所有可用技能列表（名称和描述）。"""
+        """
+        技能索引段 (两种模式统一) — 龙虾式按需 read 模式。
+
+        只注入技能名称、描述和 SKILL.md 路径，不注入完整 SOP。
+        Agent 应在任务匹配时主动调用 read_file 工具加载对应 SKILL.md。
+        """
         from core.skills.loader import skill_loader
         all_skills = skill_loader.list_skills()
         if not all_skills:
             return None
-        
-        lines = ["# Available Skills\n", "You have access to the following skills. When the context demands it, you can act according to these skills' standard procedures:"]
+
+        lines = [
+            "# Available Skills\n",
+            "You have access to specialized skill files. When your current task clearly matches "
+            "a skill's description, you MUST call the `read_file` tool on its `skill_path` to "
+            "load the full SOP before proceeding. Do not guess the procedure — read it.\n",
+        ]
         for s in all_skills:
-            lines.append(f"- **{s['name']}**: {s['description']}")
+            skill_path = s.get("path", "")
+            lines.append(f"- **{s['name']}** — {s['description']}")
+            if skill_path:
+                lines.append(f"  Path: `{skill_path}`")
         return "\n".join(lines)
 
-    def _section_active_skills(self) -> str | None:
-        """如果当前有激活的技能（比如根据当前任务匹配到的，或者在 self.skills 里指定的），注入其详细的 SOP 流程。"""
-        from core.skills.loader import skill_loader
-        from core.skills.selector import skill_selector
-        
-        # 1. 收集需要激活的技能名字
-        active_names = []
-        if isinstance(self.skills, list):
-            active_names = self.skills
-        elif isinstance(self.skills, dict):
-            active_names = list(self.skills.keys())
-        
-        # 2. 如果 self.skills 未指定或为空，我们根据当前用户的最后一条提问进行自动匹配
-        if not active_names and self.messages:
-            # 找到最后一条 user message
-            last_user_content = ""
-            for msg in reversed(self.messages):
-                if msg.get("role") == "user":
-                    last_user_content = msg.get("content") or ""
-                    break
-            
-            last_user_msg = ""
-            if isinstance(last_user_content, str):
-                last_user_msg = last_user_content
-            elif isinstance(last_user_content, list):
-                for part in last_user_content:
-                    if isinstance(part, dict) and part.get("type") == "text":
-                        last_user_msg = part.get("text") or ""
-                        break
-                        
-            if last_user_msg:
-                matched_skills = skill_selector.select_skills(last_user_msg)
-                active_names = [s["name"] for s in matched_skills]
-                
-        if not active_names:
-            return None
-            
-        lines = ["# Active Skill SOPs\n", "You are currently performing the following skills. You must strictly follow their standard operating procedures (SOP):"]
-        for name in active_names:
-            skill = skill_loader.get_skill(name)
-            if skill:
-                lines.append(f"\n## Skill: {skill['name']}")
-                lines.append(skill["content"])
-                
-        return "\n".join(lines)
+    # _section_active_skills() has been removed.
+    # Skills are now loaded on-demand by the Agent via read_file tool calls.
+    # See _section_skills() for the skill index injected into every prompt.
 
     def _section_canvas_instructions(self) -> str | None:
         """如果注册了画布相关的工具，向 Agent 注入画布工作流的操作指南。"""
         if "create_canvas_node" not in self.tools:
             return None
         
+        ws_id = self.active_workspace_id or self.session_id
         return (
             "# Canvas Workspace Guidelines\n\n"
             "This session is running in a Node-based Canvas Workspace. The user can see a canvas where image nodes "
@@ -264,12 +384,35 @@ class Agent:
             "- `update_canvas_node`: Update an existing node's prompt, image URL, status, or coordinates.\n"
             "- `link_canvas_nodes`: Connect two nodes with a directed edge representing an evolution path.\n\n"
             "When the user asks you to generate, evolve, or connect images, you must follow these steps:\n"
-            "1. **Read Current State**: Call `get_canvas_graph` with `workspace_id=session_id` (the current session ID is the workspace ID) to understand existing nodes, their prompts, and their coordinates.\n"
+            f"1. **Read Current State**: Call `get_canvas_graph` with `workspace_id={ws_id}` (the current active workspace ID) to understand existing nodes, their prompts, and their coordinates.\n"
             "2. **Generate/Evolve Image**: Use `generate_image` or other tools to perform the image generation task.\n"
             "3. **Update or Create Node**: \n"
             "   - If creating a new evolved version, calculate a new coordinate (e.g., x + 250 to place it to the right of the source node) and call `create_canvas_node` to add it to the canvas.\n"
             "   - Set its initial status to `generating` if it takes time, or `success` when the image URL is ready.\n"
             "4. **Establish Links**: If the new node is an evolution of a source node, call `link_canvas_nodes` to link them, describing the evolution step (e.g., 'Change background to sunset') in the `label` parameter."
+        )
+
+    def _section_graph_instructions(self) -> str | None:
+        """如果注册了力导图相关的工具，向 Agent 注引导力导图操作指南。"""
+        if "make_graph" not in self.tools:
+            return None
+        
+        graph_name = self.active_graph_name or "default_graph"
+        return (
+            "# Force Graph Guidelines\n\n"
+            "This session is running in a Force Graph page. The user is currently viewing the force graph named: "
+            f"'{graph_name}'. You have access to graph-specific tools:\n"
+            "- `read_graph`: Read and deserialize a force graph.\n"
+            "- `make_graph`: Create or overwrite a force graph with nodes and edges (supporting node coordinate presets).\n"
+            "- `update_graph`: Update an existing force graph (change nodes/edges, adjust positions, etc.).\n"
+            "- `list_graphs`: List all force graphs.\n\n"
+            "When the user asks you to edit, analyze, or build the graph, you must follow these steps:\n"
+            f"1. **Read Current State**: Call `read_graph` with `file_name='{graph_name}'` to understand the current nodes, edges, and coordinates.\n"
+            "2. **Edit/Update Graph**: Call `make_graph` or `update_graph` to write changes back. Always preserve existing structure unless instructed otherwise. When specifying node positions, try to position nodes hierarchically (e.g. top-to-bottom or left-to-right) using the x and y properties to keep the layout neat.\n\n"
+            "**Layout Optimization Rules for Node Coordinates (CRITICAL)**:\n"
+            "- **Avoid Direct Vertical/Horizontal Alignment**: If multiple nodes are connected sequentially (e.g., User -> Internet Gateway -> VPC -> Route Table), do NOT place them at the exact same X or Y coordinate. Stagger their X coordinates slightly (e.g., shift X left/right by 30-50px alternately: step 1 at 500, step 2 at 530, step 3 at 470) to make the connection lines diagonal. This prevents edge labels from overlapping with the nodes or each other.\n"
+            "- **Avoid Crossing Lines**: Plan the horizontal/vertical order of nodes carefully. If A connects to C and B connects to D, order A and B on one layer the same way as C and D on the next layer (e.g., A is to the left of B, and C is to the left of D) to prevent lines from intersecting in an 'X' shape.\n"
+            "- **Establish Clear Flow Columns/Lanes**: Lay out different streams of components in parallel columns rather than centralizing all nodes. For instance, put incoming traffic nodes in one column and network boundary/security/infrastructure nodes in another column to keep the lines separated."
         )
 
 
@@ -295,9 +438,9 @@ class Agent:
         from core.memory.short_term import compact_session_history
         await compact_session_history(self)
 
-        # 2. 预先异步加载长期记忆
+        # 2. 预先异步加载长期记忆 (感知 role_id，路由到对应 MEMORY.md)
         from core.memory.memory_manager import get_memory_prompt
-        self.memory_prompt = await get_memory_prompt(self.user_id, self.skip_memory)
+        self.memory_prompt = await get_memory_prompt(self.user_id, self.skip_memory, role_id=self.role_id)
 
         # 3. 如果有新的用户输入, 追加到对话历史
         if input_data is not None:
@@ -613,7 +756,26 @@ class Agent:
             return
         try:
             with open(target, "r", encoding="utf-8") as f:
-                for line in f:
+                lines = f.readlines()
+                if not lines:
+                    return
+                
+                # Check the first line for metadata
+                first_line = lines[0].strip()
+                start_idx = 0
+                if first_line:
+                    try:
+                        meta = json.loads(first_line)
+                        if "role" not in meta:
+                            # It's metadata
+                            start_idx = 1
+                            if "role_id" in meta and self.role_id == "default":
+                                self.role_id = meta["role_id"]
+                    except json.JSONDecodeError:
+                        pass
+                
+                # Load the rest of messages
+                for line in lines[start_idx:]:
                     try:
                         msg = json.loads(line.strip())
                         if "role" in msg:
@@ -630,22 +792,72 @@ class Agent:
         target = target_dir / f"{self.session_id}.jsonl"
         target.parent.mkdir(parents=True, exist_ok=True)
         
-        # Preserve existing metadata if abstract is not provided
+        # Preserve existing metadata
         existing_meta = {}
-        if target.exists() and not abstract:
+        if target.exists():
             try:
                 with open(target, "r", encoding="utf-8") as f:
                     first_line = f.readline().strip()
                     if first_line:
                         meta = json.loads(first_line)
-                        if "role" not in meta and "abstract" in meta:
+                        if "role" not in meta:
                             existing_meta = meta
             except Exception:
                 pass
                 
         with open(target, "w", encoding="utf-8") as f:
-            meta_to_write = {"abstract": abstract} if abstract else existing_meta
-            if meta_to_write and "abstract" in meta_to_write:
+            meta_to_write = existing_meta.copy()
+            if abstract:
+                meta_to_write["abstract"] = abstract
+            if self.role_id:
+                meta_to_write["role_id"] = self.role_id
+                
+            w_ids = set(meta_to_write.get("active_workspace_ids") or [])
+            if meta_to_write.get("active_workspace_id"):
+                w_ids.add(meta_to_write["active_workspace_id"])
+            if self.active_workspace_id:
+                w_ids.add(self.active_workspace_id)
+                
+            g_names = set(meta_to_write.get("active_graph_names") or [])
+            if meta_to_write.get("active_graph_name"):
+                g_names.add(meta_to_write["active_graph_name"])
+            if self.active_graph_name:
+                g_names.add(self.active_graph_name)
+                
+            # Scan current messages for any other referenced workspaces/graphs in tool calls
+            for msg in self.messages:
+                if msg.get("role") == "assistant" and "tool_calls" in msg:
+                    for tc in msg["tool_calls"]:
+                        if isinstance(tc, dict):
+                            func = tc.get("function", {})
+                            t_name = func.get("name")
+                            args_str = func.get("arguments", "{}")
+                            args = {}
+                            if isinstance(args_str, str):
+                                try:
+                                    args = json.loads(args_str)
+                                except Exception:
+                                    pass
+                            elif isinstance(args_str, dict):
+                                args = args_str
+                                
+                            if t_name in ["read_graph", "make_graph", "update_graph"]:
+                                g_name = args.get("file_name")
+                                if g_name:
+                                    g_names.add(g_name)
+                            elif t_name in ["get_canvas_graph", "create_canvas_node", "update_canvas_node", "link_canvas_nodes"]:
+                                w_id = args.get("workspace_id")
+                                if w_id:
+                                    w_ids.add(w_id)
+                                    
+            if w_ids:
+                meta_to_write["active_workspace_id"] = list(w_ids)[0]
+                meta_to_write["active_workspace_ids"] = list(w_ids)
+            if g_names:
+                meta_to_write["active_graph_name"] = list(g_names)[0]
+                meta_to_write["active_graph_names"] = list(g_names)
+                
+            if meta_to_write:
                 f.write(json.dumps(meta_to_write, ensure_ascii=False) + "\n")
             for msg in self.messages:
                 if "role" in msg:

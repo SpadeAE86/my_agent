@@ -45,20 +45,28 @@ def truncate_memory_content(raw: str) -> str:
     )
     return truncated + warning
 
-async def get_memory_prompt(user_id: str, skip_memory: bool = False) -> str | None:
+async def get_memory_prompt(user_id: str, skip_memory: bool = False, role_id: str = "default") -> str | None:
     """
     Reads MEMORY.md and constructs the memory section for the system prompt.
-    Returns None if skip_memory is True or memory is empty.
+
+    - If role_id is provided and is not "default", reads from data/roles/{role_id}/MEMORY.md.
+    - Otherwise reads from the legacy data/memory/{user_id}/MEMORY.md (CC mode).
+    - Returns None if skip_memory is True or memory is empty.
     """
     if skip_memory:
         return None
-        
-    raw_memory = long_term.load_long_term_memory(user_id)
+
+    if role_id and role_id != "default":
+        raw_memory = long_term.load_role_memory(role_id)
+    else:
+        raw_memory = long_term.load_long_term_memory(user_id)
+
     if not raw_memory.strip():
         return None
-        
+
     formatted = truncate_memory_content(raw_memory)
     if not formatted.strip():
         return None
-        
+
     return f"# Memory\n\n{formatted}"
+

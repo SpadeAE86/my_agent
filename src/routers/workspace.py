@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
+import os
+import json
 
 from services.workspace_db_service import workspace_db_service
 from models.sqlmodel.workspace import Workspace, WorkspaceNode, WorkspaceEdge
@@ -139,3 +141,109 @@ async def delete_workspace_edge(workspace_id: str, edge_id: str):
     if not success:
         raise HTTPException(status_code=404, detail="Edge not found")
     return {"success": True}
+
+
+# ─── Force Graph Endpoints ──────────────────────────────────────────
+class ForceGraphSaveRequest(BaseModel):
+    name: str
+    nodes: List[Dict[str, Any]]
+    edges: List[Dict[str, Any]]
+
+
+class ForceGraphRenameRequest(BaseModel):
+    new_name: str
+
+
+def _get_graphs_dir() -> str:
+    from pathlib import Path
+    current = Path(__file__).resolve()
+    while current.name != "src" and current.parent != current:
+        current = current.parent
+    project_root = current.parent
+    return os.path.join(project_root, "data", "graphs")
+
+
+@workspace_router.get("/graphs")
+async def list_graphs():
+    base_dir = _get_graphs_dir()
+    if not os.path.exists(base_dir):
+        return {"success": True, "graphs": []}
+    graphs = []
+    for f in os.listdir(base_dir):
+        if f.endswith(".json"):
+            name = f[:-5]
+            file_path = os.path.join(base_dir, f)
+            try:
+                with open(file_path, "r", encoding="utf-8") as file:
+                    data = json.load(file)
+                    graphs.append({
+                        "name": name,
+                        "node_count": len(data.get("nodes", [])),
+                        "edge_count": len(data.get("edges", [])),
+                        "nodes": data.get("nodes", []),
+                        "edges": data.get("edges", [])
+                    })
+            except Exception:
+                pass
+    return {"success": True, "graphs": graphs}
+
+
+@workspace_router.post("/graphs")
+async def save_graph(req: ForceGraphSaveRequest):
+    base_dir = _get_graphs_dir()
+    os.makedirs(base_dir, exist_ok=True)
+    file_path = os.path.join(base_dir, f"{req.name}.json")
+    
+    nodes = req.nodes
+    edges = req.edges
+    
+    needs_assemble = False
+    if nodes:
+        first_node = nodes[0]
+        if "data" not in first_node:
+            needs_assemble = True
+            
+    if needs_assemble:
+        from core.tools.builtin.make_graph import _assemble_graph
+        graph_data = _assemble_graph(nodes, edges)
+    else:
+        graph_data = {"nodes": nodes, "edges": edges}
+        
+    with open(file_path, "w", encoding="utf-8") as f:
+        json.dump(graph_data, f, ensure_ascii=False, indent=2)
+        
+    return {"success": True, "graph": {
+        "name": req.name,
+        "node_count": len(graph_data["nodes"]),
+        "edge_count": len(graph_data["edges"]),
+        "nodes": graph_data["nodes"],
+        "edges": graph_data["edges"]
+    }}
+
+
+@workspace_router.post("/graphs/{name}/rename")
+async def rename_graph(name: str, req: ForceGraphRenameRequest):
+    base_dir = _get_graphs_dir()
+    old_path = os.path.join(base_dir, f"{name}.json")
+    new_path = os.path.join(base_dir, f"{req.new_name}.json")
+    
+    if not os.path.exists(old_path):
+        raise HTTPException(status_code=404, detail="Graph not found")
+    if os.path.exists(new_path):
+        raise HTTPException(status_code=400, detail="New name already exists")
+        
+    os.rename(old_path, new_path)
+    return {"success": True}
+
+
+@workspace_router.delete("/graphs/{name}")
+async def delete_graph(name: str):
+    base_dir = _get_graphs_dir()
+    file_path = os.path.join(base_dir, f"{name}.json")
+    
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="Graph not found")
+        
+    os.remove(file_path)
+    return {"success": True}
+

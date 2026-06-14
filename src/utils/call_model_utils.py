@@ -35,7 +35,7 @@ def _svc_print(*args: Any, **kwargs: Any) -> None:
         builtins.print(*args, **kwargs)
 
 
-async def call_doubao_vision(prompt, image_url_list, schema_json = None):
+async def call_doubao_vision(prompt, image_url_list, schema_json = None, guideline_info = None):
     if not ARK_API_KEY:
         _svc_print("错误：未在环境变量 FZ_API_KEY 中找到 API Key。")
         return
@@ -48,6 +48,9 @@ async def call_doubao_vision(prompt, image_url_list, schema_json = None):
     prompt_text = """
     请分析这些视频片段里的画面，描述视频的内容，提取主体以及他对应的动作，以及内容的特点，封装成符合格式要求的json。
     """ if not prompt else prompt
+
+    if guideline_info:
+        prompt_text = f"{prompt_text}\n\n【已有标签库分类及推荐词提示】:\n{guideline_info}\n请结合以上推荐词风格进行打标，如非必要请不要创造不相干的新词。"
 
     content_list = [
         {

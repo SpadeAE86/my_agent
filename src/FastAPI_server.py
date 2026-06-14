@@ -103,6 +103,27 @@ async def lifespan(app: FastAPI):
 
             asyncio.create_task(_frame_orientation_backfill_bg())
 
+        # 同步数据库已有标签到自组织标签库
+        async def _sync_tags_bg() -> None:
+            try:
+                from routers.collections import sync_existing_tags_to_library
+                await sync_existing_tags_to_library()
+            except Exception as _sync_err:
+                log.warning(f"标签库后台自动同步失败: {_sync_err}")
+
+        asyncio.create_task(_sync_tags_bg())
+
+        # 定时每 15 分钟将标签库同步到数据库镜像表
+        async def _sync_library_to_db_loop() -> None:
+            try:
+                from routers.collections import start_tag_library_db_sync_task
+                await start_tag_library_db_sync_task()
+            except Exception as _sync_err:
+                log.warning(f"标签库同步写入数据库后台循环异常: {_sync_err}")
+
+        asyncio.create_task(_sync_library_to_db_loop())
+
+
         # 模型预热（后台 task，不 await）：yield 后 HTTP 立即可用；OpenSearch 入库前会 await ensure_embedding_model_ready 等待同一加载任务。
         warmup_task = start_embedding_warmup_background()
         log.info("已向后台派发向量模型预热；HTTP 即将就绪（向量化入库前会等待预热完成）。")

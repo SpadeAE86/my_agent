@@ -57,6 +57,8 @@ cos-python-sdk-v5
 huaweicloudsdkcore
 openai
 apscheduler
+tos
+
 
 # Testing & Dev
 pytest

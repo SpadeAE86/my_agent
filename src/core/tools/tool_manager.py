@@ -161,7 +161,7 @@ class ToolManager:
             return ToolResult(
                 call_id=event.call_id,
                 tool_name=event.tool_name,
-                output=output.message or output.model_dump_json(),
+                output=output.model_dump_json(),
                 error=None if output.success else output.message,
                 success=output.success,
                 agent_id=event.agent_id,

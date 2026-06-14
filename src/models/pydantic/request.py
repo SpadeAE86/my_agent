@@ -79,6 +79,10 @@ class ChatRequest(BaseModel):
     model: str = Field(default="gpt-5.4", description="指定模型")
     max_iterations: int = Field(default=10, description="Agent 最大迭代轮次", ge=1, le=50)
     reference_image_list: Optional[list[str]] = Field(default=None, description="参考图公网URL列表")
+    active_workspace_id: Optional[str] = Field(default=None, description="当前激活的画布工程 ID")
+    active_graph_name: Optional[str] = Field(default=None, description="当前激活的力导图名称")
+    role_id: str = Field(default="default", description="角色 ID，default 为 CC 模式，其他值触发人设(龙虾)模式")
+
 
 class VideoGenerateRequest(BaseModel):
     """POST /video 的请求体"""
@@ -91,3 +95,8 @@ class VideoGenerateRequest(BaseModel):
     reference_image_list: Optional[list[str]] = Field(default=None, description="参考图公网URL列表")
     reference_video_list: Optional[list[str]] = Field(default=None, description="参考视频公网URL列表")
     reference_audio_list: Optional[list[str]] = Field(default=None, description="参考音频公网URL列表")
+
+
+class CreateRoleRequest(BaseModel):
+    """POST /chat/roles 的请求体"""
+    name: str = Field(..., description="角色名称", min_length=1)

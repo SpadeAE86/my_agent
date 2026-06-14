@@ -130,7 +130,7 @@ chat_logger = logging.getLogger("agent_chat")
 chat_logger.setLevel(logging.INFO)
 chat_logger.propagate = False
 
-logger_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+logger_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 log_dir = os.path.join(logger_dir, "logs")
 os.makedirs(log_dir, exist_ok=True)
 file_handler = RotatingFileHandler(
@@ -152,7 +152,7 @@ def log_agent_debug(session_id: str, event_type: str, data: Any):
     from typing import Any
     from datetime import datetime
     
-    logger_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    logger_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
     log_dir = os.path.join(logger_dir, "logs")
     os.makedirs(log_dir, exist_ok=True)
     debug_file = os.path.join(log_dir, "agent_debug.jsonl")

@@ -25,13 +25,14 @@ from openai import AsyncOpenAI
 from core.agent.agent import Agent
 from core.agent.agent_loop import main_loop
 from core.tools.tool_manager import ToolManager
+from infra.connector_loader import connector_loader
 
 
 # ─── 配置 ────────────────────────────────────────────────────────
 LLM_CONFIG = {
     "client": AsyncOpenAI(
-        base_url="https://z.apiyihe.org/v1",
-        api_key="sk-TMd7SbPPbVw1JMx0GYKflkWkv8Mzi1tb0B64Y9HqBQ53TaqW",
+        base_url="https://ai.comfly.chat/v1",
+        api_key="sk-EZyThGS2JdkoxISCD7Dd64D625E94a8b9513D71aCfF6AcFc",
     ),
     "model": "gpt-5.4",
 }
@@ -86,52 +87,59 @@ async def run(query: str):
     print("🚀 DIYProject Agent Runner")
     print("=" * 60)
 
-    # 1. 初始化 ToolManager
-    tm = ToolManager()
-    discovered = tm.auto_discover()
-    print(f"📦 已发现 {discovered} 个内置工具: {tm.list_names()}")
-
-    # 2. 创建 Agent
-    agent = Agent(
-        user_id="test_user",
-        llm=LLM_CONFIG,
-        tools=tm.list_names(),
-        skills={},
-        max_iteration=3,     # 限制 3 轮, 方便测试
-        mode="swarm",
-        is_base=True,
-        max_token=4096,      # 测试用小一点
-        tool_manager=tm,
-        language="中文",
-    )
-    print(f"🤖 Agent 已创建: id={agent.agent_id}, session={agent.session_id}")
-
-    # 3. 打印 system prompt (调试用)
-    system_sections = agent._build_system_prompt()
-    print(f"\n📜 System Prompt 共 {len(system_sections)} 段, "
-          f"总长 {sum(len(s) for s in system_sections)} 字符:")
-    for i, section in enumerate(system_sections):
-        first_line = section.split("\n")[0]
-        print(f"   [{i}] {first_line} ({len(section)} chars)")
-
-    # 4. 运行 main_loop
-    print(f"\n💬 用户输入: {query}")
-    print("=" * 60)
+    # 0. 初始化基础组件连接
+    await connector_loader.startup()
 
     try:
-        async for event in main_loop(agent, query, tool_manager=tm):
-            print_event(event)
-    except Exception as e:
-        print(f"\n💥 运行出错: {type(e).__name__}: {e}")
-        import traceback
-        traceback.print_exc()
+        # 1. 初始化 ToolManager
+        tm = ToolManager()
+        discovered = tm.auto_discover()
+        print(f"📦 已发现 {discovered} 个内置工具: {tm.list_names()}")
 
-    # 5. 打印最终消息历史 (调试用)
-    print(f"\n📊 最终消息历史: {len(agent.messages)} 条")
-    for i, msg in enumerate(agent.messages):
-        role = msg.get("role", "?")
-        content = msg.get("content", "")[:80]
-        print(f"   [{i}] {role}: {content}...")
+        # 2. 创建 Agent
+        agent = Agent(
+            user_id="test_user",
+            llm=LLM_CONFIG,
+            tools=tm.list_names(),
+            skills={},
+            max_iteration=6,     # 限制 6 轮, 方便测试完整流程
+            mode="swarm",
+            is_base=True,
+            max_token=4096,      # 测试用小一点
+            tool_manager=tm,
+            language="中文",
+        )
+        print(f"🤖 Agent 已创建: id={agent.agent_id}, session={agent.session_id}")
+
+        # 3. 打印 system prompt (调试用)
+        system_sections = agent._build_system_prompt()
+        print(f"\n📜 System Prompt 共 {len(system_sections)} 段, "
+              f"总长 {sum(len(s) for s in system_sections)} 字符:")
+        for i, section in enumerate(system_sections):
+            first_line = section.split("\n")[0]
+            print(f"   [{i}] {first_line} ({len(section)} chars)")
+
+        # 4. 运行 main_loop
+        print(f"\n💬 用户输入: {query}")
+        print("=" * 60)
+
+        try:
+            async for event in main_loop(agent, query, tool_manager=tm):
+                print_event(event)
+        except Exception as e:
+            print(f"\n💥 运行出错: {type(e).__name__}: {e}")
+            import traceback
+            traceback.print_exc()
+
+        # 5. 打印最终消息历史 (调试用)
+        print(f"\n📊 最终消息历史: {len(agent.messages)} 条")
+        for i, msg in enumerate(agent.messages):
+            role = msg.get("role", "?")
+            content = msg.get("content", "")[:80]
+            print(f"   [{i}] {role}: {content}...")
+    finally:
+        # 优雅释放连接资源
+        await connector_loader.shutdown()
 
 
 if __name__ == "__main__":

@@ -114,13 +114,26 @@ def process_messages_vision(messages: List[Dict[str, Any]]) -> List[Dict[str, An
         content = msg.get("content")
         
         if role == "user":
+            # 如果不是最后一个 user 消息，则过滤掉所有的 image_url，只保留 text，防止历史过期或不可达的图片 URL 导致大模型 API 返回 500 报错
+            if idx != last_user_idx:
+                if isinstance(content, list):
+                    content = [part for part in content if isinstance(part, dict) and part.get("type") == "text"]
+                    if len(content) == 1:
+                        content = content[0].get("text", "")
+                    elif len(content) == 0:
+                        content = ""
+                new_msg = dict(msg)
+                new_msg["content"] = content
+                transformed_messages.append(new_msg)
+                continue
+                
+            # 如果是最后一个 user 消息，挂载可能存在的动态/参考图片 URL
             urls = user_image_urls.get(idx, [])
-            if urls:
+            if urls or isinstance(content, list):
                 content_parts = []
                 if isinstance(content, str):
                     content_parts.append({"type": "text", "text": content})
                 elif isinstance(content, list):
-                    # 保留原有的所有 parts（包含原有的 text 和原有的 image_url）
                     content_parts.extend(content)
                 
                 # 收集现有 content_parts 中已有的 image_url，避免重复添加

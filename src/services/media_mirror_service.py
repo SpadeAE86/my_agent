@@ -60,5 +60,12 @@ async def mirror_remote_url_to_obs(
 def is_obs_url(url: str) -> bool:
     if not url:
         return False
-    return ("obs.cn-east-3.myhuaweicloud.com" in url) or ("obs.freeuuu.com" in url)
+    return (
+        ("obs.cn-east-3.myhuaweicloud.com" in url) or 
+        ("obs.freeuuu.com" in url) or
+        ("volces.com" in url) or
+        ("volcengine.com" in url) or
+        ("tos-s3" in url)
+    )
+
 

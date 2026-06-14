@@ -19,6 +19,7 @@ def get_section_using_tools(tool_manager: Any) -> str | None:
         "- **To edit files**: Use `replace_file_content` or `multi_replace_file_content` instead of `sed`, `awk`, or writing custom python edit scripts.\n"
         "- **To create files**: Use `write_to_file` instead of `cat <<EOF` redirection or `echo` shell redirects.\n"
         "- **To search for files**: Use dedicated search/list tools instead of running `find` or `ls` in terminal shells.\n"
+        "- **To manage/edit force-directed graphs**: Use `list_graphs` to list saved graphs, `read_graph` to read their relations, and `update_graph` (or `make_graph`) to write changes. Do NOT manually edit graph JSON files using file writing tools unless dedicated tools are insufficient.\n"
     )
 
     # 列出所有可用工具

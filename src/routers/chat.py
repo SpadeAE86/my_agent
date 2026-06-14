@@ -37,7 +37,7 @@ from fastapi import APIRouter, Query
 from fastapi.responses import StreamingResponse, FileResponse
 from openai import AsyncOpenAI
 
-from models.pydantic.request import ChatRequest
+from models.pydantic.request import ChatRequest, CreateRoleRequest
 from core.agent.agent import Agent
 from core.agent.agent_loop import main_loop
 from core.agent.event import TaskComplete, ErrorEvent
@@ -101,6 +101,9 @@ async def chat_sse(req: ChatRequest):
                 max_token=1024,
                 tool_manager=_tool_manager,
                 language="中文",
+                active_workspace_id=req.active_workspace_id,
+                active_graph_name=req.active_graph_name,
+                role_id=req.role_id,
             )
 
             # 3. 驱动 main_loop, 把每个 AgentEvent 序列化为 SSE data 行
@@ -172,7 +175,7 @@ async def chat_sse(req: ChatRequest):
                         temperature=0.3
                     )
                     content_str = sum_resp.choices[0].message.content.strip()
-                    content_str = content_str.replace('"', '').replace('“', '').replace('”', '').replace("'", "").replace("'", "")
+                    content_str = content_str.replace('"', '').replace('“', '').replace('”', '').replace("'", "").replace('’', '')
                     if content_str and len(content_str) <= 15:
                         abstract = content_str
                     elif content_str:
@@ -211,12 +214,23 @@ async def chat_sse(req: ChatRequest):
 
 
 @chat_router.get("/sessions")
-async def get_chat_sessions(page: int = Query(1, ge=1), page_size: int = Query(20, ge=1)):
+async def get_chat_sessions(
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20, ge=1),
+    role_id: Optional[str] = Query(None)
+):
     """
     获取会话历史列表 (分页)
     """
     project_root = Path(__file__).resolve().parent.parent.parent
     memory_dir = project_root / "data" / "sessions"
+    
+    from services.workspace_db_service import workspace_db_service
+    try:
+        workspaces = await workspace_db_service.list_workspaces()
+        workspace_ids = {ws.id for ws in workspaces}
+    except Exception:
+        workspace_ids = set()
     
     if not memory_dir.exists():
         return {"sessions": [], "has_more": False}
@@ -230,23 +244,57 @@ async def get_chat_sessions(page: int = Query(1, ge=1), page_size: int = Query(2
     # 按最后修改时间倒序排列 (最新在最前)
     files_with_mtime.sort(key=lambda x: x[1], reverse=True)
     
-    total = len(files_with_mtime)
+    # 根据 role_id 过滤
+    filtered_files = []
+    for item, mtime in files_with_mtime:
+        if role_id:
+            file_role_id = "default"
+            try:
+                with open(item, "r", encoding="utf-8") as f:
+                    first_line = f.readline().strip()
+                    if first_line:
+                        meta = json.loads(first_line)
+                        if "role" not in meta:
+                            file_role_id = meta.get("role_id", "default")
+            except Exception:
+                pass
+            if file_role_id != role_id:
+                continue
+        filtered_files.append((item, mtime))
+        
+    total = len(filtered_files)
     start_idx = (page - 1) * page_size
     end_idx = start_idx + page_size
-    page_files = files_with_mtime[start_idx:end_idx]
+    page_files = filtered_files[start_idx:end_idx]
     
     sessions = []
     for item, mtime in page_files:
         session_id = item.stem
         title = "空会话"
+        active_workspace_ids = set()
+        active_graph_names = set()
+        role_id = "default"
         try:
             with open(item, "r", encoding="utf-8") as f:
                 first_line = f.readline().strip()
                 if first_line:
                     try:
                         meta = json.loads(first_line)
-                        if "role" not in meta and "abstract" in meta:
-                            title = meta["abstract"]
+                        if "role" not in meta:
+                            role_id = meta.get("role_id", "default")
+                            if "abstract" in meta:
+                                title = meta["abstract"]
+                            w_ids = meta.get("active_workspace_ids")
+                            if w_ids:
+                                active_workspace_ids.update(w_ids)
+                            elif meta.get("active_workspace_id"):
+                                active_workspace_ids.add(meta["active_workspace_id"])
+                                
+                            g_names = meta.get("active_graph_names")
+                            if g_names:
+                                active_graph_names.update(g_names)
+                            elif meta.get("active_graph_name"):
+                                active_graph_names.add(meta["active_graph_name"])
                         elif meta.get("role") == "user" and meta.get("content"):
                             title = meta["content"]
                     except json.JSONDecodeError:
@@ -265,15 +313,62 @@ async def get_chat_sessions(page: int = Query(1, ge=1), page_size: int = Query(2
                                 break
                         except json.JSONDecodeError:
                             continue
+                            
+                # Scan all lines to find active_workspace_ids and active_graph_names
+                f.seek(0)
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        msg = json.loads(line)
+                        if msg.get("role") == "assistant" and "tool_calls" in msg:
+                            for tc in msg["tool_calls"]:
+                                func = tc.get("function", {})
+                                t_name = func.get("name")
+                                args_str = func.get("arguments", "{}")
+                                args = {}
+                                if isinstance(args_str, str):
+                                    try:
+                                        args = json.loads(args_str)
+                                    except Exception:
+                                        pass
+                                elif isinstance(args_str, dict):
+                                    args = args_str
+                                    
+                                if t_name in ["read_graph", "make_graph", "update_graph"]:
+                                    g_name = args.get("file_name")
+                                    if g_name:
+                                        active_graph_names.add(g_name)
+                                elif t_name in ["get_canvas_graph", "create_canvas_node", "update_canvas_node", "link_canvas_nodes"]:
+                                    w_id = args.get("workspace_id")
+                                    if w_id:
+                                        active_workspace_ids.add(w_id)
+                    except Exception:
+                        continue
             if len(title) > 30:
                 title = title[:30] + "..."
         except Exception:
             pass
             
+        # Context matching and fallbacks
+        if session_id in workspace_ids:
+            active_workspace_ids.add(session_id)
+        if (project_root / "data" / "graphs" / f"{session_id}.json").exists():
+            active_graph_names.add(session_id)
+            
+        if not active_workspace_ids and not active_graph_names:
+            active_workspace_ids.add(session_id)
+
         sessions.append({
             "session_id": session_id,
             "title": title,
-            "updated_at": mtime
+            "updated_at": mtime,
+            "role_id": role_id,
+            "active_workspace_id": list(active_workspace_ids)[0] if active_workspace_ids else None,
+            "active_graph_name": list(active_graph_names)[0] if active_graph_names else None,
+            "active_workspace_ids": list(active_workspace_ids),
+            "active_graph_names": list(active_graph_names)
         })
         
     has_more = end_idx < total
@@ -459,3 +554,36 @@ async def get_supported_models():
         {"display_name": "Qwen 3.5 Plus", "real_name": "qwen3.5-plus"},
         {"display_name": "Claude Sonnet 4.6", "real_name": "claude-sonnet-4-6"}
     ]
+
+
+@chat_router.get("/roles")
+async def get_roles():
+    """
+    获取所有可用角色列表。
+
+    返回格式:
+        [
+          { "id": "default", "name": "CC", "mode": "default", "description": "...", "avatar_emoji": "⚡" },
+          { "id": "neuro",   "name": "Neuro", "mode": "persona", "description": "...", "avatar_emoji": "🧠" }
+        ]
+    """
+    from core.roles.role_manager import role_manager
+    roles = role_manager.list_roles()
+    if not roles:
+        # 保底: 返回默认 CC 角色
+        roles = [{"id": "default", "mode": "default", "name": "CC", "description": "通用助手", "avatar_emoji": "⚡"}]
+    return roles
+
+
+@chat_router.post("/roles")
+async def create_new_role(req: CreateRoleRequest):
+    """
+    新建一个自定义角色。
+    """
+    try:
+        from core.roles.role_manager import role_manager
+        meta = role_manager.create_role(req.name)
+        return {"ok": True, "role": meta}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
+

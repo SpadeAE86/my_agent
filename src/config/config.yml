@@ -337,3 +337,18 @@ mix_compose:
   # 落盘混剪请求体，便于本地/测试环境手动 POST；也可用环境变量 MIX_COMPOSE_DUMP_REQUEST_JSON 覆盖
   dump_request_json: work/mix_compose_last_request.json
 
+storage:
+  provider: huawei  # 'huawei' or 'volcengine'
+  huawei:
+    access_key: UJDPK31ANIBV0XTEUN5N
+    secret_key: NhQExxv9PUYsvmvGnVReizRksaiHcJdQ6vMMw19d
+    endpoint: obs.cn-east-3.myhuaweicloud.com
+    bucket: freeuuu
+  volcengine:
+    access_key: YOUR_VOLCENGINE_AK
+    secret_key: YOUR_VOLCENGINE_SK
+    endpoint: tos-s3-cn-beijing.volces.com
+    region: cn-beijing
+    bucket: your-volc-bucket
+
+

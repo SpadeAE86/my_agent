@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from core.memory import summarizer
 
 MEMORY_ROOT = Path(__file__).resolve().parent.parent.parent.parent / "data" / "memory"
+ROLES_ROOT = Path(__file__).resolve().parent.parent.parent.parent / "data" / "roles"
 
 def load_long_term_memory(user_id: str) -> str:
     """Loads the main MEMORY.md file for the user."""
@@ -20,6 +21,24 @@ def save_long_term_memory(user_id: str, content: str) -> None:
     user_dir = MEMORY_ROOT / user_id
     user_dir.mkdir(parents=True, exist_ok=True)
     memory_path = user_dir / "MEMORY.md"
+    with open(memory_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+
+def load_role_memory(role_id: str) -> str:
+    """Loads the MEMORY.md for a specific role from data/roles/{role_id}/MEMORY.md."""
+    memory_path = ROLES_ROOT / role_id / "MEMORY.md"
+    if memory_path.exists():
+        with open(memory_path, "r", encoding="utf-8") as f:
+            return f.read()
+    return ""
+
+
+def save_role_memory(role_id: str, content: str) -> None:
+    """Saves or updates the MEMORY.md for a specific role."""
+    role_dir = ROLES_ROOT / role_id
+    role_dir.mkdir(parents=True, exist_ok=True)
+    memory_path = role_dir / "MEMORY.md"
     with open(memory_path, "w", encoding="utf-8") as f:
         f.write(content)
 
