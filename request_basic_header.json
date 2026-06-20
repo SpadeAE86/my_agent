@@ -1,0 +1,11 @@
+{
+  "accept": "*/*",
+  "content-type": "application/json",
+  "accept-language": "zh-CN,zh;q=0.9,en;q=0.8",
+  "origin": "https://show.bilibili.com",
+  "referer": "https://show.bilibili.com/",
+  "user-agent": "Mozilla/5.0 (...)",
+  "sec-fetch-site": "same-origin",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-dest": "empty"
+}
