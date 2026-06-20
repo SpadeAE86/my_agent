@@ -6,6 +6,12 @@ audio:
     access_key_id: ACCESS_KEY_ID
     access_key_secret: ACCESS_KEY_SECRET
     app_key: APP_KEY
+  Volcano:
+    app_id: YOUR_VOLCANO_APP_ID
+    access_token: YOUR_VOLCANO_ACCESS_TOKEN
+    cluster: volcano_tts
+    host: wss://openspeech.bytedance.com/api/v1/tts/ws_binary
+    v3_sse_host: https://openspeech.bytedance.com/api/v3/tts/unidirectional/sse
   Tencent:
     access_key_id: ACCESS_KEY_ID
     access_key_secret: ACCESS_KEY_SECRET

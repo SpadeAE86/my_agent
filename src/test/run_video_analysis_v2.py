@@ -19,8 +19,6 @@ import zipfile
 import shutil
 import sys
 import time
-import contextlib
-import io
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
@@ -36,10 +34,10 @@ if SRC_DIR not in sys.path:
 from infra.logging.logger import logger as log
 from infra.storage.sqlmodel_init import create_tables_if_not_exists
 from models.pydantic.video_analysis_request import ShotCard
-from services.analysis_video import analyze_video, index_shotcards_to_opensearch
-from services.video_analysis_db_service import video_analysis_db_service
-from services.video_upload_cache_service import video_upload_cache_service
-from utils.obs_utils import OBS_BASE_URL, download_from_obs, download_url_to_file
+from services.video_match_services.analysis_video import analyze_video, index_shotcards_to_opensearch
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
+from services.video_compose_services import video_upload_cache_service
+from utils.obs_utils import OBS_BASE_URL, download_url_to_file
 
 
 def _quiet_logs() -> None:

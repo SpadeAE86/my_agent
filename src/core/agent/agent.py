@@ -262,7 +262,7 @@ class Agent:
 
     def _section_project_context(self) -> str | None:
         """
-        龙虾模式专用 — 从角色 Workspace 读取 IDENTITY / USER / SOUL，
+        龙虾模式专用 — 从角色 Workspace 读取 IDENTITY / USER / SOUL / USER_SETTINGS，
         组合成 project_context 注入到动态段。
         """
         from core.roles.role_manager import role_manager
@@ -270,15 +270,20 @@ class Agent:
         identity = role_manager.read_identity(self.role_id)
         user_info = role_manager.read_user(self.role_id)
         soul = role_manager.read_soul(self.role_id)
+        user_settings = role_manager.read_user_settings(self.role_id)
 
-        if not any([identity.strip(), user_info.strip(), soul.strip()]):
+        if not any([identity.strip(), user_info.strip(), soul.strip(), user_settings.strip()]):
             return None
 
         parts = ["# Project Context\n"]
 
         if identity.strip():
-            parts.append("## Identity\n")
+            parts.append("## Identity (AI Self-Maintained)\n")
             parts.append(identity.strip())
+
+        if user_settings.strip():
+            parts.append("\n## User Defined Character Settings (Strict Personality/Role Guidelines from User)\n")
+            parts.append(user_settings.strip())
 
         if user_info.strip():
             parts.append("\n## Your Human\n")

@@ -3,6 +3,12 @@ audio:
     access_key_id: YOUR_ALIYUN_AK
     access_key_secret: YOUR_ALIYUN_SK
     app_key: UwjC1qMrxjoKRbzV
+  Volcano:
+    app_id: YOUR_VOLCANO_APP_ID
+    access_token: YOUR_VOLCANO_ACCESS_TOKEN
+    cluster: volcano_tts
+    host: wss://openspeech.bytedance.com/api/v1/tts/ws_binary
+    v3_sse_host: https://openspeech.bytedance.com/api/v3/tts/unidirectional/sse
   Azure:
     service_region: SERVICE_REGION
     speech_key: SPEECH_KEY
@@ -249,11 +255,11 @@ http:
   post:
     retry: 4  # POST请求重试次数
     timeout: 60.0  # POST请求超时（秒）
-    retry_sleep: 10  # 重试等待时间（秒）
+    retry_sleep: 1  # 重试等待时间（秒）
   get:
     retry: 4  # GET请求重试次数
     timeout: 10.0  # GET请求超时（秒）
-    retry_sleep: 10  # 重试等待时间（秒）
+    retry_sleep: 1  # 重试等待时间（秒）
 
 # --- Added from simplify_ffmpeg_logic ---
 log:

@@ -1,0 +1,1038 @@
+{
+    "success": true,
+    "data": {
+        "floorKeys": [
+            "header",
+            "basicInfo",
+            "mergeAtmospherePrice",
+            "benefit",
+            "eventSale",
+            "linkGoods",
+            "detailDesc",
+            "circleComment",
+            "purchaseNotice",
+            "rec",
+            "footer"
+        ],
+        "headerFloorVO": {
+            "floorKey": "header",
+            "header": [
+                {
+                    "type": 0,
+                    "icon": "https://i0.hdslb.com/bfs/kfptfe/floor/463ba99047a3ad42f0e248ef8c10ec7163715839.png",
+                    "nightIcon": "https://i0.hdslb.com/bfs/kfptfe/floor/463ba99047a3ad42f0e248ef8c10ec7163715839.png"
+                },
+                {
+                    "type": 3,
+                    "icon": "https://i0.hdslb.com/bfs/kfptfe/floor/5ce3f0a00e3ab125cec0598916837b57b406b004.png",
+                    "nightIcon": "https://i0.hdslb.com/bfs/kfptfe/floor/5ce3f0a00e3ab125cec0598916837b57b406b004.png",
+                    "shareExtra": {
+                        "title": "上海·Sanrio characters Cafe三丽鸥家族主题餐厅 萌萌三友主题",
+                        "text": "上海·Sanrio characters Cafe三丽鸥家族主题餐厅 萌萌三友主题",
+                        "url": "https://mall.bilibili.com/neul-next/ticket-renovation/detail.html?noTitleBar=1&id=1001476&from_spmid=mall.ticket-detail.0.0",
+                        "imageUrl": "https://i2.hdslb.com/bfs/openplatform/202605/UhA6MF5b1779689561_1779689561819.jpg",
+                        "mid": 384869161
+                    }
+                },
+                {
+                    "type": 7,
+                    "icon": "https://i0.hdslb.com/bfs/kfptfe/floor/fb649d8c3019ece47d605b1491d5ec99fdebf9f4.png",
+                    "nightIcon": "https://i0.hdslb.com/bfs/kfptfe/floor/fb649d8c3019ece47d605b1491d5ec99fdebf9f4.png",
+                    "moreInteractInfoList": [
+                        {
+                            "icon": "https://i0.hdslb.com/bfs/kfptfe/floor/ddee4ecba710952cc538f4ea6814353627e6ad61.png",
+                            "text": "联系客服",
+                            "jumpUrl": "https://mall.bilibili.com/neul-next/index.html?page=customer-service-center_index&noTitleBar=1&comefrom=ticket",
+                            "type": 1,
+                            "merchant": null
+                        },
+                        {
+                            "icon": "https://i0.hdslb.com/bfs/kfptfe/floor/580c9801da15fa1017c8d3c1ceed684bcdcdc628.png",
+                            "text": "主办信息",
+                            "jumpUrl": null,
+                            "type": 2,
+                            "merchant": {
+                                "id": 3140,
+                                "desc": "项目由以上公司发起，本平台仅作为票务销售平台",
+                                "type": 1,
+                                "company": "上海咖到餐饮管理有限公司",
+                                "license_img": "//i1.hdslb.com/bfs/ticket-sales/202103/微信图片_2021022511564411176817.jpeg?token=dae2179249bb4173%3AMqMuzIeLdXcaLMzpMgJVS0oQ%2FoU%3D%3A1781690970"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "basicInfoFloorVO": {
+            "floorKey": "basicInfo",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "brief": null,
+            "extBrief": null,
+            "titlePrefix": {
+                "dayColor": "#FB7299",
+                "nightColor": "#FB7299",
+                "backDayColor": null,
+                "backNightColor": null,
+                "text": "独家",
+                "exclusiveTagExt": {
+                    "imgUrl": "https://i0.hdslb.com/bfs/activity-plat/static/20260506/ad8b313fbd90d4f4345775fe9f1742d3/JHzec9ag6r.png",
+                    "jumpUrl": "https://i0.hdslb.com/bfs/activity-plat/static/20260513/ad8b313fbd90d4f4345775fe9f1742d3/zT9P67z4qE.png",
+                    "actionType": 2
+                },
+                "bold": false
+            },
+            "itemsName": "上海·Sanrio characters Cafe三丽鸥家族主题餐厅 萌萌三友主题",
+            "itemsId": 1001476,
+            "shopId": null,
+            "oneShopId": null,
+            "imageList": [
+                "https://i2.hdslb.com/bfs/openplatform/202605/UhA6MF5b1779689561_1779689561819.jpg"
+            ],
+            "mainImgScale": null,
+            "benefitInfos": null,
+            "commitmentTags": null,
+            "headAvDTO": null,
+            "verticalHeadAvDTO": null,
+            "headArchiveVO": null,
+            "liveInfo": null,
+            "serviceRightTag": null,
+            "atmosphereImgList": null,
+            "promoInfoVOS": null,
+            "itemsBenefitsInfo": null,
+            "commentBgUrl": null,
+            "itemsStatus": 1,
+            "reserveAble": null,
+            "couponReceiveAble": null,
+            "salePoint": [
+                {
+                    "salePoint": {
+                        "tagType": 3,
+                        "title": "近期上海本地生活想去人数·第2名",
+                        "titleDayColor1": "ffBC8732",
+                        "titleDayColor2": "ffBC8732",
+                        "titleNightColor1": "ffBC8732",
+                        "titleNightColor2": "ffBC8732",
+                        "cornerRadius": 4,
+                        "useBoard": 0,
+                        "backDayColor1": "ffFFF9F0",
+                        "backDayColor2": "ffFFF9F0",
+                        "backNightColor1": "ffFFF9F0",
+                        "backNightColor2": "ffFFF9F0"
+                    },
+                    "jumpUrl": null,
+                    "tagText": "近期上海本地生活想去人数·第2名"
+                }
+            ],
+            "newUpSayVO": null,
+            "newCustomer": null,
+            "guideIndexUrl": null,
+            "newRetainHourFreq": null,
+            "newRetainNumFreq": null,
+            "retainDaysFreq": null,
+            "hitNewRetain": null,
+            "crowdFundingBulletScreenVO": null,
+            "disablePicClick": null,
+            "inPageToastVO": null,
+            "autoShowHalfVO": null,
+            "headAvDTOFront": null,
+            "timeText": "2026.05.27-08.31（以现场为准）",
+            "itemsLikeVO": {
+                "hasLiked": false,
+                "count": 481,
+                "countStr": "481",
+                "users": null,
+                "userVOS": null
+            },
+            "venueInfo": {
+                "id": 23566,
+                "name": "第一百货商业中心(南京东路店)",
+                "status": null,
+                "coordinate": {
+                    "coor": "121.47476107972915,31.23548090081347",
+                    "type": "GD"
+                },
+                "traffic": null,
+                "city": null,
+                "province": null,
+                "district": null,
+                "dis": null,
+                "address_detail": "南京东路830号",
+                "place_num": null,
+                "province_name": "上海",
+                "city_name": "上海",
+                "district_name": null
+            },
+            "disclaimer": "温馨提示：本平台仅作为本活动票务销售平台，活动内容和合规手续由主办方负责。",
+            "seatMapItemVOS": null,
+            "promoAtmosphereVOList": null
+        },
+        "benefitFloorVO": {
+            "floorKey": "benefit",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "projectBenefitInfoList": [
+                {
+                    "type": 3,
+                    "content": {
+                        "tagType": 4,
+                        "backImgUrl": "https://i0.hdslb.com/bfs/kfptfe/floor/cde3e0e61c4e965fa8f20b94a6ad5872c8c7aad8.png",
+                        "title": "条件退(可自助)",
+                        "titleDayColor1": "ff18191C",
+                        "titleDayColor2": "ff18191C",
+                        "titleNightColor1": "ff18191C",
+                        "titleNightColor2": "ff18191C",
+                        "cornerRadius": 4,
+                        "useBoard": 0,
+                        "backDayColor1": "",
+                        "backDayColor2": "",
+                        "backNightColor1": "",
+                        "backNightColor2": ""
+                    },
+                    "desc": "该活动部分门票支持有条件退票，具体可支持的退款情形请详见本页面<a class='hyperlink' href='https://www.bilibili.com/blackboard/activity-ZblKxcosG.html' target='_blank' rel='noopener noreferrer'>《哔哩哔哩票务服务协议》</a>中退票政策相关说明或公告",
+                    "opText": "前往退票",
+                    "opJumpUrl": null,
+                    "refundRuleList": [
+                        {
+                            "timeText": null,
+                            "screenTitle": "",
+                            "rules": [
+                                {
+                                    "timeRange": "08.31 22:00之后",
+                                    "fee": "停止退票",
+                                    "status": "future"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": 8,
+                    "content": {
+                        "tagType": 4,
+                        "backImgUrl": "https://i0.hdslb.com/bfs/kfptfe/floor/e592f6739828b0ba009ee55472bfbabee4b35f86.png",
+                        "title": "电子票/兑换票",
+                        "titleDayColor1": "ff18191C",
+                        "titleDayColor2": "ff18191C",
+                        "titleNightColor1": "ff18191C",
+                        "titleNightColor2": "ff18191C",
+                        "cornerRadius": 4,
+                        "useBoard": 0,
+                        "backDayColor1": "",
+                        "backDayColor2": "",
+                        "backNightColor1": "",
+                        "backNightColor2": ""
+                    },
+                    "desc": "项目支持电子票/兑换票，出票之后会展示二维码，具体入场方式以短信及现场安排为准",
+                    "opText": null,
+                    "opJumpUrl": null,
+                    "refundRuleList": null
+                }
+            ],
+            "freeGoInfoVO": null,
+            "hygSelectedInfoVO": null,
+            "projectNoticeInfoVO": null
+        },
+        "mergeAtmospherePriceFloorVO": {
+            "floorKey": "mergeAtmospherePrice",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "mergePriceInfoVO": {
+                "leftVO": {
+                    "leftTopVO": {
+                        "mainPriceVOs": [
+                            {
+                                "pricePrefix": "",
+                                "priceSymbol": "¥",
+                                "priceContext": null,
+                                "priceIntegerPart": "10",
+                                "priceDecimalPart": null,
+                                "priceSuffix": "",
+                                "canClick": false,
+                                "strikePrice": false,
+                                "priceType": 0,
+                                "styleVO": {
+                                    "dayColor": "#FF6699",
+                                    "nightColor": "#FF6699",
+                                    "backColor": null,
+                                    "canClickColor": null,
+                                    "cornerRadius": null,
+                                    "useBoard": null
+                                }
+                            }
+                        ],
+                        "priceDescVOS": []
+                    },
+                    "leftBottomVO": null
+                },
+                "rightVO": {
+                    "rightTopVO": null,
+                    "rightBottomVO": null
+                },
+                "bottomVO": null,
+                "fontColor": null
+            },
+            "mergeAtmosphereVO": null,
+            "floorCanClick": false,
+            "clickActionInfo": null
+        },
+        "detailDescFloorVO": {
+            "floorKey": "detailDesc",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "itemsAttrGroups": null,
+            "contents": null,
+            "performanceDesc": {
+                "type": 0,
+                "list": [
+                    {
+                        "module": "activity_content",
+                        "details": "<p><img src=\"//i1.hdslb.com/bfs/openplatform/202605/BRk7dUls1779689639_1779689639510.jpg\"><img src=\"//i2.hdslb.com/bfs/openplatform/202605/Uo33I6AF1779689639_1779689639082.jpg\"><img src=\"//i2.hdslb.com/bfs/openplatform/202605/iIo97kd21779689639_1779689639392.jpg\"><img src=\"//i0.hdslb.com/bfs/openplatform/202605/eAZJrVDE1779689639_1779689639353.jpg\"><img src=\"//i2.hdslb.com/bfs/openplatform/202605/nB6lzx5W1779689639_1779689639331.jpg\"><img src=\"//i1.hdslb.com/bfs/openplatform/202605/Ie0KdMZm1779689639_1779689639332.jpg\"><img src=\"//i1.hdslb.com/bfs/openplatform/202605/sLVS2Yf81779689639_1779689639392.jpg\"><img src=\"//i0.hdslb.com/bfs/openplatform/202605/cDyyUl8k1779689639_1779689639382.jpg\"><img src=\"//i2.hdslb.com/bfs/openplatform/202605/F6OlQGWJ1779689639_1779689639148.jpg\"></p>"
+                    },
+                    {
+                        "module": "base_info",
+                        "details": [
+                            {
+                                "title": "活动日期",
+                                "content": "10：30-22：00"
+                            },
+                            {
+                                "title": "场馆地址",
+                                "content": " 上海市 黄浦区 第一百货商业中心(南京东路店) C馆4楼"
+                            },
+                            {
+                                "title": "儿童说明",
+                                "content": "全部儿童持全价票入场"
+                            },
+                            {
+                                "title": "入场次数",
+                                "content": "单场票，单日单场次1次入场有效"
+                            },
+                            {
+                                "title": "入场说明",
+                                "content": "电子票，凭购票二维码到活动现场扫码验证入场（订单或订单截图无效）"
+                            },
+                            {
+                                "title": "退换说明",
+                                "content": "支持退票，退票截止日期8月31日22:00"
+                            },
+                            {
+                                "title": "限购说明",
+                                "content": "单个id限购2张"
+                            }
+                        ]
+                    },
+                    {
+                        "module": "ticket_desc",
+                        "details": {
+                            "remark": "",
+                            "ticket_list": [
+                                {
+                                    "price": "10",
+                                    "name": "10元预约金",
+                                    "welfare": "现场抵扣10元餐食消费，一票一位"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "footerFloorVO": {
+            "floorKey": "footer",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "footer": null,
+            "addCartButton": null,
+            "purchaseButton": null,
+            "actionInfoVO": null,
+            "couponPackageInfoVO": null,
+            "couponPackageInfos": null,
+            "canClick": null
+        },
+        "purchaseNoticeFloorVO": {
+            "floorKey": "purchaseNotice",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "title": "购票须知",
+            "desc": [
+                "会员购仅作为演出/赛事项目的票务代理方，不承担除法律明确规定外的责任。若您与主办方之间出现争议，会员购将尽力为您协调处理保障您的利益，但无法保证协调结果符合您的期望，会员购无权对争议作出处理。",
+                "会员购在线售票为电子票或纸质票。如您购买的是电子票，入场时请在bilibili APP中的【订单中心】打开电子票检票入场（部分活动需兑换实体票入场）；电子票不得转售，请在正规途径购买；电子票截图无法入场。如您购买的是纸质票，需在购票时填写准确配送信息，纸质票将在活动开始之前寄出，邮费由用户承担；因纸质票的特殊性，遗失不补且无法挂失，请您保管好购买到的票品。",
+                "部分活动不提供现场售票服务，请您提前购买。",
+                "因票品具有稀缺性和时效性的特点，一旦退货将会影响二次销售，票品均不支持七天无理由退票，请您理解并审慎购买。并非所有项目主办方都支持因个人原因发起的退票，具体请以各商品展示页说明信息为准，请您在购买前仔细阅读商品信息。",
+                "若所购项目主办方支持因个人原因退票，您在因个人原因退票时需支付一定比例的手续费，具体比例您可在<a class='hyperlink' href='https://www.bilibili.com/blackboard/activity-ZblKxcosG.html' target='_blank' rel='noopener noreferrer'>《bilibili票务服务协议》</a>中查询。",
+                "为保障您的人身安全，主办方在人流高峰可能会采取临时现场限流措施，如对您的正常观展产生影响，敬请谅解。",
+                "若有其他问题请联系客服：客服入口在移动端APP '我的' 个人中心，点击'我的客服'，选择'在线客服'，即可咨询。",
+                "<a class='hyperlink' href='https://www.bilibili.com/blackboard/mall/activity-H5S3ihA9Z.html' target='_blank' rel='noopener noreferrer'>《会员购服务协议》</a>"
+            ]
+        },
+        "circleCommentFloorVO": {
+            "floorKey": "circleComment",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": null,
+            "topicId": 1340186
+        },
+        "linkGoodsFloorVO": {
+            "floorKey": "linkGoods",
+            "floorIcon": null,
+            "bgImgUrl": null,
+            "floorTitle": "内场票"
+        },
+        "itemsId": 1001476,
+        "itemsStatus": 1,
+        "restriction": 0,
+        "restrictionPerOrder": 0,
+        "hitExceptionCache": false,
+        "projectId": 1001476,
+        "projectName": "上海·Sanrio characters Cafe三丽鸥家族主题餐厅 萌萌三友主题",
+        "projectType": 2,
+        "projectLabel": "2026.05.27-08.31（以现场为准）",
+        "showDate": "2026-06-17",
+        "endTime": 1788191999,
+        "currentTime": 1781690970,
+        "saleFlagNumber": 2,
+        "canClick": true,
+        "isSale": 1,
+        "isFree": false,
+        "defaultButton": 1,
+        "delayType": 0,
+        "ticketPreSale": 0,
+        "salablePriceLow": 1000,
+        "salablePriceHigh": 1000,
+        "bsCountDown": -9238169,
+        "bsTime": 1772452800,
+        "saleTimeSummary": {
+            "show_sale_start": 0,
+            "sale_start": 0,
+            "countdown": 0
+        },
+        "screenList": [
+            {
+                "saleFlag": {
+                    "number": 3,
+                    "display_name": "已停售"
+                },
+                "id": 1005263,
+                "start_time": 1781663400,
+                "start_time_str": "2026-06-17",
+                "name": "06月17日 10:30-12:30",
+                "type": 2,
+                "ticket_type": 2,
+                "screen_type": 1,
+                "delivery_type": 1,
+                "pick_seat": 0,
+                "ticket_list": [
+                    {
+                        "saleStart": 1772452800,
+                        "saleEnd": 1781667000,
+                        "whiteSku": null,
+                        "id": 877289,
+                        "project_id": 1001476,
+                        "price": 1000,
+                        "desc": "10元预约金",
+                        "sale_start": "2026-03-02 20:00:00",
+                        "sale_end": "2026-06-17 11:30:00",
+                        "type": 1,
+                        "anonymous_buy": false,
+                        "link_sc": "",
+                        "sale_type": 1,
+                        "is_sale": 1,
+                        "less_vt": -1,
+                        "less_lv": -1,
+                        "limit_buy_toast": null,
+                        "num": 2,
+                        "num_type": 0,
+                        "sale_flag": {
+                            "number": 3,
+                            "display_name": "已停售"
+                        },
+                        "static_limit": {
+                            "num": 2,
+                            "limit_option": 1,
+                            "num_type": 0
+                        },
+                        "is_refund": 10,
+                        "cf_discount": null,
+                        "weight": 0,
+                        "is_package": 0,
+                        "package_num": 1,
+                        "discount_act": null,
+                        "link_sc_name": null,
+                        "is_use_qus": 0,
+                        "clickable": false,
+                        "rebate": null,
+                        "sale_flag_number": 3,
+                        "screen_name": "06月17日 10:30-12:30"
+                    }
+                ],
+                "express_fee": 0,
+                "express_free_flag": 0,
+                "discount_tag": 0,
+                "jump_page": "confirm",
+                "clickable": false,
+                "grayClick": false,
+                "is_rebate": false,
+                "sale_end": 1781667000,
+                "sale_start": 1772452800,
+                "sale_flag_number": 3,
+                "show_date": "2026-03-02",
+                "need_new_seat": false
+            },
+            {
+                "saleFlag": {
+                    "number": 3,
+                    "display_name": "已停售"
+                },
+                "id": 1005360,
+                "start_time": 1781672400,
+                "start_time_str": "2026-06-17",
+                "name": "06月17日 13:00-15:00",
+                "type": 2,
+                "ticket_type": 2,
+                "screen_type": 1,
+                "delivery_type": 1,
+                "pick_seat": 0,
+                "ticket_list": [
+                    {
+                        "saleStart": 1772452800,
+                        "saleEnd": 1781676000,
+                        "whiteSku": null,
+                        "id": 877706,
+                        "project_id": 1001476,
+                        "price": 1000,
+                        "desc": "10元预约金",
+                        "sale_start": "2026-03-02 20:00:00",
+                        "sale_end": "2026-06-17 14:00:00",
+                        "type": 1,
+                        "anonymous_buy": false,
+                        "link_sc": "",
+                        "sale_type": 1,
+                        "is_sale": 1,
+                        "less_vt": -1,
+                        "less_lv": -1,
+                        "limit_buy_toast": null,
+                        "num": 2,
+                        "num_type": 0,
+                        "sale_flag": {
+                            "number": 3,
+                            "display_name": "已停售"
+                        },
+                        "static_limit": {
+                            "num": 2,
+                            "limit_option": 1,
+                            "num_type": 0
+                        },
+                        "is_refund": 10,
+                        "cf_discount": null,
+                        "weight": 0,
+                        "is_package": 0,
+                        "package_num": 1,
+                        "discount_act": null,
+                        "link_sc_name": null,
+                        "is_use_qus": 0,
+                        "clickable": false,
+                        "rebate": null,
+                        "sale_flag_number": 3,
+                        "screen_name": "06月17日 13:00-15:00"
+                    }
+                ],
+                "express_fee": 0,
+                "express_free_flag": 0,
+                "discount_tag": 0,
+                "jump_page": "confirm",
+                "clickable": false,
+                "grayClick": false,
+                "is_rebate": false,
+                "sale_end": 1781676000,
+                "sale_start": 1772452800,
+                "sale_flag_number": 3,
+                "show_date": "2026-03-02",
+                "need_new_seat": false
+            },
+            {
+                "saleFlag": {
+                    "number": 3,
+                    "display_name": "已停售"
+                },
+                "id": 1005457,
+                "start_time": 1781681400,
+                "start_time_str": "2026-06-17",
+                "name": "06月17日 15:30-17:30",
+                "type": 2,
+                "ticket_type": 2,
+                "screen_type": 1,
+                "delivery_type": 1,
+                "pick_seat": 0,
+                "ticket_list": [
+                    {
+                        "saleStart": 1772452800,
+                        "saleEnd": 1781677800,
+                        "whiteSku": null,
+                        "id": 877765,
+                        "project_id": 1001476,
+                        "price": 1000,
+                        "desc": "10元预约金",
+                        "sale_start": "2026-03-02 20:00:00",
+                        "sale_end": "2026-06-17 14:30:00",
+                        "type": 1,
+                        "anonymous_buy": false,
+                        "link_sc": "",
+                        "sale_type": 1,
+                        "is_sale": 1,
+                        "less_vt": -1,
+                        "less_lv": -1,
+                        "limit_buy_toast": null,
+                        "num": 2,
+                        "num_type": 0,
+                        "sale_flag": {
+                            "number": 3,
+                            "display_name": "已停售"
+                        },
+                        "static_limit": {
+                            "num": 2,
+                            "limit_option": 1,
+                            "num_type": 0
+                        },
+                        "is_refund": 10,
+                        "cf_discount": null,
+                        "weight": 0,
+                        "is_package": 0,
+                        "package_num": 1,
+                        "discount_act": null,
+                        "link_sc_name": null,
+                        "is_use_qus": 0,
+                        "clickable": false,
+                        "rebate": null,
+                        "sale_flag_number": 3,
+                        "screen_name": "06月17日 15:30-17:30"
+                    }
+                ],
+                "express_fee": 0,
+                "express_free_flag": 0,
+                "discount_tag": 0,
+                "jump_page": "confirm",
+                "clickable": false,
+                "grayClick": false,
+                "is_rebate": false,
+                "sale_end": 1781677800,
+                "sale_start": 1772452800,
+                "sale_flag_number": 3,
+                "show_date": "2026-03-02",
+                "need_new_seat": false
+            },
+            {
+                "saleFlag": {
+                    "number": 3,
+                    "display_name": "已停售"
+                },
+                "id": 1005554,
+                "start_time": 1781690400,
+                "start_time_str": "2026-06-17",
+                "name": "06月17日 18:00-20:00",
+                "type": 2,
+                "ticket_type": 2,
+                "screen_type": 1,
+                "delivery_type": 1,
+                "pick_seat": 0,
+                "ticket_list": [
+                    {
+                        "saleStart": 1772452800,
+                        "saleEnd": 1781686800,
+                        "whiteSku": null,
+                        "id": 877966,
+                        "project_id": 1001476,
+                        "price": 1000,
+                        "desc": "10元预约金",
+                        "sale_start": "2026-03-02 20:00:00",
+                        "sale_end": "2026-06-17 17:00:00",
+                        "type": 1,
+                        "anonymous_buy": false,
+                        "link_sc": "",
+                        "sale_type": 1,
+                        "is_sale": 1,
+                        "less_vt": -1,
+                        "less_lv": -1,
+                        "limit_buy_toast": null,
+                        "num": 2,
+                        "num_type": 0,
+                        "sale_flag": {
+                            "number": 3,
+                            "display_name": "已停售"
+                        },
+                        "static_limit": {
+                            "num": 2,
+                            "limit_option": 1,
+                            "num_type": 0
+                        },
+                        "is_refund": 10,
+                        "cf_discount": null,
+                        "weight": 0,
+                        "is_package": 0,
+                        "package_num": 1,
+                        "discount_act": null,
+                        "link_sc_name": null,
+                        "is_use_qus": 0,
+                        "clickable": false,
+                        "rebate": null,
+                        "sale_flag_number": 3,
+                        "screen_name": "06月17日 18:00-20:00"
+                    }
+                ],
+                "express_fee": 0,
+                "express_free_flag": 0,
+                "discount_tag": 0,
+                "jump_page": "confirm",
+                "clickable": false,
+                "grayClick": false,
+                "is_rebate": false,
+                "sale_end": 1781686800,
+                "sale_start": 1772452800,
+                "sale_flag_number": 3,
+                "show_date": "2026-03-02",
+                "need_new_seat": false
+            },
+            {
+                "saleFlag": {
+                    "number": 2,
+                    "display_name": "预售中"
+                },
+                "id": 1005651,
+                "start_time": 1781697600,
+                "start_time_str": "2026-06-17",
+                "name": "06月17日 20:00-22:00（21：00停止餐饮点单）",
+                "type": 2,
+                "ticket_type": 2,
+                "screen_type": 1,
+                "delivery_type": 1,
+                "pick_seat": 0,
+                "ticket_list": [
+                    {
+                        "saleStart": 1772452800,
+                        "saleEnd": 1781695800,
+                        "whiteSku": false,
+                        "id": 878056,
+                        "project_id": 1001476,
+                        "price": 1000,
+                        "desc": "10元预约金",
+                        "sale_start": "2026-03-02 20:00:00",
+                        "sale_end": "2026-06-17 19:30:00",
+                        "type": 1,
+                        "anonymous_buy": false,
+                        "link_sc": "",
+                        "sale_type": 1,
+                        "is_sale": 1,
+                        "less_vt": -1,
+                        "less_lv": -1,
+                        "limit_buy_toast": null,
+                        "num": 2,
+                        "num_type": 0,
+                        "sale_flag": {
+                            "number": 2,
+                            "display_name": "预售中"
+                        },
+                        "static_limit": {
+                            "num": 2,
+                            "limit_option": 1,
+                            "num_type": 0
+                        },
+                        "is_refund": 10,
+                        "cf_discount": null,
+                        "weight": 0,
+                        "is_package": 0,
+                        "package_num": 1,
+                        "discount_act": null,
+                        "link_sc_name": null,
+                        "is_use_qus": 0,
+                        "clickable": true,
+                        "rebate": null,
+                        "sale_flag_number": 2,
+                        "screen_name": "06月17日 20:00-22:00（21：00停止餐饮点单）"
+                    }
+                ],
+                "express_fee": 0,
+                "express_free_flag": 0,
+                "discount_tag": 0,
+                "jump_page": "confirm",
+                "clickable": true,
+                "grayClick": false,
+                "is_rebate": false,
+                "sale_end": 1781695800,
+                "sale_start": 1772452800,
+                "sale_flag_number": 2,
+                "show_date": "2026-03-02",
+                "need_new_seat": false
+            }
+        ],
+        "salesDates": [
+            {
+                "date": "2026-06-17"
+            },
+            {
+                "date": "2026-06-18"
+            },
+            {
+                "date": "2026-06-19"
+            },
+            {
+                "date": "2026-06-20"
+            },
+            {
+                "date": "2026-06-21"
+            },
+            {
+                "date": "2026-06-22"
+            },
+            {
+                "date": "2026-06-23"
+            },
+            {
+                "date": "2026-06-24"
+            },
+            {
+                "date": "2026-06-25"
+            },
+            {
+                "date": "2026-06-26"
+            },
+            {
+                "date": "2026-06-27"
+            },
+            {
+                "date": "2026-06-28"
+            },
+            {
+                "date": "2026-06-29"
+            },
+            {
+                "date": "2026-06-30"
+            },
+            {
+                "date": "2026-07-01"
+            },
+            {
+                "date": "2026-07-02"
+            },
+            {
+                "date": "2026-07-03"
+            },
+            {
+                "date": "2026-07-04"
+            },
+            {
+                "date": "2026-07-05"
+            },
+            {
+                "date": "2026-07-06"
+            },
+            {
+                "date": "2026-07-07"
+            },
+            {
+                "date": "2026-07-08"
+            },
+            {
+                "date": "2026-07-09"
+            },
+            {
+                "date": "2026-07-10"
+            },
+            {
+                "date": "2026-07-11"
+            },
+            {
+                "date": "2026-07-12"
+            },
+            {
+                "date": "2026-07-13"
+            },
+            {
+                "date": "2026-07-14"
+            },
+            {
+                "date": "2026-07-15"
+            },
+            {
+                "date": "2026-07-16"
+            },
+            {
+                "date": "2026-07-17"
+            },
+            {
+                "date": "2026-07-18"
+            },
+            {
+                "date": "2026-07-19"
+            },
+            {
+                "date": "2026-07-20"
+            },
+            {
+                "date": "2026-07-21"
+            },
+            {
+                "date": "2026-07-22"
+            },
+            {
+                "date": "2026-07-23"
+            },
+            {
+                "date": "2026-07-24"
+            },
+            {
+                "date": "2026-07-25"
+            },
+            {
+                "date": "2026-07-26"
+            },
+            {
+                "date": "2026-07-27"
+            },
+            {
+                "date": "2026-07-28"
+            },
+            {
+                "date": "2026-07-29"
+            },
+            {
+                "date": "2026-07-30"
+            },
+            {
+                "date": "2026-07-31"
+            },
+            {
+                "date": "2026-08-01"
+            },
+            {
+                "date": "2026-08-02"
+            },
+            {
+                "date": "2026-08-03"
+            },
+            {
+                "date": "2026-08-04"
+            },
+            {
+                "date": "2026-08-05"
+            },
+            {
+                "date": "2026-08-06"
+            },
+            {
+                "date": "2026-08-07"
+            },
+            {
+                "date": "2026-08-08"
+            },
+            {
+                "date": "2026-08-09"
+            },
+            {
+                "date": "2026-08-10"
+            },
+            {
+                "date": "2026-08-11"
+            },
+            {
+                "date": "2026-08-12"
+            },
+            {
+                "date": "2026-08-13"
+            },
+            {
+                "date": "2026-08-14"
+            },
+            {
+                "date": "2026-08-15"
+            },
+            {
+                "date": "2026-08-16"
+            },
+            {
+                "date": "2026-08-17"
+            },
+            {
+                "date": "2026-08-18"
+            },
+            {
+                "date": "2026-08-19"
+            },
+            {
+                "date": "2026-08-20"
+            },
+            {
+                "date": "2026-08-21"
+            },
+            {
+                "date": "2026-08-22"
+            },
+            {
+                "date": "2026-08-23"
+            },
+            {
+                "date": "2026-08-24"
+            },
+            {
+                "date": "2026-08-25"
+            },
+            {
+                "date": "2026-08-26"
+            },
+            {
+                "date": "2026-08-27"
+            },
+            {
+                "date": "2026-08-28"
+            },
+            {
+                "date": "2026-08-29"
+            },
+            {
+                "date": "2026-08-30"
+            },
+            {
+                "date": "2026-08-31"
+            }
+        ],
+        "favStatus": false,
+        "remindStatus": false,
+        "showRemindBtn": false,
+        "isRefund": 2,
+        "idBind": 0,
+        "pickSeat": 0,
+        "buyerInfo": "",
+        "contactNotice": 0,
+        "chatLink": "https://mall.bilibili.com/neul-next/index.html?page=customer-service-center_index&noTitleBar=1&comefrom=ticket",
+        "skuVenueInfo": {
+            "id": 23566,
+            "name": "第一百货商业中心(南京东路店)",
+            "status": null,
+            "coordinate": null,
+            "traffic": null,
+            "city": null,
+            "province": null,
+            "district": null,
+            "dis": null,
+            "address_detail": "南京东路830号",
+            "place_num": null,
+            "province_name": "上海",
+            "city_name": "上海",
+            "district_name": null
+        },
+        "screenCalendarSwitch": true,
+        "supportOuterLink": false,
+        "preFillSupport": false,
+        "simple": false,
+        "grayClick": false,
+        "hotProject": false
+    },
+    "header": null,
+    "code": 0,
+    "message": "success"
+}

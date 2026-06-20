@@ -12,11 +12,34 @@ import sys, threading, time
 import os
 from datetime import datetime
 
+class SafeStream:
+    def __init__(self, stream):
+        self.stream = stream
+
+    def write(self, message):
+        try:
+            self.stream.write(message)
+        except UnicodeEncodeError:
+            try:
+                encoding = self.stream.encoding or 'utf-8'
+                self.stream.buffer.write(message.encode(encoding, errors='replace'))
+            except Exception:
+                try:
+                    self.stream.write(message.encode('ascii', errors='replace').decode('ascii'))
+                except Exception:
+                    pass
+
+    def flush(self):
+        try:
+            self.stream.flush()
+        except Exception:
+            pass
+
 def setup_logger():
     logger.remove()  # 移除默认 handler
 
     logger.add(
-        sys.stdout,
+        SafeStream(sys.stdout),
         level="INFO",
         colorize=True,
         format=(
@@ -36,7 +59,7 @@ if not ENV:
     # --- 日志 初始化 ---
     logger.remove()  # 移除默认
     logger.add(
-        sys.stderr,
+        SafeStream(sys.stderr),
         format='<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level:1.1}</level> | <yellow>{process}</yellow>:<yellow>{thread}</yellow> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - {message}',
         level=LOG_LEVEL,
         enqueue=True,  # 🌟 重要：开启异步写入，防止日志 IO 阻塞你的主逻辑（尤其是音视频处理）
@@ -106,7 +129,7 @@ LOG_LEVEL = MY_CONFIG['log'][ENV]['level'].upper()
 # --- 日志 初始化 ---
 logger.remove()  # 移除默认
 logger.add(
-    sys.stderr,
+    SafeStream(sys.stderr),
     format='<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level:1.1}</level> | <yellow>{process}</yellow>:<yellow>{thread}</yellow> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - {message}',
     level=LOG_LEVEL,
     enqueue=True,  # 🌟 重要：开启异步写入，防止日志 IO 阻塞你的主逻辑（尤其是音视频处理）

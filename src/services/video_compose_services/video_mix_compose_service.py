@@ -18,12 +18,12 @@ from infra.storage.mysql_connector import mysql_connector
 from infra.storage.mix_overall_time_mysql import get_mix_overall_time_engine
 from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
 from models.sqlmodel.video_mix_compose import VideoMixComposeJob
-from services.video_mix_timeline_builder import (
+from services.video_compose_services.video_mix_timeline_builder import (
     build_mixed_video_request_from_shots,
     build_srt_from_match_shots,
     collect_unique_source_obs_urls,
 )
-from services.video_source_transcode_service import ensure_low_high_for_obs_url
+from services.video_compose_services.video_source_transcode_service import ensure_low_high_for_obs_url
 from utils.huawei.obs_url import mix_obs_object_path
 
 

@@ -20,7 +20,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from models.pydantic.video_analysis_request import ShotCard
-from services.analysis_video import index_shotcards_to_opensearch
+from services.video_match_services.analysis_video import index_shotcards_to_opensearch
 
 
 def mock_cards() -> list[ShotCard]:

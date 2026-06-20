@@ -7,35 +7,26 @@
 
 import asyncio
 import functools
-import hashlib
 import os
 import sys
 import time
-import uuid
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Query, BackgroundTasks
+from fastapi import APIRouter
 from pydantic import BaseModel, Field, ConfigDict
 
 from infra.storage.mysql_connector import mysql_connector
 from models.sqlmodel.video_material_match import VideoMaterialMatchHistory
 
 from models.pydantic.video_analysis_request import (
-    HistorySaveRequest,
-    HistoryUpdateRequest,
-    VideoAnalysisHistoryItem,
     ShotCard as PydShotCard,
 )
-from models.pydantic.model_output_schema.seedtext_script_segments_schema import SeedtextIndexTagsEnvelope
-from services.analysis_video import analyze_video, index_shotcards_to_opensearch
-from services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
-from utils.frame_orientation import infer_frame_orientation
-from services.video_analysis_db_service import video_analysis_db_service
-from services.video_match_service import _load_strategy_by_name
-from services.http_request_trace_service import http_request_trace_service
+from services.video_match_services.analysis_video import index_shotcards_to_opensearch
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
+from services.video_match_services.video_match_service import _load_strategy_by_name
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
 from infra.logging.logger import logger as log
 from infra.storage.opensearch_connector import opensearch_connector
 from infra.storage.opensearch.query_builder import query_builder
@@ -44,20 +35,9 @@ from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInterio
 from models.pydantic.opensearch_index.base_index import (
     get_index_name, get_vector_fields, get_searchable_fields, get_field_weights, get_vector_weights,
 )
-from services.script_match_recall import ensure_hybrid_pipeline, ensure_rrf_pipeline
-from services.video_match_http_trace import trace_response_top_hits_with_explain
-from services.token_join_template_service import (
-    TOKEN_JOIN_TERM_FIELDS_V2,
-    normalize_v2_term_filter_value,
-    create_template,
-    delete_template,
-    get_default_and_fields,
-    list_templates,
-    set_default_template,
-    update_template,
-)
+from services.video_match_services.script_match_recall import ensure_hybrid_pipeline, ensure_rrf_pipeline
+from services.video_match_services.video_match_http_trace import trace_response_top_hits_with_explain
 from utils.search_utils import reciprocal_rank_fuse
-from core.workspace import list_workspaces, DEFAULT_WORKSPACE_KEY, get_workspace
 
 
 def _va_ordered_cards_to_trace_hits(cards: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -454,7 +434,7 @@ async def search_cards(req: VideoAnalysisSearchRequest):
 
     pseudo_seg, unassigned_text, has_unassigned, unassigned_must_nots = _reconstruct_pseudo_seg(raw_tokens)
 
-    from services.script_match_query_builder import (
+    from services.video_match_services.script_match_query_builder import (
         segment_query_text,
         build_filters,
         build_should_boosts,

@@ -21,9 +21,9 @@ from typing import Optional, List
 
 from models.pydantic.request import VideoGenerateRequest, SeedanceModel
 from utils.call_model_utils import call_doubao_seedance, get_seedance_task_status
-from services.video_history_db_service import video_history_db_service
-from services.media_mirror_service import mirror_remote_url_to_obs, is_obs_url
-from services.http_request_trace_service import http_request_trace_service
+from services.video_match_services.video_history_db_service import video_history_db_service
+from services.media_mirror_service import mirror_remote_url_to_obs
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
 from infra.logging.logger import logger as log
 
 video_router = APIRouter(prefix="/video", tags=["video"])
@@ -51,7 +51,7 @@ async def delete_video_history_item(item_id: str):
 @video_router.get("/history/{item_id}/detail")
 async def get_video_history_detail(item_id: str):
     """任务看板：合成视频生成 HTTP 明细。"""
-    from services.task_detail_service import build_video_gen_task_detail, merge_http_trace_into_detail
+    from services.video_match_services.task_detail_service import build_video_gen_task_detail, merge_http_trace_into_detail
 
     item_id = (item_id or "").strip()
     if not item_id:

@@ -6,7 +6,7 @@ import asyncio
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from infra.storage.mysql_connector import mysql_connector
-from services.video_history_db_service import video_history_db_service
+from services.video_match_services.video_history_db_service import video_history_db_service
 
 async def main():
     # 1. Initialize DB connector

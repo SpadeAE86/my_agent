@@ -11,11 +11,11 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List
 
 from models.pydantic.request import PromptTemplateRequest
 from infra.logging.logger import logger as log
-from services.prompt_template_db_service import prompt_template_db_service
+from services.media_generate_services.prompt_template_db_service import prompt_template_db_service
 
 prompt_router = APIRouter(prefix="/prompt-templates", tags=["prompt-templates"])
 

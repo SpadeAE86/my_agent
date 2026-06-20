@@ -1,5 +1,3 @@
-
-import json
 from typing import Optional, List, Dict, Any
 
 from sqlmodel import select
@@ -8,9 +6,9 @@ from infra.logging.logger import logger as log
 from infra.storage.mysql_connector import mysql_connector
 from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
 from models.sqlmodel.video_material_match import VideoMaterialMatchHistory
-from services.http_request_trace_service import http_request_trace_service
-from services.video_analysis_db_service import video_analysis_db_service
-from services.script_match_query_builder import INDEX_NAME
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
+from services.video_match_services.script_match_query_builder import INDEX_NAME
 
 def shot_row_to_api_dict(row: VideoMatchShotRow) -> Dict[str, Any]:
     tj = row.tags_json or {}
@@ -88,7 +86,7 @@ async def get_shot_match_detail(job_id: str, shot_row_id: int) -> Optional[Dict[
     jid = (job_id or "").strip()
     if not jid or shot_row_id <= 0:
         return None
-    from services.task_detail_service import (
+    from services.video_match_services.task_detail_service import (
         build_video_match_shot_search_task_detail,
         merge_http_trace_into_detail,
     )
@@ -124,7 +122,7 @@ async def get_shot_match_detail(job_id: str, shot_row_id: int) -> Optional[Dict[
 
 async def get_material_match_board_detail(match_id: str) -> Optional[Dict[str, Any]]:
     """任务看板：单条素材匹配履历 HTTP 详情。"""
-    from services.task_detail_service import (
+    from services.video_match_services.task_detail_service import (
         build_video_material_match_task_detail,
         merge_http_trace_into_detail,
     )
@@ -253,7 +251,7 @@ async def _hydrate_shot_match_urls_for_response(
     t1 = _best_video_path_from_hits(new_hits)
     if not t1:
         log.debug(
-            "video_match hydrate: shot_order={} still no top1 (hits={})",
+            "video_match_services hydrate: shot_order={} still no top1 (hits={})",
             shot.get("shot_order"),
             len(new_hits),
         )

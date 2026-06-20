@@ -5,8 +5,6 @@ import copy
 import json
 from typing import Any, Dict, List
 
-from services.script_match_query_builder import INDEX_NAME
-
 
 def truncate_for_trace(obj: Any, max_bytes: int = 28000) -> Any:
     """避免 request_body 撑爆 JSON 列；尽量保留结构，超长时改为预览字符串。"""

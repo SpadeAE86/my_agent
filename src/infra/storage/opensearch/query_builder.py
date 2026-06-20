@@ -2,7 +2,6 @@ from typing import Dict, Any, List, Optional, Type, Any as AnyType
 from models.pydantic.opensearch_index.base_index import (
     BaseIndex,
     get_vector_fields,
-    get_text_fields,
     get_searchable_fields,
     get_field_weights,
     get_vector_weights,
@@ -539,7 +538,7 @@ class QueryBuilder:
         if not text:
             return [0.0] * 384
         if self.embedding_model is None:
-            from services.analysis_video import get_embedding_model
+            from services.video_match_services.analysis_video import get_embedding_model
 
             self.embedding_model = get_embedding_model()
         embedding = self.embedding_model.encode(text)

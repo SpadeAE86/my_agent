@@ -19,7 +19,6 @@ from utils.video_process_utils import get_video_scenes, get_video_single_scene_f
 from utils.obs_utils import batch_upload_to_obs
 from utils.call_model_utils import call_doubao_vision
 from models.pydantic.dataclass.scene_split_result import SceneSplitResult
-from models.pydantic.model_output_schema.video_analysis_schema import SceneAnalysisResult, SceneAnalysisResultV2
 from models.pydantic.video_analysis_request import ShotCard
 from models.pydantic.opensearch_index.car_interior_analysis import CarInteriorAnalysis
 from infra.storage.opensearch.document_writer import bulk_index
@@ -31,8 +30,8 @@ from models.sqlmodel.video_upload_cache import VideoSourceUploadCache
 from infra.storage.mysql_connector import mysql_connector
 from sqlmodel import select
 from utils.cache_utils import get_from_cache, set_to_cache
-from services.video_analysis_db_service import video_analysis_db_service
-from services.zhiji_product_context import (
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
+from services.video_match_services.zhiji_product_context import (
     build_v2_vision_selling_appendix,
     normalize_zhiji_car_key,
 )

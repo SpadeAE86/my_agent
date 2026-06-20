@@ -204,13 +204,13 @@ async def _ensure_video_match_columns() -> None:
         for sql in stmts:
             try:
                 await conn.execute(text(sql))
-                log.info("Applied video_match column migration: %s", sql[:80])
+                log.info("Applied video_match_services column migration: %s", sql[:80])
             except Exception as e:
                 msg = str(e).lower()
                 if "duplicate" in msg or "1060" in msg:
-                    log.debug("video_match column exists, skip: %s", sql[:72])
+                    log.debug("video_match_services column exists, skip: %s", sql[:72])
                     continue
-                log.warning("video_match column migration failed: %s", e)
+                log.warning("video_match_services column migration failed: %s", e)
 
 
 async def _ensure_video_match_shot_row_indexes() -> None:
@@ -410,7 +410,7 @@ async def create_tables_if_not_exists() -> None:
     await _ensure_video_mix_compose_job_columns()
     await _ensure_mix_video_overall_time_table()
 
-    from services.token_join_template_service import seed_token_join_templates_if_empty
+    from services.video_match_services.token_join_template_service import seed_token_join_templates_if_empty
 
     try:
         await seed_token_join_templates_if_empty()

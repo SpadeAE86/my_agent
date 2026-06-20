@@ -5,13 +5,13 @@
 #   3. 挂载中间件 (CORS, 日志, 异常处理)
 #   4. 启动时初始化 infra 层 (scheduler, mq, cache)
 #   5. 关闭时优雅释放资源
-import uvicorn, asyncio, os, json, contextlib
+import uvicorn, asyncio, contextlib
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from routers import *
 from infra.logging.logger import logger as log
-from services.analysis_video import start_embedding_warmup_background
+from services.video_match_services.analysis_video import start_embedding_warmup_background
 # from utils.obs_utils import *
 
 from config.config import *
@@ -64,18 +64,31 @@ async def lifespan(app: FastAPI):
     try:
         # Initialize infra connectors (mysql/redis/rabbitmq/opensearch)
         await connector_loader.startup()
-        
-        # Start background job scheduler
-        from infra.scheduler.scheduler import scheduler_manager
-        from infra.scheduler.jobs.memory_summary import run_job_sync
-        scheduler_manager.start()
-        scheduler_manager.add_cron_job(run_job_sync, "daily_memory_summary", hour=0, minute=0)
-        
+
         # Create SQLModel tables if missing
         await create_tables_if_not_exists()
 
+        # Seed Volcano voice timbres from SQL file if missing
         try:
-            from services.interrupted_tasks_recovery import mark_interrupted_tasks_on_startup
+            from services.volcovoice_service import VolcoVoiceService
+            await VolcoVoiceService.seed_default_timbres_if_empty()
+        except Exception as _seeder_err:
+            log.warning(f"Failed to seed Volcano voice timbres: {_seeder_err}")
+
+        # Seed default database-configured jobs if missing
+        from services.scheduler_service import seed_default_jobs_if_empty
+        await seed_default_jobs_if_empty()
+
+
+        # Start background job scheduler
+        from infra.scheduler.scheduler import scheduler_manager
+        scheduler_manager.start()
+        
+        # Load and synchronize all database-configured jobs
+        await scheduler_manager.init_jobs()
+
+        try:
+            from services.taskboard_services.interrupted_tasks_recovery import mark_interrupted_tasks_on_startup
 
             await mark_interrupted_tasks_on_startup("服务重启或进程中断，任务未完成")
         except Exception as _e:
@@ -92,7 +105,7 @@ async def lifespan(app: FastAPI):
             async def _frame_orientation_backfill_bg() -> None:
                 try:
                     await asyncio.sleep(2)
-                    from services.frame_orientation_os_backfill import run_frame_orientation_backfill
+                    from services.video_match_services.frame_orientation_os_backfill import run_frame_orientation_backfill
 
                     n = await run_frame_orientation_backfill()
                     log.info(f"OpenSearch frame_orientation 回填完成，更新文档数: {n}")

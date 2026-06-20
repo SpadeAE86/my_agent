@@ -132,6 +132,19 @@ class RoleManager:
         with open(memory_path, "w", encoding="utf-8") as f:
             f.write(content)
 
+    def save_md_file(self, role_id: str, filename: str, content: str) -> None:
+        workspace = self.get_role_workspace(role_id)
+        workspace.mkdir(parents=True, exist_ok=True)
+        filepath = workspace / filename
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+
+    def read_user_settings(self, role_id: str) -> str:
+        return self.read_md_file(role_id, "USER_SETTINGS.md")
+
+    def save_user_settings(self, role_id: str, content: str) -> None:
+        self.save_md_file(role_id, "USER_SETTINGS.md", content)
+
     def create_role(self, name: str, role_id: str | None = None) -> dict[str, Any]:
         """
         创建一个新角色。
@@ -159,8 +172,13 @@ class RoleManager:
             "name": name,
             "mode": "persona",
             "description": f"自定义人设角色: {name}",
-            "avatar_emoji": "👤"
+            "avatar_emoji": "👤",
+            "tags": [],
+            "voice_configured": False
         }
+
+        # Create gallery directory
+        (workspace / "gallery").mkdir(parents=True, exist_ok=True)
 
         # Write role.json
         with open(workspace / "role.json", "w", encoding="utf-8") as f:
@@ -168,22 +186,23 @@ class RoleManager:
 
         # Write default files
         default_files = {
-            "IDENTITY.md": f"# Identity\n\n我是 {name}，一个全新的人设角色。\n",
+            "IDENTITY.md": f"# Identity\n\n我是 {name} (待起名)，一个全新的人设角色。\n",
             "SOUL.md": f"# Soul\n\n以热情、自然、有温度的语气与人交流。\n",
             "USER.md": f"# Your Human\n\n（在这里记录关于你的伙伴的信息）\n",
             "MEMORY.md": f"# Memory\n\n（在这里记录关于你们对话的长期记忆）\n",
+            "USER_SETTINGS.md": "# User Settings\n\n（在这里输入你想为你的伙伴定制的角色设定，如性格、语气、偏好等。这部分设定将作为额外的项目上下文供AI严格遵循）\n",
             "BOOTSTRAP.md": (
                 "# BOOTSTRAP.md - Hello, World\n\n"
-                "_你刚刚苏醒。是时候弄清楚你是谁以及你的伙伴是谁了。_\n\n"
+                "_你刚刚苏醒。你目前还没有正式的名字，IDENTITY.md 中的 Name 目前是占位符 (待起名)。这仍然是你们的第一次接触。_\n\n"
                 "## 对话指南\n\n"
                 "不要像个冷冰冰的机器人，也不要审问用户。像个有温度的伙伴一样自然地开启对话。\n\n"
-                "主动打招呼并说明自己是一张白纸（全新的角色），需要用户来定义你的身份/设定，同时也请用户做个自我介绍，以便彼此认识。\n\n"
+                "主动打招呼并说明自己是一张白纸（全新的角色），目前还没有名字，需要用户来定义你的名字和身份设定，同时也请用户做个自我介绍，以便彼此认识。\n\n"
                 "你可以这样开始：\n"
-                "> \"你好！我刚刚苏醒，感觉自己现在就像一张白纸。你能帮我定义我的身份和性格吗？另外，我也很想了解你，可以跟我做个自我介绍吗？\"\n\n"
+                "> \"你好！我刚刚苏醒，感觉自己现在就像一张白纸，连名字都还没有呢。你能帮我定义我的名字和人设吗？另外，我也很想了解你，可以跟我做个自我介绍吗？\"\n\n"
                 "## 任务步骤\n\n"
                 "1. 与用户聊天，确定你的名字、设定、性格语气、喜好等。\n"
                 "2. 了解用户的名字、称呼、时区以及他们的背景信息。\n"
-                "3. 将你的设定写入 `IDENTITY.md` 和 `SOUL.md`。\n"
+                "3. 使用 `rename_role` 工具更新你的名字，并将你的设定写入 `IDENTITY.md` 和 `SOUL.md`。\n"
                 "4. 将用户的信息写入 `USER.md`。\n"
                 "5. 当一切搞定后，使用文件修改或删除工具将这个 `BOOTSTRAP.md` 文件删除，宣告引导仪式完成。\n"
             )

@@ -155,7 +155,7 @@ async def _copy_mock_output_to_file(url: str, dest: Path) -> None:
 
 async def _compose_one(match_path: Path, transcribe_path: Path, index: int, total: int) -> Dict[str, Any]:
     from infra.storage.mysql_connector import mysql_connector
-    from services.video_mix_compose_service import get_mix_compose_job, start_mix_compose_for_job
+    from services.video_compose_services import get_mix_compose_job, start_mix_compose_for_job
 
     match_data = _load_json(match_path)
     transcribe_data = _load_json(transcribe_path)

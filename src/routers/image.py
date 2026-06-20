@@ -9,20 +9,19 @@ import json
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Optional, List
-from enum import Enum
 import asyncio
 import datetime
 import time
 
 from models.pydantic.request import ImageGenerateRequest, TextGenerateRequest, SeedreamModel
-from utils.call_model_utils import call_doubao_seedream, call_doubao_seedtext
+from utils.call_model_utils import call_doubao_seedtext
 from infra.logging.logger import logger as log
-from services.image_history_db_service import image_history_db_service
+from services.media_generate_services.image_history_db_service import image_history_db_service
 from services.media_mirror_service import mirror_remote_url_to_obs, is_obs_url
-from services.image_generate_service import generate_image as service_generate_image
-from services.http_request_trace_service import http_request_trace_service
+from services.media_generate_services.image_generate_service import generate_image as service_generate_image
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
 
 image_router = APIRouter(prefix="", tags=["image", "text"])
 
@@ -75,7 +74,7 @@ async def get_image_history(ids: Optional[str] = None):
 @image_router.get("/image/history/{item_id}/detail")
 async def get_image_history_task_detail(item_id: str):
     """任务看板：合成「HTTP 调用详情」；有 request_id 时联表 http_request_traces。"""
-    from services.task_detail_service import build_image_task_detail, merge_http_trace_into_detail
+    from services.video_match_services.task_detail_service import build_image_task_detail, merge_http_trace_into_detail
 
     item_id = (item_id or "").strip()
     if not item_id:

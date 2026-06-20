@@ -4,8 +4,7 @@ from typing import Optional, Any
 from pydantic import Field
 
 from models.pydantic.tool_schema import ToolDef, ToolInput, ToolOutput
-from services.prompt_template_db_service import prompt_template_db_service
-from infra.logging.logger import logger as log
+from services.media_generate_services.prompt_template_db_service import prompt_template_db_service
 
 
 class PromptTemplatesInput(ToolInput):

@@ -5,7 +5,7 @@ from typing import Optional
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from services.video_mix_compose_service import get_mix_compose_job, start_mix_compose_for_job
+from services.video_compose_services import get_mix_compose_job, start_mix_compose_for_job
 
 
 class MixComposeBody(BaseModel):

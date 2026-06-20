@@ -2,7 +2,7 @@ from typing import List, Optional
 from fastapi import APIRouter, Query, HTTPException
 from pydantic import BaseModel, Field
 
-from services.token_join_template_service import (
+from services.video_match_services.token_join_template_service import (
     TOKEN_JOIN_TERM_FIELDS_V2,
     create_template,
     delete_template,

@@ -75,8 +75,8 @@ from models.pydantic.opensearch_index.base_index import build_field_types_from_m
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2  # noqa: E402
 from models.pydantic.opensearch_index.base_index import get_index_name  # noqa: E402
 from models.pydantic.video_analysis_request import ShotCard as PydShotCard  # noqa: E402
-from services.analysis_video import index_shotcards_to_opensearch  # noqa: E402
-from services.video_analysis_db_service import video_analysis_db_service  # noqa: E402
+from services.video_match_services.analysis_video import index_shotcards_to_opensearch  # noqa: E402
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service  # noqa: E402
 
 
 def _walk_props(props: dict, prefix: str = "") -> list[tuple[str, dict]]:

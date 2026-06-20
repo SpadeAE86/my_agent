@@ -5,50 +5,27 @@
 #   POST /video-analysis/history   — 覆盖写入全部历史记录
 #   POST /video-analysis/history/update — 追加/更新单条历史记录
 
-import asyncio
-import functools
-import hashlib
 import os
 import sys
-import time
-import uuid
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from datetime import datetime
-from typing import Any, Dict, List, Optional
+from typing import List, Optional
 
-from fastapi import APIRouter, File, UploadFile, Form, HTTPException, Query, BackgroundTasks
-from pydantic import BaseModel, Field, ConfigDict
-
-from infra.storage.mysql_connector import mysql_connector
-from models.sqlmodel.video_material_match import VideoMaterialMatchHistory
+from fastapi import APIRouter, HTTPException, Query
+from pydantic import BaseModel, Field
 
 from models.pydantic.video_analysis_request import (
     HistorySaveRequest,
     HistoryUpdateRequest,
-    VideoAnalysisHistoryItem,
-    ShotCard as PydShotCard,
 )
-from models.pydantic.model_output_schema.seedtext_script_segments_schema import SeedtextIndexTagsEnvelope
-from services.analysis_video import analyze_video, index_shotcards_to_opensearch
-from services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
-from utils.frame_orientation import infer_frame_orientation
-from services.video_analysis_db_service import video_analysis_db_service
-from services.video_match_service import _load_strategy_by_name
-from services.http_request_trace_service import http_request_trace_service
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
 from infra.logging.logger import logger as log
-from infra.storage.opensearch_connector import opensearch_connector
-from infra.storage.opensearch.query_builder import query_builder
-from models.pydantic.opensearch_index.car_interior_analysis import CarInteriorAnalysis
-from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 from models.pydantic.opensearch_index.base_index import (
-    get_index_name, get_vector_fields, get_searchable_fields, get_field_weights, get_vector_weights,
+    get_vector_fields, get_searchable_fields, get_field_weights, get_vector_weights,
 )
-from services.script_match_recall import ensure_hybrid_pipeline, ensure_rrf_pipeline
-from services.video_match_http_trace import trace_response_top_hits_with_explain
-from services.token_join_template_service import (
+from services.video_match_services.token_join_template_service import (
     TOKEN_JOIN_TERM_FIELDS_V2,
-    normalize_v2_term_filter_value,
     create_template,
     delete_template,
     get_default_and_fields,
@@ -56,7 +33,6 @@ from services.token_join_template_service import (
     set_default_template,
     update_template,
 )
-from utils.search_utils import reciprocal_rank_fuse
 from core.workspace import list_workspaces, DEFAULT_WORKSPACE_KEY, get_workspace
 
 
@@ -287,7 +263,7 @@ async def video_analysis_task_badges(workspace: Optional[str] = Query(None)):
 @crud_router.get("/history/{history_id}/detail")
 async def get_history_task_detail(history_id: str):
     """任务看板：视频分析历史条目的 HTTP 详情；有 request_id 时联表 http_request_traces。"""
-    from services.task_detail_service import build_video_analysis_task_detail, merge_http_trace_into_detail
+    from services.video_match_services.task_detail_service import build_video_analysis_task_detail, merge_http_trace_into_detail
 
     row = await video_analysis_db_service.get_history_row(history_id)
     if row is None:

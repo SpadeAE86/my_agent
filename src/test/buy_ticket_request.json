@@ -1,0 +1,33 @@
+{
+    "project_id": 1001476,
+    "screen_id": 1005651,
+    "count": 1,
+    "pay_money": 1000,
+    "order_type": 1,
+    "timestamp": 1781708515965,
+    "id_bind": 0,
+    "need_contact": 1,
+    "contactNoticeText": "",
+    "is_package": 0,
+    "package_num": 1,
+    "contactInfo": {
+        "uid": 384869161,
+        "username": "林诺诚",
+        "tel": "15618435583"
+    },
+    "sku_id": 878056,
+    "coupon_code": "",
+    "again": 0,
+    "token": "wGoyejcAD0gEAA9YUwEAAQANZeg.",
+    "deviceId": "b91800ce78f2a77070a3ab35c8f3227c",
+    "buyer": "林诺诚",
+    "tel": "15618435583",
+    "clickPosition": {
+        "x": 694,
+        "y": 1204,
+        "origin": 1781692982060,
+        "now": 1781708515966
+    },
+    "requestSource": "neul-next",
+    "newRisk": true
+}

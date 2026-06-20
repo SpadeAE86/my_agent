@@ -7,8 +7,8 @@ from sqlalchemy import func, update, delete
 from infra.logging.logger import logger as log  # noqa: F401 — used via log.exception in query layer
 from infra.storage.mysql_connector import mysql_connector
 from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
-from services.script_rewrite_service import synthesize_text_to_obs_wav
-from services.video_match_query import shot_row_to_api_dict
+from services.video_match_services.script_rewrite_service import synthesize_text_to_obs_wav
+from services.video_match_services.video_match_query import shot_row_to_api_dict
 
 logger = logging.getLogger(__name__)
 
@@ -139,10 +139,10 @@ async def run_video_match_retry_background(
     k = (kind or "").strip()
     try:
         if k == "parse":
-            from services.video_match_service import _reparse_video_match_job_core
+            from services.video_match_services.video_match_service import _reparse_video_match_job_core
             await _reparse_video_match_job_core(jid)
         elif k == "search" and (strategy_name or "").strip():
-            from services.video_match_service import run_job_search
+            from services.video_match_services.video_match_service import run_job_search
             await run_job_search(
                 jid,
                 strategy_name=str(strategy_name).strip(),
@@ -150,6 +150,6 @@ async def run_video_match_retry_background(
                 top_k=5,
             )
         else:
-            logger.error("video_match retry worker: bad args job=%s kind=%s", jid, k)
+            logger.error("video_match_services retry worker: bad args job=%s kind=%s", jid, k)
     except Exception:
-        logger.exception("video_match retry background failed job=%s", jid)
+        logger.exception("video_match_services retry background failed job=%s", jid)

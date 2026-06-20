@@ -35,7 +35,7 @@ if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
 from infra.storage.opensearch_connector import opensearch_connector
-from services.video_analysis_db_service import video_analysis_db_service
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
 
 
 INDEX_NAME = "car_interior_analysis_v2"

@@ -33,15 +33,14 @@ from __future__ import annotations
 import asyncio
 import copy
 import time
-from typing import Any, Awaitable, Callable, Dict, FrozenSet, List, Optional, Tuple
+from typing import Any, Awaitable, Callable, Dict, List, Optional, Tuple
 
 from infra.storage.opensearch.query_builder import QueryBuilder
 from infra.storage.opensearch_connector import opensearch_connector
-from models.pydantic.opensearch_index.base_index import get_vector_fields
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
-from services.video_analysis_db_service import video_analysis_db_service
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service
 
-from services.script_match_query_builder import (
+from services.video_match_services.script_match_query_builder import (
     INDEX_NAME,
     GLOBAL_BM25_FIELDS,
     GLOBAL_CHUNK_MAX_CHARS,
@@ -63,7 +62,7 @@ from services.script_match_query_builder import (
     segment_query_text,
     segment_duration_seconds,
 )
-from services.script_match_recall import (
+from services.video_match_services.script_match_recall import (
     ensure_hybrid_pipeline,
     ensure_rrf_pipeline,
     fill_timeline_after_top1,
@@ -71,7 +70,6 @@ from services.script_match_recall import (
     global_knn_top_k,
 )
 from utils.search_utils import chunks_from_query_parts, rrf_fuse_ranked_lists
-from infra.logging.logger import logger as log
 
 
 # ---------------------------------------------------------------------------

@@ -7,8 +7,8 @@ import numpy as np
 # 将 src 目录添加到 Python 路径中
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from services.analysis_video import ensure_embedding_model_ready, get_embedding_model
-from sentence_transformers import util
+from services.video_match_services.analysis_video import ensure_embedding_model_ready, get_embedding_model
+
 
 async def main():
     print("="*80)

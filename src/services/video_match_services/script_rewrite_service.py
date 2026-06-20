@@ -8,7 +8,7 @@ import shutil
 import uuid
 from pathlib import Path
 from tempfile import mkdtemp
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, List, Optional, Tuple
 
 from models.pydantic.opensearch_index import index_v2_enums
 from models.pydantic.model_output_schema.seedtext_script_segments_schema import (
@@ -18,7 +18,7 @@ from models.pydantic.model_output_schema.seedtext_script_segments_schema import 
 from utils.call_model_utils import call_doubao_seedtext
 from utils.alivoice_utils import AliTTS
 from infra.logging.logger import logger as log
-from services.zhiji_product_context import build_script_stage1_selling_appendix
+from services.video_match_services.zhiji_product_context import build_script_stage1_selling_appendix
 
 try:
     from pymediainfo import MediaInfo

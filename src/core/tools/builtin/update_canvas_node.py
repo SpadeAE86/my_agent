@@ -4,7 +4,7 @@ from typing import Optional, Any
 from pydantic import Field
 
 from models.pydantic.tool_schema import ToolDef, ToolInput, ToolOutput
-from services.workspace_db_service import workspace_db_service
+from services.media_generate_services.workspace_db_service import workspace_db_service
 from services.media_mirror_service import mirror_remote_url_to_obs, is_obs_url
 from infra.logging.logger import logger as log
 

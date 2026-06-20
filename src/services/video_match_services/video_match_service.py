@@ -1,11 +1,8 @@
 from __future__ import annotations
 
-import json
 import time
-import uuid
 from typing import Any, Dict, List, Optional
 
-from sqlalchemy import delete, func, update
 from sqlmodel import select
 
 from infra.logging.logger import logger as log
@@ -14,33 +11,27 @@ from models.pydantic.model_output_schema.seedtext_script_segments_schema import 
 from models.sqlmodel.video_analysis import VideoAnalysisSearchStrategy
 from models.sqlmodel.video_material_match import VideoMaterialMatchHistory
 from models.sqlmodel.video_match import VideoMatchJob, VideoMatchShotRow
-from services.http_request_trace_service import http_request_trace_service
-from services.script_match_query_builder import INDEX_NAME
-from services.script_match_service import match_script_tags_segments
-from services.video_analysis_db_service import video_analysis_db_service
-from services.video_match_http_trace import (
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
+from services.video_match_services.script_match_query_builder import INDEX_NAME
+from services.video_match_services.script_match_service import match_script_tags_segments
+from services.video_match_services.video_match_http_trace import (
     hits_for_db_with_truncated_explain,
     opensearch_body_for_debug_log,
     trace_request_body_for_shot_search,
     trace_response_top_hits_with_explain,
     truncate_for_trace,
 )
-from services.script_rewrite_service import (
-    rewrite_script_to_storyboard,
+from services.video_match_services.script_rewrite_service import (
     rewrite_script_to_storyboard_and_tags,
     rewrite_storyboard_to_tags,
-    synthesize_text_to_obs_wav,
 )
 from utils.frame_orientation import infer_frame_orientation
 
-from services.video_match_query import (
-    get_job_payload, get_shot_match_detail, get_material_match_board_detail,
-    shot_row_to_api_dict, _hydrate_shot_match_urls_for_response,
-    _enrich_hits_with_resolved_urls, _top5_video_urls_from_hits, _mock_response_payload
+from services.video_match_services.video_match_query import (
+    get_job_payload, get_shot_match_detail, get_material_match_board_detail, _enrich_hits_with_resolved_urls, _top5_video_urls_from_hits, _mock_response_payload
 )
-from services.video_match_lifecycle import (
-    synthesize_shot_obs_audio, mark_interrupted_video_match_jobs_failed,
-    schedule_video_match_job_retry, run_video_match_retry_background
+from services.video_match_services.video_match_lifecycle import (
+    run_video_match_retry_background, schedule_video_match_job_retry, synthesize_shot_obs_audio
 )
 
 # 后续「每分镜 OpenSearch 匹配」时在此使用 asyncio.Semaphore 限制并发
@@ -237,7 +228,7 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
 
                 await session.commit()
         except Exception:
-            log.exception("video_match rematch persist DB failed job={} row={}", jid, sid)
+            log.exception("video_match_services rematch persist DB failed job={} row={}", jid, sid)
             await http_request_trace_service.finalize(
                 trace_rid,
                 status_code=500,
@@ -280,9 +271,9 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
                     session.add(h)
                     await session.commit()
         except Exception:
-            log.warning("video_match rematch finalize material_match_history failed id={}", match_hist_id)
+            log.warning("video_match_services rematch finalize material_match_history failed id={}", match_hist_id)
         log.debug(
-            "video_match rematch opensearch_body job={} shot={} body={}",
+            "video_match_services rematch opensearch_body job={} shot={} body={}",
             jid, shot_ord, opensearch_body_for_debug_log(m),
         )
         _r_top1_name = top1.split("/")[-1] if top1 else "—"
@@ -291,7 +282,7 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
             for i, u in enumerate(urls5)
         ) or "  (空)"
         log.info(
-            "video_match rematch job={} shot={} row={} hits={} ok={} elapsed={:.0f}ms\n"
+            "video_match_services rematch job={} shot={} row={} hits={} ok={} elapsed={:.0f}ms\n"
             "  top1: {}\n"
             "  top5:\n{}",
             jid, shot_ord, sid, len(top_hits_raw), match_ok, elapsed, _r_top1_name, _r_top5_lines,
@@ -311,7 +302,7 @@ async def rematch_video_match_shot(job_id: str, shot_row_id: int) -> Dict[str, A
             on_segment_done=persist_one,
         )
     except Exception as e:
-        log.exception("video_match rematch shot failed: {}", e)
+        log.exception("video_match_services rematch shot failed: {}", e)
         async with mysql_connector.session_scope() as session:
             row3 = await session.get(VideoMatchShotRow, sid)
             if row3:
@@ -372,7 +363,7 @@ async def run_job_search(
     }
     if strategy.text_weights or strategy.vector_weights:
         log.info(
-            "video_match search: strategy {} has field-level weights; script_match uses macro bm25/vector only for now",
+            "video_match_services search: strategy {} has field-level weights; script_match uses macro bm25/vector only for now",
             strategy.name,
         )
 
@@ -422,7 +413,7 @@ async def run_job_search(
         await session.commit()
 
     log.info(
-        "video_match search start job={} shot_count={} strategy={} top_k={} shot_cards_version={}",
+        "video_match_services search start job={} shot_count={} strategy={} top_k={} shot_cards_version={}",
         job_id,
         len(rows),
         strategy_name,
@@ -497,7 +488,7 @@ async def run_job_search(
                 session.add(row)
                 await session.commit()
         except Exception:
-            log.exception("video_match persist_shot DB failed job={} row={}", job_id, row_id)
+            log.exception("video_match_services persist_shot DB failed job={} row={}", job_id, row_id)
             await http_request_trace_service.finalize(
                 trace_rid,
                 status_code=500,
@@ -534,9 +525,9 @@ async def run_job_search(
                     session.add(h)
                     await session.commit()
         except Exception:
-            log.warning("video_match finalize material_match_history failed id={}", match_hist_id)
+            log.warning("video_match_services finalize material_match_history failed id={}", match_hist_id)
         log.debug(
-            "video_match shot_search opensearch_body job={} shot={} body={}",
+            "video_match_services shot_search opensearch_body job={} shot={} body={}",
             job_id, shot_ord, opensearch_body_for_debug_log(m),
         )
         top1_name = top1.split("/")[-1] if top1 else "—"
@@ -545,7 +536,7 @@ async def run_job_search(
             for i, u in enumerate(urls5)
         ) or "  (空)"
         log.info(
-            "video_match shot_search job={} shot={} row={} hits={} ok={} elapsed={:.0f}ms\n"
+            "video_match_services shot_search job={} shot={} row={} hits={} ok={} elapsed={:.0f}ms\n"
             "  top1: {}\n"
             "  top5:\n{}",
             job_id, shot_ord, row_id, len(top_hits_raw), match_ok, elapsed, top1_name, top5_lines,
@@ -567,7 +558,7 @@ async def run_job_search(
             on_segment_done=persist_shot,
         )
     except Exception as e:
-        log.exception("video_match search failed: {}", e)
+        log.exception("video_match_services search failed: {}", e)
         async with mysql_connector.session_scope() as session:
             job = await session.get(VideoMatchJob, job_id)
             if job:
@@ -580,7 +571,7 @@ async def run_job_search(
     total_ms = round((time.perf_counter() - t_wall0) * 1000, 3)
 
     if len(matches) != len(rows):
-        log.warning("video_match: match count {} != rows {}", len(matches), len(rows))
+        log.warning("video_match_services: match count {} != rows {}", len(matches), len(rows))
 
     # job 级汇总：Top1 去重率（帮助判断检索策略多样性）
     _all_top1s = []
@@ -598,7 +589,7 @@ async def run_job_search(
         if cnt > 1
     ) or "  (无重复)"
     log.info(
-        "video_match search finished job={} wall_ms={} segments={} top1_unique={}/{}\n"
+        "video_match_services search finished job={} wall_ms={} segments={} top1_unique={}/{}\n"
         "  重复 Top1:\n{}",
         job_id, total_ms, len(rows), len(_dup), len(_all_top1s), _dup_lines,
     )
@@ -646,8 +637,6 @@ async def create_job_and_parse(
     mock: bool = False,
     background_tasks: Optional[BackgroundTasks] = None,
 ) -> Dict[str, Any]:
-    from fastapi import BackgroundTasks
-
     if mock:
         return _mock_response_payload()
 
@@ -998,7 +987,7 @@ async def _reparse_video_match_job_core(job_id: str) -> None:
             out_obs_audio_urls=tts_audio_urls,
         )
     except Exception as e:
-        log.exception("video_match parse retry failed: {}", e)
+        log.exception("video_match_services parse retry failed: {}", e)
         await http_request_trace_service.finalize(
             parse_rid,
             status_code=500,

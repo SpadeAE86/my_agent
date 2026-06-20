@@ -9,8 +9,8 @@ from fastapi import APIRouter, BackgroundTasks, Body, HTTPException, Query
 from infra.logging.logger import logger as log
 from infra.storage.mysql_connector import mysql_connector
 from models.sqlmodel.video_match import VideoMatchJob
-from services.http_request_trace_service import http_request_trace_service
-from services.video_match_service import (
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
+from services.video_match_services.video_match_service import (
     create_job_and_parse,
     get_job_payload,
     get_material_match_board_detail,
@@ -23,7 +23,7 @@ from services.video_match_service import (
     schedule_video_match_job_retry,
     synthesize_shot_obs_audio,
 )
-from services.video_mix_compose_service import start_mix_compose_for_job
+from services.video_compose_services import start_mix_compose_for_job
 
 
 class VideoMatchCreateJobBody(BaseModel):
@@ -113,7 +113,7 @@ async def create_video_match_job(body: VideoMatchCreateJobBody, background_tasks
 @video_match_router.get("/jobs/{job_id}/detail")
 async def get_video_match_job_board_detail(job_id: str):
     """任务看板：整 job 口播转写 / 解析阶段的 HTTP 详情（联表 request_id）。"""
-    from services.task_detail_service import build_video_match_job_task_detail, merge_http_trace_into_detail
+    from services.video_match_services.task_detail_service import build_video_match_job_task_detail, merge_http_trace_into_detail
 
     jid = (job_id or "").strip()
     if not jid:
@@ -162,7 +162,7 @@ async def get_video_match_job(job_id: str, verbose: int = Query(0, ge=0, le=1)):
             if isinstance(hits, list) and hits and isinstance(hits[0], dict):
                 fk = list(hits[0].keys())
             log.info(
-                "video_match GET job={} shot_order={} search={} top1_non_empty={} hit_count={} first_hit_keys={}",
+                "video_match_services GET job={} shot_order={} search={} top1_non_empty={} hit_count={} first_hit_keys={}",
                 job_id,
                 s.get("shot_order"),
                 s.get("search_status"),
@@ -176,7 +176,7 @@ async def get_video_match_job(job_id: str, verbose: int = Query(0, ge=0, le=1)):
 @video_match_router.post("/jobs/{job_id}/extract")
 async def extract_tags_for_job_route(job_id: str, background_tasks: BackgroundTasks):
     """批量提取标签 (Stage 2)"""
-    from services.video_match_service import run_job_extract_tags
+    from services.video_match_services.video_match_service import run_job_extract_tags
     background_tasks.add_task(run_job_extract_tags, job_id)
     return {"success": True, "message": "extracting tags in background"}
 
@@ -198,7 +198,7 @@ async def retry_video_match_job(job_id: str, background_tasks: BackgroundTasks):
 @video_match_router.post("/jobs/{job_id}/shots/{shot_row_id}/extract")
 async def extract_tags_for_shot_route(job_id: str, shot_row_id: int, background_tasks: BackgroundTasks):
     """单条分镜提取标签"""
-    from services.video_match_service import run_shot_extract_tags
+    from services.video_match_services.video_match_service import run_shot_extract_tags
     background_tasks.add_task(run_shot_extract_tags, job_id, shot_row_id)
     return {"success": True, "message": "extracting shot tags in background"}
 
@@ -213,7 +213,7 @@ async def update_shot_tokens_route(job_id: str, shot_row_id: int, body: dict = B
     tokens = body.get("tokens")
     if not isinstance(tokens, list):
         raise HTTPException(status_code=400, detail="tokens must be a list")
-    from services.video_match_service import update_shot_tokens
+    from services.video_match_services.video_match_service import update_shot_tokens
     return await update_shot_tokens(job_id, shot_row_id, tokens)
 
 
@@ -223,7 +223,7 @@ async def update_shot_top1_route(job_id: str, shot_row_id: int, body: dict = Bod
     top1_obs_url = body.get("top1_obs_url")
     if not isinstance(top1_obs_url, str):
         raise HTTPException(status_code=400, detail="top1_obs_url must be a string")
-    from services.video_match_service import update_shot_top1_url
+    from services.video_match_services.video_match_service import update_shot_top1_url
     return await update_shot_top1_url(job_id, shot_row_id, top1_obs_url)
 
 

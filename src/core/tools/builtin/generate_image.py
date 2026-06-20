@@ -9,10 +9,10 @@ from pydantic import Field
 
 from models.pydantic.tool_schema import ToolDef, ToolInput, ToolOutput
 from models.pydantic.request import SeedreamModel
-from services.image_generate_service import generate_image as service_generate_image
+from services.media_generate_services.image_generate_service import generate_image as service_generate_image
 from services.media_mirror_service import mirror_remote_url_to_obs
-from services.image_history_db_service import image_history_db_service
-from services.http_request_trace_service import http_request_trace_service
+from services.media_generate_services.image_history_db_service import image_history_db_service
+from services.taskboard_services.http_request_trace_service import http_request_trace_service
 from infra.logging.logger import logger as log
 
 

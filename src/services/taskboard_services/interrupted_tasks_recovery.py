@@ -11,7 +11,7 @@ from sqlmodel import select
 from sqlalchemy import or_, and_
 from models.sqlmodel.image_history import ImageHistoryCard
 from infra.storage.mysql_connector import mysql_connector
-from services.video_history_db_service import video_history_db_service
+from services.video_match_services.video_history_db_service import video_history_db_service
 from utils.call_model_utils import get_seedance_task_status
 from routers.video import poll_and_finalize_video_task
 
@@ -57,7 +57,7 @@ async def recover_running_video_tasks() -> int:
             ])
             if trace_rid:
                 try:
-                    from services.http_request_trace_service import http_request_trace_service
+                    from services.taskboard_services.http_request_trace_service import http_request_trace_service
                     await http_request_trace_service.finalize(
                         trace_id=trace_rid,
                         status_code=500,
@@ -98,7 +98,7 @@ async def recover_running_video_tasks() -> int:
                         )
                         if trace_rid:
                             try:
-                                from services.http_request_trace_service import http_request_trace_service
+                                from services.taskboard_services.http_request_trace_service import http_request_trace_service
                                 await http_request_trace_service.finalize(
                                     trace_id=trace_rid,
                                     status_code=200,
@@ -127,7 +127,7 @@ async def recover_running_video_tasks() -> int:
                         )
                         if trace_rid:
                             try:
-                                from services.http_request_trace_service import http_request_trace_service
+                                from services.taskboard_services.http_request_trace_service import http_request_trace_service
                                 await http_request_trace_service.finalize(
                                     trace_id=trace_rid,
                                     status_code=200,
@@ -149,7 +149,7 @@ async def recover_running_video_tasks() -> int:
                     ])
                     if trace_rid:
                         try:
-                            from services.http_request_trace_service import http_request_trace_service
+                            from services.taskboard_services.http_request_trace_service import http_request_trace_service
                             await http_request_trace_service.finalize(
                                 trace_id=trace_rid,
                                 status_code=500,
@@ -169,7 +169,7 @@ async def recover_running_video_tasks() -> int:
                 ])
                 if trace_rid:
                     try:
-                        from services.http_request_trace_service import http_request_trace_service
+                        from services.taskboard_services.http_request_trace_service import http_request_trace_service
                         await http_request_trace_service.finalize(
                             trace_id=trace_rid,
                             status_code=500,
@@ -196,16 +196,16 @@ async def mark_interrupted_tasks_on_startup(reason: str) -> Dict[str, int]:
     """
     各表独立实现具体 SQL；此处聚合调用并返回影响行数（便于日志）。
     """
-    counts: Dict[str, int] = {"image": 0, "video": 0, "video_analysis": 0, "video_match": 0}
-    from services.image_history_db_service import image_history_db_service
-    from services.video_analysis_db_service import video_analysis_db_service
-    from services.video_match_service import mark_interrupted_video_match_jobs_failed
+    counts: Dict[str, int] = {"image": 0, "video": 0, "video_analysis": 0, "video_match_services": 0}
+    from services.media_generate_services.image_history_db_service import image_history_db_service
+    from services.video_match_services.video_analysis_db_service import video_analysis_db_service
+    from services.video_match_services.video_match_service import mark_interrupted_video_match_jobs_failed
 
     # 1. 各表 running → failed 恢复
     counts["image"] = await image_history_db_service.mark_interrupted_running_as_failed(reason)
     counts["video"] = await recover_running_video_tasks()
     counts["video_analysis"] = await video_analysis_db_service.mark_interrupted_running_histories_failed(reason)
-    counts["video_match"] = await mark_interrupted_video_match_jobs_failed(reason)
+    counts["video_match_services"] = await mark_interrupted_video_match_jobs_failed(reason)
 
     total = sum(counts.values())
     if total:
@@ -214,7 +214,7 @@ async def mark_interrupted_tasks_on_startup(reason: str) -> Dict[str, int]:
             counts["image"],
             counts["video"],
             counts["video_analysis"],
-            counts["video_match"],
+            counts["video_match_services"],
             reason[:120],
         )
     return counts

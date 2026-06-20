@@ -29,7 +29,7 @@ from models.pydantic.mix import (  # noqa: E402
     CropConfig,
     MixedVideoRequest,
 )
-from services.video_mix_compose_service import (  # noqa: E402
+from services.video_compose_services import (  # noqa: E402
     fetch_mix_result_obs_url,
     mock_write_mix_overall_time,
 )

@@ -32,7 +32,7 @@ from infra.storage.opensearch_connector import opensearch_connector  # noqa: E40
 from infra.storage.mysql_connector import mysql_connector  # noqa: E402
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2  # noqa: E402
 from models.pydantic.opensearch_index.base_index import get_index_name, get_vector_fields  # noqa: E402
-from services.video_analysis_db_service import video_analysis_db_service  # noqa: E402
+from services.video_match_services.video_analysis_db_service import video_analysis_db_service  # noqa: E402
 from pathlib import Path  # noqa: E402
 
 

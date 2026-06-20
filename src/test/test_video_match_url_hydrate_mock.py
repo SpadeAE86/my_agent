@@ -27,7 +27,7 @@ if str(_SRC) not in sys.path:
 
 
 async def _run_hydrate_case() -> None:
-    from services.video_match_service import _hydrate_shot_match_urls_for_response
+    from services.video_match_services.video_match_service import _hydrate_shot_match_urls_for_response
 
     shot: dict = {
         "shot_order": 0,
@@ -61,7 +61,7 @@ async def _run_hydrate_case() -> None:
 
 
 async def _run_skip_when_top1_exists() -> None:
-    from services.video_match_service import _hydrate_shot_match_urls_for_response
+    from services.video_match_services.video_match_service import _hydrate_shot_match_urls_for_response
 
     shot = {
         "shot_order": 1,

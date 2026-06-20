@@ -4,7 +4,7 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 
-from services.image_generate_service import generate_image
+from services.media_generate_services.image_generate_service import generate_image
 
 async def test_gpt_image_generation():
     prompt = "A beautiful cyberpunk city at night with neon lights"

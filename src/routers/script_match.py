@@ -3,8 +3,8 @@ from __future__ import annotations
 from fastapi import APIRouter
 
 from models.pydantic.script_match_request import ScriptMatchRequest
-from services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
-from services.script_match_service import match_script_tags_segments
+from services.video_match_services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
+from services.video_match_services.script_match_service import match_script_tags_segments
 
 
 script_match_router = APIRouter(prefix="/script", tags=["script"])

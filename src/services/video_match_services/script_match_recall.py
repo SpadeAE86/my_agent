@@ -21,7 +21,7 @@ from infra.logging.logger import logger as log
 from infra.storage.opensearch.query_builder import QueryBuilder
 from models.pydantic.opensearch_index.car_interior_analysis_v2 import CarInteriorAnalysisV2
 
-from services.script_match_query_builder import (
+from services.video_match_services.script_match_query_builder import (
     INDEX_NAME,
     GLOBAL_KNN_QUERY_MAX_CHARS,
     _FILL_MAX_FOLLOW_SCENES,

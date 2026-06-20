@@ -21,7 +21,7 @@ from dataclasses import asdict, is_dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.dirname(CURRENT_DIR)
@@ -170,7 +170,7 @@ def _segment_and_filter(seg: Dict[str, Any], car_model: str) -> Dict[str, Any]:
 
 
 async def _rewrite_one(item: Dict[str, Any], *, total: int) -> Dict[str, Any]:
-    from services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
+    from services.video_match_services.script_rewrite_service import rewrite_script_to_storyboard_and_tags
 
     idx = int(item.get("index") or 0)
     topic = str(item.get("topic") or "").strip()

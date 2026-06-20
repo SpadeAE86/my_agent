@@ -1,6 +1,6 @@
 import numpy as np
-from typing import List, Union
-from services.analysis_video import ensure_embedding_model_ready, get_embedding_model
+from typing import List
+from services.video_match_services.analysis_video import ensure_embedding_model_ready, get_embedding_model
 
 class TagEmbedder:
     """

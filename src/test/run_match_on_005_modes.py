@@ -12,7 +12,7 @@ SRC_DIR = os.path.dirname(CURRENT_DIR)
 if SRC_DIR not in sys.path:
     sys.path.append(SRC_DIR)
 
-from services.script_match_service import match_script_tags_segments  # noqa: E402
+from services.video_match_services.script_match_service import match_script_tags_segments  # noqa: E402
 
 
 TAGS_PATH = Path(

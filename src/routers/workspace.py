@@ -4,8 +4,7 @@ from typing import List, Optional, Dict, Any
 import os
 import json
 
-from services.workspace_db_service import workspace_db_service
-from models.sqlmodel.workspace import Workspace, WorkspaceNode, WorkspaceEdge
+from services.media_generate_services.workspace_db_service import workspace_db_service
 
 workspace_router = APIRouter(prefix="/workspace", tags=["workspace"])
 

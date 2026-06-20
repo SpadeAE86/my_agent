@@ -4,7 +4,7 @@ from typing import Any
 from pydantic import Field
 
 from models.pydantic.tool_schema import ToolDef, ToolInput, ToolOutput
-from services.workspace_db_service import workspace_db_service
+from services.media_generate_services.workspace_db_service import workspace_db_service
 
 
 class GetCanvasGraphInput(ToolInput):

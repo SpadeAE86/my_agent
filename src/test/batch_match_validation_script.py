@@ -73,7 +73,7 @@ def _match_segments_input(stage2: Dict[str, Any], fallback_durations: Optional[L
 
 
 async def _match_one(path: Path, index: int, total: int) -> Dict[str, Any]:
-    from services.script_match_service import match_script_tags_segments
+    from services.video_match_services.script_match_service import match_script_tags_segments
 
     data = _load_json(path)
     source = data.get("source") if isinstance(data, dict) else {}
