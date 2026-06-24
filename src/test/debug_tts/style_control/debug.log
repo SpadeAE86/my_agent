@@ -1,0 +1,8 @@
+[0621/023549.451:INFO:network_monitor.cc(54)] [NetworkMonitor] Started
+[0621/023610.609:INFO:network_monitor_win.cc(71)] [NetMon] Stop begin
+[0621/023610.609:INFO:network_monitor_win.cc(79)] [NetMon] Joining worker thread...
+[0621/023610.609:INFO:network_monitor_win.cc(81)] [NetMon] Worker thread joined
+[0621/023610.609:INFO:network_monitor_win.cc(99)] [NetMon] Stop done
+[0621/023610.609:INFO:network_monitor_win.cc(71)] [NetMon] Stop begin
+[0621/023610.609:INFO:network_monitor_win.cc(99)] [NetMon] Stop done
+[0621/023610.609:INFO:network_monitor.cc(74)] [NetworkMonitor] Stopped

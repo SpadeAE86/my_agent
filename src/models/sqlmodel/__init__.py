@@ -26,7 +26,13 @@ from .collections import ThemeSpace, CollectionItem, TagLibraryItem  # noqa: F40
 from .ticket_buyer import TicketBuyer  # noqa: F401
 from .scheduler_job import SchedulerJob, SchedulerJobLog  # noqa: F401
 from .agent_daily_message import AgentDailyMessage  # noqa: F401
-from .volco_timbre import VolcoTimbre  # noqa: F401
+from .voice_timbre import VoiceTimbre  # noqa: F401
+from .voice_tts import VoiceTTSTask, VoiceTTSChunk  # noqa: F401
+from .voice_cloned import VoiceCloned  # noqa: F401
+from .voice_designed import VoiceDesigned  # noqa: F401
+
+
+
 
 
 

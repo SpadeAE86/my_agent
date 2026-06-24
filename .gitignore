@@ -27,7 +27,7 @@ src/data/
 # Ide
 .idea/
 .claude/
-
+src/final/
 # Video analysis extracted frames (large, generated)
 src/video_analysis_workspace/
 src/video_analysis_workspace/**

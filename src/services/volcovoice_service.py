@@ -11,7 +11,7 @@ from datetime import datetime
 from pathlib import Path
 from config.config import ENV, MY_CONFIG
 from exceptions.infra import ServiceException
-from models.voice_enums import character_options
+from models.volcano_online_voice_enums import character_options
 from utils.obs_utils import upload_audio
 from utils.volcano_utils import volcano_generate_voice, parse_frontend_words
 from infra.logging.logger import logger as log
@@ -138,14 +138,14 @@ class VolcoVoiceService:
             cleaned_text = "没有可朗读的文本。"
 
         # 1. 动态从数据库加载音色代码，如果不存在则回退至硬编码静态映射
-        from models.sqlmodel.volco_timbre import VolcoTimbre
+        from models.sqlmodel.voice_timbre import VoiceTimbre
         from infra.storage.mysql_connector import mysql_connector
         from sqlmodel import select
 
         voice_type = None
         try:
             async with mysql_connector.session_scope() as session:
-                stmt = select(VolcoTimbre).where(VolcoTimbre.voice_character == voice_character, VolcoTimbre.is_enabled == True)
+                stmt = select(VoiceTimbre).where(VoiceTimbre.voice_character == voice_character, VoiceTimbre.is_enabled == True)
                 result = await session.execute(stmt)
                 timbre = result.scalar_one_or_none()
                 if timbre:
@@ -228,22 +228,22 @@ class VolcoVoiceService:
     @classmethod
     async def seed_default_timbres_if_empty(cls):
         """
-        如果数据库中的 volco_timbre 表没有任何记录，则自动解析并导入
+        如果数据库中的 voice_timbre 表没有任何记录，则自动解析并导入
         C:\\Users\\admin\\Downloads\\volcovoice_sample.sql 中的音色配置。
         """
-        from models.sqlmodel.volco_timbre import VolcoTimbre
+        from models.sqlmodel.voice_timbre import VoiceTimbre
         from infra.storage.mysql_connector import mysql_connector
         from sqlmodel import select
 
         try:
             async with mysql_connector.session_scope() as session:
-                stmt = select(VolcoTimbre).limit(1)
+                stmt = select(VoiceTimbre).limit(1)
                 result = await session.execute(stmt)
                 if result.scalar_one_or_none() is not None:
-                    log.info("volco_timbre 数据表已包含记录，跳过自动初始化。")
+                    log.info("voice_timbre 数据表已包含记录，跳过自动初始化。")
                     return
         except Exception as e:
-            log.warning(f"无法检查 volco_timbre 表状态，可能表未就绪: {e}")
+            log.warning(f"无法检查 voice_timbre 表状态，可能表未就绪: {e}")
             return
 
         sql_path = r"C:\Users\admin\Downloads\volcovoice_sample.sql"
@@ -338,7 +338,15 @@ class VolcoVoiceService:
                     except ValueError:
                         return datetime.now()
 
-                timbre = VolcoTimbre(
+                sex_val = record.get("sex")
+                if sex_val in ("女", "female", "0", "女/0"):
+                    normalized_sex = "0"
+                elif sex_val in ("男", "male", "1", "男/1"):
+                    normalized_sex = "1"
+                else:
+                    normalized_sex = sex_val
+
+                timbre = VoiceTimbre(
                     voice_character=record.get("voice_character"),
                     voice_code=record.get("voice_code"),
                     voice_model_type=record.get("voice_model_type", "default"),
@@ -346,8 +354,10 @@ class VolcoVoiceService:
                     note=record.get("note"),
                     priority=int(record.get("priority", 0)),
                     age_type=record.get("age_type"),
-                    sex=record.get("sex"),
+                    sex=normalized_sex,
                     full_voice=record.get("full_voice"),
+                    provider="volcano",
+                    is_online=True,
                     created_at=parse_dt(record.get("created_at")),
                     updated_at=parse_dt(record.get("updated_at")),
                 )
@@ -362,4 +372,118 @@ class VolcoVoiceService:
                 log.warning("没有可导入的有效音色配置记录。")
         except Exception as e:
             log.error(f"导入火山音色配置发生异常: {e}", exc_info=True)
+
+    @classmethod
+    async def seed_qwen_timbres_if_missing(cls):
+        """
+        Seed Qwen online voices from config into the voice_timbre database table.
+        """
+        from models.sqlmodel.voice_timbre import VoiceTimbre
+        from infra.storage.mysql_connector import mysql_connector
+        from sqlmodel import select
+        from models.qwen_online_voice_enums import qwen_online_voice_options
+        from models.qwen_online_voice_enums_meta import qwen_online_voice_enums_meta
+
+        try:
+            async with mysql_connector.session_scope() as session:
+                stmt = select(VoiceTimbre).where(VoiceTimbre.provider == "qwen")
+                result = await session.execute(stmt)
+                if result.scalars().first() is not None:
+                    log.info("Qwen online voice timbres already seeded, skipping.")
+                    return
+
+                timbres_to_insert = []
+                for name, code in qwen_online_voice_options.items():
+                    meta = qwen_online_voice_enums_meta.get(name, {})
+                    sex_val = meta.get("gender", "女")
+                    if sex_val in ("女", "female", "0", "女/0"):
+                        normalized_sex = "0"
+                    elif sex_val in ("男", "male", "1", "男/1"):
+                        normalized_sex = "1"
+                    else:
+                        normalized_sex = sex_val
+
+                    timbre = VoiceTimbre(
+                        voice_character=name,
+                        voice_code=code,
+                        voice_model_type="default",
+                        is_enabled=True,
+                        note=meta.get("description", ""),
+                        priority=0,
+                        age_type=meta.get("age", "青年"),
+                        sex=normalized_sex,
+                        full_voice=None,
+                        provider="qwen",
+                        is_online=True
+                    )
+                    timbres_to_insert.append(timbre)
+
+                if timbres_to_insert:
+                    session.add_all(timbres_to_insert)
+                    await session.commit()
+                    log.info(f"成功导入 {len(timbres_to_insert)} 个Qwen在线音色配置记录到数据库！")
+        except Exception as e:
+            log.error(f"导入Qwen在线音色配置发生异常: {e}", exc_info=True)
+
+    @classmethod
+    async def seed_volcano_timbres_if_missing(cls):
+        """
+        Ensure all Volcano online voices from enums are seeded in the database.
+        """
+        from models.sqlmodel.voice_timbre import VoiceTimbre
+        from infra.storage.mysql_connector import mysql_connector
+        from sqlmodel import select
+        from models.volcano_online_voice_enums import character_options, get_volcano_voice_type
+        from models.volcano_online_voice_enums_meta import voice_enums_meta
+
+        try:
+            async with mysql_connector.session_scope() as session:
+                # Get all existing volcano voice characters in the DB (lowercased for case-insensitive check)
+                stmt = select(VoiceTimbre.voice_character).where(VoiceTimbre.provider == "volcano")
+                res = await session.execute(stmt)
+                existing_chars = {c.lower() for c in res.scalars().all()}
+
+                inserted_chars_lower = set(existing_chars)
+                timbres_to_insert = []
+                for name, code in character_options.items():
+                    name_lower = name.lower()
+                    if name_lower in inserted_chars_lower:
+                        continue
+                    
+                    inserted_chars_lower.add(name_lower)
+                    meta = voice_enums_meta.get(name, {})
+                    try:
+                        voice_model_type = get_volcano_voice_type(name)
+                    except KeyError:
+                        voice_model_type = "big"
+
+                    sex_val = meta.get("gender")
+                    if sex_val in ("女", "female", "0", "女/0"):
+                        normalized_sex = "0"
+                    elif sex_val in ("男", "male", "1", "男/1"):
+                        normalized_sex = "1"
+                    else:
+                        normalized_sex = sex_val
+
+                    timbre = VoiceTimbre(
+                        voice_character=name,
+                        voice_code=code,
+                        voice_model_type=voice_model_type,
+                        is_enabled=True,
+                        note=None,
+                        priority=0,
+                        age_type=meta.get("age"),
+                        sex=normalized_sex,
+                        full_voice=None,
+                        provider="volcano",
+                        is_online=True
+                    )
+                    timbres_to_insert.append(timbre)
+
+                if timbres_to_insert:
+                    session.add_all(timbres_to_insert)
+                    await session.commit()
+                    log.info(f"成功导入 {len(timbres_to_insert)} 个新火山音色配置记录到数据库！")
+        except Exception as e:
+            log.error(f"增量导入火山音色配置发生异常: {e}", exc_info=True)
 

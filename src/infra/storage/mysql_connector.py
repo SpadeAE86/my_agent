@@ -28,7 +28,7 @@ class MySQLConnector(ResourceConnector):
     async def init(self):
         log.info("MySQLConnector: Initializing...")
         cfg = MY_CONFIG.get("mysql", {}).get(ENV, {})
-        url = f"mysql+aiomysql://{cfg['username']}:{cfg['password']}@{cfg['host']}:{cfg['port']}/{cfg['database']}"
+        url = f"mysql+aiomysql://{cfg['username']}:{cfg['password']}@{cfg['host']}:{cfg['port']}/{cfg['database']}?charset=utf8mb4"
 
         self._engine = create_async_engine(url, pool_pre_ping=True)
         # 这里的 _client 就是对外暴露的“出口”

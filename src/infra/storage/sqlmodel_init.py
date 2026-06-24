@@ -388,17 +388,117 @@ async def _ensure_mix_video_overall_time_table() -> None:
             pass
 
 
+async def _migrate_volco_timbre_to_voice_timbre() -> None:
+    """Rename volco_timbre table to voice_timbre if old table exists but new table does not."""
+    engine = await mysql_connector.get_engine()
+    async with engine.begin() as conn:
+        r_old = await conn.execute(
+            text(
+                "SELECT COUNT(*) FROM information_schema.tables "
+                "WHERE table_schema = DATABASE() AND table_name = 'volco_timbre'"
+            )
+        )
+        old_exists = (r_old.scalar() or 0) > 0
+
+        r_new = await conn.execute(
+            text(
+                "SELECT COUNT(*) FROM information_schema.tables "
+                "WHERE table_schema = DATABASE() AND table_name = 'voice_timbre'"
+            )
+        )
+        new_exists = (r_new.scalar() or 0) > 0
+
+        if old_exists and not new_exists:
+            try:
+                await conn.execute(text("RENAME TABLE volco_timbre TO voice_timbre"))
+                log.info("Successfully migrated database table: RENAME TABLE volco_timbre TO voice_timbre")
+            except Exception as e:
+                log.error("Failed to rename volco_timbre table to voice_timbre: %s", e)
+
+
+async def _ensure_voice_timbre_columns() -> None:
+    """Ensure voice_timbre table has provider and is_online columns."""
+    engine = await mysql_connector.get_engine()
+    stmts = [
+        "ALTER TABLE voice_timbre ADD COLUMN provider VARCHAR(64) NOT NULL DEFAULT 'volcano'",
+        "ALTER TABLE voice_timbre ADD COLUMN is_online TINYINT(1) NOT NULL DEFAULT 1",
+    ]
+    async with engine.begin() as conn:
+        for sql in stmts:
+            try:
+                await conn.execute(text(sql))
+                log.info("Applied voice_timbre column migration: %s", sql)
+            except Exception as e:
+                msg = str(e).lower()
+                if "duplicate" in msg or "1060" in msg:
+                    log.debug("voice_timbre column already exists, skip: %s", sql[:60])
+                    continue
+                log.warning("voice_timbre column migration failed: %s", e)
+
+
+async def _ensure_voice_cloned_columns() -> None:
+    """Ensure voice_cloned table has provider, is_online, tag, note, age_type, and sex columns."""
+    engine = await mysql_connector.get_engine()
+    stmts = [
+        "ALTER TABLE voice_cloned ADD COLUMN provider VARCHAR(64) NOT NULL DEFAULT 'volcano'",
+        "ALTER TABLE voice_cloned ADD COLUMN is_online TINYINT(1) NOT NULL DEFAULT 1",
+        "ALTER TABLE voice_cloned ADD COLUMN tag VARCHAR(255) NULL",
+        "ALTER TABLE voice_cloned ADD COLUMN note TEXT NULL",
+        "ALTER TABLE voice_cloned ADD COLUMN age_type VARCHAR(64) NULL",
+        "ALTER TABLE voice_cloned ADD COLUMN sex VARCHAR(64) NULL",
+    ]
+    async with engine.begin() as conn:
+        for sql in stmts:
+            try:
+                await conn.execute(text(sql))
+                log.info("Applied voice_cloned column migration: %s", sql)
+            except Exception as e:
+                msg = str(e).lower()
+                if "duplicate" in msg or "1060" in msg:
+                    log.debug("voice_cloned column already exists, skip: %s", sql[:60])
+                    continue
+                log.warning("voice_cloned column migration failed: %s", e)
+
+
+async def _ensure_voice_designed_columns() -> None:
+    """Ensure voice_designed table has provider, is_online, tag, note, age_type, and sex columns."""
+    engine = await mysql_connector.get_engine()
+    stmts = [
+        "ALTER TABLE voice_designed ADD COLUMN provider VARCHAR(64) NOT NULL DEFAULT 'volcano'",
+        "ALTER TABLE voice_designed ADD COLUMN is_online TINYINT(1) NOT NULL DEFAULT 1",
+        "ALTER TABLE voice_designed ADD COLUMN tag VARCHAR(255) NULL",
+        "ALTER TABLE voice_designed ADD COLUMN note TEXT NULL",
+        "ALTER TABLE voice_designed ADD COLUMN age_type VARCHAR(64) NULL",
+        "ALTER TABLE voice_designed ADD COLUMN sex VARCHAR(64) NULL",
+    ]
+    async with engine.begin() as conn:
+        for sql in stmts:
+            try:
+                await conn.execute(text(sql))
+                log.info("Applied voice_designed column migration: %s", sql)
+            except Exception as e:
+                msg = str(e).lower()
+                if "duplicate" in msg or "1060" in msg:
+                    log.debug("voice_designed column already exists, skip: %s", sql[:60])
+                    continue
+                log.warning("voice_designed column migration failed: %s", e)
+
+
 async def create_tables_if_not_exists() -> None:
     """
     Create SQLModel tables if they do not exist.
     Uses the existing async MySQL engine.
     """
+    await _migrate_volco_timbre_to_voice_timbre()
     engine = await mysql_connector.get_engine()
     async with engine.begin() as conn:
         log.info("Ensuring SQLModel tables exist...")
         await conn.run_sync(SQLModel.metadata.create_all)
         log.info("SQLModel table check complete.")
     await _migrate_image_history_numeric_pk()
+    await _ensure_voice_timbre_columns()
+    await _ensure_voice_cloned_columns()
+    await _ensure_voice_designed_columns()
     await _ensure_http_request_trace_columns()
     await _ensure_history_request_id_columns()
     await _ensure_video_analysis_history_extras()

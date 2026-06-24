@@ -192,3 +192,54 @@ def log_agent_debug(session_id: str, event_type: str, data: Any):
             f.write(json.dumps(record, ensure_ascii=False) + "\n")
     except Exception as e:
         chat_logger.error(f"Failed to write to agent_debug.jsonl: {e}")
+
+
+class LoguruWrapper:
+    def __init__(self, logger_obj):
+        self._logger = logger_obj
+
+    def _format(self, msg, *args):
+        if args and isinstance(msg, str) and "%" in msg:
+            try:
+                return msg % args, []
+            except Exception:
+                pass
+        return msg, args
+
+    def trace(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).trace(msg, *args, **kwargs)
+
+    def debug(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).debug(msg, *args, **kwargs)
+
+    def info(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).info(msg, *args, **kwargs)
+
+    def success(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).success(msg, *args, **kwargs)
+
+    def warning(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).warning(msg, *args, **kwargs)
+
+    def error(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).error(msg, *args, **kwargs)
+
+    def critical(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).critical(msg, *args, **kwargs)
+
+    def exception(self, msg, *args, **kwargs):
+        msg, args = self._format(msg, *args)
+        self._logger.opt(depth=1).exception(msg, *args, **kwargs)
+
+    def __getattr__(self, name):
+        return getattr(self._logger, name)
+
+
+logger = LoguruWrapper(logger)

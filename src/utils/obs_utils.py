@@ -4,12 +4,15 @@ import os
 import time
 import re
 import urllib
+import contextvars
 from typing import List, Optional
 
 from config.config import ENV, MY_CONFIG, VPC
 from exceptions.infra import ServiceException
 from infra.logging.logger import logger as log
 from utils.cache_utils import get_from_cache, set_to_cache
+
+return_local_path_ctx = contextvars.ContextVar("return_local_path", default=False)
 
 # === 存储提供商选择 ===
 STORAGE_PROVIDER = os.getenv("STORAGE_PROVIDER") or MY_CONFIG.get("storage", {}).get("provider") or "huawei"
@@ -18,7 +21,7 @@ if STORAGE_PROVIDER == "volcengine":
     # 动态切换到 Volcano TOS 的实现
     from utils.tos_utils import (
         download_resource,
-        upload_audio,
+        upload_audio as _original_upload_audio,
         upload_to_tos as upload_to_obs,
         download_from_tos as download_from_obs,
         batch_upload_to_tos as batch_upload_to_obs,
@@ -88,7 +91,7 @@ else:
             path_list = await asyncio.gather(*download_task)
         return path_list
 
-    async def upload_audio(audio_path, project_id="test"):
+    async def _original_upload_audio(audio_path, project_id="test"):
         log.info(f"开始上传音频到 OBS: {audio_path}")
         if not audio_path:
             return ""
@@ -208,6 +211,13 @@ else:
         except Exception as e:
             log.exception(f"OBS 路径{obs_path}不存在 异常: {e}")
             return False
+
+
+async def upload_audio(audio_path, project_id="test"):
+    if return_local_path_ctx.get():
+        log.info(f"Context return_local_path is enabled. Bypassing upload, returning local path: {audio_path}")
+        return audio_path
+    return await _original_upload_audio(audio_path, project_id)
 
 
 # === 始终导出的通用、存储提供商无关的下载函数 ===

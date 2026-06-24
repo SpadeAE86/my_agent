@@ -100,3 +100,5 @@ class VideoGenerateRequest(BaseModel):
 class CreateRoleRequest(BaseModel):
     """POST /chat/roles 的请求体"""
     name: str = Field(..., description="角色名称", min_length=1)
+    description: Optional[str] = Field(default=None, description="角色简介")
+

@@ -6,6 +6,7 @@ audio:
     access_key_id: ACCESS_KEY_ID
     access_key_secret: ACCESS_KEY_SECRET
     app_key: APP_KEY
+    workspace_id: WORKSPACE_ID
   Volcano:
     app_id: YOUR_VOLCANO_APP_ID
     access_token: YOUR_VOLCANO_ACCESS_TOKEN

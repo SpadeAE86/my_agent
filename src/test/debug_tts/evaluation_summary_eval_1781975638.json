@@ -1,0 +1,41 @@
+[
+  {
+    "category": "clone",
+    "test_id": "eval_1781975638",
+    "average_time_sec": 45.42,
+    "run_times": [
+      26.93,
+      30.64,
+      44.37,
+      66.8,
+      58.33
+    ],
+    "urls": [
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781975674366_718/voice_qwen_1781975674366_718.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781975705079_115/voice_qwen_1781975705079_115.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781975749714_224/voice_qwen_1781975749714_224.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781975816527_810/voice_qwen_1781975816527_810.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781975874966_652/voice_qwen_1781975874966_652.mp3"
+    ]
+  },
+  {
+    "category": "design",
+    "test_id": "eval_1781975638_instruct_一个声音有些沙哑语调活泼灵动的年轻女孩语",
+    "instruction": "一个声音有些沙哑、语调活泼灵动的年轻女孩，语气中带着俏皮",
+    "average_time_sec": 64.86,
+    "run_times": [
+      65.26,
+      60.88,
+      60.15,
+      64.92,
+      73.1
+    ],
+    "urls": [
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781975952113_215/voice_qwen_1781975952113_215.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781976012970_735/voice_qwen_1781976012970_735.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781976073255_483/voice_qwen_1781976073255_483.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781976138181_331/voice_qwen_1781976138181_331.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781976211459_156/voice_qwen_1781976211459_156.mp3"
+    ]
+  }
+]

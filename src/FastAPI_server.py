@@ -68,12 +68,14 @@ async def lifespan(app: FastAPI):
         # Create SQLModel tables if missing
         await create_tables_if_not_exists()
 
-        # Seed Volcano voice timbres from SQL file if missing
+        # Seed Volcano & Qwen voice timbres if missing
         try:
             from services.volcovoice_service import VolcoVoiceService
             await VolcoVoiceService.seed_default_timbres_if_empty()
+            await VolcoVoiceService.seed_volcano_timbres_if_missing()
+            await VolcoVoiceService.seed_qwen_timbres_if_missing()
         except Exception as _seeder_err:
-            log.warning(f"Failed to seed Volcano voice timbres: {_seeder_err}")
+            log.warning(f"Failed to seed voice timbres: {_seeder_err}")
 
         # Seed default database-configured jobs if missing
         from services.scheduler_service import seed_default_jobs_if_empty
@@ -92,7 +94,55 @@ async def lifespan(app: FastAPI):
 
             await mark_interrupted_tasks_on_startup("服务重启或进程中断，任务未完成")
         except Exception as _e:
-            log.warning("启动时标记中断任务失败（可忽略若表未就绪）: %s", _e)
+            log.warning("启动时标记中断任务失败（可忽略若表未就绪）: {}", _e)
+
+        try:
+            from services.tts_services.voice_tts_service import voice_tts_service
+            asyncio.create_task(voice_tts_service.heal_pending_tasks_on_startup())
+            log.info("已向后台派发 TTS 任务启动时修复任务。")
+        except Exception as _e:
+            log.warning("启动时派发 TTS 任务修复失败: {}", _e)
+
+        try:
+            from services.tts_services.voice_clone_service import voice_clone_service
+            async def heal_qwen_voice_demos():
+                await asyncio.sleep(5)  # 等待系统组件及数据库完全就绪
+                log.info("开始扫描并自动补全缺失演示音频的阿里云自定义音色...")
+                from sqlmodel import select
+                from models.sqlmodel.voice_cloned import VoiceCloned
+                from models.sqlmodel.voice_designed import VoiceDesigned
+                from infra.storage.mysql_connector import mysql_connector
+                
+                async with mysql_connector.session_scope() as session:
+                    cloned_res = await session.execute(
+                        select(VoiceCloned)
+                        .where(VoiceCloned.provider == "qwen")
+                        .where(VoiceCloned.status != 3)
+                        .where((VoiceCloned.demo_audio_url == None) | (VoiceCloned.demo_audio_url == ""))
+                    )
+                    cloned_voices = cloned_res.scalars().all()
+                    
+                    designed_res = await session.execute(
+                        select(VoiceDesigned)
+                        .where(VoiceDesigned.provider == "qwen")
+                        .where(VoiceDesigned.status != 3)
+                        .where((VoiceDesigned.demo_audio_url == None) | (VoiceDesigned.demo_audio_url == ""))
+                    )
+                    designed_voices = designed_res.scalars().all()
+                    
+                for v in cloned_voices:
+                    log.info("自动补全 Qwen 克隆音色 demo 预览音频: {} ({})", v.voice_character, v.custom_speaker_id)
+                    await voice_clone_service._generate_qwen_demo_audio(v.id, v.custom_speaker_id)
+                    
+                for v in designed_voices:
+                    log.info("自动补全 Qwen 设计音色 demo 预览音频: {} ({})", v.voice_character, v.custom_speaker_id)
+                    await voice_clone_service._generate_qwen_design_demo_audio(v.id, v.custom_speaker_id)
+                    
+                log.info("阿里云自定义音色缺失演示音频自动补全任务处理完毕。")
+
+            asyncio.create_task(heal_qwen_voice_demos())
+        except Exception as _heal_err:
+            log.warning("启动时派发阿里云演示音频补全任务失败: %s", _heal_err)
 
         if os.environ.get("SKIP_FRAME_ORIENTATION_BACKFILL", "").strip().lower() in (
             "1",
@@ -135,6 +185,50 @@ async def lifespan(app: FastAPI):
                 log.warning(f"标签库同步写入数据库后台循环异常: {_sync_err}")
 
         asyncio.create_task(_sync_library_to_db_loop())
+
+        # 定时每 10 分钟同步火山和阿里云音色状态
+        async def _sync_custom_voices_loop() -> None:
+            # 启动后先等待 15 秒，避免和启动初始化阶段冲突，并给网络和DB连接充足的时间
+            await asyncio.sleep(15)
+            while True:
+                try:
+                    from services.tts_services.voice_clone_service import voice_clone_service
+                    log.info("定时任务启动：开始同步火山引擎和阿里云自定义音色状态...")
+                    await asyncio.gather(
+                        voice_clone_service.sync_volcano_voices(),
+                        voice_clone_service.sync_qwen_voices(),
+                        return_exceptions=True
+                    )
+                    log.info("定时任务：自定义音色状态同步完成")
+                except Exception as _sync_err:
+                    log.warning(f"定时同步自定义音色状态异常: {_sync_err}")
+                await asyncio.sleep(600)
+
+        asyncio.create_task(_sync_custom_voices_loop())
+
+
+
+        # 启动时后台预热所有已配置的角色音色
+        async def _prewarm_all_roles_bg() -> None:
+            try:
+                # 稍微等待 6 秒，给数据库和连接就绪时间
+                await asyncio.sleep(6)
+                from core.roles.role_manager import role_manager
+                from services.tts_services.voice_tts_service import voice_tts_service
+                
+                roles = role_manager.list_roles()
+                for r in roles:
+                    if r.get("voice_configured"):
+                        voice_char = r.get("voice_character")
+                        if voice_char:
+                            log.info(f"启动后台预热角色 '{r.get('name')}' 的音色 '{voice_char}'...")
+                            await voice_tts_service.warm_up_voice(voice_char)
+                log.info("启动时角色音色后台预热完毕。")
+            except Exception as _pe:
+                log.warning(f"启动后台预热角色音色异常: {_pe}")
+
+        asyncio.create_task(_prewarm_all_roles_bg())
+
 
 
         # 模型预热（后台 task，不 await）：yield 后 HTTP 立即可用；OpenSearch 入库前会 await ensure_embedding_model_ready 等待同一加载任务。

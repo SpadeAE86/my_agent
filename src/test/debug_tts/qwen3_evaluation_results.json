@@ -1,0 +1,39 @@
+[
+  {
+    "test_case_name": "Qwen3-Clone (胡桃音色)",
+    "engine": "qwen3",
+    "voice_character": "hutao_cloned",
+    "text": "你想要的是一个有脑子、有灵气、有审美、会主动生长出想法的搭档。不是机械配合你，而是能跟上你、补足你、甚至偶尔把你往更有趣的方向轻轻推一下的人。",
+    "params": {
+      "ref_audio": "C:\\CloudMusic\\voice_collection\\voice_dataset\\6月21日\\6月21日.mp3_0000004160_0000145600.wav",
+      "x_vector_only_mode": true
+    },
+    "result_url": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781974532079_938/voice_qwen_1781974532079_938.mp3",
+    "generation_time_sec": 36.0,
+    "timestamp": "2026-06-21 00:55:32"
+  },
+  {
+    "test_case_name": "Qwen3-Design (风格测试 1)",
+    "engine": "qwen3",
+    "voice_character": "designed_speaker_1",
+    "text": "你想要的是一个有脑子、有灵气、有审美、会主动生长出想法的搭档。不是机械配合你，而是能跟上你、补足你、甚至偶尔把你往更有趣的方向轻轻推一下的人。",
+    "params": {
+      "instruct": "一个声音非常有磁性、成熟稳重的中年男性，语速稍慢，语气充满哲理"
+    },
+    "result_url": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781974577559_904/voice_qwen_1781974577559_904.mp3",
+    "generation_time_sec": 45.36,
+    "timestamp": "2026-06-21 00:56:17"
+  },
+  {
+    "test_case_name": "Qwen3-Design (风格测试 2)",
+    "engine": "qwen3",
+    "voice_character": "designed_speaker_2",
+    "text": "你想要的是一个有脑子、有灵气、有审美、会主动生长出想法的搭档。不是机械配合你，而是能跟上你、补足你、甚至偶尔把你往更有趣的方向轻轻推一下的人。",
+    "params": {
+      "instruct": "一个声音有些沙哑、语调活泼灵动的年轻女孩，语气中带着俏皮"
+    },
+    "result_url": "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781974607568_991/voice_qwen_1781974607568_991.mp3",
+    "generation_time_sec": 29.96,
+    "timestamp": "2026-06-21 00:56:47"
+  }
+]

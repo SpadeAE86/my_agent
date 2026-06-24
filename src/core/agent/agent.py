@@ -221,6 +221,10 @@ class Agent:
             f"- Is main agent: {self.is_base}",
         ]
         
+        if getattr(self, "role_id", "default") != "default":
+            items.append(f"- Role ID: {self.role_id}")
+            items.append(f"- Role Workspace: data/roles/{self.role_id}/")
+        
         if self.active_workspace_id:
             items.append(f"- Active Workspace ID: {self.active_workspace_id}")
         if self.active_graph_name:
@@ -262,7 +266,7 @@ class Agent:
 
     def _section_project_context(self) -> str | None:
         """
-        龙虾模式专用 — 从角色 Workspace 读取 IDENTITY / USER / SOUL / USER_SETTINGS，
+        龙虾模式专用 — 从角色 Workspace 读取 IDENTITY / USER / SOUL / USER_SETTINGS / HABIT，
         组合成 project_context 注入到动态段。
         """
         from core.roles.role_manager import role_manager
@@ -271,8 +275,9 @@ class Agent:
         user_info = role_manager.read_user(self.role_id)
         soul = role_manager.read_soul(self.role_id)
         user_settings = role_manager.read_user_settings(self.role_id)
+        habit = role_manager.read_habit(self.role_id)
 
-        if not any([identity.strip(), user_info.strip(), soul.strip(), user_settings.strip()]):
+        if not any([identity.strip(), user_info.strip(), soul.strip(), user_settings.strip(), habit.strip()]):
             return None
 
         parts = ["# Project Context\n"]
@@ -292,6 +297,10 @@ class Agent:
         if soul.strip():
             parts.append("\n## Soul\n")
             parts.append(soul.strip())
+
+        if habit.strip():
+            parts.append("\n## Dialogue Habits and Lines (Strict Habits/Sample Dialogues from User)\n")
+            parts.append(habit.strip())
 
         if self._is_user_uninitialized(user_info):
             parts.append(

@@ -500,3 +500,122 @@ async def volcano_generate_voice(
                 log.warning(f"Volcano websocket close failed: {type(close_err).__name__}: {close_err}")
             else:
                 log.info("Connection closed")
+
+
+import hmac
+import hashlib
+import datetime
+import httpx
+
+def _sign_v4(key, msg):
+    return hmac.new(key, msg.encode('utf-8'), hashlib.sha256).digest()
+
+def _get_signature_key_v4(key, date_stamp, region_name, service_name):
+    k_date = _sign_v4(key.encode('utf-8'), date_stamp)
+    k_region = _sign_v4(k_date, region_name)
+    k_service = _sign_v4(k_region, service_name)
+    k_signing = _sign_v4(k_service, 'request')
+    return k_signing
+
+async def query_volcano_train_statuses(page_number: int = 1, page_size: int = 100) -> dict:
+    """
+    查询已在火山引擎购买/复刻训练的音色状态列表
+    """
+    import os
+    ak = os.getenv("VOLC_TOS_AK") or my_config.get("storage", {}).get("volcengine", {}).get("access_key")
+    sk = os.getenv("VOLC_TOS_SK") or my_config.get("storage", {}).get("volcengine", {}).get("secret_key")
+    appid = os.getenv("VOLCANO_APP_ID") or my_config.get("audio", {}).get("Volcano", {}).get("appid")
+
+    if not ak or not sk or not appid:
+        raise ServiceException(
+            code=450,
+            message="Volcano open api requires VOLC_TOS_AK, VOLC_TOS_SK, and VOLCANO_APP_ID to be configured",
+        )
+
+    host = 'open.volcengineapi.com'
+    region = 'cn-north-1'
+    service = 'speech_saas_prod'
+    version = '2023-11-07'
+    action = 'BatchListMegaTTSTrainStatus'
+
+    # Datetime formatting for credentials scope
+    t = datetime.datetime.utcnow()
+    amz_date = t.strftime('%Y%m%dT%H%M%SZ')
+    date_stamp = t.strftime('%Y%m%d')
+
+    payload = {
+        "AppID": str(appid),
+        "PageNumber": page_number,
+        "PageSize": page_size
+    }
+    payload_str = json.dumps(payload)
+
+    method = 'POST'
+    canonical_uri = '/'
+    canonical_querystring = f'Action={action}&Version={version}'
+
+    canonical_headers = (
+        f'content-type:application/json; charset=utf-8\n'
+        f'host:{host}\n'
+        f'x-date:{amz_date}\n'
+    )
+    signed_headers = 'content-type;host;x-date'
+
+    payload_hash = hashlib.sha256(payload_str.encode('utf-8')).hexdigest()
+    canonical_request = (
+        f'{method}\n'
+        f'{canonical_uri}\n'
+        f'{canonical_querystring}\n'
+        f'{canonical_headers}\n'
+        f'{signed_headers}\n'
+        f'{payload_hash}'
+    )
+
+    algorithm = 'HMAC-SHA256'
+    credential_scope = f'{date_stamp}/{region}/{service}/request'
+    string_to_sign = (
+        f'{algorithm}\n'
+        f'{amz_date}\n'
+        f'{credential_scope}\n'
+        f'{hashlib.sha256(canonical_request.encode("utf-8")).hexdigest()}'
+    )
+
+    signing_key = _get_signature_key_v4(sk, date_stamp, region, service)
+    signature = hmac.new(signing_key, string_to_sign.encode('utf-8'), hashlib.sha256).hexdigest()
+
+    authorization_header = (
+        f'{algorithm} Credential={ak}/{credential_scope}, '
+        f'SignedHeaders={signed_headers}, Signature={signature}'
+    )
+
+    headers = {
+        'Content-Type': 'application/json; charset=utf-8',
+        'X-Date': amz_date,
+        'Authorization': authorization_header,
+        'Host': host
+    }
+
+    url = f'https://{host}/?{canonical_querystring}'
+
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        resp = await client.post(url, headers=headers, content=payload_str)
+        if resp.status_code != 200:
+            raise ServiceException(
+                code=resp.status_code,
+                message=f"火山开放接口调用失败 (HTTP {resp.status_code}): {resp.text}"
+            )
+        resp_data = resp.json()
+
+    # Error handling
+    response_metadata = resp_data.get("ResponseMetadata", {})
+    error_info = response_metadata.get("Error")
+    if error_info:
+        code = error_info.get("Code", "UnknownError")
+        msg = error_info.get("Message", "Unknown open api error")
+        raise ServiceException(
+            code=400,
+            message=f"火山开放服务返回错误: {msg} (错误码: {code})"
+        )
+
+    return resp_data.get("Result", {})
+

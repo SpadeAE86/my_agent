@@ -1,0 +1,86 @@
+[
+  {
+    "name": "shy",
+    "description": "害羞颤抖",
+    "instruct": "害羞低沉地说话，语速很慢，语气有些颤抖和娇羞",
+    "ttft_sec": 4.65,
+    "avg_clause_sec": 4.2,
+    "total_duration_sec": 34.05,
+    "segment_times": [
+      4.65,
+      2.24,
+      2.32,
+      5.64,
+      3.14,
+      3.67,
+      4.04,
+      7.94
+    ],
+    "urls": [
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979763182_419/voice_qwen_1781979763182_419.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979765545_607/voice_qwen_1781979765545_607.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979767970_270/voice_qwen_1781979767970_270.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979773620_721/voice_qwen_1781979773620_721.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979776824_994/voice_qwen_1781979776824_994.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979780467_138/voice_qwen_1781979780467_138.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979784603_659/voice_qwen_1781979784603_659.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979792589_345/voice_qwen_1781979792589_345.mp3"
+    ]
+  },
+  {
+    "name": "confident",
+    "description": "自信满满",
+    "instruct": "自信满满地大声说话，情绪高昂，语气坚定有力，充满热情",
+    "ttft_sec": 3.99,
+    "avg_clause_sec": 3.73,
+    "total_duration_sec": 30.27,
+    "segment_times": [
+      3.99,
+      2.19,
+      2.66,
+      3.89,
+      3.97,
+      3.21,
+      2.37,
+      7.57
+    ],
+    "urls": [
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979796645_316/voice_qwen_1781979796645_316.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979798910_954/voice_qwen_1781979798910_954.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979801491_398/voice_qwen_1781979801491_398.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979805545_807/voice_qwen_1781979805545_807.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979809396_788/voice_qwen_1781979809396_788.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979812812_140/voice_qwen_1781979812812_140.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979815256_818/voice_qwen_1781979815256_818.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979822888_771/voice_qwen_1781979822888_771.mp3"
+    ]
+  },
+  {
+    "name": "friendly",
+    "description": "亲切自然",
+    "instruct": "用十分温柔、亲切自然的语气说话，声音甜美，像是在耳边和好朋友聊天",
+    "ttft_sec": 4.01,
+    "avg_clause_sec": 3.72,
+    "total_duration_sec": 30.2,
+    "segment_times": [
+      4.01,
+      2.3,
+      2.41,
+      4.59,
+      3.01,
+      3.46,
+      2.01,
+      8.0
+    ],
+    "urls": [
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979826667_963/voice_qwen_1781979826667_963.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979829227_950/voice_qwen_1781979829227_950.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979831702_908/voice_qwen_1781979831702_908.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979836174_309/voice_qwen_1781979836174_309.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979839465_345/voice_qwen_1781979839465_345.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979842970_266/voice_qwen_1781979842970_266.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979845070_772/voice_qwen_1781979845070_772.mp3",
+      "https://freeuuu.obs.cn-east-3.myhuaweicloud.com/aigc/aigc_local/qwen_1781979853101_470/voice_qwen_1781979853101_470.mp3"
+    ]
+  }
+]

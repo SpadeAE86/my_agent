@@ -40,7 +40,20 @@ async def handle_read_file(
     **_kwargs: Any,
 ) -> ReadFileOutput:
     
-    path = os.path.abspath(params.target_path)
+    target_path = params.target_path
+    if agent and getattr(agent, "role_id", "default") != "default":
+        from core.roles.role_manager import role_manager
+        workspace_dir = role_manager.get_role_workspace(agent.role_id)
+        if not os.path.isabs(target_path):
+            norm_target = os.path.normpath(target_path).replace("\\", "/")
+            if not norm_target.startswith("data/roles/"):
+                path = os.path.abspath(os.path.join(workspace_dir, target_path))
+            else:
+                path = os.path.abspath(target_path)
+        else:
+            path = os.path.abspath(target_path)
+    else:
+        path = os.path.abspath(target_path)
     
     try:
         content_str = await file_registry.read_lines(

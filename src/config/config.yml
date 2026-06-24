@@ -3,6 +3,7 @@ audio:
     access_key_id: YOUR_ALIYUN_AK
     access_key_secret: YOUR_ALIYUN_SK
     app_key: UwjC1qMrxjoKRbzV
+    workspace_id: YOUR_DASHSCOPE_WORKSPACE_ID
   Volcano:
     app_id: YOUR_VOLCANO_APP_ID
     access_token: YOUR_VOLCANO_ACCESS_TOKEN
